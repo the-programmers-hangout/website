@@ -1,4 +1,4 @@
-import * as React from "react"
+import React from "react"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -66,9 +66,9 @@ const SEO = ({ description = "", lang = "en", meta = [], title }: SEOProps) => {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ]}
     />
   )
-}
+};
 
 export default SEO
