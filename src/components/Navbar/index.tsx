@@ -1,11 +1,10 @@
-
 import { Link } from "gatsby";
-import PropTypes from "prop-types";
-import React from "react";
+import * as React from "react";
 import icon from "./icon.png";
 import { HeaderWrapper } from "./styles";
 
-const Navbar = ({ siteTitle }) => (
+// @todo maybe find alternative type for data
+const Navbar = ({ siteTitle }: any) => (
   <HeaderWrapper>
     <div
       style={{
@@ -34,7 +33,7 @@ const Navbar = ({ siteTitle }) => (
 )
 
 Navbar.propTypes = {
-  siteTitle: PropTypes.string,
+  siteTitle: String
 }
 
 Navbar.defaultProps = {

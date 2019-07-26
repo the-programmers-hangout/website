@@ -1,8 +1,9 @@
-import * as React from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 
-const LanguagePost = ({ data }) => {
+// @todo maybe find alternative type for data
+const LanguagePost = ({ data }: any) => {
   const { html } = data.file.post;
   console.log(data)
   return (
