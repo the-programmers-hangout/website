@@ -9,7 +9,7 @@ date: "2019/07/26"
 
 The first naive attempt, using new Promise for something that already returns a promise.
 
-```javascript
+```js
 function doAsync(number) {
   return new Promise(function(resolve, reject) {
     doDatabase().then(function(dbResult) {

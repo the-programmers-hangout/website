@@ -1,15 +1,12 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-import icon from "./icon.png"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `#ba1a2e`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+import { Link } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
+import icon from "./icon.png";
+import { HeaderWrapper } from "./styles";
+
+const Navbar = ({ siteTitle }) => (
+  <HeaderWrapper>
     <div
       style={{
         margin: `0 auto`,
@@ -18,12 +15,11 @@ const Header = ({ siteTitle }) => (
       }}
     >
       <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-        <img src={icon} style={{ width: "70px" }} />
+        {/* <img src={icon} style={{ width: "70px" }} /> */}
         <h1 style={{ margin: 0 }}>
           <Link
             to="/"
             style={{
-              paddingLeft: 25,
               color: `white`,
               textDecoration: `none`,
             }}
@@ -34,15 +30,15 @@ const Header = ({ siteTitle }) => (
       </div>
     </div>
 
-  </header >
+  </HeaderWrapper>
 )
 
-Header.propTypes = {
+Navbar.propTypes = {
   siteTitle: PropTypes.string,
 }
 
-Header.defaultProps = {
+Navbar.defaultProps = {
   siteTitle: ``,
 }
 
-export default Header
+export default Navbar;

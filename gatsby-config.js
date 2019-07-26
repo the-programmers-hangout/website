@@ -7,16 +7,10 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-transformer-remark`,
-      plugins: [
-        {
-          resolve: `gatsby-remark-prismjs`,
-          options: {
-            classPrefix: ""
-          }
-        }
-      ],
+      plugins: [`gatsby-remark-vscode`],
     },
     {
       resolve: `gatsby-source-filesystem`,

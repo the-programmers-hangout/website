@@ -5,15 +5,16 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
+import React, { PropsWithChildren } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import Navbar from "../Navbar"
 import "./layout.scss"
-// import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+import { MainContent } from "./styles";
+import Scrollbar from "react-perfect-scrollbar"
+import "react-perfect-scrollbar/dist/css/styles.css";
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: PropsWithChildren<{}>) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,8 +26,8 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+    <Scrollbar>
+      <Navbar siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
           margin: `0 auto`,
@@ -35,19 +36,15 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
-        <main>{children}</main>
+        <MainContent>{children}</MainContent>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
-    </>
+    </Scrollbar>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
