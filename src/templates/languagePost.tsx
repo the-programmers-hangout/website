@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import SEO from "../components/SEO";
 import Layout from "../components/Layout";
+import { Sidebar } from "../components/Docs";
 
 // @todo maybe find alternative type for data
 const LanguagePost = ({ data }: any) => {
@@ -10,6 +11,7 @@ const LanguagePost = ({ data }: any) => {
   return (
     <Layout>
       <SEO title={frontmatter.title} />
+      <Sidebar />
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout >
   )
