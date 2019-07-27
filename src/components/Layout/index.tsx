@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Container from "../Container"
 import Sidebar from "../Sidebar"
 import "./layout.scss"
-import { Main, MainContent } from "./styles"
+import * as SC from "./styles"
 import Scrollbar from "react-perfect-scrollbar"
 import "react-perfect-scrollbar/dist/css/styles.css"
 
@@ -29,13 +29,13 @@ const Layout = ({ children }: PropsWithChildren<{}>) => {
   return (
     <Scrollbar>
       <Container>
-        <Main>
+        <SC.Main>
           <Sidebar />
-          <MainContent>
+          <SC.MainContent>
             <h1>{data.site.siteMetadata.title}</h1>
             {children}
-          </MainContent>
-        </Main>
+          </SC.MainContent>
+        </SC.Main>
       </Container>
       <footer>
         <Container>

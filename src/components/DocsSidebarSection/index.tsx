@@ -1,5 +1,5 @@
 import React from "react"
-import { SidebarTitle } from "./style"
+import * as SC from "./styles"
 
 export interface DocsSidebarSectionProps {
   readonly title: string
@@ -11,7 +11,7 @@ const DocsSidebarSection = ({
 }: React.PropsWithChildren<DocsSidebarSectionProps>) => {
   return (
     <div>
-      <SidebarTitle>{title}</SidebarTitle>
+      <SC.SidebarTitle>{title}</SC.SidebarTitle>
       {children}
     </div>
   )

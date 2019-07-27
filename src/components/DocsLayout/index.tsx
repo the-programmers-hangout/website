@@ -9,7 +9,7 @@ import React, { PropsWithChildren } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import DocsSidebar from "../DocsSidebar"
-import { Main, MainContent } from "./styles"
+import * as SC from "./styles"
 
 const DocsLayout = ({ children }: PropsWithChildren<{}>) => {
   const data = useStaticQuery(graphql`
@@ -24,13 +24,13 @@ const DocsLayout = ({ children }: PropsWithChildren<{}>) => {
 
   return (
     <div>
-      <Main>
+      <SC.Main>
         <DocsSidebar />
-        <MainContent>
+        <SC.MainContent>
           <h1>{data.site.siteMetadata.title}</h1>
           {children}
-        </MainContent>
-      </Main>
+        </SC.MainContent>
+      </SC.Main>
       <footer>
         © {new Date().getFullYear()}, Built with
         {` `}
