@@ -131,7 +131,11 @@ const ALL_DOCS = graphql`
 
 const plantTree = (item: IFileOrFolder) => {
   if (item.type === "file") {
-    return <SC.PageLink to={item.path}>{item.title}</SC.PageLink>
+    return (
+      <SC.PageLink to={item.path} activeClassName="active">
+        {item.title}
+      </SC.PageLink>
+    )
   }
 
   return <Folder item={item} />
