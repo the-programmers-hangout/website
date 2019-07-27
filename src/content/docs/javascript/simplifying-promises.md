@@ -1,6 +1,7 @@
 ---
-author: "@Xetera"
-date: "2019/07/26"
+authors:
+  - "@Xetera"
+created_at: "2019/07/26"
 ---
 
 # Simplifying Promises

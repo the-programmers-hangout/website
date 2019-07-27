@@ -1,13 +1,15 @@
 import React from "react";
 import { graphql } from "gatsby";
+import SEO from "../components/SEO";
 import Layout from "../components/Layout";
 
 // @todo maybe find alternative type for data
 const LanguagePost = ({ data }: any) => {
-  const { html } = data.file.post;
+  const { html, frontmatter } = data.file.post;
   console.log(data)
   return (
     <Layout>
+      <SEO title={frontmatter.title} />
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout >
   )
@@ -21,8 +23,8 @@ export const query = graphql`
       post: childMarkdownRemark {
         html
         frontmatter {
-          author
-          date
+          authors
+          title
         }
       }
     }
