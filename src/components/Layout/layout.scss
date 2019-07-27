@@ -59,6 +59,9 @@ body {
 /* style for the children nodes container */
 .tree-view_children {
   margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .tree-view_children-collapsed {
