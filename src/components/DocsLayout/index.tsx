@@ -26,7 +26,7 @@ const DocsLayout = ({ children }: PropsWithChildren<{}>) => {
   `)
 
   return (
-    <Scrollbar>
+    <div>
       <Main>
         <DocsSidebar />
         <MainContent>
@@ -39,7 +39,7 @@ const DocsLayout = ({ children }: PropsWithChildren<{}>) => {
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
       </footer>
-    </Scrollbar>
+    </div>
   )
 }
 

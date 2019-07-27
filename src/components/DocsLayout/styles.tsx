@@ -7,7 +7,7 @@ export const Main = styled.div`
 `
 
 export const MainContent = styled.main`
-  flex: 1 0 auto;
+  flex: 1 1 auto;
 
   & > :first-child {
     margin-top: 0;
