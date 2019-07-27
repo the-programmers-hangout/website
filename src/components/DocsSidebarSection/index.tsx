@@ -5,7 +5,7 @@ export interface DocsSidebarSectionProps {
   readonly title: string
 }
 
-function DocsSidebarSection({
+export function DocsSidebarSection({
   title,
   children,
 }: PropsWithChildren<DocsSidebarSectionProps>) {
@@ -16,5 +16,3 @@ function DocsSidebarSection({
     </div>
   )
 }
-
-export default DocsSidebarSection

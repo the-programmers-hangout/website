@@ -1,7 +1,7 @@
 import React from "react"
 
-import DocsLayout from "../components/DocsLayout"
-import SEO from "../components/SEO"
+import { DocsLayout } from "../components/DocsLayout"
+import { SEO } from "../components/SEO"
 
 function DocsPage() {
   return (

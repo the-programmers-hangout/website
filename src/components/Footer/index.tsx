@@ -1,8 +1,8 @@
 import React from "react"
 import * as SC from "./styles"
-import Container from "../Container"
+import { Container } from "../Container"
 
-function Footer() {
+export function Footer() {
   return (
     <SC.FooterWrapper>
       <Container>
@@ -13,5 +13,3 @@ function Footer() {
     </SC.FooterWrapper>
   )
 }
-
-export default Footer

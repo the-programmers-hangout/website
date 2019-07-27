@@ -8,11 +8,11 @@
 import React, { PropsWithChildren } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import DocsSidebar from "../DocsSidebar"
-import Footer from "../Footer"
+import { DocsSidebar } from "../DocsSidebar"
+import { Footer } from "../Footer"
 import * as SC from "./styles"
 
-function DocsLayout({ children }: PropsWithChildren<{}>) {
+export function DocsLayout({ children }: PropsWithChildren<{}>) {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -36,5 +36,3 @@ function DocsLayout({ children }: PropsWithChildren<{}>) {
     </div>
   )
 }
-
-export default DocsLayout

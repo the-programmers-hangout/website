@@ -84,7 +84,7 @@ function Folder({ item }: { item: IFolder }) {
   )
 }
 
-function DocsSidebar() {
+export function DocsSidebar() {
   const docs = useStaticQuery<IAllDocsQuery>(ALL_DOCS)
   const tree = useBuildTree(docs)
 
@@ -94,5 +94,3 @@ function DocsSidebar() {
     </SC.DocsSidebarWrapper>
   )
 }
-
-export default DocsSidebar

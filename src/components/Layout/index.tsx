@@ -8,15 +8,15 @@
 import React, { PropsWithChildren } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Container from "../Container"
-import Footer from "../Footer"
-import Sidebar from "../Sidebar"
+import { Container } from "../Container"
+import { Footer } from "../Footer"
+import { Sidebar } from "../Sidebar"
 import "./layout.scss"
 import * as SC from "./styles"
 import Scrollbar from "react-perfect-scrollbar"
 import "react-perfect-scrollbar/dist/css/styles.css"
 
-function Layout({ children }: PropsWithChildren<{}>) {
+export function Layout({ children }: PropsWithChildren<{}>) {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -42,5 +42,3 @@ function Layout({ children }: PropsWithChildren<{}>) {
     </Scrollbar>
   )
 }
-
-export default Layout

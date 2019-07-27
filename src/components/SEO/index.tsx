@@ -10,7 +10,7 @@ interface SEOProps {
   readonly title: string
 }
 
-function SEO({
+export function SEO({
   description,
   lang = "en",
   meta = [],
@@ -86,5 +86,3 @@ function SEO({
     />
   )
 }
-
-export default SEO

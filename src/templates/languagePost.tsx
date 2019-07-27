@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import SEO from "../components/SEO"
-import DocsLayout from "../components/DocsLayout"
+import { SEO } from "../components/SEO"
+import { DocsLayout } from "../components/DocsLayout"
 
 // @todo maybe find alternative type for data
 function LanguagePost({ data }: any) {

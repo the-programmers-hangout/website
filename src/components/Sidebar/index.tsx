@@ -11,7 +11,7 @@ function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
   )
 }
 
-function Sidebar() {
+export function Sidebar() {
   return (
     <SC.SidebarWrapper>
       <SC.Logo src={logo} />
@@ -27,5 +27,3 @@ function Sidebar() {
     </SC.SidebarWrapper>
   )
 }
-
-export default Sidebar
