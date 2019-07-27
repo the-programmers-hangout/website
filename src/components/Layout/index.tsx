@@ -9,7 +9,6 @@ import React, { PropsWithChildren } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Container from "../Container"
-import Navbar from "../Navbar"
 import Sidebar from "../Sidebar"
 import "./layout.scss"
 import { Main, MainContent } from "./styles"

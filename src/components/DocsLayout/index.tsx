@@ -8,11 +8,8 @@
 import React, { PropsWithChildren } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Container from "../Container"
 import DocsSidebar from "../DocsSidebar"
 import { Main, MainContent } from "./styles"
-import Scrollbar from "react-perfect-scrollbar"
-import "react-perfect-scrollbar/dist/css/styles.css"
 
 const DocsLayout = ({ children }: PropsWithChildren<{}>) => {
   const data = useStaticQuery(graphql`
