@@ -6,18 +6,24 @@ const makeTree = () => {
 
 }
 
-const Sidebar = () => {
+export interface SidebarProps {
+  readonly width: string | number;
+}
+
+const Sidebar = ({ width }: SidebarProps) => {
 
   return (
-    <Tree
-      nodeLabel={<div>"Javascript"</div>}
-    >
+    <div style={{ width }}>
       <Tree
         nodeLabel={<div>"Javascript"</div>}
       >
-        Test
+        <Tree
+          nodeLabel={<div>"Javascript"</div>}
+        >
+          Test
     </Tree>
-    </Tree>
+      </Tree>
+    </div>
   )
 }
 
