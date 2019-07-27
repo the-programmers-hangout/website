@@ -11,4 +11,8 @@ export const PageLink = styled(Link)`
   display: block;
   padding: 4px 0;
   color: #1c61df;
+
+  &.active {
+    font-weight: 700;
+  }
 `
