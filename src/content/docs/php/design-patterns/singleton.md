@@ -13,7 +13,6 @@ There are multiple benefits to using a singleton class
 - You're always going to pull the same instance of the class
 - It's only instantiated once
 - Use `$this` in a static-like context
-- 
 
 By using a singleton instead of a static class we expose a cleaner class to use and we can use regular instance properties instead of static properties.
 
@@ -28,13 +27,13 @@ namespace Example;
 
 class Singleton
 {
-    
+
     /**
      * The singleton instance
      * @var Singleton
      */
     private static $instance;
-    
+
     /**
      * Get the instantiated singleton, or create it if it hasn't been instantiated yet.
      * @return Singleton
@@ -44,7 +43,7 @@ class Singleton
         // static::$instance =?? new static();
         // The double ?'s is a null-coalesce operator. There's a link about it below.
         static::$instance = static::$instance ?? new static();
-        
+
         return static::$instance;
     }
 
@@ -57,12 +56,12 @@ To give a little functionality to our freshly baked Singleton we add these three
 
 ```php
     private $word = "Pineapple";
-    
+
     public function getWord(): string {
         // PHP_EOL is a constant for a new line (\r\n) or whichever your OS uses.
         return $this->word . PHP_EOL;
     }
-    
+
     public function setWord(string $word): void {
         $this->word = $word;
     }

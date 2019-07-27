@@ -3,10 +3,10 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 interface SEOProps {
-  readonly description: string;
-  readonly lang: string;
-  readonly meta: object[];
-  readonly title: string;
+  readonly description: string
+  readonly lang: string
+  readonly meta: object[]
+  readonly title: string
 }
 
 const SEO = ({ description = "", lang = "en", meta = [], title }: SEOProps) => {
@@ -69,6 +69,6 @@ const SEO = ({ description = "", lang = "en", meta = [], title }: SEOProps) => {
       ]}
     />
   )
-};
+}
 
 export default SEO
