@@ -1,11 +1,7 @@
-import React from "react"
+import React, { PropsWithChildren} from "react"
 import * as SC from "./styles"
 
-interface ContainerProps {
-  children: React.ReactNode
-}
-
-const Container = ({ children, ...restProps }: ContainerProps): JSX.Element => (
+const Container = ({ children, ...restProps }: PropsWithChildren<{}>): JSX.Element => (
   <SC.ContainerWrapper {...restProps}>{children}</SC.ContainerWrapper>
 )
 
