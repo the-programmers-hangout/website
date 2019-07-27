@@ -58,8 +58,8 @@ function generateFile({
 }): IFile {
   return {
     title,
-    path,
     type: "file",
+    path,
   }
 }
 
