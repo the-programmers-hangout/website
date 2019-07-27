@@ -22,6 +22,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `site`,
+        path: `${__dirname}/src/content/site`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `docs`,
         path: `${__dirname}/src/content/docs`,
       },
@@ -34,7 +41,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `The Programmers Hangout`,
-        short_name: `starter`,
+        short_name: `TPH`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#ba1a2e`,

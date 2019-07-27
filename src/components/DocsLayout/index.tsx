@@ -9,14 +9,12 @@ import React, { PropsWithChildren } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Container from "../Container"
-import Navbar from "../Navbar"
-import Sidebar from "../Sidebar"
-import "./layout.scss"
+import DocsSidebar from "../DocsSidebar"
 import { Main, MainContent } from "./styles"
 import Scrollbar from "react-perfect-scrollbar"
 import "react-perfect-scrollbar/dist/css/styles.css"
 
-const Layout = ({ children }: PropsWithChildren<{}>) => {
+const DocsLayout = ({ children }: PropsWithChildren<{}>) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -29,24 +27,20 @@ const Layout = ({ children }: PropsWithChildren<{}>) => {
 
   return (
     <Scrollbar>
-      <Container>
-        <Main>
-          <Sidebar />
-          <MainContent>
-            <h1>{data.site.siteMetadata.title}</h1>
-            {children}
-          </MainContent>
-        </Main>
-      </Container>
+      <Main>
+        <DocsSidebar />
+        <MainContent>
+          <h1>{data.site.siteMetadata.title}</h1>
+          {children}
+        </MainContent>
+      </Main>
       <footer>
-        <Container>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </Container>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
       </footer>
     </Scrollbar>
   )
 }
 
-export default Layout
+export default DocsLayout

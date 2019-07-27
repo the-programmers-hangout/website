@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "TPH",
   "dependencies": {
-    "@types/styled-components": "^4.1.18",
+    "@types/ramda": "^0.26.18",
     "axios": "^0.19.0",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.13.39",
@@ -27,10 +27,12 @@
     "highlight.js": "^9.15.8",
     "node-sass": "^4.12.0",
     "prismjs": "^1.17.1",
+    "ramda": "^0.26.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-perfect-scrollbar": "^1.5.3",
+    "react-treeview": "^0.4.7",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
@@ -38,6 +40,8 @@
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.5",
     "@types/react-helmet": "^5.0.8",
+    "@types/react-treeview": "^0.4.2",
+    "@types/styled-components": "^4.1.18",
     "prettier": "^1.18.2",
     "@graphql-codegen/typescript": "1.4.0",
     "@graphql-codegen/typescript-operations": "1.4.0",

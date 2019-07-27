@@ -8,6 +8,7 @@ recommended_reading:
   - javascript/callbacks
   - javascript/es6/arrow-functions
 ---
+
 # A Promise to Keep
 
 A `Promise` in Javascript represents an action that has already started, but one that will be
