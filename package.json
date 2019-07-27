@@ -5,7 +5,6 @@
   "version": "0.1.0",
   "author": "TPH",
   "dependencies": {
-    "@types/styled-components": "^4.1.18",
     "axios": "^0.19.0",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.13.39",
@@ -40,6 +39,7 @@
     "@types/react-dom": "^16.8.5",
     "@types/react-helmet": "^5.0.8",
     "@types/react-treeview": "^0.4.2",
+    "@types/styled-components": "^4.1.18",
     "prettier": "^1.18.2",
     "@graphql-codegen/typescript": "1.4.0",
     "@graphql-codegen/typescript-operations": "1.4.0",
