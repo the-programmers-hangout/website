@@ -48,11 +48,20 @@ body {
 
 .tree-view_item {
   display: flex;
+  cursor: pointer;
+}
+
+.tree-view_item,
+.tree-view_children > div {
+  padding: 4px 0;
 }
 
 /* style for the children nodes container */
 .tree-view_children {
   margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .tree-view_children-collapsed {
