@@ -1,13 +1,12 @@
 import styled from "styled-components"
 
-export const Main = styled.div`
+export const ContainerWrapper = styled.div`
   display: flex;
-  margin: 128px auto 64px !important;
+  flex-direction: column;
+  padding: 0 32px;
+  margin: 0 auto;
   width: 100%;
-`
-
-export const MainContent = styled.main`
-  flex: 1 0 auto;
+  max-width: 1015px;
 
   & > :first-child {
     margin-top: 0;
