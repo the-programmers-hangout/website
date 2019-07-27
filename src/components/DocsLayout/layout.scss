@@ -1,4 +1,4 @@
-// @import "~prismjs/themes/prism-tomorrow.css";
+// TODO: refactor this into styled components
 
 html {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
@@ -6,6 +6,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -37,45 +38,4 @@ body {
   padding: 0;
   padding-left: 2.8em;
   overflow: initial;
-}
-
-/* temp */
-/* the tree node's style */
-.tree-view {
-  overflow-y: hidden;
-}
-
-.tree-view_item {
-  display: flex;
-}
-
-/* style for the children nodes container */
-.tree-view_children {
-  margin-left: 16px;
-}
-
-.tree-view_children-collapsed {
-  height: 0px;
-}
-
-.tree-view_arrow {
-  cursor: pointer;
-  margin-right: 6px;
-  display: inline-block;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.tree-view_arrow:after {
-  content: "▾";
-}
-
-/* rotate the triangle to close it */
-.tree-view_arrow-collapsed {
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
 }
