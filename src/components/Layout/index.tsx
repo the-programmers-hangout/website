@@ -9,6 +9,7 @@ import React, { PropsWithChildren } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Container from "../Container"
+import Footer from "../Footer"
 import Sidebar from "../Sidebar"
 import "./layout.scss"
 import * as SC from "./styles"
@@ -37,13 +38,7 @@ const Layout = ({ children }: PropsWithChildren<{}>) => {
           </SC.MainContent>
         </SC.Main>
       </Container>
-      <footer>
-        <Container>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </Container>
-      </footer>
+      <Footer />
     </Scrollbar>
   )
 }
