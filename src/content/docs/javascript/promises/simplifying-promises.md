@@ -15,9 +15,9 @@ function doAsync(number) {
   return new Promise(function(resolve, reject) {
     doDatabase().then(function(dbResult) {
       otherDbFunction(dbResult).then(function(secondResult) {
-        resolve(secondResult + 10);
+        resolve(secondResult + 10)
       })
-    });
+    })
   })
 }
 ```
@@ -29,9 +29,9 @@ already returns a promise, you can just return the original thing.
 function doAsync(number) {
   return doDatabase().then(function(dbResult) {
     otherDbFunction(dbResult).then(function(secondResult) {
-      return secondResult + 10;
+      return secondResult + 10
     })
-  });
+  })
 }
 ```
 
@@ -40,11 +40,13 @@ is that they allow you do chain them sequentially.
 
 ```js
 function doAsync(number) {
-  return doDatabase().then(function(dbResult) {
-    return otherDbFunction(dbResult)
-  }).then(function(secondResult) {
-    return secondResult + 10;
-  });
+  return doDatabase()
+    .then(function(dbResult) {
+      return otherDbFunction(dbResult)
+    })
+    .then(function(secondResult) {
+      return secondResult + 10
+    })
 }
 ```
 
@@ -56,17 +58,18 @@ function doAsync(number) {
   return doDatabase()
     .then(otherDbFunction)
     .then(function(secondResult) {
-      return secondResult + 10;
-    });
+      return secondResult + 10
+    })
 }
 ```
 
 And you don't need those returns if you just have ES6 arrow functions
 
 ```js
-const doAsync = number => doDatabase()
-  .then(otherDbFunction)
-  .then(secondResult => secondResult + 10);
+const doAsync = number =>
+  doDatabase()
+    .then(otherDbFunction)
+    .then(secondResult => secondResult + 10)
 ```
 
 Wow, that last one looks a lot cleaner to me than the first. Keeping that in mind, maybe we could be making some of our other functions cleaner as well

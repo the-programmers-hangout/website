@@ -1,9 +1,9 @@
-import React from "react"
+import React, { PropsWithChildren } from "react"
 import logo from "../../images/tph-logo.png"
 import * as SC from "./styles"
 import ArrowRight from "../../icons/arrow-right.svg"
 
-function MenuItem({ children, to }: { children: React.ReactNode; to: string }) {
+function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
   return (
     <SC.MenuItem to={to}>
       {children} <ArrowRight />
@@ -11,7 +11,7 @@ function MenuItem({ children, to }: { children: React.ReactNode; to: string }) {
   )
 }
 
-const Sidebar = () => {
+export function Sidebar() {
   return (
     <SC.SidebarWrapper>
       <SC.Logo src={logo} />
@@ -27,5 +27,3 @@ const Sidebar = () => {
     </SC.SidebarWrapper>
   )
 }
-
-export default Sidebar

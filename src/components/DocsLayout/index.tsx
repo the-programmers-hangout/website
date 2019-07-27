@@ -8,13 +8,11 @@
 import React, { PropsWithChildren } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Container from "../Container"
-import DocsSidebar from "../DocsSidebar"
-import { Main, MainContent } from "./styles"
-import Scrollbar from "react-perfect-scrollbar"
-import "react-perfect-scrollbar/dist/css/styles.css"
+import { DocsSidebar } from "../DocsSidebar"
+import { Footer } from "../Footer"
+import * as SC from "./styles"
 
-const DocsLayout = ({ children }: PropsWithChildren<{}>) => {
+export function DocsLayout({ children }: PropsWithChildren<{}>) {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -27,20 +25,14 @@ const DocsLayout = ({ children }: PropsWithChildren<{}>) => {
 
   return (
     <div>
-      <Main>
+      <SC.Main>
         <DocsSidebar />
-        <MainContent>
+        <SC.MainContent>
           <h1>{data.site.siteMetadata.title}</h1>
           {children}
-        </MainContent>
-      </Main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+        </SC.MainContent>
+      </SC.Main>
+      <Footer />
     </div>
   )
 }
-
-export default DocsLayout
