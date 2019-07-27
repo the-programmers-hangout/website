@@ -11,7 +11,7 @@ function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
   )
 }
 
-const Sidebar = () => {
+function Sidebar() {
   return (
     <SC.SidebarWrapper>
       <SC.Logo src={logo} />

@@ -55,7 +55,7 @@ const ALL_DOCS = graphql`
   }
 `
 
-const plantTree = (item: IFileOrFolder) => {
+function plantTree(item: IFileOrFolder) {
   if (item.type === "file") {
     return (
       <SC.PageLink to={item.path} activeClassName="active">
@@ -84,7 +84,7 @@ function Folder({ item }: { item: IFolder }) {
   )
 }
 
-const DocsSidebar = () => {
+function DocsSidebar() {
   const docs = useStaticQuery<IAllDocsQuery>(ALL_DOCS)
   const tree = useBuildTree(docs)
 

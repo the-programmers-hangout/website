@@ -2,7 +2,7 @@ import React from "react"
 import * as SC from "./styles"
 import Container from "../Container"
 
-const Footer = () => {
+function Footer() {
   return (
     <SC.FooterWrapper>
       <Container>

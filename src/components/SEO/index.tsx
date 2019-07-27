@@ -10,13 +10,13 @@ interface SEOProps {
   readonly title: string
 }
 
-const SEO = ({
+function SEO({
   description,
   lang = "en",
   meta = [],
   keywords = [],
   title,
-}: SEOProps) => {
+}: SEOProps) {
   const { site } = useStaticQuery(
     graphql`
       query {

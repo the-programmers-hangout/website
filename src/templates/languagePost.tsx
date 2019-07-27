@@ -4,7 +4,7 @@ import SEO from "../components/SEO"
 import DocsLayout from "../components/DocsLayout"
 
 // @todo maybe find alternative type for data
-const LanguagePost = ({ data }: any) => {
+function LanguagePost({ data }: any) {
   const { html, frontmatter } = data.file.post
   console.log(data)
   return (

@@ -5,10 +5,10 @@ export interface DocsSidebarSectionProps {
   readonly title: string
 }
 
-const DocsSidebarSection = ({
+function DocsSidebarSection({
   title,
   children,
-}: PropsWithChildren<DocsSidebarSectionProps>) => {
+}: PropsWithChildren<DocsSidebarSectionProps>) {
   return (
     <div>
       <SC.SidebarTitle>{title}</SC.SidebarTitle>

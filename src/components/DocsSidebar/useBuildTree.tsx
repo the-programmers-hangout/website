@@ -7,10 +7,10 @@ import {
   IFileQuery,
 } from "./index"
 
-const traverse = (
+function traverse(
   [head, ...tail]: string[],
   basePath = "/docs"
-): IFileOrFolder => {
+): IFileOrFolder {
   const path = basePath + "/" + head
   const isFile = !tail.length
   if (isFile) {
@@ -30,7 +30,7 @@ const traverse = (
   }
 }
 
-const generateFolder = ({
+function generateFolder({
   title,
   path,
   targets,
@@ -38,7 +38,7 @@ const generateFolder = ({
   title: IFolder["title"]
   path: IFile["path"]
   targets: IFolder[]
-}): IFolder => {
+}): IFolder {
   const children = join(R.chain(target => target.children, targets))
 
   return {
@@ -49,13 +49,13 @@ const generateFolder = ({
   }
 }
 
-const generateFile = ({
+function generateFile({
   title,
   path,
 }: {
   title: IFile["title"]
   path: IFile["path"]
-}): IFile => {
+}): IFile {
   return {
     title,
     path,
@@ -63,7 +63,7 @@ const generateFile = ({
   }
 }
 
-const join = ([head, ...tail]: IFileOrFolder[]): IFileOrFolder[] => {
+function join([head, ...tail]: IFileOrFolder[]): IFileOrFolder[] {
   if (!head) return []
 
   const [similarFs, remaining] = R.partition(

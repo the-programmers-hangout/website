@@ -16,7 +16,7 @@ import * as SC from "./styles"
 import Scrollbar from "react-perfect-scrollbar"
 import "react-perfect-scrollbar/dist/css/styles.css"
 
-const Layout = ({ children }: PropsWithChildren<{}>) => {
+function Layout({ children }: PropsWithChildren<{}>) {
   const data = useStaticQuery(graphql`
     query {
       site {

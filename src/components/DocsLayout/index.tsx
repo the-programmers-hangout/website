@@ -12,7 +12,7 @@ import DocsSidebar from "../DocsSidebar"
 import Footer from "../Footer"
 import * as SC from "./styles"
 
-const DocsLayout = ({ children }: PropsWithChildren<{}>) => {
+function DocsLayout({ children }: PropsWithChildren<{}>) {
   const data = useStaticQuery(graphql`
     query {
       site {
