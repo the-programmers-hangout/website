@@ -1,26 +1,29 @@
 import * as R from "ramda"
-import React from "react"
+import React, { useState } from "react"
 import Tree from "react-treeview"
 import { useStaticQuery, graphql } from "gatsby"
-
-export interface DocsSidebarProps {
-  readonly width: string | number
-}
+import * as SC from "./styles"
 
 interface IFile {
   title: string
   type: "file"
+  path: string
 }
 
 interface IFolder {
   title: string
   type: "folder"
+  path: string
   children: IFileOrFolder[]
 }
 
 type IFileOrFolder = IFile | IFolder
 
-const traverse = ([head, ...tail]: string[]): IFileOrFolder => {
+const traverse = (
+  [head, ...tail]: string[],
+  basePath = "/docs"
+): IFileOrFolder => {
+  const path = basePath + "/" + head
   const isFile = !tail.length
   if (isFile) {
     // probably not more than one dot
@@ -28,20 +31,24 @@ const traverse = ([head, ...tail]: string[]): IFileOrFolder => {
     return {
       title: name,
       type: "file",
+      path,
     }
   }
   return {
     title: head,
     type: "folder",
-    children: [traverse(tail)],
+    path,
+    children: [traverse(tail, path)],
   }
 }
 
 const generateFolder = ({
   title,
+  path,
   targets,
 }: {
   title: IFolder["title"]
+  path: IFile["path"]
   targets: IFolder[]
 }): IFolder => {
   const children = join(R.chain(target => target.children, targets))
@@ -49,13 +56,21 @@ const generateFolder = ({
   return {
     title,
     type: "folder",
+    path,
     children,
   }
 }
 
-const generateFile = ({ title }: { title: IFile["title"] }): IFile => {
+const generateFile = ({
+  title,
+  path,
+}: {
+  title: IFile["title"]
+  path: IFile["path"]
+}): IFile => {
   return {
     title,
+    path,
     type: "file",
   }
 }
@@ -68,12 +83,12 @@ const join = ([head, ...tail]: IFileOrFolder[]): IFileOrFolder[] => {
     tail
   )
   const targets = [head, ...similarFs]
-  const { title } = head
+  const { title, path } = head
 
   const current =
     head.type === "folder"
-      ? generateFolder({ title, targets: targets as IFolder[] })
-      : generateFile({ title })
+      ? generateFolder({ title, path, targets: targets as IFolder[] })
+      : generateFile({ title, path })
 
   return [current, ...join(remaining)]
 }
@@ -116,17 +131,30 @@ const ALL_DOCS = graphql`
 
 const plantTree = (item: IFileOrFolder) => {
   if (item.type === "file") {
-    return <div>{item.title}</div>
+    return <SC.PageLink to={item.path}>{item.title}</SC.PageLink>
+  }
+
+  return <Folder item={item} />
+}
+
+function Folder({ item }: { item: IFolder }) {
+  const [collapsed, setCollapse] = useState(false)
+
+  function toggleCollapse() {
+    setCollapse(prevState => !prevState)
   }
 
   return (
-    <Tree nodeLabel={<div>{item.title}</div>}>
+    <Tree
+      collapsed={collapsed}
+      nodeLabel={<div onClick={toggleCollapse}>{item.title}</div>}
+    >
       {item.children.map(plantTree)}
     </Tree>
   )
 }
 
-const DocsSidebar = ({ width }: DocsSidebarProps) => {
+const DocsSidebar = () => {
   const docs = useStaticQuery<IAllDocsQuery>(ALL_DOCS)
 
   const objects = docs.allFile.edges.map(({ node: file }: IFileQuery) =>
@@ -136,7 +164,11 @@ const DocsSidebar = ({ width }: DocsSidebarProps) => {
 
   console.log(results)
 
-  return <div style={{ width }}>{results.map(node => plantTree(node))}</div>
+  return (
+    <SC.DocsSidebarWrapper>
+      {results.map(node => plantTree(node))}
+    </SC.DocsSidebarWrapper>
+  )
 }
 
 export default DocsSidebar
