@@ -3,9 +3,9 @@ import logo from "../../images/tph-logo.png"
 import * as SC from "./styles"
 import ArrowRight from "../../icons/arrow-right.svg"
 
-function MenuItem({ children }: { children: React.ReactNode }) {
+function MenuItem({ children, to }: { children: React.ReactNode; to: string }) {
   return (
-    <SC.MenuItem>
+    <SC.MenuItem to={to}>
       {children} <ArrowRight />
     </SC.MenuItem>
   )
@@ -17,12 +17,12 @@ const Sidebar = () => {
       <SC.Logo src={logo} />
 
       <SC.Menu>
-        <MenuItem>about</MenuItem>
-        <MenuItem>rules</MenuItem>
-        <MenuItem>faq</MenuItem>
-        <MenuItem>hotbot</MenuItem>
-        <MenuItem>documentation</MenuItem>
-        <MenuItem>tech spotlight</MenuItem>
+        <MenuItem to="/">about</MenuItem>
+        <MenuItem to="/">rules</MenuItem>
+        <MenuItem to="/">faq</MenuItem>
+        <MenuItem to="/">hotbot</MenuItem>
+        <MenuItem to="/docs">documentation</MenuItem>
+        <MenuItem to="/">tech spotlight</MenuItem>
       </SC.Menu>
     </SC.SidebarWrapper>
   )
