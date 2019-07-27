@@ -10,7 +10,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-transformer-remark`,
-      plugins: [`gatsby-remark-vscode`],
+      plugins: [`gatsby-remark-prismjs`],
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -32,13 +32,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `The Programmers Hangout`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
-        theme_color: `#663399`,
+        theme_color: `#ba1a2e`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
