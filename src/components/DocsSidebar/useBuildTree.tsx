@@ -1,4 +1,6 @@
-import * as R from "ramda"
+import partition from "ramda/es/partition"
+import chain from "ramda/es/chain"
+
 import {
   IFileOrFolder,
   IFile,
@@ -39,7 +41,7 @@ function generateFolder({
   path: IFile["path"]
   targets: IFolder[]
 }): IFolder {
-  const children = join(R.chain(target => target.children, targets))
+  const children = join(chain(target => target.children, targets))
 
   return {
     title,
@@ -66,7 +68,7 @@ function generateFile({
 function join([head, ...tail]: IFileOrFolder[]): IFileOrFolder[] {
   if (!head) return []
 
-  const [similarFs, remaining] = R.partition(
+  const [similarFs, remaining] = partition(
     obj => obj.title === head.title && obj.type === head.type,
     tail
   )
