@@ -51,7 +51,7 @@ An example frontmatter might look like this
 ```md
 ---
 authors:
-  - "@Xetera"
+  - "Xetera#0001"
 title: "Working with Lists in Elixir"
 created_at: 2020/01/30
 external_resources:
