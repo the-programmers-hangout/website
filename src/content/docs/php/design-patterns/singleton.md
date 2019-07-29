@@ -1,6 +1,6 @@
 ---
 authors:
-  - "@supergrecko"
+  - "supergrecko#3434"
 created_at: "2019/07/27"
 ---
 

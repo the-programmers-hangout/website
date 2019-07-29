@@ -1,5 +1,6 @@
 ---
-author: "@Xetera"
+authors:
+  - "Xetera#0001"
 date: 2019/06/26
 ---
 
