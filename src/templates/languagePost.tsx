@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Markdown } from "../components/Markdown"
 import { SEO } from "../components/SEO"
 import { DocsLayout } from "../components/DocsLayout"
 
@@ -10,7 +11,7 @@ function LanguagePost({ data }: any) {
   return (
     <DocsLayout>
       <SEO title={frontmatter.title} />
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <Markdown content={html} />
     </DocsLayout>
   )
 }
