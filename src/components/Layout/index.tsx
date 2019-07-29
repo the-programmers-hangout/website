@@ -10,7 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import { Container } from "../Container"
 import { Footer } from "../Footer"
-import { Sidebar } from "../Sidebar"
+import { Header } from "../Header"
 import "./layout.scss"
 import * as SC from "./styles"
 import Scrollbar from "react-perfect-scrollbar"
@@ -29,15 +29,15 @@ export function Layout({ children }: PropsWithChildren<{}>) {
 
   return (
     <Scrollbar>
-      <Container>
-        <SC.Main>
-          <Sidebar />
-          <SC.MainContent>
+      <SC.Main>
+        <Header />
+        <SC.MainContent>
+          <Container>
             <h1>{data.site.siteMetadata.title}</h1>
             {children}
-          </SC.MainContent>
-        </SC.Main>
-      </Container>
+          </Container>
+        </SC.MainContent>
+      </SC.Main>
       <Footer />
     </Scrollbar>
   )
