@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Container } from "../Container"
 import { Footer } from "../Footer"
 import { Header } from "../Header"
+import { GlobalStyles } from "../../globalStyles"
 import "./layout.scss"
 import * as SC from "./styles"
 import Scrollbar from "react-perfect-scrollbar"
@@ -29,6 +30,7 @@ export function Layout({ children }: PropsWithChildren<{}>) {
 
   return (
     <Scrollbar>
+      <GlobalStyles />
       <SC.Main>
         <Header />
         <SC.MainContent>
