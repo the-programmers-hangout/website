@@ -22,8 +22,15 @@ export const query = graphql`
     file(relativePath: { eq: $file }) {
       post: childMarkdownRemark {
         html
+        fields {
+          authors {
+            name
+            hash
+            avatar
+          }
+        }
         frontmatter {
-          authors
+          date
           title
         }
       }
