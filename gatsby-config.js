@@ -9,6 +9,21 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Oxygen`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Montserrat`,
+            variants: [`400`, `700`],
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       plugins: [`gatsby-remark-prismjs`],
     },
