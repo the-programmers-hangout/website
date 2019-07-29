@@ -45,7 +45,8 @@ const ALL_DOCS = graphql`
           relativePath
           childMarkdownRemark {
             frontmatter {
-              author
+              authors
+              title
               date
             }
           }

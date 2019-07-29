@@ -1,28 +1,40 @@
 const { graphql } = require("gatsby")
 const { createFilePath } = require("gatsby-source-filesystem")
+const helper = require("./scripts/buildHelpers")
 const path = require(`path`)
+const fs = require("fs")
 
-const usersEndpoint = id => `https://discordapp.com/api/guilds/${id}/members`
+const requiredArticleFrontmatter = ["authors", "date"]
 
-const fetchUsers = () => {
-  // Fetch user data from discord using bot token here
+let users = []
+try {
+  users = JSON.parse(fs.readFileSync("./users.json", "utf-8"))
+  console.log("(◕◡◕✿) Users list loaded!")
+} catch (e) {
+  console.log("(◕‸ ◕✿) Users list not present, skipping user resolution...")
+}
+
+const validateResourceArticle = node => {
+  const missingField = requiredArticleFrontmatter.find(
+    required => node.frontmatter[required]
+  )
+  if (missingField) {
+    console.error(
+      `Article ${node.fileAbsolutePath} is missing field '${missingField}'`
+    )
+    process.exit(1)
+  }
 }
 
 const createDocs = async ({ createPage, graphql }) => {
   const languageDocs = path.resolve(`src/templates/languagePost.tsx`)
 
   const result = await graphql(`
-    {
+    query FetchDocs {
       allFile(filter: { sourceInstanceName: { eq: "docs" } }) {
         edges {
           node {
             relativePath
-            childMarkdownRemark {
-              frontmatter {
-                author
-                date
-              }
-            }
           }
         }
       }
@@ -47,11 +59,19 @@ const createDocs = async ({ createPage, graphql }) => {
 exports.onCreateNode = async ({ node, getNode, actions }) => {
   const { createPage, createNodeField } = actions
   if (node.internal.type === "MarkdownRemark") {
-    const slug = createFilePath({ node, getNode, basePath: "src/content/docs" })
+    const { frontmatter } = node
+    const isDoc = Boolean(!frontmatter.path)
+
+    if (!isDoc) {
+      return
+    }
+
+    const authors = helper.resolveAuthors(users, frontmatter.authors)
+
     createNodeField({
       node,
-      name: "slug",
-      value: slug,
+      name: "authors",
+      value: authors,
     })
   }
 }

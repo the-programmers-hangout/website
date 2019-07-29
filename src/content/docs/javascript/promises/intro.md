@@ -1,6 +1,6 @@
 ---
 authors:
-  - "@Xetera"
+  - "Xetera#0001"
 created_at: 2019/07/26
 updated_at: 2019/07/26
 title: Introduction to Promises
