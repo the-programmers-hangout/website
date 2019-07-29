@@ -18,7 +18,7 @@ const writeS = (content, dest) => {
   const source = new Readable()
   source.push(JSON.stringify(content))
   source.push(null)
-  source.pipe(dest)
+  return source.pipe(dest)
 }
 
 client.once("ready", async () => {
@@ -34,8 +34,10 @@ client.once("ready", async () => {
   }))
   const wrs = fs.createWriteStream(DESTINATION)
   console.log(`Fetched ${memberInfo.length} users, writing to ${DESTINATION}`)
-  writeS(memberInfo, wrs)
-  process.exit(0)
+  writeS(memberInfo, wrs).on("finish", () => {
+    console.log("Finished writing list")
+    process.exit(0)
+  })
 })
 
 console.log("Attempting to log in...")
