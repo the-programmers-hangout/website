@@ -1,8 +1,10 @@
 import styled, { css } from "styled-components"
-
-const BASE_FONT_SIZE = 18
-const BASE_LINE_HEIGHT = 26
-const MODULAR_SCALE = 1.1487
+import {
+  BASE_FONT_SIZE,
+  BASE_LINE_HEIGHT,
+  MODULAR_SCALE,
+  fontFamily,
+} from "../../design/typography"
 
 function modularFontSize(power: number) {
   return BASE_FONT_SIZE * Math.pow(MODULAR_SCALE, power)
@@ -36,7 +38,7 @@ export const MarkdownWrapper = styled.div`
   h4,
   h5,
   h6 {
-    font-family: "Montserrat";
+    font-family: ${fontFamily.header};
     letter-spacing: -1.75px;
     margin-top: ${BASE_LINE_HEIGHT * 2}px;
     margin-bottom: ${BASE_LINE_HEIGHT}px;
