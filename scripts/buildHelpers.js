@@ -11,16 +11,14 @@ module.exports = {
     const hash = identifier.slice(hashLocation + 1)
     return [name, hash]
   },
-  getDefaultAvatar(name) {
-    const [_, hash] = this.splitHash(hashLocation)
-
-    const avatar = Number(hash) % DEFAULT_AVATAR_MODULO
+  getDefaultAvatar(hash) {
+    const avatar = hash % DEFAULT_AVATAR_MODULO
     return `https://cdn.discordapp.com/embed/avatars/${avatar}.png`
   },
   resolveAuthor(users, author) {
     const target = users.find(user => user.identifier === author)
     const [name, hash] = this.splitHash(author)
-    const avatar = target ? target.avatar : this.getDefaultAvatar(author)
+    const avatar = target ? target.avatar : this.getDefaultAvatar(hash)
 
     return {
       name,
