@@ -19,8 +19,8 @@ export function Header() {
           <SC.Logo src={logo} />
 
           <SC.Menu>
-            <MenuItem to="/">about</MenuItem>
-            <MenuItem to="/">rules</MenuItem>
+            <MenuItem to="/about">about</MenuItem>
+            <MenuItem to="/rules">rules</MenuItem>
             <MenuItem to="/">faq</MenuItem>
             <MenuItem to="/">hotbot</MenuItem>
             <MenuItem to="/resources">resources</MenuItem>
