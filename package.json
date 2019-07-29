@@ -59,7 +59,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "codegen": "graphql-codegen --config codegen.yml"
+    "codegen": "graphql-codegen --config codegen.yml",
+    "fetch-users": "node ./scripts/fetchUsers.js"
   },
   "repository": {
     "type": "git",
