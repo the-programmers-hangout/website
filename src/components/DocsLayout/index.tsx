@@ -8,6 +8,7 @@
 import React, { PropsWithChildren } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
+import { GlobalStyles } from "../../globalStyles"
 import { DocsSidebar } from "../DocsSidebar"
 import { Footer } from "../Footer"
 import * as SC from "./styles"
@@ -25,6 +26,7 @@ export function DocsLayout({ children }: PropsWithChildren<{}>) {
 
   return (
     <div>
+      <GlobalStyles />
       <SC.Main>
         <DocsSidebar />
         <SC.MainContent>
