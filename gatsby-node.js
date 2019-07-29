@@ -26,12 +26,12 @@ const validateResourceArticle = node => {
   }
 }
 
-const createDocs = async ({ createPage, graphql }) => {
-  const languageDocs = path.resolve(`src/templates/languagePost.tsx`)
+const createResources = async ({ createPage, graphql }) => {
+  const languageResources = path.resolve(`src/templates/languagePost.tsx`)
 
   const result = await graphql(`
-    query FetchDocs {
-      allFile(filter: { sourceInstanceName: { eq: "docs" } }) {
+    query FetchResources {
+      allFile(filter: { sourceInstanceName: { eq: "resources" } }) {
         edges {
           node {
             relativePath
@@ -47,8 +47,8 @@ const createDocs = async ({ createPage, graphql }) => {
 
   return result.data.allFile.edges.forEach(({ node }) => {
     createPage({
-      path: path.join("docs", node.relativePath),
-      component: languageDocs,
+      path: path.join("resources", node.relativePath),
+      component: languageResources,
       context: {
         file: node.relativePath,
       },
@@ -78,5 +78,5 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-  return createDocs({ createPage, graphql })
+  return createResources({ createPage, graphql })
 }

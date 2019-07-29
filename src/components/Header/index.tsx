@@ -23,7 +23,7 @@ export function Header() {
             <MenuItem to="/">rules</MenuItem>
             <MenuItem to="/">faq</MenuItem>
             <MenuItem to="/">hotbot</MenuItem>
-            <MenuItem to="/docs">documentation</MenuItem>
+            <MenuItem to="/resources">resources</MenuItem>
             <MenuItem to="/">tech spotlight</MenuItem>
           </SC.Menu>
         </SC.InnerWrapper>

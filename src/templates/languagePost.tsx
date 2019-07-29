@@ -2,17 +2,17 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Markdown } from "../components/Markdown"
 import { SEO } from "../components/SEO"
-import { DocsLayout } from "../components/DocsLayout"
+import { ResourcesLayout } from "../components/ResourcesLayout"
 
 // @todo maybe find alternative type for data
 function LanguagePost({ data }: any) {
   const { html, frontmatter } = data.file.post
   console.log(data)
   return (
-    <DocsLayout>
+    <ResourcesLayout>
       <SEO title={frontmatter.title} />
       <Markdown content={html} />
-    </DocsLayout>
+    </ResourcesLayout>
   )
 }
 

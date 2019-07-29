@@ -5,13 +5,13 @@ import {
   IFileOrFolder,
   IFile,
   IFolder,
-  IAllDocsQuery,
+  IAllResourcesQuery,
   IFileQuery,
 } from "./index"
 
 function traverse(
   [head, ...tail]: string[],
-  basePath = "/docs"
+  basePath = "/resources"
 ): IFileOrFolder {
   const path = basePath + "/" + head
   const isFile = !tail.length
@@ -83,8 +83,8 @@ function join([head, ...tail]: IFileOrFolder[]): IFileOrFolder[] {
   return [current, ...join(remaining)]
 }
 
-export default function useBuildTree(docs: IAllDocsQuery) {
-  const objects = docs.allFile.edges.map(({ node: file }: IFileQuery) =>
+export default function useBuildTree(resources: IAllResourcesQuery) {
+  const objects = resources.allFile.edges.map(({ node: file }: IFileQuery) =>
     traverse(file.relativePath.split("/"))
   )
 
