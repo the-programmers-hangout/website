@@ -6,7 +6,6 @@
   "author": "TPH",
   "dependencies": {
     "@types/ramda": "^0.26.18",
-    "axios": "^0.19.0",
     "babel-plugin-styled-components": "^1.10.6",
     "discord.js": "^11.5.1",
     "gatsby": "^2.13.39",
@@ -25,7 +24,6 @@
     "gatsby-source-filesystem": "^2.1.6",
     "gatsby-transformer-remark": "^2.6.9",
     "gatsby-transformer-sharp": "^2.2.4",
-    "highlight.js": "^9.15.8",
     "prismjs": "^1.17.1",
     "ramda": "^0.26.1",
     "react": "^16.8.6",
