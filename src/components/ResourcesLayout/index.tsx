@@ -6,7 +6,6 @@
  */
 
 import React, { PropsWithChildren } from "react"
-import { useStaticQuery, graphql } from "gatsby"
 
 import { GlobalStyles } from "../../globalStyles"
 import { ResourcesSidebar } from "../ResourcesSidebar"
@@ -14,26 +13,13 @@ import * as SC from "./styles"
 import { SidebarProvider } from "../../SidebarProvider"
 
 export function ResourcesLayout({ children }: PropsWithChildren<{}>) {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <SidebarProvider>
       <GlobalStyles />
       <SC.Main>
         <ResourcesSidebar />
         <SC.MainContent>
-          <SC.Container>
-            <h1>{data.site.siteMetadata.title}</h1>
-            {children}
-          </SC.Container>
+          <SC.Container>{children}</SC.Container>
         </SC.MainContent>
       </SC.Main>
     </SidebarProvider>

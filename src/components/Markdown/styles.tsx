@@ -28,6 +28,14 @@ export const MarkdownWrapper = styled.div`
   font-size: ${BASE_FONT_SIZE}px;
   line-height: ${BASE_LINE_HEIGHT}px;
 
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :first-child {
+    margin-bottom: 0;
+  }
+
   p {
     margin: ${BASE_LINE_HEIGHT}px 0;
   }
