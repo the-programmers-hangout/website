@@ -1,5 +1,17 @@
 const DEFAULT_AVATAR_MODULO = 5
 module.exports = {
+  findMarkdownLink(absolutePath) {
+    // We're assuming this path isn't going to change
+    const start = absolutePath.lastIndexOf("src/content")
+
+    if (!start) {
+      throw Error(`Markdown file ${absolutePath} is outside of src/content`)
+    }
+
+    const route = absolutePath.slice(start)
+    // Same as this
+    return `https://github.com/the-programmers-hangout/website/tree/master/${route}`
+  },
   splitHash(identifier) {
     const hashLocation = identifier.lastIndexOf("#")
 
