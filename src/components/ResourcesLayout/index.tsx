@@ -9,11 +9,11 @@ import React, { PropsWithChildren } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import { GlobalStyles } from "../../globalStyles"
-import { DocsSidebar } from "../DocsSidebar"
+import { ResourcesSidebar } from "../ResourcesSidebar"
 import { Footer } from "../Footer"
 import * as SC from "./styles"
 
-export function DocsLayout({ children }: PropsWithChildren<{}>) {
+export function ResourcesLayout({ children }: PropsWithChildren<{}>) {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -28,7 +28,7 @@ export function DocsLayout({ children }: PropsWithChildren<{}>) {
     <div>
       <GlobalStyles />
       <SC.Main>
-        <DocsSidebar />
+        <ResourcesSidebar />
         <SC.MainContent>
           <h1>{data.site.siteMetadata.title}</h1>
           {children}

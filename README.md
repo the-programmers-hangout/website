@@ -15,7 +15,7 @@ The official website for [The Programmer's Hangout](https://discord.gg/programmi
 The site is built with [Gatsby](https://github.com/gatsbyjs/gatsby) which is used to leverage the power of React while
 allowing for static asset generation along with improved SEO.
 
-**This site and docs is still a work-in-progress and subject to change**
+**This site and resources is still a work-in-progress and subject to change**
 
 ### Setup
 
@@ -29,7 +29,7 @@ allowing for static asset generation along with improved SEO.
 
 If you're not familiar with Gatsby or React, you can still contribute by adding resources for languages you _are_ familiar with.
 
-The list of resources can be found [here](/src/content/docs)
+The list of resources can be found [here](/src/content/resources)
 
 #### Adding a new resource
 
@@ -63,4 +63,4 @@ external_resources:
 some content here
 ```
 
-You can look at other resources like [this one](/src/content/docs/javascript/promises/intro.md) for reference when creating your own. We use [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) as the date format to confuse both Americans and Europeans an equal amount.
+You can look at other resources like [this one](/src/content/resources/javascript/promises/intro.md) for reference when creating your own. We use [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) as the date format to confuse both Americans and Europeans an equal amount.

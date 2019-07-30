@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-export const DocsSidebarWrapper = styled.div`
+export const ResourcesSidebarWrapper = styled.div`
   box-sizing: border-box;
   padding: 0 16px;
   flex: 0 0 300px;

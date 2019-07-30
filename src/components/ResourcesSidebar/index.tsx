@@ -31,15 +31,15 @@ export interface IFileQuery {
   }
 }
 
-export interface IAllDocsQuery {
+export interface IAllResourcesQuery {
   allFile: {
     edges: IFileQuery[]
   }
 }
 
-const ALL_DOCS = graphql`
+const ALL_RESOURCES = graphql`
   query {
-    allFile(filter: { sourceInstanceName: { eq: "docs" } }) {
+    allFile(filter: { sourceInstanceName: { eq: "resources" } }) {
       edges {
         node {
           relativePath
@@ -85,13 +85,13 @@ function Folder({ item }: { item: IFolder }) {
   )
 }
 
-export function DocsSidebar() {
-  const docs = useStaticQuery<IAllDocsQuery>(ALL_DOCS)
-  const tree = useBuildTree(docs)
+export function ResourcesSidebar() {
+  const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
+  const tree = useBuildTree(resources)
 
   return (
-    <SC.DocsSidebarWrapper>
+    <SC.ResourcesSidebarWrapper>
       {tree.map(node => plantTree(node))}
-    </SC.DocsSidebarWrapper>
+    </SC.ResourcesSidebarWrapper>
   )
 }
