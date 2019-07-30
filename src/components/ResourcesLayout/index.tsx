@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { GlobalStyles } from "../../globalStyles"
 import { ResourcesSidebar } from "../ResourcesSidebar"
 import * as SC from "./styles"
+import { SidebarProvider } from "../../SidebarProvider"
 
 export function ResourcesLayout({ children }: PropsWithChildren<{}>) {
   const data = useStaticQuery(graphql`
@@ -24,7 +25,7 @@ export function ResourcesLayout({ children }: PropsWithChildren<{}>) {
   `)
 
   return (
-    <div>
+    <SidebarProvider>
       <GlobalStyles />
       <SC.Main>
         <ResourcesSidebar />
@@ -35,6 +36,6 @@ export function ResourcesLayout({ children }: PropsWithChildren<{}>) {
           </SC.Container>
         </SC.MainContent>
       </SC.Main>
-    </div>
+    </SidebarProvider>
   )
 }
