@@ -2,9 +2,8 @@
 authors:
   - "supergrecko#3434"
 created_at: "2019/07/27"
+title: Singletons
 ---
-
-# Singletons
 
 A singleton is a class which is only instantiated once during runtime. This is done by keeping a static property containing its instance on the singleton class.
 
@@ -16,7 +15,7 @@ There are multiple benefits to using a singleton class
 
 By using a singleton instead of a static class we expose a cleaner class to use and we can use regular instance properties instead of static properties.
 
-# Creating a Singleton in PHP
+## Creating a Singleton in PHP
 
 Creating a class which can be used as a singleton is very simple.
 
@@ -50,7 +49,7 @@ class Singleton
 }
 ```
 
-# Testing our Singleton
+## Testing our Singleton
 
 To give a little functionality to our freshly baked Singleton we add these three members to the class
 
@@ -93,7 +92,7 @@ $first->setWord("Banana");
 var_dump($first->getWord() === $second->getWord()); // bool(true)
 ```
 
-# Further Research
+## Further Research
 
 Here's a couple links which will help you understand Singletons better.
 

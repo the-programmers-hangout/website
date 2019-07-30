@@ -9,14 +9,14 @@ recommended_reading:
   - javascript/es6/arrow-functions
 ---
 
-# A Promise to Keep
+## A Promise to Keep
 
 A `Promise` in Javascript represents an action that has already started, but one that will be
 completed at a later time. Much like in real life, when you create a promise, you are expected
 to fulfill that promise. However, sometimes things go wrong where you can no longer fulfill
 a promise you made. This is essentially the main idea behind how promises work in javascript.
 
-## Basics
+### Basics
 
 When you create a Promise or call a function that returns a Promise in Javascript, you're left
 with an object that can either resolve into the actual value that you were promised, or it
@@ -24,7 +24,7 @@ can reject and leave you with an error for why that promise failed.
 
 We can access these values using the `.then` and `.catch` methods on the `Promise` object respectively.
 
-## A Simple Example
+### A Simple Example
 
 First, let's explore a bit of a made-up example. Imagine we have a promise-returning function
 called `getMembers` that retrieves all the members in a discord server. When we execute this
@@ -50,7 +50,7 @@ getMembers("The Programmers Hangout").then(members => {
 
 This way we are able to make sure that we only try to `console.log` when the `getMembers` function has resolved and ready to be used.
 
-## Beginner Mistakes
+### Beginner Mistakes
 
 Promises are possibly the #1 most common source of confusion for beginners. In order
 to avoid falling in pitfalls yourself, you have to remember 2 things about Javascript when
@@ -85,7 +85,7 @@ getWeather("Los Angeles").then(weather => {
 })
 ```
 
-## Real World Example
+### Real World Example
 
 Here is a real function that gets character information from the Rick and Morty API.
 You can try it in your browser if you want to test it out.
