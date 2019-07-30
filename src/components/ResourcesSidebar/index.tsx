@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, PropsWithChildren } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import useBuildTree from "./useBuildTree"
 import useSidebar from "./../../hooks/useSidebar"
@@ -109,6 +109,14 @@ function FirstLevelFolder({ item, index }: { item: IFolder; index: number }) {
   )
 }
 
+function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
+  return (
+    <SC.MenuItem to={to} activeClassName="active">
+      {children}
+    </SC.MenuItem>
+  )
+}
+
 export function ResourcesSidebar() {
   const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
   const tree = useBuildTree(resources)
@@ -120,6 +128,15 @@ export function ResourcesSidebar() {
       </Link>
       <SC.Inner>
         {tree.map((node, index) => plantTree(node, index, true))}
+
+        <SC.Menu>
+          <MenuItem to="/about">about</MenuItem>
+          <MenuItem to="/rules">rules</MenuItem>
+          <MenuItem to="/faq">faq</MenuItem>
+          <MenuItem to="/">hotbot</MenuItem>
+          <MenuItem to="/resources">resources</MenuItem>
+          <MenuItem to="/">tech</MenuItem>
+        </SC.Menu>
       </SC.Inner>
     </SC.ResourcesSidebarWrapper>
   )

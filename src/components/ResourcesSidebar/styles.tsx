@@ -115,3 +115,27 @@ export const PageLink = styled(Link)`
     font-weight: 700;
   }
 `
+
+export const Menu = styled.nav`
+  display: flex;
+  flex-direction: column;
+  border-top: 1px dashed #a5a5a5;
+  margin-top: 20px;
+  padding-top: 20px;
+`
+
+export const MenuItem = styled(Link)`
+  padding: 4px 0;
+  font-size: 20px;
+  color: #000;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+
+  &.active {
+    font-weight: 700;
+  }
+`
