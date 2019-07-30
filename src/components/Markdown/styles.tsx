@@ -2,21 +2,12 @@ import styled, { css } from "styled-components"
 import {
   BASE_FONT_SIZE,
   BASE_LINE_HEIGHT,
-  MODULAR_SCALE,
   fontFamily,
+  modularScale,
 } from "../../design/typography"
 
-function modularFontSize(power: number) {
-  return BASE_FONT_SIZE * Math.pow(MODULAR_SCALE, power)
-}
-
-function modularScale(power: number) {
-  const fontSize = modularFontSize(power)
-
-  // attempt to fit line-height a little larger than font-size
-  const paddedLineHeight = fontSize * 1.1
-  const lineHeight =
-    paddedLineHeight - (paddedLineHeight % BASE_LINE_HEIGHT) + BASE_LINE_HEIGHT
+function modularScaleCSS(power: number) {
+  const { fontSize, lineHeight } = modularScale(power)
 
   return css`
     font-size: ${fontSize}px;
@@ -27,6 +18,14 @@ function modularScale(power: number) {
 export const MarkdownWrapper = styled.div`
   font-size: ${BASE_FONT_SIZE}px;
   line-height: ${BASE_LINE_HEIGHT}px;
+
+  & > :first-child {
+    margin-top: 0;
+  }
+
+  & > :first-child {
+    margin-bottom: 0;
+  }
 
   p {
     margin: ${BASE_LINE_HEIGHT}px 0;
@@ -45,26 +44,26 @@ export const MarkdownWrapper = styled.div`
   }
 
   h1 {
-    ${modularScale(6)};
+    ${modularScaleCSS(6)};
   }
 
   h2 {
-    ${modularScale(5)};
+    ${modularScaleCSS(5)};
   }
 
   h3 {
-    ${modularScale(4)};
+    ${modularScaleCSS(4)};
   }
 
   h4 {
-    ${modularScale(3)};
+    ${modularScaleCSS(3)};
   }
 
   h5 {
-    ${modularScale(2)};
+    ${modularScaleCSS(2)};
   }
 
   h6 {
-    ${modularScale(1)};
+    ${modularScaleCSS(1)};
   }
 `

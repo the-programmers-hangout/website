@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import Tree from "react-treeview"
 import { useStaticQuery, graphql } from "gatsby"
 import useBuildTree from "./useBuildTree"
+import useSidebar from "./../../hooks/useSidebar"
+import banner from "../../images/tph-banner.png"
 import * as SC from "./styles"
 
 export interface IFile {
@@ -56,32 +58,63 @@ const ALL_RESOURCES = graphql`
   }
 `
 
-function plantTree(item: IFileOrFolder) {
+function plantTree(item: IFileOrFolder, index?: number, firstLevel?: boolean) {
   if (item.type === "file") {
     return (
-      <SC.PageLink to={item.path} activeClassName="active">
+      <SC.PageLink key={item.title} to={item.path} activeClassName="active">
         {item.title}
       </SC.PageLink>
     )
   }
 
-  return <Folder item={item} />
+  if (firstLevel && index !== undefined) {
+    return <FirstLevelFolder key={item.title} item={item} index={index} />
+  }
+
+  return <Folder key={item.title} item={item} />
 }
 
 function Folder({ item }: { item: IFolder }) {
-  const [collapsed, setCollapse] = useState(false)
+  const [collapsed, setCollapse] = useState(true)
 
   function toggleCollapse() {
     setCollapse(prevState => !prevState)
   }
 
   return (
-    <Tree
-      collapsed={collapsed}
-      nodeLabel={<div onClick={toggleCollapse}>{item.title}</div>}
-    >
-      {item.children.map(plantTree)}
-    </Tree>
+    <SC.TreeWrapper>
+      <Tree
+        collapsed={collapsed}
+        nodeLabel={<SC.Label onClick={toggleCollapse}>{item.title}</SC.Label>}
+      >
+        {item.children.map(node => plantTree(node))}
+      </Tree>
+    </SC.TreeWrapper>
+  )
+}
+
+function FirstLevelFolder({ item, index }: { item: IFolder; index: number }) {
+  const { current, setCurrent } = useSidebar()
+  const collapsed = current !== index
+
+  return (
+    <SC.TreeWrapper>
+      <Tree
+        className="firstLevel"
+        collapsed={collapsed}
+        nodeLabel={
+          <SC.FirstLabel
+            className={!collapsed ? "active" : undefined}
+            onClick={() => setCurrent(index)}
+          >
+            {item.title}
+            <SC.CollapseToggler />
+          </SC.FirstLabel>
+        }
+      >
+        {item.children.map(node => plantTree(node))}
+      </Tree>
+    </SC.TreeWrapper>
   )
 }
 
@@ -91,7 +124,10 @@ export function ResourcesSidebar() {
 
   return (
     <SC.ResourcesSidebarWrapper>
-      {tree.map(node => plantTree(node))}
+      <SC.Banner src={banner} />
+      <SC.Inner>
+        {tree.map((node, index) => plantTree(node, index, true))}
+      </SC.Inner>
     </SC.ResourcesSidebarWrapper>
   )
 }

@@ -2,9 +2,8 @@
 authors:
   - "veksen#1060"
 created_at: "2019/07/27"
+title: Iterative vs Functional array helpers
 ---
-
-# Iterative vs Functional array helpers
 
 -- placeholder --
 
