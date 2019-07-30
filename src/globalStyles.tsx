@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    margin: 0;
     font-size: ${BASE_FONT_SIZE}px;
     line-height: ${BASE_LINE_HEIGHT}px;
   }

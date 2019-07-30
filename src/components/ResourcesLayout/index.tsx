@@ -10,7 +10,6 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import { GlobalStyles } from "../../globalStyles"
 import { ResourcesSidebar } from "../ResourcesSidebar"
-import { Footer } from "../Footer"
 import * as SC from "./styles"
 
 export function ResourcesLayout({ children }: PropsWithChildren<{}>) {
@@ -30,11 +29,12 @@ export function ResourcesLayout({ children }: PropsWithChildren<{}>) {
       <SC.Main>
         <ResourcesSidebar />
         <SC.MainContent>
-          <h1>{data.site.siteMetadata.title}</h1>
-          {children}
+          <SC.Container>
+            <h1>{data.site.siteMetadata.title}</h1>
+            {children}
+          </SC.Container>
         </SC.MainContent>
       </SC.Main>
-      <Footer />
     </div>
   )
 }

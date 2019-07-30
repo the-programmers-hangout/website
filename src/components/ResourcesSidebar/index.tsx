@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import Tree from "react-treeview"
 import { useStaticQuery, graphql } from "gatsby"
 import useBuildTree from "./useBuildTree"
+import banner from "../../images/tph-banner.png"
 import * as SC from "./styles"
 
 export interface IFile {
@@ -76,12 +77,14 @@ function Folder({ item }: { item: IFolder }) {
   }
 
   return (
-    <Tree
-      collapsed={collapsed}
-      nodeLabel={<div onClick={toggleCollapse}>{item.title}</div>}
-    >
-      {item.children.map(plantTree)}
-    </Tree>
+    <SC.TreeWrapper>
+      <Tree
+        collapsed={collapsed}
+        nodeLabel={<div onClick={toggleCollapse}>{item.title}</div>}
+      >
+        {item.children.map(plantTree)}
+      </Tree>
+    </SC.TreeWrapper>
   )
 }
 
@@ -91,7 +94,8 @@ export function ResourcesSidebar() {
 
   return (
     <SC.ResourcesSidebarWrapper>
-      {tree.map(node => plantTree(node))}
+      <SC.Banner src={banner} />
+      <SC.Inner>{tree.map(node => plantTree(node))}</SC.Inner>
     </SC.ResourcesSidebarWrapper>
   )
 }

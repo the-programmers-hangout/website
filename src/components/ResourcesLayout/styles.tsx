@@ -2,12 +2,13 @@ import styled from "styled-components"
 
 export const Main = styled.div`
   display: flex;
-  margin: 128px auto 64px !important;
   width: 100%;
+  min-height: 100vh;
 `
 
 export const MainContent = styled.main`
   flex: 1 1 auto;
+  margin-top: 128px;
 
   & > :first-child {
     margin-top: 0;
@@ -16,4 +17,9 @@ export const MainContent = styled.main`
   & > :last-child {
     margin-bottom: 0;
   }
+`
+
+export const Container = styled.div`
+  width: 650px;
+  margin: 0 auto;
 `
