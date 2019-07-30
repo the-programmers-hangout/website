@@ -1,5 +1,6 @@
 import React from "react"
 
+import { StackedAvatars } from "../StackedAvatars"
 import ChevronUp from "../../icons/chevron-up.svg"
 import * as SC from "./styles"
 
@@ -29,11 +30,7 @@ export function ResourceHeader({
       <SC.Title>{title}</SC.Title>
 
       <SC.Top>
-        <SC.AuthorAvatars>
-          {authors.map(author => (
-            <SC.AuthorAvatar src={author.avatar} />
-          ))}
-        </SC.AuthorAvatars>
+        <StackedAvatars authors={authors} />
         <SC.Meta>
           {authors.length} contributor{authors.lenght > 1 && "s"}
         </SC.Meta>

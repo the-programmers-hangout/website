@@ -19,17 +19,6 @@ export const Title = styled.h1`
   letter-spacing: -1.75px;
 `
 
-export const AuthorAvatars = styled.div`
-  margin-right: 16px;
-`
-
-export const AuthorAvatar = styled.img`
-  width: 32px;
-  height: 32px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-`
-
 export const Meta = styled.div`
   & + &::before {
     content: "•";
