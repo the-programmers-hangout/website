@@ -85,7 +85,7 @@ function Folder({ item }: { item: IFolder }) {
     <SC.TreeWrapper>
       <Tree
         collapsed={collapsed}
-        nodeLabel={<div onClick={toggleCollapse}>{item.title}</div>}
+        nodeLabel={<SC.Label onClick={toggleCollapse}>{item.title}</SC.Label>}
       >
         {item.children.map(node => plantTree(node))}
       </Tree>
@@ -100,8 +100,17 @@ function FirstLevelFolder({ item, index }: { item: IFolder; index: number }) {
   return (
     <SC.TreeWrapper>
       <Tree
+        className="firstLevel"
         collapsed={collapsed}
-        nodeLabel={<div onClick={() => setCurrent(index)}>{item.title}</div>}
+        nodeLabel={
+          <SC.FirstLabel
+            className={!collapsed ? "active" : undefined}
+            onClick={() => setCurrent(index)}
+          >
+            {item.title}
+            <SC.CollapseToggler />
+          </SC.FirstLabel>
+        }
       >
         {item.children.map(node => plantTree(node))}
       </Tree>
