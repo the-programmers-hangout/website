@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { fontFamily, modularScale } from "../../design/typography"
 
 export const ResourceHeaderWrapper = styled.div`
   border-bottom: 1px solid #dbdbdb;
@@ -11,7 +12,12 @@ export const Top = styled.div`
   align-items: center;
 `
 
-export const Title = styled.h1``
+export const Title = styled.h1`
+  font-family: ${fontFamily.header};
+  font-size: ${modularScale(6).fontSize}px;
+  line-height: ${modularScale(6).lineHeight}px;
+  letter-spacing: -1.75px;
+`
 
 export const AuthorAvatars = styled.div`
   margin-right: 16px;
