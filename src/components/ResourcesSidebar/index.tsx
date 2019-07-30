@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import useBuildTree from "./useBuildTree"
 import useSidebar from "./../../hooks/useSidebar"
 import banner from "../../images/tph-banner.png"
@@ -115,7 +115,9 @@ export function ResourcesSidebar() {
 
   return (
     <SC.ResourcesSidebarWrapper>
-      <SC.Banner src={banner} />
+      <Link to="/">
+        <SC.Banner src={banner} />
+      </Link>
       <SC.Inner>
         {tree.map((node, index) => plantTree(node, index, true))}
       </SC.Inner>
