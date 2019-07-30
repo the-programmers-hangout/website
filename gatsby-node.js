@@ -62,6 +62,14 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
     const { frontmatter } = node
     const isDoc = Boolean(!frontmatter.path)
 
+    const githubLink = helper.findMarkdownLink(node.fileAbsolutePath)
+
+    createNodeField({
+      node,
+      name: "githubLink",
+      value: githubLink,
+    })
+
     if (!isDoc) {
       return
     }
