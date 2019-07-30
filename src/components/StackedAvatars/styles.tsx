@@ -21,6 +21,7 @@ export const AuthorAvatar = styled.img<{ index: number }>`
   position: relative;
   width: ${AVATAR_SIZE}px;
   height: ${AVATAR_SIZE}px;
+  flex: 0 0 ${AVATAR_SIZE}px;
   border: 2px solid #fff;
   border-radius: 50%;
   z-index: ${props => props.index};
