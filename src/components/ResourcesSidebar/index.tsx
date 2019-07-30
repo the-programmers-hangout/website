@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import Tree from "react-treeview"
 import { useStaticQuery, graphql } from "gatsby"
 import useBuildTree from "./useBuildTree"
 import useSidebar from "./../../hooks/useSidebar"
 import banner from "../../images/tph-banner.png"
+import TriangleDown from "../../icons/triangle-down.svg"
 import * as SC from "./styles"
 
 export interface IFile {
@@ -82,13 +82,11 @@ function Folder({ item }: { item: IFolder }) {
   }
 
   return (
-    <SC.TreeWrapper>
-      <Tree
-        collapsed={collapsed}
-        nodeLabel={<SC.Label onClick={toggleCollapse}>{item.title}</SC.Label>}
-      >
-        {item.children.map(node => plantTree(node))}
-      </Tree>
+    <SC.TreeWrapper collapsed={collapsed}>
+      <SC.Label onClick={toggleCollapse}>
+        <TriangleDown /> {item.title}
+      </SC.Label>
+      <SC.Children>{item.children.map(node => plantTree(node))}</SC.Children>
     </SC.TreeWrapper>
   )
 }
@@ -98,22 +96,15 @@ function FirstLevelFolder({ item, index }: { item: IFolder; index: number }) {
   const collapsed = current !== index
 
   return (
-    <SC.TreeWrapper>
-      <Tree
-        className="firstLevel"
-        collapsed={collapsed}
-        nodeLabel={
-          <SC.FirstLabel
-            className={!collapsed ? "active" : undefined}
-            onClick={() => setCurrent(index)}
-          >
-            {item.title}
-            <SC.CollapseToggler />
-          </SC.FirstLabel>
-        }
+    <SC.TreeWrapper className="firstLevel" collapsed={collapsed}>
+      <SC.FirstLabel
+        className={!collapsed ? "active" : undefined}
+        onClick={() => setCurrent(index)}
       >
-        {item.children.map(node => plantTree(node))}
-      </Tree>
+        {item.title}
+        <SC.CollapseToggler />
+      </SC.FirstLabel>
+      <SC.Children>{item.children.map(node => plantTree(node))}</SC.Children>
     </SC.TreeWrapper>
   )
 }
