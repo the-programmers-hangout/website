@@ -38,8 +38,8 @@ export function Layout({ children }: PropsWithChildren<{}>) {
             {children}
           </Container>
         </SC.MainContent>
+        <Footer />
       </SC.Main>
-      <Footer />
     </Scrollbar>
   )
 }

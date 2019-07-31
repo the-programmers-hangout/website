@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 export const HeaderWrapper = styled.header`
-  margin: 0 auto 20px;
+  margin-bottom: 20px;
 `
 
 export const InnerWrapper = styled.div`
@@ -21,9 +21,8 @@ export const Logo = styled.img`
 export const Menu = styled.nav`
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
-  width: 100%;
 `
 
 export const MenuItem = styled(Link)`

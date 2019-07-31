@@ -17,7 +17,6 @@ export function Header() {
       <Container>
         <SC.InnerWrapper>
           <SC.Logo src={logo} />
-
           <SC.Menu>
             <MenuItem to="/about">about</MenuItem>
             <MenuItem to="/rules">rules</MenuItem>
