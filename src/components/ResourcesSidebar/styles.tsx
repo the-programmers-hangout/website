@@ -4,7 +4,7 @@ import ChevronUp from "../../icons/chevron-up.svg"
 
 export const ResourcesSidebarWrapper = styled.div`
   box-sizing: border-box;
-  flex: 0 0 300px;
+  flex: 0 0 320px;
   background: #f9f9f9;
 `
 
@@ -13,25 +13,41 @@ export const Banner = styled.img`
   width: 100%;
 `
 
-export const TreeWrapper = styled.div`
-  width: 100%;
-
-  & + & {
-    border-top: 1px solid #dbdbdb;
-  }
+export const Children = styled.div`
+  padding-left: 16px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
 `
 
 export const Label = styled.div`
-  padding: 4px 0;
+  user-select: none;
+  position: relative;
+  padding: 8px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  svg {
+    position: absolute;
+    right: 100%;
+    margin-right: 4px;
+    width: 10px;
+  }
 `
 
 export const FirstLabel = styled.div`
+  user-select: none;
   display: flex;
   align-items: center;
   width: 100%;
+  box-sizing: border-box;
   padding: 12px 15px 12px 0;
   font-weight: 700;
   color: #a9a9a9;
+  cursor: pointer;
 
   &.active {
     color: #000;
@@ -56,62 +72,68 @@ export const FirstLabel = styled.div`
   }
 `
 
+export const TreeWrapper = styled.div<{ collapsed: boolean }>`
+  width: 100%;
+  font-size: 20px;
+
+  &.firstLevel {
+    overflow: hidden;
+  }
+
+  & + & {
+    border-top: 1px solid #dbdbdb;
+  }
+
+  ${Children} {
+    display: ${props => (props.collapsed ? "none" : "block")};
+    /* height: ${props => (props.collapsed ? 0 : "auto")}; */
+  }
+
+  & > ${Label} svg {
+    transform: rotate(${props => (props.collapsed ? -90 : 0)}deg);
+  }
+`
+
 export const CollapseToggler = styled(ChevronUp)``
 
 export const Inner = styled.div`
   padding-top: 30px;
   padding-left: 20px;
-
-  .tree-view {
-    overflow-y: hidden;
-  }
-
-  .tree-view_item {
-    display: flex;
-    cursor: pointer;
-  }
-
-  .tree-view_children {
-    margin-left: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .tree-view_children-collapsed {
-    height: 0px;
-  }
-
-  .tree-view_arrow {
-    cursor: pointer;
-    margin-right: 6px;
-    display: inline-block;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
-  .tree-view_arrow:after {
-    content: "▾";
-  }
-
-  .tree-view_arrow.firstLevel {
-    display: none;
-  }
-
-  .tree-view_arrow-collapsed {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-  }
 `
 
 export const PageLink = styled(Link)`
   display: block;
   padding: 4px 0;
-  color: #1c61df;
+  color: #000;
+  text-decoration: none;
+
+  & + & {
+    margin-top: 4px;
+  }
+
+  &.active {
+    font-weight: 700;
+  }
+`
+
+export const Menu = styled.nav`
+  display: flex;
+  flex-direction: column;
+  border-top: 1px dashed #a5a5a5;
+  margin-top: 20px;
+  padding-top: 20px;
+`
+
+export const MenuItem = styled(Link)`
+  padding: 4px 0;
+  font-size: 20px;
+  color: #000;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
 
   &.active {
     font-weight: 700;
