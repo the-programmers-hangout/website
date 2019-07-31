@@ -23,6 +23,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-layout`,
     {
       resolve: `gatsby-transformer-remark`,
       plugins: [`gatsby-remark-prismjs`],

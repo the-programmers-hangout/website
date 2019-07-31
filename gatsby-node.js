@@ -6,6 +6,9 @@ const fs = require("fs")
 
 const requiredArticleFrontmatter = ["authors", "date"]
 
+const LAYOUT_RESOURCES = "resources"
+const LAYOUT_REGULAR = "regular"
+
 let users = []
 try {
   users = JSON.parse(fs.readFileSync("./users.json", "utf-8"))
@@ -51,6 +54,7 @@ const createResources = async ({ createPage, graphql }) => {
       component: languageResources,
       context: {
         file: node.relativePath,
+        layout: LAYOUT_RESOURCES,
       },
     })
   })
@@ -82,6 +86,15 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
       value: authors,
     })
   }
+}
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions
+
+  page.context.layout = page.path.match(/resources/)
+    ? LAYOUT_RESOURCES
+    : LAYOUT_REGULAR
+  createPage(page)
 }
 
 exports.createPages = ({ actions, graphql }) => {

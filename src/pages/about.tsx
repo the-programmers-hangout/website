@@ -1,7 +1,6 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { graphql } from "gatsby"
 import { Markdown } from "../components/Markdown"
-import { Layout } from "../components/Layout"
 import { MarkdownRemark, Query } from "../generated/graphql"
 import { SEO } from "../components/SEO"
 
@@ -9,10 +8,10 @@ function AboutPage({ data }: ComponentQuery<{ md: MarkdownRemark }>) {
   const { md } = data
 
   return (
-    <Layout>
+    <Fragment>
       <SEO title="About" />
       <Markdown content={md.html!} />
-    </Layout>
+    </Fragment>
   )
 }
 
