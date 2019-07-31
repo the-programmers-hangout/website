@@ -1,8 +1,7 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { graphql } from "gatsby"
 import { Markdown } from "../components/Markdown"
 import { SEO } from "../components/SEO"
-import { ResourcesLayout } from "../components/ResourcesLayout"
 import { ResourceHeader } from "../components/ResourceHeader"
 
 // @todo maybe find alternative type for data
@@ -10,7 +9,7 @@ function LanguagePost({ data }: any) {
   const { html, fields, frontmatter, timeToRead } = data.file.post
   console.log(data)
   return (
-    <ResourcesLayout>
+    <Fragment>
       <SEO title={frontmatter.title} />
       <ResourceHeader
         title={frontmatter.title}
@@ -20,7 +19,7 @@ function LanguagePost({ data }: any) {
         recommendedReading={frontmatter.recommended_reading}
       />
       <Markdown content={html} />
-    </ResourcesLayout>
+    </Fragment>
   )
 }
 
