@@ -1,27 +1,29 @@
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-export const HeaderWrapper = styled.header``
+export const HeaderWrapper = styled.header`
+  margin: 0 auto 20px;
+`
 
 export const InnerWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  height: 122px;
+  flex-direction: column;
 `
 
 export const Logo = styled.img`
-  position: absolute;
-  margin-right: 50px;
-  left: calc(-122px - 50px);
   width: 122px;
   height: 122px;
+  margin-bottom: 10px;
 `
 
 export const Menu = styled.nav`
-  margin-top: 16px;
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
 `
 
 export const MenuItem = styled(Link)`
@@ -32,6 +34,7 @@ export const MenuItem = styled(Link)`
   color: #555;
   position: relative;
   transition: color 0.3s;
+  margin: 5px 10px;
 
   /* underline bar, getting animated through hover */
   &::after {
@@ -75,9 +78,5 @@ export const MenuItem = styled(Link)`
     &:hover::after {
       background: #d33636;
     }
-  }
-
-  & + & {
-    margin-left: 48px;
   }
 `
