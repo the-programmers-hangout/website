@@ -1,3 +1,4 @@
+import { Link } from "gatsby"
 import React, { PropsWithChildren } from "react"
 import { Container } from "../Container"
 import logo from "../../images/tph-logo.png"
@@ -16,7 +17,9 @@ export function Header() {
     <SC.HeaderWrapper>
       <Container>
         <SC.InnerWrapper>
-          <SC.Logo src={logo} />
+          <Link to="/">
+            <SC.Logo src={logo} />
+          </Link>
           <SC.Menu>
             <MenuItem to="/about">about</MenuItem>
             <MenuItem to="/rules">rules</MenuItem>
