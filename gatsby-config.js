@@ -24,10 +24,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-layout`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      plugins: [`gatsby-remark-prismjs`],
-    },
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -61,11 +58,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#ba1a2e`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
