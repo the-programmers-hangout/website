@@ -6,7 +6,7 @@
   "author": "TPH",
   "dependencies": {
     "gatsby": "^2.13.51",
-    "gatsby-image": "^2.2.6",
+    "gatsby-image": "^2.2.8",
     "gatsby-plugin-layout": "^1.1.2",
     "gatsby-plugin-manifest": "^2.2.4",
     "gatsby-plugin-mdx": "^1.0.17",
