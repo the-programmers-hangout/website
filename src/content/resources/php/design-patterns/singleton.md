@@ -3,6 +3,15 @@ authors:
   - "supergrecko#3434"
 created_at: "2019/07/27"
 title: Singletons
+external_resources:
+  - https://en.wikipedia.org/wiki/Singleton_pattern
+  - https://phpenthusiast.com/blog/the-singleton-design-pattern-in-php
+  - https://phptherightway.com/pages/Design-Patterns.html#singleton
+  - https://www.php.net/manual/en/language.oop5.static.php
+  - https://www.php.net/manual/en/language.oop5.late-static-bindings.php
+  - https://en.wikipedia.org/wiki/Static_(keyword)
+  - https://en.wikipedia.org/wiki/Null_coalescing_operator
+  - https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.null-coalesce-op
 ---
 
 A singleton is a class which is only instantiated once during runtime. This is done by keeping a static property containing its instance on the singleton class.
@@ -91,24 +100,3 @@ $first->setWord("Banana");
 // the test will still pass, because it's a singleton.
 var_dump($first->getWord() === $second->getWord()); // bool(true)
 ```
-
-## Further Research
-
-Here's a couple links which will help you understand Singletons better.
-
-## Singleton Resources:
-
-- https://en.wikipedia.org/wiki/Singleton_pattern
-- https://phpenthusiast.com/blog/the-singleton-design-pattern-in-php
-- https://phptherightway.com/pages/Design-Patterns.html#singleton
-
-## Static Keyword Resources:
-
-- https://www.php.net/manual/en/language.oop5.static.php
-- https://www.php.net/manual/en/language.oop5.late-static-bindings.php
-- https://en.wikipedia.org/wiki/Static_(keyword)
-
-## The Null-Coalescing Operator Resources:
-
-- https://en.wikipedia.org/wiki/Null_coalescing_operator
-- https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.null-coalesce-op
