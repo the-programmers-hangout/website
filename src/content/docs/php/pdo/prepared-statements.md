@@ -2,7 +2,7 @@
 authors:
   - "supergrecko#3434"
 created_at: "2019/08/07"
-title: Singletons
+title: Prepared Statements
 external_resources:
   - https://www.php.net/manual/en/class.pdostatement.php
   - https://phptherightway.com/#pdo_extension
