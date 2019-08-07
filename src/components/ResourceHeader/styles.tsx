@@ -50,6 +50,7 @@ const extraLink = css`
 
   svg {
     width: 14px;
+    flex: 0 0 14px;
     transform: rotate(90deg);
     margin-right: 6px;
   }
