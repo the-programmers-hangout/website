@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
+import { Link } from "gatsby"
 import { fontFamily, modularScale } from "../../design/typography"
 
 export const ResourceHeaderWrapper = styled.div`
@@ -26,11 +27,15 @@ export const Meta = styled.div`
   }
 `
 
-export const RecommendedReading = styled.div`
+const ExtraLinks = styled.div`
   margin-top: 16px;
 `
 
-export const ReadLink = styled.div`
+export const RecommendedReading = styled(ExtraLinks)``
+
+export const ExternalResources = styled(ExtraLinks)``
+
+const extraLink = css`
   display: flex;
   align-items: center;
   color: #04b0a6;
@@ -53,6 +58,14 @@ export const ReadLink = styled.div`
   }
 `
 
-export const ReadLinkText = styled.div`
+export const ExtraLinkInternal = styled(Link)`
+  ${extraLink};
+`
+
+export const ExtraLinkExternal = styled.a`
+  ${extraLink};
+`
+
+export const ExtraLinkText = styled.div`
   text-decoration: underline;
 `

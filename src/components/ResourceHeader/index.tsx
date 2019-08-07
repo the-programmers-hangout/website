@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 
 import { StackedAvatars } from "../StackedAvatars"
 import ChevronUp from "../../icons/chevron-up.svg"
@@ -10,6 +10,35 @@ interface ResourceHeaderProps {
   createdAt: any
   timeToRead: any
   recommendedReading: any
+  externalResources: any
+}
+
+function ExtraLink({
+  item,
+  external = false,
+}: {
+  item: string
+  external?: boolean
+}) {
+  const Inner = () => (
+    <Fragment>
+      <ChevronUp /> <SC.ExtraLinkText>{item}</SC.ExtraLinkText>
+    </Fragment>
+  )
+
+  if (external) {
+    return (
+      <SC.ExtraLinkExternal href={item} target="_blank">
+        <Inner />
+      </SC.ExtraLinkExternal>
+    )
+  }
+
+  return (
+    <SC.ExtraLinkInternal to={`/resources/${item}.md`}>
+      <Inner />
+    </SC.ExtraLinkInternal>
+  )
 }
 
 export function ResourceHeader({
@@ -18,6 +47,7 @@ export function ResourceHeader({
   createdAt,
   timeToRead,
   recommendedReading,
+  externalResources,
 }: ResourceHeaderProps) {
   const date = new Date(createdAt)
   const month = date.toLocaleString("default", { month: "long" })
@@ -44,13 +74,18 @@ export function ResourceHeader({
         <SC.RecommendedReading>
           Recommended reading
           {recommendedReading.map(item => {
-            return (
-              <SC.ReadLink>
-                <ChevronUp /> <SC.ReadLinkText>{item}</SC.ReadLinkText>
-              </SC.ReadLink>
-            )
+            return <ExtraLink item={item} />
           })}
         </SC.RecommendedReading>
+      )}
+
+      {externalResources && (
+        <SC.ExternalResources>
+          External Resources
+          {externalResources.map(item => {
+            return <ExtraLink item={item} external />
+          })}
+        </SC.ExternalResources>
       )}
     </SC.ResourceHeaderWrapper>
   )

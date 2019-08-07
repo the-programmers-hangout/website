@@ -17,6 +17,7 @@ function LanguagePost({ data }: any) {
         createdAt={frontmatter.created_at}
         timeToRead={timeToRead}
         recommendedReading={frontmatter.recommended_reading}
+        externalResources={frontmatter.external_resources}
       />
       <Markdown content={html} />
     </Fragment>
@@ -41,6 +42,7 @@ export const query = graphql`
           created_at
           title
           recommended_reading
+          external_resources
         }
         timeToRead
       }
