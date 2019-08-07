@@ -108,7 +108,7 @@ users.forEach(user => {
 Functional way:
 
 ```js
-const totalAge = users.reduce((acc, user) => acc + user.age)
+const totalAge = users.reduce((acc, user) => acc + user.age, 0)
 ```
 
 ## some
@@ -164,10 +164,10 @@ for (let i = 0; users.length > i; i++) {
 Functional way:
 
 ```js
-const hasYoungUsers = users.some(user => user.age < 18)
+const hasYoungUsers = users.every(user => user.age < 18)
 ```
 
-## inludes
+## includes
 
 ```js
 const pets = ["cat", "dog", "bat"]
