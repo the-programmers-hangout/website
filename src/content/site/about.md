@@ -20,7 +20,7 @@ This server was made on the 4th of November, 2016.
 
 ## Who owns this server
 
-Elliott#0001
+Elliott#0001 and Fox#0001
 
 ## Am I welcome
 
