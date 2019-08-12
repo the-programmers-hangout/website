@@ -1,9 +1,30 @@
 {
   "name": "tph-website",
+  "version": "0.1.0",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
+  "keywords": [
+    "gatsby"
+  ],
+  "bugs": {
+    "url": "https://github.com/the-programmers-hangout/website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/the-programmers-hangout/website"
+  },
+  "license": "MIT",
   "author": "TPH",
+  "scripts": {
+    "build": "gatsby build",
+    "codegen": "graphql-codegen --config codegen.yml",
+    "develop": "gatsby develop",
+    "fetch-users": "node ./scripts/fetchUsers.js",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "serve": "gatsby serve",
+    "start": "npm run develop",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
   "dependencies": {
     "gatsby": "^2.13.51",
     "gatsby-image": "^2.2.8",
@@ -31,6 +52,9 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.4.0",
+    "@graphql-codegen/typescript": "1.4.0",
+    "@graphql-codegen/typescript-operations": "1.4.0",
+    "@graphql-codegen/typescript-react-apollo": "1.4.0",
     "@types/prismjs": "^1.16.0",
     "@types/ramda": "^0.26.18",
     "@types/react": "^16.8.24",
@@ -40,30 +64,6 @@
     "@types/styled-components": "^4.1.18",
     "babel-plugin-styled-components": "^1.10.6",
     "discord.js": "^11.5.1",
-    "prettier": "^1.18.2",
-    "@graphql-codegen/typescript": "1.4.0",
-    "@graphql-codegen/typescript-operations": "1.4.0",
-    "@graphql-codegen/typescript-react-apollo": "1.4.0"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "codegen": "graphql-codegen --config codegen.yml",
-    "fetch-users": "node ./scripts/fetchUsers.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/the-programmers-hangout/website"
-  },
-  "bugs": {
-    "url": "https://github.com/the-programmers-hangout/website/issues"
+    "prettier": "^1.18.2"
   }
 }
