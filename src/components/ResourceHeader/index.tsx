@@ -74,7 +74,7 @@ export function ResourceHeader({
         <SC.RecommendedReading>
           Recommended reading
           {recommendedReading.map(item => {
-            return <ExtraLink item={item} />
+            return <ExtraLink key={item} item={item} />
           })}
         </SC.RecommendedReading>
       )}
@@ -83,7 +83,7 @@ export function ResourceHeader({
         <SC.ExternalResources>
           External Resources
           {externalResources.map(item => {
-            return <ExtraLink item={item} external />
+            return <ExtraLink key={item} item={item} external />
           })}
         </SC.ExternalResources>
       )}
