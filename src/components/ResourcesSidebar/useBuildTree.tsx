@@ -1,13 +1,13 @@
-import partition from "ramda/es/partition"
 import chain from "ramda/es/chain"
+import partition from "ramda/es/partition"
 
 import { traversePaths } from "../../utils"
 import {
-  IFileOrFolder,
-  IFile,
-  IFolder,
   IAllResourcesQuery,
+  IFile,
+  IFileOrFolder,
   IFileQuery,
+  IFolder,
 } from "./index"
 
 function generateFolder({
@@ -44,7 +44,7 @@ function generateFile({
 }
 
 function join([head, ...tail]: IFileOrFolder[]): IFileOrFolder[] {
-  if (!head) return []
+  if (!head) { return [] }
 
   const [similarFs, remaining] = partition(
     obj => obj.title === head.title && obj.type === head.type,

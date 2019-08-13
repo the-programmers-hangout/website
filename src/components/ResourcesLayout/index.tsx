@@ -8,9 +8,9 @@
 import React, { PropsWithChildren } from "react"
 
 import { GlobalStyles } from "../../globalStyles"
+import { SidebarProvider } from "../../SidebarProvider"
 import { ResourcesSidebar } from "../ResourcesSidebar"
 import * as SC from "./styles"
-import { SidebarProvider } from "../../SidebarProvider"
 
 export function ResourcesLayout({ children }: PropsWithChildren<{}>) {
   return (

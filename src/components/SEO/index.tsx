@@ -1,8 +1,8 @@
+import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
 
-interface SEOProps {
+interface ISEOProps {
   readonly description?: string
   readonly lang?: string
   readonly meta?: any[]
@@ -16,7 +16,7 @@ export function SEO({
   meta = [],
   keywords = [],
   title,
-}: SEOProps) {
+}: ISEOProps) {
   const { site } = useStaticQuery(
     graphql`
       query {

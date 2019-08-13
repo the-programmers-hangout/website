@@ -2,7 +2,7 @@ import { IFileOrFolder } from "../components/ResourcesSidebar/index"
 
 export function traversePaths(
   [head, ...tail]: string[],
-  basePath = "/resources"
+  basePath: string = "/resources"
 ): IFileOrFolder {
   const path = basePath + "/" + head
   const isFile = !tail.length

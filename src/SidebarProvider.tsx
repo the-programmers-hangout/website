@@ -1,21 +1,21 @@
 import React, { useState } from "react"
 
-interface SidebarProviderProps {
+interface ISidebarProviderProps {
   children: React.ReactNode
 }
 
-export interface SidebarContextInterface {
+export interface ISidebarContextInterface {
   current: number
   setCurrent: (index: number) => void
 }
 
-export const SidebarContext = React.createContext<SidebarContextInterface | null>(
+export const SidebarContext = React.createContext<ISidebarContextInterface | null>(
   null
 )
 
 export function SidebarProvider({
   children,
-}: SidebarProviderProps): JSX.Element {
+}: ISidebarProviderProps): JSX.Element {
   const [current, setCurrent] = useState(0)
 
   function selectFirstLevel(index: number) {

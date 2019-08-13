@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React, { PropsWithChildren } from "react"
-import { Container } from "../Container"
 import logo from "../../images/tph-logo.png"
+import { Container } from "../Container"
 import * as SC from "./styles"
 
 function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {

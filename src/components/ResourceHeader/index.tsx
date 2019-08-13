@@ -1,11 +1,11 @@
 import React, { Fragment } from "react"
 
-import { StackedAvatars } from "../StackedAvatars"
 import ChevronUp from "../../icons/chevron-up.svg"
 import { ResourceBreadcrumb } from "../ResourceBreadcrumb"
+import { StackedAvatars } from "../StackedAvatars"
 import * as SC from "./styles"
 
-interface ResourceHeaderProps {
+interface IResourceHeaderProps {
   relativePath: any
   title: any
   authors: any
