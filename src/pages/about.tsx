@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import { graphql } from "gatsby"
 import { Markdown } from "../components/Markdown"
-import { MarkdownRemark, Query } from "../generated/graphql"
+import { MarkdownRemark, Query } from "../../generated/graphql"
 import { SEO } from "../components/SEO"
 
 function AboutPage({ data }: ComponentQuery<{ md: MarkdownRemark }>) {
