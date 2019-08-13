@@ -18,6 +18,7 @@ export const Title = styled.h1`
   font-size: ${modularScale(6).fontSize}px;
   line-height: ${modularScale(6).lineHeight}px;
   letter-spacing: -1.75px;
+  margin-top: 0;
 `
 
 export const Meta = styled.div`

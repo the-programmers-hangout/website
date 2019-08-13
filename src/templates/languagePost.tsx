@@ -6,12 +6,14 @@ import { ResourceHeader } from "../components/ResourceHeader"
 
 // @todo maybe find alternative type for data
 function LanguagePost({ data }: any) {
+  const { relativePath } = data.file
   const { html, fields, frontmatter, timeToRead } = data.file.post
   console.log(data)
   return (
     <Fragment>
       <SEO title={frontmatter.title} />
       <ResourceHeader
+        relativePath={relativePath}
         title={frontmatter.title}
         authors={fields.authors}
         createdAt={frontmatter.created_at}
@@ -29,6 +31,7 @@ export default LanguagePost
 export const query = graphql`
   query LanguagePost($file: String!) {
     file(relativePath: { eq: $file }) {
+      relativePath
       post: childMarkdownRemark {
         html
         fields {
