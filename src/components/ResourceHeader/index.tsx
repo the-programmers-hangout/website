@@ -2,9 +2,11 @@ import React, { Fragment } from "react"
 
 import { StackedAvatars } from "../StackedAvatars"
 import ChevronUp from "../../icons/chevron-up.svg"
+import { ResourceBreadcrumb } from "../ResourceBreadcrumb"
 import * as SC from "./styles"
 
 interface ResourceHeaderProps {
+  relativePath: any
   title: any
   authors: any
   createdAt: any
@@ -42,6 +44,7 @@ function ExtraLink({
 }
 
 export function ResourceHeader({
+  relativePath,
   title,
   authors,
   createdAt,
@@ -57,6 +60,8 @@ export function ResourceHeader({
 
   return (
     <SC.ResourceHeaderWrapper>
+      <ResourceBreadcrumb relativePath={relativePath} />
+
       <SC.Title>{title}</SC.Title>
 
       <SC.Top>

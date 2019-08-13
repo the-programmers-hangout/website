@@ -1,6 +1,7 @@
 import partition from "ramda/es/partition"
 import chain from "ramda/es/chain"
 
+import { traversePaths } from "../../utils"
 import {
   IFileOrFolder,
   IFile,
@@ -8,29 +9,6 @@ import {
   IAllResourcesQuery,
   IFileQuery,
 } from "./index"
-
-function traverse(
-  [head, ...tail]: string[],
-  basePath = "/resources"
-): IFileOrFolder {
-  const path = basePath + "/" + head
-  const isFile = !tail.length
-  if (isFile) {
-    // probably not more than one dot
-    const [name] = head.split(".")
-    return {
-      title: name,
-      type: "file",
-      path,
-    }
-  }
-  return {
-    title: head,
-    type: "folder",
-    path,
-    children: [traverse(tail, path)],
-  }
-}
 
 function generateFolder({
   title,
@@ -85,7 +63,7 @@ function join([head, ...tail]: IFileOrFolder[]): IFileOrFolder[] {
 
 export default function useBuildTree(resources: IAllResourcesQuery) {
   const objects = resources.allFile.edges.map(({ node: file }: IFileQuery) =>
-    traverse(file.relativePath.split("/"))
+    traversePaths(file.relativePath.split("/"))
   )
 
   return join(objects)
