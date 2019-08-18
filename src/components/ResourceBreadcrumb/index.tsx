@@ -9,14 +9,16 @@ interface ResourceBreadcrumbProps {
   relativePath: any
 }
 
-function capitalize(string: string, ignoreSpaces: boolean = false) {
+const capitalize = (string: string, ignoreSpaces = false): string => {
+  let removeIndex = 0;
+  let continueIndex = 1;
   if (ignoreSpaces) {
-    return `${string.charAt(0).toUpperCase()}${string.substring(1)}`;
+    return `${string.charAt(removeIndex).toUpperCase()}${string.substring(continueIndex)}`;
   } else {
-    let split = string.split(" ");
-    let reconstruct = [];
-    for (let substr of split) {
-      reconstruct.push(`${substr.charAt(0).toUpperCase()}${substr.substring(1)}`);
+    const split = string.split(" ");
+    const reconstruct = [];
+    for (const substr of split) {
+      reconstruct.push(`${substr.charAt(removeIndex).toUpperCase()}${substr.substring(continueIndex)}`);
     }
     return reconstruct.join(" ");
   }
