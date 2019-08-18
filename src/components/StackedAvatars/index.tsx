@@ -4,7 +4,7 @@ import * as SC from "./styles"
 
 interface StackedAvatarsProps {
   authors: {
-    avatar: string
+    avatar: string,
   }[]
 }
 
