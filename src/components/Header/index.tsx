@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React, { PropsWithChildren } from "react"
 import { Container } from "../Container"
-import logo from "../../images/tph-logo.png"
+import Logo from "../../images/tph-logo.svg"
 import * as SC from "./styles"
 
 function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
@@ -18,7 +18,7 @@ export function Header() {
       <Container>
         <SC.InnerWrapper>
           <Link to="/">
-            <SC.Logo src={logo} />
+            <Logo />
           </Link>
           <SC.Menu>
             <MenuItem to="/about">about</MenuItem>

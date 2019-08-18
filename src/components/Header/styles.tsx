@@ -12,12 +12,6 @@ export const InnerWrapper = styled.div`
   flex-direction: column;
 `
 
-export const Logo = styled.img`
-  width: 122px;
-  height: 122px;
-  margin-bottom: 10px;
-`
-
 export const Menu = styled.nav`
   display: flex;
   align-items: flex-start;
