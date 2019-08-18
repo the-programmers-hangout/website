@@ -1,21 +1,27 @@
 import React, { Fragment } from "react"
 
 import { SEO } from "../components/SEO"
+import { Markdown } from '../components/Markdown'
+import { MarkdownRemark } from '../generated/graphql';
+import { graphql } from 'gatsby';
 
-function IndexPage() {
+function HomePage({ data }: ComponentQuery<{ md: MarkdownRemark }>) {
+  const { md } = data;
+  
   return (
     <Fragment>
       <SEO title="Home" />
-      <p>The Programmer's Hangout (TPH) is a Discord community of programmers with members of
-      all skill levels. If you're interested in programming, you're welcome here regardless
-      of how much experience you have. You'll find that we're always learning here regardless
-      of expertise.</p>
-
-      <h1>How do I join?</h1>
-
-      <p>All you need to do is click!</p>
+      <Markdown content={md.html!} />
     </Fragment>
   )
 }
 
-export default IndexPage
+export const query = graphql`
+  query HomePage {
+    md: markdownRemark(frontmatter: { path: { eq: "/" } }) {
+      html
+    }
+  }
+`
+
+export default HomePage
