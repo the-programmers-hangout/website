@@ -9,8 +9,21 @@ interface ResourceBreadcrumbProps {
   relativePath: any
 }
 
+function capitalize(string: string, ignoreSpaces: boolean = false) {
+  if (ignoreSpaces) {
+    return `${string.charAt(0).toUpperCase()}${string.substring(1)}`;
+  } else {
+    let split = string.split(" ");
+    let reconstruct = [];
+    for (let substr of split) {
+      reconstruct.push(`${substr.charAt(0).toUpperCase()}${substr.substring(1)}`);
+    }
+    return reconstruct.join(" ");
+  }
+}
+
 function Link({ item }: { item: IFileOrFolder }) {
-  return <SC.StyledLink to={item.path}>{item.title}</SC.StyledLink>
+  return <SC.StyledLink to={item.path}>{capitalize(item.title)}</SC.StyledLink>
 }
 
 function flatten([
@@ -30,6 +43,14 @@ export function ResourceBreadcrumb({ relativePath }: ResourceBreadcrumbProps) {
 
   return (
     <SC.ResourceBreadcrumbWrapper>
+      <SC.LinkWrapper>
+        <Link item={{ path: '/', title: 'Home', type: "folder", children: [] }} />
+        <ChevronUp />
+      </SC.LinkWrapper>
+      <SC.LinkWrapper>
+        <Link item={{ path: '/resources', title: 'Resources', type: "folder", children: [] }} />
+        <ChevronUp />
+      </SC.LinkWrapper>
       {breadcrumbItems.map(item => {
         if (item.type === "folder") {
           return (
