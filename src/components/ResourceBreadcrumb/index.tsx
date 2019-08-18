@@ -10,8 +10,8 @@ interface ResourceBreadcrumbProps {
 }
 
 const capitalize = (string: string, ignoreSpaces = false): string => {
-  let removeIndex = 0;
-  let continueIndex = 1;
+  const removeIndex = 0;
+  const continueIndex = 1;
   if (ignoreSpaces) {
     return `${string.charAt(removeIndex).toUpperCase()}${string.substring(continueIndex)}`;
   } else {
