@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 export const HeaderWrapper = styled.header`
   margin-bottom: 20px;
+  padding: 80px 0 40px 0;
 `
 
 export const InnerWrapper = styled.div`
@@ -17,59 +18,38 @@ export const Menu = styled.nav`
   align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
+  padding-top: 34px;
 `
 
 export const MenuItem = styled(Link)`
   display: flex;
   align-items: center;
-  font-size: 22px;
+  font-size: 28px;
   text-decoration: none;
-  color: #555;
+  color: #000;
   position: relative;
   transition: color 0.3s;
-  margin: 5px 10px;
-
-  /* underline bar, getting animated through hover */
-  &::after {
-    z-index: -1;
-    position: absolute;
-    content: "";
-    height: 2px;
-    width: 100%;
-    margin-top: -3px;
-    bottom: 0;
-    background: #555;
-    transition: all 0.3s;
-  }
+  margin: 5px 47px;
 
   &:hover {
-    color: #fff;
-  }
-
-  &:hover::after {
-    padding: 8px;
-    height: 100%;
-    background: #000;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), 0 5px 11px rgba(0, 0, 0, 0.25);
-    margin-left: -8px;
-    margin-bottom: -8px;
-    border-radius: 3px;
+    color: #FF70A5;
   }
 
   &.active {
-    font-weight: 700;
-    color: #d33636;
+    color: #000;
+    padding-bottom: 5px;
+    border-bottom: 5px solid #FF70A5;
 
     &::after {
-      background: #d33636;
+      background: #FF70A5;
     }
 
     &:hover {
-      color: #fff;
+      color: #FF70A5;
     }
 
     &:hover::after {
-      background: #d33636;
+      background: #FF70A5;
     }
   }
 `

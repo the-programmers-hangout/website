@@ -14,22 +14,22 @@ function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
 
 export function Header() {
   return (
-    <SC.HeaderWrapper>
-      <Container>
-        <SC.InnerWrapper>
-          <Link to="/">
-            <Logo />
-          </Link>
-          <SC.Menu>
-            <MenuItem to="/about">about</MenuItem>
-            <MenuItem to="/rules">rules</MenuItem>
-            <MenuItem to="/">faq</MenuItem>
-            <MenuItem to="/">hotbot</MenuItem>
-            <MenuItem to="/resources">resources</MenuItem>
-            <MenuItem to="/">tech spotlight</MenuItem>
-          </SC.Menu>
-        </SC.InnerWrapper>
-      </Container>
-    </SC.HeaderWrapper>
+      <SC.HeaderWrapper>
+        <Link to="/" style={{ position: "absolute", left: "80px" }}>
+          <Logo />
+        </Link>
+        <Container>
+          <SC.InnerWrapper>
+            <SC.Menu>
+              <MenuItem to="/about">about</MenuItem>
+              <MenuItem to="/rules">rules</MenuItem>
+              <MenuItem to="/">faq</MenuItem>
+              <MenuItem to="/">hotbot</MenuItem>
+              <MenuItem to="/resources">resources</MenuItem>
+              <MenuItem to="/">tech spotlight</MenuItem>
+            </SC.Menu>
+          </SC.InnerWrapper>
+        </Container>
+      </SC.HeaderWrapper>
   )
 }
