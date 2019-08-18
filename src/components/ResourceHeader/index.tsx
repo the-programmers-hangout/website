@@ -67,7 +67,7 @@ export function ResourceHeader({
       <SC.Top>
         <StackedAvatars authors={authors} />
         <SC.Meta>
-          {authors.length} contributor{authors.lenght > 1 && "s"}
+          {authors.length} contributor{authors.length > 1 && "s"}
         </SC.Meta>
         <SC.Meta>{dateToHuman}</SC.Meta>
         <SC.Meta>
@@ -78,7 +78,7 @@ export function ResourceHeader({
       {recommendedReading && (
         <SC.RecommendedReading>
           Recommended reading
-          {recommendedReading.map((item: any) => {
+          {recommendedReading.map((item: string) => {
             return <ExtraLink key={item} item={item} />
           })}
         </SC.RecommendedReading>
@@ -87,7 +87,7 @@ export function ResourceHeader({
       {externalResources && (
         <SC.ExternalResources>
           External Resources
-          {externalResources.map((item: any) => {
+          {externalResources.map((item: string) => {
             return <ExtraLink key={item} item={item} external />
           })}
         </SC.ExternalResources>
