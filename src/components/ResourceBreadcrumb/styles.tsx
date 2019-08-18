@@ -18,17 +18,13 @@ export const LinkWrapper = styled.div`
   }
 
   svg path {
-    fill: #04b0a6;
+    fill: #000000;
   }
 `
 
 export const StyledLink = styled(Link)`
-  color: #04b0a6;
+  color: #000000;
   cursor: pointer;
-
-  &:hover {
-    color: #045551;
-  }
 `
 
 export const CurrentPage = styled.div`
