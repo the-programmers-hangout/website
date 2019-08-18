@@ -34,8 +34,7 @@ export function Layout({ children }: PropsWithChildren<{}>) {
         <Header />
         <SC.MainContent>
           <Container>
-            <SC.TPHTitle>The Programmers Hangout</SC.TPHTitle>
-            <h1>{data.site.siteMetadata.title}</h1>
+            <SC.TPHTitle>{data.site.siteMetadata.title}</SC.TPHTitle>
             {children}
           </Container>
         </SC.MainContent>
