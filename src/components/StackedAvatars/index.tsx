@@ -3,7 +3,9 @@ import React from "react"
 import * as SC from "./styles"
 
 interface StackedAvatarsProps {
-  authors: any
+  authors: {
+    avatar: string
+  }[]
 }
 
 export function StackedAvatars({ authors }: StackedAvatarsProps) {
