@@ -21,12 +21,12 @@ export function Header() {
         <Container>
           <SC.InnerWrapper>
             <SC.Menu>
-              <MenuItem to="/about">about</MenuItem>
+              <MenuItem to="/">about</MenuItem>
               <MenuItem to="/rules">rules</MenuItem>
-              <MenuItem to="/">faq</MenuItem>
-              <MenuItem to="/">hotbot</MenuItem>
+              <MenuItem to="/faq">faq</MenuItem>
+              <MenuItem to="/hotbot">hotbot</MenuItem>
               <MenuItem to="/resources">resources</MenuItem>
-              <MenuItem to="/">tech spotlight</MenuItem>
+              <MenuItem to="/tech">tech spotlight</MenuItem>
             </SC.Menu>
           </SC.InnerWrapper>
         </Container>
