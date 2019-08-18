@@ -12,3 +12,8 @@ export const MainContent = styled.main`
   justify-content: center;
   max-width: 800px;
 `
+
+export const TPHTitle = styled.h2`
+  font-weight: 100;
+  margin-bottom: 32px;
+`
