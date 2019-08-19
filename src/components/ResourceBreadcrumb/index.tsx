@@ -10,12 +10,10 @@ interface IResourceBreadcrumbProps {
 }
 
 function capitalize(str: string): string {
-  const split = str.split(" ")
-  const reconstruct = []
-  for (const substr of split) {
-    reconstruct.push(`${substr.charAt(0).toUpperCase()}${substr.substring(1)}`)
-  }
-  return reconstruct.join(" ")
+  return str
+    .split(" ")
+    .map(word => `${word.charAt(0).toUpperCase()}${word.substring(1)}`)
+    .join(" ")
 }
 
 function Link({ item }: { item: IFileOrFolder }) {
