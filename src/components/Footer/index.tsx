@@ -1,6 +1,6 @@
 import React from "react"
-import * as SC from "./styles"
 import { Container } from "../Container"
+import * as SC from "./styles"
 
 export function Footer() {
   return (

@@ -5,16 +5,16 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
+import { graphql, useStaticQuery } from "gatsby"
 import React, { PropsWithChildren } from "react"
-import { useStaticQuery, graphql } from "gatsby"
 
+import Scrollbar from "react-perfect-scrollbar"
+import "react-perfect-scrollbar/dist/css/styles.css"
+import { GlobalStyles } from "../../globalStyles"
 import { Container } from "../Container"
 import { Footer } from "../Footer"
 import { Header } from "../Header"
-import { GlobalStyles } from "../../globalStyles"
 import * as SC from "./styles"
-import Scrollbar from "react-perfect-scrollbar"
-import "react-perfect-scrollbar/dist/css/styles.css"
 
 export function Layout({ children }: PropsWithChildren<{}>) {
   const data = useStaticQuery(graphql`

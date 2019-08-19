@@ -1,10 +1,10 @@
-import React, { useState, PropsWithChildren } from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import useBuildTree from "./useBuildTree"
-import useSidebar from "./../../hooks/useSidebar"
-import Banner from "../../images/tph-banner.svg"
+import { graphql, Link, useStaticQuery } from "gatsby"
+import React, { PropsWithChildren, useState } from "react"
 import TriangleDown from "../../icons/triangle-down.svg"
+import Banner from "../../images/tph-banner.svg"
+import useSidebar from "./../../hooks/useSidebar"
 import * as SC from "./styles"
+import useBuildTree from "./useBuildTree"
 
 export interface IFile {
   title: string

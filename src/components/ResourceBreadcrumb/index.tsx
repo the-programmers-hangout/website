@@ -1,11 +1,11 @@
 import React from "react"
 
-import { IFileOrFolder } from "../ResourcesSidebar/index"
 import ChevronUp from "../../icons/chevron-up.svg"
 import { traversePaths } from "../../utils"
+import { IFileOrFolder } from "../ResourcesSidebar/index"
 import * as SC from "./styles"
 
-interface ResourceBreadcrumbProps {
+interface IResourceBreadcrumbProps {
   relativePath: any
 }
 
@@ -24,7 +24,7 @@ function flatten([
   return flatten([...currNode.children, ...previousNodes, currNode])
 }
 
-export function ResourceBreadcrumb({ relativePath }: ResourceBreadcrumbProps) {
+export function ResourceBreadcrumb({ relativePath }: IResourceBreadcrumbProps) {
   const paths = relativePath.split("/")
   const breadcrumbItems = flatten([traversePaths(paths)])
 

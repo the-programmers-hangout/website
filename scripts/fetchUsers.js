@@ -22,6 +22,7 @@ const writeS = (content, dest) => {
 }
 
 client.once("ready", async () => {
+  // tslint:disable-next-line no-console
   console.log("Bot ready, fetching user list...")
   const tph = client.guilds.get(TPH)
   if (!tph) {
@@ -29,16 +30,19 @@ client.once("ready", async () => {
   }
   const guild = await tph.fetchMembers()
   const memberInfo = guild.members.map(member => ({
-    identifier: `${member.user.username}#${member.user.discriminator}`,
     avatar: member.user.displayAvatarURL,
+    identifier: `${member.user.username}#${member.user.discriminator}`,
   }))
   const wrs = fs.createWriteStream(DESTINATION)
+  // tslint:disable-next-line no-console
   console.log(`Fetched ${memberInfo.length} users, writing to ${DESTINATION}`)
   writeS(memberInfo, wrs).on("finish", () => {
+    // tslint:disable-next-line no-console
     console.log("Finished writing list")
     process.exit(0)
   })
 })
 
+// tslint:disable-next-line no-console
 console.log("Attempting to log in...")
 client.login(process.env.BOT_TOKEN)

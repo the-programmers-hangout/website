@@ -33,9 +33,9 @@ module.exports = {
     const avatar = target ? target.avatar : this.getDefaultAvatar(hash)
 
     return {
-      name,
-      hash,
       avatar,
+      hash,
+      name,
     }
   },
   resolveAuthors(users, authors) {

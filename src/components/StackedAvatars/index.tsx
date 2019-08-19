@@ -2,11 +2,11 @@ import React from "react"
 
 import * as SC from "./styles"
 
-interface StackedAvatarsProps {
+interface IStackedAvatarsProps {
   authors: any
 }
 
-export function StackedAvatars({ authors }: StackedAvatarsProps) {
+export function StackedAvatars({ authors }: IStackedAvatarsProps) {
   return (
     <SC.StackedAvatarsWrapper count={authors.length}>
       {authors.map((author, index) => (

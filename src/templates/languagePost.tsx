@@ -1,8 +1,8 @@
-import React, { Fragment } from "react"
 import { graphql } from "gatsby"
+import React, { Fragment } from "react"
 import { Markdown } from "../components/Markdown"
-import { SEO } from "../components/SEO"
 import { ResourceHeader } from "../components/ResourceHeader"
+import { SEO } from "../components/SEO"
 
 // @todo maybe find alternative type for data
 function LanguagePost({ data }: any) {

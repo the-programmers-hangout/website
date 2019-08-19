@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components"
 import { Link } from "gatsby"
+import styled, { css } from "styled-components"
 import { fontFamily, modularScale } from "../../design/typography"
 
 export const ResourceHeaderWrapper = styled.div`
