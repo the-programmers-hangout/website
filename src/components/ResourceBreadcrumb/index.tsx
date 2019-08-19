@@ -1,3 +1,4 @@
+import pipe from "ramda/es/pipe"
 import React from "react"
 
 import ChevronUp from "../../icons/chevron-up.svg"
@@ -9,8 +10,26 @@ interface IResourceBreadcrumbProps {
   relativePath: any
 }
 
+function capitalize(str: string): string {
+  return str
+    .split(" ")
+    .map(word => `${word.charAt(0).toUpperCase()}${word.substring(1)}`)
+    .join(" ")
+}
+
+function dashToSpace(str: string): string {
+  return str.replace("-", " ")
+}
+
+function humanize(str: string): string {
+  return pipe(
+    dashToSpace,
+    capitalize
+  )(str)
+}
+
 function Link({ item }: { item: IFileOrFolder }) {
-  return <SC.StyledLink to={item.path}>{item.title}</SC.StyledLink>
+  return <SC.StyledLink to={item.path}>{humanize(item.title)}</SC.StyledLink>
 }
 
 function flatten([
@@ -30,6 +49,23 @@ export function ResourceBreadcrumb({ relativePath }: IResourceBreadcrumbProps) {
 
   return (
     <SC.ResourceBreadcrumbWrapper>
+      <SC.LinkWrapper>
+        <Link
+          item={{ path: "/", title: "Home", type: "folder", children: [] }}
+        />
+        <ChevronUp />
+      </SC.LinkWrapper>
+      <SC.LinkWrapper>
+        <Link
+          item={{
+            path: "/resources",
+            title: "Resources",
+            type: "folder",
+            children: [],
+          }}
+        />
+        <ChevronUp />
+      </SC.LinkWrapper>
       {breadcrumbItems.map(item => {
         if (item.type === "folder") {
           return (
