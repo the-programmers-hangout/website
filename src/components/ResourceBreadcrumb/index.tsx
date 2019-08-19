@@ -1,3 +1,4 @@
+import pipe from "ramda/es/pipe"
 import React from "react"
 
 import ChevronUp from "../../icons/chevron-up.svg"
@@ -16,8 +17,19 @@ function capitalize(str: string): string {
     .join(" ")
 }
 
+function dashToSpace(str: string): string {
+  return str.replace("-", " ")
+}
+
+function humanize(str: string): string {
+  return pipe(
+    dashToSpace,
+    capitalize
+  )(str)
+}
+
 function Link({ item }: { item: IFileOrFolder }) {
-  return <SC.StyledLink to={item.path}>{capitalize(item.title)}</SC.StyledLink>
+  return <SC.StyledLink to={item.path}>{humanize(item.title)}</SC.StyledLink>
 }
 
 function flatten([
