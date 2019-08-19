@@ -8,8 +8,6 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React, { PropsWithChildren } from "react"
 
-import Scrollbar from "react-perfect-scrollbar"
-import "react-perfect-scrollbar/dist/css/styles.css"
 import { GlobalStyles } from "../../globalStyles"
 import { Container } from "../Container"
 import { Footer } from "../Footer"
@@ -28,18 +26,16 @@ export function Layout({ children }: PropsWithChildren<{}>) {
   `)
 
   return (
-    <Scrollbar>
+    <SC.LayoutWrapper>
       <GlobalStyles />
-      <SC.Main>
-        <Header />
-        <SC.MainContent>
-          <Container>
-            <h1>{data.site.siteMetadata.title}</h1>
-            {children}
-          </Container>
-        </SC.MainContent>
-        <Footer />
-      </SC.Main>
-    </Scrollbar>
+      <Header />
+      <SC.MainContent>
+        <Container>
+          <h1>{data.site.siteMetadata.title}</h1>
+          {children}
+        </Container>
+      </SC.MainContent>
+      <Footer />
+    </SC.LayoutWrapper>
   )
 }
