@@ -2,7 +2,7 @@ import React, { useState, PropsWithChildren } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import useBuildTree from "./useBuildTree"
 import useSidebar from "./../../hooks/useSidebar"
-import banner from "../../images/tph-banner.png"
+import Banner from "../../images/tph-banner.svg"
 import TriangleDown from "../../icons/triangle-down.svg"
 import * as SC from "./styles"
 
@@ -124,7 +124,7 @@ export function ResourcesSidebar() {
   return (
     <SC.ResourcesSidebarWrapper>
       <Link to="/">
-        <SC.Banner src={banner} />
+        <Banner />
       </Link>
       <SC.Inner>
         {tree.map((node, index) => plantTree(node, index, true))}

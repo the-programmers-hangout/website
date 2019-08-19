@@ -8,11 +8,6 @@ export const ResourcesSidebarWrapper = styled.div`
   background: #f9f9f9;
 `
 
-export const Banner = styled.img`
-  display: block;
-  width: 100%;
-`
-
 export const Children = styled.div`
   padding-left: 16px;
   padding-bottom: 8px;
