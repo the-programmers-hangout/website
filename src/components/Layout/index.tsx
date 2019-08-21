@@ -6,12 +6,13 @@
  */
 
 import { graphql, useStaticQuery } from "gatsby"
-import React, { PropsWithChildren } from "react"
+import React, { Fragment, PropsWithChildren } from "react"
 
 import { GlobalStyles } from "../../globalStyles"
 import { Container } from "../Container"
 import { Footer } from "../Footer"
 import { Header } from "../Header"
+import { WavesBottom } from "../Waves"
 import * as SC from "./styles"
 
 export function Layout({
@@ -32,16 +33,17 @@ export function Layout({
   return (
     <SC.LayoutWrapper>
       <GlobalStyles />
-      <Header />
+      <Header isHome={isHome} />
       {!isHome && (
-        <SC.MainContent>
-          <Container>
-            <h1>{data.site.siteMetadata.title}</h1>
-            {children}
-          </Container>
-        </SC.MainContent>
+        <Fragment>
+          <SC.MainContent>
+            <Container>{children}</Container>
+          </SC.MainContent>
+          <Footer />
+          <WavesBottom />
+          <SC.WavesSpacer />
+        </Fragment>
       )}
-      {!isHome && <Footer />}
     </SC.LayoutWrapper>
   )
 }

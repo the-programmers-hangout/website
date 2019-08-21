@@ -1,6 +1,11 @@
 import { Link } from "gatsby"
-import React, { PropsWithChildren } from "react"
+import React, { PropsWithChildren, useLayoutEffect, useState } from "react"
+import { WavesBottom, WavesTop } from "../Waves"
 import * as SC from "./styles"
+
+interface IHeaderProps {
+  isHome: boolean
+}
 
 function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
   return (
@@ -11,12 +16,22 @@ function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
   )
 }
 
-export function Header() {
+export function Header({ isHome }: IHeaderProps) {
+  // Hack to force Particle.js to rerender
+  const [noop, setNoop] = useState(0)
+  useLayoutEffect(() => {
+    setNoop(prevState => prevState + 1)
+  }, [isHome])
+
   return (
-    <SC.HeaderWrapper>
-      <SC.StyledWavesTop />
-      <SC.StyledWavesBottom />
+    <SC.HeaderWrapper isHome={isHome}>
+      <WavesTop />
+      <SC.FadedBottomWave faded={!isHome}>
+        <WavesBottom />
+      </SC.FadedBottomWave>
+
       <SC.StyledParticles
+        noop={noop}
         params={{
           particles: {
             number: { value: 5, density: { enable: true, value_area: 500 } },

@@ -3,16 +3,14 @@ import Particles from "react-particles-js"
 import styled from "styled-components"
 import DiscordLogo from "../../images/discord-logo.svg"
 import TPHLogo from "../../images/tph-logo.svg"
-import WavesBottom from "../../images/waves-bot.svg"
-import WavesTop from "../../images/waves-top.svg"
 
-export const HeaderWrapper = styled.header`
+export const HeaderWrapper = styled.header<{ isHome: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   position: relative;
-  min-height: 100vh;
+  min-height: ${props => (props.isHome ? "100vh" : "auto")};
   background: #121240;
   overflow: hidden;
 `
@@ -35,21 +33,25 @@ export const Title = styled.h1`
   }
 `
 
-export const StyledWavesTop = styled(WavesTop)`
-  width: 100vw;
-  max-width: 100%;
+export const FadedBottomWave = styled.div<{ faded: boolean }>`
   position: absolute;
-  top: 0;
-`
-
-export const StyledWavesBottom = styled(WavesBottom)`
-  width: 100vw;
-  max-width: 100%;
-  position: absolute;
+  transform: translateY(${props => (props.faded ? "100%" : 0)});
   bottom: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 0.5s, transform 0.5s;
+  opacity: ${props => (props.faded ? 0 : 1)};
+
+  ${props =>
+    props.faded &&
+    css`
+      svg {
+        position: static;
+      }
+    `}
 `
 
-export const StyledParticles = styled(Particles)`
+export const StyledParticles = styled(Particles)<{ noop: number }>`
   mask-image: -webkit-linear-gradient(
     top,
     rgba(0, 0, 0, 0) 5%,
@@ -93,7 +95,7 @@ export const StyledDiscordLogo = styled(DiscordLogo)`
 export const InnerWrapper = styled.div`
   width: 800px;
   max-width: calc(100% - 64px);
-  padding: 0 32px;
+  padding: 32px;
   position: relative;
   display: flex;
   align-items: flex-start;
