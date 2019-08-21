@@ -1,28 +1,134 @@
 import { Link } from "gatsby"
+import Particles from "react-particles-js"
 import styled from "styled-components"
+import DiscordLogo from "../../images/discord-logo.svg"
+import TPHLogo from "../../images/tph-logo.svg"
+import WavesBottom from "../../images/waves-bot.svg"
+import WavesTop from "../../images/waves-top.svg"
 
 export const HeaderWrapper = styled.header`
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  min-height: 100vh;
+  background: #121240;
+  overflow: hidden;
+`
+
+export const Title = styled.h1`
+  margin: 32px 0;
+  font-weight: 700;
+  font-size: 110px;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+  @media screen and (max-width: 991px) {
+    font-size: 72px;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 40px;
+  }
+`
+
+export const StyledWavesTop = styled(WavesTop)`
+  width: 100vw;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+`
+
+export const StyledWavesBottom = styled(WavesBottom)`
+  width: 100vw;
+  max-width: 100%;
+  position: absolute;
+  bottom: 0;
+`
+
+export const StyledParticles = styled(Particles)`
+  mask-image: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 5%,
+    rgba(0, 0, 0, 1) 25%,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(0, 0, 0, 0) 95%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`
+
+export const DiscordButton = styled.div`
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  font-family: "Oxygen", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: #7289da;
+  color: #fff;
+  padding: 22px 35px;
+  border-radius: 5px;
+  transition: background 0.3s;
+  cursor: pointer;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    background: #5265ad;
+  }
+`
+
+export const StyledDiscordLogo = styled(DiscordLogo)`
+  width: 38px;
+  margin-right: 16px;
 `
 
 export const InnerWrapper = styled.div`
+  width: 800px;
+  max-width: calc(100% - 64px);
+  padding: 0 32px;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
 `
 
-export const Logo = styled.img`
+export const Logo = styled(TPHLogo)`
   width: 122px;
   height: 122px;
   margin-bottom: 10px;
+  position: relative;
+  z-index: 3;
 `
 
 export const Menu = styled.nav`
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
+`
+
+export const MenuItemText = styled.div`
+  position: relative;
+  z-index: 5;
+`
+
+/* underline bar, getting animated through hover */
+export const MenuItemLine = styled.div`
+  position: absolute;
+  z-index: 4;
+  height: 2px;
+  width: 100%;
+  margin-top: -3px;
+  bottom: 0;
+  background: #fff;
+  transition: all 0.3s;
 `
 
 export const MenuItem = styled(Link)`
@@ -30,52 +136,50 @@ export const MenuItem = styled(Link)`
   align-items: center;
   font-size: 22px;
   text-decoration: none;
-  color: #555;
+  color: #fff;
   position: relative;
   transition: color 0.3s;
-  margin: 5px 10px;
-
-  /* underline bar, getting animated through hover */
-  &::after {
-    z-index: -1;
-    position: absolute;
-    content: "";
-    height: 2px;
-    width: 100%;
-    margin-top: -3px;
-    bottom: 0;
-    background: #555;
-    transition: all 0.3s;
-  }
+  margin: 10px 20px 5px 0;
+  font-family: "Oxygen Mono";
 
   &:hover {
     color: #fff;
   }
 
-  &:hover::after {
+  &:hover ${MenuItemLine} {
     padding: 8px;
     height: 100%;
-    background: #000;
+    background: #cf2e7d;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), 0 5px 11px rgba(0, 0, 0, 0.25);
     margin-left: -8px;
     margin-bottom: -8px;
     border-radius: 3px;
   }
 
+  &[href="/"] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  &[href="/"] ${MenuItemLine} {
+    bottom: 50%;
+  }
+
   &.active {
     font-weight: 700;
-    color: #d33636;
+    color: #cf2e7d;
 
-    &::after {
-      background: #d33636;
+    ${MenuItemLine} {
+      background: #cf2e7d;
     }
 
     &:hover {
       color: #fff;
     }
 
-    &:hover::after {
-      background: #d33636;
+    &:hover ${MenuItemLine} {
+      background: #cf2e7d;
     }
   }
 `

@@ -17,6 +17,10 @@ module.exports = {
             variants: [`400`, `700`],
           },
           {
+            family: `Oxygen Mono`,
+            variants: [`400`],
+          },
+          {
             family: `Montserrat`,
             variants: [`400`, `700`],
           },

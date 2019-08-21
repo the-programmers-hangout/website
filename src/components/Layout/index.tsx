@@ -14,7 +14,11 @@ import { Footer } from "../Footer"
 import { Header } from "../Header"
 import * as SC from "./styles"
 
-export function Layout({ children }: PropsWithChildren<{}>) {
+export function Layout({
+  children,
+  location,
+}: PropsWithChildren<{ location: Location }>) {
+  const isHome = location.pathname === "/"
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -29,13 +33,15 @@ export function Layout({ children }: PropsWithChildren<{}>) {
     <SC.LayoutWrapper>
       <GlobalStyles />
       <Header />
-      <SC.MainContent>
-        <Container>
-          <h1>{data.site.siteMetadata.title}</h1>
-          {children}
-        </Container>
-      </SC.MainContent>
-      <Footer />
+      {!isHome && (
+        <SC.MainContent>
+          <Container>
+            <h1>{data.site.siteMetadata.title}</h1>
+            {children}
+          </Container>
+        </SC.MainContent>
+      )}
+      {!isHome && <Footer />}
     </SC.LayoutWrapper>
   )
 }
