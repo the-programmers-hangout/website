@@ -9,7 +9,11 @@ interface IHeaderProps {
 
 function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
   return (
-    <SC.MenuItem to={to} activeClassName="active">
+    <SC.MenuItem
+      to={to}
+      activeClassName="active"
+      className={to === "/" ? "disabled" : ""}
+    >
       <SC.MenuItemText>{children}</SC.MenuItemText>
       <SC.MenuItemLine />
     </SC.MenuItem>

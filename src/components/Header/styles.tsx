@@ -158,14 +158,16 @@ export const MenuItem = styled(Link)`
     border-radius: 3px;
   }
 
-  &[href="/"] {
+  &.disabled {
     cursor: default;
     pointer-events: none;
     opacity: 0.7;
+    color: #fff !important;
   }
 
-  &[href="/"] ${MenuItemLine} {
+  &.disabled ${MenuItemLine} {
     bottom: 50%;
+    background: #fff !important;
   }
 
   &.active {
