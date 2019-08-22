@@ -17,6 +17,10 @@ export const MainContent = styled.main`
   max-width: calc(100% - 64px);
   padding: 0 32px;
 
+  .anchor svg path {
+    fill: #fff;
+  }
+
   a:not(.anchor) {
     color: #0090d8;
     font-weight: 700;
