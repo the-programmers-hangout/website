@@ -28,9 +28,9 @@ export function Header({ isHome }: IHeaderProps) {
   }, [isHome])
 
   return (
-    <SC.HeaderWrapper isHome={isHome}>
+    <SC.HeaderWrapper className={isHome ? "is-home" : ""}>
       <WavesTop />
-      <SC.FadedBottomWave faded={!isHome}>
+      <SC.FadedBottomWave>
         <WavesBottom />
       </SC.FadedBottomWave>
 
@@ -68,10 +68,12 @@ export function Header({ isHome }: IHeaderProps) {
         }}
       />
       <SC.InnerWrapper>
-        <Link to="/">
-          <SC.Logo />
-        </Link>
-        <SC.Title>The Programmer's Hangout</SC.Title>
+        <SC.TitleWrapper>
+          <Link to="/">
+            <SC.Logo />
+          </Link>
+          <SC.Title>The Programmer's Hangout</SC.Title>
+        </SC.TitleWrapper>
         <SC.Menu>
           <MenuItem to="/about">about</MenuItem>
           <MenuItem to="/rules">rules</MenuItem>

@@ -4,15 +4,19 @@ import styled from "styled-components"
 import DiscordLogo from "../../images/discord-logo.svg"
 import TPHLogo from "../../images/tph-logo.svg"
 
-export const HeaderWrapper = styled.header<{ isHome: boolean }>`
+export const HeaderWrapper = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   position: relative;
-  min-height: ${props => (props.isHome ? "100vh" : "auto")};
+  min-height: auto;
   background: #121240;
   overflow: hidden;
+
+  &.is-home {
+    min-height: 100vh;
+  }
 `
 
 export const Title = styled.h1`
@@ -33,22 +37,27 @@ export const Title = styled.h1`
   }
 `
 
-export const FadedBottomWave = styled.div<{ faded: boolean }>`
+export const FadedBottomWave = styled.div`
   position: absolute;
-  transform: translateY(${props => (props.faded ? "100%" : 0)});
+  transform: translateY(100%);
   bottom: 0;
   left: 0;
   right: 0;
   transition: opacity 0.5s, transform 0.5s;
-  opacity: ${props => (props.faded ? 0 : 1)};
+  opacity: 0;
 
-  ${props =>
-    props.faded &&
-    css`
-      svg {
-        position: static;
-      }
-    `}
+  svg {
+    position: static;
+  }
+
+  .is-home & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .is-home & svg {
+    position: static;
+  }
 `
 
 export const StyledParticles = styled(Particles)<{ noop: number }>`
