@@ -16,6 +16,20 @@ export const MainContent = styled.main`
   width: 800px;
   max-width: calc(100% - 64px);
   padding: 0 32px;
+
+  a:not(.anchor) {
+    color: #0090d8;
+    font-weight: 700;
+    border-bottom: 2px solid;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover,
+    &:focus {
+      color: #5dbbea;
+      transition: none;
+    }
+  }
 `
 
 export const WavesSpacer = styled.div`
