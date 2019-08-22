@@ -76,7 +76,7 @@ export const FadedBottomWave = styled.div`
   }
 `
 
-export const StyledParticles = styled(Particles)<{ noop: number }>`
+export const StyledParticles = styled(Particles)`
   mask-image: -webkit-linear-gradient(
     top,
     rgba(0, 0, 0, 0) 5%,

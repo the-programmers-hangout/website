@@ -35,7 +35,7 @@ export function Header({ isHome }: IHeaderProps) {
       </SC.FadedBottomWave>
 
       <SC.StyledParticles
-        noop={noop}
+        key={noop}
         params={{
           particles: {
             number: { value: 5, density: { enable: true, value_area: 500 } },
