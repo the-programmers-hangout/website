@@ -19,21 +19,37 @@ export const HeaderWrapper = styled.header`
   }
 `
 
+export const TitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 22px;
+
+  .is-home & {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`
+
 export const Title = styled.h1`
-  margin: 32px 0;
+  margin: 0;
   font-weight: 700;
-  font-size: 110px;
+  font-size: 50px;
   text-transform: uppercase;
   line-height: 1;
   color: #fff;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 
-  @media screen and (max-width: 991px) {
-    font-size: 72px;
-  }
+  .is-home & {
+    margin: 32px 0;
+    font-size: 110px;
 
-  @media screen and (max-width: 767px) {
-    font-size: 40px;
+    @media screen and (max-width: 991px) {
+      font-size: 72px;
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: 40px;
+    }
   }
 `
 
@@ -112,11 +128,15 @@ export const InnerWrapper = styled.div`
 `
 
 export const Logo = styled(TPHLogo)`
-  width: 122px;
-  height: 122px;
-  margin-bottom: 10px;
+  width: 70px;
+  margin: 0 15px 0 0;
   position: relative;
   z-index: 3;
+
+  .is-home & {
+    width: 122px;
+    margin-bottom: 0 0 10px 0;
+  }
 `
 
 export const Menu = styled.nav`
