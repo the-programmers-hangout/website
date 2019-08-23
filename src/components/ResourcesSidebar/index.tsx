@@ -1,5 +1,5 @@
 import { graphql, Link, useStaticQuery } from "gatsby"
-import React, { PropsWithChildren, useState, memo } from "react"
+import React, { memo, PropsWithChildren, useState } from "react"
 import TriangleDown from "../../icons/triangle-down.svg"
 import Banner from "../../images/tph-banner.svg"
 import useSidebar from "./../../hooks/useSidebar"
