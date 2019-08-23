@@ -1,13 +1,11 @@
-import React from "react"
+import React, { PropsWithChildren } from "react"
+import * as SC from "./styles"
 
-function DiscordButton({
-  lined = false,
-  children,
-}: React.PropsWithChildren<{ lined: boolean }>) {
+function DiscordButton({ children }: PropsWithChildren<{}>) {
   return (
-    <button>
-      <div>{children}</div>
-    </button>
+    <SC.DiscordButtonWrapper>
+      <SC.StyledDiscordLogo /> {children}
+    </SC.DiscordButtonWrapper>
   )
 }
 
