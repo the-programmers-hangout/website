@@ -1,5 +1,5 @@
 import { graphql, Link, useStaticQuery } from "gatsby"
-import React, { PropsWithChildren, useState } from "react"
+import React, { PropsWithChildren, useState, memo } from "react"
 import TriangleDown from "../../icons/triangle-down.svg"
 import Banner from "../../images/tph-banner.svg"
 import useSidebar from "./../../hooks/useSidebar"
@@ -91,7 +91,7 @@ function Folder({ item }: { item: IFolder }) {
   )
 }
 
-function FirstLevelFolder({ item, index }: { item: IFolder; index: number }) {
+const FirstLevelFolder = memo(({ item, index }: { item: IFolder; index: number }) => {
   const { current, setCurrent } = useSidebar()
   const collapsed = current !== index
 
@@ -107,7 +107,7 @@ function FirstLevelFolder({ item, index }: { item: IFolder; index: number }) {
       <SC.Children>{item.children.map(node => plantTree(node))}</SC.Children>
     </SC.TreeWrapper>
   )
-}
+})
 
 function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
   return (
