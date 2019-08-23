@@ -1,5 +1,6 @@
 import { Link } from "gatsby"
 import React, { PropsWithChildren, useLayoutEffect, useState } from "react"
+import DiscordButton from "../DiscordButton"
 import { WavesBottom, WavesTop } from "../Waves"
 import * as SC from "./styles"
 
@@ -82,9 +83,7 @@ export function Header({ isHome }: IHeaderProps) {
           <MenuItem to="/resources">resources</MenuItem>
           <MenuItem to="/">tech spotlight</MenuItem>
         </SC.Menu>
-        <SC.DiscordButton>
-          <SC.StyledDiscordLogo /> join us
-        </SC.DiscordButton>
+        <DiscordButton>join us</DiscordButton>
       </SC.InnerWrapper>
     </SC.HeaderWrapper>
   )

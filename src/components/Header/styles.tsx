@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import Particles from "react-particles-js"
 import styled from "styled-components"
-import DiscordLogo from "../../images/discord-logo.svg"
 import TPHLogo from "../../images/tph-logo.svg"
 
 export const HeaderWrapper = styled.header`
@@ -89,32 +88,6 @@ export const StyledParticles = styled(Particles)`
   left: 0;
   right: 0;
   bottom: 0;
-`
-
-export const DiscordButton = styled.div`
-  margin-top: 32px;
-  display: flex;
-  align-items: center;
-  font-family: "Oxygen", sans-serif;
-  font-size: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
-  background: #7289da;
-  color: #fff;
-  padding: 22px 35px;
-  border-radius: 5px;
-  transition: background 0.3s;
-  cursor: pointer;
-  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.3);
-
-  &:hover {
-    background: #5265ad;
-  }
-`
-
-export const StyledDiscordLogo = styled(DiscordLogo)`
-  width: 38px;
-  margin-right: 16px;
 `
 
 export const InnerWrapper = styled.div`
