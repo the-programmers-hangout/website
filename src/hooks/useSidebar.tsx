@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { SidebarContext, ISidebarContextInterface } from "../SidebarProvider"
+import { ISidebarContextInterface, SidebarContext } from "../SidebarProvider"
 
 export default function useSidebar(): ISidebarContextInterface {
   const sidebarContext = useContext(SidebarContext)
