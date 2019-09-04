@@ -9,6 +9,7 @@ import React, { PropsWithChildren, useState } from "react"
 
 import { GlobalStyles } from "../../globalStyles"
 import { SidebarProvider } from "../../SidebarProvider"
+import { MobileHeader } from "../MobileHeader"
 import { ResourcesSidebar } from "../ResourcesSidebar"
 import * as SC from "./styles"
 
@@ -27,13 +28,7 @@ export function ResourcesLayout({ children }: PropsWithChildren<{}>) {
     <SidebarProvider>
       <GlobalStyles />
       <SC.Main>
-        <SC.MobileHeader>
-          <SC.LogoWrapper>
-            <SC.StyledLogo />
-          </SC.LogoWrapper>
-          Resources
-          <SC.Burger onClick={openMenu} />
-        </SC.MobileHeader>
+        <MobileHeader openMenu={openMenu} />
         <ResourcesSidebar className={activeMobileMenu ? "is-open" : ""} />
         <SC.MainContent>
           <SC.Container>{children}</SC.Container>
