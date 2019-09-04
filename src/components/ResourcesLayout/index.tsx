@@ -28,7 +28,10 @@ export function ResourcesLayout({ children }: PropsWithChildren<{}>) {
       <GlobalStyles />
       <SC.Main>
         <SC.MobileHeader>
-          TPH Resources
+          <SC.LogoWrapper>
+            <SC.StyledLogo />
+          </SC.LogoWrapper>
+          Resources
           <SC.Burger onClick={openMenu} />
         </SC.MobileHeader>
         <ResourcesSidebar className={activeMobileMenu ? "is-open" : ""} />
