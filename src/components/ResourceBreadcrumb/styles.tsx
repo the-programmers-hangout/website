@@ -4,6 +4,11 @@ import styled from "styled-components"
 export const ResourceBreadcrumbWrapper = styled.div`
   display: flex;
   align-items: flex-start;
+
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
 `
 
 export const LinkWrapper = styled.div`

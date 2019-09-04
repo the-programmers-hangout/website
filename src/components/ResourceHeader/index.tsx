@@ -65,9 +65,9 @@ export function ResourceHeader({
       <SC.Title>{title}</SC.Title>
 
       <SC.Top>
-        <StackedAvatars authors={authors} />
         <SC.Meta>
-          {authors.length} contributor{authors.lenght > 1 && "s"}
+          <StackedAvatars authors={authors} /> {authors.length} contributor
+          {authors.lenght > 1 && "s"}
         </SC.Meta>
         <SC.Meta>{dateToHuman}</SC.Meta>
         <SC.Meta>

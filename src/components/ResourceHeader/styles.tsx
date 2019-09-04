@@ -11,6 +11,11 @@ export const ResourceHeaderWrapper = styled.div`
 export const Top = styled.div`
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `
 
 export const Title = styled.h1`
@@ -22,9 +27,22 @@ export const Title = styled.h1`
 `
 
 export const Meta = styled.div`
+  display: flex;
+  align-items: center;
+
   & + &::before {
     content: "•";
     margin: 0 8px;
+  }
+
+  @media screen and (max-width: 767px) {
+    & + & {
+      margin-top: 8px;
+    }
+
+    & + &::before {
+      display: none;
+    }
   }
 `
 
