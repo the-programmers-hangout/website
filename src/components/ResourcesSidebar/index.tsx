@@ -117,12 +117,12 @@ function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
   )
 }
 
-export function ResourcesSidebar() {
+export function ResourcesSidebar(props: React.HTMLAttributes<HTMLDivElement>) {
   const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
   const tree = useBuildTree(resources)
 
   return (
-    <SC.ResourcesSidebarWrapper>
+    <SC.ResourcesSidebarWrapper {...props}>
       <Link to="/">
         <Banner />
       </Link>
