@@ -9,6 +9,7 @@ export const Main = styled.div`
 export const MainContent = styled.main`
   flex: 1 1 auto;
   margin-top: 128px;
+  width: calc(100% - 320px);
 
   & > :first-child {
     margin-top: 0;
