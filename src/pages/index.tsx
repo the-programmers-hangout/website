@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React, { Fragment } from "react"
 
 import { SEO } from "../components/SEO"

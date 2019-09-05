@@ -1,6 +1,6 @@
 import { graphql } from "gatsby"
 import React, { Fragment } from "react"
-import { MarkdownRemark, Query } from "../../generated/graphql"
+import { MarkdownRemark } from "../../generated/graphql"
 import { Markdown } from "../components/Markdown"
 import { SEO } from "../components/SEO"
 
