@@ -51,7 +51,7 @@ export function ResourceHeader({
   timeToRead,
   recommendedReading,
   externalResources,
-}: ResourceHeaderProps) {
+}: IResourceHeaderProps) {
   const date = new Date(createdAt)
   const month = date.toLocaleString("default", { month: "long" })
   const day = date.getDate()

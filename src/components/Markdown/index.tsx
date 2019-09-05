@@ -17,7 +17,7 @@ interface IMarkdownProps {
 export function Markdown({
   content,
   ...restProps
-}: MarkdownProps): JSX.Element {
+}: IMarkdownProps): JSX.Element {
   React.useEffect(() => {
     Prism.highlightAll()
   }, [])
