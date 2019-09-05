@@ -66,4 +66,8 @@ export const MarkdownWrapper = styled.div`
   h6 {
     ${modularScaleCSS(1)};
   }
+
+  pre[class*="language-"] {
+    overflow-x: scroll;
+  }
 `

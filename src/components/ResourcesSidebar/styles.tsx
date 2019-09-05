@@ -6,6 +6,23 @@ export const ResourcesSidebarWrapper = styled.div`
   box-sizing: border-box;
   flex: 0 0 320px;
   background: #f9f9f9;
+
+  @media screen and (max-width: 767px) {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    /* TODO: maybe find a less "awkward" way to animate this */
+    left: calc(-100% - 100px);
+    right: calc(100% - 0px);
+    transition: left 0.3s, right 0.3s;
+  }
+
+  &.is-open {
+    left: 0;
+    right: 100px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
 `
 
 export const Children = styled.div`

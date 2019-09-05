@@ -6,9 +6,35 @@ export const Main = styled.div`
   min-height: 100vh;
 `
 
+export const Overlay = styled.div`
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: background-color 0.3s;
+  background-color: rgba(0, 0, 0, 0);
+  pointer-events: none;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  &.is-open {
+    pointer-events: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+`
+
 export const MainContent = styled.main`
   flex: 1 1 auto;
   margin-top: 128px;
+  width: calc(100% - 320px);
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
 
   & > :first-child {
     margin-top: 0;
@@ -21,5 +47,7 @@ export const MainContent = styled.main`
 
 export const Container = styled.div`
   width: 650px;
+  max-width: calc(100% - 64px);
+  padding: 0 32px;
   margin: 0 auto;
 `
