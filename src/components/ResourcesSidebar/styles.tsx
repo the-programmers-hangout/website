@@ -6,12 +6,14 @@ export const ResourcesSidebarWrapper = styled.div`
   box-sizing: border-box;
   flex: 0 0 320px;
   background: #f9f9f9;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 320px;
 
   @media screen and (max-width: 767px) {
     z-index: 100;
-    position: fixed;
-    top: 0;
-    bottom: 0;
+    width: auto;
     /* TODO: maybe find a less "awkward" way to animate this */
     left: calc(-100% - 100px);
     right: calc(100% - 0px);
