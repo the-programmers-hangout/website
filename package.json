@@ -21,7 +21,7 @@
     "develop": "gatsby develop",
     "fetch-users": "node ./scripts/fetchUsers.js",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "lint": "tslint -c tslint.json '{src,scripts}/**/*.{js,ts,tsx}'",
+    "lint": "tslint -p tsconfig.json -c tslint.json '{src,scripts}/**/*.{js,ts,tsx}'",
     "lint:fix": "npm run lint -- --fix",
     "serve": "gatsby serve",
     "start": "npm run develop",

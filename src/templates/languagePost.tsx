@@ -8,7 +8,7 @@ import { SEO } from "../components/SEO"
 function LanguagePost({ data }: any) {
   const { relativePath } = data.file
   const { html, fields, frontmatter, timeToRead } = data.file.post
-  console.log(data)
+
   return (
     <Fragment>
       <SEO title={frontmatter.title} />

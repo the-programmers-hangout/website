@@ -27,6 +27,7 @@
     "no-eval": true,
     "no-parameter-reassignment": true,
     "no-submodule-imports": false,
+    "no-unused-variable": true,
 
     "react-hooks-nesting": "error"
   },

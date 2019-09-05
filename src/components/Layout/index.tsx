@@ -5,7 +5,6 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import { graphql, useStaticQuery } from "gatsby"
 import React, { Fragment, PropsWithChildren } from "react"
 
 import { GlobalStyles } from "../../globalStyles"
@@ -20,15 +19,6 @@ export function Layout({
   location,
 }: PropsWithChildren<{ location: Location }>) {
   const isHome = location.pathname === "/"
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   return (
     <SC.LayoutWrapper>

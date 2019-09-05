@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React, { PropsWithChildren, useLayoutEffect, useState } from "react"
-import DiscordButton from "../DiscordButton"
+import { DiscordButton } from "../DiscordButton"
 import { WavesBottom, WavesTop } from "../Waves"
 import * as SC from "./styles"
 
