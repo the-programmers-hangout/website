@@ -1,5 +1,7 @@
 import { graphql, Link, useStaticQuery } from "gatsby"
 import React, { memo, PropsWithChildren, useState } from "react"
+import Scrollbar from "react-perfect-scrollbar"
+import "react-perfect-scrollbar/dist/css/styles.css"
 import TriangleDown from "../../icons/triangle-down.svg"
 import Banner from "../../images/tph-banner.svg"
 import useSidebar from "./../../hooks/useSidebar"
@@ -123,21 +125,23 @@ export function ResourcesSidebar(props: React.HTMLAttributes<HTMLDivElement>) {
 
   return (
     <SC.ResourcesSidebarWrapper {...props}>
-      <Link to="/">
-        <Banner />
-      </Link>
-      <SC.Inner>
-        {tree.map((node, index) => plantTree(node, index, true))}
+      <Scrollbar>
+        <Link to="/">
+          <Banner />
+        </Link>
+        <SC.Inner>
+          {tree.map((node, index) => plantTree(node, index, true))}
 
-        <SC.Menu>
-          <MenuItem to="/about">about</MenuItem>
-          <MenuItem to="/rules">rules</MenuItem>
-          <MenuItem to="/faq">faq</MenuItem>
-          <MenuItem to="/">hotbot</MenuItem>
-          <MenuItem to="/resources">resources</MenuItem>
-          <MenuItem to="/">tech</MenuItem>
-        </SC.Menu>
-      </SC.Inner>
+          <SC.Menu>
+            <MenuItem to="/about">about</MenuItem>
+            <MenuItem to="/rules">rules</MenuItem>
+            <MenuItem to="/faq">faq</MenuItem>
+            <MenuItem to="/">hotbot</MenuItem>
+            <MenuItem to="/resources">resources</MenuItem>
+            <MenuItem to="/">tech</MenuItem>
+          </SC.Menu>
+        </SC.Inner>
+      </Scrollbar>
     </SC.ResourcesSidebarWrapper>
   )
 }
