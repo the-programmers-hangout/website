@@ -9,7 +9,7 @@ export const DiscordButtonWrapper = styled.div`
   font-size: 30px;
   font-weight: 700;
   text-transform: uppercase;
-  background: #7289da;
+  background: ${props => props.theme.discord.base};
   color: #fff;
   padding: 22px 35px;
   border-radius: 5px;
@@ -18,7 +18,7 @@ export const DiscordButtonWrapper = styled.div`
   box-shadow: 0 3px 18px rgba(0, 0, 0, 0.3);
 
   &:hover {
-    background: #5265ad;
+    background: ${props => props.theme.discord.darker};
   }
 `
 

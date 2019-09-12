@@ -1,10 +1,11 @@
+import { transparentize } from "polished"
 import styled from "styled-components"
 import { fontFamily } from "../../design/typography"
 import Logo from "../../images/tph-logo.svg"
 
 export const MobileHeaderWrapper = styled.div`
   z-index: 50;
-  background: rgba(255, 255, 255, 0.8);
+  background: ${props => transparentize(0.2, props.theme.main.background)};
   position: fixed;
   top: 0;
   left: 0;
@@ -50,7 +51,7 @@ export const Burger = styled.div`
     content: "";
     height: 2px;
     width: 16px;
-    background: #222;
+    background: ${props => props.theme.main.foreground};
     margin: 0 auto;
   }
 

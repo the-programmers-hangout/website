@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import styled, { css } from "styled-components"
 import { fontFamily, modularScale } from "../../design/typography"
+import { darken, lighten } from "polished"
 
 export const ResourceHeaderWrapper = styled.div`
   border-bottom: 1px solid #dbdbdb;
@@ -57,13 +58,16 @@ export const ExternalResources = styled(ExtraLinks)``
 const extraLink = css`
   display: flex;
   align-items: center;
-  color: #04b0a6;
+  color: ${props => props.theme.main.link};
   margin-top: 4px;
   margin-left: 20px;
   cursor: pointer;
 
   &:hover {
-    color: #045551;
+    color: ${props =>
+      props.theme.name === "dark"
+        ? lighten(0.15, props.theme.main.link)
+        : darken(0.15, props.theme.main.link)};
   }
 
   svg {
@@ -74,7 +78,7 @@ const extraLink = css`
   }
 
   svg path {
-    fill: #04b0a6;
+    fill: ${props => props.theme.main.link};
   }
 `
 

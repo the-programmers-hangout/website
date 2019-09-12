@@ -9,6 +9,7 @@ import React, { PropsWithChildren, useState } from "react"
 
 import { GlobalStyles } from "../../globalStyles"
 import { SidebarProvider } from "../../SidebarProvider"
+import { ThemeProvider } from "../../ThemeProvider"
 import { MobileHeader } from "../MobileHeader"
 import { ResourcesSidebar } from "../ResourcesSidebar"
 import * as SC from "./styles"
@@ -25,19 +26,23 @@ export function ResourcesLayout({ children }: PropsWithChildren<{}>) {
   }
 
   return (
-    <SidebarProvider>
-      <GlobalStyles />
-      <SC.Main>
-        <MobileHeader openMenu={openMenu} />
-        <ResourcesSidebar className={activeMobileMenu ? "is-open" : ""} />
-        <SC.MainContent>
-          <SC.Container>{children}</SC.Container>
-        </SC.MainContent>
-      </SC.Main>
-      <SC.Overlay
-        className={activeMobileMenu ? "is-open" : ""}
-        onClick={closeMenu}
-      />
-    </SidebarProvider>
+    <ThemeProvider>
+      <SidebarProvider>
+        <GlobalStyles />
+        <SC.Main>
+          <MobileHeader openMenu={openMenu} />
+          <ResourcesSidebar className={activeMobileMenu ? "is-open" : ""} />
+          <SC.MainContent>
+            <SC.Container>
+              {children}
+            </SC.Container>
+          </SC.MainContent>
+        </SC.Main>
+        <SC.Overlay
+          className={activeMobileMenu ? "is-open" : ""}
+          onClick={closeMenu}
+        />
+      </SidebarProvider>
+    </ThemeProvider>
   )
 }
