@@ -8,6 +8,7 @@
 import React, { Fragment, PropsWithChildren } from "react"
 
 import { GlobalStyles } from "../../globalStyles"
+import { ThemeProvider } from "../../ThemeProvider"
 import { Container } from "../Container"
 import { Footer } from "../Footer"
 import { Header } from "../Header"
@@ -21,19 +22,21 @@ export function Layout({
   const isHome = location.pathname === "/"
 
   return (
-    <SC.LayoutWrapper>
-      <GlobalStyles />
-      <Header isHome={isHome} />
-      {!isHome && (
-        <Fragment>
-          <SC.MainContent>
-            <Container>{children}</Container>
-          </SC.MainContent>
-          <Footer />
-          <WavesBottom />
-          <SC.WavesSpacer />
-        </Fragment>
-      )}
-    </SC.LayoutWrapper>
+    <ThemeProvider>
+      <SC.LayoutWrapper>
+        <GlobalStyles />
+        <Header isHome={isHome} />
+        {!isHome && (
+          <Fragment>
+            <SC.MainContent>
+              <Container>{children}</Container>
+            </SC.MainContent>
+            <Footer />
+            <WavesBottom />
+            <SC.WavesSpacer />
+          </Fragment>
+        )}
+      </SC.LayoutWrapper>
+    </ThemeProvider>
   )
 }

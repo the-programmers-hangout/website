@@ -1,4 +1,5 @@
 import { Link } from "gatsby"
+import { darken, lighten } from "polished"
 import styled from "styled-components"
 
 export const ResourceBreadcrumbWrapper = styled.div`
@@ -23,16 +24,20 @@ export const LinkWrapper = styled.div`
   }
 
   svg path {
-    fill: #04b0a6;
+    fill: ${props => props.theme.main.link};
   }
 `
 
 export const StyledLink = styled(Link)`
-  color: #04b0a6;
+  color: ${props => props.theme.main.link};
   cursor: pointer;
 
   &:hover {
     color: #045551;
+    color: ${props =>
+      props.theme.name === "dark"
+        ? lighten(0.15, props.theme.main.link)
+        : darken(0.15, props.theme.main.link)};
   }
 `
 

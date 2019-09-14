@@ -4,6 +4,7 @@ import Scrollbar from "react-perfect-scrollbar"
 import "react-perfect-scrollbar/dist/css/styles.css"
 import TriangleDown from "../../icons/triangle-down.svg"
 import Banner from "../../images/tph-banner.svg"
+import { ThemeToggler } from "../ThemeToggler"
 import useSidebar from "./../../hooks/useSidebar"
 import * as SC from "./styles"
 import useBuildTree from "./useBuildTree"
@@ -93,23 +94,25 @@ function Folder({ item }: { item: IFolder }) {
   )
 }
 
-const FirstLevelFolder = memo(({ item, index }: { item: IFolder; index: number }) => {
-  const { current, setCurrent } = useSidebar()
-  const collapsed = current !== index
+const FirstLevelFolder = memo(
+  ({ item, index }: { item: IFolder; index: number }) => {
+    const { current, setCurrent } = useSidebar()
+    const collapsed = current !== index
 
-  return (
-    <SC.TreeWrapper className="firstLevel" collapsed={collapsed}>
-      <SC.FirstLabel
-        className={!collapsed ? "active" : undefined}
-        onClick={() => setCurrent(index)}
-      >
-        {item.title}
-        <SC.CollapseToggler />
-      </SC.FirstLabel>
-      <SC.Children>{item.children.map(node => plantTree(node))}</SC.Children>
-    </SC.TreeWrapper>
-  )
-})
+    return (
+      <SC.TreeWrapper className="firstLevel" collapsed={collapsed}>
+        <SC.FirstLabel
+          className={!collapsed ? "active" : undefined}
+          onClick={() => setCurrent(index)}
+        >
+          {item.title}
+          <SC.CollapseToggler />
+        </SC.FirstLabel>
+        <SC.Children>{item.children.map(node => plantTree(node))}</SC.Children>
+      </SC.TreeWrapper>
+    )
+  }
+)
 
 function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
   return (
@@ -140,6 +143,8 @@ export function ResourcesSidebar(props: React.HTMLAttributes<HTMLDivElement>) {
             <MenuItem to="/resources">resources</MenuItem>
             <MenuItem to="/">tech</MenuItem>
           </SC.Menu>
+
+          <ThemeToggler />
         </SC.Inner>
       </Scrollbar>
     </SC.ResourcesSidebarWrapper>

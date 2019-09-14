@@ -44,6 +44,7 @@
     "gatsby-source-filesystem": "^2.1.8",
     "gatsby-transformer-remark": "^2.6.10",
     "gatsby-transformer-sharp": "^2.2.5",
+    "polished": "^3.4.1",
     "prismjs": "^1.17.1",
     "ramda": "^0.26.1",
     "react": "^16.8.6",

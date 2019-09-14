@@ -67,7 +67,31 @@ export const MarkdownWrapper = styled.div`
     ${modularScaleCSS(1)};
   }
 
+  :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
-    overflow-x: scroll;
+    overflow-x: auto;
+    background: #192129;
+  }
+
+  pre[class*="language-"] {
+    .token.boolean,
+    .token.number,
+    .token.function {
+      color: #d48d5d;
+    }
+
+    .token.operator,
+    .token.entity,
+    .token.url {
+      color: #00add9;
+    }
+
+    .token.selector,
+    .token.important,
+    .token.atrule,
+    .token.keyword,
+    .token.builtin {
+      color: #d1529d;
+    }
   }
 `

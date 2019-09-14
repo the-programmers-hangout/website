@@ -1,11 +1,13 @@
 import { Link } from "gatsby"
+import { transparentize } from "polished"
 import styled from "styled-components"
 import ChevronUp from "../../icons/chevron-up.svg"
 
 export const ResourcesSidebarWrapper = styled.div`
   box-sizing: border-box;
   flex: 0 0 320px;
-  background: #f9f9f9;
+  background: ${props => props.theme.sidebar.background};
+  color: ${props => props.theme.sidebar.foreground};
   position: fixed;
   top: 0;
   bottom: 0;
@@ -60,11 +62,11 @@ export const FirstLabel = styled.div`
   box-sizing: border-box;
   padding: 12px 15px 12px 0;
   font-weight: 700;
-  color: #a9a9a9;
+  color: ${props => transparentize(0.5, props.theme.sidebar.foreground)};
   cursor: pointer;
 
   &.active {
-    color: #000;
+    color: ${props => props.theme.sidebar.foreground};
   }
 
   svg {
@@ -73,7 +75,7 @@ export const FirstLabel = styled.div`
     transition: transform 0.3s;
 
     path {
-      fill: #a9a9a9;
+      fill: ${props => transparentize(0.5, props.theme.sidebar.foreground)};
     }
   }
 
@@ -81,7 +83,7 @@ export const FirstLabel = styled.div`
     transform: rotate(0);
 
     path {
-      fill: #000;
+      fill: ${props => props.theme.sidebar.foreground};
     }
   }
 `
@@ -105,20 +107,20 @@ export const TreeWrapper = styled.div<{ collapsed: boolean }>`
 
   & > ${Label} svg {
     transform: rotate(${props => (props.collapsed ? -90 : 0)}deg);
+    fill: ${props => props.theme.sidebar.foreground};
   }
 `
 
 export const CollapseToggler = styled(ChevronUp)``
 
 export const Inner = styled.div`
-  padding-top: 30px;
-  padding-left: 20px;
+  padding: 30px 0 30px 20px;
 `
 
 export const PageLink = styled(Link)`
   display: block;
   padding: 4px 0;
-  color: #000;
+  color: ${props => props.theme.sidebar.foreground};
   text-decoration: none;
 
   & + & {
@@ -127,6 +129,7 @@ export const PageLink = styled(Link)`
 
   &.active {
     font-weight: 700;
+    color: ${props => props.theme.sidebar.active};
   }
 `
 
@@ -134,14 +137,14 @@ export const Menu = styled.nav`
   display: flex;
   flex-direction: column;
   border-top: 1px dashed #a5a5a5;
-  margin-top: 20px;
+  margin: 20px 0 40px;
   padding-top: 20px;
 `
 
 export const MenuItem = styled(Link)`
   padding: 4px 0;
   font-size: 20px;
-  color: #000;
+  color: ${props => props.theme.sidebar.foreground};
   text-decoration: none;
 
   &:hover,
