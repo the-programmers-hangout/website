@@ -69,14 +69,14 @@ export function ResourceBreadcrumb({ relativePath }: IResourceBreadcrumbProps) {
       {breadcrumbItems.map(item => {
         if (item.type === "folder") {
           return (
-            <SC.LinkWrapper>
+            <SC.LinkWrapper key={item.path}>
               <Link item={item} />
               <ChevronUp />
             </SC.LinkWrapper>
           )
         }
 
-        return <SC.CurrentPage>{item.title}</SC.CurrentPage>
+        return <SC.CurrentPage key={item.path}>{item.title}</SC.CurrentPage>
       })}
     </SC.ResourceBreadcrumbWrapper>
   )
