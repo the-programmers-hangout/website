@@ -44,7 +44,9 @@ function generateFile({
 }
 
 function join([head, ...tail]: IFileOrFolder[]): IFileOrFolder[] {
-  if (!head) { return [] }
+  if (!head) {
+    return []
+  }
 
   const [similarFs, remaining] = partition(
     obj => obj.title === head.title && obj.type === head.type,

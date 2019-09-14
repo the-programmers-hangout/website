@@ -11,7 +11,6 @@ export function Footer() {
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </p>
-
       </Container>
     </SC.FooterWrapper>
   )

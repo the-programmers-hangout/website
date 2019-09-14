@@ -33,9 +33,7 @@ export function ResourcesLayout({ children }: PropsWithChildren<{}>) {
           <MobileHeader openMenu={openMenu} />
           <ResourcesSidebar className={activeMobileMenu ? "is-open" : ""} />
           <SC.MainContent>
-            <SC.Container>
-              {children}
-            </SC.Container>
+            <SC.Container>{children}</SC.Container>
           </SC.MainContent>
         </SC.Main>
         <SC.Overlay
