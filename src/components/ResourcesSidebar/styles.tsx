@@ -41,10 +41,18 @@ export const Children = styled.div`
 export const Label = styled.div`
   user-select: none;
   position: relative;
-  padding: 8px 0;
+  padding: 8px 0 4px;
+  margin-bottom: 2px;
   cursor: pointer;
   display: flex;
   align-items: center;
+  border-bottom: 2px solid transparent;
+  align-self: flex-start;
+
+  &:hover {
+    border-color: ${props =>
+      transparentize(0.7, props.theme.sidebar.foreground)};
+  }
 
   svg {
     position: absolute;
@@ -64,6 +72,14 @@ export const FirstLabel = styled.div`
   font-weight: 700;
   color: ${props => transparentize(0.5, props.theme.sidebar.foreground)};
   cursor: pointer;
+
+  &:hover {
+    color: ${props => props.theme.sidebar.foreground};
+
+    svg path {
+      fill: ${props => props.theme.sidebar.foreground};
+    }
+  }
 
   &.active {
     color: ${props => props.theme.sidebar.foreground};
@@ -89,6 +105,8 @@ export const FirstLabel = styled.div`
 `
 
 export const TreeWrapper = styled.div<{ collapsed: boolean }>`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   font-size: 20px;
 
@@ -101,7 +119,7 @@ export const TreeWrapper = styled.div<{ collapsed: boolean }>`
   }
 
   ${Children} {
-    display: ${props => (props.collapsed ? "none" : "block")};
+    display: ${props => (props.collapsed ? "none" : "flex")};
     /* height: ${props => (props.collapsed ? 0 : "auto")}; */
   }
 
@@ -121,7 +139,14 @@ export const PageLink = styled(Link)`
   display: block;
   padding: 4px 0;
   color: ${props => props.theme.sidebar.foreground};
+  align-self: flex-start;
   text-decoration: none;
+  border-bottom: 2px solid transparent;
+
+  &:hover {
+    border-color: ${props =>
+      transparentize(0.7, props.theme.sidebar.foreground)};
+  }
 
   & + & {
     margin-top: 4px;
@@ -130,6 +155,10 @@ export const PageLink = styled(Link)`
   &.active {
     font-weight: 700;
     color: ${props => props.theme.sidebar.active};
+  }
+
+  &.active:hover {
+    border-color: ${props => transparentize(0.7, props.theme.sidebar.active)};
   }
 `
 
