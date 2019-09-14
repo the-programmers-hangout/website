@@ -120,7 +120,6 @@ export const TreeWrapper = styled.div<{ collapsed: boolean }>`
 
   ${Children} {
     display: ${props => (props.collapsed ? "none" : "flex")};
-    /* height: ${props => (props.collapsed ? 0 : "auto")}; */
   }
 
   & > ${Label} svg {
