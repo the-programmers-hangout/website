@@ -13,15 +13,16 @@ export const SidebarContext = React.createContext<ISidebarContextInterface | nul
   null
 )
 
-export function SidebarProvider({
-  children,
-}: ISidebarProviderProps) {
+export function SidebarProvider({ children }: ISidebarProviderProps) {
   const [current, setCurrent] = useState(0)
 
-  const memoizedContextValue = useMemo(() => ({
-    current,
-    setCurrent,
-  }), [current, setCurrent])
+  const memoizedContextValue = useMemo(
+    () => ({
+      current,
+      setCurrent,
+    }),
+    [current, setCurrent]
+  )
 
   return (
     <SidebarContext.Provider value={memoizedContextValue}>

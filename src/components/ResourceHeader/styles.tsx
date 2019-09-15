@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
+import { darken, lighten } from "polished"
 import styled, { css } from "styled-components"
 import { fontFamily, modularScale } from "../../design/typography"
-import { darken, lighten } from "polished"
 
 export const ResourceHeaderWrapper = styled.div`
   border-bottom: 1px solid #dbdbdb;
