@@ -1,9 +1,9 @@
-import React, { PropsWithChildren } from "react"
+import React, { FC } from "react"
 import * as SC from "./styles"
 
-export function Container({
+export const Container: FC = ({
   children,
   ...restProps
-}: PropsWithChildren<{}>): JSX.Element {
+}) => {
   return <SC.ContainerWrapper {...restProps}>{children}</SC.ContainerWrapper>
 }

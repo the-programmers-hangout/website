@@ -1,8 +1,4 @@
-import React, { useMemo, useState } from "react"
-
-interface ISidebarProviderProps {
-  children: React.ReactNode
-}
+import React, { FC, useMemo, useState } from "react"
 
 export interface ISidebarContextInterface {
   current: number
@@ -13,7 +9,7 @@ export const SidebarContext = React.createContext<ISidebarContextInterface | nul
   null
 )
 
-export function SidebarProvider({ children }: ISidebarProviderProps) {
+export const SidebarProvider: FC = ({ children }) => {
   const [current, setCurrent] = useState(0)
 
   const memoizedContextValue = useMemo(

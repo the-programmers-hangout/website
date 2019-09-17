@@ -1,12 +1,14 @@
-import React, { PropsWithChildren } from "react"
+import React, { FC } from "react"
 import * as SC from "./styles"
 
-export function ResourcesLink({
+interface IResourcesLinkProps {
+  to: string
+}
+
+export const ResourcesLink: FC<IResourcesLinkProps> = ({
   children,
   to,
-}: PropsWithChildren<{
-  to: string
-}>) {
+}) => {
   if (!to.match(/^(https?:\/\/)/)) {
     return (
       <SC.ResourcesLinkInternal to={to}>{children}</SC.ResourcesLinkInternal>

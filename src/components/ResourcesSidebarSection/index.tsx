@@ -1,14 +1,14 @@
-import React, { PropsWithChildren } from "react"
+import React, { FC } from "react"
 import * as SC from "./styles"
 
 export interface IResourcesSidebarSectionProps {
   readonly title: string
 }
 
-export function ResourcesSidebarSection({
+export const ResourcesSidebarSection: FC<IResourcesSidebarSectionProps> = ({
   title,
   children,
-}: PropsWithChildren<IResourcesSidebarSectionProps>) {
+}) => {
   return (
     <div>
       <SC.SidebarTitle>{title}</SC.SidebarTitle>

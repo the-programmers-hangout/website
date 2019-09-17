@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import React, { PropsWithChildren, useLayoutEffect, useState } from "react"
+import React, { FC, useLayoutEffect, useState } from "react"
 import { DiscordButton } from "../DiscordButton"
 import { WavesBottom, WavesTop } from "../Waves"
 import * as SC from "./styles"
@@ -8,7 +8,11 @@ interface IHeaderProps {
   isHome: boolean
 }
 
-function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
+interface IMenuItemProps {
+  to: string
+}
+
+const MenuItem: FC<IMenuItemProps> = ({ children, to }) => {
   return (
     <SC.MenuItem
       to={to}
@@ -21,7 +25,7 @@ function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
   )
 }
 
-export function Header({ isHome }: IHeaderProps) {
+export const Header: FC<IHeaderProps> = ({ isHome }) => {
   // Hack to force Particle.js to rerender
   const [noop, setNoop] = useState(0)
   useLayoutEffect(() => {

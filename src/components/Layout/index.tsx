@@ -5,7 +5,8 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { Fragment, PropsWithChildren } from "react"
+import { RouteComponentProps } from '@reach/router'
+import React, { FC, Fragment } from "react"
 
 import { GlobalStyles } from "../../globalStyles"
 import { ThemeProvider } from "../../ThemeProvider"
@@ -15,11 +16,11 @@ import { Header } from "../Header"
 import { WavesBottom } from "../Waves"
 import * as SC from "./styles"
 
-export function Layout({
+export const Layout: FC<RouteComponentProps> = ({
   children,
   location,
-}: PropsWithChildren<{ location: Location }>) {
-  const isHome = location.pathname === "/"
+}) => {
+  const isHome = location ? location.pathname === "/" : false
 
   return (
     <ThemeProvider>

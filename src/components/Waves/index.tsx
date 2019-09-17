@@ -1,10 +1,10 @@
-import React from "react"
+import React, { FC } from "react"
 import * as SC from "./styles"
 
-export function WavesTop() {
+export const WavesTop: FC = () => {
   return <SC.StyledWavesTop />
 }
 
-export function WavesBottom() {
+export const WavesBottom: FC = () => {
   return <SC.StyledWavesBottom />
 }

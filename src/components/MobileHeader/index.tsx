@@ -1,11 +1,11 @@
-import React from "react"
+import React, { FC } from "react"
 import * as SC from "./styles"
 
 interface IMobileHeaderProps {
   openMenu: () => void
 }
 
-export function MobileHeader({ openMenu }: IMobileHeaderProps) {
+export const MobileHeader: FC<IMobileHeaderProps> = ({ openMenu }) => {
   return (
     <SC.MobileHeaderWrapper>
       <SC.LogoWrapper>

@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { PropsWithChildren, useState } from "react"
+import React, { FC, useState } from "react"
 
 import { GlobalStyles } from "../../globalStyles"
 import { SidebarProvider } from "../../SidebarProvider"
@@ -14,7 +14,7 @@ import { MobileHeader } from "../MobileHeader"
 import { ResourcesSidebar } from "../ResourcesSidebar"
 import * as SC from "./styles"
 
-export function ResourcesLayout({ children }: PropsWithChildren<{}>) {
+export const ResourcesLayout: FC = ({ children }) => {
   const [activeMobileMenu, setActiveMobileMenu] = useState(false)
 
   function openMenu() {
