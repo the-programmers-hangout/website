@@ -3,7 +3,7 @@ import "prismjs/components/prism-markup-templating"
 import "prismjs/components/prism-php"
 import "prismjs/components/prism-python"
 import "prismjs/plugins/line-numbers/prism-line-numbers.css"
-import React from "react"
+import React, { FC, useEffect } from "react"
 import * as SC from "./styles"
 
 interface IMarkdownProps {
@@ -14,11 +14,11 @@ interface IMarkdownProps {
   This component is used as a wrapper around Markdown generated content,
   mainly to provide styles to the html generated.
 */
-export function Markdown({
+export const Markdown: FC<IMarkdownProps> = ({
   content,
   ...restProps
-}: IMarkdownProps): JSX.Element {
-  React.useEffect(() => {
+}) => {
+  useEffect(() => {
     Prism.highlightAll()
   }, [])
   return (

@@ -1,12 +1,12 @@
-import React from "react"
+import React, { FC } from "react"
 
 import * as SC from "./styles"
 
 interface IStackedAvatarsProps {
-  authors: any
+  authors: any[]
 }
 
-export function StackedAvatars({ authors }: IStackedAvatarsProps) {
+export const StackedAvatars: FC<IStackedAvatarsProps> = ({ authors }) => {
   return (
     <SC.StackedAvatarsWrapper count={authors.length}>
       {authors.map((author, index) => (

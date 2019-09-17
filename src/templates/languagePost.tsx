@@ -1,11 +1,11 @@
 import { graphql } from "gatsby"
-import React, { Fragment } from "react"
+import React, { FC, Fragment } from "react"
 import { Markdown } from "../components/Markdown"
 import { ResourceHeader } from "../components/ResourceHeader"
 import { SEO } from "../components/SEO"
 
 // @todo maybe find alternative type for data
-function LanguagePost({ data }: any) {
+const LanguagePost: FC<any> = ({ data }) => {
   const { relativePath } = data.file
   const { html, fields, frontmatter, timeToRead } = data.file.post
 

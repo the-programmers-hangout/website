@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React, { FC, Fragment } from "react"
 
 import ChevronUp from "../../icons/chevron-up.svg"
 import { ResourceBreadcrumb } from "../ResourceBreadcrumb"
@@ -6,13 +6,13 @@ import { StackedAvatars } from "../StackedAvatars"
 import * as SC from "./styles"
 
 interface IResourceHeaderProps {
-  relativePath: any
-  title: any
-  authors: any
-  createdAt: any
-  timeToRead: any
-  recommendedReading: any
-  externalResources: any
+  relativePath: string
+  title: string
+  authors: string[]
+  createdAt: string
+  timeToRead: number
+  recommendedReading: string[]
+  externalResources: string[]
 }
 
 function ExtraLink({
@@ -43,7 +43,7 @@ function ExtraLink({
   )
 }
 
-export function ResourceHeader({
+export const ResourceHeader: FC<IResourceHeaderProps> = ({
   relativePath,
   title,
   authors,
@@ -51,7 +51,7 @@ export function ResourceHeader({
   timeToRead,
   recommendedReading,
   externalResources,
-}: IResourceHeaderProps) {
+}) => {
   const date = new Date(createdAt)
   const month = date.toLocaleString("default", { month: "long" })
   const day = date.getDate()
@@ -67,7 +67,7 @@ export function ResourceHeader({
       <SC.Top>
         <SC.Meta>
           <StackedAvatars authors={authors} /> {authors.length} contributor
-          {authors.lenght > 1 && "s"}
+          {authors.length > 1 && "s"}
         </SC.Meta>
         <SC.Meta>{dateToHuman}</SC.Meta>
         <SC.Meta>

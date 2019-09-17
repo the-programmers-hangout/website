@@ -1,13 +1,8 @@
-import React, { createContext, useMemo } from "react"
+import React, { createContext, FC, useMemo } from "react"
 import { ThemeProvider as BaseThemeProvider } from "styled-components"
 
 import { darkTheme, lightTheme } from "./design/themes"
 import { useLocalStorage } from "./hooks/useLocalStorage"
-
-interface IThemeProviderProps {
-  // TODO: type this properly, BaseThemeProvider doesn't like React.ReactNode
-  children: any
-}
 
 export interface IThemeContext {
   theme: "dark" | "light"
@@ -15,9 +10,13 @@ export interface IThemeContext {
   toggleTheme: () => void
 }
 
+interface IScopedDownChildren {
+  children: JSX.Element
+}
+
 export const ThemeContext = createContext<IThemeContext | null>(null)
 
-const ThemeProvider = ({ children }: IThemeProviderProps) => {
+const ThemeProvider: FC<IScopedDownChildren> = ({ children }) => {
   const [theme, setTheme] = useLocalStorage("theme", "light")
 
   const themeObject = useMemo(

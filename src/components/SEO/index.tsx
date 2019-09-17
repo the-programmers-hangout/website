@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby"
-import React from "react"
+import React, { FC } from "react"
 import Helmet from "react-helmet"
 
 interface ISEOProps {
@@ -10,13 +10,13 @@ interface ISEOProps {
   readonly title: string
 }
 
-export function SEO({
+export const SEO: FC<ISEOProps> = ({
   description,
   lang = "en",
   meta = [],
   keywords = [],
   title,
-}: ISEOProps) {
+}) => {
   const { site } = useStaticQuery(
     graphql`
       query {

@@ -1,8 +1,8 @@
-import React from "react"
+import React, { FC } from "react"
 import { Container } from "../Container"
 import * as SC from "./styles"
 
-export function Footer() {
+export const Footer: FC = () => {
   return (
     <SC.FooterWrapper>
       <Container>

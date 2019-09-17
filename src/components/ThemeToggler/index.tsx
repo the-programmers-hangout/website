@@ -1,8 +1,8 @@
-import React from "react"
+import React, { FC } from "react"
 import useTheme from "../../hooks/useTheme"
 import * as SC from "./styles"
 
-export function ThemeToggler() {
+export const ThemeToggler: FC = () => {
   const { theme, toggleTheme } = useTheme()
 
   return (

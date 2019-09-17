@@ -1,7 +1,7 @@
-import React, { PropsWithChildren } from "react"
+import React, { FC } from "react"
 import * as SC from "./styles"
 
-export function DiscordButton({ children }: PropsWithChildren<{}>) {
+export const DiscordButton: FC = ({ children }) => {
   return (
     <SC.DiscordButtonWrapper>
       <SC.StyledDiscordLogo /> {children}

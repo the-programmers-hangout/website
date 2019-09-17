@@ -1,5 +1,5 @@
 import { graphql, Link, useStaticQuery } from "gatsby"
-import React, { memo, PropsWithChildren, useState } from "react"
+import React, { FC, HTMLAttributes, memo, useState } from "react"
 import Scrollbar from "react-perfect-scrollbar"
 import "react-perfect-scrollbar/dist/css/styles.css"
 import TriangleDown from "../../icons/triangle-down.svg"
@@ -83,7 +83,11 @@ const FirstLevelFolder = memo(
   }
 )
 
-function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
+interface IMenuItemProps {
+  to: string
+}
+
+const MenuItem: FC<IMenuItemProps> = ({ children, to }) => {
   return (
     <SC.MenuItem to={to} activeClassName="active">
       {children}
@@ -91,7 +95,7 @@ function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
   )
 }
 
-export function ResourcesSidebar(props: React.HTMLAttributes<HTMLDivElement>) {
+export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
   const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
   const tree = useBuildTree(resources)
 

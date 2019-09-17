@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby"
-import React, { memo } from "react"
+import React, { FC, HTMLAttributes, memo } from "react"
 import "react-perfect-scrollbar/dist/css/styles.css"
 import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
 import { humanize } from "../../utils"
@@ -51,7 +51,7 @@ const Language = memo(({ item }: { item: IFolder; index: number }) => {
   )
 })
 
-export function ResourcesList(props: React.HTMLAttributes<HTMLDivElement>) {
+export const ResourcesList: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
   const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
   const tree = useBuildTree(resources)
 

@@ -1,15 +1,19 @@
-import React from "react"
+import React, { FC } from "react"
 
 import ChevronUp from "../../icons/chevron-up.svg"
 import { IFileOrFolder } from "../../types"
 import { humanize, traversePaths } from "../../utils"
 import * as SC from "./styles"
 
+interface ILinkProps {
+  item: IFileOrFolder
+}
+
 interface IResourceBreadcrumbProps {
   relativePath: any
 }
 
-function Link({ item }: { item: IFileOrFolder }) {
+const Link: FC<ILinkProps> = ({ item }) => {
   return <SC.StyledLink to={item.path}>{humanize(item.title)}</SC.StyledLink>
 }
 
