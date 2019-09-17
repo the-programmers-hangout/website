@@ -5,6 +5,7 @@ import "react-perfect-scrollbar/dist/css/styles.css"
 import TriangleDown from "../../icons/triangle-down.svg"
 import Banner from "../../images/tph-banner.svg"
 import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
+import { humanize } from "../../utils"
 import { ThemeToggler } from "../ThemeToggler"
 import useSidebar from "./../../hooks/useSidebar"
 import * as SC from "./styles"
@@ -33,7 +34,7 @@ function plantTree(item: IFileOrFolder, index?: number, firstLevel?: boolean) {
   if (item.type === "file") {
     return (
       <SC.PageLink key={item.title} to={item.path} activeClassName="active">
-        {item.title}
+        {humanize(item.title)}
       </SC.PageLink>
     )
   }
@@ -55,7 +56,7 @@ function Folder({ item }: { item: IFolder }) {
   return (
     <SC.TreeWrapper collapsed={collapsed}>
       <SC.Label onClick={toggleCollapse}>
-        <TriangleDown /> {item.title}
+        <TriangleDown /> {humanize(item.title)}
       </SC.Label>
       <SC.Children>{item.children.map(node => plantTree(node))}</SC.Children>
     </SC.TreeWrapper>
@@ -73,7 +74,7 @@ const FirstLevelFolder = memo(
           className={!collapsed ? "active" : undefined}
           onClick={() => setCurrent(index)}
         >
-          {item.title}
+          {humanize(item.title)}
           <SC.CollapseToggler />
         </SC.FirstLabel>
         <SC.Children>{item.children.map(node => plantTree(node))}</SC.Children>

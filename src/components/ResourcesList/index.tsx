@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import React, { memo } from "react"
 import "react-perfect-scrollbar/dist/css/styles.css"
 import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
+import { humanize } from "../../utils/index"
 import * as SC from "./styles"
 import useBuildTree from "./useBuildTree"
 
@@ -32,7 +33,7 @@ function plantTree(item: IFileOrFolder, index?: number) {
       <SC.PageLink key={item.title} to={item.path}>
         {cleanedUpPath.map(node => (
           // TODO: use helper to format path
-          <SC.NodePart key={node}>{node.replace(".md", "")}</SC.NodePart>
+          <SC.NodePart key={node}>{humanize(node)}</SC.NodePart>
         ))}
       </SC.PageLink>
     )
@@ -44,7 +45,7 @@ function plantTree(item: IFileOrFolder, index?: number) {
 const Language = memo(({ item }: { item: IFolder; index: number }) => {
   return (
     <SC.TreeWrapper>
-      <SC.LanguageLabel>{item.title}</SC.LanguageLabel>
+      <SC.LanguageLabel>{humanize(item.title)}</SC.LanguageLabel>
       <SC.Children>{item.children.map(node => plantTree(node))}</SC.Children>
     </SC.TreeWrapper>
   )
