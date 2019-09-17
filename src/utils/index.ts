@@ -1,4 +1,4 @@
-import { IFile, IFileOrFolder } from "../components/ResourcesSidebar/index"
+import { IFileOrFolder } from "../types"
 
 export function traversePaths(
   [head, ...tail]: string[],

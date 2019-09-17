@@ -1,14 +1,14 @@
 import chain from "ramda/es/chain"
 import partition from "ramda/es/partition"
 
-import { traversePathsToFiles } from "../../utils"
 import {
   IAllResourcesQuery,
   IFile,
   IFileOrFolder,
   IFileQuery,
   IFolder,
-} from "./index"
+} from "../../types"
+import { traversePathsToFiles } from "../../utils"
 
 function generateFolder({
   title,
