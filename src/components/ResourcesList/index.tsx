@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import React, { memo } from "react"
 import "react-perfect-scrollbar/dist/css/styles.css"
 import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
-import { humanize } from "../../utils/index"
+import { humanize } from "../../utils"
 import * as SC from "./styles"
 import useBuildTree from "./useBuildTree"
 

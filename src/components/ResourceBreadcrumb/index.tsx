@@ -1,8 +1,8 @@
 import React from "react"
 
 import ChevronUp from "../../icons/chevron-up.svg"
+import { IFileOrFolder } from "../../types"
 import { humanize, traversePaths } from "../../utils"
-import { IFileOrFolder } from "../ResourcesSidebar/index"
 import * as SC from "./styles"
 
 interface IResourceBreadcrumbProps {
