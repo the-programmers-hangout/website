@@ -72,3 +72,8 @@ yarn-error.log
 
 # Yarn lock (mainly using NPM)
 yarn.lock
+
+# Editors
+.vscode/
+.idea/
+*.swp
