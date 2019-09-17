@@ -7,11 +7,11 @@
 
 import React, { FC, useState } from "react"
 
+import { MobileHeader } from "../../components/MobileHeader"
+import { ResourcesSidebar } from "../../components/ResourcesSidebar"
 import { GlobalStyles } from "../../globalStyles"
 import { SidebarProvider } from "../../SidebarProvider"
 import { ThemeProvider } from "../../ThemeProvider"
-import { MobileHeader } from "../MobileHeader"
-import { ResourcesSidebar } from "../ResourcesSidebar"
 import * as SC from "./styles"
 
 export const ResourcesLayout: FC = ({ children }) => {
