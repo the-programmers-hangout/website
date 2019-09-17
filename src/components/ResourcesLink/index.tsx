@@ -7,5 +7,15 @@ export function ResourcesLink({
 }: PropsWithChildren<{
   to: string
 }>) {
-  return <SC.ResourcesLinkWrapper to={to}>{children}</SC.ResourcesLinkWrapper>
+  if (!to.match(/^(https?:\/\/)/)) {
+    return (
+      <SC.ResourcesLinkInternal to={to}>{children}</SC.ResourcesLinkInternal>
+    )
+  }
+
+  return (
+    <SC.ResourcesLinkExternal href={to} target="_blank">
+      {children}
+    </SC.ResourcesLinkExternal>
+  )
 }

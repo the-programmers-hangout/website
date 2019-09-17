@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
-export const ResourcesLinkWrapper = styled(Link)`
+const linkStyle = css`
   color: #0090d8;
   font-weight: 700;
   border-bottom: 2px solid;
@@ -13,4 +13,12 @@ export const ResourcesLinkWrapper = styled(Link)`
     color: #5dbbea;
     transition: none;
   }
+`
+
+export const ResourcesLinkInternal = styled(Link)`
+  ${linkStyle}
+`
+
+export const ResourcesLinkExternal = styled.a`
+  ${linkStyle}
 `
