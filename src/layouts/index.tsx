@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react"
-import { Layout } from "../components/Layout"
-import { ResourcesLayout } from "../components/ResourcesLayout"
+import { Layout } from "./Layout"
+import { ResourcesLayout } from "./ResourcesLayout"
 
 export default function BaseLayout({
   children,
