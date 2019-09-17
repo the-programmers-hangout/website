@@ -63,25 +63,29 @@ function Folder({ item }: { item: IFolder }) {
   )
 }
 
-const FirstLevelFolder = memo(
-  ({ item, index }: { item: IFolder; index: number }) => {
-    const { current, setCurrent } = useSidebar()
-    const collapsed = current !== index
+const FirstLevelFolder = ({
+  item,
+  index,
+}: {
+  item: IFolder
+  index: number
+}) => {
+  const { current, setCurrent } = useSidebar()
+  const collapsed = current !== index
 
-    return (
-      <SC.TreeWrapper className="firstLevel" collapsed={collapsed}>
-        <SC.FirstLabel
-          className={!collapsed ? "active" : undefined}
-          onClick={() => setCurrent(index)}
-        >
-          {humanize(item.title)}
-          <SC.CollapseToggler />
-        </SC.FirstLabel>
-        <SC.Children>{item.children.map(node => plantTree(node))}</SC.Children>
-      </SC.TreeWrapper>
-    )
-  }
-)
+  return (
+    <SC.TreeWrapper className="firstLevel" collapsed={collapsed}>
+      <SC.FirstLabel
+        className={!collapsed ? "active" : undefined}
+        onClick={() => setCurrent(index)}
+      >
+        {humanize(item.title)}
+        <SC.CollapseToggler />
+      </SC.FirstLabel>
+      <SC.Children>{item.children.map(node => plantTree(node))}</SC.Children>
+    </SC.TreeWrapper>
+  )
+}
 
 function MenuItem({ children, to }: PropsWithChildren<{ to: string }>) {
   return (
