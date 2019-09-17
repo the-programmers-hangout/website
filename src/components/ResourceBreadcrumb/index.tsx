@@ -1,31 +1,12 @@
-import pipe from "ramda/es/pipe"
 import React from "react"
 
 import ChevronUp from "../../icons/chevron-up.svg"
-import { traversePaths } from "../../utils"
+import { humanize, traversePaths } from "../../utils"
 import { IFileOrFolder } from "../ResourcesSidebar/index"
 import * as SC from "./styles"
 
 interface IResourceBreadcrumbProps {
   relativePath: any
-}
-
-function capitalize(str: string): string {
-  return str
-    .split(" ")
-    .map(word => `${word.charAt(0).toUpperCase()}${word.substring(1)}`)
-    .join(" ")
-}
-
-function dashToSpace(str: string): string {
-  return str.replace("-", " ")
-}
-
-function humanize(str: string): string {
-  return pipe(
-    dashToSpace,
-    capitalize
-  )(str)
 }
 
 function Link({ item }: { item: IFileOrFolder }) {
@@ -51,7 +32,7 @@ export function ResourceBreadcrumb({ relativePath }: IResourceBreadcrumbProps) {
     <SC.ResourceBreadcrumbWrapper>
       <SC.LinkWrapper>
         <Link
-          item={{ path: "/", title: "Home", type: "folder", children: [] }}
+          item={{ path: "/", title: "home", type: "folder", children: [] }}
         />
         <ChevronUp />
       </SC.LinkWrapper>
@@ -59,7 +40,7 @@ export function ResourceBreadcrumb({ relativePath }: IResourceBreadcrumbProps) {
         <Link
           item={{
             path: "/resources",
-            title: "Resources",
+            title: "resources",
             type: "folder",
             children: [],
           }}
@@ -76,7 +57,11 @@ export function ResourceBreadcrumb({ relativePath }: IResourceBreadcrumbProps) {
           )
         }
 
-        return <SC.CurrentPage key={item.path}>{item.title}</SC.CurrentPage>
+        return (
+          <SC.CurrentPage key={item.path}>
+            {humanize(item.title)}
+          </SC.CurrentPage>
+        )
       })}
     </SC.ResourceBreadcrumbWrapper>
   )

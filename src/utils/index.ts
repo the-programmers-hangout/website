@@ -1,7 +1,34 @@
 import chain from "ramda/es/chain"
 import partition from "ramda/es/partition"
+import pipe from "ramda/es/pipe"
 
 import { IFile, IFileOrFolder, IFolder } from "../types"
+
+function specificWordsToUpper(str: string): string {
+  const wordsToUpper = ["pdo", "c"]
+  const toUpper = (word: string) =>
+    wordsToUpper.includes(word.toLowerCase()) ? word.toUpperCase() : word
+  return str
+    .split(" ")
+    .map(toUpper)
+    .join(" ")
+}
+
+function removeDotMD(str: string): string {
+  return str.replace(".md", "")
+}
+
+function dashToSpace(str: string): string {
+  return str.replace(/-/g, " ")
+}
+
+export function humanize(str: string): string {
+  return pipe(
+    dashToSpace,
+    specificWordsToUpper,
+    removeDotMD
+  )(str)
+}
 
 export function traversePaths(
   [head, ...tail]: string[],
