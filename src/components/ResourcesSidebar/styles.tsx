@@ -41,8 +41,8 @@ export const Children = styled.div`
 export const Label = styled.div`
   user-select: none;
   position: relative;
-  padding: 8px 0 4px;
-  margin-bottom: 2px;
+  padding: 8px 0 0;
+  margin-bottom: 6px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -57,8 +57,8 @@ export const Label = styled.div`
   svg {
     position: absolute;
     right: 100%;
-    margin-right: 4px;
-    width: 10px;
+    margin-right: 5px;
+    width: 7px;
   }
 `
 
@@ -115,7 +115,8 @@ export const TreeWrapper = styled.div<{ collapsed: boolean }>`
   }
 
   & + & {
-    border-top: 1px solid #dbdbdb;
+    border-top: 1px solid
+      ${props => transparentize(0.8, props.theme.sidebar.foreground)};
   }
 
   ${Children} {
@@ -136,7 +137,8 @@ export const Inner = styled.div`
 
 export const PageLink = styled(Link)`
   display: block;
-  padding: 4px 0;
+  padding: 4px 0 0;
+  margin-bottom: 4px;
   color: ${props => props.theme.sidebar.foreground};
   align-self: flex-start;
   text-decoration: none;
