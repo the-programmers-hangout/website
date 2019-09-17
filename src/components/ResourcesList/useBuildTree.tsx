@@ -1,9 +1,9 @@
 import { IAllResourcesQuery, IFileQuery } from "../../types"
-import { join, traversePaths } from "../../utils"
+import { join, traversePathsToFiles } from "../../utils"
 
 export default function useBuildTree(resources: IAllResourcesQuery) {
   const objects = resources.allFile.edges.map(({ node: file }: IFileQuery) =>
-    traversePaths(file.relativePath.split("/"))
+    traversePathsToFiles(file.relativePath.split("/"))
   )
 
   return join(objects)

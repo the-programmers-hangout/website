@@ -3,6 +3,7 @@ import "styled-components"
 
 declare module "*.svg"
 declare module "*.png"
+declare module "*.json"
 
 type ComponentQuery<T> = {
   readonly data: T

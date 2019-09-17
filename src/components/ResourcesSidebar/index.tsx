@@ -4,43 +4,11 @@ import Scrollbar from "react-perfect-scrollbar"
 import "react-perfect-scrollbar/dist/css/styles.css"
 import TriangleDown from "../../icons/triangle-down.svg"
 import Banner from "../../images/tph-banner.svg"
+import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
 import { ThemeToggler } from "../ThemeToggler"
 import useSidebar from "./../../hooks/useSidebar"
 import * as SC from "./styles"
 import useBuildTree from "./useBuildTree"
-
-export interface IFile {
-  title: string
-  type: "file"
-  path: string
-}
-
-export interface IFolder {
-  title: string
-  type: "folder"
-  path: string
-  children: IFileOrFolder[]
-}
-
-export type IFileOrFolder = IFile | IFolder
-
-export interface IFileQuery {
-  node: {
-    relativePath: string
-    childMarkdownRemark: {
-      frontmatter: {
-        author: string
-        date: string
-      }
-    }
-  }
-}
-
-export interface IAllResourcesQuery {
-  allFile: {
-    edges: IFileQuery[]
-  }
-}
 
 const ALL_RESOURCES = graphql`
   query {
