@@ -40,14 +40,14 @@ export const Title = styled.h1`
 
   .is-home & {
     margin: 32px 0;
-    font-size: 110px;
+    font-size: 88px;
 
     @media screen and (max-width: 991px) {
-      font-size: 72px;
+      font-size: 58px;
     }
 
     @media screen and (max-width: 767px) {
-      font-size: 40px;
+      font-size: 32px;
     }
   }
 `
@@ -107,7 +107,7 @@ export const Logo = styled(TPHLogo)`
   z-index: 3;
 
   .is-home & {
-    width: 122px;
+    width: 98px;
     margin-bottom: 0 0 10px 0;
   }
 `
