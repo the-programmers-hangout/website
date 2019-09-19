@@ -6,12 +6,12 @@ export const DiscordButtonWrapper = styled.div`
   display: flex;
   align-items: center;
   font-family: "Oxygen", sans-serif;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
   background: ${props => props.theme.discord.base};
   color: #fff;
-  padding: 22px 35px;
+  padding: 18px 28px;
   border-radius: 5px;
   transition: background 0.3s;
   cursor: pointer;
@@ -23,6 +23,6 @@ export const DiscordButtonWrapper = styled.div`
 `
 
 export const StyledDiscordLogo = styled(DiscordLogo)`
-  width: 38px;
-  margin-right: 16px;
+  width: 30px;
+  margin-right: 13px;
 `
