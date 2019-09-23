@@ -40,7 +40,7 @@
     "gatsby-plugin-react-svg": "^2.1.2",
     "gatsby-plugin-sharp": "^2.2.25",
     "gatsby-plugin-styled-components": "^3.1.6",
-    "gatsby-plugin-typescript": "^2.1.2",
+    "gatsby-plugin-typescript": "^2.1.9",
     "gatsby-remark-auto-headers": "^1.0.3",
     "gatsby-source-filesystem": "^2.1.8",
     "gatsby-transformer-remark": "^2.6.10",
