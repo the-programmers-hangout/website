@@ -2,6 +2,7 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import React, { FC, HTMLAttributes, memo, useState } from "react"
 import Scrollbar from "react-perfect-scrollbar"
 import "react-perfect-scrollbar/dist/css/styles.css"
+import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import TriangleDown from "../../icons/triangle-down.svg"
 import Banner from "../../images/tph-banner.svg"
 import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
@@ -95,7 +96,7 @@ const MenuItem: FC<IMenuItemProps> = ({ children, to }) => {
   )
 }
 
-export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
+export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = props => {
   const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
   const tree = useBuildTree(resources)
 
