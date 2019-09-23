@@ -44,7 +44,7 @@
     "gatsby-remark-auto-headers": "^1.0.3",
     "gatsby-source-filesystem": "^2.1.26",
     "gatsby-transformer-remark": "^2.6.24",
-    "gatsby-transformer-sharp": "^2.2.5",
+    "gatsby-transformer-sharp": "^2.2.16",
     "polished": "^3.4.1",
     "prismjs": "^1.17.1",
     "ramda": "^0.26.1",
