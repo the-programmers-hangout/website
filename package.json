@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.7.0",
-    "@graphql-codegen/typescript": "1.4.0",
+    "@graphql-codegen/typescript": "1.7.0",
     "@graphql-codegen/typescript-operations": "1.4.0",
     "@graphql-codegen/typescript-react-apollo": "1.4.0",
     "@types/prismjs": "^1.16.0",
