@@ -17,7 +17,7 @@ interface IScopedDownChildren {
 export const ThemeContext = createContext<IThemeContext | null>(null)
 
 const ThemeProvider: FC<IScopedDownChildren> = ({ children }) => {
-  const [theme, setTheme] = useLocalStorage("theme", "light")
+  const [theme, setTheme] = useLocalStorage("theme", "dark")
 
   const themeObject = useMemo(
     () => (theme === "dark" ? darkTheme : lightTheme),
