@@ -4,6 +4,8 @@ import { Markdown } from "../components/Markdown"
 import { ResourceHeader } from "../components/ResourceHeader"
 import { SEO } from "../components/SEO"
 
+import "katex/dist/katex.min.css"
+
 // @todo maybe find alternative type for data
 const LanguagePost: FC<any> = ({ data }) => {
   const { relativePath } = data.file
