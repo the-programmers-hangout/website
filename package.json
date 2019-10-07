@@ -60,7 +60,7 @@
     "typescript": "^3.6.3"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^1.7.0",
+    "@graphql-codegen/cli": "^1.8.1",
     "@graphql-codegen/typescript": "1.7.0",
     "@graphql-codegen/typescript-operations": "1.7.0",
     "@graphql-codegen/typescript-react-apollo": "1.7.0",
