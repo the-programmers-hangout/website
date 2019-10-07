@@ -1,3 +1,4 @@
+import { darken, lighten } from "polished"
 import styled, { css } from "styled-components"
 import {
   BASE_FONT_SIZE,
@@ -92,6 +93,18 @@ export const MarkdownWrapper = styled.div`
     .token.keyword,
     .token.builtin {
       color: #d1529d;
+    }
+  }
+
+  a {
+    color: ${props => props.theme.main.link};
+    cursor: pointer;
+
+    &:hover {
+      color: ${props =>
+        props.theme.name === "dark"
+          ? lighten(0.15, props.theme.main.link)
+          : darken(0.15, props.theme.main.link)};
     }
   }
 `
