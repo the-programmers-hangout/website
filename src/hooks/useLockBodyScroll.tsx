@@ -13,7 +13,8 @@ export const useLockBodyScroll = () => {
   }
 
   const body = documentGlobal && document.querySelector("body")
-  const gatsbyNode = documentGlobal && document.querySelector<HTMLDivElement>("#___gatsby")
+  const gatsbyNode =
+    documentGlobal && document.querySelector<HTMLDivElement>("#___gatsby")
   if (body && gatsbyNode) {
     body.style.overflow = locked ? "hidden" : ""
     gatsbyNode.style.overflowY = locked ? "scroll" : ""

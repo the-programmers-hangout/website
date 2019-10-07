@@ -32,20 +32,20 @@ const users = [
   { name: "Joe", age: 25 },
   { name: "John", age: 17 },
   { name: "Jane", age: 16 },
-]
+];
 
 // functional way
-const foundUser = users.find(user => user.name === "John")
+const foundUser = users.find(user => user.name === "John");
 
 // iterative way
-let foundUser = null
+let foundUser = null;
 users.forEach(user => {
   if (user.name === "John") {
-    foundUser = user
+    foundUser = user;
   }
-})
+});
 
-console.log(foundUser) // outputs { name: "John", age: 17 }
+console.log(foundUser); // outputs { name: "John", age: 17 }
 ```
 
 ## Keep specific items using `filter()`
@@ -68,20 +68,20 @@ const users = [
   { name: "Joe", age: 25 },
   { name: "John", age: 17 },
   { name: "Jane", age: 16 },
-]
+];
 
 // functional way
-const youngerUsers = users.filter(user => user.age < 18)
+const youngerUsers = users.filter(user => user.age < 18);
 
 // iterative way
-const youngerUsers = []
+const youngerUsers = [];
 users.forEach(user => {
   if (user.age < 18) {
-    youngerUsers.push(user)
+    youngerUsers.push(user);
   }
-})
+});
 
-console.log(youngerUsers) // outputs [ { name: "John", age: 17 }, { name: "Jane", age: 16 } ]
+console.log(youngerUsers); // outputs [ { name: "John", age: 17 }, { name: "Jane", age: 16 } ]
 ```
 
 ## Modifying all elements of an array using `.map()`
@@ -102,18 +102,18 @@ const users = [
   { name: "Joe", age: 25 },
   { name: "John", age: 17 },
   { name: "Jane", age: 16 },
-]
+];
 
 // functional way
-const userNames = users.map(user => user.name)
+const userNames = users.map(user => user.name);
 
 // iterative way
-const userNames = []
+const userNames = [];
 users.forEach(user => {
-  userNames.push(user.name)
-})
+  userNames.push(user.name);
+});
 
-console.log(userNames) // outputs [ "Joe", "John", "Jane" ]
+console.log(userNames); // outputs [ "Joe", "John", "Jane" ]
 ```
 
 ## Running custom logic using an array using `.reduce()`
@@ -133,18 +133,18 @@ const users = [
   { name: "Joe", age: 25 },
   { name: "John", age: 17 },
   { name: "Jane", age: 16 },
-]
+];
 
 // functional way
-const totalAge = users.reduce((acc, user) => acc + user.age, 0)
+const totalAge = users.reduce((acc, user) => acc + user.age, 0);
 
 // iterative way
-let totalAge = 0
+let totalAge = 0;
 users.forEach(user => {
-  totalAge += user.age
-})
+  totalAge += user.age;
+});
 
-console.log(totalAge) // outputs 58
+console.log(totalAge); // outputs 58
 ```
 
 ## Checking if any element matches a condition with `some()`
@@ -163,47 +163,47 @@ const users = [
   { name: "Joe", age: 25 },
   { name: "John", age: 17 },
   { name: "Jane", age: 16 },
-]
+];
 
 // functional way
-const hasYoungUsers = users.some(user => user.age < 18)
+const hasYoungUsers = users.some(user => user.age < 18);
 
 // iterative way
-let hasYoungUsers = false
+let hasYoungUsers = false;
 for (let i = 0; users.length > i; i++) {
   if (user > 18) {
-    hasYoungUsers = true
-    break
+    hasYoungUsers = true;
+    break;
   }
 }
 
-console.log(hasYoungUsers) // outputs true
+console.log(hasYoungUsers); // outputs true
 ```
 
 ## every
 
 `every()` is similar to `some()`. The difference is that `some()` test if one or more of the items match. `every()` tests if every item in the array matches.
- 
+
 ```js
 // given our data
 const users = [
   { name: "Joe", age: 25 },
   { name: "John", age: 17 },
   { name: "Jane", age: 16 },
-]
+];
 
 // functional way
-const allUsersAreOldEnough = users.every(user => user.age < 18)
+const allUsersAreOldEnough = users.every(user => user.age < 18);
 
 // iterative way
-let allUsersAreOldEnough = true
+let allUsersAreOldEnough = true;
 for (let i = 0; users.length > i; i++) {
   if (user.age > 18) {
-    allUsersAreOldEnough = false
-    break
+    allUsersAreOldEnough = false;
+    break;
   }
 }
-console.log(allUsersAreOldEnough) // outputs false
+console.log(allUsersAreOldEnough); // outputs false
 ```
 
 ## includes
@@ -212,21 +212,21 @@ The `includes()` function tests if the passed item exists inside the array. It r
 
 ```js
 // given our data
-const pets = ["cat", "dog", "bat"]
+const pets = ["cat", "dog", "bat"];
 
 // functional way
-const found = pets.includes("dog")
+const found = pets.includes("dog");
 
 // iterative way
-let found = false
+let found = false;
 pets.forEach(pet => {
   if (pet === "dog") {
-    found = true
+    found = true;
   }
-})
+});
 
 // or most of the time done with indexOf
-const found = pets.indexOf("dog") > 0
+const found = pets.indexOf("dog") > 0;
 
-console.log(found) // outputs true
+console.log(found); // outputs true
 ```

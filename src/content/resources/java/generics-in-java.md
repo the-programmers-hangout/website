@@ -10,7 +10,7 @@ title: Generics in Java
 Generics is a concept in programming which allows passing a type argument to a class or a method.
 
 Java's standard library makes heavy use of generics to reduce repetition and to provide flexibility.
- 
+
 Here's an example where Java uses generics.
 
 ```java
@@ -25,7 +25,7 @@ In this example we are passing the String type to the List class. We can now say
 
 ## Why should we use generics?
 
-By using generics we can provide type safety while having reusable code. 
+By using generics we can provide type safety while having reusable code.
 
 Lets say we want to create coffee capsule, We want one holder for Espresso capsules and one for Cappuccino capsules. This is one way we can implement this coffee capsule holder.
 
@@ -42,7 +42,7 @@ import java.util.ArrayList;
 // An espresso capsule holder
 class EspressoHolder {
   // This is a generic. ArrayList of EspressoCapsules
-  private ArrayList<EspressoCapsule> capsules = new ArrayList<EspressoCapsule>();  
+  private ArrayList<EspressoCapsule> capsules = new ArrayList<EspressoCapsule>();
 
   public EspressoHolder(EspressoCapsule capsule) {
     this.capsules.add(capsule);
@@ -77,7 +77,7 @@ Next up we'll take a look at an implementation which uses generics to avoid this
 
 ## Optimizing our Coffee brewer with Generics
 
-What if we could have a single Holder class for both types of capsules? Let's implement that by using generics. 
+What if we could have a single Holder class for both types of capsules? Let's implement that by using generics.
 
 Let's start off by removing both the `CappuccinoHolder` and the `EspressoHolder` classes. We're now left with this:
 
