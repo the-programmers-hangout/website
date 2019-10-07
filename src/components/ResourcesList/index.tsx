@@ -51,7 +51,7 @@ const Language = memo(({ item }: { item: IFolder; index: number }) => {
   )
 })
 
-export const ResourcesList: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
+export const ResourcesList: FC<HTMLAttributes<HTMLDivElement>> = props => {
   const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
   const tree = useBuildTree(resources)
 

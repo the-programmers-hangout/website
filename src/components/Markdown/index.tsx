@@ -14,10 +14,7 @@ interface IMarkdownProps {
   This component is used as a wrapper around Markdown generated content,
   mainly to provide styles to the html generated.
 */
-export const Markdown: FC<IMarkdownProps> = ({
-  content,
-  ...restProps
-}) => {
+export const Markdown: FC<IMarkdownProps> = ({ content, ...restProps }) => {
   useEffect(() => {
     Prism.highlightAll()
   }, [])

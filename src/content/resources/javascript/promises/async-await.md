@@ -27,7 +27,7 @@ This basic example will return a promise with the value of `foo`.
 
 ## Await
 
-The `await` keyword is used to wait until a promise has executed and fetches the result. In order to use the `await` keyword, you **need** to be inside an `async` function. 
+The `await` keyword is used to wait until a promise has executed and fetches the result. In order to use the `await` keyword, you **need** to be inside an `async` function.
 
 ```js
 async function demo() {
@@ -43,7 +43,7 @@ Another example to demonstrate this is if we extended the `foo()` function from 
 ```js
 async function foo() {
   let promise = new Promise((resolve, reject) => {
-    setTimeout(() => resolve("foo"), 5000)
+    setTimeout(() => resolve("foo"), 5000);
   });
 
   let data = await promise; // Execution waits here until promise resolves
@@ -93,7 +93,7 @@ To get around this issue, you can use an declare asynchronous function anonymous
 })();
 ```
 
-Top-Level-Await is something that *may* get added to Javascript in the future, but for now wrapper functions like above are needed for this functionality.
+Top-Level-Await is something that _may_ get added to Javascript in the future, but for now wrapper functions like above are needed for this functionality.
 
 ## Real World Example
 
@@ -110,29 +110,33 @@ async function getCharacters() {
 (async () => {
   try {
     let characters = await getCharacters();
-    console.log(characters) // (20) [{...}, {...}, {...}]
+    console.log(characters); // (20) [{...}, {...}, {...}]
   } catch (err) {
     console.error(err);
   }
 })();
 ```
 
-In this example, we are querying real data from the Rick & Morty API. This API has a lot of information regarding Rick & Morty, but here, we are trying to retrieve all the characters. 
+In this example, we are querying real data from the Rick & Morty API. This API has a lot of information regarding Rick & Morty, but here, we are trying to retrieve all the characters.
+
 - The first thing we do is use `fetch` to retrieve the data from the API. `fetch` is a built in function in web browsers to do http requests, and returns a Promise by default. We `await` the result of this.
 - When we get the result, we need to get the `JSON` value of the data. To do this, the `.json()` method from fetch is used. We then return the results.
 - As `await` can only be used in an `async` function, we use the method from above to make this work. As `getCharacters()` returns a Promise due to it being `async`, we `await` the result. We surround this in a `try...catch` in case fetch returns an error. Then, if no error is returned, `characters` contains the information we want, and is logged to the console. If `getCharacters()` returns an error, that error is also logged.
 
 ## Comparision with default Promises:
 
-Below is the same code implemented without using Async / Await as a comparision. Here, you can see the differences between the two methods, and how Aysnc / Await makes the code appear in a *more synchronous* pattern, and can be clearer to follow.
+Below is the same code implemented without using Async / Await as a comparision. Here, you can see the differences between the two methods, and how Aysnc / Await makes the code appear in a _more synchronous_ pattern, and can be clearer to follow.
+
 ```js
 function getCharacters() {
   return fetch(`https://rickandmortyapi.com/api/character`)
     .then(response => response.json())
-    .then(response => response.results)
+    .then(response => response.results);
 }
 
-getCharacters().then(characters => {
-  console.log(characters) // (20) [{...}, {...}, {...}]
-}).catch(err => console.error(err))
+getCharacters()
+  .then(characters => {
+    console.log(characters); // (20) [{...}, {...}, {...}]
+  })
+  .catch(err => console.error(err));
 ```
