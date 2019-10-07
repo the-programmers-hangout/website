@@ -1,13 +1,14 @@
 import styled from "styled-components"
 import DiscordLogo from "../../images/discord-logo.svg"
 
-export const DiscordButtonWrapper = styled.div`
+export const DiscordButtonWrapper = styled.a`
   margin-top: 32px;
   display: flex;
   align-items: center;
   font-family: "Oxygen", sans-serif;
   font-size: 24px;
   font-weight: 700;
+  text-decoration: none;
   text-transform: uppercase;
   background: ${props => props.theme.discord.base};
   color: #fff;
