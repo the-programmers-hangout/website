@@ -8,7 +8,11 @@ import * as SC from "./styles"
 interface IResourceHeaderProps {
   relativePath: string
   title: string
-  authors: string[]
+  authors: Array<{
+    avatar: string
+    hash: string
+    name: string
+  }>
   createdAt: string
   timeToRead: number
   recommendedReading: string[]
@@ -66,8 +70,15 @@ export const ResourceHeader: FC<IResourceHeaderProps> = ({
 
       <SC.Top>
         <SC.Meta>
-          <StackedAvatars authors={authors} /> {authors.length} contributor
-          {authors.length > 1 && "s"}
+          <StackedAvatars authors={authors} />
+          <SC.PopoverToggler>
+            {authors.length} contributor{authors.length > 1 && "s"}
+            <SC.Popover>
+              {authors
+                .map(author => `${author.name}#${author.hash}`)
+                .join(", ")}
+            </SC.Popover>
+          </SC.PopoverToggler>
         </SC.Meta>
         <SC.Meta>{dateToHuman}</SC.Meta>
         <SC.Meta>
