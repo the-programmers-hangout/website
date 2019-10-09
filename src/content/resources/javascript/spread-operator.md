@@ -66,31 +66,31 @@ const b = [3, 4];
 console.log([...a, ...b]); // [1, 2, 3, 4] - Merged!
 ```
 
-Here's a real-world example. Imagine that you're making a function which accepts an ``options`` object as argument, but you also want to have default values for this object. Here's a not so good way to do it without spread operator:
+Here's a real-world example. Imagine that you're making a function which accepts an `options` object as argument, but you also want to have default values for this object. Here's a not so good way to do it without spread operator:
 
 ```js
-const f = (opts) => {
-	const options = {};
-	options.foo = opts.foo || "default value";
-	options.bar = opts.bar || "default value";
-	options.x = opts.x || 10;
-	// ...
-}
+const f = opts => {
+  const options = {};
+  options.foo = opts.foo || "default value";
+  options.bar = opts.bar || "default value";
+  options.x = opts.x || 10;
+  // ...
+};
 ```
 
 This works, but here's a better way:
 
 ```js
-const f = (opts) => {
-	const defaults = { 
-		foo: "default value", 
-		bar: "default value", 
-		x: 10 
-	};
-	
-	const options = { ...defaults, ...opts };
-	// ...	
-}
+const f = opts => {
+  const defaults = {
+    foo: "default value",
+    bar: "default value",
+    x: 10,
+  };
+
+  const options = { ...defaults, ...opts };
+  // ...
+};
 ```
 
 ## Expanding an array as function arguments
@@ -101,7 +101,8 @@ Spread operator also allows you to expand an array as function arguments. Each e
 const numbers = [2, 4, 8, 10, 11, 14];
 console.log(Math.max(...numbers)); // 14
 ```
-The array gets expanded like so: ``Math.max(2, 4, 8, 10, 11, 14)``
+
+The array gets expanded like so: `Math.max(2, 4, 8, 10, 11, 14)`
 
 ## Variadic functions
 
@@ -109,9 +110,10 @@ A variadic function is a function which accepts an arbitrary amount of arguments
 
 ```js
 const f = (...args) => {
-	console.log(args);
-}
+  console.log(args);
+};
 
 f(1, 2, 3, 5); // [1, 2, 3, 5]
 ```
+
 As you can see, you can call the function with an infinite number of arguments and it will receive them as an array. Keep in mind that rest parameters must always be at the end.

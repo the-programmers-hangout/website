@@ -6,18 +6,26 @@
  */
 
 import { RouteComponentProps } from "@reach/router"
-import React, { FC, Fragment } from "react"
+import React, { FC, Fragment, useEffect } from "react"
 
 import { Container } from "../../components/Container"
 import { Footer } from "../../components/Footer"
 import { Header } from "../../components/Header"
 import { WavesBottom } from "../../components/Waves"
 import { GlobalStyles } from "../../globalStyles"
+import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import { ThemeProvider } from "../../ThemeProvider"
 import * as SC from "./styles"
 
 export const Layout: FC<RouteComponentProps> = ({ children, location }) => {
   const isHome = location ? location.pathname === "/" : false
+  const { locked, unlock } = useLockBodyScroll()
+
+  useEffect(() => {
+    if (locked) {
+      unlock()
+    }
+  }, [locked])
 
   return (
     <ThemeProvider>

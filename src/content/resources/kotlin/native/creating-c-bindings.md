@@ -23,13 +23,14 @@ If you do not have the Kotlin compiler installed on your computer you can downlo
 We will be creating a very simple library to demonstrate linking.
 
 This is our `App.h` file
+
 ```c
 #ifndef APP_H
 #define APP_H
 
-void run();      
+void run();
 
-#endif 
+#endif
 ```
 
 And this is our `App.c` file
@@ -40,7 +41,7 @@ And this is our `App.c` file
 
 void run() {
     printf("Hello, from C");
-}     
+}
 ```
 
 ### Compiling our C library
@@ -49,7 +50,7 @@ First of all we will need to compile our C sources.
 
 ```bash
 gcc -c "-I$(pwd)" App.c -o App.o
-```                       
+```
 
 The `"-I$(pwd)"` flag translates to the gcc -I flag with our current working directory as its parameter. You can also type out the full path if you want to.
 
@@ -59,14 +60,14 @@ We'll save our compiled static library in a file named `App.a`
 
 ```bash
 ar rcs App.a App.o
-```               
+```
 
 ### Compiling our bindings
 
 Now we need to create a `App.def` file for the Kotlin cinterop tool
-    
+
 The minimal requirements for a `.def` file is some headers. We will include our header file here.
-    
+
 ```def
 headers = App.h
 ```
@@ -83,7 +84,7 @@ We're now ready to create a Kotlin file to interact with our C library so let's 
 import App.run
 
 fun main() {
-    println("Hello, from Kotlin/Native") 
+    println("Hello, from Kotlin/Native")
     run()
 }
 ```
@@ -104,10 +105,11 @@ We can now run our executable so let's do that.
 
 ```bash
 ./App.kexe
-```       
+```
 
 This should be the program output:
+
 ```text
 Hello, from Kotlin/Native
-Hello, from C     
+Hello, from C
 ```

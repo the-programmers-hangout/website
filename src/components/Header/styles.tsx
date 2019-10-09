@@ -10,11 +10,11 @@ export const HeaderWrapper = styled.header`
   width: 100%;
   position: relative;
   min-height: auto;
-  background: #121240;
-  overflow: hidden;
+  background: #1f2a34;
 
   &.is-home {
     min-height: 100vh;
+    overflow: hidden;
   }
 `
 
@@ -60,6 +60,7 @@ export const FadedBottomWave = styled.div`
   right: 0;
   transition: opacity 0.5s, transform 0.5s;
   opacity: 0;
+  pointer-events: none;
 
   svg {
     position: static;
@@ -153,7 +154,7 @@ export const MenuItem = styled(Link)`
   &:hover ${MenuItemLine} {
     padding: 8px;
     height: 100%;
-    background: #cf2e7d;
+    background: #dd66a1;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), 0 5px 11px rgba(0, 0, 0, 0.25);
     margin-left: -8px;
     margin-bottom: -8px;
@@ -174,10 +175,10 @@ export const MenuItem = styled(Link)`
 
   &.active {
     font-weight: 700;
-    color: #cf2e7d;
+    color: #dd66a1;
 
     ${MenuItemLine} {
-      background: #cf2e7d;
+      background: #dd66a1;
     }
 
     &:hover {
@@ -185,7 +186,7 @@ export const MenuItem = styled(Link)`
     }
 
     &:hover ${MenuItemLine} {
-      background: #cf2e7d;
+      background: #dd66a1;
     }
   }
 `

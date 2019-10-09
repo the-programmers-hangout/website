@@ -1,3 +1,4 @@
+import { darken, lighten } from "polished"
 import styled, { css } from "styled-components"
 import {
   BASE_FONT_SIZE,
@@ -67,10 +68,32 @@ export const MarkdownWrapper = styled.div`
     ${modularScaleCSS(1)};
   }
 
+  h1 .anchor svg,
+  h2 .anchor svg,
+  h3 .anchor svg,
+  h4 .anchor svg,
+  h5 .anchor svg,
+  h6 .anchor svg {
+    fill: ${props => props.theme.main.foreground};
+  }
+
+  code {
+    background: #192129;
+    padding: 4px 8px;
+    display: inline;
+    border-radius: 3px;
+    letter-spacing: 0.25px;
+    color: #ccc;
+  }
+
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
     overflow-x: auto;
     background: #192129;
+  }
+
+  pre > code[class*="language-"] {
+    padding: 0;
   }
 
   pre[class*="language-"] {
@@ -92,6 +115,18 @@ export const MarkdownWrapper = styled.div`
     .token.keyword,
     .token.builtin {
       color: #d1529d;
+    }
+  }
+
+  a {
+    color: ${props => props.theme.main.link};
+    cursor: pointer;
+
+    &:hover {
+      color: ${props =>
+        props.theme.name === "dark"
+          ? lighten(0.15, props.theme.main.link)
+          : darken(0.15, props.theme.main.link)};
     }
   }
 `

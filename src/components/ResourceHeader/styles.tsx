@@ -93,3 +93,43 @@ export const ExtraLinkExternal = styled.a`
 export const ExtraLinkText = styled.div`
   text-decoration: underline;
 `
+
+export const Popover = styled.div`
+  display: none;
+  position: absolute;
+  top: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  background: ${props =>
+    props.theme.name === "dark"
+      ? lighten(0.1, props.theme.main.background)
+      : darken(0.1, props.theme.main.background)};
+
+  &::before {
+    position: absolute;
+    left: 16px;
+    bottom: 100%;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 3.5px 4px 3.5px;
+    border-color: transparent transparent
+      ${props =>
+        props.theme.name === "dark"
+          ? lighten(0.1, props.theme.main.background)
+          : darken(0.1, props.theme.main.background)}
+      transparent;
+  }
+`
+
+export const PopoverToggler = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &:hover ${Popover} {
+    display: block;
+  }
+`

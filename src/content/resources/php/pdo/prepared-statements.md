@@ -38,6 +38,7 @@ This would fetch every single row from the `users` table as `1 = 1` will always 
 You can think of a prepared statement as a conversation between the user and the database. A basic prepared statement would look a little like this:
 
 > User: Hello Database, I'm going to run this prepared statement. I will tell you what it should look like, but I won't give you any values. Here's my query:
+
 ```sql
 SELECT * FROM `users` WHERE `age` > :age;
 ```
@@ -46,7 +47,7 @@ SELECT * FROM `users` WHERE `age` > :age;
 
 > User: Here's the value for `:age`, it's the number `18`.
 
-> Database: Okay, here are all the results where age was more than 18. 
+> Database: Okay, here are all the results where age was more than 18.
 
 Via a prepared statement we tell the database what our query will look like, then we pass the values. This means there is no way of modifying the SQL query and you'll probably just get a goofy result instead of having your entire database dropped.
 
@@ -110,7 +111,7 @@ Let's execute our SQL statement.
 $statement->execute();
 ```
 
-If you're looking to capture the result you can always do 
+If you're looking to capture the result you can always do
 
 ```php
 $result = $statement->execute();
