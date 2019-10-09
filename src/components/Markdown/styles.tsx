@@ -68,6 +68,15 @@ export const MarkdownWrapper = styled.div`
     ${modularScaleCSS(1)};
   }
 
+  code {
+    background: #192129;
+    padding: 4px 8px;
+    display: inline;
+    border-radius: 3px;
+    letter-spacing: 0.25px;
+    color: #ccc;
+  }
+
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
     overflow-x: auto;
