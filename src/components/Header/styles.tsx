@@ -10,7 +10,7 @@ export const HeaderWrapper = styled.header`
   width: 100%;
   position: relative;
   min-height: auto;
-  background: #121240;
+  background: #1f2a34;
 
   &.is-home {
     min-height: 100vh;

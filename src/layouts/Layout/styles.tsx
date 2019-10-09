@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const LayoutWrapper = styled.div`
-  background: #121240;
+  background: #1f2a34;
   color: #fff;
   position: relative;
   display: flex;
