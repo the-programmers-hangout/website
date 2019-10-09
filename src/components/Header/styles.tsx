@@ -11,10 +11,10 @@ export const HeaderWrapper = styled.header`
   position: relative;
   min-height: auto;
   background: #121240;
-  overflow: hidden;
 
   &.is-home {
     min-height: 100vh;
+    overflow: hidden;
   }
 `
 
@@ -60,6 +60,7 @@ export const FadedBottomWave = styled.div`
   right: 0;
   transition: opacity 0.5s, transform 0.5s;
   opacity: 0;
+  pointer-events: none;
 
   svg {
     position: static;
