@@ -5,7 +5,7 @@ created_at: 2019/07/26
 updated_at: 2019/07/26
 title: Introduction to Promises
 recommended_reading:
-  - javascript/callbacks
+  - javascript/callbacks/intro
   - javascript/es6/arrow-functions
 ---
 
