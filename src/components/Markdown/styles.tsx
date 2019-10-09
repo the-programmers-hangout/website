@@ -68,6 +68,15 @@ export const MarkdownWrapper = styled.div`
     ${modularScaleCSS(1)};
   }
 
+  h1 .anchor svg,
+  h2 .anchor svg,
+  h3 .anchor svg,
+  h4 .anchor svg,
+  h5 .anchor svg,
+  h6 .anchor svg {
+    fill: ${props => props.theme.main.foreground};
+  }
+
   code {
     background: #192129;
     padding: 4px 8px;
