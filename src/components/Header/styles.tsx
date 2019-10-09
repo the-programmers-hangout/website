@@ -154,7 +154,7 @@ export const MenuItem = styled(Link)`
   &:hover ${MenuItemLine} {
     padding: 8px;
     height: 100%;
-    background: #cf2e7d;
+    background: #dd66a1;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), 0 5px 11px rgba(0, 0, 0, 0.25);
     margin-left: -8px;
     margin-bottom: -8px;
@@ -175,10 +175,10 @@ export const MenuItem = styled(Link)`
 
   &.active {
     font-weight: 700;
-    color: #cf2e7d;
+    color: #dd66a1;
 
     ${MenuItemLine} {
-      background: #cf2e7d;
+      background: #dd66a1;
     }
 
     &:hover {
@@ -186,7 +186,7 @@ export const MenuItem = styled(Link)`
     }
 
     &:hover ${MenuItemLine} {
-      background: #cf2e7d;
+      background: #dd66a1;
     }
   }
 `
