@@ -33,7 +33,7 @@
     "gatsby-image": "^2.2.24",
     "gatsby-plugin-layout": "^1.1.10",
     "gatsby-plugin-manifest": "^2.2.20",
-    "gatsby-plugin-mdx": "^1.0.47",
+    "gatsby-plugin-mdx": "^1.0.49",
     "gatsby-plugin-offline": "^3.0.11",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.1.10",
