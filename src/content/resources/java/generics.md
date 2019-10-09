@@ -2,7 +2,7 @@
 authors:
   - "supergrecko#3434"
 created_at: "2019/10/04"
-title: Generics in Java
+title: Generics
 ---
 
 ## What are generics?

@@ -2,7 +2,7 @@
 authors:
   - "sudonym#8623"
 created_at: 2019/10/6
-title: "pragma once FAQ"
+title: "pragma once"
 ---
 
 ## What is `#pragma once`?
