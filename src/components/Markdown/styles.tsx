@@ -92,6 +92,10 @@ export const MarkdownWrapper = styled.div`
     background: #192129;
   }
 
+  pre > code[class*="language-"] {
+    padding: 0;
+  }
+
   pre[class*="language-"] {
     .token.boolean,
     .token.number,
