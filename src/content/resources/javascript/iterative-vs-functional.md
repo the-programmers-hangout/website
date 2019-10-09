@@ -180,7 +180,7 @@ for (let i = 0; users.length > i; i++) {
 console.log(hasYoungUsers); // outputs true
 ```
 
-## every
+## Checking if all elements match a condition with `every()`
 
 `every()` is similar to `some()`. The difference is that `some()` test if one or more of the items match. `every()` tests if every item in the array matches.
 
@@ -206,7 +206,7 @@ for (let i = 0; users.length > i; i++) {
 console.log(allUsersAreOldEnough); // outputs false
 ```
 
-## includes
+## Checking if an array contains a value with `includes()`
 
 The `includes()` function tests if the passed item exists inside the array. It returns a boolean value.
 
