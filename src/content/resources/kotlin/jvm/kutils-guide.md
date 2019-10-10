@@ -2,7 +2,7 @@
 authors:
   - "Hayden#5036"
 created_at: "2019/09/06"
-title: Getting Started
+title: Getting Started with KUtils
 ---
 
 ## What is KUtils?
