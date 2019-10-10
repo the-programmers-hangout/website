@@ -129,11 +129,14 @@ fun utilityCommands() = commands {
 Note how this has a weird ending. It doesn't go straight into a function, this goes into a `commands` block. Huh. Well, believe me, it makes it very simple. Because now all you need to do is add this:
 
 ```kotlin
-command("Ping") {
-    description = "Pong!"
-    execute {
-        it.respond("Pong!")
-    }
+@CommandSet("Utility")
+fun utilityCommands() = commands {
+  command("Ping") {
+      description = "Pong!"
+      execute {
+          it.respond("Pong!")
+      }
+  }
 }
 ```
 
