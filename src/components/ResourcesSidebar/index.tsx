@@ -98,6 +98,7 @@ const MenuItem: FC<IMenuItemProps> = ({ children, to }) => {
 export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = props => {
   const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
   const tree = useBuildTree(resources)
+  const sortedTree = tree.sort((a, b) => a.title.localeCompare(b.title));
 
   return (
     <SC.ResourcesSidebarWrapper {...props}>
@@ -106,7 +107,7 @@ export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = props => {
           <Banner />
         </Link>
         <SC.Inner>
-          {tree.map((node, index) => plantTree(node, index, true))}
+          {sortedTree.map((node, index) => plantTree(node, index, true))}
 
           <SC.Menu>
             <MenuItem to="/about">about</MenuItem>

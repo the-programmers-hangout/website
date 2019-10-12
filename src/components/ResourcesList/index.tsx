@@ -54,10 +54,11 @@ const Language = memo(({ item }: { item: IFolder; index: number }) => {
 export const ResourcesList: FC<HTMLAttributes<HTMLDivElement>> = props => {
   const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
   const tree = useBuildTree(resources)
+  const sortedTree = tree.sort((a, b) => a.title.localeCompare(b.title));
 
   return (
     <SC.ResourcesListWrapper {...props}>
-      {tree.map((node, index) => plantTree(node, index))}
+      {sortedTree.map((node, index) => plantTree(node, index))}
     </SC.ResourcesListWrapper>
   )
 }
