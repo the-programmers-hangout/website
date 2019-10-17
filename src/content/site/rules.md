@@ -20,7 +20,7 @@ If you make yourself particularly hard to deal with, if you pretend that you are
 
 If you are going to provide anecdote or your own experience, that is fine, provided you don't pass it off as axiomatic. Quote sources when you are asked to.
 
-## 4. Do not flame languages or other such technologies (e.g. text editors).
+## 4. Do not flame languages or other such technologies (e.g. text editors)
 
 Doing so is reductive. If someone likes to use VB.Net or JavaScript or Vim, we surprisingly expect you to not jump down their throat about that. Doing so outside of regulated channels where staff have explicitly allowed the discussion for a short period of time is not allowed ( #poll-discussion is one such example of an okay place to talk about it provided the poll allows it )
 
