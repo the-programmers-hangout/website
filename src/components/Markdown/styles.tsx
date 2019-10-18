@@ -96,6 +96,10 @@ export const MarkdownWrapper = styled.div`
     padding: 0;
   }
 
+  img {
+    max-width: 100%;
+  }
+
   pre[class*="language-"] {
     .token.boolean,
     .token.number,
@@ -119,6 +123,7 @@ export const MarkdownWrapper = styled.div`
   }
 
   a {
+    word-break: break-all;
     color: ${props => props.theme.main.link};
     cursor: pointer;
 
