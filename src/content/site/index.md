@@ -13,4 +13,4 @@ of expertise.
 
 All you need to do is click!
 
-<!-- Insert link here later -->
+[Join here](https://discord.gg/programming)
