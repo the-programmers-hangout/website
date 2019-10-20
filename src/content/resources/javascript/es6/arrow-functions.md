@@ -1,6 +1,6 @@
 ---
 authors:
-  - "t0m#5956"
+  - "T0M#5956"
 created_at: 2019/10/08
 updated_at: 2019/10/13
 title: Arrow functions
