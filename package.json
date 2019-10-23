@@ -44,7 +44,7 @@
     "gatsby-remark-auto-headers": "^1.0.3",
     "gatsby-remark-katex": "^3.1.15",
     "gatsby-source-filesystem": "^2.1.33",
-    "gatsby-transformer-remark": "^2.6.27",
+    "gatsby-transformer-remark": "^2.6.30",
     "gatsby-transformer-sharp": "^2.2.20",
     "katex": "^0.11.1",
     "polished": "^3.4.1",
