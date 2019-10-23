@@ -30,7 +30,7 @@
   "dependencies": {
     "@reach/router": "^1.2.1",
     "gatsby": "^2.17.2",
-    "gatsby-image": "^2.2.24",
+    "gatsby-image": "^2.2.29",
     "gatsby-plugin-layout": "^1.1.10",
     "gatsby-plugin-manifest": "^2.2.20",
     "gatsby-plugin-mdx": "^1.0.49",
