@@ -9,11 +9,11 @@ import "katex/dist/katex.min.css"
 // @todo maybe find alternative type for data
 const LanguagePost: FC<any> = ({ data }) => {
   const { relativePath } = data.file
-  const { html, fields, frontmatter, timeToRead } = data.file.post
+  const { html, excerpt, fields, frontmatter, timeToRead } = data.file.post
 
   return (
     <Fragment>
-      <SEO title={frontmatter.title} />
+      <SEO title={frontmatter.title} description={excerpt} />
       <ResourceHeader
         relativePath={relativePath}
         title={frontmatter.title}
@@ -36,6 +36,7 @@ export const query = graphql`
       relativePath
       post: childMarkdownRemark {
         html
+        excerpt
         fields {
           authors {
             name
