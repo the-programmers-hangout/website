@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import React, { FC, useLayoutEffect, useState } from "react"
 import { DiscordButton } from "../DiscordButton"
+import { Partner } from "../Partner"
 import { WavesBottom, WavesTop } from "../Waves"
 import * as SC from "./styles"
 
@@ -88,6 +89,7 @@ export const Header: FC<IHeaderProps> = ({ isHome }) => {
           <MenuItem to="/">tech spotlight</MenuItem>
         </SC.Menu>
         <DiscordButton>join us</DiscordButton>
+        {isHome && <Partner />}
       </SC.InnerWrapper>
     </SC.HeaderWrapper>
   )
