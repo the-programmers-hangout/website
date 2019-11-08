@@ -171,7 +171,7 @@ const hasYoungUsers = users.some(user => user.age < 18);
 // iterative way
 let hasYoungUsers = false;
 for (let i = 0; users.length > i; i++) {
-  if (user > 18) {
+  if (user.age < 18) {
     hasYoungUsers = true;
     break;
   }
@@ -198,7 +198,7 @@ const allUsersAreOldEnough = users.every(user => user.age < 18);
 // iterative way
 let allUsersAreOldEnough = true;
 for (let i = 0; users.length > i; i++) {
-  if (user.age > 18) {
+  if (user.age < 18) {
     allUsersAreOldEnough = false;
     break;
   }
@@ -226,7 +226,7 @@ pets.forEach(pet => {
 });
 
 // or most of the time done with indexOf
-const found = pets.indexOf("dog") > 0;
+const found = pets.indexOf("dog") >= 0;
 
 console.log(found); // outputs true
 ```
