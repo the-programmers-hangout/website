@@ -31,8 +31,7 @@ export const Overlay = styled.div`
 
 export const MainContent = styled.main`
   flex: 1 1 auto;
-  margin-top: 128px;
-  margin-left: 320px;
+  margin: 128px 0 128px 320px;
   width: calc(100% - 320px);
 
   @media screen and (max-width: 767px) {
