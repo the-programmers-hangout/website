@@ -13,12 +13,13 @@ import { Footer } from "../../components/Footer"
 import { Header } from "../../components/Header"
 import { WavesBottom } from "../../components/Waves"
 import { GlobalStyles } from "../../globalStyles"
+import useLocation from "../../hooks/useLocation"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import { ThemeProvider } from "../../ThemeProvider"
 import * as SC from "./styles"
 
-export const Layout: FC<RouteComponentProps> = ({ children, location }) => {
-  const isHome = location ? location.pathname === "/" : false
+export const Layout: FC<RouteComponentProps> = ({ children }) => {
+  const { isHome } = useLocation()
   const { locked, unlock } = useLockBodyScroll()
 
   useEffect(() => {
