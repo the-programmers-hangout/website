@@ -1,4 +1,6 @@
+import { WindowLocation } from "@reach/router"
 import React, { PropsWithChildren } from "react"
+import { LocationProvider } from "../LocationProvider"
 import { Layout } from "./Layout"
 import { ResourcesLayout } from "./ResourcesLayout"
 
@@ -10,11 +12,15 @@ export default function BaseLayout({
   pageContext: {
     layout?: string
   }
-  location: Location
+  location: WindowLocation
 }>) {
-  if (pageContext.layout === "resources") {
-    return <ResourcesLayout>{children}</ResourcesLayout>
-  }
-
-  return <Layout location={location}>{children}</Layout>
+  return (
+    <LocationProvider location={location}>
+      {pageContext.layout === "resources" ? (
+        <ResourcesLayout>{children}</ResourcesLayout>
+      ) : (
+        <Layout>{children}</Layout>
+      )}
+    </LocationProvider>
+  )
 }
