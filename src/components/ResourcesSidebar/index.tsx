@@ -10,6 +10,7 @@ import { ThemeToggler } from "../ThemeToggler"
 import useSidebar from "./../../hooks/useSidebar"
 import * as SC from "./styles"
 import useBuildTree from "./useBuildTree"
+import useMatchingPath from "./useMatchingPath"
 
 const ALL_RESOURCES = graphql`
   query {
@@ -49,6 +50,10 @@ function plantTree(item: IFileOrFolder, index?: number, firstLevel?: boolean) {
 function Folder({ item }: { item: IFolder }) {
   const [collapsed, setCollapse] = useState(true)
 
+  useMatchingPath(item.path, () => {
+    setCollapse(false)
+  })
+
   function toggleCollapse() {
     setCollapse(prevState => !prevState)
   }
@@ -66,6 +71,11 @@ function Folder({ item }: { item: IFolder }) {
 const FirstLevelFolder = memo(
   ({ item, index }: { item: IFolder; index: number }) => {
     const { current, setCurrent } = useSidebar()
+
+    useMatchingPath(item.path, () => {
+      setCurrent(index)
+    })
+
     const collapsed = current !== index
 
     return (
