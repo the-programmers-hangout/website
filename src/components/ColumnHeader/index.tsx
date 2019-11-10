@@ -1,22 +1,23 @@
 import React, { FC, Fragment } from "react"
 
 import ChevronUp from "../../icons/chevron-up.svg"
-import { ResourceBreadcrumb } from "../ResourceBreadcrumb"
+import { Breadcrumb } from "../Breadcrumb"
 import { StackedAvatars } from "../StackedAvatars"
 import * as SC from "./styles"
 
-interface IResourceHeaderProps {
+interface IColumnHeaderProps {
   relativePath: string
+  basePath: string
   title: string
-  authors: Array<{
+  authors?: Array<{
     avatar: string
     hash: string
     name: string
   }>
   createdAt: string
   timeToRead: number
-  recommendedReading: string[]
-  externalResources: string[]
+  recommendedReading?: string[]
+  externalResources?: string[]
 }
 
 function ExtraLink({
@@ -47,7 +48,8 @@ function ExtraLink({
   )
 }
 
-export const ResourceHeader: FC<IResourceHeaderProps> = ({
+export const ColumnHeader: FC<IColumnHeaderProps> = ({
+  basePath,
   relativePath,
   title,
   authors,
@@ -63,24 +65,26 @@ export const ResourceHeader: FC<IResourceHeaderProps> = ({
   const dateToHuman = `${month} ${day}, ${year}`
 
   return (
-    <SC.ResourceHeaderWrapper>
-      <ResourceBreadcrumb relativePath={relativePath} />
+    <SC.ColumnHeaderWrapper>
+      <Breadcrumb relativePath={relativePath} basePath={basePath} />
 
       <SC.Title>{title}</SC.Title>
 
       <SC.Top>
-        <SC.Meta>
-          <StackedAvatars authors={authors} />
-          <SC.PopoverToggler>
-            {authors.length} contributor{authors.length > 1 && "s"}
-            <SC.Popover>
-              {authors
-                .map(author => `${author.name}#${author.hash}`)
-                .join(", ")}
-            </SC.Popover>
-          </SC.PopoverToggler>
-        </SC.Meta>
-        <SC.Meta>{dateToHuman}</SC.Meta>
+        {authors && (
+          <SC.Meta>
+            <StackedAvatars authors={authors} />
+            <SC.PopoverToggler>
+              {authors.length} contributor{authors.length > 1 && "s"}
+              <SC.Popover>
+                {authors
+                  .map(author => `${author.name}#${author.hash}`)
+                  .join(", ")}
+              </SC.Popover>
+            </SC.PopoverToggler>
+          </SC.Meta>
+        )}
+        {dateToHuman && <SC.Meta>{dateToHuman}</SC.Meta>}
         <SC.Meta>
           {timeToRead} minute{timeToRead !== 1 && "s"} read time
         </SC.Meta>
@@ -103,6 +107,6 @@ export const ResourceHeader: FC<IResourceHeaderProps> = ({
           })}
         </SC.ExternalResources>
       )}
-    </SC.ResourceHeaderWrapper>
+    </SC.ColumnHeaderWrapper>
   )
 }

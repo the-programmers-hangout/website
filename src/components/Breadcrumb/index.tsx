@@ -9,8 +9,9 @@ interface ILinkProps {
   item: IFileOrFolder
 }
 
-interface IResourceBreadcrumbProps {
+interface IBreadcrumbProps {
   relativePath: any
+  basePath: string
 }
 
 const Link: FC<ILinkProps> = ({ item }) => {
@@ -28,12 +29,12 @@ function flatten([
   return flatten([...currNode.children, ...previousNodes, currNode])
 }
 
-export function ResourceBreadcrumb({ relativePath }: IResourceBreadcrumbProps) {
+export function Breadcrumb({ relativePath, basePath }: IBreadcrumbProps) {
   const paths = relativePath.split("/")
-  const breadcrumbItems = flatten([traversePaths(paths)])
+  const breadcrumbItems = flatten([traversePaths(paths, basePath)])
 
   return (
-    <SC.ResourceBreadcrumbWrapper>
+    <SC.BreadcrumbWrapper>
       <SC.LinkWrapper>
         <Link
           item={{ path: "/", title: "home", type: "folder", children: [] }}
@@ -43,8 +44,8 @@ export function ResourceBreadcrumb({ relativePath }: IResourceBreadcrumbProps) {
       <SC.LinkWrapper>
         <Link
           item={{
-            path: "/resources",
-            title: "resources",
+            path: basePath,
+            title: basePath.replace(/\//, ""),
             type: "folder",
             children: [],
           }}
@@ -67,6 +68,6 @@ export function ResourceBreadcrumb({ relativePath }: IResourceBreadcrumbProps) {
           </SC.CurrentPage>
         )
       })}
-    </SC.ResourceBreadcrumbWrapper>
+    </SC.BreadcrumbWrapper>
   )
 }

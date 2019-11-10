@@ -1,15 +1,12 @@
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import React, { FC, HTMLAttributes, memo, useState } from "react"
-import Scrollbar from "react-perfect-scrollbar"
-import "react-perfect-scrollbar/dist/css/styles.css"
 import TriangleDown from "../../icons/triangle-down.svg"
-import Banner from "../../images/tph-banner.svg"
 import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
 import { humanize } from "../../utils"
-import { ThemeToggler } from "../ThemeToggler"
+import { ColumnSidebar } from "../ColumnSidebar"
+import useBuildTree from "./../../hooks/useBuildTree"
 import useSidebar from "./../../hooks/useSidebar"
 import * as SC from "./styles"
-import useBuildTree from "./useBuildTree"
 import useMatchingPath from "./useMatchingPath"
 
 const ALL_RESOURCES = graphql`
@@ -93,44 +90,14 @@ const FirstLevelFolder = memo(
   }
 )
 
-interface IMenuItemProps {
-  to: string
-}
-
-const MenuItem: FC<IMenuItemProps> = ({ children, to }) => {
-  return (
-    <SC.MenuItem to={to} activeClassName="active">
-      {children}
-    </SC.MenuItem>
-  )
-}
-
 export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = props => {
   const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
-  const tree = useBuildTree(resources)
+  const tree = useBuildTree(resources, "/resources")
   const sortedTree = tree.sort((a, b) => a.title.localeCompare(b.title))
 
   return (
-    <SC.ResourcesSidebarWrapper {...props}>
-      <Scrollbar>
-        <Link to="/">
-          <Banner />
-        </Link>
-        <SC.Inner>
-          {sortedTree.map((node, index) => plantTree(node, index, true))}
-
-          <SC.Menu>
-            <MenuItem to="/about">about</MenuItem>
-            <MenuItem to="/rules">rules</MenuItem>
-            <MenuItem to="/faq">faq</MenuItem>
-            <MenuItem to="/">hotbot</MenuItem>
-            <MenuItem to="/resources">resources</MenuItem>
-            <MenuItem to="/">tech</MenuItem>
-          </SC.Menu>
-
-          <ThemeToggler />
-        </SC.Inner>
-      </Scrollbar>
-    </SC.ResourcesSidebarWrapper>
+    <ColumnSidebar {...props}>
+      {sortedTree.map((node, index) => plantTree(node, index, true))}
+    </ColumnSidebar>
   )
 }

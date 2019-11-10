@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import { RouteComponentProps } from "@reach/router"
 import React, { FC, Fragment, useEffect } from "react"
 
