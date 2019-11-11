@@ -3,7 +3,7 @@ import { darken, lighten } from "polished"
 import styled, { css } from "styled-components"
 import { fontFamily, modularScale } from "../../design/typography"
 
-export const ResourceHeaderWrapper = styled.div`
+export const ColumnHeaderWrapper = styled.div`
   border-bottom: 1px solid #dbdbdb;
   padding-bottom: 32px;
   margin-bottom: 32px;

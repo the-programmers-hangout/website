@@ -1,7 +1,7 @@
 import { graphql } from "gatsby"
 import React, { FC, Fragment } from "react"
+import { ColumnHeader } from "../components/ColumnHeader"
 import { Markdown } from "../components/Markdown"
-import { ResourceHeader } from "../components/ResourceHeader"
 import { SEO } from "../components/SEO"
 
 import "katex/dist/katex.min.css"
@@ -14,8 +14,9 @@ const LanguagePost: FC<any> = ({ data }) => {
   return (
     <Fragment>
       <SEO title={frontmatter.title} description={excerpt} />
-      <ResourceHeader
+      <ColumnHeader
         relativePath={relativePath}
+        basePath="/resources"
         title={frontmatter.title}
         authors={fields.authors}
         createdAt={frontmatter.created_at}

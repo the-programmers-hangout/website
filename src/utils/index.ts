@@ -32,7 +32,7 @@ export function humanize(str: string): string {
 
 export function traversePaths(
   [head, ...tail]: string[],
-  basePath: string = "/resources"
+  basePath: string
 ): IFileOrFolder {
   const path = basePath + "/" + head
   const isFile = !tail.length
@@ -55,7 +55,7 @@ export function traversePaths(
 
 export function traversePathsToFiles(
   [head, ...tail]: string[],
-  basePath: string = "/resources",
+  basePath: string,
   depth: number = 0
 ): IFileOrFolder {
   const path = basePath + "/" + head + "/" + tail.join("/")

@@ -16,6 +16,12 @@ export type IFileOrFolder = IFile | IFolder
 export interface IFileQuery {
   node: {
     relativePath: string
+  }
+}
+
+export interface IFileResourceQuery {
+  node: {
+    relativePath: string
     childMarkdownRemark: {
       frontmatter: {
         author: string
@@ -25,8 +31,26 @@ export interface IFileQuery {
   }
 }
 
-export interface IAllResourcesQuery {
+export interface IFileArchiveQuery {
+  node: {
+    relativePath: string
+  }
+}
+
+export interface IAllFilesQuery {
   allFile: {
     edges: IFileQuery[]
+  }
+}
+
+export interface IAllResourcesQuery extends IAllFilesQuery {
+  allFile: {
+    edges: IFileResourceQuery[]
+  }
+}
+
+export interface IAllArchivesQuery extends IAllFilesQuery {
+  allFile: {
+    edges: IFileArchiveQuery[]
   }
 }

@@ -63,6 +63,14 @@ module.exports = {
         path: `${__dirname}/src/content/resources`,
       },
     },
+    {
+      resolve: `gatsby-source-git`,
+      options: {
+        name: `what-is-archive`,
+        remote: `https://github.com/the-programmers-hangout/technology-spotlight`,
+        patterns: [`*.md`, `!README.md`],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-svg`,
     `gatsby-plugin-sharp`,

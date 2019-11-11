@@ -7,7 +7,20 @@ const fs = require("fs")
 const requiredArticleFrontmatter = ["authors", "date"]
 
 const LAYOUT_RESOURCES = "resources"
+const LAYOUT_ARCHIVES = "archives"
 const LAYOUT_REGULAR = "regular"
+
+function resolveLayout(path) {
+  if (path.match(/resources/)) {
+    return LAYOUT_RESOURCES
+  }
+
+  if (path.match(/archives/)) {
+    return LAYOUT_ARCHIVES
+  }
+
+  return LAYOUT_REGULAR
+}
 
 let users = []
 try {
@@ -38,6 +51,7 @@ const createResources = async ({ createPage, graphql }) => {
         edges {
           node {
             relativePath
+            sourceInstanceName
           }
         }
       }
@@ -60,9 +74,43 @@ const createResources = async ({ createPage, graphql }) => {
   })
 }
 
+const createArchives = async ({ createPage, graphql }) => {
+  const archive = path.resolve(`src/templates/archive.tsx`)
+
+  const result = await graphql(`
+    query FetchArchives {
+      allFile(filter: { sourceInstanceName: { eq: "what-is-archive" } }) {
+        edges {
+          node {
+            relativePath
+            sourceInstanceName
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) {
+    return Promise.reject(result.errors)
+  }
+
+  return result.data.allFile.edges.forEach(({ node }) => {
+    createPage({
+      path: path.join("archives", node.relativePath),
+      component: archive,
+      context: {
+        file: node.relativePath,
+        layout: LAYOUT_ARCHIVES,
+      },
+    })
+  })
+}
+
 exports.onCreateNode = async ({ node, getNode, actions }) => {
   const { createPage, createNodeField } = actions
-  if (node.internal.type === "MarkdownRemark") {
+  // TODO: find a better way to avoid handling non-resources
+  // or better, attach authors to what-is archives
+  if (node.internal.type === "MarkdownRemark" && node.frontmatter.authors) {
     const { frontmatter } = node
     const isDoc = Boolean(!frontmatter.path)
 
@@ -91,13 +139,15 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage } = actions
 
-  page.context.layout = page.path.match(/resources/)
-    ? LAYOUT_RESOURCES
-    : LAYOUT_REGULAR
+  page.context.layout = resolveLayout(page.path)
   createPage(page)
 }
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-  return createResources({ createPage, graphql })
+
+  return Promise.all([
+    createArchives({ createPage, graphql }),
+    createResources({ createPage, graphql }),
+  ])
 }

@@ -86,7 +86,7 @@ export const Header: FC<IHeaderProps> = ({ isHome }) => {
           <MenuItem to="/">faq</MenuItem>
           <MenuItem to="/">hotbot</MenuItem>
           <MenuItem to="/resources">resources</MenuItem>
-          <MenuItem to="/">tech spotlight</MenuItem>
+          <MenuItem to="/archives">tech spotlights</MenuItem>
         </SC.Menu>
         <DiscordButton>join us</DiscordButton>
         {isHome && <Partner />}

@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import { darken, lighten } from "polished"
 import styled from "styled-components"
 
-export const ResourceBreadcrumbWrapper = styled.div`
+export const BreadcrumbWrapper = styled.div`
   display: flex;
   align-items: flex-start;
 

@@ -1,6 +1,7 @@
 import { WindowLocation } from "@reach/router"
-import React, { PropsWithChildren } from "react"
+import React, { PropsWithChildren, useMemo } from "react"
 import { LocationProvider } from "../LocationProvider"
+import { ArchivesLayout } from "./ArchivesLayout"
 import { Layout } from "./Layout"
 import { ResourcesLayout } from "./ResourcesLayout"
 
@@ -14,13 +15,20 @@ export default function BaseLayout({
   }
   location: WindowLocation
 }>) {
+  const ResolvedLayout = useMemo(() => {
+    switch (pageContext.layout) {
+      case "resources":
+        return ResourcesLayout
+      case "archives":
+        return ArchivesLayout
+      default:
+        return Layout
+    }
+  }, [pageContext.layout])
+
   return (
     <LocationProvider location={location}>
-      {pageContext.layout === "resources" ? (
-        <ResourcesLayout>{children}</ResourcesLayout>
-      ) : (
-        <Layout>{children}</Layout>
-      )}
+      <ResolvedLayout>{children}</ResolvedLayout>
     </LocationProvider>
   )
 }
