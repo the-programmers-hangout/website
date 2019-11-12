@@ -1,9 +1,9 @@
 import React, { Fragment } from "react"
 
-import { ColumnLink } from "../components/ColumnLink"
+import { Link } from "../components/Link"
 import { SEO } from "../components/SEO"
 
-function ResourcesPage() {
+function ArchivesPage() {
   return (
     <Fragment>
       <SEO title="Tech Spotlights Archives" />
@@ -11,11 +11,10 @@ function ResourcesPage() {
       <p>
         This regroups the archives of our occasional, temporary channels that
         cover a piece of technology that might be unknown to part of our users.
-        You can find those on{" "}
-        <ColumnLink to="/about">The Programmer's Hangout</ColumnLink>.
+        You can find those on <Link to="/about">The Programmer's Hangout</Link>.
       </p>
     </Fragment>
   )
 }
 
-export default ResourcesPage
+export default ArchivesPage

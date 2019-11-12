@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import React, { FC, HTMLAttributes } from "react"
 import { IAllArchivesQuery, IFileOrFolder } from "../../types"
 import { humanize } from "../../utils"
-import { ColumnSidebar } from "../ColumnSidebar"
+import { Sidebar } from "../Sidebar"
 import useBuildTree from "./../../hooks/useBuildTree"
 import * as SC from "./styles"
 
@@ -31,5 +31,5 @@ export const ArchivesSidebar: FC<HTMLAttributes<HTMLDivElement>> = props => {
   const tree = useBuildTree(archives, "/archives")
   const sortedTree = tree.sort((a, b) => a.title.localeCompare(b.title))
 
-  return <ColumnSidebar {...props}>{sortedTree.map(plantTree)}</ColumnSidebar>
+  return <Sidebar {...props}>{sortedTree.map(plantTree)}</Sidebar>
 }

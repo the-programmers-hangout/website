@@ -1,6 +1,6 @@
 import { graphql } from "gatsby"
 import React, { FC, Fragment } from "react"
-import { ColumnHeader } from "../components/ColumnHeader"
+import { Header } from "../components/Header"
 import { Markdown } from "../components/Markdown"
 import { SEO } from "../components/SEO"
 import { humanize } from "../utils"
@@ -15,7 +15,7 @@ const Archive: FC<any> = ({ data }) => {
   return (
     <Fragment>
       <SEO title={title} description={excerpt} />
-      <ColumnHeader
+      <Header
         relativePath={relativePath}
         basePath="/archives"
         title={title}

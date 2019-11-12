@@ -15,10 +15,10 @@ const linkStyle = css`
   }
 `
 
-export const ColumnLinkInternal = styled(Link)`
+export const LinkInternal = styled(Link)`
   ${linkStyle}
 `
 
-export const ColumnLinkExternal = styled.a`
+export const LinkExternal = styled.a`
   ${linkStyle}
 `

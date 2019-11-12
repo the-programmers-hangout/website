@@ -1,96 +1,112 @@
-import { Link } from "gatsby"
-import React, { FC, useLayoutEffect, useState } from "react"
-import { DiscordButton } from "../DiscordButton"
-import { Partner } from "../Partner"
-import { WavesBottom, WavesTop } from "../Waves"
+import React, { FC, Fragment } from "react"
+
+import ChevronUp from "../../icons/chevron-up.svg"
+import { Breadcrumb } from "../Breadcrumb"
+import { StackedAvatars } from "../StackedAvatars"
 import * as SC from "./styles"
 
 interface IHeaderProps {
-  isHome: boolean
+  relativePath: string
+  basePath: string
+  title: string
+  authors?: Array<{
+    avatar: string
+    hash: string
+    name: string
+  }>
+  createdAt: string
+  timeToRead: number
+  recommendedReading?: string[]
+  externalResources?: string[]
 }
 
-interface IMenuItemProps {
-  to: string
-}
+function ExtraLink({
+  item,
+  external = false,
+}: {
+  item: string
+  external?: boolean
+}) {
+  const Inner = () => (
+    <Fragment>
+      <ChevronUp /> <SC.ExtraLinkText>{item}</SC.ExtraLinkText>
+    </Fragment>
+  )
 
-const MenuItem: FC<IMenuItemProps> = ({ children, to }) => {
+  if (external) {
+    return (
+      <SC.ExtraLinkExternal href={item} target="_blank">
+        <Inner />
+      </SC.ExtraLinkExternal>
+    )
+  }
+
   return (
-    <SC.MenuItem
-      to={to}
-      activeClassName="active"
-      className={to === "/" ? "disabled" : ""}
-    >
-      <SC.MenuItemText>{children}</SC.MenuItemText>
-      <SC.MenuItemLine />
-    </SC.MenuItem>
+    <SC.ExtraLinkInternal to={`/resources/${item}.md`}>
+      <Inner />
+    </SC.ExtraLinkInternal>
   )
 }
 
-export const Header: FC<IHeaderProps> = ({ isHome }) => {
-  // Hack to force Particle.js to rerender
-  const [noop, setNoop] = useState(0)
-  useLayoutEffect(() => {
-    setNoop(prevState => prevState + 1)
-  }, [isHome])
+export const Header: FC<IHeaderProps> = ({
+  basePath,
+  relativePath,
+  title,
+  authors,
+  createdAt,
+  timeToRead,
+  recommendedReading,
+  externalResources,
+}) => {
+  const date = new Date(createdAt)
+  const month = date.toLocaleString("default", { month: "long" })
+  const day = date.getDate()
+  const year = date.getUTCFullYear()
+  const dateToHuman = `${month} ${day}, ${year}`
 
   return (
-    <SC.HeaderWrapper className={isHome ? "is-home" : ""}>
-      <WavesTop />
-      <SC.FadedBottomWave>
-        <WavesBottom />
-      </SC.FadedBottomWave>
+    <SC.HeaderWrapper>
+      <Breadcrumb relativePath={relativePath} basePath={basePath} />
 
-      <SC.StyledParticles
-        key={noop}
-        params={{
-          particles: {
-            number: { value: 5, density: { enable: true, value_area: 500 } },
-            color: { value: "#ffffff" },
-            opacity: {
-              value: 0.5,
-              random: false,
-              anim: { enable: false },
-            },
-            size: {
-              value: 36,
-              random: true,
-              anim: { enable: false },
-            },
-            line_linked: {
-              enable: false,
-            },
-            move: {
-              enable: true,
-              speed: 1.5,
-              direction: "top",
-              random: false,
-              straight: false,
-              out_mode: "out",
-              bounce: false,
-              attract: { enable: false },
-            },
-          },
-          retina_detect: true,
-        }}
-      />
-      <SC.InnerWrapper>
-        <SC.TitleWrapper>
-          <Link to="/">
-            <SC.Logo />
-          </Link>
-          <SC.Title>The Programmer's Hangout</SC.Title>
-        </SC.TitleWrapper>
-        <SC.Menu>
-          <MenuItem to="/about">about</MenuItem>
-          <MenuItem to="/rules">rules</MenuItem>
-          <MenuItem to="/">faq</MenuItem>
-          <MenuItem to="/">hotbot</MenuItem>
-          <MenuItem to="/resources">resources</MenuItem>
-          <MenuItem to="/archives">tech spotlights</MenuItem>
-        </SC.Menu>
-        <DiscordButton>join us</DiscordButton>
-        {isHome && <Partner />}
-      </SC.InnerWrapper>
+      <SC.Title>{title}</SC.Title>
+
+      <SC.Top>
+        {authors && (
+          <SC.Meta>
+            <StackedAvatars authors={authors} />
+            <SC.PopoverToggler>
+              {authors.length} contributor{authors.length > 1 && "s"}
+              <SC.Popover>
+                {authors
+                  .map(author => `${author.name}#${author.hash}`)
+                  .join(", ")}
+              </SC.Popover>
+            </SC.PopoverToggler>
+          </SC.Meta>
+        )}
+        {dateToHuman && <SC.Meta>{dateToHuman}</SC.Meta>}
+        <SC.Meta>
+          {timeToRead} minute{timeToRead !== 1 && "s"} read time
+        </SC.Meta>
+      </SC.Top>
+
+      {recommendedReading && (
+        <SC.RecommendedReading>
+          Recommended reading
+          {recommendedReading.map(item => {
+            return <ExtraLink key={item} item={item} />
+          })}
+        </SC.RecommendedReading>
+      )}
+
+      {externalResources && (
+        <SC.ExternalResources>
+          External Resources
+          {externalResources.map(item => {
+            return <ExtraLink key={item} item={item} external />
+          })}
+        </SC.ExternalResources>
+      )}
     </SC.HeaderWrapper>
   )
 }

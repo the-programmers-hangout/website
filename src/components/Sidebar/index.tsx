@@ -18,13 +18,13 @@ const MenuItem: FC<IMenuItemProps> = ({ children, to }) => {
   )
 }
 
-export const ColumnSidebar: FC<
+export const Sidebar: FC<
   PropsWithChildren<HTMLAttributes<HTMLDivElement>>
 > = props => {
   const { children, ...restProps } = props
 
   return (
-    <SC.ColumnSidebarWrapper {...restProps}>
+    <SC.SidebarWrapper {...restProps}>
       <Scrollbar>
         <Link to="/">
           <Banner />
@@ -44,6 +44,6 @@ export const ColumnSidebar: FC<
           <ThemeToggler />
         </SC.Inner>
       </Scrollbar>
-    </SC.ColumnSidebarWrapper>
+    </SC.SidebarWrapper>
   )
 }

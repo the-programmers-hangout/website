@@ -1,192 +1,135 @@
 import { Link } from "gatsby"
-import Particles from "react-particles-js"
-import styled from "styled-components"
-import TPHLogo from "../../images/tph-logo.svg"
+import { darken, lighten } from "polished"
+import styled, { css } from "styled-components"
+import { fontFamily, modularScale } from "../../design/typography"
 
-export const HeaderWrapper = styled.header`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  min-height: auto;
-  background: #1f2a34;
-
-  &.is-home {
-    min-height: 100vh;
-    overflow: hidden;
-  }
+export const HeaderWrapper = styled.div`
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 32px;
+  margin-bottom: 32px;
 `
 
-export const TitleWrapper = styled.div`
+export const Top = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 22px;
 
-  .is-home & {
+  @media screen and (max-width: 767px) {
     flex-direction: column;
     align-items: flex-start;
   }
 `
 
 export const Title = styled.h1`
-  margin: 0;
-  font-weight: 700;
-  font-size: 50px;
-  text-transform: uppercase;
-  line-height: 1;
-  color: #fff;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-
-  .is-home & {
-    margin: 32px 0;
-    font-size: 88px;
-
-    @media screen and (max-width: 991px) {
-      font-size: 58px;
-    }
-
-    @media screen and (max-width: 767px) {
-      font-size: 32px;
-    }
-  }
+  font-family: ${fontFamily.header};
+  font-size: ${modularScale(6).fontSize}px;
+  line-height: ${modularScale(6).lineHeight}px;
+  letter-spacing: -1.75px;
+  margin-top: 0;
 `
 
-export const FadedBottomWave = styled.div`
-  position: absolute;
-  transform: translateY(100%);
-  bottom: 0;
-  left: 0;
-  right: 0;
-  transition: opacity 0.5s, transform 0.5s;
-  opacity: 0;
-  pointer-events: none;
-
-  svg {
-    position: static;
-  }
-
-  .is-home & {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .is-home & svg {
-    position: static;
-  }
-`
-
-export const StyledParticles = styled(Particles)`
-  mask-image: -webkit-linear-gradient(
-    top,
-    rgba(0, 0, 0, 0) 5%,
-    rgba(0, 0, 0, 1) 25%,
-    rgba(0, 0, 0, 1) 75%,
-    rgba(0, 0, 0, 0) 95%
-  );
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-`
-
-export const InnerWrapper = styled.div`
-  width: 800px;
-  max-width: calc(100% - 64px);
-  padding: 32px;
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-`
-
-export const Logo = styled(TPHLogo)`
-  width: 70px;
-  margin: 0 15px 0 0;
-  position: relative;
-  z-index: 3;
-
-  .is-home & {
-    width: 98px;
-    margin-bottom: 0 0 10px 0;
-  }
-`
-
-export const Menu = styled.nav`
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-`
-
-export const MenuItemText = styled.div`
-  position: relative;
-  z-index: 5;
-`
-
-/* underline bar, getting animated through hover */
-export const MenuItemLine = styled.div`
-  position: absolute;
-  z-index: 4;
-  height: 2px;
-  width: 100%;
-  margin-top: -3px;
-  bottom: 0;
-  background: #fff;
-  transition: all 0.3s;
-`
-
-export const MenuItem = styled(Link)`
+export const Meta = styled.div`
   display: flex;
   align-items: center;
-  font-size: 22px;
-  text-decoration: none;
-  color: #fff;
-  position: relative;
-  transition: color 0.3s;
-  margin: 10px 20px 5px 0;
-  font-family: "Oxygen Mono";
+
+  & + &::before {
+    content: "•";
+    margin: 0 8px;
+  }
+
+  @media screen and (max-width: 767px) {
+    & + & {
+      margin-top: 8px;
+    }
+
+    & + &::before {
+      display: none;
+    }
+  }
+`
+
+const ExtraLinks = styled.div`
+  margin-top: 16px;
+`
+
+export const RecommendedReading = styled(ExtraLinks)``
+
+export const ExternalResources = styled(ExtraLinks)``
+
+const extraLink = css`
+  display: flex;
+  align-items: center;
+  color: ${props => props.theme.main.link};
+  margin-top: 4px;
+  margin-left: 20px;
+  cursor: pointer;
 
   &:hover {
-    color: #fff;
+    color: ${props =>
+      props.theme.name === "dark"
+        ? lighten(0.15, props.theme.main.link)
+        : darken(0.15, props.theme.main.link)};
   }
 
-  &:hover ${MenuItemLine} {
-    padding: 8px;
-    height: 100%;
-    background: #dd66a1;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1), 0 5px 11px rgba(0, 0, 0, 0.25);
-    margin-left: -8px;
-    margin-bottom: -8px;
-    border-radius: 3px;
+  svg {
+    width: 14px;
+    flex: 0 0 14px;
+    transform: rotate(90deg);
+    margin-right: 6px;
   }
 
-  &.disabled {
-    cursor: default;
-    pointer-events: none;
-    opacity: 0.7;
-    color: #fff !important;
+  svg path {
+    fill: ${props => props.theme.main.link};
   }
+`
 
-  &.disabled ${MenuItemLine} {
-    bottom: 50%;
-    background: #fff !important;
+export const ExtraLinkInternal = styled(Link)`
+  ${extraLink};
+`
+
+export const ExtraLinkExternal = styled.a`
+  ${extraLink};
+`
+
+export const ExtraLinkText = styled.div`
+  text-decoration: underline;
+`
+
+export const Popover = styled.div`
+  display: none;
+  position: absolute;
+  top: 100%;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  background: ${props =>
+    props.theme.name === "dark"
+      ? lighten(0.1, props.theme.main.background)
+      : darken(0.1, props.theme.main.background)};
+
+  &::before {
+    position: absolute;
+    left: 16px;
+    bottom: 100%;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 3.5px 4px 3.5px;
+    border-color: transparent transparent
+      ${props =>
+        props.theme.name === "dark"
+          ? lighten(0.1, props.theme.main.background)
+          : darken(0.1, props.theme.main.background)}
+      transparent;
   }
+`
 
-  &.active {
-    font-weight: 700;
-    color: #dd66a1;
+export const PopoverToggler = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
 
-    ${MenuItemLine} {
-      background: #dd66a1;
-    }
-
-    &:hover {
-      color: #fff;
-    }
-
-    &:hover ${MenuItemLine} {
-      background: #dd66a1;
-    }
+  &:hover ${Popover} {
+    display: block;
   }
 `
