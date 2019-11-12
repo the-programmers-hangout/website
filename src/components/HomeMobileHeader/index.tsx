@@ -1,18 +1,18 @@
 import React, { FC } from "react"
 import * as SC from "./styles"
 
-interface IMobileHeaderProps {
+interface IHomeMobileHeaderProps {
   openMenu: () => void
 }
 
-export const MobileHeader: FC<IMobileHeaderProps> = ({ openMenu }) => {
+export const HomeMobileHeader: FC<IHomeMobileHeaderProps> = ({ openMenu }) => {
   return (
-    <SC.MobileHeaderWrapper>
+    <SC.HomeMobileHeaderWrapper>
       <SC.LogoWrapper>
         <SC.StyledLogo />
       </SC.LogoWrapper>
       Resources
       <SC.Burger onClick={openMenu} />
-    </SC.MobileHeaderWrapper>
+    </SC.HomeMobileHeaderWrapper>
   )
 }

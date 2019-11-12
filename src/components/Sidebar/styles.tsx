@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-export const ColumnSidebarWrapper = styled.div`
+export const SidebarWrapper = styled.div`
   box-sizing: border-box;
   flex: 0 0 320px;
   background: ${props => props.theme.sidebar.background};

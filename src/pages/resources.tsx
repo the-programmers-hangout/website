@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 
 import packageJson from "../../package.json"
-import { ColumnLink } from "../components/ColumnLink"
+import { Link } from "../components/Link"
 import { ResourcesList } from "../components/ResourcesList"
 import { SEO } from "../components/SEO"
 
@@ -13,11 +13,11 @@ function ResourcesPage() {
       <p>
         This is meant as a small knowledge base for commonly answered questions
         on our Discord community,{" "}
-        <ColumnLink to="/about">The Programmer's Hangout</ColumnLink>.
+        <Link to="/about">The Programmer's Hangout</Link>.
       </p>
       <p>
         All of it is open source, and you can contribute to it on{" "}
-        <ColumnLink to={packageJson.repository.url}>GitHub</ColumnLink>.
+        <Link to={packageJson.repository.url}>GitHub</Link>.
       </p>
       <ResourcesList />
     </Fragment>

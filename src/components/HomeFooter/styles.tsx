@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const FooterWrapper = styled.footer`
+export const HomeFooterWrapper = styled.footer`
   & a {
     display: inline;
     color: #0090d8;

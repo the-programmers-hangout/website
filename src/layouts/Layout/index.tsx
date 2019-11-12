@@ -2,8 +2,8 @@ import { RouteComponentProps } from "@reach/router"
 import React, { FC, Fragment, useEffect } from "react"
 
 import { Container } from "../../components/Container"
-import { Footer } from "../../components/Footer"
-import { Header } from "../../components/Header"
+import { HomeFooter } from "../../components/HomeFooter"
+import { HomeHeader } from "../../components/HomeHeader"
 import { WavesBottom } from "../../components/Waves"
 import { GlobalStyles } from "../../globalStyles"
 import useLocation from "../../hooks/useLocation"
@@ -25,13 +25,13 @@ export const Layout: FC<RouteComponentProps> = ({ children }) => {
     <ThemeProvider>
       <SC.LayoutWrapper>
         <GlobalStyles />
-        <Header isHome={isHome} />
+        <HomeHeader isHome={isHome} />
         {!isHome && (
           <Fragment>
             <SC.MainContent>
               <Container>{children}</Container>
             </SC.MainContent>
-            <Footer />
+            <HomeFooter />
             <WavesBottom />
             <SC.WavesSpacer />
           </Fragment>

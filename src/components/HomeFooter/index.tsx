@@ -3,9 +3,9 @@ import packageJson from "../../../package.json"
 import { Container } from "../Container"
 import * as SC from "./styles"
 
-export const Footer: FC = () => {
+export const HomeFooter: FC = () => {
   return (
-    <SC.FooterWrapper>
+    <SC.HomeFooterWrapper>
       <Container>
         <p>
           © {new Date().getFullYear()}, Built with
@@ -14,6 +14,6 @@ export const Footer: FC = () => {
           <a href={packageJson.repository.url}>GitHub</a>
         </p>
       </Container>
-    </SC.FooterWrapper>
+    </SC.HomeFooterWrapper>
   )
 }

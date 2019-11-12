@@ -3,7 +3,7 @@ import React, { FC, HTMLAttributes, memo, useState } from "react"
 import TriangleDown from "../../icons/triangle-down.svg"
 import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
 import { humanize } from "../../utils"
-import { ColumnSidebar } from "../ColumnSidebar"
+import { Sidebar } from "../Sidebar"
 import useBuildTree from "./../../hooks/useBuildTree"
 import useSidebar from "./../../hooks/useSidebar"
 import * as SC from "./styles"
@@ -96,8 +96,8 @@ export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = props => {
   const sortedTree = tree.sort((a, b) => a.title.localeCompare(b.title))
 
   return (
-    <ColumnSidebar {...props}>
+    <Sidebar {...props}>
       {sortedTree.map((node, index) => plantTree(node, index, true))}
-    </ColumnSidebar>
+    </Sidebar>
   )
 }
