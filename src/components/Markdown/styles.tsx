@@ -123,7 +123,7 @@ export const MarkdownWrapper = styled.div`
   }
 
   a {
-    word-break: break-all;
+    word-break: break-word;
     color: ${props => props.theme.main.link};
     cursor: pointer;
 
