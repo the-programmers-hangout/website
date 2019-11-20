@@ -3,7 +3,7 @@
 </a>
 
 <a href="https://discord.gg/programming">
-  <img src="https://cdn.discordapp.com/banners/244230771232079873/ab1a9d5657892f173d5dd752b21d318f.jpg?size=1024" />
+  <img src="https://cdn.discordapp.com/banners/244230771232079873/926cef2bb5f6fc981994fd198033b8aa.jpg?size=1024" />
 </a>
 
 # TPH Website
@@ -44,7 +44,7 @@ Gatsby will take care of most of this process by creating a new page and positio
 
 #### Frontmatter
 
-Frontmatter the optional metadata attached to every markdown file, like the list of authors or the creation date of the file. It is essentially just yaml syntax inside `---` delimiters within a markdown file. If you're not familiar with yaml you can find some refreshers [here](https://learnxinyminutes.com/docs/yaml/)
+Frontmatter is the optional metadata attached to every markdown file, like the list of authors or the creation date of the file. It is essentially just yaml syntax inside `---` delimiters within a markdown file. If you're not familiar with yaml you can find some refreshers [here](https://learnxinyminutes.com/docs/yaml/)
 
 An example frontmatter might look like this
 
