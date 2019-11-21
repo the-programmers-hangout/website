@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useState } from "react"
+import React, { FC, useState } from "react"
 
 import { HomeMobileHeader } from "../../components/HomeMobileHeader"
 import { GlobalStyles } from "../../globalStyles"
