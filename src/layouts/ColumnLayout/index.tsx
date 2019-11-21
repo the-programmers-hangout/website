@@ -8,11 +8,16 @@ import { ThemeProvider } from "../../ThemeProvider"
 import * as SC from "./styles"
 
 interface IColumnLayoutProps {
+  title: string
   sidebar: React.ReactNode
   content: React.ReactNode
 }
 
-export const ColumnLayout: FC<IColumnLayoutProps> = ({ sidebar, content }) => {
+export const ColumnLayout: FC<IColumnLayoutProps> = ({
+  title,
+  sidebar,
+  content,
+}) => {
   const [activeMobileMenu, setActiveMobileMenu] = useState(false)
   const { lock, unlock } = useLockBodyScroll()
 
@@ -31,7 +36,7 @@ export const ColumnLayout: FC<IColumnLayoutProps> = ({ sidebar, content }) => {
       <SidebarProvider>
         <GlobalStyles />
         <SC.Main>
-          <HomeMobileHeader openMenu={openMenu} />
+          <HomeMobileHeader openMenu={openMenu}>{title}</HomeMobileHeader>
           {sidebar({ className: activeMobileMenu ? "is-open" : "" })}
           <SC.MainContent>
             <SC.Container>{content}</SC.Container>

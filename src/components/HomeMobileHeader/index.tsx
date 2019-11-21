@@ -5,13 +5,16 @@ interface IHomeMobileHeaderProps {
   openMenu: () => void
 }
 
-export const HomeMobileHeader: FC<IHomeMobileHeaderProps> = ({ openMenu }) => {
+export const HomeMobileHeader: FC<IHomeMobileHeaderProps> = ({
+  openMenu,
+  children,
+}) => {
   return (
     <SC.HomeMobileHeaderWrapper>
       <SC.LogoWrapper>
         <SC.StyledLogo />
       </SC.LogoWrapper>
-      Resources
+      {children}
       <SC.Burger onClick={openMenu} />
     </SC.HomeMobileHeaderWrapper>
   )
