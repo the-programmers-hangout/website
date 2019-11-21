@@ -70,7 +70,7 @@
     "@types/react-dom": "^16.9.4",
     "@types/react-helmet": "^5.0.14",
     "@types/react-treeview": "^0.4.2",
-    "@types/styled-components": "^4.1.19",
+    "@types/styled-components": "^4.4.0",
     "babel-plugin-styled-components": "^1.10.6",
     "discord.js": "^11.5.1",
     "prettier": "^1.18.2",
