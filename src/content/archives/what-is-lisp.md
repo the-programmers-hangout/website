@@ -123,19 +123,19 @@ If you know python, this document may be of particular interest to you: http://n
 
 Common Lisp:
 
-```
+```clojure
 (print "Hello, World!")
 ```
 
 Scheme:
 
-```
+```clojure
 (print "Hello, World!")
 ```
 
 Clojure (as a JVM program entry point):
 
-```
+```clojure
 (defn -main
   "A documentation string for my hello world function"
   [& args]
@@ -144,7 +144,7 @@ Clojure (as a JVM program entry point):
 
 Racket:
 
-```lisp
+```clojure
 #lang racket
 
 (println "Hello, World!")
@@ -152,7 +152,7 @@ Racket:
 
 ALGOL60, as implemented in Racket (to demonstrate the flexibility offered by Racket):
 
-```
+```clojure
 #lang algol60
 
 begin
@@ -164,7 +164,7 @@ end
 
 Common Lisp:
 
-```
+```clojure
 (let ((first (block a (write-line "first number:") (read)))
      (second (block b (write-line "second number: ") (read))))
   (format t "The sum of ~A and ~A is ~D" first second (+ first second)))
@@ -172,7 +172,7 @@ Common Lisp:
 
 Scheme:
 
-```
+```clojure
 (let ((first (begin (display "first number:") (read)))
      (second (begin (display "second number: ") (read))))
   (format #t "The sum of ~s and ~s is ~s" first second (+ first second)))
@@ -180,7 +180,7 @@ Scheme:
 
 Clojure:
 
-```
+```clojure
 (let [first (do (println "first number: ") (Integer/parseInt (read-line)))
       second (do (println "second number: ") (Integer/parseInt (read-line)))]
   (printf "The sum of %d and %d is %d" first second (+ first second)))
@@ -188,7 +188,7 @@ Clojure:
 
 Racket:
 
-```lisp
+```clojure
 #lang racket
 
 (let ((first (begin (print "first number:")(read)))
@@ -198,7 +198,7 @@ Racket:
 
 - A very basic macro in Clojure
 
-```
+```clojure
 ;; definition - we'll take an expression, evaluate it once, print the formatted string, and then return the result
 
 (defmacro log-call [form]
@@ -215,7 +215,7 @@ Racket:
 
 - A really simple Clojure web site using the ring and compojure libraries
 
-```
+```clojure
 ;; define a namespace for our functions, and import routing and default request handling functions
 (ns hello-web.handler
   (:require [compojure.core :refer :all]
@@ -234,7 +234,7 @@ Racket:
 
 - Memoizing pure functions in Clojure
 
-```
+```clojure
 (defn expensive
   [number]
   (Thread/sleep 1000)
@@ -257,7 +257,7 @@ Racket:
 
 - Lazy sequences in Clojure
 
-```
+```clojure
 (defn fib-seq
   "Returns a lazy sequence of Fibonacci numbers. Copied from http://clojure-doc.org/articles/language/laziness.html"
   ([]
@@ -273,7 +273,7 @@ Racket:
 
 - Collatz sequence in Scheme
 
-```
+```clojure
 (define (collatz n)
   (cond
   [(equal? n 1)(format #t "1")]
@@ -284,7 +284,7 @@ Racket:
 
 - FizzBuzz from 1 to n using lazy evaluation in Racket
 
-```lisp
+```clojure
 #lang lazy
 
 (define fizzes (cycle "" "" "Fizz"))

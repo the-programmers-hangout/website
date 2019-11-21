@@ -16,13 +16,13 @@ The advantage to this approach is that it's very lightweight since it doesn't re
 **Examples**  
 You can get a fully functional ubuntu machine by just running
 
-```
+```sh
 docker run -it ubuntu bash
 ```
 
 Running an nginx web server can be done easily using docker-compose:
 
-docker-compose.yml:
+Create: `docker-compose.yml`
 
 ```yml
 web:
@@ -37,17 +37,21 @@ web:
   command: /bin/bash -c "envsubst < /etc/nginx/conf.d/mysite.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
 ```
 
-`docker-compose up -d`
+And run:
+
+```sh
+docker-compose up -d
+```
 
 You can start a Redis instance like this:
 
-```
+```sh
 docker run --name my-redis -d redis
 ```
 
 Then you can inspect the running containers with:
 
-```
+```sh
 $ docker ps
 
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
@@ -56,7 +60,7 @@ d295137f5965        redis               "docker-entrypoint.s…"   6 seconds ago
 
 and attach to the running redis container to run commands with redis-cli:
 
-```
+```sh
 $ docker exec -it my-redis redis-cli
 127.0.0.1:6379> set example-key 1234
 OK
