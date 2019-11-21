@@ -57,7 +57,7 @@
     "react-particles-js": "^2.7.0",
     "react-perfect-scrollbar": "^1.5.3",
     "styled-components": "^4.4.1",
-    "typescript": "^3.6.4"
+    "typescript": "^3.7.2"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.8.1",
