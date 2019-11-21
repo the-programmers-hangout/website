@@ -43,7 +43,7 @@
     "gatsby-plugin-typescript": "^2.1.19",
     "gatsby-remark-auto-headers": "^1.0.3",
     "gatsby-remark-katex": "^3.1.17",
-    "gatsby-source-filesystem": "^2.1.33",
+    "gatsby-source-filesystem": "^2.1.38",
     "gatsby-transformer-remark": "^2.6.30",
     "gatsby-transformer-sharp": "^2.3.0",
     "katex": "^0.11.1",
