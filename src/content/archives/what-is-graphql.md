@@ -35,7 +35,7 @@ GraphQL was created internally by Facebook in 2012, mainly to optimize the netwo
 
 Meanwhile, a GraphQL query would look like :
 
-```
+```graphql
 query user(id: "5") {
   id
   name
@@ -61,7 +61,7 @@ query user(id: "5") {
 
 2. GraphQL helps building features faster. Because of the way the front-end can explicitly query the data it needs, it's not rare to not need to update the backend API. Again, using the example from earlier, if we wanted to also fetch the user friends, we could simply add it to our query:
 
-```
+```graphql
 query user(id: "5") {
   name
   posts {
@@ -85,7 +85,7 @@ GraphQL has three types of operations:
 
 Basic query:
 
-```
+```graphql
 query User($id: ID) {
   user {
     id
@@ -99,7 +99,7 @@ query User($id: ID) {
 
 Basic mutation:
 
-```
+```graphql
 mutation CreatePost($title: String!, $content: String!, $draft: Boolean!) {
   createPost(title: $title, content: $content, draft: $draft) {
     title
@@ -111,9 +111,9 @@ mutation CreatePost($title: String!, $content: String!, $draft: Boolean!) {
 
 Basic subscription:
 
-```
-subscription OnMessageReceived($conversationId: ID!){
-  messageReceived(conversationId: $conversationId){
+```graphql
+subscription OnMessageReceived($conversationId: ID!) {
+  messageReceived(conversationId: $conversationId) {
     id
     content
   }
@@ -124,7 +124,7 @@ At its core, GraphQL consists of two parts: client, and server.
 
 A server contains a single endpoint, accepting GET and POST requests, which are translated like so:
 
-```
+```graphql
 {
   me {
     name
