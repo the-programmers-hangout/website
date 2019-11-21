@@ -23,14 +23,13 @@ All of these words are nouns which is a hint that they should be implemented as 
 
 ```java
 public class Animal {
-  private String name;
-  private int age;
-  private float weight;
+  public String name;
+  public int age;
+  public float weight;
 }
 ```
 
 Notice that we have only declared these variables, we did **not** initialize them (set them equal to a value).
-Remember this is only the blueprint (the recipe) of an animal, not a specific animal. Later we will create specific animals from this blueprint.
 
 Okay so we have added attributes to our animal which is great, but we want our animal to actually be able to _do_ things. Let's pick 2
 things we want our animal to do.
@@ -39,13 +38,13 @@ Our animal should
 - move
 - sleep
 
-These are verbs which means they will be implemented as methods.
+These are verbs which means they likely need to be implemented as methods.
 
 ```java
 public class Animal {
-  private String name;
-  private int age;
-  private float weight;
+  public String name;
+  public int age;
+  public float weight;
 
   public void move() {
     System.out.println("The animal moves.");
@@ -57,78 +56,74 @@ public class Animal {
 }
 ```
 
-Now you can see what an animal will be like in our program. Each animal will have 3 attributes and 2 actions. There is one more thing
-that must be discussed in order to understand how classes work. Every class has to have a constructor.
+### Class vs Object
 
-## What is a constructor?
+Remember this is only the description of what an animal is, not a specific animal. A specific animal such as Max is one instance of a class and is called an object. It has values assigned to its attributes like the name is Max and the age is 5. You can call methods on the object such as move or sleep. And there can be an infinite number of objects constructed from a class. To create objects from your class, you need something called a constructor.
 
-A constructor is a method that enables a class to create actual objects. If we think of the class as the blueprint, the constructor is like the person using the blueprint to make the item.
-
-The constructor will always have the same name as the class and there will never be a return type.
-
-If you do not write a constructor for your class, it will be given one implicitely and will look like:
+The format of a constructor looks like this:
 
 ```java
 public ClassName() {
-  super();
 }
 ```
 
-The call to `super()` is calling the parameterless constructor of the parent class. If the parent class does not have a parameterless constructor, it will produce an error.
-This constructor will give all of your class variables their default zero value (numbers are 0, boolean is false, strings and other objects are null). To instead assign your own values to them, you have to create a constructor that accepts parameters.
+It should be public, have no return type, and the name of the method should be the same name as the class.
+
+Since the constructor is called when you want to create an object of a class, and you will likely want that object to have specific values for its attributes (such as making the name be "Max"), you need the constructor to initialize the variables of the object. One way to do this is by giving the constructor parameters that you will use to pass in the values you want for your object.
+Modifying our constructor template from above to do this might look like:
 
 ```java
-public ClassName(int someVar) {
-  this.someVar = someVar;
+public ClassName(String myObjectsName) {
+  name = myObjectsName;
 }
 ```
 
-Every constructor you write will call `super()` as the very first line it executes unless you call a different form of super such as `super(var1, var2)`.
-It is important to note that when you explicitly write a constructor in your class, the class will no longer create the parameterless constructor for you. So if you create a class with 1 constructor that accepts parameters like the one above, and then a child class implicitely calls `super()`, an error will occur. You would either need to supply a parameterless constructor in your parent class or make the child explicitly call the constructor with parameters.
-
-```java
-public ChildClassConstructor(int someVar) {
-  super(someVar);
-}
-```
-
-Applying this to our Animal class, lets create 2 constructors.
-
-1. a parameterless constructor that will implicitly call the parent constructor (via `super()`) and assign our variables to their zero value
-2. a constructor that accepts parameters, implicitely calls the parent constructor (via `super()`), and assign our variables with the parameter values
-
-We will also create a method for each variable that, when called, returns the value of that variable. These are called "getters".
+Now that you've got a general idea of what a constructor should look like, we will apply this to our Animal class.
 
 ```java
 public class Animal {
-  private String name;
-  private int age;
-  private float weight;
+  public String name;
+  public int age;
+  public float weight;
 
-  // constructor #1
-  public Animal() {}
+  // here is the constructor
+  public Animal(String name, int age, float weight) {
+    /*
+      Since we used the same name for the parameters as we did the class variables, we have
+      to use the word "this" to differentiate between which variable we are talking about.
+      "this" refers to the Animal class, so stating "this.name" refers to the name variable
+      declared at the top of the Animal class.
+      Stating "name" without "this" refers to the parameter variable called name.
+    */
+    this.name = name; // set the class variable called name equal to the value of the parameter called name
+    this.age = age;
+    this.weight = weight;
+  }
 
-  // constructor #2
-  public Animal(String name, int age, float weight){
+  public void move() {
+    System.out.println("The animal moves.");
+  }
+
+  public void sleep() {
+    System.out.println("The animal sleeps.");
+  }
+}
+```
+
+Our class is finally ready to use! Let's add in a main method to our class so we can create some objects and see what happens.
+
+```java
+public class Animal {
+  public String name;
+  public int age;
+  public float weight;
+
+  public Animal(String name, int age, float weight) {
     this.name = name;
     this.age = age;
     this.weight = weight;
   }
 
-  // 3 getters
-  public String getName() {
-    return name;
-  }
-
-  public int getAge() {
-    return age;
-  }
-
-  public float getWeight() {
-    return weight;
-  }
-
-
   public void move() {
     System.out.println("The animal moves.");
   }
@@ -136,20 +131,30 @@ public class Animal {
   public void sleep() {
     System.out.println("The animal sleeps.");
   }
+
+  public static void main(String[] args){
+    // create a variable of type Animal by calling the constructor of the Animal class
+    Animal myAnimal = new Animal("Max", 5, 10.3);
+
+    // access the variables of the object you just created
+    myAnimal.name; // returns "Max"
+    myAnimal.age; // returns 5
+    myAnimal.weight; // returns 10.3
+
+    // change a variable of the object
+    myAnimal.name = "JoJo";
+    myAnimal.name; // returns "JoJo"
+
+    // call the functions of the object you just created
+    myAnimal.move(); // returns "The animal moves."
+    myAnimal.sleep(); // returns "The animal sleeps."
+
+    // create as many Animal objects as you want
+    Animal foo = new Animal("Polly", 34, 1.4);
+    Animal bar = new Animal("Sophie", 8, 89.7);
+
+    foo.name; // returns "Polly"
+    bar.name; // returns "Sophie"
+  }
 }
-```
-
-And we are finished!!
-Let's create Animal objects using the different constructors to see what happens.
-
-```java
-Animal defaultAnimal = new Animal();
-defaultAnimal.getName(); // returns null
-defaultAnimal.getAge(); // returns 0
-defaultAnimal.getWeight(); // returns 0.0
-
-Animal customAnimal = new Animal("Rosie", 4, 20.6);
-customAnimal.getName(); // returns "Rosie"
-customAnimal.getAge(); // returns 4
-customAnimal.getWeight(); // returns 20.6
 ```
