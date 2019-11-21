@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { fontFamily } from "../../design/typography"
 import Logo from "../../images/tph-logo.svg"
 
-export const HomeMobileHeaderWrapper = styled.div`
+export const MobileHeaderWrapper = styled.div`
   z-index: 50;
   background: ${props => transparentize(0.2, props.theme.main.background)};
   position: fixed;
