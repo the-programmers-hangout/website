@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react"
 
-import { HomeMobileHeader } from "../../components/HomeMobileHeader"
+import { MobileHeader } from "../../components/MobileHeader"
 import { GlobalStyles } from "../../globalStyles"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import { SidebarProvider } from "../../SidebarProvider"
@@ -36,7 +36,7 @@ export const ColumnLayout: FC<IColumnLayoutProps> = ({
       <SidebarProvider>
         <GlobalStyles />
         <SC.Main>
-          <HomeMobileHeader openMenu={openMenu}>{title}</HomeMobileHeader>
+          <MobileHeader openMenu={openMenu}>{title}</MobileHeader>
           {sidebar({ className: activeMobileMenu ? "is-open" : "" })}
           <SC.MainContent>
             <SC.Container>{content}</SC.Container>
