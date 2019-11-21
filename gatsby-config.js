@@ -64,11 +64,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-git`,
+      resolve: `gatsby-source-filesystem`,
       options: {
         name: `what-is-archive`,
-        remote: `https://github.com/the-programmers-hangout/technology-spotlight`,
-        patterns: [`*.md`, `!README.md`],
+        path: `${__dirname}/src/content/archives`,
       },
     },
     `gatsby-transformer-sharp`,
