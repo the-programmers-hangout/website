@@ -50,6 +50,14 @@ export const Title = styled.h1`
       font-size: 32px;
     }
   }
+
+  @media screen and (max-width: 991px) {
+    font-size: 42px;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 32px;
+  }
 `
 
 export const FadedBottomWave = styled.div`
