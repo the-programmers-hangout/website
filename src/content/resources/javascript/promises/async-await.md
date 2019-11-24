@@ -11,7 +11,7 @@ recommended_reading:
 
 Async / Await is another way to handle the calling of asynchronous code and is built on top of Promises. It is a nice and clean way to handle asynchronous code, without the need to `.then()` functions to the promise.
 
-It is made up of 2 keywords as the name suggests: `async` and `await`. These need to be used together and can for this method to work.
+It is made up of 2 keywords as the name suggests: `async` and `await`. These need to be used together for this method to work.
 
 ## Async
 
