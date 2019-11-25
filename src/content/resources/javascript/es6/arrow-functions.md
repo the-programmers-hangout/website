@@ -1,6 +1,7 @@
 ---
 authors:
   - "T0M#5956"
+  - "Hayden#5036"
 created_at: 2019/10/08
 updated_at: 2019/10/13
 title: Arrow functions
@@ -40,11 +41,30 @@ const sayHello = name => {
 };
 ```
 
-Another interesting feature that also reduces the syntax within arrow functions, is that if a function only returns an expression using one line of code, you can omit the `return` keyword and the curly braces. In arrow functions without braces, the `return` is implicit, meaning you don't need to include the `return` keyword. The following function returns "hello":
+Another interesting feature that also reduces the syntax within arrow functions, is that if the function is an expression, you can omit the `return` keyword and the curly braces. In arrow functions without braces, the `return` is implicit, meaning you don't need to include the `return` keyword. The following function returns "hello":
 
 ```js
 const sayHello = () => "hello";
 ```
+
+The same is also true of functions returning an expression using parameters, too.
+
+```js
+const sayHello = name => `hello ${name}`;
+```
+
+Or even...
+
+```js
+const helloObject = name => ({
+  isGreeting: true,
+  helloName: name,
+});
+```
+
+This is essentially wrapping an object expression inside a grouped expression, causing it to return an object instead of expanding into a whole function body.
+
+Long story short, we heard you liked expressions, so we put an expression inside your expression to give you nicer expressions.
 
 ## Handling of the Keyword This
 
