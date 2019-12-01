@@ -136,10 +136,16 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
   }
 }
 
-exports.onCreatePage = ({ page, actions }) => {
-  const { createPage } = actions
+exports.onCreatePage = async ({ page, actions }) => {
+  const { createPage, deletePage } = actions
 
-  page.context.layout = resolveLayout(page.path)
+  if (page.path.match(/^\/resources\/404/)) {
+    const oldPage = { ...page }
+    page.matchPath = `/resources/*`
+    deletePage(oldPage)
+  } else {
+    page.context.layout = resolveLayout(page.path)
+  }
   createPage(page)
 }
 
