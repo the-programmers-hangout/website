@@ -1,9 +1,9 @@
 import React, { Fragment } from "react"
 
-import packageJson from "../../package.json"
-import { Link } from "../components/Link"
-import { ResourcesList } from "../components/ResourcesList"
-import { SEO } from "../components/SEO"
+import packageJson from "../../../package.json"
+import { Link } from "../../components/Link"
+import { ResourcesList } from "../../components/ResourcesList"
+import { SEO } from "../../components/SEO"
 
 function ResourcesPage() {
   return (

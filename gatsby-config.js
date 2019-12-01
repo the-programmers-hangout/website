@@ -72,6 +72,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-svg`,
+    `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
