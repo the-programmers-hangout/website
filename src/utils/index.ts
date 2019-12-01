@@ -23,11 +23,7 @@ function dashToSpace(str: string): string {
 }
 
 export function humanize(str: string): string {
-  return pipe(
-    dashToSpace,
-    specificWordsToUpper,
-    removeDotMD
-  )(str)
+  return pipe(dashToSpace, specificWordsToUpper, removeDotMD)(str)
 }
 
 export function traversePaths(
