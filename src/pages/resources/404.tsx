@@ -1,12 +1,14 @@
+import { Location, WindowLocation } from "@reach/router"
 import { graphql, Link } from "gatsby"
-import React, { Component, Fragment } from "react"
-import { Location } from "@reach/router"
+import React, { Fragment } from "react"
 
+import { FileConnection } from "../../../generated/graphql"
+import { ComponentQuery } from "../../../typings"
 import { SEO } from "../../components/SEO"
 
 // helper function to make matrix generation easier
 // credits to https://stackoverflow.com/a/13808461
-function makeMatrix(w, h, val) {
+function makeMatrix(w: number, h: number, val: any = null) {
   return Array(h)
     .fill(null)
     .map(() => Array(w).fill(val))
@@ -16,10 +18,14 @@ function makeMatrix(w, h, val) {
 // based on one character edits
 // efficient refactoring inspired by MIT licensed repo:
 // https://github.com/trekhleb/javascript-algorithms
-function levenshteinDistance(term1, term2) {
+function levenshteinDistance(term1: string, term2: string) {
   /* base case: empty strings */
-  if (term1.length == 0) return term2.length
-  if (term2.length == 0) return term1.length
+  if (term1.length === 0) {
+    return term2.length
+  }
+  if (term2.length === 0) {
+    return term1.length
+  }
 
   // this will be our comparison matrix
   const matrix = makeMatrix(term1.length + 1, term2.length + 1, null)
@@ -51,13 +57,16 @@ function levenshteinDistance(term1, term2) {
   return matrix[term2.length][term1.length]
 }
 
-function getPossibleResources(location, data) {
+function getPossibleResources(
+  location: WindowLocation,
+  data: { allFile: FileConnection }
+) {
   // the data prop has the graphql result
-  // we're abstracting it to `link_array` to just have array of edges matched
+  // we're abstracting it to `linkArray` to just have array of edges matched
   // must use `.node.absolutePath` on each edge to get each node's absolute link
   // we will compare this link
   // however, the relative links are more user friendly
-  const link_array = data.allFile.edges
+  const linkArray = data.allFile.edges
 
   // location prop has several attributes
   // location.origin is base url
@@ -69,25 +78,25 @@ function getPossibleResources(location, data) {
 
   // filter based on distance
   // levenshtein distance of x means how 'off' it was
-  const display_array = link_array.filter(
-    (value, index) =>
+  const displayArray = linkArray.filter(
+    value =>
       levenshteinDistance(
         search.toLowerCase(),
-        value.node.relativePath.toLowerCase()
+        value.node!.relativePath!.toLowerCase()
       ) < 8
   )
 
   // helpful message if no matches found
-  const found = display_array.length == 0 ? "Oops, nothing similar found." : ""
+  const found = displayArray.length === 0 ? "Oops, nothing similar found." : ""
 
   return (
     <Fragment>
       <h3>Based off of "{search}" you may have meant:</h3>
       <ul>
-        {display_array.map((value, index) => {
+        {displayArray.map((value, index) => {
           return (
             <li key={index}>
-              <Link to={`${"resources/" + value.node.relativePath}`}>
+              <Link to={`"resources/${value.node.relativePath}`}>
                 {value.node.relativePath}
               </Link>
             </li>
@@ -99,16 +108,17 @@ function getPossibleResources(location, data) {
   )
 }
 
-export default ({ location, data }) => (
+export default ({ data }: ComponentQuery<{ allFile: FileConnection }>) => (
   <Fragment>
     <SEO title="404: Resource Not found" />
     <h1>RESOURCE NOT FOUND</h1>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     <Location>
-      {({ navigate, location }) => getPossibleResources(location, data)}
+      {({ location }) => getPossibleResources(location, data)}
     </Location>
   </Fragment>
 )
+
 export const query = graphql`
   query {
     allFile(filter: { sourceInstanceName: { eq: "resources" } }) {
