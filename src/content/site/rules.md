@@ -145,7 +145,7 @@ Self-explanatory - _ChatMod/Moderator/Senior Moderator/Admin/Owner_ - These peop
 
 # Nickname Policy
 
-On TPH, we enforce a nickname policy - This means that if your nickname is deemed to NSFW (not safe for work), or hard to read/tag (it uses weird characters, it's blank or it contains numbers) we can and will forcibly nickname you to something else.
+On TPH, we enforce a nickname policy - This means that if your nickname is deemed too NSFW (not safe for work), or hard to read/tag (it uses weird characters, it's blank or it contains numbers) we can and will forcibly nickname you to something else.
 
 To further, we like to play around with nicknames, so expect to be nicknamed something silly from time to time.
 
