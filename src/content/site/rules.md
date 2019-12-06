@@ -14,7 +14,7 @@ path: /rules
 
 # General Rules
 
-Below you will find the rules of the server. These are the do's and don'ts of being here. Follow them if you wish to stay, ignorance is not an excuse.
+Below you will find the rules of the server. These are the dos and don'ts of being here. Follow them if you wish to stay, ignorance is not an excuse.
 
 **1. Do not advertise.**<br />
 This includes other servers, products or services that you stand to benefit from financially, your Youtube channel or the like.
@@ -23,7 +23,7 @@ This includes other servers, products or services that you stand to benefit from
 If you make yourself particularly hard to deal with, if you pretend that you are better than anyone else, or if you are just in general very annoying and not a good fit for this server we will remove you. Permanently.
 
 **3. Use facts, not authority.**<br />
-If you are going to provide anecdote or your own experience, that is fine, provided you don't pass it off as axiomatic. Quote sources when you are asked to.
+If you are going to provide an anecdote or your own experience, that is fine, provided you don't pass it off as axiomatic. Quote sources when you are asked to.
 
 **4. Do not flame languages or other such technologies (e.g. text editors).**<br />
 Doing so is reductive. If someone likes to use VB.Net or JavaScript or Vim, we surprisingly expect you to not jump down their throat about that. Doing so outside of regulated channels where staff have explicitly allowed the discussion for a short period of time is not allowed ( #poll-discussion is one such example of an okay place to talk about it provided the poll allows it )
@@ -35,7 +35,7 @@ This speaks for itself, we do not expect staff to speak extra languages and we c
 This is not an advertisement platform. If you are going to take from this community, you are going to give back to it first. We do not care about your work if you do not care about us. Thanks.
 
 **7. Do not DM people who you have not built a rapport with.**<br />
-This is self explanatory. Don't be a creep. Don't be a pest, ask questions in relevant channels. Someone's DM is not a relevant channel.
+This is self-explanatory. Don't be a creep. Don't be a pest, ask questions in relevant channels. Someone's DM is not a relevant channel.
 
 **8. Do not talk about your infractions publicly.**<br />
 If you are infracted, it's not a big deal. It's simply a formal warning - you can totally recover from that. If you disagree with a warning, DM @ModMail. Complaining about infractions publicly will land you a mute or a ban. Don't pollute chat or other channels with these conversations.
@@ -44,7 +44,7 @@ If you are infracted, it's not a big deal. It's simply a formal warning - you ca
 Asking to be spoonfed is the same as asking someone else to do your work for you. We do not condone just solving the problems of others -- make them work for it. Give a man a fish and you feed him for a day. Teach a man to fish and you feed him for a lifetime.
 
 **10. Do not impersonate staff members.**<br />
-Using the avatar of another staff member that they've had for a reasonable long time is not allowed. You will be notified if you seem like you're impersonating a staff member. We may also nickname you depending on context. In addition, it is especially prohibited to pretend to be another staff member through messages/voice, DM or otherwise. Doing so will land you an immediate, permanent ban.
+Using the avatar of another staff member that they've had for a reasonable long time is not allowed. You will be notified if you seem like you're impersonating a staff member. We may also nickname you depending on the context. In addition, it is especially prohibited to pretend to be another staff member through messages/voice, DM or otherwise. Doing so will land you an immediate, permanent ban.
 
 **11. Follow the directions of staff members to the letter.**<br />
 Most of us are here for our love of programming, so we like to do as much talking about programming and the like as possible. That being said, we really don't like intervening. But we especially don't like having to intervene twice. Please don't make us do that, thank you
@@ -59,7 +59,7 @@ TPH is joined at the hip to Controversy Central (CC), KUtils, and Late Gaming (L
 Bans on all linked servers are propagated. This means that if you are banned on any of our servers (CC/KUtils/Late Gaming), you will be banned on all of them. Members with certain roles will be exempt from ban propagation, but that is no excuse to run riot on other servers. If you troll them, we will also ban you here. That being said, TPH is not a place to post your ban appeal. Please take it up with those servers.
 
 **15. Link to the FAQ and beginner guide channels liberally.**<br />
-The FAQ and beginner guide channels represent many hours of discussion to find well rounded answers to common questions. Please link to them regularly when beginners and the uninformed ask those questions. You may be asked to cease your participation in a conversation if you present yourself as a zealot with distracting opinions.
+The FAQ and beginner guide channels represent many hours of discussion to find well-rounded answers to common questions. Please link to them regularly when beginners and the uninformed ask those questions. You may be asked to cease your participation in a conversation if you present yourself as a zealot with distracting opinions.
 
 [Table of Contents](#table-of-contents)
 
@@ -83,7 +83,7 @@ In general, if you have a contribution to make, _please be encouraging_. Being p
 
 # Content Policy
 
-Below is a list of things that you cannot talk about here. If a staff member cites you the content policy, please understand that they really mean _stop_ talking about the thing you are talking about. I think you will find the list reasonable, as we construct it to be conducive to an environment which suits talking about programming and technology in absence of distractions.
+Below is a list of things that you cannot talk about here. If a staff member cites you the content policy, please understand that they really mean _stop_ talking about the thing you are talking about. I think you will find the list reasonable, as we construct it to be conducive to an environment that suits talking about programming and technology in the absence of distractions.
 
 **1. No politics, religion, philosophy or other such topics.**<br />
 This goes without saying. You don't make friends by talking to strangers about these topics. Your political views have nothing to do with how good of a programmer you are.
@@ -95,10 +95,10 @@ Always ask yourself "Would my boss be okay with this fullscreen on my monitor as
 Sorry to say, but if you are depressed or considering suicide, that is terrible and we feel sorry for you, but we do **not** feel qualified to give advice, to moderate advice given, or anything of the sort. It would be absolutely unfair of me to put that weight on the shoulders of the moderators here. So please, ring your local suicide hotline which you can hopefully find here: [http://www.suicide.org/international-suicide-hotlines.html](http://www.suicide.org/international-suicide-hotlines.html "http://www.suicide.org/international-suicide-hotlines.html") (or by googling it)
 
 **4. No talk of illegal topics, pirating, reverse engineering, hacking, imitating user interaction or other similar topics.**<br />
-This includes anything against a sites terms of service, anything protected by a captcha/robots.txt and any automated account creation/checkout/purchasing. These topics are strictly forbidden. Topics related to these may also be disallowed.
+This includes anything against a site's terms of service, anything protected by a captcha/robots.txt and any automated account creation/checkout/purchasing. These topics are strictly forbidden. Topics related to these may also be disallowed.
 
 **5. Don't ask for relationship or life advice.**<br />
-As annoying as it is for me to write this, do not ask about how to "get the girl" or whatever. This is not the appropriate environment. Go look for dating advice and the like elsewhere. Complicated, heavy life advice topics that are not explicitly career related are **off limits** here as well. We're just programmers, we're not miracle makers.
+As annoying as it is for me to write this, do not ask about how to "get the girl" or whatever. This is not the appropriate environment. Go look for dating advice and the like elsewhere. Complicated, heavy life advice topics that are not explicitly career-related are **off-limits** here as well. We're just programmers, we're not miracle makers.
 
 **6. Do not bring other server drama here.**<br />
 We do not care that you got banned on another server. Sorry, but not our problem. Take it up with that server's staff.
@@ -111,7 +111,7 @@ There are a few reasons for not allowing it: - It is directly against the Discor
 
 _Hacking is a dick move. Stop trying to be a dick._
 
-It generally leads into even more illegal topics
+It generally leads to even more illegal topics
 
 **So then, what is allowed?**<br />
 Light talk about prevention is allowed. Providing elaborate details in any capacity of how someone might get past a system is not allowed.
@@ -123,14 +123,14 @@ Try not to, honestly, if you are looking to prevent a specific kind of attack fe
 
 # Roles
 
-TPH has a relatively small amount of roles, but each of our roles have a purpose. We don't have 30 language roles and a staff rank. That being said, it's kind of tricky to keep a track of all of the roles at once - so here you can see what they're for.
+TPH has a relatively small amount of roles, but each of our roles has a purpose. We don't have 30 language roles and a staff rank. That being said, it's kind of tricky to keep a track of all of the roles at once - so here you can see what they're for.
 
-_Community-Member, Active Contributor, Chatterbox, Super-Talky-Guy, Bepis-Drinker, Conke-Commander and Patriotic-Procrastinator_
+_Community-Member, Active Contributor, Chatterbox, Super-Talky-Guy, Bepis-Drinker, Conke-Commander, and Patriotic-Procrastinator_
 
-These are the activity roles of the server. Different tiers will grant different perks, such unlocking hidden channels, voice access, and nicknaming privileges. These roles are assigned automatically as you participate in the server, so don't ask for them.
+These are the activity roles of the server. Different tiers will grant different perks, such as unlocking hidden channels, voice access, and nicknaming privileges. These roles are assigned automatically as you participate in the server, so don't ask for them.
 
 **Wizard**<br />
-This is for helpful members who have shown exceptional aptitude or expertise in some field. This is given out on the discretion of Elliott - though other staff members may suggest someone to get it to Elliott. Less than 0.001% of users get this role.
+This is for helpful members who have shown exceptional aptitude or expertise in some field. This is given out at the discretion of Elliott - though other staff members may suggest for Elliot to give it to someone. Less than 0.001% of users get this role.
 
 **Technology Champion**<br />
 These people will try to provide some answers on their own time for questions in the Technology spotlight category. Often times these people will write the introductory text for the current technology as well. Staff will be preferred for this role, but not always - This is a temporary role.
@@ -139,13 +139,13 @@ These people will try to provide some answers on their own time for questions in
 This role recognizes people who contribute their time and knowledge to the server completely out of their own volition.
 
 **Staff roles**<br />
-Self-explanatory - _ChatMod/Moderator/Senior Moderator/Admin/Owner_ - These people ensure that the usage of this environment reflects the guidelines as illustrated in the rules. Staff are sometimes handpicked, and sometimes there is an application process. There is a trial period for all new staff of 2-4 weeks (Sometimes more, sometimes less) which comes with a trial role, however they are treated as full staff members during this time. Please respect all staff equally, however if you take issue with a specific staff member, talk to an administrator.
+Self-explanatory - _ChatMod/Moderator/Senior Moderator/Admin/Owner_ - These people ensure that the usage of this environment reflects the guidelines as illustrated in the rules. Staff is occasionally handpicked, and sometimes there is an application process. There is a trial period for all new staff of 2-4 weeks (Sometimes more, sometimes less) which comes with a trial role, however, they are treated as full staff members during this time. Please respect all staff equally; if you have an issue with a specific staff member, talk to an administrator.
 
 [Table of Contents](#table-of-contents)
 
 # Nickname Policy
 
-On TPH, we enforce a nickname policy - This means that if your nickname is deemed too NSFW (not safe for work), or hard to read/tag (it uses weird characters, it's blank or it contains numbers) we can and will forcibly nickname you to something else.
+On TPH, we enforce a nickname policy - This means that if your nickname is deemed to NSFW (not safe for work), or hard to read/tag (it uses weird characters, it's blank or it contains numbers) we can and will forcibly nickname you to something else.
 
 To further, we like to play around with nicknames, so expect to be nicknamed something silly from time to time.
 
@@ -157,7 +157,7 @@ If you pipe up and get annoyed and flustered that you don't have your name, you'
 
 # What is ModMail?
 
-ModMail (@ModMail) is a bot which reports every direct message received to staff.
+ModMail (@ModMail) is a bot that reports every direct message received to staff.
 
 **How do I use it?**<br />
 Send it a message. This will open a two-way communication medium between you and the entire staff team. It won't notify or bother people who are offline or busy, so don't even concern yourself with that part.
