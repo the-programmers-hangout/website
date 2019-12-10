@@ -96,7 +96,7 @@ function getPossibleResources(
         {displayArray.map((value, index) => {
           return (
             <li key={index}>
-              <Link to={`"resources/${value.node.relativePath}`}>
+              <Link to={`resources/${value.node.relativePath}`}>
                 {value.node.relativePath}
               </Link>
             </li>
