@@ -44,6 +44,7 @@ const validateResourceArticle = node => {
 
 const createResources = async ({ createPage, graphql }) => {
   const languageResources = path.resolve(`src/templates/languagePost.tsx`)
+  const languageHome = path.resolve(`src/templates/languageHome.tsx`)
 
   const result = await graphql(`
     query FetchResources {
@@ -62,6 +63,27 @@ const createResources = async ({ createPage, graphql }) => {
     return Promise.reject(result.errors)
   }
 
+  const languages = result.data.allFile.edges.reduce((acc, { node }) => {
+    const [language] = node.relativePath.split("/")
+    if (!acc.includes(language)) {
+      acc.push(language)
+    }
+    return acc
+  }, [])
+
+  // create home page for each languages
+  languages.forEach(language => {
+    createPage({
+      path: path.join("resources", language),
+      component: languageHome,
+      context: {
+        language,
+        layout: LAYOUT_RESOURCES,
+      },
+    })
+  })
+
+  // create resource pages
   return result.data.allFile.edges.forEach(({ node }) => {
     createPage({
       path: path.join("resources", node.relativePath),

@@ -12,6 +12,7 @@ const ALL_RESOURCES = graphql`
       edges {
         node {
           relativePath
+          relativeDirectory
           childMarkdownRemark {
             frontmatter {
               authors
@@ -51,9 +52,29 @@ const Language = memo(({ item }: { item: IFolder; index: number }) => {
   )
 })
 
-export const ResourcesList: FC<HTMLAttributes<HTMLDivElement>> = props => {
+interface IResourcesList extends HTMLAttributes<HTMLDivElement> {
+  relativeDirectory?: string
+}
+
+export const ResourcesList: FC<IResourcesList> = props => {
   const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
-  const tree = useBuildTree(resources)
+
+  const filteredResources = {
+    ...resources,
+    allFile: {
+      ...resources.allFile,
+      edges: resources.allFile.edges.filter(({ node }) => {
+        if (!props.relativeDirectory) {
+          return true
+        }
+
+        const [language] = node.relativeDirectory.split("/")
+        return props.relativeDirectory === language
+      }),
+    },
+  }
+
+  const tree = useBuildTree(filteredResources)
   const sortedTree = tree.sort((a, b) => a.title.localeCompare(b.title))
 
   return (
