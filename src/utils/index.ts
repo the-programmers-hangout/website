@@ -26,6 +26,13 @@ export function humanize(str: string): string {
   return pipe(dashToSpace, specificWordsToUpper, removeDotMD)(str)
 }
 
+export function getPath({ path, title }: IFileOrFolder) {
+  const depth = path.replace("/resources", "").split("/").length - 2
+  const isLanguageIntro = depth === 1 && title.includes("intro")
+
+  return isLanguageIntro ? path.replace("intro.md", "") : path
+}
+
 export function traversePaths(
   [head, ...tail]: string[],
   basePath: string

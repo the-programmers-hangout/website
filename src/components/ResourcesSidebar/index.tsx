@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import React, { FC, HTMLAttributes, memo, useState } from "react"
 import TriangleDown from "../../icons/triangle-down.svg"
 import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
-import { humanize } from "../../utils"
+import { getPath, humanize } from "../../utils"
 import { Sidebar } from "../Sidebar"
 import useBuildTree from "./../../hooks/useBuildTree"
 import useSidebar from "./../../hooks/useSidebar"
@@ -30,8 +30,10 @@ const ALL_RESOURCES = graphql`
 
 function plantTree(item: IFileOrFolder, index?: number, firstLevel?: boolean) {
   if (item.type === "file") {
+    const path = getPath(item)
+
     return (
-      <SC.PageLink key={item.title} to={item.path} activeClassName="active">
+      <SC.PageLink key={item.title} to={path} activeClassName="active">
         {humanize(item.title)}
       </SC.PageLink>
     )
