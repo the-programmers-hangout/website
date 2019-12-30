@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import Particles from "react-particles-js"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import TPHLogo from "../../images/tph-logo.svg"
 
 export const HomeHeaderWrapper = styled.header`
@@ -144,7 +144,7 @@ export const MenuItemLine = styled.div`
   transition: all 0.3s;
 `
 
-export const MenuItem = styled(Link)`
+export const menuItemStyles = css`
   display: flex;
   align-items: center;
   font-size: 22px;
@@ -197,4 +197,12 @@ export const MenuItem = styled(Link)`
       background: #dd66a1;
     }
   }
+`
+
+export const MenuItem = styled(Link)`
+  ${menuItemStyles};
+`
+
+export const MenuItemExternal = styled.a`
+  ${menuItemStyles};
 `
