@@ -83,8 +83,6 @@ export const HomeHeader: FC<IHomeHeaderProps> = ({ isHome }) => {
         <SC.Menu>
           <MenuItem to="/about">about</MenuItem>
           <MenuItem to="/rules">rules</MenuItem>
-          <MenuItem to="/">faq</MenuItem>
-          <MenuItem to="/">hotbot</MenuItem>
           <MenuItem to="/resources">resources</MenuItem>
           <MenuItem to="/archives">tech spotlights</MenuItem>
         </SC.Menu>
