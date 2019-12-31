@@ -66,7 +66,6 @@ export const FadedBottomWave = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  transition: opacity 0.5s, transform 0.5s;
   opacity: 0;
   pointer-events: none;
 
@@ -76,6 +75,7 @@ export const FadedBottomWave = styled.div`
 
   .is-home & {
     opacity: 1;
+    transition: opacity 0.5s, transform 0.5s;
     transform: translateY(0);
   }
 
