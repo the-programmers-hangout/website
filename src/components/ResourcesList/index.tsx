@@ -5,6 +5,7 @@ import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
 import { getPath, humanize } from "../../utils"
 import * as SC from "./styles"
 import useBuildTree from "./useBuildTree"
+import { sort } from "ramda"
 
 const ALL_RESOURCES = graphql`
   query {
@@ -77,7 +78,7 @@ export const ResourcesList: FC<IResourcesList> = props => {
   }
 
   const tree = useBuildTree(filteredResources)
-  const sortedTree = tree.sort((a, b) => a.title.localeCompare(b.title))
+  const sortedTree = sort((a, b) => a.title.localeCompare(b.title), tree)
 
   return (
     <SC.ResourcesListWrapper {...props}>

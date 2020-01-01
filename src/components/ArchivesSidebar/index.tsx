@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby"
+import { sort } from "ramda"
 import React, { FC, HTMLAttributes } from "react"
 import { IAllArchivesQuery, IFileOrFolder } from "../../types"
 import { humanize } from "../../utils"
@@ -29,7 +30,7 @@ function plantTree(item: IFileOrFolder) {
 export const ArchivesSidebar: FC<HTMLAttributes<HTMLDivElement>> = props => {
   const archives = useStaticQuery<IAllArchivesQuery>(ALL_ARCHIVES)
   const tree = useBuildTree(archives, "/archives")
-  const sortedTree = tree.sort((a, b) => a.title.localeCompare(b.title))
+  const sortedTree = sort((a, b) => a.title.localeCompare(b.title), tree)
 
   return <Sidebar {...props}>{sortedTree.map(plantTree)}</Sidebar>
 }

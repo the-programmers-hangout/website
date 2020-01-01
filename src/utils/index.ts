@@ -2,6 +2,7 @@ import chain from "ramda/es/chain"
 import partition from "ramda/es/partition"
 import pipe from "ramda/es/pipe"
 
+import { sort } from "ramda"
 import { IFile, IFileOrFolder, IFolder } from "../types"
 
 function specificWordsToUpper(str: string): string {
@@ -91,16 +92,17 @@ function generateFolder({
   targets: IFolder[]
 }): IFolder {
   const children = join(chain(target => target.children, targets))
+  const sortedChildren = sort((a, b) => {
+    return a.title.split("/").length > b.title.split("/").length
+      ? -1
+      : a.title.localeCompare(b.title)
+  }, children)
 
   return {
     title,
     type: "folder",
     path,
-    children: children.sort((a, b) =>
-      a.title.split("/").length > b.title.split("/").length
-        ? -1
-        : a.title.localeCompare(b.title)
-    ),
+    children: sortedChildren,
   }
 }
 
