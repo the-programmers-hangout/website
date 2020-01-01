@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby"
-import { descend, sortWith } from "ramda"
+import { descend, sort, sortWith } from "ramda"
 import React, { FC, HTMLAttributes, memo, useState } from "react"
 import TriangleDown from "../../icons/triangle-down.svg"
 import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
@@ -113,7 +113,7 @@ const FirstLevelFolder = memo(
 export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = props => {
   const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
   const tree = useBuildTree(resources, "/resources")
-  const sortedTree = tree.sort((a, b) => a.title.localeCompare(b.title))
+  const sortedTree = sort((a, b) => a.title.localeCompare(b.title), tree)
 
   return (
     <Sidebar {...props}>
