@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby"
+import { descend, sortWith } from "ramda"
 import React, { FC, HTMLAttributes, memo, useState } from "react"
 import TriangleDown from "../../icons/triangle-down.svg"
 import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
@@ -27,6 +28,20 @@ const ALL_RESOURCES = graphql`
     }
   }
 `
+
+const childrenSort = sortWith<IFileOrFolder>([
+  descend(f => {
+    if (f.title === "intro") {
+      return 1
+    }
+
+    if (f.type === "folder") {
+      return 0
+    }
+
+    return -1
+  }),
+])
 
 function plantTree(item: IFileOrFolder, index?: number, firstLevel?: boolean) {
   if (item.type === "file") {
@@ -57,12 +72,14 @@ function Folder({ item }: { item: IFolder }) {
     setCollapse(prevState => !prevState)
   }
 
+  const sortedChildren = childrenSort(item.children)
+
   return (
     <SC.TreeWrapper collapsed={collapsed}>
       <SC.Label onClick={toggleCollapse}>
         <TriangleDown /> {humanize(item.title)}
       </SC.Label>
-      <SC.Children>{item.children.map(node => plantTree(node))}</SC.Children>
+      <SC.Children>{sortedChildren.map(node => plantTree(node))}</SC.Children>
     </SC.TreeWrapper>
   )
 }
@@ -76,6 +93,7 @@ const FirstLevelFolder = memo(
     })
 
     const collapsed = current !== index
+    const sortedChildren = childrenSort(item.children)
 
     return (
       <SC.TreeWrapper className="firstLevel" collapsed={collapsed}>
@@ -86,7 +104,7 @@ const FirstLevelFolder = memo(
           {humanize(item.title)}
           <SC.CollapseToggler />
         </SC.FirstLabel>
-        <SC.Children>{item.children.map(node => plantTree(node))}</SC.Children>
+        <SC.Children>{sortedChildren.map(node => plantTree(node))}</SC.Children>
       </SC.TreeWrapper>
     )
   }
