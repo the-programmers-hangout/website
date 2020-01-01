@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
-    "gatsby": "^2.18.12",
+    "gatsby": "^2.18.17",
     "gatsby-plugin-layout": "^1.1.18",
     "gatsby-plugin-manifest": "^2.2.33",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
