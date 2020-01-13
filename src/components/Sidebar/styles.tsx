@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const SidebarWrapper = styled.div`
   box-sizing: border-box;
@@ -39,7 +39,7 @@ export const Menu = styled.nav`
   padding-top: 20px;
 `
 
-export const MenuItem = styled(Link)`
+export const menuItemStyles = css`
   padding: 4px 0;
   font-size: 20px;
   color: ${props => props.theme.sidebar.foreground};
@@ -53,4 +53,12 @@ export const MenuItem = styled(Link)`
   &.active {
     font-weight: 700;
   }
+`
+
+export const MenuItem = styled(Link)`
+  ${menuItemStyles};
+`
+
+export const MenuItemExternal = styled.a`
+  ${menuItemStyles};
 `

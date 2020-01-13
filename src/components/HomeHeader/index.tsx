@@ -14,6 +14,15 @@ interface IMenuItemProps {
 }
 
 const MenuItem: FC<IMenuItemProps> = ({ children, to }) => {
+  if (to.match(/^(https?:\/\/)/)) {
+    return (
+      <SC.MenuItemExternal href={to} target="_blank">
+        <SC.MenuItemText>{children}</SC.MenuItemText>
+        <SC.MenuItemLine />
+      </SC.MenuItemExternal>
+    )
+  }
+
   return (
     <SC.MenuItem
       to={to}
@@ -83,10 +92,11 @@ export const HomeHeader: FC<IHomeHeaderProps> = ({ isHome }) => {
         <SC.Menu>
           <MenuItem to="/about">about</MenuItem>
           <MenuItem to="/rules">rules</MenuItem>
-          <MenuItem to="/">faq</MenuItem>
-          <MenuItem to="/">hotbot</MenuItem>
           <MenuItem to="/resources">resources</MenuItem>
           <MenuItem to="/archives">tech spotlights</MenuItem>
+          <MenuItem to="https://forum.theprogrammershangout.com">
+            forum
+          </MenuItem>
         </SC.Menu>
         <DiscordButton>join us</DiscordButton>
         {isHome && <HomePartner />}
