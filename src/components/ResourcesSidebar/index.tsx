@@ -9,6 +9,7 @@ import useBuildTree from "./../../hooks/useBuildTree"
 import useSidebar from "./../../hooks/useSidebar"
 import * as SC from "./styles"
 import useMatchingPath from "./useMatchingPath"
+import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 
 const ALL_RESOURCES = graphql`
   query {
@@ -43,12 +44,31 @@ const childrenSort = sortWith<IFileOrFolder>([
   }),
 ])
 
-function plantTree(item: IFileOrFolder, index?: number, firstLevel?: boolean) {
+function Tree({
+  item,
+  index,
+  firstLevel,
+}: {
+  item: IFileOrFolder
+  index?: number
+  firstLevel?: boolean
+}) {
+  const { setOpenOnMobile } = useSidebar()
+  const { unlock } = useLockBodyScroll()
+
   if (item.type === "file") {
     const path = getPath(item)
 
     return (
-      <SC.PageLink key={item.title} to={path} activeClassName="active">
+      <SC.PageLink
+        key={item.title}
+        to={path}
+        activeClassName="active"
+        onClick={() => {
+          setOpenOnMobile(false)
+          unlock()
+        }}
+      >
         {humanize(item.title)}
       </SC.PageLink>
     )
@@ -79,7 +99,11 @@ function Folder({ item }: { item: IFolder }) {
       <SC.Label onClick={toggleCollapse}>
         <TriangleDown /> {humanize(item.title)}
       </SC.Label>
-      <SC.Children>{sortedChildren.map(node => plantTree(node))}</SC.Children>
+      <SC.Children>
+        {sortedChildren.map(node => (
+          <Tree item={node} />
+        ))}
+      </SC.Children>
     </SC.TreeWrapper>
   )
 }
@@ -104,7 +128,11 @@ const FirstLevelFolder = memo(
           {humanize(item.title)}
           <SC.CollapseToggler />
         </SC.FirstLabel>
-        <SC.Children>{sortedChildren.map(node => plantTree(node))}</SC.Children>
+        <SC.Children>
+          {sortedChildren.map(node => (
+            <Tree item={node} />
+          ))}
+        </SC.Children>
       </SC.TreeWrapper>
     )
   }
@@ -117,7 +145,9 @@ export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = props => {
 
   return (
     <Sidebar {...props}>
-      {sortedTree.map((node, index) => plantTree(node, index, true))}
+      {sortedTree.map((node, index) => (
+        <Tree item={node} index={index} firstLevel={true} />
+      ))}
     </Sidebar>
   )
 }
