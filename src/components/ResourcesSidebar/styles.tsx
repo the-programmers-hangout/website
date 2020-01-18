@@ -1,7 +1,9 @@
 import { Link } from "gatsby"
 import { transparentize } from "polished"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import ChevronUp from "../../icons/chevron-up.svg"
+import Collapse from "../../icons/collapse.svg"
+import Expand from "../../icons/expand.svg"
 
 export const Children = styled.div`
   padding-left: 16px;
@@ -10,6 +12,10 @@ export const Children = styled.div`
   flex-direction: column;
   align-items: flex-start;
   overflow: hidden;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
 `
 
 export const Label = styled.div`
@@ -44,7 +50,7 @@ export const FirstLabel = styled.div`
   box-sizing: border-box;
   padding: 12px 15px 12px 0;
   font-weight: 700;
-  color: ${props => transparentize(0.5, props.theme.sidebar.foreground)};
+  color: ${props => props.theme.sidebar.foreground};
   cursor: pointer;
 
   &:hover {
@@ -55,30 +61,17 @@ export const FirstLabel = styled.div`
     }
   }
 
-  &.active {
-    color: ${props => props.theme.sidebar.foreground};
-  }
-
   svg {
     margin-left: auto;
     transform: rotate(90deg);
-    transition: transform 0.3s;
 
     path {
       fill: ${props => transparentize(0.5, props.theme.sidebar.foreground)};
     }
   }
-
-  &.active svg {
-    transform: rotate(0);
-
-    path {
-      fill: ${props => props.theme.sidebar.foreground};
-    }
-  }
 `
 
-export const TreeWrapper = styled.div<{ collapsed: boolean }>`
+export const TreeWrapper = styled.div<{ collapsed?: boolean }>`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -86,11 +79,6 @@ export const TreeWrapper = styled.div<{ collapsed: boolean }>`
 
   &.firstLevel {
     overflow: hidden;
-  }
-
-  & + & {
-    border-top: 1px solid
-      ${props => transparentize(0.8, props.theme.sidebar.foreground)};
   }
 
   ${Children} {
@@ -105,22 +93,64 @@ export const TreeWrapper = styled.div<{ collapsed: boolean }>`
 
 export const CollapseToggler = styled(ChevronUp)``
 
-export const PageLink = styled(Link)`
+export const CollapseIcon = styled(Collapse)`
+  margin-left: auto;
+
+  path {
+    fill: ${props => transparentize(0.5, props.theme.sidebar.foreground)};
+  }
+`
+
+export const ExpandIcon = styled(Expand)`
+  margin-left: auto;
+
+  path {
+    fill: ${props => transparentize(0.5, props.theme.sidebar.foreground)};
+  }
+`
+
+export const ExpandLanguages = styled.div`
+  padding: 12px 15px 12px 0;
+
+  border-bottom: 1px solid
+    ${props => transparentize(0.8, props.theme.sidebar.foreground)};
+  margin-bottom: 8px;
+`
+
+export const ExpandLanguagesHeader = styled.div`
+  user-select: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: ${props => transparentize(0.5, props.theme.sidebar.foreground)};
+  font-weight: 700;
+`
+
+export const ExpandLanguagesList = styled.div`
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+`
+
+const item = css`
   display: block;
-  padding: 4px 0 0;
   margin-bottom: 4px;
   color: ${props => props.theme.sidebar.foreground};
   align-self: flex-start;
   text-decoration: none;
   border-bottom: 2px solid transparent;
+  cursor: pointer;
 
   &:hover {
     border-color: ${props =>
       transparentize(0.7, props.theme.sidebar.foreground)};
   }
 
-  & + & {
-    margin-top: 4px;
+  & + &,
+  ${TreeWrapper} + & {
+    padding: 8px 0 0;
   }
 
   &.active {
@@ -131,4 +161,12 @@ export const PageLink = styled(Link)`
   &.active:hover {
     border-color: ${props => transparentize(0.7, props.theme.sidebar.active)};
   }
+`
+
+export const Language = styled.div`
+  ${item};
+`
+
+export const PageLink = styled(Link)`
+  ${item};
 `

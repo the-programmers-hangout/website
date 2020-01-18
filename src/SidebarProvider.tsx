@@ -1,8 +1,9 @@
-import React, { FC, useMemo, useState } from "react"
+import React, { FC, useEffect, useMemo, useState } from "react"
+import useLocation from "./hooks/useLocation"
 
 export interface ISidebarContextInterface {
-  current: number
-  setCurrent: (index: number) => void
+  current: string | null
+  setCurrent: (key: string) => void
   openOnMobile: boolean
   setOpenOnMobile: (active: boolean) => void
 }
@@ -12,8 +13,18 @@ export const SidebarContext = React.createContext<ISidebarContextInterface | nul
 )
 
 export const SidebarProvider: FC = ({ children }) => {
-  const [current, setCurrent] = useState(0)
+  const { location, getSecondLevel } = useLocation()
+  const [current, setCurrent] = useState<string | null>(null)
   const [openOnMobile, setOpenOnMobile] = useState(false)
+
+  useEffect(() => {
+    if (location && location.pathname) {
+      const secondLevel = getSecondLevel(location.pathname)
+      setCurrent(secondLevel || null)
+    } else {
+      setCurrent(null)
+    }
+  }, [location])
 
   const memoizedContextValue = useMemo(
     () => ({

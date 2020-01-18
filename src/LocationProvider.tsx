@@ -5,10 +5,17 @@ function appendSlashToPath(path: string): string {
   return path.endsWith("/") ? path : `${path}/`
 }
 
+function getSecondLevel(path: string): string | void {
+  const [, , secondLevel] = path.split("/")
+
+  return secondLevel
+}
+
 export interface ILocationContextInterface {
   location: WindowLocation | void
   isHome: boolean
   isMatchingPath: (path: string) => boolean
+  getSecondLevel: (path: string) => string | void
 }
 
 interface ILocationProviderProps {
@@ -19,9 +26,9 @@ export const LocationContext = React.createContext<ILocationContextInterface | n
   null
 )
 
-export const LocationProvider: FC<
-  PropsWithChildren<ILocationProviderProps>
-> = ({ children, location }) => {
+export const LocationProvider: FC<PropsWithChildren<
+  ILocationProviderProps
+>> = ({ children, location }) => {
   const memoizedContextValue = useMemo(
     () => ({
       location,
@@ -31,6 +38,7 @@ export const LocationProvider: FC<
           ? appendSlashToPath(location.pathname).startsWith(path)
           : false
       },
+      getSecondLevel,
     }),
     [location]
   )

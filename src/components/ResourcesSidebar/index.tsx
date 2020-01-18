@@ -46,7 +46,6 @@ const childrenSort = sortWith<IFileOrFolder>([
 
 function Tree({
   item,
-  index,
   firstLevel,
 }: {
   item: IFileOrFolder
@@ -74,8 +73,8 @@ function Tree({
     )
   }
 
-  if (firstLevel && index !== undefined) {
-    return <FirstLevelFolder key={item.title} item={item} index={index} />
+  if (firstLevel) {
+    return <FirstLevelFolder key={item.title} item={item} />
   }
 
   return <Folder key={item.title} item={item} />
@@ -108,46 +107,81 @@ function Folder({ item }: { item: IFolder }) {
   )
 }
 
-const FirstLevelFolder = memo(
-  ({ item, index }: { item: IFolder; index: number }) => {
-    const { current, setCurrent } = useSidebar()
+const FirstLevelFolder = memo(({ item }: { item: IFolder }) => {
+  const { setCurrent } = useSidebar()
 
-    useMatchingPath(item.path, () => {
-      setCurrent(index)
-    })
+  useMatchingPath(item.path, () => {
+    setCurrent(item.title)
+  })
 
-    const collapsed = current !== index
-    const sortedChildren = childrenSort(item.children)
+  const sortedChildren = childrenSort(item.children)
 
-    return (
-      <SC.TreeWrapper className="firstLevel" collapsed={collapsed}>
-        <SC.FirstLabel
-          className={!collapsed ? "active" : undefined}
-          onClick={() => setCurrent(index)}
-        >
-          {humanize(item.title)}
-          <SC.CollapseToggler />
-        </SC.FirstLabel>
-        <SC.Children>
-          {sortedChildren.map(node => (
-            <Tree item={node} />
+  return (
+    <SC.TreeWrapper className="firstLevel">
+      <SC.FirstLabel>{humanize(item.title)}</SC.FirstLabel>
+      <SC.Children>
+        {sortedChildren.map(node => (
+          <Tree item={node} />
+        ))}
+      </SC.Children>
+    </SC.TreeWrapper>
+  )
+})
+
+const AllLanguages: FC<{
+  items: IFileOrFolder[]
+  expanded: boolean
+  setExpanded: React.Dispatch<React.SetStateAction<boolean>>
+}> = ({ items, expanded, setExpanded }) => {
+  const { current, setCurrent } = useSidebar()
+
+  return (
+    <SC.ExpandLanguages>
+      <SC.ExpandLanguagesHeader
+        onClick={() => setExpanded(prevState => !prevState)}
+      >
+        Expand languages {expanded ? <SC.CollapseIcon /> : <SC.ExpandIcon />}
+      </SC.ExpandLanguagesHeader>
+      {expanded && (
+        <SC.ExpandLanguagesList>
+          {items.map(item => (
+            <SC.Language
+              className={current === item.title ? "active" : ""}
+              onClick={() => {
+                setCurrent(item.title)
+                setExpanded(false)
+              }}
+            >
+              {item.title}
+            </SC.Language>
           ))}
-        </SC.Children>
-      </SC.TreeWrapper>
-    )
-  }
-)
+        </SC.ExpandLanguagesList>
+      )}
+    </SC.ExpandLanguages>
+  )
+}
 
 export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = props => {
+  const [expandedLanguages, setExpandedLanguages] = useState(false)
   const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
-  const tree = useBuildTree(resources, "/resources")
-  const sortedTree = sort((a, b) => a.title.localeCompare(b.title), tree)
+  const languages = useBuildTree(resources, "/resources")
+  const { current } = useSidebar()
+  const sortedLanguages = sort(
+    (a, b) => a.title.localeCompare(b.title),
+    languages
+  )
+
+  const currentLanguage =
+    sortedLanguages.find(lang => lang.title === current) || sortedLanguages[0]
 
   return (
     <Sidebar {...props}>
-      {sortedTree.map((node, index) => (
-        <Tree item={node} index={index} firstLevel={true} />
-      ))}
+      <AllLanguages
+        items={sortedLanguages}
+        expanded={expandedLanguages}
+        setExpanded={setExpandedLanguages}
+      />
+      <Tree item={currentLanguage} firstLevel={true} />
     </Sidebar>
   )
 }
