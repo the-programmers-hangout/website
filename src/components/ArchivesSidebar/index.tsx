@@ -1,6 +1,8 @@
 import { graphql, useStaticQuery } from "gatsby"
 import { sort } from "ramda"
 import React, { FC, HTMLAttributes } from "react"
+import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
+import useSidebar from "../../hooks/useSidebar"
 import { IAllArchivesQuery, IFileOrFolder } from "../../types"
 import { humanize } from "../../utils"
 import { Sidebar } from "../Sidebar"
@@ -19,9 +21,20 @@ const ALL_ARCHIVES = graphql`
   }
 `
 
-function plantTree(item: IFileOrFolder) {
+function Tree({ item }: { item: IFileOrFolder }) {
+  const { setOpenOnMobile } = useSidebar()
+  const { unlock } = useLockBodyScroll()
+
   return (
-    <SC.PageLink key={item.title} to={item.path} activeClassName="active">
+    <SC.PageLink
+      key={item.title}
+      to={item.path}
+      activeClassName="active"
+      onClick={() => {
+        setOpenOnMobile(false)
+        unlock()
+      }}
+    >
       {humanize(item.title)}
     </SC.PageLink>
   )
@@ -32,5 +45,11 @@ export const ArchivesSidebar: FC<HTMLAttributes<HTMLDivElement>> = props => {
   const tree = useBuildTree(archives, "/archives")
   const sortedTree = sort((a, b) => a.title.localeCompare(b.title), tree)
 
-  return <Sidebar {...props}>{sortedTree.map(plantTree)}</Sidebar>
+  return (
+    <Sidebar {...props}>
+      {sortedTree.map(node => (
+        <Tree item={node} />
+      ))}
+    </Sidebar>
+  )
 }
