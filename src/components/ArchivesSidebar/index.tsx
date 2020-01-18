@@ -1,12 +1,12 @@
 import { graphql, useStaticQuery } from "gatsby"
 import { sort } from "ramda"
 import React, { FC, HTMLAttributes } from "react"
+import useBuildTree from "../../hooks/useBuildTree"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import useSidebar from "../../hooks/useSidebar"
 import { IAllArchivesQuery, IFileOrFolder } from "../../types"
 import { humanize } from "../../utils"
 import { Sidebar } from "../Sidebar"
-import useBuildTree from "./../../hooks/useBuildTree"
 import * as SC from "./styles"
 
 const ALL_ARCHIVES = graphql`

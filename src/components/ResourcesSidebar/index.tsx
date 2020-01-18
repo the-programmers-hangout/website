@@ -1,15 +1,15 @@
 import { graphql, useStaticQuery } from "gatsby"
 import { descend, sort, sortWith } from "ramda"
 import React, { FC, HTMLAttributes, memo, useState } from "react"
+import useBuildTree from "../../hooks/useBuildTree"
+import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
+import useSidebar from "../../hooks/useSidebar"
 import TriangleDown from "../../icons/triangle-down.svg"
 import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
 import { getPath, humanize } from "../../utils"
 import { Sidebar } from "../Sidebar"
-import useBuildTree from "./../../hooks/useBuildTree"
-import useSidebar from "./../../hooks/useSidebar"
 import * as SC from "./styles"
 import useMatchingPath from "./useMatchingPath"
-import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 
 const ALL_RESOURCES = graphql`
   query {
