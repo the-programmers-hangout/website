@@ -22,6 +22,7 @@ export const TitleWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 22px;
+  max-width: 100%;
 
   .is-home & {
     flex-direction: column;
@@ -41,6 +42,7 @@ export const Title = styled.h1`
   .is-home & {
     margin: 32px 0;
     font-size: 88px;
+    max-width: 100%;
 
     @media screen and (max-width: 991px) {
       font-size: 58px;
@@ -142,6 +144,7 @@ export const MenuItemLine = styled.div`
   bottom: 0;
   background: #fff;
   transition: all 0.3s;
+  left: 0;
 `
 
 export const menuItemStyles = css`

@@ -25,5 +25,6 @@ export const DiscordButtonWrapper = styled.a`
 
 export const StyledDiscordLogo = styled(DiscordLogo)`
   width: 30px;
+  height: 30px;
   margin-right: 13px;
 `
