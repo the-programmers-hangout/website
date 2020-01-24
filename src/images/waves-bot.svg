@@ -30,10 +30,5 @@
       <stop offset=".51" stop-color="#FF70A5"/>
       <stop offset="1" stop-color="#FEAF6D"/>
     </linearGradient>
-    <linearGradient id="bot_gradient5" x1="1822.96" x2="1382.5" y1="1171.81" y2="-194.38" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#9423FC"/>
-      <stop offset=".51" stop-color="#FF70A5"/>
-      <stop offset="1" stop-color="#FEAF6D"/>
-    </linearGradient>
   </defs>
 </svg>
