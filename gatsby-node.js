@@ -9,8 +9,13 @@ const requiredArticleFrontmatter = ["authors", "date"]
 const LAYOUT_RESOURCES = "resources"
 const LAYOUT_ARCHIVES = "archives"
 const LAYOUT_REGULAR = "regular"
+const LAYOUT_HOME = "home"
 
 function resolveLayout(path) {
+  if (path === "/") {
+    return LAYOUT_HOME
+  }
+
   if (path.match(/resources/)) {
     return LAYOUT_RESOURCES
   }
