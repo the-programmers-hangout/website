@@ -57,7 +57,8 @@ function levenshteinDistance(term1: string, term2: string) {
   return matrix[term2.length][term1.length]
 }
 
-function getPossibleResources(
+function getPossibleCorrections(
+  basepath: string,
   location: WindowLocation,
   data: { allFile: FileConnection }
 ) {
@@ -74,7 +75,7 @@ function getPossibleResources(
   // location.pathname is link after protocol and hostname
   // by replacing `"/resources/"`,
   // we are left with only the relative path to `resources`
-  const search = location.pathname.replace("/resources/", "")
+  const search = location.pathname.replace(`/${basepath}/`, "")
 
   // filter based on distance
   // levenshtein distance of x means how 'off' it was
@@ -96,7 +97,7 @@ function getPossibleResources(
         {displayArray.map((value, index) => {
           return (
             <li key={index}>
-              <Link to={`resources/${value.node.relativePath}`}>
+              <Link to={`${basepath}/${value.node.relativePath}`}>
                 {value.node.relativePath}
               </Link>
             </li>
@@ -114,7 +115,7 @@ export default ({ data }: ComponentQuery<{ allFile: FileConnection }>) => (
     <h1>RESOURCE NOT FOUND</h1>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     <Location>
-      {({ location }) => getPossibleResources(location, data)}
+      {({ location }) => getPossibleCorrections("resources", location, data)}
     </Location>
   </Fragment>
 )
