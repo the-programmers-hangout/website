@@ -1,13 +1,9 @@
 import { Link } from "gatsby"
-import React, { FC, useLayoutEffect, useState } from "react"
+import React, { FC } from "react"
 import { DiscordButton } from "../DiscordButton"
 import { HomePartner } from "../HomePartner"
 import { WavesBottom, WavesTop } from "../Waves"
 import * as SC from "./styles"
-
-interface IHomeHeaderProps {
-  isHome: boolean
-}
 
 interface IMenuItemProps {
   to: string
@@ -35,22 +31,15 @@ const MenuItem: FC<IMenuItemProps> = ({ children, to }) => {
   )
 }
 
-export const HomeHeader: FC<IHomeHeaderProps> = ({ isHome }) => {
-  // Hack to force Particle.js to rerender
-  const [noop, setNoop] = useState(0)
-  useLayoutEffect(() => {
-    setNoop(prevState => prevState + 1)
-  }, [isHome])
-
+export const Home: FC = () => {
   return (
-    <SC.HomeHeaderWrapper className={isHome ? "is-home" : ""}>
+    <SC.HomeWrapper>
       <WavesTop />
       <SC.FadedBottomWave>
         <WavesBottom />
       </SC.FadedBottomWave>
 
       <SC.StyledParticles
-        key={noop}
         params={{
           particles: {
             number: { value: 5, density: { enable: true, value_area: 500 } },
@@ -99,8 +88,8 @@ export const HomeHeader: FC<IHomeHeaderProps> = ({ isHome }) => {
           </MenuItem>
         </SC.Menu>
         <DiscordButton>join us</DiscordButton>
-        {isHome && <HomePartner />}
+        <HomePartner />
       </SC.InnerWrapper>
-    </SC.HomeHeaderWrapper>
+    </SC.HomeWrapper>
   )
 }

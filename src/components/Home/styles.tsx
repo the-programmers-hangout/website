@@ -3,58 +3,38 @@ import Particles from "react-particles-js"
 import styled, { css } from "styled-components"
 import TPHLogo from "../../images/tph-logo.svg"
 
-export const HomeHeaderWrapper = styled.header`
+export const HomeWrapper = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   position: relative;
-  min-height: auto;
+  min-height: 100vh;
   background: #1f2a34;
-
-  &.is-home {
-    min-height: 100vh;
-    overflow: hidden;
-  }
+  overflow: hidden;
 `
 
 export const TitleWrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 22px;
   max-width: 100%;
-
-  .is-home & {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  flex-direction: column;
 `
 
 export const Title = styled.h1`
   margin: 0;
   font-weight: 700;
-  font-size: 50px;
+  font-size: 88px;
   text-transform: uppercase;
   line-height: 1;
   color: #fff;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-
-  .is-home & {
-    margin: 32px 0;
-    font-size: 88px;
-    max-width: 100%;
-
-    @media screen and (max-width: 991px) {
-      font-size: 58px;
-    }
-
-    @media screen and (max-width: 767px) {
-      font-size: 32px;
-    }
-  }
+  margin: 32px 0;
+  max-width: 100%;
 
   @media screen and (max-width: 991px) {
-    font-size: 42px;
+    font-size: 58px;
   }
 
   @media screen and (max-width: 767px) {
@@ -64,24 +44,12 @@ export const Title = styled.h1`
 
 export const FadedBottomWave = styled.div`
   position: absolute;
-  transform: translateY(100%);
   bottom: 0;
   left: 0;
   right: 0;
-  opacity: 0;
   pointer-events: none;
 
   svg {
-    position: static;
-  }
-
-  .is-home & {
-    opacity: 1;
-    transition: opacity 0.5s, transform 0.5s;
-    transform: translateY(0);
-  }
-
-  .is-home & svg {
     position: static;
   }
 `
@@ -116,11 +84,8 @@ export const Logo = styled(TPHLogo)`
   margin: 0 15px 0 0;
   position: relative;
   z-index: 3;
-
-  .is-home & {
-    width: 98px;
-    margin-bottom: 0 0 10px 0;
-  }
+  width: 98px;
+  margin-bottom: 0 0 10px 0;
 `
 
 export const Menu = styled.nav`
