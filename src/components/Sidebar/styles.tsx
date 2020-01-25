@@ -34,7 +34,8 @@ export const Inner = styled.div`
 export const Menu = styled.nav`
   display: flex;
   flex-direction: column;
-  border-top: 1px dashed #a5a5a5;
+  border-top: ${props =>
+    props.borderVisibility ? "1px dashed #a5a5a5" : "none"};
   margin: 20px 0 40px;
   padding-top: 20px;
 `
