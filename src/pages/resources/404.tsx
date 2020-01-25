@@ -13,7 +13,7 @@ export default ({ data }: ComponentQuery<{ allFile: FileConnection }>) => (
     <h1>RESOURCE NOT FOUND</h1>
     <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     <Location>
-      {({ location }) => getPossibleCorrections("resources", location, data)}
+      {({ location }) => getPossibleCorrections("resources", location, data, 8)}
     </Location>
   </Fragment>
 )

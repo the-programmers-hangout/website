@@ -58,7 +58,8 @@ function levenshteinDistance(term1: string, term2: string) {
 export const getPossibleCorrections = (
   basepath: string,
   location: WindowLocation,
-  data: { allFile: FileConnection }
+  data: { allFile: FileConnection },
+  threshold: number
 ) => {
   // the data prop has the graphql result
   // we're abstracting it to `linkArray` to just have array of edges matched
@@ -82,7 +83,7 @@ export const getPossibleCorrections = (
       levenshteinDistance(
         search.toLowerCase(),
         value.node!.relativePath!.toLowerCase()
-      ) < 8
+      ) < threshold
   )
 
   // helpful message if no matches found
