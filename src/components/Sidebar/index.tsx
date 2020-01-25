@@ -30,6 +30,7 @@ export const Sidebar: FC<PropsWithChildren<
   HTMLAttributes<HTMLDivElement>
 >> = props => {
   const { children, ...restProps } = props
+  const isBorderVisible = children === undefined ? false : true
 
   return (
     <SC.SidebarWrapper {...restProps}>
@@ -40,7 +41,7 @@ export const Sidebar: FC<PropsWithChildren<
         <SC.Inner>
           {children}
 
-          <SC.Menu>
+          <SC.Menu borderVisibility={isBorderVisible}>
             <MenuItem to="/about">about</MenuItem>
             <MenuItem to="/rules">rules</MenuItem>
             <MenuItem to="/resources">resources</MenuItem>

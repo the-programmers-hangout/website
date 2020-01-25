@@ -28,7 +28,7 @@ export default function BaseLayout({
 
   return (
     <LocationProvider location={location}>
-      <ResolvedLayout>{children}</ResolvedLayout>
+      <ResolvedLayout path={location.pathname}>{children}</ResolvedLayout>
     </LocationProvider>
   )
 }
