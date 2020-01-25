@@ -1,4 +1,4 @@
-<svg fill="none" viewBox="0 0 1825 862" preserveAspectRatio="xMaxYmax slice">
+<svg fill="none" viewBox="0 0 1825 862" preserveAspectRatio="xMaxYMax slice">
   <mask id="#bot_mask" width="1825" height="862" x="0" y="0" maskUnits="userSpaceOnUse">
     <path fill="#C4C4C4" d="M0 0h1825v862H0z"/>
   </mask>
@@ -26,11 +26,6 @@
       <stop offset="1" stop-color="#FEAF6D"/>
     </linearGradient>
     <linearGradient id="bot_gradient4" x1="1993.87" x2="1553.41" y1="1147.96" y2="-218.23" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#9423FC"/>
-      <stop offset=".51" stop-color="#FF70A5"/>
-      <stop offset="1" stop-color="#FEAF6D"/>
-    </linearGradient>
-    <linearGradient id="bot_gradient5" x1="1822.96" x2="1382.5" y1="1171.81" y2="-194.38" gradientUnits="userSpaceOnUse">
       <stop stop-color="#9423FC"/>
       <stop offset=".51" stop-color="#FF70A5"/>
       <stop offset="1" stop-color="#FEAF6D"/>

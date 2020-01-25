@@ -13,7 +13,7 @@ const waves = css`
 export const StyledWavesTop = styled(WavesTop)`
   ${waves};
   top: 0;
-  left: 0;
+  height: 87vh;
 `
 
 export const StyledWavesBottom = styled(WavesBottom)`

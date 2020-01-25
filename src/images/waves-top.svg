@@ -1,4 +1,4 @@
-<svg fill="none" viewBox="0 0 1825 859" width="1825" height="859" preserveAspectRatio="xMinYMin meet">
+<svg fill="none" viewBox="0 0 1825 859" width="1825" height="859" preserveAspectRatio="xMaxYMin meet">
   <mask id="top_mask" width="1825" height="859" x="0" y="0" maskUnits="userSpaceOnUse">
     <path fill="#C4C4C4" d="M0 0h1825v859H0z"/>
   </mask>
