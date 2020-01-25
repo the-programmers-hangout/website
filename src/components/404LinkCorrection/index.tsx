@@ -74,7 +74,7 @@ export const getPossibleCorrections = (
   // location.pathname is link after protocol and hostname
   // by replacing `"/resources/"`,
   // we are left with only the relative path to `resources`
-  const search = location.pathname.replace(`/${basepath}/`, "")
+  const search = location.pathname.replace(`/${basepath}`, "")
 
   // filter based on distance
   // levenshtein distance of x means how 'off' it was
@@ -96,7 +96,7 @@ export const getPossibleCorrections = (
         {displayArray.map((value, index) => {
           return (
             <li key={index}>
-              <Link to={`${basepath}/${value.node.relativePath}`}>
+              <Link to={`${basepath}${value.node.relativePath}`}>
                 {value.node.relativePath}
               </Link>
             </li>
