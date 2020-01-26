@@ -174,9 +174,9 @@ exports.onCreatePage = async ({ page, actions }) => {
     const oldPage = { ...page }
     page.matchPath = `/archives/*`
     deletePage(oldPage)
-  } else {
-    page.context.layout = resolveLayout(page.path)
   }
+
+  page.context.layout = resolveLayout(page.path)
   createPage(page)
 }
 
