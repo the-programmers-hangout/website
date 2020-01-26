@@ -1,16 +1,14 @@
 import { RouteComponentProps } from "@reach/router"
 import React, { FC, useEffect } from "react"
 
-import { HomeHeader } from "../../components/HomeHeader"
+import { Home } from "../../components/Home"
 import { SEO } from "../../components/SEO"
 import { GlobalStyles } from "../../globalStyles"
-import useLocation from "../../hooks/useLocation"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import { ThemeProvider } from "../../ThemeProvider"
 import * as SC from "./styles"
 
 export const HomeLayout: FC<RouteComponentProps> = () => {
-  const { isHome } = useLocation()
   const { locked, unlock } = useLockBodyScroll()
 
   useEffect(() => {
@@ -27,7 +25,7 @@ export const HomeLayout: FC<RouteComponentProps> = () => {
           title="Home"
           description="The Programmer's Hangout (TPH) is a discord community geared towards programming."
         />
-        <HomeHeader isHome={isHome} />
+        <Home />
       </SC.LayoutWrapper>
     </ThemeProvider>
   )
