@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 
-import { Link } from "../components/Link"
-import { SEO } from "../components/SEO"
+import { Link } from "../../components/Link"
+import { SEO } from "../../components/SEO"
 
 function ArchivesPage() {
   return (
