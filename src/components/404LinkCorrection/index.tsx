@@ -1,6 +1,6 @@
 import { WindowLocation } from "@reach/router"
-import { Link } from "gatsby"
 import React, { FC, Fragment } from "react"
+import * as SC from "./styles"
 
 import { FileConnection } from "../../../generated/graphql"
 
@@ -104,9 +104,9 @@ export const PossibleCorrections: FC<IPossibleCorrections> = ({
         {displayArray.map((value, index) => {
           return (
             <li key={index}>
-              <Link to={`${basepath}${value.node.relativePath}`}>
+              <SC.StyledLink to={`${basepath}${value.node.relativePath}`}>
                 {value.node.relativePath}
-              </Link>
+              </SC.StyledLink>
             </li>
           )
         })}
