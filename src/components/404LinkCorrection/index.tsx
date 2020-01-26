@@ -1,6 +1,6 @@
 import { WindowLocation } from "@reach/router"
 import { Link } from "gatsby"
-import React, { Fragment } from "react"
+import React, { FC, Fragment } from "react"
 
 import { FileConnection } from "../../../generated/graphql"
 
@@ -55,12 +55,19 @@ function levenshteinDistance(term1: string, term2: string) {
   return matrix[term2.length][term1.length]
 }
 
-export const getPossibleCorrections = (
-  basepath: string,
-  location: WindowLocation,
-  data: { allFile: FileConnection },
-  threshold: number
-) => {
+interface IPossibleCorrections {
+  basepath: string
+  location: WindowLocation
+  data: { allFile: FileConnection }
+  threshold?: number
+}
+
+export const PossibleCorrections: FC<IPossibleCorrections> = ({
+  basepath,
+  location,
+  data,
+  threshold = 8,
+}) => {
   // the data prop has the graphql result
   // we're abstracting it to `linkArray` to just have array of edges matched
   // must use `.node.absolutePath` on each edge to get each node's absolute link
