@@ -5,8 +5,6 @@ created_at: "2019/07/26"
 title: Simplifying Promises
 ---
 
--- placeholder --
-
 The first naive attempt, using new Promise for something that already returns a promise.
 
 ```js
