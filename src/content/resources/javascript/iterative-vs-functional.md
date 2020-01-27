@@ -84,7 +84,7 @@ users.forEach(user => {
 console.log(youngerUsers); // outputs [ { name: "John", age: 17 }, { name: "Jane", age: 16 } ]
 ```
 
-## Modifying all elements of an array using `.map()`
+## Modifying all elements of an array using `map()`
 
 It's common to want to modify every element of an array with some logic, and `map()` makes this easy.
 
@@ -116,7 +116,7 @@ users.forEach(user => {
 console.log(userNames); // outputs [ "Joe", "John", "Jane" ]
 ```
 
-## Running custom logic using an array using `.reduce()`
+## Running custom logic using an array using `reduce()`
 
 `reduce()` is often less understood, but it's not that complicated once you get the basics. Itself, it takes 2 arguments, a function, and an initial value. The function takes a few arguments:
 
