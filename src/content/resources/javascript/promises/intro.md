@@ -101,7 +101,3 @@ getCharacters().then(characters => {
   console.log(characters); // (20) [{...}, {...}, {...}]
 });
 ```
-
-Let's break down what's happening in this function
-
-// TODO: finish this
