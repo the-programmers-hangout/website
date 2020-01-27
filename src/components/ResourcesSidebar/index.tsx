@@ -21,7 +21,6 @@ const ALL_RESOURCES = graphql`
             frontmatter {
               authors
               title
-              date
             }
           }
         }
