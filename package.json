@@ -73,7 +73,7 @@
     "discord.js": "^11.5.1",
     "gatsby-plugin-remove-trailing-slashes": "^2.1.20",
     "prettier": "^1.19.1",
-    "tslint": "^5.20.1",
+    "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-eslint-rules": "^5.4.0",
     "tslint-react-hooks": "^2.2.1"
