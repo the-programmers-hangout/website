@@ -41,7 +41,7 @@
     "gatsby-remark-auto-headers": "^1.0.3",
     "gatsby-remark-katex": "^3.1.23",
     "gatsby-source-filesystem": "^2.1.46",
-    "gatsby-transformer-remark": "^2.6.45",
+    "gatsby-transformer-remark": "^2.6.48",
     "gatsby-transformer-sharp": "^2.3.9",
     "katex": "^0.11.1",
     "lodash": "^4.17.15",
