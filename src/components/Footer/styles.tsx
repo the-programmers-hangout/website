@@ -1,6 +1,8 @@
 import styled from "styled-components"
 
-export const HomeFooterWrapper = styled.footer`
+export const FooterWrapper = styled.footer`
+  margin-top: 128px;
+
   & a {
     display: inline;
     color: #0090d8;
