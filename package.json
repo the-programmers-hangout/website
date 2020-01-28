@@ -45,7 +45,7 @@
     "gatsby-transformer-sharp": "^2.3.13",
     "katex": "^0.11.1",
     "lodash": "^4.17.15",
-    "polished": "^3.4.2",
+    "polished": "^3.4.3",
     "prismjs": "^1.17.1",
     "ramda": "^0.26.1",
     "react": "^16.12.0",
