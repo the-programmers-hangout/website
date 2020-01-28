@@ -141,7 +141,7 @@ This can cause confusing behaviour, as `var` has different scoping behaviour dep
 
 ### Hoisting
 
-Variables defined using `var` are also hoisted to the top of the function they are declared in, which can casue some weird behaviour.
+Variables defined using `var` are also hoisted to the top of the function they are declared in, which can cause some weird behaviour.
 
 ```js
 console.log(myVar); // undefined.

@@ -33,7 +33,7 @@ function doAsync(number) {
 ```
 
 You also don't have to nest `.then` functions, the whole point of promises
-is that they allow you do chain them sequentially.
+is that they allow you to chain them sequentially.
 
 ```js
 function doAsync(number) {
