@@ -30,7 +30,7 @@
   "dependencies": {
     "@reach/router": "^1.2.1",
     "gatsby": "^2.19.7",
-    "gatsby-plugin-layout": "^1.1.18",
+    "gatsby-plugin-layout": "^1.1.21",
     "gatsby-plugin-manifest": "^2.2.34",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.1.18",
