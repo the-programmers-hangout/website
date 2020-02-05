@@ -1,6 +1,6 @@
 ---
 authors:
-  - "ddivad#1337"
+  - "ddivad#0001"
 created_at: "2019/10/01"
 title: Async Await
 recommended_reading:
