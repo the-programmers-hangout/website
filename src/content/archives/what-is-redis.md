@@ -32,7 +32,7 @@ It's not uncommon to use both RDB and AOF together to take advantage of the incr
 
 The simplest operation in Redis is `GET`/`SET`.
 
-```
+```sh
 127.0.0.1:6379> SET some_key "Hello, Redis"
 OK
 127.0.0.1:6379> GET some_key
@@ -41,7 +41,7 @@ OK
 
 You can also set an expiration time on keys with `SETEX`/`PSETEX`. `SETEX` uses seconds for the expiration value, and `PSETEX` uses milliseconds.
 
-```
+```sh
 127.0.0.1:6379> SETEX expiring_key 10 "Goodbye, Redis"
 OK
 127.0.0.1:6379> GET expiring_key
@@ -50,14 +50,14 @@ OK
 
 If you run the same command after ten seconds have passed, the key no longer exists.
 
-```
+```sh
 127.0.0.1:6379> GET expiring_key
 (nil)
 ```
 
 You can set a key only if it doesn't exist (`SETNX`, `SET ... NX`) or only if it already exists. (`SET ... XX`)
 
-```
+```sh
 127.0.0.1:6379> SETNX existing_key "This key was free."
 OK
 127.0.0.1:6379> SETNX existing_key "The key is no longer free, so this will fail."
@@ -68,14 +68,14 @@ OK
 
 As you can see, if a `SET` operation is successful, it returns `OK`, otherwise it returns nothing, represented as `(nil)` in the CLI. Both the expiration time, and the create if (not) exists options can be set in the basic `SET` command as well.
 
-```
+```sh
 127.0.0.1:6379> SET magical_key "This key has several options set." EX 10 NX
 OK
 ```
 
 Now, let's check out some more complex datatypes. One of the datatypes that Redis supports are hashes. Like hashes in any programming language, one key has many fields.
 
-```
+```sh
 127.0.0.1:6379> HSET example_hash name "Caff"
 (integer) 1
 127.0.0.1:6379> HSET example_hash age 24
@@ -95,7 +95,7 @@ Now, let's check out some more complex datatypes. One of the datatypes that Redi
 
 You can also set multiple fields in a single command. The number it returns is the number of new fields created, so updating existing fields doesn't increase that number.
 
-```
+```sh
 127.0.0.1:6379> HSET example_hash discord "The Programmer's Hangout" discriminator "0001" age 25
 (integer) 2
 127.0.0.1:6379> HGETALL example_hash
@@ -111,7 +111,7 @@ You can also set multiple fields in a single command. The number it returns is t
 
 Another datastructure is Sorted Sets. These are essentially arrays, in which each item has a score. `ZRANGE` allows you to retrieve a range of items in the sorted set, ordered by score. It allows you to provide indexes, starting at zero. Negative indexes are from the end of the set, so `0 -1` means all items in the set, since -1 is the last item.
 
-```
+```sh
 127.0.0.1:6379> ZADD high_scores 100000 "PinballWizard" 80000 "Elliott" 50000 "Caff" 25000 "HotBot"
 (integer) 4
 127.0.0.1:6379> ZRANGE high_scores 0 -1 WITHSCORES
@@ -127,7 +127,7 @@ Another datastructure is Sorted Sets. These are essentially arrays, in which eac
 
 By default, Redis sorts by the lowest scores first. For sorting/displaying data, Redis also provides reversed functions for displaying the highest scores first.
 
-```
+```sh
 127.0.0.1:6379> ZREVRANGE high_scores 0 -1 WITHSCORES
 1) "PinballWizard"
 2) "100000"
@@ -143,7 +143,7 @@ By default, Redis sorts by the lowest scores first. For sorting/displaying data,
 
 Redis also has some functions for geospatial data. Internally, Geospatial data is stored using a sorted set. The Geo functions allow you to get the distance between two members, get all members within a radius of a certain point/member.
 
-```
+```sh
 127.0.0.1:6379> GEOADD some_cities 2.354493 48.862773 "Paris" -0.117431 51.506906 "London" 10.000977 53.538554 "Hamburg" 21.01412 52.210929 "Warsaw" -122.423435 37.771993 "San Francisco" 37.649808 55.753146 "Moscow" 72.911566 19.093070 "Mumbai" 18.500058 -33.865797 "Cape Town"
 (integer) 8
 127.0.0.1:6379> GEODIST some_cities "London" "Hamburg" km
@@ -175,7 +175,7 @@ Redis also has some functions for geospatial data. Internally, Geospatial data i
 
 Redis also offers a publish/subscription system, to listen for real-time events via channels.
 
-```
+```sh
 127.0.0.1:6379> SUBSCRIBE tweets
 Reading messages... (press Ctrl-C to quit)
 1) "subscribe"
@@ -185,14 +185,14 @@ Reading messages... (press Ctrl-C to quit)
 
 Another client could then run `PUBLISH` to push messages to all listening clients.
 
-```
+```sh
 127.0.0.1:6379> PUBLISH tweets "@RedisLabs just tweeted \"This is a Redis example.\""
 (integer) 1
 ```
 
 The listening clients would then receive the following.
 
-```
+```sh
 1) "message"
 2) "tweets"
 3) "@TheProgrammersHangout just tweeted \"This is a Redis example.\""
@@ -200,7 +200,7 @@ The listening clients would then receive the following.
 
 Redis' pub/sub implementation also supports pattern-matching for channels.
 
-```
+```sh
 127.0.0.1:6379> PSUBSCRIBE tweets:*
 Reading messages... (press Ctrl-C to quit)
 1) "psubscribe"
@@ -212,7 +212,7 @@ Any messages published to channels beginning with `tweets:` would be retireved b
 
 If the following messages were published:
 
-```
+```sh
 127.0.0.1:6379> PUBLISH tweets:follow "John just followed."
 (integer) 1
 127.0.0.1:6379> PUBLISH tweets:retweet "Eric retweeted your Tweet"
@@ -221,7 +221,7 @@ If the following messages were published:
 
 A subscribed client would recieve the following:
 
-```
+```sh
 1) "pmessage"
 2) "tweets:*"
 3) "tweets:follow"

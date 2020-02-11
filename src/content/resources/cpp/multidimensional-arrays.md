@@ -28,7 +28,7 @@ To create multidimensional array, you do it like a regular array but with a extr
 
 Use
 
-```
+```c++
 data_type array_name[A][B];
 ```
 
