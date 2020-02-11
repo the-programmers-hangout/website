@@ -13,7 +13,7 @@ Inheritance is the idea that when two classes have similar implementations, rath
 its parent class.
 Here is an example of a class hierarchy:
 
-```
+```sh
           Animal
        _____|______
       |            |
@@ -24,7 +24,7 @@ Animal is the parent class (also called the superclass), Dog and Bird are both c
 **NOTE:** A child class will only have 1 direct parent (known as single inheritance), not more.
 Here is an example of an illegal class hierarchy in Java:
 
-```
+```sh
 // THIS IS ILLEGAL
 // A child can only have 1 parent.
 
@@ -36,7 +36,7 @@ Here is an example of an illegal class hierarchy in Java:
 
 However, there can be many children.
 
-```
+```sh
                 Animal
              _____|______
             |            |

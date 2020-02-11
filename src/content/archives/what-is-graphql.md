@@ -8,7 +8,7 @@ GraphQL was created internally by Facebook in 2012, mainly to optimize the netwo
 
 1. GraphQL resolves the issues of underfetching, and overfetching of REST. For example, if you were to retrieve a user, its name, and the title of his posts, REST would end up over and under fetching this :
 
-```
+```sh
 /users/5
 /users/5/posts
 ```
