@@ -32,7 +32,7 @@ function flatten([
 export function Breadcrumb({ relativePath, basePath }: IBreadcrumbProps) {
   const paths = relativePath.split("/")
   const breadcrumbItems = flatten([traversePaths(paths, basePath)])
-  let count = 0;
+  let foldersDepth = 0;
   return (
     <SC.BreadcrumbWrapper>
       <SC.LinkWrapper>
@@ -55,8 +55,8 @@ export function Breadcrumb({ relativePath, basePath }: IBreadcrumbProps) {
 
       {breadcrumbItems.map(item => {
         if (item.type === "folder") {
-          count++;
-          if (count > 1) {
+          foldersDepth++;
+          if (foldersDepth > 1) {
             return (
             <SC.LinkWrapper key={item.path}>
               { item.title }
