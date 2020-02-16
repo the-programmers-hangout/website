@@ -99,7 +99,7 @@ function Folder({ item }: { item: IFolder }) {
       </SC.Label>
       <SC.Children>
         {sortedChildren.map(node => (
-          <Tree item={node} />
+          <Tree key={node.title + '-tree'} item={node} />
         ))}
       </SC.Children>
     </SC.TreeWrapper>
@@ -120,7 +120,7 @@ const FirstLevelFolder = memo(({ item }: { item: IFolder }) => {
       <SC.FirstLabel>{humanize(item.title)}</SC.FirstLabel>
       <SC.Children>
         {sortedChildren.map(node => (
-          <Tree item={node} />
+          <Tree key={node.title + '-tree'} item={node} />
         ))}
       </SC.Children>
     </SC.TreeWrapper>
