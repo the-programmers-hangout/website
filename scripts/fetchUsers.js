@@ -24,12 +24,12 @@ const writeS = (content, dest) => {
 client.once("ready", async () => {
   // tslint:disable-next-line no-console
   console.log("Bot ready, fetching user list...")
-  const tph = client.guilds.get(TPH)
+  const tph = client.guilds.cache.get(TPH)
   if (!tph) {
     throw Error("Bot is not in TPH, cannot fetch users")
   }
-  const guild = await tph.fetchMembers()
-  const memberInfo = guild.members.map(member => ({
+  const members = await tph.members.fetch()
+  const memberInfo = members.map(member => ({
     avatar: member.user.displayAvatarURL,
     identifier: `${member.user.username}#${member.user.discriminator}`,
   }))
