@@ -59,7 +59,3 @@ export const menuItemStyles = css`
 export const MenuItem = styled(Link)`
   ${menuItemStyles};
 `
-
-export const MenuItemExternal = styled.a`
-  ${menuItemStyles};
-`
