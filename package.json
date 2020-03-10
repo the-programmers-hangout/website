@@ -65,7 +65,7 @@
     "@types/lodash": "^4.14.149",
     "@types/prismjs": "^1.16.0",
     "@types/ramda": "^0.26.43",
-    "@types/react": "^16.9.19",
+    "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "@types/react-helmet": "^5.0.15",
     "@types/styled-components": "^4.4.2",
