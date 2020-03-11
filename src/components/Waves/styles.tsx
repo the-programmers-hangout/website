@@ -3,6 +3,7 @@ import WavesBottom from "../../images/waves-bot.svg"
 import WavesTop from "../../images/waves-top.svg"
 
 const waves = css`
+  display: block;
   opacity: 0.7;
   width: 100vw;
   max-width: 100%;
