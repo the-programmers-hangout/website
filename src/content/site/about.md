@@ -18,10 +18,6 @@ All you need to do is click. You'll be prompted to create yourself a Discord acc
 
 This server was made on the 4th of November, 2016.
 
-## Who owns this server?
-
-`Elliott#0001` and `Fox#0001`.
-
 ## Am I welcome?
 
 Anyone interested in discussing programming and not breaking the [rules](/rules) is welcome.
