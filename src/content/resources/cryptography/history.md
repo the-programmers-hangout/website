@@ -82,11 +82,3 @@ Mary was soon caught, and was sent to trial. Although, they used a cipher, there
 
 
 This document is a work in progress, and will be constantly updated.
-
-
-
-
-
-
-
-
