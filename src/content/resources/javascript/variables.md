@@ -117,7 +117,7 @@ console.log(myVar); // 'test'
 This is fixed using `let`
 
 ```js
-for('let i = 0; i < 5; i++) {
+for(let i = 0; i < 5; i++) {
   console.log(i);
 }
 console.log(i); // Error: i is undefined
