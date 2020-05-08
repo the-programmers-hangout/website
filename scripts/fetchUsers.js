@@ -30,7 +30,7 @@ client.once("ready", async () => {
   }
   const members = await tph.members.fetch()
   const memberInfo = members.map(member => ({
-    avatar: member.user.displayAvatarURL,
+    avatar: member.user.displayAvatarURL(),
     identifier: member.tag,
   }))
   const wrs = fs.createWriteStream(DESTINATION)
