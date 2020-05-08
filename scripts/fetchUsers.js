@@ -45,4 +45,4 @@ client.once("ready", async () => {
 
 // tslint:disable-next-line no-console
 console.log("Attempting to log in...")
-client.login(process.env.BOT_TOKEN)
+client.login(BOT_TOKEN)
