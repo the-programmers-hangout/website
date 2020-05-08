@@ -31,7 +31,7 @@ client.once("ready", async () => {
   const members = await tph.members.fetch()
   const memberInfo = members.map(member => ({
     avatar: member.user.displayAvatarURL,
-    identifier: `${member.user.username}#${member.user.discriminator}`,
+    identifier: member.tag,
   }))
   const wrs = fs.createWriteStream(DESTINATION)
   // tslint:disable-next-line no-console
