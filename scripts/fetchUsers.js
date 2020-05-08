@@ -2,7 +2,7 @@
 // don't touch it
 const Discord = require("discord.js")
 const fs = require("fs")
-const { Readable, Writable } = require("stream")
+const { Readable } = require("stream")
 
 const client = new Discord.Client()
 
@@ -30,8 +30,8 @@ client.once("ready", async () => {
   }
   const members = await tph.members.fetch()
   const memberInfo = members.map(member => ({
-    avatar: member.user.displayAvatarURL,
-    identifier: `${member.user.username}#${member.user.discriminator}`,
+    avatar: member.user.displayAvatarURL(),
+    identifier: member.user.tag,
   }))
   const wrs = fs.createWriteStream(DESTINATION)
   // tslint:disable-next-line no-console
@@ -45,4 +45,4 @@ client.once("ready", async () => {
 
 // tslint:disable-next-line no-console
 console.log("Attempting to log in...")
-client.login(process.env.BOT_TOKEN)
+client.login(BOT_TOKEN)
