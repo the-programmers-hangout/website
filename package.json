@@ -73,7 +73,7 @@
     "@types/styled-components": "^5.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "discord.js": "^12.2.0",
-    "gatsby-plugin-remove-trailing-slashes": "^2.1.22",
+    "gatsby-plugin-remove-trailing-slashes": "^2.3.2",
     "prettier": "^1.19.1",
     "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0",
