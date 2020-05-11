@@ -124,6 +124,10 @@ export const ExpandLanguagesHeader = styled.div`
   cursor: pointer;
   color: ${props => transparentize(0.5, props.theme.sidebar.foreground)};
   font-weight: 700;
+
+  &:hover {
+    opacity: 0.85;
+  }
 `
 
 export const ExpandLanguagesList = styled.div`

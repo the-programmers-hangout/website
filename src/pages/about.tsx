@@ -4,6 +4,8 @@ import { MarkdownRemark } from "../../generated/graphql"
 import { ComponentQuery } from "../../typings"
 import { Markdown } from "../components/Markdown"
 import { SEO } from "../components/SEO"
+import { PageContent } from "../components/PageContent"
+import { HeaderBarebone } from "../components/HeaderBarebone"
 
 function AboutPage({ data }: ComponentQuery<{ md: MarkdownRemark }>) {
   const { md } = data
@@ -11,7 +13,9 @@ function AboutPage({ data }: ComponentQuery<{ md: MarkdownRemark }>) {
   return (
     <Fragment>
       <SEO title="About" />
-      <Markdown content={md.html!} />
+      <HeaderBarebone title="About us" />
+
+      <PageContent content={<Markdown content={md.html!} />} />
     </Fragment>
   )
 }

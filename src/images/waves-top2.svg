@@ -1,0 +1,33 @@
+<svg fill="none" viewBox="0 0 1292 653">
+  <g clip-path="url(#top2_mask)" opacity=".7">
+    <path fill="url(#top2_gradient1)" d="M81.27 608.1s164.68 80.48 292.77 25.22c128.1-55.26 124.75-229.97 226.97-280.8 102.23-50.81 283.17 46.84 386.02 51.39 102.84 4.54 148.41-14.37 257.29-104.05 108.87-89.68-4.22-283.29-4.22-283.29s-444.7 7.5-493.54 20.32c-48.83 12.81-495.8 149.4-495.8 149.4L0 302.53 81.27 608.1z"/>
+    <path fill="url(#top2_gradient2)" d="M81.27 591.53S245.94 672 374.03 616.75c128.1-55.26 124.75-229.98 226.97-280.8 102.23-50.81 283.17 46.84 386.02 51.39 102.84 4.54 148.41-14.37 257.29-104.05C1353.19 193.61 1240.1 0 1240.1 0S795.4 7.5 746.56 20.32c-48.83 12.81-495.8 149.4-495.8 149.4L0 285.96l81.27 305.57z"/>
+    <path fill="url(#top2_gradient3)" d="M81.27 599.38s164.68 80.47 292.77 25.22c128.1-55.26 124.75-229.98 226.97-280.8C703.24 293 884.18 390.65 987.03 395.2c102.84 4.54 148.41-14.37 257.29-104.05 108.87-89.68-4.22-283.29-4.22-283.29s-444.7 7.5-493.54 20.32c-48.83 12.81-495.8 149.4-495.8 149.4L0 293.8l81.27 305.57z" opacity=".68"/>
+    <path fill="url(#top2_gradient4)" d="M225.64 353.63c76.4 41.07 295.11 131.56 354.85 105.79 59.75-25.77 58.19-107.26 105.87-130.97 47.67-23.7 132.07 21.85 180.04 23.97 47.97 2.12 69.22-6.7 120-48.53s-1.97-132.13-1.97-132.13-205.76-22.63-228.54-16.65-251.53 35.16-251.53 35.16l-465.61 46.3s110.48 75.98 186.89 117.06z" opacity=".39"/>
+  </g>
+  <defs>
+    <linearGradient id="top2_gradient1" x1="743.55" x2="400.27" y1="70.57" y2="757.12" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#345EFE"/>
+      <stop offset=".51" stop-color="#03B8FF"/>
+      <stop offset="1" stop-color="#00FCFF"/>
+    </linearGradient>
+    <linearGradient id="top2_gradient2" x1="715.46" x2="381.83" y1="121.82" y2="738.99" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#345EFE"/>
+      <stop offset=".51" stop-color="#03B8FF"/>
+      <stop offset="1" stop-color="#00FCFF"/>
+    </linearGradient>
+    <linearGradient id="top2_gradient3" x1="743.55" x2="400.27" y1="61.85" y2="748.4" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#345EFE"/>
+      <stop offset=".51" stop-color="#03B8FF"/>
+      <stop offset="1" stop-color="#00FCFF"/>
+    </linearGradient>
+    <linearGradient id="top2_gradient4" x1="573.02" x2="428.65" y1="168.74" y2="420.27" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#345EFE"/>
+      <stop offset=".51" stop-color="#03B8FF"/>
+      <stop offset="1" stop-color="#00FCFF"/>
+    </linearGradient>
+    <clipPath id="top2_mask">
+      <path fill="#fff" d="M0 0h1291.64v652.7H0z"/>
+    </clipPath>
+  </defs>
+</svg>

@@ -5,7 +5,8 @@ import Logo from "../../images/tph-logo.svg"
 
 export const MobileHeaderWrapper = styled.div`
   z-index: 50;
-  background: ${props => transparentize(0.2, props.theme.main.background)};
+  background: ${props => transparentize(0.6, props.theme.main.background)};
+  backdrop-filter: blur(14px);
   position: fixed;
   top: 0;
   left: 0;

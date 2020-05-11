@@ -11,6 +11,9 @@ export interface ITheme {
     base: string
     darker: string
   }
+  code: {
+    background: string
+  }
 }
 
 const baseColors = {
@@ -18,18 +21,21 @@ const baseColors = {
     base: "#7289DA",
     darker: "#5265AD",
   },
+  code: {
+    background: "#0c1115",
+  },
 }
 
 export const darkTheme: ITheme = {
   ...baseColors,
   name: "dark",
   sidebar: {
-    background: "#293845",
+    background: "#22323f",
     foreground: "#FFFFFF",
     active: "#00FCFF",
   },
   main: {
-    background: "#1F2A34",
+    background: "#16212b",
     foreground: "#FFFFFF",
     link: "#04B0A6",
   },

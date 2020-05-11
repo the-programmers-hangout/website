@@ -22,7 +22,7 @@ export const AuthorAvatar = styled.img<{ index: number }>`
   width: ${AVATAR_SIZE}px;
   height: ${AVATAR_SIZE}px;
   flex: 0 0 ${AVATAR_SIZE}px;
-  border: 2px solid #fff;
+  border: 2px solid #4c6780;
   border-radius: 50%;
   z-index: ${props => props.index};
   left: -${props => AVATAR_SIZE * OVERLAP_AMOUT * props.index}px;

@@ -1,9 +1,9 @@
 import { Link } from "gatsby"
-import { darken, lighten } from "polished"
 import styled from "styled-components"
 
 export const BreadcrumbWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
 
   @media screen and (max-width: 767px) {
@@ -16,6 +16,7 @@ export const LinkWrapper = styled.div`
   display: flex;
   align-items: center;
   height: 30px;
+  white-space: nowrap;
 
   svg {
     width: 12px;
@@ -24,20 +25,21 @@ export const LinkWrapper = styled.div`
   }
 
   svg path {
-    fill: ${props => props.theme.main.link};
+    fill: ${props => (props.theme.name === "dark" ? "#f9f9f9" : "#172129")};
   }
 `
 
 export const StyledLink = styled(Link)`
-  color: ${props => props.theme.main.link};
+  color: ${props => (props.theme.name === "dark" ? "#f9f9f9" : "#172129")};
   cursor: pointer;
+  font-weight: 700;
+  text-decoration: underline;
 
   &:hover {
-    color: #045551;
-    color: ${props =>
-      props.theme.name === "dark"
-        ? lighten(0.15, props.theme.main.link)
-        : darken(0.15, props.theme.main.link)};
+    background: linear-gradient(92.97deg, #feaf6d 0%, #ff70a5 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 `
 
@@ -45,4 +47,5 @@ export const CurrentPage = styled.div`
   display: flex;
   align-items: center;
   height: 30px;
+  white-space: nowrap;
 `

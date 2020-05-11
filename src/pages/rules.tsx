@@ -2,7 +2,9 @@ import { graphql } from "gatsby"
 import React, { Fragment } from "react"
 import { MarkdownRemark } from "../../generated/graphql"
 import { ComponentQuery } from "../../typings"
+import { HeaderBarebone } from "../components/HeaderBarebone"
 import { Markdown } from "../components/Markdown"
+import { PageContent } from "../components/PageContent"
 import { SEO } from "../components/SEO"
 
 function RulesPage({ data }: ComponentQuery<{ md: MarkdownRemark }>) {
@@ -11,7 +13,9 @@ function RulesPage({ data }: ComponentQuery<{ md: MarkdownRemark }>) {
   return (
     <Fragment>
       <SEO title="Rules" />
-      <Markdown content={md.html!} />
+      <HeaderBarebone title="Rules" />
+
+      <PageContent content={<Markdown content={md.html!} />} />
     </Fragment>
   )
 }

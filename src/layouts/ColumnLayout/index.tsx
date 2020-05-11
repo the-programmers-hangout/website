@@ -1,6 +1,5 @@
 import React, { FC, Fragment } from "react"
 
-import { Footer } from "../../components/Footer"
 import { MobileHeader } from "../../components/MobileHeader"
 import { GlobalStyles } from "../../globalStyles"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
@@ -39,12 +38,7 @@ const InnerColumnLayout: FC<IColumnLayoutProps> = ({
       <SC.Main>
         <MobileHeader openMenu={openMenu}>{title}</MobileHeader>
         {sidebar({ className: openOnMobile ? "is-open" : "" })}
-        <SC.MainContent>
-          <SC.Container>
-            {content}
-            <Footer />
-          </SC.Container>
-        </SC.MainContent>
+        <SC.MainContent>{content}</SC.MainContent>
       </SC.Main>
       <SC.Overlay
         className={openOnMobile ? "is-open" : ""}
