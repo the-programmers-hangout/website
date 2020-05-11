@@ -2,16 +2,31 @@ import { Link } from "gatsby"
 import styled, { css } from "styled-components"
 
 const linkStyle = css`
-  color: #0090d8;
+  display: inline-block;
   font-weight: 700;
-  border-bottom: 2px solid;
+  color: #fff;
+  color: ${props => props.theme.main.foreground};
+  font-weight: 700;
   text-decoration: none;
-  transition: color 0.3s;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(92.97deg, #feaf6d 0%, #ff70a5 100%);
+  }
 
   &:hover,
   &:focus {
-    color: #5dbbea;
-    transition: none;
+    background: linear-gradient(92.97deg, #feaf6d 0%, #ff70a5 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 `
 

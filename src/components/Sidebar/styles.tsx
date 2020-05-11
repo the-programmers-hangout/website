@@ -1,5 +1,6 @@
 import { Link } from "gatsby"
 import styled, { css } from "styled-components"
+import { transparentize } from "polished"
 
 export const SidebarWrapper = styled.div`
   box-sizing: border-box;
@@ -27,17 +28,34 @@ export const SidebarWrapper = styled.div`
   }
 `
 
+export const Title = styled(Link)`
+  display: block;
+  color: ${props => props.theme.sidebar.foreground};
+  font-size: 30px;
+  line-height: 34px;
+  font-weight: 700;
+  padding: 20px 0 0 20px;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.85;
+  }
+`
+
 export const Inner = styled.div`
-  padding: 30px 0 30px 20px;
+  padding: 20px 0 30px 20px;
 `
 
 export const Menu = styled.nav`
   display: flex;
   flex-direction: column;
-  border-top: ${props =>
-    props.borderVisibility ? "1px dashed #a5a5a5" : "none"};
   margin: 20px 0 40px;
   padding-top: 20px;
+
+  &.has-border {
+    border-top: ${props =>
+      `1px dashed ${transparentize(0.8, props.theme.sidebar.foreground)}`};
+  }
 `
 
 export const menuItemStyles = css`

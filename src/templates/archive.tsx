@@ -4,6 +4,7 @@ import { Header } from "../components/Header"
 import { Markdown } from "../components/Markdown"
 import { SEO } from "../components/SEO"
 import { humanize } from "../utils"
+import { PageContent } from "../components/PageContent"
 
 // @todo maybe find alternative type for data
 const Archive: FC<any> = ({ data }) => {
@@ -21,8 +22,9 @@ const Archive: FC<any> = ({ data }) => {
         title={title}
         createdAt={ctime}
         timeToRead={timeToRead}
+        shifted={false}
       />
-      <Markdown content={html} />
+      <PageContent content={<Markdown content={html} />} />
     </Fragment>
   )
 }

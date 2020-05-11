@@ -14,7 +14,7 @@ interface IBreadcrumbProps {
   basePath: string
 }
 
-const Link: FC<ILinkProps> = ({ item }) => {
+const LinkItem: FC<ILinkProps> = ({ item }) => {
   return <SC.StyledLink to={item.path}>{humanize(item.title)}</SC.StyledLink>
 }
 
@@ -32,17 +32,17 @@ function flatten([
 export function Breadcrumb({ relativePath, basePath }: IBreadcrumbProps) {
   const paths = relativePath.split("/")
   const breadcrumbItems = flatten([traversePaths(paths, basePath)])
-  let foldersDepth = 0;
+  let foldersDepth = 0
   return (
     <SC.BreadcrumbWrapper>
       <SC.LinkWrapper>
-        <Link
+        <LinkItem
           item={{ path: "/", title: "home", type: "folder", children: [] }}
         />
         <ChevronUp />
       </SC.LinkWrapper>
       <SC.LinkWrapper>
-        <Link
+        <LinkItem
           item={{
             path: basePath,
             title: basePath.replace(/\//, ""),
@@ -55,18 +55,18 @@ export function Breadcrumb({ relativePath, basePath }: IBreadcrumbProps) {
 
       {breadcrumbItems.map(item => {
         if (item.type === "folder") {
-          foldersDepth++;
+          foldersDepth++
           if (foldersDepth > 1) {
             return (
-            <SC.LinkWrapper key={item.path}>
-              { item.title }
-              <ChevronUp />
-            </SC.LinkWrapper>
+              <SC.LinkWrapper key={item.path}>
+                {item.title}
+                <ChevronUp />
+              </SC.LinkWrapper>
             )
           } else {
             return (
               <SC.LinkWrapper key={item.path}>
-                <Link item={item} />
+                <LinkItem item={item} />
                 <ChevronUp />
               </SC.LinkWrapper>
             )

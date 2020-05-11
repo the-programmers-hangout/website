@@ -1,4 +1,3 @@
-import { darken, lighten } from "polished"
 import styled, { css } from "styled-components"
 import {
   BASE_FONT_SIZE,
@@ -78,7 +77,7 @@ export const MarkdownWrapper = styled.div`
   }
 
   code {
-    background: #192129;
+    background: ${props => props.theme.code.background};
     padding: 4px 8px;
     display: inline;
     border-radius: 3px;
@@ -89,7 +88,7 @@ export const MarkdownWrapper = styled.div`
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
     overflow-x: auto;
-    background: #192129;
+    background: ${props => props.theme.code.background};
   }
 
   pre > code[class*="language-"] {
@@ -122,16 +121,30 @@ export const MarkdownWrapper = styled.div`
     }
   }
 
-  a {
+  a:not(.anchor) {
+    display: inline-block;
+    position: relative;
+    font-weight: 700;
+    color: ${props => (props.theme.name === "dark" ? "#f9f9f9" : "#172129")};
+    text-decoration: none;
     word-break: break-word;
-    color: ${props => props.theme.main.link};
     cursor: pointer;
 
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(92.97deg, #feaf6d 0%, #ff70a5 100%);
+    }
+
     &:hover {
-      color: ${props =>
-        props.theme.name === "dark"
-          ? lighten(0.15, props.theme.main.link)
-          : darken(0.15, props.theme.main.link)};
+      background: linear-gradient(92.97deg, #feaf6d 0%, #ff70a5 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 `
