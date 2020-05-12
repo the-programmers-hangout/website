@@ -21,6 +21,8 @@ export const Sidebar = styled.div`
   color: ${props => (props.theme.name === "dark" ? "#f9f9f9" : "#172129")};
   margin: 64px 0;
   padding: 0 32px;
+  position: sticky;
+  top: 32px;
 
   &:empty {
     display: none;
@@ -50,7 +52,11 @@ export const SidebarHeader = styled.div`
 `
 
 const ExtraLinks = styled.div`
-  margin-top: 16px;
+  margin-top: 32px;
+
+  &:first-child {
+    margin-top: 0;
+  }
 `
 
 export const RecommendedReading = styled(ExtraLinks)``

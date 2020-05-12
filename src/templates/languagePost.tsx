@@ -1,20 +1,32 @@
 import { graphql } from "gatsby"
 import React, { FC, Fragment } from "react"
+import "katex/dist/katex.min.css"
+
+import { Footer } from "../components/Footer"
 import { Header } from "../components/Header"
 import { Markdown } from "../components/Markdown"
-import { SEO } from "../components/SEO"
-
-import "katex/dist/katex.min.css"
 import { PageContent } from "../components/PageContent"
-import { Footer } from "../components/Footer"
+import { SEO } from "../components/SEO"
+import { buildToc } from "../utils"
 
 // @todo maybe find alternative type for data
 const LanguagePost: FC<any> = ({ data }) => {
   const { relativePath } = data.file
-  const { html, excerpt, fields, frontmatter, timeToRead } = data.file.post
+  const {
+    html,
+    headings,
+    excerpt,
+    fields,
+    frontmatter,
+    timeToRead,
+  } = data.file.post
+
+  const toc = buildToc(headings)
 
   const shiftLayout = Boolean(
-    frontmatter.recommended_reading || frontmatter.external_resources
+    frontmatter.recommended_reading ||
+      frontmatter.external_resources ||
+      toc.length
   )
 
   return (
@@ -36,6 +48,7 @@ const LanguagePost: FC<any> = ({ data }) => {
             <Footer />
           </>
         }
+        toc={toc}
         recommendedReading={frontmatter.recommended_reading}
         externalResources={frontmatter.external_resources}
       />
@@ -51,6 +64,10 @@ export const query = graphql`
       relativePath
       post: childMarkdownRemark {
         html
+        headings {
+          depth
+          value
+        }
         excerpt
         fields {
           authors {

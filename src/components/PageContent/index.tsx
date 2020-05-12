@@ -1,11 +1,14 @@
 import React, { FC, Fragment } from "react"
 
+import { ITocItem } from "../../types"
 import { humanize } from "../../utils"
-import * as SC from "./styles"
 import { Container } from "../Container"
+import { Toc } from "../Toc"
+import * as SC from "./styles"
 
 interface IPageContentProps {
   content: JSX.Element
+  toc?: ITocItem[]
   recommendedReading?: string[]
   externalResources?: string[]
 }
@@ -42,6 +45,7 @@ function ExtraLink({
 
 export const PageContent: FC<IPageContentProps> = ({
   content,
+  toc = [],
   recommendedReading,
   externalResources,
 }) => {
@@ -52,6 +56,13 @@ export const PageContent: FC<IPageContentProps> = ({
       </SC.Content>
 
       <SC.Sidebar>
+        {toc.length > 0 && (
+          <Toc
+            header={<SC.SidebarHeader>Table of Contents</SC.SidebarHeader>}
+            items={toc}
+          />
+        )}
+
         {recommendedReading && (
           <SC.RecommendedReading>
             <SC.SidebarHeader>Recommended reading</SC.SidebarHeader>
