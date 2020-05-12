@@ -55,3 +55,9 @@ export interface IAllArchivesQuery extends IAllFilesQuery {
     edges: IFileArchiveQuery[]
   }
 }
+
+export interface ITocItem {
+  depth: number
+  link: string
+  title: string
+}

@@ -71,6 +71,12 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100,
+      },
+    },
     `gatsby-plugin-react-svg`,
     `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-sharp`,

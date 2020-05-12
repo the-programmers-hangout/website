@@ -1,9 +1,11 @@
+import kebabCase from "lodash/kebabCase"
 import chain from "ramda/es/chain"
 import partition from "ramda/es/partition"
 import pipe from "ramda/es/pipe"
+import sort from "ramda/es/sort"
 
-import { sort } from "ramda"
-import { IFile, IFileOrFolder, IFolder } from "../types"
+import { IFile, IFileOrFolder, IFolder, ITocItem } from "../types"
+import { MarkdownRemark } from "../../generated/graphql"
 
 function specificWordsToUpper(str: string): string {
   const wordsToUpper = ["pdo", "c"]
@@ -138,4 +140,20 @@ export function join([head, ...tail]: IFileOrFolder[]): IFileOrFolder[] {
       : generateFile({ title, path })
 
   return [current, ...join(remaining)]
+}
+
+export function buildToc(headings: MarkdownRemark["headings"]): ITocItem[] {
+  if (!headings) {
+    return []
+  }
+
+  return headings
+    .filter(h => h?.depth === 2)
+    .map(h => {
+      return {
+        depth: h!.depth!,
+        link: `#${kebabCase(h!.value!)}`,
+        title: h!.value!,
+      }
+    })
 }
