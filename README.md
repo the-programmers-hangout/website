@@ -55,7 +55,8 @@ authors:
 title: "Working with Lists in Elixir"
 created_at: 2020/01/30
 external_resources:
-  - "https://hexdocs.pm/elixir/List.html"
+  - text: Elixir docs: List
+    href: "https://hexdocs.pm/elixir/List.html"
 ---
 
 # Title
