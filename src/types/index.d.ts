@@ -56,6 +56,11 @@ export interface IAllArchivesQuery extends IAllFilesQuery {
   }
 }
 
+export interface IExternalResource {
+  text: string
+  href: string
+}
+
 export interface ITocItem {
   depth: number
   link: string

@@ -4,8 +4,10 @@ authors:
 created_at: "2020/04/22"
 title: "Deploying discord bots written in Kotlin to Heroku"
 external_resources:
-  - "https://devcenter.heroku.com/articles/getting-started-with-java#introduction"
-  - "https://github.com/heroku/java-sample"
+  - text: Getting Started on Heroku with Java
+    href: "https://devcenter.heroku.com/articles/getting-started-with-java#introduction"
+  - text: Java Sample (on GitHub)
+    href: "https://github.com/heroku/java-sample"
 ---
 
 Over my time in TPH, I have noticed that a common woe aspiring bot developers have is that they are unable to host

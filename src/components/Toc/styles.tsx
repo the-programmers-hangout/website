@@ -1,4 +1,3 @@
-import { AnchorLink } from "gatsby-plugin-anchor-links"
 import styled from "styled-components"
 
 export const TocWrapper = styled.div`
@@ -16,15 +15,5 @@ export const TocItem = styled.div`
   &.depth-2 + &.depth-2,
   &.depth-3 + &.depth-2 {
     margin-top: 8px;
-  }
-`
-
-export const TocLink = styled(AnchorLink)`
-  color: ${props => props.theme.main.foreground};
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    text-decoration: underline;
   }
 `

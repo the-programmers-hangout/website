@@ -1,5 +1,4 @@
-import styled, { css } from "styled-components"
-import { Link } from "gatsby"
+import styled from "styled-components"
 import fontFamily from "../../design/typography"
 import { darken } from "polished"
 
@@ -53,6 +52,8 @@ export const SidebarHeader = styled.div`
 
 const ExtraLinks = styled.div`
   margin-top: 32px;
+  display: flex;
+  flex-direction: column;
 
   &:first-child {
     margin-top: 0;
@@ -62,53 +63,3 @@ const ExtraLinks = styled.div`
 export const RecommendedReading = styled(ExtraLinks)``
 
 export const ExternalResources = styled(ExtraLinks)``
-
-const extraLink = css`
-  display: flex;
-  align-items: center;
-  color: ${props => (props.theme.name === "dark" ? "#f9f9f9" : "#172129")};
-  cursor: pointer;
-  text-decoration: none;
-
-  & + & {
-    margin-top: 8px;
-  }
-
-  &:hover {
-    background: linear-gradient(92.97deg, #feaf6d 0%, #ff70a5 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  svg {
-    width: 14px;
-    flex: 0 0 14px;
-    transform: rotate(90deg);
-    margin-left: 6px;
-  }
-
-  svg path {
-    fill: ${props => (props.theme.name === "dark" ? "#f9f9f9" : "#172129")};
-  }
-`
-
-export const ExtraLinkInternal = styled(Link)`
-  ${extraLink};
-`
-
-export const ExtraLinkExternal = styled.a`
-  ${extraLink};
-`
-
-export const ExtraLinkText = styled.div`
-  word-break: break-word;
-
-  &::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(92.97deg, #feaf6d 0%, #ff70a5 100%);
-  }
-`

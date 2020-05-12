@@ -4,9 +4,12 @@ authors:
 title: "Spread operator"
 created_at: 2019/08/10
 external_resources:
-  - "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax"
-  - "https://javascript.info/rest-parameters-spread-operator"
-  - "https://www.freecodecamp.org/news/spread-operator-and-rest-parameter-in-javascript-es6-4416a9f47e5e/"
+  - text: MDN Spread Operator
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax"
+  - text: Javascript.info Spread/rest
+    href: "https://javascript.info/rest-parameters-spread-operator"
+  - text: Freecodecamp.org Spread/rest
+    href: "https://www.freecodecamp.org/news/spread-operator-and-rest-parameter-in-javascript-es6-4416a9f47e5e/"
 ---
 
 # An overview of the spread operator

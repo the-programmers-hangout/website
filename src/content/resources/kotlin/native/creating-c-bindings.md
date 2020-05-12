@@ -4,8 +4,10 @@ authors:
 created_at: "2019/08/23"
 title: "Creating C bindings with Kotlin/Native"
 external_resources:
-  - "https://kotlinlang.org/docs/reference/native/c_interop.html"
-  - "https://github.com/JetBrains/kotlin-native/releases"
+  - text: KotlinLang.org C-interop reference
+    href: "https://kotlinlang.org/docs/reference/native/c_interop.html"
+  - text: Kotlin releases on GitHub
+    href: "https://github.com/JetBrains/kotlin-native/releases"
 ---
 
 ## Interoperability with C

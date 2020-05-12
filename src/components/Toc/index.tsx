@@ -1,4 +1,5 @@
 import React, { FC } from "react"
+import { PageSidebarLink } from "../PageSidebarLink"
 import { ITocItem } from "../../types"
 import * as SC from "./styles"
 
@@ -40,7 +41,7 @@ export const Toc: FC<ITocProps> = ({ header, items }) => {
         return (
           <SC.TocItem key={item.link} className={`depth-${item.depth}`}>
             {prefix}
-            <SC.TocLink to={`${pathname}${item.link}`}>{title}</SC.TocLink>
+            <PageSidebarLink href={`${pathname}${item.link}`} text={title} type="anchor" />
           </SC.TocItem>
         )
       })}
