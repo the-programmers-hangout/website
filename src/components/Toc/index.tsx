@@ -23,7 +23,14 @@ function extractTitle(title: string): ITitle {
 }
 
 export const Toc: FC<ITocProps> = ({ header, items }) => {
-  const { pathname } = window.location
+  const windowGlobal = typeof window !== "undefined" && window
+
+  // window is not available on build
+  if (!windowGlobal) {
+    return null
+  }
+
+  const { pathname } = windowGlobal.location
   return (
     <SC.TocWrapper>
       {header}
