@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components"
 import WavesBottom from "../../images/waves-bot.svg"
 import WavesTop from "../../images/waves-top.svg"
-import WavesTopTwo from "../../images/waves-top2.svg"
 
 const waves = css`
   display: block;
@@ -13,12 +12,6 @@ const waves = css`
 `
 
 export const StyledWavesTop = styled(WavesTop)`
-  ${waves};
-  top: 0;
-  height: 87vh;
-`
-
-export const StyledWavesTopTwo = styled(WavesTopTwo)`
   ${waves};
   top: 0;
   height: 87vh;

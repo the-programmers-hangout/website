@@ -6,9 +6,7 @@ export const FooterWrapper = styled.footer`
   & a {
     display: inline;
     font-weight: 700;
-    color: #fff;
     color: ${props => props.theme.main.foreground};
-    font-weight: 700;
     text-decoration: none;
     position: relative;
 

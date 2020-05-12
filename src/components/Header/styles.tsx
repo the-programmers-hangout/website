@@ -15,10 +15,7 @@ export const Meta = styled.div`
   display: flex;
   white-space: nowrap;
   align-items: center;
-  color: ${props =>
-    props.theme.name === "dark"
-      ? transparentize(0.1, props.theme.main.foreground)
-      : transparentize(0.1, props.theme.main.foreground)};
+  color: ${props => transparentize(0.1, props.theme.main.foreground)};
 
   & + &::before {
     content: "•";
@@ -44,10 +41,7 @@ export const Popover = styled.div`
   padding: 8px;
   border-radius: 4px;
   backdrop-filter: blur(14px);
-  background: ${props =>
-    props.theme.name === "dark"
-      ? transparentize(0.3, props.theme.main.background)
-      : transparentize(0.3, props.theme.main.background)};
+  background: ${props => transparentize(0.3, props.theme.main.background)};
 
   &::before {
     position: absolute;
@@ -60,11 +54,7 @@ export const Popover = styled.div`
     border-style: solid;
     border-width: 0 3.5px 4px 3.5px;
     border-color: transparent transparent
-      ${props =>
-        props.theme.name === "dark"
-          ? transparentize(0.3, props.theme.main.background)
-          : transparentize(0.3, props.theme.main.background)}
-      transparent;
+      ${props => transparentize(0.3, props.theme.main.background)} transparent;
   }
 `
 
@@ -73,10 +63,7 @@ export const PopoverToggler = styled.div`
   align-items: center;
   position: relative;
   border-bottom: 1px dashed
-    ${props =>
-      props.theme.name === "dark"
-        ? transparentize(0.1, props.theme.main.foreground)
-        : transparentize(0.1, props.theme.main.foreground)};
+    ${props => transparentize(0.1, props.theme.main.foreground)};
 
   &:hover ${Popover} {
     display: block;
