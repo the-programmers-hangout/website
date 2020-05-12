@@ -2,16 +2,6 @@
 path: /rules
 ---
 
-# Table of Contents
-
-- [General Rules](#general-rules)
-- [Golden Rules](#golden-rules)
-- [Content Policy](#content-policy)
-- [Why isn't security talk allowed?](#why-dont-you-allow-talk-regarding-hacking)
-- [Server Roles](#roles)
-- [Nickname Policy](#nickname-policy)
-- [What is Modmail / How to contact staff](#what-is-modmail)
-
 ## General Rules
 
 Below you will find the rules of the server. These are the dos and don'ts of being here. Follow them if you wish to stay, ignorance is not an excuse.
@@ -76,8 +66,6 @@ Bans on all linked servers are propagated. This means that if you are banned on 
 
 The FAQ and beginner guide channels represent many hours of discussion to find well-rounded answers to common questions. Please link to them regularly when beginners and the uninformed ask those questions. You may be asked to cease your participation in a conversation if you present yourself as a zealot with distracting opinions.
 
-[Table of Contents](#table-of-contents)
-
 ## Golden Rules
 
 ### 1. Don't be a pedant.
@@ -97,8 +85,6 @@ Always be humble. No one likes a cocky fool.
 Treat other members, regardless of their skill level, as though you have something to learn from them.
 
 In general, if you have a contribution to make, _please be encouraging_. Being pedantic or gatekeeping how "hard" something is or pretending like you're some kind of God when it comes to programming is purely reductive garbage. If you are found to be guilty of violating these tenants appropriate action shall be taken against you. There are far too many people out there actively discouraging self-improvement and learning. This server refuses to stand for it.
-
-[Table of Contents](#table-of-contents)
 
 ## Content Policy
 
@@ -128,8 +114,6 @@ As annoying as it is for me to write this, do not ask about how to "get the girl
 
 We do not care that you got banned on another server. Sorry, but not our problem. Take it up with that server's staff.
 
-[Table of Contents](#table-of-contents)
-
 ## Why don't you allow talk regarding hacking?
 
 There are a few reasons for not allowing it: - It is directly against the Discord Terms of Service (ToS), allowing talk of how to perform hacks is basically never going to be allowed for this reason.
@@ -145,8 +129,6 @@ Light talk about prevention is allowed. Providing elaborate details in any capac
 #### Where should I ask?
 
 Try not to, honestly, if you are looking to prevent a specific kind of attack feel free to ask if your code prevents that, outside of that sharing details as to how you might get past some code isn't the best idea, try to talk about the solution more so than the gory details of the problem. Feel free to share the gory details via DM, but don't wait to take the conversation to DM. This is one of the very few topic areas we want you to take it to DM, since information spread in this area is not something we want to prevent, rather, the discussion around it.
-
-[Table of Contents](#table-of-contents)
 
 ## Roles
 
@@ -172,8 +154,6 @@ This role recognizes people who contribute their time and knowledge to the serve
 
 Self-explanatory - _ChatMod/Moderator/Senior Moderator/Admin/Owner_ - These people ensure that the usage of this environment reflects the guidelines as illustrated in the rules. Staff is occasionally handpicked, and sometimes there is an application process. There is a trial period for all new staff of 2-4 weeks (Sometimes more, sometimes less) which comes with a trial role, however, they are treated as full staff members during this time. Please respect all staff equally; if you have an issue with a specific staff member, talk to an administrator.
 
-[Table of Contents](#table-of-contents)
-
 ## Nickname Policy
 
 On TPH, we enforce a nickname policy - This means that if your nickname is deemed too NSFW (not safe for work), or hard to read/tag (it uses weird characters, it's blank or it contains numbers) we can and will forcibly nickname you to something else.
@@ -183,8 +163,6 @@ To further, we like to play around with nicknames, so expect to be nicknamed som
 _This is harmless fun, if you just accept it, laugh and move on, no problem._
 
 If you pipe up and get annoyed and flustered that you don't have your name, you're gonna have a bad time. Everyone, including the owner, follows nickname trends and jokes. This is in an attempt to be inclusive, and most people who stay here either genuinely don't care about it, or quite enjoy it. It's a mere 10% (yes, we have actually polled for this) that dislike it, and much less actually leave because of it. Don't be the sour apple if you get nicknamed something funny.
-
-[Table of Contents](#table-of-contents)
 
 ## What is ModMail?
 
@@ -204,5 +182,3 @@ Send it a message. This will open a two-way communication medium between you and
 ### Don't use it when you...
 
 Notice something which requires immediate attention such as raids or NSFW content. In these cases, use the serious rule break tag instead to immediately alert staff.
-
-[Table of Contents](#table-of-contents)
