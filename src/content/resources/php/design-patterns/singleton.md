@@ -4,14 +4,22 @@ authors:
 created_at: "2019/07/27"
 title: Singletons
 external_resources:
-  - https://en.wikipedia.org/wiki/Singleton_pattern
-  - https://phpenthusiast.com/blog/the-singleton-design-pattern-in-php
-  - https://phptherightway.com/pages/Design-Patterns.html#singleton
-  - https://www.php.net/manual/en/language.oop5.static.php
-  - https://www.php.net/manual/en/language.oop5.late-static-bindings.php
-  - https://en.wikipedia.org/wiki/Static_(keyword)
-  - https://en.wikipedia.org/wiki/Null_coalescing_operator
-  - https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.null-coalesce-op
+  - text: Wikipedia.org Singleton Pattern
+    href: https://en.wikipedia.org/wiki/Singleton_pattern
+  - text: phpenthusiast.com Singleton Pattern
+    href: https://phpenthusiast.com/blog/the-singleton-design-pattern-in-php
+  - text: phptherightway.com Singleton Pattern
+    href: https://phptherightway.com/pages/Design-Patterns.html#singleton
+  - text: php.net Static Keyword
+    href: https://www.php.net/manual/en/language.oop5.static.php
+  - text: php.net Late Static Bindings
+    href: https://www.php.net/manual/en/language.oop5.late-static-bindings.php
+  - text: Wikipedia.org Static Keyword
+    href: https://en.wikipedia.org/wiki/Static_(keyword)
+  - text: Wikipedia.org Null Coalescing Operator
+    href: https://en.wikipedia.org/wiki/Null_coalescing_operator
+  - text: php.net Null coalescing operator
+    href: https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.null-coalesce-op
 ---
 
 A singleton is a class which is only instantiated once during runtime. This is done by keeping a static property containing its instance on the singleton class.

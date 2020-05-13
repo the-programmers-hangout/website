@@ -4,8 +4,10 @@ authors:
 created_at: "2019/08/07"
 title: Prepared Statements
 external_resources:
-  - https://www.php.net/manual/en/class.pdostatement.php
-  - https://phptherightway.com/#pdo_extension
+  - text: php.net The PDOStatement class
+    href: https://www.php.net/manual/en/class.pdostatement.php
+  - text: phptherightway.com PDO Extension
+    href: https://phptherightway.com/#pdo_extension
 ---
 
 The PDO driver supports prepared statements. A prepared statement is a template statement with placeholders which can be executed with real values. Prepared Statements are also essential for avoiding SQL-injection attacks.

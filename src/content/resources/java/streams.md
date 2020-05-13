@@ -4,7 +4,8 @@ authors:
 title: "An introduction to Streams"
 created_at: 2019/12/15
 external_resources:
-  - https://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
+  - text: Java8 Stream Tutorial
+    href: https://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/
 ---
 
 ## An introduction to Streams

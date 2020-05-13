@@ -1,8 +1,8 @@
-import React, { FC, Fragment } from "react"
+import React, { FC } from "react"
 
-import { ITocItem } from "../../types"
-import { humanize } from "../../utils"
+import { IExternalResource, ITocItem } from "../../types"
 import { Container } from "../Container"
+import { PageSidebarLink } from "../PageSidebarLink"
 import { Toc } from "../Toc"
 import * as SC from "./styles"
 
@@ -10,37 +10,7 @@ interface IPageContentProps {
   content: JSX.Element
   toc?: ITocItem[]
   recommendedReading?: string[]
-  externalResources?: string[]
-}
-
-function ExtraLink({
-  item,
-  external = false,
-}: {
-  item: string
-  external?: boolean
-}) {
-  const Inner = ({ text }: { text: string }) => (
-    <Fragment>
-      <SC.ExtraLinkText>{text}</SC.ExtraLinkText>
-    </Fragment>
-  )
-
-  if (external) {
-    return (
-      <SC.ExtraLinkExternal href={item} target="_blank">
-        <Inner text={item} />
-      </SC.ExtraLinkExternal>
-    )
-  }
-
-  const [internalText] = item.split("/").slice(-1)
-
-  return (
-    <SC.ExtraLinkInternal to={`/resources/${item}.md`}>
-      <Inner text={humanize(internalText)} />
-    </SC.ExtraLinkInternal>
-  )
+  externalResources?: IExternalResource[]
 }
 
 export const PageContent: FC<IPageContentProps> = ({
@@ -67,7 +37,7 @@ export const PageContent: FC<IPageContentProps> = ({
           <SC.RecommendedReading>
             <SC.SidebarHeader>Recommended reading</SC.SidebarHeader>
             {recommendedReading.map(item => {
-              return <ExtraLink key={item} item={item} />
+              return <PageSidebarLink key={item} href={item} type="internal" />
             })}
           </SC.RecommendedReading>
         )}
@@ -76,7 +46,7 @@ export const PageContent: FC<IPageContentProps> = ({
           <SC.ExternalResources>
             <SC.SidebarHeader>External Resources</SC.SidebarHeader>
             {externalResources.map(item => {
-              return <ExtraLink key={item} item={item} external />
+              return <PageSidebarLink key={item.href} href={item.href} text={item.text} type="external" />
             })}
           </SC.ExternalResources>
         )}

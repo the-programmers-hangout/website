@@ -80,7 +80,10 @@ export const query = graphql`
           created_at
           title
           recommended_reading
-          external_resources
+          external_resources {
+            text
+            href
+          }
         }
         timeToRead
       }
