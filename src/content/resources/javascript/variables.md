@@ -5,8 +5,6 @@ created_at: "2019/10/06"
 title: Variables
 ---
 
-## Variables
-
 A `variable` in Javascript is a "named container" that can hold data. Variables are declared by giving them a name and a value - the `name` allows you to reference the variable throughout your program, and the `value` is the current value the variable represents.
 
 Variables can be defined in the following ways:
@@ -117,15 +115,15 @@ console.log(myVar); // 'test'
 This is fixed using `let`
 
 ```js
-for(let i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++) {
   console.log(i);
 }
 console.log(i); // Error: i is undefined
 
 if (true) {
-  let myVar = 'test';
+  let myVar = "test";
 }
-console.log(myVar) // Error: myVar is undefined
+console.log(myVar); // Error: myVar is undefined
 ```
 
 However, if the above code was in a function, this would not be the case. In the case of a function, the variable will be scoped to the given function, and not accessible outside it. Eg:

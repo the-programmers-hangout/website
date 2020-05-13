@@ -12,8 +12,6 @@ external_resources:
     href: "https://www.freecodecamp.org/news/spread-operator-and-rest-parameter-in-javascript-es6-4416a9f47e5e/"
 ---
 
-# An overview of the spread operator
-
 Spread operator (or spread syntax) is a powerful feature in Javascript which allows you to do such things as merging or copying objects, expanding an array into function arguments and a lot more. In this post, we are going to cover most of its use-cases.
 
 ## Copying an object
