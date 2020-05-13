@@ -24,7 +24,7 @@ And we can keep going on and on, creating more arrays inside the arrays.
 
 To create multidimensional array, you do it like a regular array but with a extra `[]` at the end.
 
-##### Method 1:
+#### Method 1:
 
 Use
 
@@ -48,7 +48,7 @@ This will make a empty 2x3 matrix that looks like:
 
 So there are 2 arrays with 3 elements each within the array `arr`.
 
-##### Method 2:
+#### Method 2:
 
 Use:
 
@@ -70,7 +70,7 @@ This will make a 2x3 matrix with preset values instead of all 0's so it'll look 
 {{1,2,3},{4,5,6}}
 ```
 
-##### Method 3:
+#### Method 3:
 
 Combine both:
 
@@ -92,7 +92,7 @@ This will make a 2x3 matrix that looks like:
 {{1,2,3},{4,5,6}}
 ```
 
-##### Note:
+#### Note:
 
 It is possible to go ever further, and so a declaration like `data_type array_name[A][B][C]` is possible and would add more layers to your array. So after going through one layer, you have to input the location of the next layer, and so on and so forth until you reach the deepest layer of the `{}` where you'll find the object.
 
@@ -108,9 +108,9 @@ This will make an 2x3x4 matrix that looks like:
 {{{0,0,0,0},{0,0,0,0},{0,0,0,0}},{{0,0,0,0},{0,0,0,0},{0,0,0,0}}}
 ```
 
-### What can you do with it?
+## What can you do with it?
 
-##### Calling objects
+#### Calling objects
 
 To get the object inside, you can call for the object inside a multidimensional array by putting a integer inside the `[]`.
 
@@ -126,7 +126,7 @@ This would output `2` because using array indicies, `2` is the object in positio
 You must put an integer in both `[]`, or else you will get an error.
 There is no syntax to instantly view the whole array, but an easy way is to loop through the whole array and outputting it.
 
-##### Reassigning objects
+#### Reassigning objects
 
 Like with a regular array, you can also reassign what object is being held inside a exact position using `=`
 So let's take for example the array made in example 2 above, which looks like:
@@ -142,7 +142,7 @@ This would cause the array to change to looking like:
 {{1,2,3},{4,1337,6}}
 ```
 
-### Restrictions
+## Restrictions
 
 1. The size is locked upon initialization. Once you make the array, its size is locked. For example, if you make a 2x3 array, and realize you need another column or row, you have to either make a new one, or change the size where you initialize it. If you want a dynamic size array, a array which you can change the size of, consider using `std::vector` instead.
 2. There is no way to search except by iterating through each object in the entire array. For example, if you need to find the number `2` in:

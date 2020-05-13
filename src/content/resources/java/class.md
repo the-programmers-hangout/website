@@ -1,11 +1,11 @@
 ---
 authors:
   - "AstronautEVA#0331"
-title: "What is a class?"
+title: "Classes"
 created_at: 2019/10/20
 ---
 
-# What is a class?
+## What is a class?
 
 Oftentimes in programs, it is necessary to represent objects from the real world as computer data.
 For example, if someone is writing a program that simulates a zoo, they will need to create some animals.
@@ -56,7 +56,7 @@ public class Animal {
 }
 ```
 
-### Class vs Object
+## Class vs Object
 
 Remember this is only the description of what an animal is, not a specific animal. A specific animal such as Max is one instance of a class and is called an object. It has values assigned to its attributes like the name is Max and the age is 5. You can call methods on the object such as move or sleep. And there can be an infinite number of objects constructed from a class. To create objects from your class, you need something called a constructor.
 

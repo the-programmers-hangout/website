@@ -1,13 +1,13 @@
 ---
 authors:
   - "AstronautEVA#0331"
-title: "What is Inheritance?"
+title: "Inheritance"
 created_at: 2019/10/24
 recommended_reading:
   - java/class
 ---
 
-# What is Inheritance?
+## What is Inheritance?
 
 Inheritance is the idea that when two classes have similar implementations, rather than duplicating code for each class one can obtain it from the other. Much like a human child will inherit traits from their parents, a child class will inherit data from
 its parent class.
@@ -123,7 +123,7 @@ public class Animal {
 
 It can be used in our subclass.
 
-```
+```java
 Animal myAnimal = new Animal();
 myAnimal.sleep(); // returns "The animal sleeps."
 
@@ -145,7 +145,7 @@ public class Bird extends Animal {
 
 It cannot be used in our superclass.
 
-```
+```java
 Animal myAnimal = new Animal();
 myAnimal.chirp(); // error, the method does not exist
 

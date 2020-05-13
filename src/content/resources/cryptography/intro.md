@@ -10,7 +10,6 @@ title: Introduction to Cryptography
 - [The Codebreakers](https://www.amazon.com/Codebreakers-Comprehensive-History-Communication-Internet/dp/0684831309)
 - [Seizing the Enigma: The Race to Break the German U-Boats Codes](https://www.amazon.com/Seizing-Enigma-German-U-Boats-1939-1943/dp/0395427398)
 
-
 ## Books
 
 - [Handbook of Applied Cryptography - Free](http://cacr.uwaterloo.ca/hac/)
