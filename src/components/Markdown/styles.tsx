@@ -121,6 +121,15 @@ export const MarkdownWrapper = styled.div`
     }
   }
 
+  blockquote {
+    border-left: 2px solid ${props => props.theme.main.foreground};
+    margin-top: ${BASE_LINE_HEIGHT}px;
+    margin-bottom: ${BASE_LINE_HEIGHT}px;
+    margin-right: ${BASE_LINE_HEIGHT * 2}px;
+    margin-left: 0;
+    padding-left: ${BASE_LINE_HEIGHT}px;
+  }
+
   a:not(.anchor) {
     display: inline-block;
     position: relative;
