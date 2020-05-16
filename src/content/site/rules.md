@@ -2,183 +2,136 @@
 path: /rules
 ---
 
-## General Rules
+Below are the rules of the server. If you are unsure about any or wish to discuss in further detail, contact ModMail.
 
-Below you will find the rules of the server. These are the dos and don'ts of being here. Follow them if you wish to stay, ignorance is not an excuse.
+## 1. Keep the learning environment positive
 
-### 1. Do not advertise.
+Everybody is here for the same reason: to learn and talk about programming.
 
-This includes other servers, products or services that you stand to benefit from financially, your Youtube channel or the like.
+These rules are here to make sure the community stays a place where people of all skill levels and backgrounds can flourish.
 
-### 2. Do not be a dick.
+### Spoon Feeding
 
-If you make yourself particularly hard to deal with, if you pretend that you are better than anyone else, or if you are just in general very annoying and not a good fit for this server we will remove you. Permanently.
+This is when you give someone the solution without letting them figure it out. It doesn’t help them learn and it’s generally just a waste of time.
 
-### 3. Use facts, not authority.
+### Language Flaming
 
-If you are going to provide an anecdote or your own experience, that is fine, provided you don't pass it off as axiomatic. Quote sources when you are asked to.
+Unless constructive, keep any opinions about how much you dislike languages or tools to yourself. It doesn't benefit anyone at all.
 
-### 4. Do not flame languages or other such technologies (e.g. text editors).
+### Direct Messaging
 
-Doing so is reductive. If someone likes to use VB.Net or JavaScript or Vim, we surprisingly expect you to not jump down their throat about that. Doing so outside of regulated channels where staff have explicitly allowed the discussion for a short period of time is not allowed ( #poll-discussion is one such example of an okay place to talk about it provided the poll allows it )
+If you direct message people instead of posting in the right channel, you’re preventing others from learning from the conversation. We have plenty of channels, use one of them. Do not send uninvited DMs.
 
-### 5. Speak English only in the chat.
+### Gatekeeping
 
-This speaks for itself, we do not expect staff to speak extra languages and we cannot moderate what we do not understand. Sorry.
+This describes when someone takes it upon themselves to set a standard for something (like eg. “good code”), and uses that as an excuse to tell somebody else that they aren’t able to learn or do something. Remember we’re all here to learn and improve.
 
-### 6. Do not ask for free work.
+### Nitpicking
 
-This is not an advertisement platform. If you are going to take from this community, you are going to give back to it first. We do not care about your work if you do not care about us. Thanks.
+Keep criticism constructive. Fixating on minor details or deliberately picking holes in someone’s work is something that should be avoided.
 
-### 7. Do not DM people who you have not built a rapport with.
+### Arguing from authority
 
-This is self-explanatory. Don't be a creep. Don't be a pest, ask questions in relevant channels. Someone's DM is not a relevant channel.
+Nobody likes a know-it-all, and presenting your opinion as fact isn’t the way to participate constructively. If you’re sharing an anecdote or example from your experience, that’s totally fine, but make that clear, and don’t present it as concrete evidence of something being a certain way.
 
-### 8. Do not talk about your infractions publicly.
+### Backseat driving
 
-If you are infracted, it's not a big deal. It's simply a formal warning - you can totally recover from that. If you disagree with a warning, DM @ModMail. Complaining about infractions publicly will land you a mute or a ban. Don't pollute chat or other channels with these conversations.
+If somebody is already getting help, do not jump in the middle of the conversation. Do not turn a simple question into a “too many cooks in the kitchen” problem. If you think you have something to contribute, ask if you can join into the conversation.
 
-### 9. Do not participate in spoonfeeding.
+### Opinions for beginner languages
 
-Asking to be spoonfed is the same as asking someone else to do your work for you. We do not condone just solving the problems of others -- make them work for it. Give a man a fish and you feed him for a day. Teach a man to fish and you feed him for a lifetime.
+The FAQ and beginner guide represent many hours of discussion to find well-rounded answers to common questions. Please link to them regularly when beginners ask questions those guides answer.
 
-### 10. Do not impersonate staff members.
+### Maintain a student mentality
 
-Using the avatar of another staff member that they've had for a reasonable long time is not allowed. You will be notified if you seem like you're impersonating a staff member. We may also nickname you depending on the context. In addition, it is especially prohibited to pretend to be another staff member through messages/voice, DM or otherwise. Doing so will land you an immediate, permanent ban.
+Treat everyone, regardless of their skill level, as though you have something to learn from them.
 
-### 11. Follow the directions of staff members to the letter.
+### Do not attempt academic dishonesty
 
-Most of us are here for our love of programming, so we like to do as much talking about programming and the like as possible. That being said, we really don't like intervening. But we especially don't like having to intervene twice. Please don't make us do that, thank you
+This is where you cheat on your school work, pay someone to do your school work or try to avoid your school work in any way. It's unethical and will not be tolerated here.
 
-### 12. No backseat driving.
+## 2. Use common sense
 
-If you see people working through a problem, you shouldn't intermittently interject advice. Let them work it out unless someone asks for help. We understand you want to help out, but this can often cause confusion and overall a negative impact on the person who originally asked the question.
+### Do not impersonate staff
 
-### 13. Do not bad mouth linked servers.
+Don’t pretend to be staff; this includes but is not limited to: copying their profile picture, putting a hammer emoji in your name, having the same name as a staff member and pretending to be a member of the staff team.
 
-TPH is joined at the hip to Controversy Central (CC), KUtils, and Late Gaming (LG). If you don't like one of our linked servers, just leave them. Each server serves its own purpose.
+### Do not make yourself hard to deal with
 
-### 14. TPH is not a ban appeal vector for linked servers.
+This speaks for itself: don’t be difficult or generally a pain in the ass.
 
-Bans on all linked servers are propagated. This means that if you are banned on any of our servers (CC/KUtils/Late Gaming), you will be banned on all of them. Members with certain roles will be exempt from ban propagation, but that is no excuse to run riot on other servers. If you troll them, we will also ban you here. That being said, TPH is not a place to post your ban appeal. Please take it up with those servers.
+### Do not discuss infractions in public
 
-### 15. Link to the FAQ and beginner guide channels liberally.
+Use ModMail if you want to discuss an infraction or mute: don’t do it anywhere else on the server.
 
-The FAQ and beginner guide channels represent many hours of discussion to find well-rounded answers to common questions. Please link to them regularly when beginners and the uninformed ask those questions. You may be asked to cease your participation in a conversation if you present yourself as a zealot with distracting opinions.
+### Do not ask for free work
 
-## Golden Rules
+Programming is a skilled trade, so if you want development work, pay for it. Profit shares do not count as a form of payment.
 
-### 1. Don't be a pedant.
+### Do not post NSFW content
 
-Don't be the type of person who fixates on minor details or meaningless trivia.
+Content should be kept to a PG13 level. Always ask yourself "Would my boss be okay with this fullscreen on my monitor as he walked by?". If the answer is no, don't post it.
 
-### 2. Don't be a gatekeeper.
+## 3: No illegal or prohibited topics / Security and hacking
 
-_Gatekeeping_ is when someone takes it upon themselves to decide who does or does not have access to a community/identity. i.e. “You’re not a _real_ programmer if you don’t use [language x]”
+### Do not discuss anything prohibited by law or a service’s Terms of Service (ToS)
 
-### 3. Don't be cocky.
+This includes, but is not limited to: piracy, video game cheats/hacks, hacking, web scraping, running automated tools against a website or service against the ToS, and so on. Basically anything that the website or service in question does not allow, we won’t either.
 
-Always be humble. No one likes a cocky fool.
+If you are unsure if it’s a suitable topic to discuss, please contact ModMail.
 
-### 4. Maintain a student mentality.
+### Do not talk about hacking, “offensive security”, or the like
 
-Treat other members, regardless of their skill level, as though you have something to learn from them.
+This includes, but is not limited to: reverse engineering and decompiling
 
-In general, if you have a contribution to make, _please be encouraging_. Being pedantic or gatekeeping how "hard" something is or pretending like you're some kind of God when it comes to programming is purely reductive garbage. If you are found to be guilty of violating these tenants appropriate action shall be taken against you. There are far too many people out there actively discouraging self-improvement and learning. This server refuses to stand for it.
+Light talk about preventing and best practices for coding with security in mind are allowed. Everyone should be aware of and make a good effort to write secure code, but discussions around how to bypass a system will not be allowed.
 
-## Content Policy
+## 4. Use only english
 
-Below is a list of things that you cannot talk about here. If a staff member cites you the content policy, please understand that they really mean _stop_ talking about the thing you are talking about. I think you will find the list reasonable, as we construct it to be conducive to an environment that suits talking about programming and technology in the absence of distractions.
+We’re an English server and our staff is primarily English speaking. We cannot moderate what we cannot understand.
 
-### 1. No politics, religion, philosophy or other such topics.
+## 5. Stay on topic
 
-This goes without saying. You don't make friends by talking to strangers about these topics. Your political views have nothing to do with how good of a programmer you are.
+### Don’t derail constructive conversation
 
-### 2. No NSFW content in any capacity.
+Technical and language channels need to be kept on topic, meaning these channels are not the place to have random conversations or to post things unrelated to that specific channel. If there’s an on-going conversation taking place, do not jump in with something completely unrelated.
 
-Always ask yourself "Would my boss be okay with this fullscreen on my monitor as he walked by?". If the answer is no, don't post it. The content here is meant to be pg13. Not pg15, not pg18 - if you wouldn't show it to your kid brother in front of your mother, it has no place here. No hentai, no porn, no anything like that.
+### Don’t post controversial content
 
-### 3. No talk of suicide or depression.
+In addition, content that is not on topic for the server or against the content policy shouldn’t be posted anywhere. If you wish to discuss topics like politics, religion, philosophy and alike, head over to our sister server, Controversy Central.
 
-Sorry to say, but if you are depressed or considering suicide, that is terrible and we feel sorry for you, but we do **not** feel qualified to give advice, to moderate advice given, or anything of the sort. It would be absolutely unfair of me to put that weight on the shoulders of the moderators here. So please, ring your local suicide hotline which you can hopefully find here: [http://www.suicide.org/international-suicide-hotlines.html](http://www.suicide.org/international-suicide-hotlines.html "http://www.suicide.org/international-suicide-hotlines.html") (or by googling it)
+## 6. Do not advertise
 
-### 4. No talk of illegal topics, pirating, reverse engineering, hacking, imitating user interaction or other similar topics.
+Do not advertise anything you stand to benefit from. A few examples of this are: other Discord servers, websites, Youtube channels, and blog posts.
 
-This includes anything against a site's terms of service, anything protected by a captcha/robots.txt and any automated account creation/checkout/purchasing. These topics are strictly forbidden. Topics related to these may also be disallowed.
+Exceptions to this rule are rarely made; if you’d like to request such an exception, please contact ModMail directly.
 
-### 5. Don't ask for relationship or life advice.
+## 7: Use ModMail to contact staff
 
-As annoying as it is for me to write this, do not ask about how to "get the girl" or whatever. This is not the appropriate environment. Go look for dating advice and the like elsewhere. Complicated, heavy life advice topics that are not explicitly career-related are **off-limits** here as well. We're just programmers, we're not miracle makers.
-
-### 6. Do not bring other server drama here.
-
-We do not care that you got banned on another server. Sorry, but not our problem. Take it up with that server's staff.
-
-## Why don't you allow talk regarding hacking?
-
-There are a few reasons for not allowing it: - It is directly against the Discord Terms of Service (ToS), allowing talk of how to perform hacks is basically never going to be allowed for this reason.
-
-_Hacking is a dick move. Stop trying to be a dick._
-
-It generally leads to even more illegal topics
-
-#### So then, what is allowed?
-
-Light talk about prevention is allowed. Providing elaborate details in any capacity of how someone might get past a system is not allowed.
-
-#### Where should I ask?
-
-Try not to, honestly, if you are looking to prevent a specific kind of attack feel free to ask if your code prevents that, outside of that sharing details as to how you might get past some code isn't the best idea, try to talk about the solution more so than the gory details of the problem. Feel free to share the gory details via DM, but don't wait to take the conversation to DM. This is one of the very few topic areas we want you to take it to DM, since information spread in this area is not something we want to prevent, rather, the discussion around it.
-
-## Roles
-
-TPH has a relatively small amount of roles, but each of our roles has a purpose. We don't have 30 language roles and a staff rank. That being said, it's kind of tricky to keep a track of all of the roles at once - so here you can see what they're for.
-
-### _Community-Member, Active Contributor, Chatterbox, Super-Talky-Guy, Bepis-Drinker, Conke-Commander, and Patriotic-Procrastinator_
-
-These are the activity roles of the server. Different tiers will grant different perks, such as unlocking hidden channels, voice access, and nicknaming privileges. These roles are assigned automatically as you participate in the server, so don't ask for them.
-
-### Wizard
-
-This is for helpful members who have shown exceptional aptitude or expertise in some field. This is given out at the discretion of Elliott - though other staff members may suggest for Elliot to give it to someone. Less than 0.001% of users get this role.
-
-### Technology Champion
-
-These people will try to provide some answers on their own time for questions in the Technology spotlight category. Often times these people will write the introductory text for the current technology as well. Staff will be preferred for this role, but not always - This is a temporary role.
-
-### Solid Contributor
-
-This role recognizes people who contribute their time and knowledge to the server completely out of their own volition.
-
-### Staff roles
-
-Self-explanatory - _ChatMod/Moderator/Senior Moderator/Admin/Owner_ - These people ensure that the usage of this environment reflects the guidelines as illustrated in the rules. Staff is occasionally handpicked, and sometimes there is an application process. There is a trial period for all new staff of 2-4 weeks (Sometimes more, sometimes less) which comes with a trial role, however, they are treated as full staff members during this time. Please respect all staff equally; if you have an issue with a specific staff member, talk to an administrator.
-
-## Nickname Policy
-
-On TPH, we enforce a nickname policy - This means that if your nickname is deemed too NSFW (not safe for work), or hard to read/tag (it uses weird characters, it's blank or it contains numbers) we can and will forcibly nickname you to something else.
-
-To further, we like to play around with nicknames, so expect to be nicknamed something silly from time to time.
-
-_This is harmless fun, if you just accept it, laugh and move on, no problem._
-
-If you pipe up and get annoyed and flustered that you don't have your name, you're gonna have a bad time. Everyone, including the owner, follows nickname trends and jokes. This is in an attempt to be inclusive, and most people who stay here either genuinely don't care about it, or quite enjoy it. It's a mere 10% (yes, we have actually polled for this) that dislike it, and much less actually leave because of it. Don't be the sour apple if you get nicknamed something funny.
-
-## What is ModMail?
+### What is ModMail?
 
 ModMail (@ModMail) is a bot that reports every direct message received to staff.
 
 ### How do I use it?
 
-Send it a message. This will open a two-way communication medium between you and the entire staff team. It won't notify or bother people who are offline or busy, so don't even concern yourself with that part.
+Simply send the bot a direct message.
 
-### Use it when you...
+### When do I use it?
 
-- Notice a heated argument about how bad JavaScript is.
-- Wish to dispute an infraction you have received.
-- Would like more context about a rule.
-- Would like to screen something with the staff before posting.
+A few examples of when using ModMail is good practice
 
-### Don't use it when you...
+You’ve noticed a heated argument in a channel and there’s no staff around.
+Wish to dispute an infraction you have received.
+Would like more context about a rule.
+Would like to screen something with the staff before posting.
 
-Notice something which requires immediate attention such as raids or NSFW content. In these cases, use the serious rule break tag instead to immediately alert staff.
+### When do I not use it?
+
+A few examples of when using ModMail is **not** good practice
+
+Someone posts some NSFW content, instead ping the `serious rule break` role.
+Want help with programming, use a channel in discord.
+
+## 8: No life advice
+
+This includes, but is not limited to: relationship advice, depression or suicidal talk. We are not qualified to offer professional advice; it just does not belong here. Note that career-related advice is fine.
