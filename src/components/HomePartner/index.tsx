@@ -5,7 +5,9 @@ export const HomePartner: FC = () => {
   return (
     <SC.HomePartnerWrapper>
       Member of
-      <SC.StyledJetBrainsLogo alt="JetBrains" />
+      <SC.JetBrainsLogoWrapper href="https://jetbrains.com">
+        <SC.StyledJetBrainsLogo alt="JetBrains" />
+      </SC.JetBrainsLogoWrapper>
       Supported user groups
     </SC.HomePartnerWrapper>
   )

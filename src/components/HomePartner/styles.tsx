@@ -14,3 +14,6 @@ export const StyledJetBrainsLogo = styled(JetBrainsLogo)`
   height: 110px;
   margin: 0 16px;
 `
+
+export const JetBrainsLogoWrapper = styled.a`
+`
