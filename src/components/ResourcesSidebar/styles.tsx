@@ -130,7 +130,7 @@ export const ExpandLanguagesHeader = styled.div`
   }
 `
 
-export const ExpandLanguagesList = styled.div`
+export const StyledLanguageList = styled.div`
   padding: 8px 0;
   display: flex;
   flex-direction: column;

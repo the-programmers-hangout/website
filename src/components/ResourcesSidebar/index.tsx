@@ -127,12 +127,40 @@ const FirstLevelFolder = memo(({ item }: { item: IFolder }) => {
   )
 })
 
+const LanguageList: FC<{
+  items: IFileOrFolder[]
+  setExpanded: React.Dispatch<React.SetStateAction<boolean>>
+}> = ({ items, setExpanded }) => {
+  const { current, setCurrent } = useSidebar()
+
+  return (
+    <SC.StyledLanguageList>
+      {items.map(item => (
+        <SC.Language
+          key={item.title}
+          className={current === item.title ? "active" : ""}
+          onClick={() => {
+            setCurrent(item.title)
+            setExpanded(false)
+          }}
+        >
+          {item.title}
+        </SC.Language>
+      ))}
+    </SC.StyledLanguageList>
+  )
+}
+
 const AllLanguages: FC<{
   items: IFileOrFolder[]
   expanded: boolean
   setExpanded: React.Dispatch<React.SetStateAction<boolean>>
 }> = ({ items, expanded, setExpanded }) => {
-  const { current, setCurrent } = useSidebar()
+  const { current } = useSidebar()
+
+  if (!current) {
+    return <LanguageList items={items} setExpanded={setExpanded} />
+  }
 
   return (
     <SC.ExpandLanguages>
@@ -141,21 +169,7 @@ const AllLanguages: FC<{
       >
         Expand languages {expanded ? <SC.CollapseIcon /> : <SC.ExpandIcon />}
       </SC.ExpandLanguagesHeader>
-      {expanded && (
-        <SC.ExpandLanguagesList>
-          {items.map(item => (
-            <SC.Language
-              className={current === item.title ? "active" : ""}
-              onClick={() => {
-                setCurrent(item.title)
-                setExpanded(false)
-              }}
-            >
-              {item.title}
-            </SC.Language>
-          ))}
-        </SC.ExpandLanguagesList>
-      )}
+      {expanded && <LanguageList items={items} setExpanded={setExpanded} />}
     </SC.ExpandLanguages>
   )
 }
@@ -170,8 +184,7 @@ export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = props => {
     languages
   )
 
-  const currentLanguage =
-    sortedLanguages.find(lang => lang.title === current) || sortedLanguages[0]
+  const currentLanguage = sortedLanguages.find(lang => lang.title === current)
 
   return (
     <Sidebar {...props}>
@@ -180,7 +193,7 @@ export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = props => {
         expanded={expandedLanguages}
         setExpanded={setExpandedLanguages}
       />
-      <Tree item={currentLanguage} firstLevel={true} />
+      {currentLanguage && <Tree item={currentLanguage} firstLevel={true} />}
     </Sidebar>
   )
 }
