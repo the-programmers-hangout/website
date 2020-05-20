@@ -69,7 +69,7 @@
     "@types/ramda": "^0.27.6",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
-    "@types/react-helmet": "^5.0.15",
+    "@types/react-helmet": "^6.0.0",
     "@types/styled-components": "^5.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "discord.js": "^12.2.0",
