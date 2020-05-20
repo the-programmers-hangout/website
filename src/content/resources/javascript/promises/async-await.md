@@ -130,13 +130,13 @@ Below is the same code implemented without using Async / Await as a comparision.
 ```js
 function getCharacters() {
   return fetch(`https://rickandmortyapi.com/api/character`)
-    .then(response => response.json())
-    .then(response => response.results);
+    .then((response) => response.json())
+    .then((response) => response.results);
 }
 
 getCharacters()
-  .then(characters => {
+  .then((characters) => {
     console.log(characters); // (20) [{...}, {...}, {...}]
   })
-  .catch(err => console.error(err));
+  .catch((err) => console.error(err));
 ```

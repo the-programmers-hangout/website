@@ -85,7 +85,7 @@ export const PossibleCorrections: FC<IPossibleCorrections> = ({
 
   // filter based on distance
   // levenshtein distance of x means how 'off' it was
-  const displayArray = linkArray.filter(value => {
+  const displayArray = linkArray.filter((value) => {
     return (
       levenshteinDistance(
         search.toLowerCase(),

@@ -6,13 +6,13 @@ export const PageLink = styled(Link)`
   display: block;
   padding: 4px 0 0;
   margin-bottom: 4px;
-  color: ${props => props.theme.sidebar.foreground};
+  color: ${(props) => props.theme.sidebar.foreground};
   align-self: flex-start;
   text-decoration: none;
   border-bottom: 2px solid transparent;
 
   &:hover {
-    border-color: ${props =>
+    border-color: ${(props) =>
       transparentize(0.7, props.theme.sidebar.foreground)};
   }
 
@@ -22,10 +22,10 @@ export const PageLink = styled(Link)`
 
   &.active {
     font-weight: 700;
-    color: ${props => props.theme.sidebar.active};
+    color: ${(props) => props.theme.sidebar.active};
   }
 
   &.active:hover {
-    border-color: ${props => transparentize(0.7, props.theme.sidebar.active)};
+    border-color: ${(props) => transparentize(0.7, props.theme.sidebar.active)};
   }
 `

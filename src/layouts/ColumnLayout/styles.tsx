@@ -4,8 +4,8 @@ export const Main = styled.div`
   display: flex;
   width: 100%;
   min-height: 100vh;
-  background: ${props => props.theme.main.background};
-  color: ${props => props.theme.main.foreground};
+  background: ${(props) => props.theme.main.background};
+  color: ${(props) => props.theme.main.foreground};
 `
 
 export const Overlay = styled.div`

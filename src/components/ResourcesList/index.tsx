@@ -34,7 +34,7 @@ function plantTree(item: IFileOrFolder, index?: number) {
 
     return (
       <SC.PageLink key={item.title} to={path}>
-        {cleanedUpPath.map(node => (
+        {cleanedUpPath.map((node) => (
           // TODO: use helper to format path
           <SC.NodePart key={node}>{humanize(node)}</SC.NodePart>
         ))}
@@ -49,7 +49,7 @@ const Language = memo(({ item }: { item: IFolder; index: number }) => {
   return (
     <SC.TreeWrapper>
       <SC.LanguageLabel>{humanize(item.title)}</SC.LanguageLabel>
-      <SC.Children>{item.children.map(node => plantTree(node))}</SC.Children>
+      <SC.Children>{item.children.map((node) => plantTree(node))}</SC.Children>
     </SC.TreeWrapper>
   )
 })
@@ -58,7 +58,7 @@ interface IResourcesList extends HTMLAttributes<HTMLDivElement> {
   relativeDirectory?: string
 }
 
-export const ResourcesList: FC<IResourcesList> = props => {
+export const ResourcesList: FC<IResourcesList> = (props) => {
   const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
 
   const filteredResources = {

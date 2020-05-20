@@ -10,6 +10,6 @@ export const Link = styled.span`
 
   &:hover {
     border-bottom: 2px solid
-      ${props => transparentize(0.6, props.theme.sidebar.foreground)};
+      ${(props) => transparentize(0.6, props.theme.sidebar.foreground)};
   }
 `

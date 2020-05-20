@@ -10,7 +10,7 @@ interface IHeaderBareboneProps {
   className?: string
 }
 
-export const HeaderBarebone: React.FC<IHeaderBareboneProps> = props => {
+export const HeaderBarebone: React.FC<IHeaderBareboneProps> = (props) => {
   return (
     <SC.HeaderWrapper className={props.className}>
       <SC.BackgroundWrapper>

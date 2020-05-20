@@ -73,11 +73,11 @@ export const MarkdownWrapper = styled.div`
   h4 .anchor svg,
   h5 .anchor svg,
   h6 .anchor svg {
-    fill: ${props => props.theme.main.foreground};
+    fill: ${(props) => props.theme.main.foreground};
   }
 
   code {
-    background: ${props => props.theme.code.background};
+    background: ${(props) => props.theme.code.background};
     padding: 4px 8px;
     display: inline;
     border-radius: 3px;
@@ -88,7 +88,7 @@ export const MarkdownWrapper = styled.div`
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
     overflow-x: auto;
-    background: ${props => props.theme.code.background};
+    background: ${(props) => props.theme.code.background};
   }
 
   pre > code[class*="language-"] {
@@ -122,7 +122,7 @@ export const MarkdownWrapper = styled.div`
   }
 
   blockquote {
-    border-left: 2px solid ${props => props.theme.main.foreground};
+    border-left: 2px solid ${(props) => props.theme.main.foreground};
     margin-top: ${BASE_LINE_HEIGHT}px;
     margin-bottom: ${BASE_LINE_HEIGHT}px;
     margin-right: ${BASE_LINE_HEIGHT * 2}px;
@@ -134,7 +134,7 @@ export const MarkdownWrapper = styled.div`
     display: inline-block;
     position: relative;
     font-weight: 700;
-    color: ${props => (props.theme.name === "dark" ? "#f9f9f9" : "#172129")};
+    color: ${(props) => (props.theme.name === "dark" ? "#f9f9f9" : "#172129")};
     text-decoration: none;
     word-break: break-word;
     cursor: pointer;

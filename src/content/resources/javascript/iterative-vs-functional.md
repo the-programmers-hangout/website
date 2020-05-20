@@ -35,11 +35,11 @@ const users = [
 ];
 
 // functional way
-const foundUser = users.find(user => user.name === "John");
+const foundUser = users.find((user) => user.name === "John");
 
 // iterative way
 let foundUser = null;
-users.forEach(user => {
+users.forEach((user) => {
   if (user.name === "John") {
     foundUser = user;
   }
@@ -71,11 +71,11 @@ const users = [
 ];
 
 // functional way
-const youngerUsers = users.filter(user => user.age < 18);
+const youngerUsers = users.filter((user) => user.age < 18);
 
 // iterative way
 const youngerUsers = [];
-users.forEach(user => {
+users.forEach((user) => {
   if (user.age < 18) {
     youngerUsers.push(user);
   }
@@ -105,11 +105,11 @@ const users = [
 ];
 
 // functional way
-const userNames = users.map(user => user.name);
+const userNames = users.map((user) => user.name);
 
 // iterative way
 const userNames = [];
-users.forEach(user => {
+users.forEach((user) => {
   userNames.push(user.name);
 });
 
@@ -140,7 +140,7 @@ const totalAge = users.reduce((acc, user) => acc + user.age, 0);
 
 // iterative way
 let totalAge = 0;
-users.forEach(user => {
+users.forEach((user) => {
   totalAge += user.age;
 });
 
@@ -166,7 +166,7 @@ const users = [
 ];
 
 // functional way
-const hasYoungUsers = users.some(user => user.age < 18);
+const hasYoungUsers = users.some((user) => user.age < 18);
 
 // iterative way
 let hasYoungUsers = false;
@@ -193,7 +193,7 @@ const users = [
 ];
 
 // functional way
-const allUsersAreOldEnough = users.every(user => user.age < 18);
+const allUsersAreOldEnough = users.every((user) => user.age < 18);
 
 // iterative way
 let allUsersAreOldEnough = true;
@@ -219,7 +219,7 @@ const found = pets.includes("dog");
 
 // iterative way
 let found = false;
-pets.forEach(pet => {
+pets.forEach((pet) => {
   if (pet === "dog") {
     found = true;
   }

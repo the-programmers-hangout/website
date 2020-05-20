@@ -30,7 +30,7 @@ export const Label = styled.div`
   align-self: flex-start;
 
   &:hover {
-    border-color: ${props =>
+    border-color: ${(props) =>
       transparentize(0.7, props.theme.sidebar.foreground)};
   }
 
@@ -50,14 +50,14 @@ export const FirstLabel = styled.div`
   box-sizing: border-box;
   padding: 12px 15px 12px 0;
   font-weight: 700;
-  color: ${props => props.theme.sidebar.foreground};
+  color: ${(props) => props.theme.sidebar.foreground};
   cursor: pointer;
 
   &:hover {
-    color: ${props => props.theme.sidebar.foreground};
+    color: ${(props) => props.theme.sidebar.foreground};
 
     svg path {
-      fill: ${props => props.theme.sidebar.foreground};
+      fill: ${(props) => props.theme.sidebar.foreground};
     }
   }
 
@@ -66,7 +66,7 @@ export const FirstLabel = styled.div`
     transform: rotate(90deg);
 
     path {
-      fill: ${props => transparentize(0.5, props.theme.sidebar.foreground)};
+      fill: ${(props) => transparentize(0.5, props.theme.sidebar.foreground)};
     }
   }
 `
@@ -82,12 +82,12 @@ export const TreeWrapper = styled.div<{ collapsed?: boolean }>`
   }
 
   ${Children} {
-    display: ${props => (props.collapsed ? "none" : "flex")};
+    display: ${(props) => (props.collapsed ? "none" : "flex")};
   }
 
   & > ${Label} svg {
-    transform: rotate(${props => (props.collapsed ? -90 : 0)}deg);
-    fill: ${props => props.theme.sidebar.foreground};
+    transform: rotate(${(props) => (props.collapsed ? -90 : 0)}deg);
+    fill: ${(props) => props.theme.sidebar.foreground};
   }
 `
 
@@ -97,7 +97,7 @@ export const CollapseIcon = styled(Collapse)`
   margin-left: auto;
 
   path {
-    fill: ${props => transparentize(0.5, props.theme.sidebar.foreground)};
+    fill: ${(props) => transparentize(0.5, props.theme.sidebar.foreground)};
   }
 `
 
@@ -105,7 +105,7 @@ export const ExpandIcon = styled(Expand)`
   margin-left: auto;
 
   path {
-    fill: ${props => transparentize(0.5, props.theme.sidebar.foreground)};
+    fill: ${(props) => transparentize(0.5, props.theme.sidebar.foreground)};
   }
 `
 
@@ -113,7 +113,7 @@ export const ExpandLanguages = styled.div`
   padding: 12px 15px 12px 0;
 
   border-bottom: 1px solid
-    ${props => transparentize(0.8, props.theme.sidebar.foreground)};
+    ${(props) => transparentize(0.8, props.theme.sidebar.foreground)};
   margin-bottom: 8px;
 `
 
@@ -122,7 +122,7 @@ export const ExpandLanguagesHeader = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: ${props => transparentize(0.5, props.theme.sidebar.foreground)};
+  color: ${(props) => transparentize(0.5, props.theme.sidebar.foreground)};
   font-weight: 700;
 
   &:hover {
@@ -141,14 +141,14 @@ export const StyledLanguageList = styled.div`
 const item = css`
   display: block;
   margin-bottom: 4px;
-  color: ${props => props.theme.sidebar.foreground};
+  color: ${(props) => props.theme.sidebar.foreground};
   align-self: flex-start;
   text-decoration: none;
   border-bottom: 2px solid transparent;
   cursor: pointer;
 
   &:hover {
-    border-color: ${props =>
+    border-color: ${(props) =>
       transparentize(0.7, props.theme.sidebar.foreground)};
   }
 
@@ -159,11 +159,11 @@ const item = css`
 
   &.active {
     font-weight: 700;
-    color: ${props => props.theme.sidebar.active};
+    color: ${(props) => props.theme.sidebar.active};
   }
 
   &.active:hover {
-    border-color: ${props => transparentize(0.7, props.theme.sidebar.active)};
+    border-color: ${(props) => transparentize(0.7, props.theme.sidebar.active)};
   }
 `
 

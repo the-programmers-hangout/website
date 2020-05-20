@@ -35,13 +35,17 @@ export const Toc: FC<ITocProps> = ({ header, items }) => {
   return (
     <SC.TocWrapper>
       {header}
-      {items.map(item => {
+      {items.map((item) => {
         const { prefix, title } = extractTitle(item.title)
 
         return (
           <SC.TocItem key={item.link} className={`depth-${item.depth}`}>
             {prefix}
-            <PageSidebarLink href={`${pathname}${item.link}`} text={title} type="anchor" />
+            <PageSidebarLink
+              href={`${pathname}${item.link}`}
+              text={title}
+              type="anchor"
+            />
           </SC.TocItem>
         )
       })}

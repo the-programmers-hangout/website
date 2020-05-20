@@ -5,8 +5,8 @@ import { transparentize } from "polished"
 export const SidebarWrapper = styled.div`
   box-sizing: border-box;
   flex: 0 0 320px;
-  background: ${props => props.theme.sidebar.background};
-  color: ${props => props.theme.sidebar.foreground};
+  background: ${(props) => props.theme.sidebar.background};
+  color: ${(props) => props.theme.sidebar.foreground};
   position: fixed;
   top: 0;
   bottom: 0;
@@ -30,7 +30,7 @@ export const SidebarWrapper = styled.div`
 
 export const Title = styled(Link)`
   display: block;
-  color: ${props => props.theme.sidebar.foreground};
+  color: ${(props) => props.theme.sidebar.foreground};
   font-size: 30px;
   line-height: 34px;
   font-weight: 700;
@@ -53,7 +53,7 @@ export const Menu = styled.nav`
   padding-top: 20px;
 
   &.has-border {
-    border-top: ${props =>
+    border-top: ${(props) =>
       `1px dashed ${transparentize(0.8, props.theme.sidebar.foreground)}`};
   }
 `
@@ -61,7 +61,7 @@ export const Menu = styled.nav`
 export const menuItemStyles = css`
   padding: 4px 0;
   font-size: 20px;
-  color: ${props => props.theme.sidebar.foreground};
+  color: ${(props) => props.theme.sidebar.foreground};
   text-decoration: none;
 
   &:hover,

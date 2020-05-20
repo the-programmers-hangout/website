@@ -30,7 +30,7 @@ const ALL_RESOURCES = graphql`
 `
 
 const childrenSort = sortWith<IFileOrFolder>([
-  descend(f => {
+  descend((f) => {
     if (f.title === "intro") {
       return 1
     }
@@ -87,7 +87,7 @@ function Folder({ item }: { item: IFolder }) {
   })
 
   function toggleCollapse() {
-    setCollapse(prevState => !prevState)
+    setCollapse((prevState) => !prevState)
   }
 
   const sortedChildren = childrenSort(item.children)
@@ -98,8 +98,8 @@ function Folder({ item }: { item: IFolder }) {
         <TriangleDown /> {humanize(item.title)}
       </SC.Label>
       <SC.Children>
-        {sortedChildren.map(node => (
-          <Tree key={node.title + '-tree'} item={node} />
+        {sortedChildren.map((node) => (
+          <Tree key={node.title + "-tree"} item={node} />
         ))}
       </SC.Children>
     </SC.TreeWrapper>
@@ -119,8 +119,8 @@ const FirstLevelFolder = memo(({ item }: { item: IFolder }) => {
     <SC.TreeWrapper className="firstLevel">
       <SC.FirstLabel>{humanize(item.title)}</SC.FirstLabel>
       <SC.Children>
-        {sortedChildren.map(node => (
-          <Tree key={node.title + '-tree'} item={node} />
+        {sortedChildren.map((node) => (
+          <Tree key={node.title + "-tree"} item={node} />
         ))}
       </SC.Children>
     </SC.TreeWrapper>
@@ -135,7 +135,7 @@ const LanguageList: FC<{
 
   return (
     <SC.StyledLanguageList>
-      {items.map(item => (
+      {items.map((item) => (
         <SC.Language
           key={item.title}
           className={current === item.title ? "active" : ""}
@@ -165,7 +165,7 @@ const AllLanguages: FC<{
   return (
     <SC.ExpandLanguages>
       <SC.ExpandLanguagesHeader
-        onClick={() => setExpanded(prevState => !prevState)}
+        onClick={() => setExpanded((prevState) => !prevState)}
       >
         Expand languages {expanded ? <SC.CollapseIcon /> : <SC.ExpandIcon />}
       </SC.ExpandLanguagesHeader>
@@ -174,7 +174,7 @@ const AllLanguages: FC<{
   )
 }
 
-export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = props => {
+export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
   const [expandedLanguages, setExpandedLanguages] = useState(false)
   const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
   const languages = useBuildTree(resources, "/resources")
@@ -184,7 +184,7 @@ export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = props => {
     languages
   )
 
-  const currentLanguage = sortedLanguages.find(lang => lang.title === current)
+  const currentLanguage = sortedLanguages.find((lang) => lang.title === current)
 
   return (
     <Sidebar {...props}>

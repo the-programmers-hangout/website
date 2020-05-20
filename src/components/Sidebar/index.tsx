@@ -17,9 +17,9 @@ const MenuItem: FC<IMenuItemProps> = ({ children, to }) => {
   )
 }
 
-export const Sidebar: FC<PropsWithChildren<
-  HTMLAttributes<HTMLDivElement>
->> = props => {
+export const Sidebar: FC<PropsWithChildren<HTMLAttributes<HTMLDivElement>>> = (
+  props
+) => {
   const { children, ...restProps } = props
 
   return (

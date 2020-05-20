@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 export const ResourcesListWrapper = styled.div`
   box-sizing: border-box;
-  color: ${props => props.theme.main.foreground};
+  color: ${(props) => props.theme.main.foreground};
 `
 
 export const Children = styled.div`
@@ -28,7 +28,7 @@ export const Label = styled.div`
   align-self: flex-start;
 
   &:hover {
-    border-color: ${props =>
+    border-color: ${(props) =>
       transparentize(0.7, props.theme.sidebar.foreground)};
   }
 
@@ -47,7 +47,7 @@ export const LanguageLabel = styled.div`
   box-sizing: border-box;
   padding: 4px 15px 4px 0;
   font-weight: 700;
-  color: ${props => transparentize(0.5, props.theme.sidebar.foreground)};
+  color: ${(props) => transparentize(0.5, props.theme.sidebar.foreground)};
 
   svg {
     margin-left: auto;
@@ -55,7 +55,7 @@ export const LanguageLabel = styled.div`
     transition: transform 0.3s;
 
     path {
-      fill: ${props => transparentize(0.5, props.theme.sidebar.foreground)};
+      fill: ${(props) => transparentize(0.5, props.theme.sidebar.foreground)};
     }
   }
 `
@@ -72,20 +72,20 @@ export const TreeWrapper = styled.div`
   }
 
   & > ${Label} svg {
-    fill: ${props => props.theme.sidebar.foreground};
+    fill: ${(props) => props.theme.sidebar.foreground};
   }
 `
 
 export const PageLink = styled(Link)`
   display: block;
   padding: 2px 0;
-  color: ${props => props.theme.sidebar.foreground};
+  color: ${(props) => props.theme.sidebar.foreground};
   align-self: flex-start;
   text-decoration: none;
   border-bottom: 1px solid transparent;
 
   &:hover {
-    border-color: ${props =>
+    border-color: ${(props) =>
       transparentize(0.7, props.theme.sidebar.foreground)};
   }
 

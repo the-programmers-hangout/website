@@ -16,8 +16,8 @@ export const Content = styled.div`
 export const Sidebar = styled.div`
   width: 240px;
   flex: 0 0 240px;
-  border-left: 1px solid ${props => darken(0.1, props.theme.main.background)};
-  color: ${props => (props.theme.name === "dark" ? "#f9f9f9" : "#172129")};
+  border-left: 1px solid ${(props) => darken(0.1, props.theme.main.background)};
+  color: ${(props) => (props.theme.name === "dark" ? "#f9f9f9" : "#172129")};
   margin: 64px 0;
   padding: 0 32px;
   position: sticky;
