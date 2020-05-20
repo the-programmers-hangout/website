@@ -12,7 +12,7 @@ title: Arrow functions
 Brought into ES6, arrow functions are a new way to declare functions, and allow for shorter syntax. For example, below is a regular function, as usually seen before ES6.
 
 ```js
-const sayHello = function() {
+const sayHello = function () {
   console.log("hello");
 };
 ```
@@ -36,7 +36,7 @@ const sayHello = (nameOne, nameTwo) => {
 For a single parameter, the parentheses can be omitted:
 
 ```js
-const sayHello = name => {
+const sayHello = (name) => {
   console.log("hello", name);
 };
 ```
@@ -50,13 +50,13 @@ const sayHello = () => "hello";
 The same is also true of functions returning an expression using parameters, too.
 
 ```js
-const sayHello = name => `hello ${name}`;
+const sayHello = (name) => `hello ${name}`;
 ```
 
 Or even...
 
 ```js
-const helloObject = name => ({
+const helloObject = (name) => ({
   isGreeting: true,
   helloName: name,
 });
@@ -73,7 +73,7 @@ The keyword `this` is handled differently in arrow functions. In an arrow functi
 Using regular anonymous function, `this` is refers to the `HTMLButtonObject` that called it, and therefore the function outputs `[object HTMLButtonElement]` to the console.
 
 ```js
-document.querySelector("#btn").addEventListener("click", function() {
+document.querySelector("#btn").addEventListener("click", function () {
   console.log(this); // outputs "[object HTMLButtonElement]"
 });
 ```

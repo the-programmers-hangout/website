@@ -10,7 +10,7 @@ export const HomeWrapper = styled.header`
   width: 100%;
   position: relative;
   min-height: 100vh;
-  background: ${props => props.theme.main.background};
+  background: ${(props) => props.theme.main.background};
   overflow: hidden;
 `
 

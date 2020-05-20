@@ -11,10 +11,7 @@ function specificWordsToUpper(str: string): string {
   const wordsToUpper = ["pdo", "c"]
   const toUpper = (word: string) =>
     wordsToUpper.includes(word.toLowerCase()) ? word.toUpperCase() : word
-  return str
-    .split(" ")
-    .map(toUpper)
-    .join(" ")
+  return str.split(" ").map(toUpper).join(" ")
 }
 
 function removeDotMD(str: string): string {
@@ -93,7 +90,7 @@ function generateFolder({
   path: IFile["path"]
   targets: IFolder[]
 }): IFolder {
-  const children = join(chain(target => target.children, targets))
+  const children = join(chain((target) => target.children, targets))
   const sortedChildren = sort((a, b) => {
     return a.title.split("/").length > b.title.split("/").length
       ? -1
@@ -128,7 +125,7 @@ export function join([head, ...tail]: IFileOrFolder[]): IFileOrFolder[] {
   }
 
   const [similarFs, remaining] = partition(
-    obj => obj.title === head.title && obj.type === head.type,
+    (obj) => obj.title === head.title && obj.type === head.type,
     tail
   )
   const targets = [head, ...similarFs]
@@ -148,8 +145,8 @@ export function buildToc(headings: MarkdownRemark["headings"]): ITocItem[] {
   }
 
   return headings
-    .filter(h => h?.depth === 2)
-    .map(h => {
+    .filter((h) => h?.depth === 2)
+    .map((h) => {
       return {
         depth: h!.depth!,
         link: `#${kebabCase(h!.value!)}`,

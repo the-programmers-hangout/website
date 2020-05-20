@@ -3,7 +3,7 @@ import styled, { css } from "styled-components"
 import { Link } from "gatsby"
 
 const extraLink = css`
-  color: ${props => props.theme.main.foreground};
+  color: ${(props) => props.theme.main.foreground};
   text-decoration: none;
   word-break: break-word;
 

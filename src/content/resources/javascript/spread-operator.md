@@ -70,7 +70,7 @@ console.log([...a, ...b]); // [1, 2, 3, 4] - Merged!
 Here's a real-world example. Imagine that you're making a function which accepts an `options` object as argument, but you also want to have default values for this object. Here's a not so good way to do it without spread operator:
 
 ```js
-const f = opts => {
+const f = (opts) => {
   const options = {};
   options.foo = opts.foo || "default value";
   options.bar = opts.bar || "default value";
@@ -82,7 +82,7 @@ const f = opts => {
 This works, but here's a better way:
 
 ```js
-const f = opts => {
+const f = (opts) => {
   const defaults = {
     foo: "default value",
     bar: "default value",

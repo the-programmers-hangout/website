@@ -36,7 +36,7 @@ export const PageContent: FC<IPageContentProps> = ({
         {recommendedReading && (
           <SC.RecommendedReading>
             <SC.SidebarHeader>Recommended reading</SC.SidebarHeader>
-            {recommendedReading.map(item => {
+            {recommendedReading.map((item) => {
               return <PageSidebarLink key={item} href={item} type="internal" />
             })}
           </SC.RecommendedReading>
@@ -45,8 +45,15 @@ export const PageContent: FC<IPageContentProps> = ({
         {externalResources && (
           <SC.ExternalResources>
             <SC.SidebarHeader>External Resources</SC.SidebarHeader>
-            {externalResources.map(item => {
-              return <PageSidebarLink key={item.href} href={item.href} text={item.text} type="external" />
+            {externalResources.map((item) => {
+              return (
+                <PageSidebarLink
+                  key={item.href}
+                  href={item.href}
+                  text={item.text}
+                  type="external"
+                />
+              )
             })}
           </SC.ExternalResources>
         )}

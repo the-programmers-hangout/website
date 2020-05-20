@@ -14,7 +14,7 @@ function containerWidth(count: number): number {
 export const StackedAvatarsWrapper = styled.div<{ count: number }>`
   display: flex;
   margin-right: 16px;
-  width: ${props => containerWidth(props.count)}px;
+  width: ${(props) => containerWidth(props.count)}px;
 `
 
 export const AuthorAvatar = styled.img<{ index: number }>`
@@ -24,6 +24,6 @@ export const AuthorAvatar = styled.img<{ index: number }>`
   flex: 0 0 ${AVATAR_SIZE}px;
   border: 2px solid #4c6780;
   border-radius: 50%;
-  z-index: ${props => props.index};
-  left: -${props => AVATAR_SIZE * OVERLAP_AMOUT * props.index}px;
+  z-index: ${(props) => props.index};
+  left: -${(props) => AVATAR_SIZE * OVERLAP_AMOUT * props.index}px;
 `

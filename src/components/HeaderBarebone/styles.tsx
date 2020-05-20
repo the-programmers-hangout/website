@@ -40,7 +40,7 @@ export const BackgroundWrapper = styled.div`
 
   @media screen and (max-width: 767px) {
     height: calc(100% - 67px);
-    background: ${props => darken(0.2, props.theme.main.background)};
+    background: ${(props) => darken(0.2, props.theme.main.background)};
   }
 `
 
@@ -57,7 +57,7 @@ export const StyledCircles = styled(Circles)`
 `
 
 export const StyledWavesTop = styled(WavesTop)`
-  opacity: ${props => (props.theme.name === "dark" ? 0.8 : 0.2)};
+  opacity: ${(props) => (props.theme.name === "dark" ? 0.8 : 0.2)};
   top: -10%;
   transform: scaleX(-1);
 
@@ -67,7 +67,7 @@ export const StyledWavesTop = styled(WavesTop)`
 `
 
 export const StyledWavesBottom = styled(WavesBottom)`
-  opacity: ${props => (props.theme.name === "dark" ? 0.8 : 0.2)};
+  opacity: ${(props) => (props.theme.name === "dark" ? 0.8 : 0.2)};
   bottom: -30%;
   transform: scaleX(-1);
 
@@ -82,7 +82,7 @@ export const Box = styled.div`
   position: absolute;
   bottom: 40px;
   margin-left: -16px;
-  background: ${props => transparentize(0.3, props.theme.main.background)};
+  background: ${(props) => transparentize(0.3, props.theme.main.background)};
   padding: 16px;
   backdrop-filter: blur(14px);
   max-width: 650px;

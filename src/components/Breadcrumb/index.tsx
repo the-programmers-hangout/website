@@ -53,7 +53,7 @@ export function Breadcrumb({ relativePath, basePath }: IBreadcrumbProps) {
         <ChevronUp />
       </SC.LinkWrapper>
 
-      {breadcrumbItems.map(item => {
+      {breadcrumbItems.map((item) => {
         if (item.type === "folder") {
           foldersDepth++
           if (foldersDepth > 1) {

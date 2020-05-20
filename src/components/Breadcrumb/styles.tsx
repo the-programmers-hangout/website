@@ -25,12 +25,12 @@ export const LinkWrapper = styled.div`
   }
 
   svg path {
-    fill: ${props => (props.theme.name === "dark" ? "#f9f9f9" : "#172129")};
+    fill: ${(props) => (props.theme.name === "dark" ? "#f9f9f9" : "#172129")};
   }
 `
 
 export const StyledLink = styled(Link)`
-  color: ${props => (props.theme.name === "dark" ? "#f9f9f9" : "#172129")};
+  color: ${(props) => (props.theme.name === "dark" ? "#f9f9f9" : "#172129")};
   cursor: pointer;
   font-weight: 700;
   text-decoration: underline;

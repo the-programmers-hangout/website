@@ -16,7 +16,7 @@ interface IBaseLayout extends IPageContext {
   location: WindowLocation
 }
 
-const BaseLayout: FC<IBaseLayout> = props => {
+const BaseLayout: FC<IBaseLayout> = (props) => {
   const ResolvedLayout = useMemo(() => {
     switch (props.pageContext.layout) {
       case "resources":

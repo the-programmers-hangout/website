@@ -5,7 +5,7 @@ import Logo from "../../images/tph-logo.svg"
 
 export const MobileHeaderWrapper = styled.div`
   z-index: 50;
-  background: ${props => transparentize(0.6, props.theme.main.background)};
+  background: ${(props) => transparentize(0.6, props.theme.main.background)};
   backdrop-filter: blur(14px);
   position: fixed;
   top: 0;
@@ -52,7 +52,7 @@ export const Burger = styled.div`
     content: "";
     height: 2px;
     width: 16px;
-    background: ${props => props.theme.main.foreground};
+    background: ${(props) => props.theme.main.foreground};
     margin: 0 auto;
   }
 

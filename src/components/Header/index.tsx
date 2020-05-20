@@ -49,7 +49,7 @@ export const Header: React.FC<IHeaderProps> = ({
                 {authors.length} contributor{authors.length > 1 && "s"}
                 <SC.Popover>
                   {authors
-                    .map(author => `${author.name}#${author.hash}`)
+                    .map((author) => `${author.name}#${author.hash}`)
                     .join(", ")}
                 </SC.Popover>
               </SC.PopoverToggler>

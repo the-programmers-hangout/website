@@ -5,7 +5,7 @@ const linkStyle = css`
   display: inline-block;
   font-weight: 700;
   color: #fff;
-  color: ${props => props.theme.main.foreground};
+  color: ${(props) => props.theme.main.foreground};
   font-weight: 700;
   text-decoration: none;
   position: relative;

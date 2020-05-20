@@ -43,7 +43,7 @@ In order to access this information, we'll have to call the `.then` method on ou
 to access the actual members like so.
 
 ```js
-getMembers("The Programmers Hangout").then(members => {
+getMembers("The Programmers Hangout").then((members) => {
   console.log(members); // (32k) [{...}, {...}, {...}]
 });
 ```
@@ -64,7 +64,7 @@ You may have tried doing something like this before.
 ```js
 // Incorrect code, don't copy!
 let results;
-getWeather("Los Angeles").then(weather => {
+getWeather("Los Angeles").then((weather) => {
   results = weather;
 });
 console.log(results); // undefined
@@ -80,7 +80,7 @@ you can watch [this amazing talk](https://youtu.be/8aGhZQkoFbQ) on it to learn m
 In order to fix this problem we need to move the `console.log` inside the `.then` callback like so:
 
 ```js
-getWeather("Los Angeles").then(weather => {
+getWeather("Los Angeles").then((weather) => {
   console.log(weather); // Sunny, probably
 });
 ```
@@ -93,11 +93,11 @@ You can try it in your browser if you want to test it out.
 ```js
 function getCharacters() {
   return fetch(`https://rickandmortyapi.com/api/character`)
-    .then(response => response.json())
-    .then(response => response.results);
+    .then((response) => response.json())
+    .then((response) => response.results);
 }
 
-getCharacters().then(characters => {
+getCharacters().then((characters) => {
   console.log(characters); // (20) [{...}, {...}, {...}]
 });
 ```
