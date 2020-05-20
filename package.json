@@ -65,7 +65,7 @@
     "@graphql-codegen/typescript-react-apollo": "1.14.0",
     "@types/classnames": "^2.2.10",
     "@types/lodash": "^4.14.152",
-    "@types/prismjs": "^1.16.0",
+    "@types/prismjs": "^1.16.1",
     "@types/ramda": "^0.27.4",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
