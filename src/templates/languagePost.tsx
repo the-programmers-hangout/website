@@ -1,6 +1,5 @@
 import { graphql } from "gatsby"
 import React, { FC, Fragment } from "react"
-import "katex/dist/katex.min.css"
 
 import { Footer } from "../components/Footer"
 import { Header } from "../components/Header"
