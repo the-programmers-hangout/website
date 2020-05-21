@@ -44,27 +44,29 @@ export const MarkdownWrapper = styled.div`
   }
 
   h1 {
-    ${modularScaleCSS(6)};
-  }
-
-  h2 {
-    ${modularScaleCSS(5)};
-  }
-
-  h3 {
     ${modularScaleCSS(4)};
   }
 
-  h4 {
+  h2 {
     ${modularScaleCSS(3)};
+
+    @media screen and (min-width: 1440px) {
+      margin-left: -27px;
+    }
   }
 
-  h5 {
+  h3 {
     ${modularScaleCSS(2)};
   }
 
-  h6 {
+  h4 {
     ${modularScaleCSS(1)};
+  }
+
+  h5,
+  h6 {
+    font-size: ${BASE_FONT_SIZE}px;
+    line-height: ${BASE_LINE_HEIGHT}px;
   }
 
   h1 .anchor svg,

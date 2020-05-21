@@ -13,7 +13,7 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Oxygen`,
+            family: `Inter`,
             variants: [`400`, `700`],
           },
           {

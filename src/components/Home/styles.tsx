@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import Particles from "react-particles-js"
 import styled, { css } from "styled-components"
+import { fontFamily } from "../../design/typography"
 import TPHLogo from "../../images/tph-logo.svg"
 
 export const HomeWrapper = styled.header`
@@ -24,6 +25,7 @@ export const TitleWrapper = styled.div`
 
 export const Title = styled.h1`
   margin: 0;
+  font-family: ${fontFamily.header};
   font-weight: 700;
   font-size: 88px;
   text-transform: uppercase;
