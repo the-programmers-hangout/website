@@ -8,6 +8,7 @@ interface ISEOProps {
   readonly meta?: any[]
   readonly keywords?: string[]
   readonly title: string
+  readonly subCategory?: string | null
 }
 
 export const SEO: FC<ISEOProps> = ({
@@ -16,6 +17,7 @@ export const SEO: FC<ISEOProps> = ({
   meta = [],
   keywords = [],
   title,
+  subCategory,
 }) => {
   const { site } = useStaticQuery(
     graphql`
@@ -38,7 +40,7 @@ export const SEO: FC<ISEOProps> = ({
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title={subCategory ? `${title} - ${subCategory}` : title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {

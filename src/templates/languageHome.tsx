@@ -6,9 +6,11 @@ import { ResourcesList } from "../components/ResourcesList"
 import { SEO } from "../components/SEO"
 import { PageContent } from "../components/PageContent"
 import { Footer } from "../components/Footer"
+import useSidebar from "../hooks/useSidebar"
 
 // @todo maybe find alternative type for data
 const LanguageHome: FC<any> = ({ data, pageContext }) => {
+  const { current: language } = useSidebar()
   const { relativePath } = data.file
   const { html, excerpt, fields, frontmatter, timeToRead } = data.file.post
 
@@ -18,7 +20,11 @@ const LanguageHome: FC<any> = ({ data, pageContext }) => {
 
   return (
     <Fragment>
-      <SEO title={frontmatter.title} description={excerpt} />
+      <SEO
+        title={frontmatter.title}
+        subCategory={language}
+        description={excerpt}
+      />
       <Header
         relativePath={relativePath}
         basePath="/resources"

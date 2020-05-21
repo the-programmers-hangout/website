@@ -7,10 +7,12 @@ import { Header } from "../components/Header"
 import { Markdown } from "../components/Markdown"
 import { PageContent } from "../components/PageContent"
 import { SEO } from "../components/SEO"
+import useSidebar from "../hooks/useSidebar"
 import { buildToc } from "../utils"
 
 // @todo maybe find alternative type for data
 const LanguagePost: FC<any> = ({ data }) => {
+  const { current: language } = useSidebar()
   const { relativePath } = data.file
   const {
     html,
@@ -31,7 +33,11 @@ const LanguagePost: FC<any> = ({ data }) => {
 
   return (
     <Fragment>
-      <SEO title={frontmatter.title} description={excerpt} />
+      <SEO
+        title={frontmatter.title}
+        subCategory={language}
+        description={excerpt}
+      />
       <Header
         relativePath={relativePath}
         basePath="/resources"
