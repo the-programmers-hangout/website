@@ -78,7 +78,7 @@ export const MarkdownWrapper = styled.div`
 
   code {
     background: ${(props) => props.theme.code.background};
-    padding: 4px 8px;
+    padding: 2px 4px;
     display: inline;
     border-radius: 3px;
     letter-spacing: 0.25px;
