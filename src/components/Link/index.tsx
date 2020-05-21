@@ -11,7 +11,7 @@ export const Link: FC<ILinkProps> = ({ children, to }) => {
   }
 
   return (
-    <SC.LinkExternal href={to} target="_blank">
+    <SC.LinkExternal rel="noreferrer" href={to} target="_blank">
       {children}
     </SC.LinkExternal>
   )
