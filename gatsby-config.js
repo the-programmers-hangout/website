@@ -30,15 +30,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [
-          `gatsby-remark-auto-headers`,
-          {
-            resolve: `gatsby-remark-katex`,
-            options: {
-              strict: `ignore`,
-            },
-          },
-        ],
+        plugins: [`gatsby-remark-auto-headers`],
       },
     },
     {
