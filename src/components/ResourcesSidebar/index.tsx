@@ -1,5 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby"
-import { descend, sort, sortWith } from "ramda"
+import descend from "ramda/es/descend"
+import sort from "ramda/es/sort"
+import sortWith from "ramda/es/sortWith"
 import React, { FC, HTMLAttributes, memo, useState } from "react"
 import useBuildTree from "../../hooks/useBuildTree"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
