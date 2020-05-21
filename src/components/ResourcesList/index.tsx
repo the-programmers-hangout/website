@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby"
-import { sort } from "ramda"
+import sort from "ramda/es/sort"
 import React, { FC, HTMLAttributes, memo } from "react"
 import "react-perfect-scrollbar/dist/css/styles.css"
 import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
