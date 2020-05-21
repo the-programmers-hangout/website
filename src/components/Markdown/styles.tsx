@@ -82,7 +82,8 @@ export const MarkdownWrapper = styled.div`
     display: inline;
     border-radius: 3px;
     letter-spacing: 0.25px;
-    color: #ccc;
+    color: #ebedee;
+    font-family: "Oxygen Mono", monospace;
   }
 
   :not(pre) > code[class*="language-"],
@@ -103,13 +104,20 @@ export const MarkdownWrapper = styled.div`
     .token.boolean,
     .token.number,
     .token.function {
-      color: #d48d5d;
+      color: #eca371;
+    }
+
+    .token.property,
+    .token.class-name,
+    .token.constant,
+    .token.symbol {
+      color: #ffd664;
     }
 
     .token.operator,
     .token.entity,
     .token.url {
-      color: #00add9;
+      color: #11beea;
     }
 
     .token.selector,
@@ -117,7 +125,7 @@ export const MarkdownWrapper = styled.div`
     .token.atrule,
     .token.keyword,
     .token.builtin {
-      color: #d1529d;
+      color: #ee5cb2;
     }
   }
 
