@@ -69,6 +69,32 @@ export const MarkdownWrapper = styled.div`
     line-height: ${BASE_LINE_HEIGHT}px;
   }
 
+  h2 + h3 {
+    margin-top: 0;
+  }
+
+  h3 + h4 {
+    margin-top: 0;
+  }
+
+  h4 + h5 {
+    margin-top: 0;
+  }
+
+  h5 + h6 {
+    margin-top: 0;
+  }
+
+  h2 ~ h2::before {
+    display: block;
+    margin-bottom: ${BASE_LINE_HEIGHT * 2}px;
+    content: "";
+    height: 1px;
+    margin-right: -27px;
+    background: ${(props) =>
+      props.theme.name === "dark" ? "#34414e" : "#a3beda"};
+  }
+
   h1 .anchor svg,
   h2 .anchor svg,
   h3 .anchor svg,
