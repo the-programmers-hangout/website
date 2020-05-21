@@ -1,8 +1,9 @@
 ---
 authors:
   - "Xetera#0001"
+  - "veksen#1060"
 created_at: 2019/07/26
-updated_at: 2019/07/26
+updated_at: 2020/05/20
 title: Introduction to Promises
 recommended_reading:
   - javascript/callbacks/intro
@@ -83,6 +84,14 @@ In order to fix this problem we need to move the `console.log` inside the `.then
 getWeather("Los Angeles").then((weather) => {
   console.log(weather); // Sunny, probably
 });
+```
+
+Outlining this one again, because it's very common, is to attempt to use the value of a promise, but not resolving it:
+
+```js
+// Incorrect code, don't copy!
+const weather = getWeather("Los Angeles");
+console.log(weather); // Promise {<pending>}
 ```
 
 ## Real World Example
