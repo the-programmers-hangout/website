@@ -123,7 +123,7 @@ export const menuItemStyles = css`
   position: relative;
   transition: color 0.3s;
   margin: 10px 20px 5px 0;
-  font-family: "Oxygen Mono";
+  font-family: "Oxygen Mono", monospace;
 
   &:hover {
     color: #fff;
