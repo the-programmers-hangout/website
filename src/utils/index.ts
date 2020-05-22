@@ -1,4 +1,4 @@
-import kebabCase from "lodash/kebabCase"
+import GithubSlugger from "github-slugger"
 import chain from "ramda/es/chain"
 import partition from "ramda/es/partition"
 import pipe from "ramda/es/pipe"
@@ -6,6 +6,8 @@ import sort from "ramda/es/sort"
 
 import { IFile, IFileOrFolder, IFolder, ITocItem } from "../types"
 import { MarkdownRemark } from "../../generated/graphql"
+
+const slugger = new GithubSlugger()
 
 function specificWordsToUpper(str: string): string {
   const wordsToUpper = ["pdo", "c"]
@@ -144,12 +146,18 @@ export function buildToc(headings: MarkdownRemark["headings"]): ITocItem[] {
     return []
   }
 
+  const strip = (value: string) => value.replace(/^(\d*\-)(.*)/, "$2")
+
+  slugger.reset()
+
   return headings
     .filter((h) => h?.depth === 2)
     .map((h) => {
+      const slug = slugger.slug(h!.value!)
+
       return {
         depth: h!.depth!,
-        link: `#${kebabCase(h!.value!)}`,
+        link: `#${strip(slug)}`,
         title: h!.value!,
       }
     })
