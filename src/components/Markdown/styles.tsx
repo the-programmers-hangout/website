@@ -118,6 +118,7 @@ export const MarkdownWrapper = styled.div`
   pre[class*="language-"] {
     overflow-x: auto;
     background: ${(props) => props.theme.code.background};
+    font-size: 18px;
   }
 
   pre > code[class*="language-"] {
