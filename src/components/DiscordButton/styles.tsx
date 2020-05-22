@@ -5,7 +5,7 @@ export const DiscordButtonWrapper = styled.a`
   margin-top: 32px;
   display: flex;
   align-items: center;
-  font-family: "Oxygen", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 24px;
   font-weight: 700;
   text-decoration: none;

@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import styled, { css } from "styled-components"
 import { transparentize } from "polished"
+import { fontFamily } from "../../design/typography"
 
 export const SidebarWrapper = styled.div`
   box-sizing: border-box;
@@ -36,6 +37,7 @@ export const Title = styled(Link)`
   font-weight: 700;
   padding: 20px 0 0 20px;
   text-decoration: none;
+  font-family: ${fontFamily.header};
 
   &:hover {
     opacity: 0.85;

@@ -44,27 +44,55 @@ export const MarkdownWrapper = styled.div`
   }
 
   h1 {
-    ${modularScaleCSS(6)};
-  }
-
-  h2 {
-    ${modularScaleCSS(5)};
-  }
-
-  h3 {
     ${modularScaleCSS(4)};
   }
 
-  h4 {
+  h2 {
     ${modularScaleCSS(3)};
+
+    @media screen and (min-width: 1440px) {
+      margin-left: -27px;
+    }
   }
 
-  h5 {
+  h3 {
     ${modularScaleCSS(2)};
   }
 
-  h6 {
+  h4 {
     ${modularScaleCSS(1)};
+  }
+
+  h5,
+  h6 {
+    font-size: ${BASE_FONT_SIZE}px;
+    line-height: ${BASE_LINE_HEIGHT}px;
+  }
+
+  h2 + h3 {
+    margin-top: 0;
+  }
+
+  h3 + h4 {
+    margin-top: 0;
+  }
+
+  h4 + h5 {
+    margin-top: 0;
+  }
+
+  h5 + h6 {
+    margin-top: 0;
+  }
+
+  h2 ~ h2::before {
+    display: block;
+    margin-bottom: ${BASE_LINE_HEIGHT * 2}px;
+    content: "";
+    height: 1px;
+    margin-right: -27px;
+    background: ${(props) =>
+      props.theme.name === "dark" ? "#34414e" : "#a3beda"};
   }
 
   h1 .anchor svg,
@@ -78,17 +106,19 @@ export const MarkdownWrapper = styled.div`
 
   code {
     background: ${(props) => props.theme.code.background};
-    padding: 4px 8px;
+    padding: 2px 4px;
     display: inline;
     border-radius: 3px;
     letter-spacing: 0.25px;
-    color: #ccc;
+    color: #ebedee;
+    font-family: "Oxygen Mono", monospace;
   }
 
   :not(pre) > code[class*="language-"],
   pre[class*="language-"] {
     overflow-x: auto;
     background: ${(props) => props.theme.code.background};
+    font-size: 18px;
   }
 
   pre > code[class*="language-"] {
@@ -103,13 +133,20 @@ export const MarkdownWrapper = styled.div`
     .token.boolean,
     .token.number,
     .token.function {
-      color: #d48d5d;
+      color: #eca371;
+    }
+
+    .token.property,
+    .token.class-name,
+    .token.constant,
+    .token.symbol {
+      color: #ffd664;
     }
 
     .token.operator,
     .token.entity,
     .token.url {
-      color: #00add9;
+      color: #11beea;
     }
 
     .token.selector,
@@ -117,7 +154,7 @@ export const MarkdownWrapper = styled.div`
     .token.atrule,
     .token.keyword,
     .token.builtin {
-      color: #d1529d;
+      color: #ee5cb2;
     }
   }
 
