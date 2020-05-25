@@ -5,7 +5,7 @@ created_at: 2019/12/15
 title: PHP
 ---
 
-## Useful links and documentation
+###### Useful links and documentation
 
 - [Official documentation](https://secure.php.net/manual/en/)
 - [Laracasts PHP tutorials](http://laracasts.com/)
@@ -13,7 +13,7 @@ title: PHP
 - [PHP Standard Recommendations](https://www.php-fig.org/psr/)
 - [OWASP Cheatsheet](https://cheatsheetseries.owasp.org/)
 
-## Useful Libraries
+###### Useful Libraries
 
 - [Composer package manager](https://getcomposer.org/)
 - [phpDocumentor](https://www.phpdoc.org/)

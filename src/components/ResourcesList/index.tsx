@@ -26,7 +26,7 @@ const ALL_RESOURCES = graphql`
   }
 `
 
-function plantTree(item: IFileOrFolder, index?: number) {
+function plantTree(item: IFileOrFolder, single?: boolean) {
   if (item.type === "file") {
     // remove the first elements, treat as hardcoded
     const [, , , ...cleanedUpPath] = item.path.split("/")
@@ -42,17 +42,21 @@ function plantTree(item: IFileOrFolder, index?: number) {
     )
   }
 
-  return <Language key={item.title} item={item} index={index!} />
+  return <Language key={item.title} item={item} single={Boolean(single)} />
 }
 
-const Language = memo(({ item }: { item: IFolder; index: number }) => {
-  return (
-    <SC.TreeWrapper>
-      <SC.LanguageLabel>{humanize(item.title)}</SC.LanguageLabel>
-      <SC.Children>{item.children.map((node) => plantTree(node))}</SC.Children>
-    </SC.TreeWrapper>
-  )
-})
+const Language = memo(
+  ({ item, single }: { item: IFolder; single: boolean }) => {
+    return (
+      <SC.TreeWrapper>
+        {!single && <SC.LanguageLabel>{humanize(item.title)}</SC.LanguageLabel>}
+        <SC.Children>
+          {item.children.map((node) => plantTree(node))}
+        </SC.Children>
+      </SC.TreeWrapper>
+    )
+  }
+)
 
 interface IResourcesList extends HTMLAttributes<HTMLDivElement> {
   relativeDirectory?: string
@@ -78,10 +82,11 @@ export const ResourcesList: FC<IResourcesList> = (props) => {
 
   const tree = useBuildTree(filteredResources)
   const sortedTree = sort((a, b) => a.title.localeCompare(b.title), tree)
+  const isSingle = Boolean(props.relativeDirectory)
 
   return (
     <SC.ResourcesListWrapper {...props}>
-      {sortedTree.map((node, index) => plantTree(node, index))}
+      {sortedTree.map((node) => plantTree(node, isSingle))}
     </SC.ResourcesListWrapper>
   )
 }

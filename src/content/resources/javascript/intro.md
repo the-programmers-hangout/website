@@ -5,7 +5,7 @@ created_at: 2019/12/15
 title: Javascript
 ---
 
-## Documentation
+###### Documentation
 
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [jQuery](https://contribute.jquery.org/documentation/)
@@ -13,7 +13,7 @@ title: Javascript
 - [Typescript](https://www.typescriptlang.org/docs/home.html)
 - [Discord.js](https://discord.js.org/#/docs/main/stable/general/welcome)
 
-## Tutorials
+###### Tutorials
 
 - [Eloquent](https://eloquentjavascript.net/)
 - [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)
@@ -21,12 +21,12 @@ title: Javascript
 - [Modern JS](https://javascript.info/)
 - [Evie's Accelerated JS Tutorial](https://evie.gitbook.io/js/)
 
-## Discord.js
+###### Discord.js
 
 - [An Idiot's Guide](https://anidiots.guide/)
 - [Discord.js Guide](https://discordjs.guide/)
 
-## Other
+###### Other
 
 - [You might not need jQuery](https://youmightnotneedjquery.com/)
 - [You might not need jQuery 2](https://github.com/you-dont-need-x/you-dont-need-jquery)
