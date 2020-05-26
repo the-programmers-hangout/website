@@ -20,30 +20,6 @@ export const Children = styled.div`
   }
 `
 
-export const Label = styled.div`
-  user-select: none;
-  position: relative;
-  padding: 4px 0 2px;
-  margin-bottom: 2px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid transparent;
-  align-self: flex-start;
-
-  &:hover {
-    border-color: ${(props) =>
-      transparentize(0.7, props.theme.sidebar.foreground)};
-  }
-
-  svg {
-    position: absolute;
-    right: 100%;
-    margin-right: 4px;
-    width: 10px;
-  }
-`
-
 export const LanguageLabel = styled.div`
   display: flex;
   align-items: center;
@@ -52,16 +28,6 @@ export const LanguageLabel = styled.div`
   padding: 4px 15px 4px 0;
   font-weight: 700;
   color: ${(props) => transparentize(0.5, props.theme.sidebar.foreground)};
-
-  svg {
-    margin-left: auto;
-    transform: rotate(90deg);
-    transition: transform 0.3s;
-
-    path {
-      fill: ${(props) => transparentize(0.5, props.theme.sidebar.foreground)};
-    }
-  }
 `
 
 export const TreeWrapper = styled.div`
@@ -76,10 +42,6 @@ export const TreeWrapper = styled.div`
 
   ${Children} {
     display: flex;
-  }
-
-  & > ${Label} svg {
-    fill: ${(props) => props.theme.sidebar.foreground};
   }
 `
 
