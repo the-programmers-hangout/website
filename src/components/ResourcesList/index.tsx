@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby"
 import sort from "ramda/es/sort"
-import React, { FC, HTMLAttributes, memo } from "react"
+import React, { FC, HTMLAttributes, memo, useMemo } from "react"
 import "react-perfect-scrollbar/dist/css/styles.css"
 import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
 import { getPath, humanize } from "../../utils"
@@ -47,16 +47,29 @@ function plantTree(item: IFileOrFolder, single?: boolean) {
 
 const Language = memo(
   ({ item, single }: { item: IFolder; single: boolean }) => {
+    const children = useMemo(() => {
+      if (single) {
+        return item.children.filter((child) => {
+          const [, , , title] = child.title.split("/")
+          return title !== "intro"
+        })
+      }
+
+      return item.children
+    }, [item.children, single])
+
     return (
       <SC.TreeWrapper>
         {!single && <SC.LanguageLabel>{humanize(item.title)}</SC.LanguageLabel>}
-        <SC.Children>
-          {item.children.map((node) => plantTree(node))}
-        </SC.Children>
+        <SC.Children>{children.map((node) => plantTree(node))}</SC.Children>
       </SC.TreeWrapper>
     )
   }
 )
+
+function sortTree(tree: IFileOrFolder[]) {
+  return sort((a, b) => a.title.localeCompare(b.title), tree)
+}
 
 interface IResourcesList extends HTMLAttributes<HTMLDivElement> {
   relativeDirectory?: string
@@ -81,7 +94,7 @@ export const ResourcesList: FC<IResourcesList> = (props) => {
   }
 
   const tree = useBuildTree(filteredResources)
-  const sortedTree = sort((a, b) => a.title.localeCompare(b.title), tree)
+  const sortedTree = sortTree(tree)
   const isSingle = Boolean(props.relativeDirectory)
 
   return (
