@@ -5,13 +5,17 @@ interface ILinkProps {
   to: string
 }
 
-export const Link: FC<ILinkProps> = ({ children, to }) => {
+export const Link: FC<ILinkProps> = ({ children, to, ...props }) => {
   if (!to.match(/^(https?:\/\/)/)) {
-    return <SC.LinkInternal to={to}>{children}</SC.LinkInternal>
+    return (
+      <SC.LinkInternal {...props} to={to}>
+        {children}
+      </SC.LinkInternal>
+    )
   }
 
   return (
-    <SC.LinkExternal rel="noreferrer" href={to} target="_blank">
+    <SC.LinkExternal {...props} rel="noreferrer" href={to} target="_blank">
       {children}
     </SC.LinkExternal>
   )

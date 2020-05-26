@@ -1,3 +1,4 @@
+import cx from "classnames"
 import { graphql, useStaticQuery } from "gatsby"
 import sort from "ramda/es/sort"
 import React, { FC, HTMLAttributes, memo, useMemo } from "react"
@@ -34,10 +35,7 @@ function plantTree(item: IFileOrFolder, single?: boolean) {
 
     return (
       <SC.PageLink key={item.title} to={path}>
-        {cleanedUpPath.map((node) => (
-          // TODO: use helper to format path
-          <SC.NodePart key={node}>{humanize(node)}</SC.NodePart>
-        ))}
+        {cleanedUpPath.map((node) => humanize(node)).join(" / ")}
       </SC.PageLink>
     )
   }
@@ -61,7 +59,9 @@ const Language = memo(
     return (
       <SC.TreeWrapper>
         {!single && <SC.LanguageLabel>{humanize(item.title)}</SC.LanguageLabel>}
-        <SC.Children>{children.map((node) => plantTree(node))}</SC.Children>
+        <SC.Children className={cx({ "is-single": single })}>
+          {children.map((node) => plantTree(node))}
+        </SC.Children>
       </SC.TreeWrapper>
     )
   }

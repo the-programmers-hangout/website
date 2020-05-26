@@ -1,6 +1,6 @@
-import { Link } from "gatsby"
 import { transparentize } from "polished"
 import styled from "styled-components"
+import { Link } from "../Link"
 
 export const ResourcesListWrapper = styled.div`
   box-sizing: border-box;
@@ -14,6 +14,10 @@ export const Children = styled.div`
   flex-direction: column;
   align-items: flex-start;
   overflow: hidden;
+
+  &.is-single {
+    padding-left: 0;
+  }
 `
 
 export const Label = styled.div`
@@ -65,7 +69,10 @@ export const TreeWrapper = styled.div`
   flex-direction: column;
   width: 100%;
   font-size: 16px;
-  margin: 32px 0;
+
+  & + & {
+    margin-top: 32px;
+  }
 
   ${Children} {
     display: flex;
@@ -77,27 +84,11 @@ export const TreeWrapper = styled.div`
 `
 
 export const PageLink = styled(Link)`
-  display: block;
-  padding: 2px 0;
-  color: ${(props) => props.theme.sidebar.foreground};
-  align-self: flex-start;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-
-  &:hover {
-    border-color: ${(props) =>
-      transparentize(0.7, props.theme.sidebar.foreground)};
-  }
+  font-weight: 400;
+  display: inline-block;
+  font-size: 18px;
 
   & + & {
-    margin-top: 4px;
-  }
-`
-
-export const NodePart = styled.span`
-  & + &::before {
-    content: "/";
-    opacity: 0.3;
-    margin: 0 4px;
+    margin-top: 8px;
   }
 `
