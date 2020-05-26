@@ -18,8 +18,10 @@ export const ResourcesHomeContent: FC<IResourcesHomeContent> = (props) => {
         answered questions.
       </SC.Intro>
       <ResourcesList relativeDirectory={props.language} />
-      <SC.Title>Extra resources</SC.Title>
-      <Markdown content={props.html} />
+      <SC.Box>
+        <SC.Title>Extra resources</SC.Title>
+        <Markdown content={props.html} />
+      </SC.Box>
       <Footer />
     </>
   )
