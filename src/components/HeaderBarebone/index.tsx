@@ -1,4 +1,5 @@
 import React from "react"
+import cx from "classnames"
 
 import * as SC from "./styles"
 import { Container } from "../Container"
@@ -23,7 +24,13 @@ export const HeaderBarebone: React.FC<IHeaderBareboneProps> = (props) => {
         <SC.Box>
           {props.above}
 
-          <SC.Title>{props.title}</SC.Title>
+          <SC.Title
+            className={cx({
+              "has-content-below": props.content,
+            })}
+          >
+            {props.title}
+          </SC.Title>
 
           {props.content}
         </SC.Box>

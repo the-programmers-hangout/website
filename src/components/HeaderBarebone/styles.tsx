@@ -1,6 +1,6 @@
 import { transparentize, darken } from "polished"
 import styled from "styled-components"
-import { fontFamily, modularScale } from "../../design/typography"
+import { fontFamily } from "../../design/typography"
 import { WavesTop, WavesBottom } from "../Waves"
 import Circles from "../../images/circles.svg"
 
@@ -104,13 +104,13 @@ export const Box = styled.div`
 
 export const Title = styled.h1`
   font-family: ${fontFamily.header};
-  font-size: ${modularScale(6).fontSize}px;
-  line-height: ${modularScale(6).lineHeight}px;
+  font-size: 34px;
+  line-height: 41px;
   letter-spacing: -1.75px;
   margin-top: 0;
   margin: 0;
 
-  & + * {
-    margin-top: 16px;
+  &.has-content-below {
+    margin-bottom: 16px;
   }
 `

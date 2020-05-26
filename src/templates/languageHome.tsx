@@ -1,11 +1,9 @@
 import { graphql } from "gatsby"
 import React, { FC, Fragment } from "react"
 import { Header } from "../components/Header"
-import { Markdown } from "../components/Markdown"
-import { ResourcesList } from "../components/ResourcesList"
+import { ResourcesHomeContent } from "../components/ResourcesHomeContent"
 import { SEO } from "../components/SEO"
 import { PageContent } from "../components/PageContent"
-import { Footer } from "../components/Footer"
 import useSidebar from "../hooks/useSidebar"
 
 // @todo maybe find alternative type for data
@@ -36,11 +34,7 @@ const LanguageHome: FC<any> = ({ data, pageContext }) => {
       />
       <PageContent
         content={
-          <>
-            <Markdown content={html} />
-            <ResourcesList relativeDirectory={pageContext.language} />
-            <Footer />
-          </>
+          <ResourcesHomeContent language={pageContext.language} html={html} />
         }
         recommendedReading={frontmatter.recommended_reading}
         externalResources={frontmatter.external_resources}
