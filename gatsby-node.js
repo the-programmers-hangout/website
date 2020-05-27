@@ -48,57 +48,81 @@ const validateResourceArticle = node => {
 }
 
 const createResources = async ({ createPage, graphql }) => {
-  const languageResources = path.resolve(`src/templates/languagePost.tsx`)
-  const languageHome = path.resolve(`src/templates/languageHome.tsx`)
+  const resourcePage = path.resolve(`src/templates/resourcePage.tsx`)
+  const resourceHome = path.resolve(`src/templates/resourceHome.tsx`)
 
-  const result = await graphql(`
-    query FetchResources {
-      allFile(filter: { sourceInstanceName: { eq: "resources" } }) {
-        edges {
-          node {
-            relativePath
-            sourceInstanceName
+  const languagesQuery = await graphql(
+    `
+      query FetchLanguages {
+        allFile(filter: { sourceInstanceName: { eq: "languages" } }) {
+          edges {
+            node {
+              relativePath
+              sourceInstanceName
+            }
           }
         }
       }
-    }
-  `)
+    `
+  )
 
-  if (result.errors) {
-    return Promise.reject(result.errors)
+  const topicsQuery = await graphql(
+    `
+      query FetchTopics {
+        allFile(filter: { sourceInstanceName: { eq: "topics" } }) {
+          edges {
+            node {
+              relativePath
+              sourceInstanceName
+            }
+          }
+        }
+      }
+    `
+  )
+
+  const resources = [
+    { key: "topics", query: topicsQuery },
+    { key: "languages", query: languagesQuery },
+  ]
+
+  for ({ key, query } of resources) {
+    if (query.errors) {
+      return Promise.reject(query.errors)
+    }
+
+    const resources = query.data.allFile.edges.reduce((acc, { node }) => {
+      const [resourceCategory] = node.relativePath.split("/")
+      if (!acc.includes(resourceCategory)) {
+        acc.push(resourceCategory)
+      }
+      return acc
+    }, [])
+
+    // create home page for each resources
+    resources.forEach((resource) => {
+      createPage({
+        path: path.join("resources", resource),
+        component: resourceHome,
+        context: {
+          resourceType: key,
+          entry: resource,
+          layout: LAYOUT_RESOURCES,
+        },
+      })
+    })
+
+    query.data.allFile.edges.forEach(({ node }) => {
+      createPage({
+        path: path.join("resources", node.relativePath),
+        component: resourcePage,
+        context: {
+          file: node.relativePath,
+          layout: LAYOUT_RESOURCES,
+        },
+      })
+    })
   }
-
-  const languages = result.data.allFile.edges.reduce((acc, { node }) => {
-    const [language] = node.relativePath.split("/")
-    if (!acc.includes(language)) {
-      acc.push(language)
-    }
-    return acc
-  }, [])
-
-  // create home page for each languages
-  languages.forEach(language => {
-    createPage({
-      path: path.join("resources", language),
-      component: languageHome,
-      context: {
-        language,
-        layout: LAYOUT_RESOURCES,
-      },
-    })
-  })
-
-  // create resource pages
-  return result.data.allFile.edges.forEach(({ node }) => {
-    createPage({
-      path: path.join("resources", node.relativePath),
-      component: languageResources,
-      context: {
-        file: node.relativePath,
-        layout: LAYOUT_RESOURCES,
-      },
-    })
-  })
 }
 
 const createArchives = async ({ createPage, graphql }) => {

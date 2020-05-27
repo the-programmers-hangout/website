@@ -54,8 +54,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `resources`,
-        path: `${__dirname}/src/content/resources`,
+        name: `languages`,
+        path: `${__dirname}/src/content/resources/language`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `topics`,
+        path: `${__dirname}/src/content/resources/topic`,
       },
     },
     {

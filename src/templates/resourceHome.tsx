@@ -7,7 +7,7 @@ import { PageContent } from "../components/PageContent"
 import useSidebar from "../hooks/useSidebar"
 
 // @todo maybe find alternative type for data
-const LanguageHome: FC<any> = ({ data, pageContext }) => {
+const ResourceHome: FC<any> = ({ data, pageContext }) => {
   const { current: language } = useSidebar()
   const { relativePath } = data.file
   const { html, excerpt, fields, frontmatter, timeToRead } = data.file.post
@@ -43,13 +43,13 @@ const LanguageHome: FC<any> = ({ data, pageContext }) => {
   )
 }
 
-export default LanguageHome
+export default ResourceHome
 
 export const query = graphql`
-  query LanguageHome($language: String!) {
+  query ResourceHome($resourceType: String!, $entry: String!) {
     file(
-      sourceInstanceName: { eq: "resources" }
-      relativeDirectory: { eq: $language }
+      sourceInstanceName: { eq: $resourceType }
+      relativeDirectory: { eq: $entry }
       base: { eq: "intro.md" }
     ) {
       relativePath
