@@ -1,21 +1,33 @@
 import { graphql, useStaticQuery } from "gatsby"
 import descend from "ramda/es/descend"
-import sort from "ramda/es/sort"
 import sortWith from "ramda/es/sortWith"
 import React, { FC, HTMLAttributes, memo, useState } from "react"
-import useBuildTree from "../../hooks/useBuildTree"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import useSidebar from "../../hooks/useSidebar"
 import TriangleDown from "../../icons/triangle-down.svg"
-import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
+import { IFileOrFolder, IFolder } from "../../types"
 import { getPath, humanize } from "../../utils"
 import { Sidebar } from "../Sidebar"
 import * as SC from "./styles"
 import useMatchingPath from "./useMatchingPath"
+import useTree from "./useTree"
 
 const ALL_RESOURCES = graphql`
-  query {
-    allFile(filter: { sourceInstanceName: { eq: "resources" } }) {
+  query AllTopicsAndAllLanguages {
+    languages: allFile(filter: { sourceInstanceName: { eq: "languages" } }) {
+      edges {
+        node {
+          relativePath
+          childMarkdownRemark {
+            frontmatter {
+              authors
+              title
+            }
+          }
+        }
+      }
+    }
+    topics: allFile(filter: { sourceInstanceName: { eq: "topics" } }) {
       edges {
         node {
           relativePath
@@ -129,16 +141,16 @@ const FirstLevelFolder = memo(({ item }: { item: IFolder }) => {
   )
 })
 
-const LanguageList: FC<{
+const ResourceList: FC<{
   items: IFileOrFolder[]
   setExpanded: React.Dispatch<React.SetStateAction<boolean>>
 }> = ({ items, setExpanded }) => {
   const { current, setCurrent } = useSidebar()
 
   return (
-    <SC.StyledLanguageList>
+    <SC.StyledResourceList>
       {items.map((item) => (
-        <SC.Language
+        <SC.Resource
           key={item.title}
           className={current === item.title ? "active" : ""}
           onClick={() => {
@@ -147,55 +159,52 @@ const LanguageList: FC<{
           }}
         >
           {item.title}
-        </SC.Language>
+        </SC.Resource>
       ))}
-    </SC.StyledLanguageList>
+    </SC.StyledResourceList>
   )
 }
 
-const AllLanguages: FC<{
-  items: IFileOrFolder[]
+const ExpandResources: FC<{
   expanded: boolean
   setExpanded: React.Dispatch<React.SetStateAction<boolean>>
-}> = ({ items, expanded, setExpanded }) => {
+}> = ({ children, expanded, setExpanded }) => {
   const { current } = useSidebar()
 
-  if (!current) {
-    return <LanguageList items={items} setExpanded={setExpanded} />
-  }
+  const showList = expanded || !current
 
   return (
-    <SC.ExpandLanguages>
-      <SC.ExpandLanguagesHeader
-        onClick={() => setExpanded((prevState) => !prevState)}
-      >
-        Expand languages {expanded ? <SC.CollapseIcon /> : <SC.ExpandIcon />}
-      </SC.ExpandLanguagesHeader>
-      {expanded && <LanguageList items={items} setExpanded={setExpanded} />}
-    </SC.ExpandLanguages>
+    <SC.ExpandResources>
+      {current && (
+        <SC.ExpandResourcesHeader
+          onClick={() => setExpanded((prevState) => !prevState)}
+        >
+          Expand resources {expanded ? <SC.CollapseIcon /> : <SC.ExpandIcon />}
+        </SC.ExpandResourcesHeader>
+      )}
+      {showList && children}
+    </SC.ExpandResources>
   )
 }
 
 export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
-  const [expandedLanguages, setExpandedLanguages] = useState(false)
-  const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
-  const languages = useBuildTree(resources, "/resources")
+  const [expanded, setExpanded] = useState(false)
+  const resources = useStaticQuery(ALL_RESOURCES)
+  const languagesTree = useTree(resources.languages)
+  const topicsTree = useTree(resources.topics)
   const { current } = useSidebar()
-  const sortedLanguages = sort(
-    (a, b) => a.title.localeCompare(b.title),
-    languages
-  )
 
-  const currentLanguage = sortedLanguages.find((lang) => lang.title === current)
+  const currentLanguage = languagesTree.find((lang) => lang.title === current)
+  const currentTopic = topicsTree.find((topic) => topic.title === current)
 
   return (
     <Sidebar {...props}>
-      <AllLanguages
-        items={sortedLanguages}
-        expanded={expandedLanguages}
-        setExpanded={setExpandedLanguages}
-      />
+      <ExpandResources expanded={expanded} setExpanded={setExpanded}>
+        <ResourceList items={languagesTree} setExpanded={setExpanded} />
+        <ResourceList items={topicsTree} setExpanded={setExpanded} />
+      </ExpandResources>
       {currentLanguage && <Tree item={currentLanguage} firstLevel={true} />}
+      {currentTopic && <Tree item={currentTopic} firstLevel={true} />}
     </Sidebar>
   )
 }
