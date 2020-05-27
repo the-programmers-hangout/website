@@ -5,6 +5,23 @@ created_at: 2020/04/20
 title: Bot Development
 ---
 
-###### About
+###### JavaScript
 
-In TPH, we employ the use of various Discord bots to help with a myriad of tasks such as moderation and managing embeds.
+- [discord.js Docs](https://discord.js.org/#/docs/main/stable/general/welcome)
+- [discord.js Guide](https://discordjs.guide/)
+- [An Idiot's Guide](https://anidiots.guide/)
+
+- [Akairo (framework)](https://github.com/discord-akairo/discord-akairo)
+- [Commando (Command handler)](https://github.com/discordjs/Commando)
+
+###### Python
+
+- [discord.py Docs](https://discordpy.readthedocs.io/en/latest/)
+
+###### Java
+
+- [JDA](https://github.com/DV8FromTheWorld/JDA/wiki)
+
+###### Kotlin
+
+- [KUtils](https://gitlab.com/Aberrantfox/KUtils/-/wikis/home)
