@@ -11,7 +11,9 @@ import * as SC from "./styles"
 
 const ALL_ARCHIVES = graphql`
   query {
-    allFile(filter: { sourceInstanceName: { eq: "what-is-archive" } }) {
+    archives: allFile(
+      filter: { sourceInstanceName: { eq: "what-is-archive" } }
+    ) {
       edges {
         node {
           relativePath
@@ -41,7 +43,7 @@ function Tree({ item }: { item: IFileOrFolder }) {
 }
 
 export const ArchivesSidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
-  const archives = useStaticQuery<IAllArchivesQuery>(ALL_ARCHIVES)
+  const { archives } = useStaticQuery(ALL_ARCHIVES)
   const tree = useBuildTree(archives, "/archives")
   const sortedTree = sort((a, b) => a.title.localeCompare(b.title), tree)
 

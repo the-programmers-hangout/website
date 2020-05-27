@@ -79,6 +79,8 @@ export const TreeWrapper = styled.div<{ collapsed?: boolean }>`
 
   &.firstLevel {
     overflow: hidden;
+    border-top: 1px solid
+      ${(props) => transparentize(0.8, props.theme.sidebar.foreground)};
   }
 
   ${Children} {
@@ -109,15 +111,12 @@ export const ExpandIcon = styled(Expand)`
   }
 `
 
-export const ExpandLanguages = styled.div`
-  padding: 12px 15px 12px 0;
-
-  border-bottom: 1px solid
-    ${(props) => transparentize(0.8, props.theme.sidebar.foreground)};
-  margin-bottom: 8px;
+export const ExpandResources = styled.div`
+  padding-right: 15px;
+  margin: 20px 0;
 `
 
-export const ExpandLanguagesHeader = styled.div`
+export const ExpandResourcesHeader = styled.div`
   user-select: none;
   display: flex;
   align-items: center;
@@ -130,12 +129,18 @@ export const ExpandLanguagesHeader = styled.div`
   }
 `
 
-export const StyledLanguageList = styled.div`
-  padding: 8px 0;
+export const StyledResourceList = styled.div`
+  padding-top: 16px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   overflow: hidden;
+
+  & + & {
+    margin-top: 16px;
+    border-top: 1px solid
+      ${(props) => transparentize(0.8, props.theme.sidebar.foreground)};
+  }
 `
 
 const item = css`
@@ -167,7 +172,7 @@ const item = css`
   }
 `
 
-export const Language = styled.div`
+export const Resource = styled.div`
   ${item};
 `
 

@@ -10,7 +10,7 @@ import useSidebar from "../hooks/useSidebar"
 import { buildToc } from "../utils"
 
 // @todo maybe find alternative type for data
-const LanguagePost: FC<any> = ({ data }) => {
+const ResourcePage: FC<any> = ({ data }) => {
   const { current: language } = useSidebar()
   const { relativePath } = data.file
   const {
@@ -61,10 +61,10 @@ const LanguagePost: FC<any> = ({ data }) => {
   )
 }
 
-export default LanguagePost
+export default ResourcePage
 
 export const query = graphql`
-  query LanguagePost($file: String!) {
+  query ResourcePage($file: String!) {
     file(relativePath: { eq: $file }) {
       relativePath
       post: childMarkdownRemark {

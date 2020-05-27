@@ -2,10 +2,10 @@ import { IAllFilesQuery, IFileQuery } from "../types"
 import { join, traversePaths } from "../utils"
 
 export default function useBuildTree(
-  resources: IAllFilesQuery,
+  resources: IAllFilesQuery["allFile"],
   basePath: string
 ) {
-  const objects = resources.allFile.edges.map(({ node: file }: IFileQuery) =>
+  const objects = resources.edges.map(({ node: file }: IFileQuery) =>
     traversePaths(file.relativePath.split("/"), basePath)
   )
 
