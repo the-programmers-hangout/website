@@ -20,8 +20,8 @@ function extractTitle(title: string): ITitle {
   const rest = maybePrefix ? title.replace(maybePrefix[0], "") : title
 
   return {
-    prefix: maybePrefix ? maybePrefix[0] : undefined,
-    title: rest,
+    prefix: maybePrefix ? `${maybePrefix[0]} ` : undefined,
+    title: rest.trim(),
   }
 }
 
