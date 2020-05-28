@@ -1,4 +1,3 @@
-import { AnchorLink } from "gatsby-plugin-anchor-links"
 import styled, { css } from "styled-components"
 import { Link } from "gatsby"
 
@@ -13,7 +12,7 @@ const extraLink = css`
   }
 `
 
-export const Anchor = styled(AnchorLink)`
+export const Anchor = styled.a`
   ${extraLink};
 `
 

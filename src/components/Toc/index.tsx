@@ -1,4 +1,6 @@
+import cx from "classnames"
 import React, { FC } from "react"
+import Scrollspy from "react-scrollspy"
 import { PageSidebarLink } from "../PageSidebarLink"
 import { ITocItem } from "../../types"
 import * as SC from "./styles"
@@ -24,31 +26,40 @@ function extractTitle(title: string): ITitle {
 }
 
 export const Toc: FC<ITocProps> = ({ header, items }) => {
-  const windowGlobal = typeof window !== "undefined" && window
+  const [scrollSpyCache, setScrollSpyCache] = React.useState<string>()
 
-  // window is not available on build
-  if (!windowGlobal) {
-    return null
-  }
-
-  const { pathname } = windowGlobal.location
   return (
     <SC.TocWrapper>
       {header}
-      {items.map((item) => {
-        const { prefix, title } = extractTitle(item.title)
+      <Scrollspy
+        items={items.map((item) => item.link.substring(1))}
+        currentClassName="scrollspy-current"
+        scrolledPastClassName="scrollspy-past"
+        componentTag={SC.ScrollspyWrapper}
+        onUpdate={(updatedElement: HTMLDivElement) => {
+          // @ts-ignore
+          const id = updatedElement?.id
+          if (id) {
+            setScrollSpyCache(id)
+          }
+        }}
+      >
+        {items.map((item) => {
+          const { prefix, title } = extractTitle(item.title)
 
-        return (
-          <SC.TocItem key={item.link} className={`depth-${item.depth}`}>
-            {prefix}
-            <PageSidebarLink
-              href={`${pathname}${item.link}`}
-              text={title}
-              type="anchor"
-            />
-          </SC.TocItem>
-        )
-      })}
+          return (
+            <SC.TocItem
+              key={item.link}
+              className={cx(`depth-${item.depth}`, {
+                "scrollspy-cached": scrollSpyCache === item.link.substring(1),
+              })}
+            >
+              {prefix}
+              <PageSidebarLink href={item.link} text={title} type="anchor" />
+            </SC.TocItem>
+          )
+        })}
+      </Scrollspy>
     </SC.TocWrapper>
   )
 }
