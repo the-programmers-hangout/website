@@ -16,7 +16,7 @@ export const PageSidebarLink: FC<IPageSidebarLinkProps> = ({
   type = "internal",
 }) => {
   if (type === "anchor") {
-    return <SC.Anchor to={href}>{text}</SC.Anchor>
+    return <SC.Anchor href={href}>{text}</SC.Anchor>
   }
 
   if (type === "external") {
