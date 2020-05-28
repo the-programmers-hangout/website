@@ -72,7 +72,7 @@ Programming is a skilled trade, so if you want development work, pay for it. Pro
 
 Content should be kept to a PG13 level. Always ask yourself "Would my boss be okay with this fullscreen on my monitor as he walked by?". If the answer is no, don't post it.
 
-## 3: No illegal or prohibited topics / Security and hacking
+## 3. No illegal or prohibited topics / Security and hacking
 
 ### Do not discuss anything prohibited by law or a service’s Terms of Service (ToS)
 
@@ -106,7 +106,7 @@ Do not advertise anything you stand to benefit from. A few examples of this are:
 
 Exceptions to this rule are rarely made; if you’d like to request such an exception, please contact ModMail directly.
 
-## 7: Use ModMail to contact staff
+## 7. Use ModMail to contact staff
 
 ### What is ModMail?
 
@@ -132,6 +132,6 @@ A few examples of when using ModMail is **not** good practice
 Someone posts some NSFW content, instead ping the `serious rule break` role.
 Want help with programming, use a channel in discord.
 
-## 8: No life advice
+## 8. No life advice
 
 This includes, but is not limited to: relationship advice, depression or suicidal talk. We are not qualified to offer professional advice; it just does not belong here. Note that career-related advice is fine.
