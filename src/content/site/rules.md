@@ -120,17 +120,17 @@ Simply send the bot a direct message.
 
 A few examples of when using ModMail is good practice
 
-You’ve noticed a heated argument in a channel and there’s no staff around.
-Wish to dispute an infraction you have received.
-Would like more context about a rule.
-Would like to screen something with the staff before posting.
+- You’ve noticed a heated argument in a channel and there’s no staff around.
+- Wish to dispute an infraction you have received.
+- Would like more context about a rule.
+- Would like to screen something with the staff before posting.
 
 ### When do I not use it?
 
 A few examples of when using ModMail is **not** good practice
 
-Someone posts some NSFW content, instead ping the `serious rule break` role.
-Want help with programming, use a channel in discord.
+- Someone posts some NSFW content, instead ping the `serious rule break` role.
+- Want help with programming, use a channel in discord.
 
 ## 8. No life advice
 
