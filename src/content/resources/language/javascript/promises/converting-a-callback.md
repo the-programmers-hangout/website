@@ -1,6 +1,7 @@
 ---
 authors:
   - "veksen#1060"
+  - "Daniell#4062"
 created_at: "2020/05/20"
 title: Converting a callback
 recommended_reading:
