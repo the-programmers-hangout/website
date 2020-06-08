@@ -48,7 +48,7 @@ Treat everyone, regardless of their skill level, as though you have something to
 
 ### Do not attempt academic dishonesty
 
-This means cheating on on your school work, paying someone to do your school work or trying to avoid your school work in any way. It's unethical and will not be tolerated here.
+This means cheating on your school work, paying someone to do your school work or trying to avoid your school work in any way. It's unethical and will not be tolerated here.
 
 ## 2. Use common sense
 
