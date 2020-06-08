@@ -7,7 +7,7 @@ title: "Chapter 4: Reading from the socket"
 
 ## Chapter 4: Reading from the socket.
 
-Its a good start, we have a server that can accept connections. It will write a message to the client. 
+It's a good start, we have a server that can accept connections. It will write a message to the client. 
 
 But we aren't reading anything from the client. This will all change now. 
 

@@ -21,10 +21,10 @@ This project will guide you in the direction of what you need to do but it leave
 Feel free to ask for help, search topics online, look for tutorials for any of the concepts presented.
 
 The idea is to guide you along but not give you all the answers. There will be pseudo code in some of the chapters in 
-this project its down to you to achieve the functionality in your language of choice. 
+this project it's down to you to achieve the functionality in your language of choice. 
 The pseudo code isn't representative of a final project and is there to convey specific ideas you need to achieve
 
 ## Rules
 
 - Put in the work yourself. Don't copy and paste, the only person you are cheating is yourself.
-- If you are helping don't spoon-feed. Its about the journey not the destination.
+- If you are helping don't spoon-feed. It's about the journey not the destination.

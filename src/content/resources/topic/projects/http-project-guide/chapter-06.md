@@ -12,7 +12,7 @@ They need some sort of agreed way to ask for things and respond with replies or 
 
 In this chapter, we are going to create a really simple protocol for getting and storing strings, a *dictionary*.
 With our hypothetical protocol your server will store the definition to a series of words.
-You can do this nice and simply with a map like data structure or something more complex, your choice.
+You can do this nice and simply with a map-like data structure or something more complex, your choice.
 
 In a client-server architecture, genrally a client initiates communication by making a request to the server. In our case, the client will make a request to *get* a definition from the dictionary server.
 
@@ -37,7 +37,7 @@ We have created a simple reading protocol. This protocol can be extended by addi
 ```txt
 VERB args go here
 ```
-I encourage you to mess about and add other verb based commands.
+I encourage you to experiment and add other verb based commands.
 
 ## Goals
 

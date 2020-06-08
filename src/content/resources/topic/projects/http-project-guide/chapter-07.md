@@ -23,7 +23,7 @@ fun test_get_definition() {
     assert(line == "ANSWER something interesting here\n");
 }
 ```
-The idea is to try and test all the functionality of your program and use these tests to identify what is going wrong.
+The idea here is to try and test all the functionality of your program and use the above tests to identify what may be going wrong.
 
 Coverage is a reasonably good metric for establishing if your code is well tested. Coverage is identifying what lines 
 are covered by unit tests and what lines are not.

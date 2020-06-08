@@ -19,7 +19,7 @@ If you are using a build tool that sets up the environment for you now would be 
 Feel free to add the Hello World of your language to test that everything is setup correctly.
 
 One of the key steps in this project will be to track progress and changes as you develop. 
-For this we are going to be using `git` if you do not know git, 
+For this we are going to be using `git`. If you do not know git, 
 don't worry there will be links to [tutorials](https://www.atlassian.com/git/tutorials)
  and [guides](https://rogerdudler.github.io/git-guide/).
 

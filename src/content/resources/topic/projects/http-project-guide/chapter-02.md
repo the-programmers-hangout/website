@@ -10,14 +10,14 @@ title: "Chapter 2: So what are we building?"
 The actual final end goal is going to remain a mystery for the time being, but what I can tell you is that we are going
 to be building a server!
 
-What is a server? Its a program that accepts incoming connections, reads and writes to that connection and closing 
+What is a server? It's a program that accepts incoming connections, reads and writes to that connection and closing 
 it eventually.
 
 You will hear the term socket used a lot in this project. Sockets are a way of connecting two devices on a network together.
 One socket listens, the other socket connects.
 
 The main design of sockets in the unix world is [Berkeley Sockets](https://en.wikipedia.org/wiki/Berkeley_sockets) and
-on windows its [Winsock](https://www.wikiwand.com/en/Winsock).
+on windows it's [Winsock](https://www.wikiwand.com/en/Winsock).
 
 This project will mostly be using berkeley sockets but if you want to use windows APIs feel free.
 

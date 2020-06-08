@@ -44,7 +44,7 @@ should have identical results, cause *no* side effects, it can also be cached.
 ### Resource
 
 A resource is just something identified by a URL. An example of a resource could be `/index.html` or `/api/person`
-These are both resources, its down to the server to decide what these resources mean. In a web application they might 
+These are both resources, it's down to the server to decide what these resources mean. In a web application they might 
 correspond to a controller, or as a file on disk. 
 
 ### Version

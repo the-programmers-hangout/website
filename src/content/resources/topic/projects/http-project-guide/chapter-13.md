@@ -8,7 +8,7 @@ title: "Chapter 12: Config"
 ## Chapter 12: Config.
 
 For the time being we have been hard coding all the various values like the port and the web directory, 
-its about time we made this configurable.
+it's about time we made this configurable.
 
 Lets create a config file that we can set the port and the host in. Lets say this config file is called `config` 
 and can contain any format you want. YAML, JSON, INI, Plain text; whatever suits you and your language. 
@@ -27,7 +27,7 @@ The whole point of making it configurable is the person deploying this in the fu
 change values in your program to get it to work to their usecase. So by providing a way to configure your application 
 it makes it more portable and usable in different situations.
 
-This should be quite an easy chapter but its a reasonably important one. 
+This should be quite an easy chapter but it's a reasonably important one. 
 
 ## Goals
 

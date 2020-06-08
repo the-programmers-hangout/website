@@ -66,7 +66,7 @@ Boom. Done.
 
 
 There are other replies we might send though, for example lets say someone requests `missing.txt` and we don't have that.
-We need to inform the client it doesn't exist. We do this by sending a 404. Its mostly the same as the previous but we change
+We need to inform the client it doesn't exist. We do this by sending a 404. It's mostly the same as the previous but we change
 the number and message to something different
 
 ```txt
