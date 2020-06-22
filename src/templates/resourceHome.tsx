@@ -10,7 +10,7 @@ import useSidebar from "../hooks/useSidebar"
 const ResourceHome: FC<any> = ({ data, pageContext }) => {
   const { current: language } = useSidebar()
   const { relativePath } = data.file
-  const { html, excerpt, fields, frontmatter, timeToRead } = data.file.post
+  const { body, excerpt, fields, frontmatter, timeToRead } = data.file.post
 
   const shiftLayout = Boolean(
     frontmatter.recommended_reading || frontmatter.external_resources
@@ -34,7 +34,7 @@ const ResourceHome: FC<any> = ({ data, pageContext }) => {
       />
       <PageContent
         content={
-          <ResourcesHomeContent language={pageContext.language} html={html} />
+          <ResourcesHomeContent language={pageContext.language} body={body} />
         }
         recommendedReading={frontmatter.recommended_reading}
         externalResources={frontmatter.external_resources}
@@ -53,8 +53,8 @@ export const query = graphql`
       base: { eq: "intro.md" }
     ) {
       relativePath
-      post: childMarkdownRemark {
-        html
+      post: childMdx {
+        body
         excerpt
         fields {
           authors {

@@ -18,7 +18,7 @@ const ALL_RESOURCES = graphql`
       edges {
         node {
           relativePath
-          childMarkdownRemark {
+          childMdx {
             frontmatter {
               authors
               title
@@ -31,7 +31,7 @@ const ALL_RESOURCES = graphql`
       edges {
         node {
           relativePath
-          childMarkdownRemark {
+          childMdx {
             frontmatter {
               authors
               title

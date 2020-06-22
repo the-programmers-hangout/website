@@ -14,7 +14,7 @@ const ResourcePage: FC<any> = ({ data }) => {
   const { current: language } = useSidebar()
   const { relativePath } = data.file
   const {
-    html,
+    body,
     headings,
     excerpt,
     fields,
@@ -49,7 +49,7 @@ const ResourcePage: FC<any> = ({ data }) => {
       <PageContent
         content={
           <>
-            <Markdown content={html} />
+            <Markdown content={body} />
             <Footer />
           </>
         }
@@ -67,8 +67,8 @@ export const query = graphql`
   query ResourcePage($file: String!) {
     file(relativePath: { eq: $file }) {
       relativePath
-      post: childMarkdownRemark {
-        html
+      post: childMdx {
+        body
         headings {
           depth
           value

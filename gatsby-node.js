@@ -161,7 +161,7 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
   const { createPage, createNodeField } = actions
   // TODO: find a better way to avoid handling non-resources
   // or better, attach authors to what-is archives
-  if (node.internal.type === "MarkdownRemark" && node.frontmatter.authors) {
+  if (node.internal.type === "Mdx" && node.frontmatter.authors) {
     const { frontmatter } = node
     const isDoc = Boolean(!frontmatter.path)
 

@@ -9,7 +9,7 @@ import { PageContent } from "../components/PageContent"
 // @todo maybe find alternative type for data
 const Archive: FC<any> = ({ data }) => {
   const { relativePath, ctime } = data.file
-  const { html, excerpt, timeToRead } = data.file.post
+  const { body, excerpt, timeToRead } = data.file.post
 
   const title = humanize(relativePath)
 
@@ -24,7 +24,7 @@ const Archive: FC<any> = ({ data }) => {
         timeToRead={timeToRead}
         shifted={false}
       />
-      <PageContent content={<Markdown content={html} />} />
+      <PageContent content={<Markdown content={body} />} />
     </Fragment>
   )
 }
@@ -36,8 +36,8 @@ export const query = graphql`
     file(relativePath: { eq: $file }) {
       relativePath
       ctime
-      post: childMarkdownRemark {
-        html
+      post: childMdx {
+        body
         excerpt
         timeToRead
       }

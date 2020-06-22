@@ -6,7 +6,7 @@ import * as SC from "./styles"
 
 interface IResourcesHomeContent extends HTMLAttributes<HTMLDivElement> {
   language: string
-  html: any
+  body: any
 }
 
 export const ResourcesHomeContent: FC<IResourcesHomeContent> = (props) => {
@@ -20,7 +20,7 @@ export const ResourcesHomeContent: FC<IResourcesHomeContent> = (props) => {
       <ResourcesList relativeDirectory={props.language} />
       <SC.Box>
         <SC.Title>Extra resources</SC.Title>
-        <Markdown content={props.html} />
+        <Markdown content={props.body} />
       </SC.Box>
       <Footer />
     </>
