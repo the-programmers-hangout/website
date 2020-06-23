@@ -47,7 +47,6 @@
     "gatsby-plugin-styled-components": "^3.3.2",
     "gatsby-remark-auto-headers-improved": "^1.0.4",
     "gatsby-source-filesystem": "^2.3.8",
-    "gatsby-transformer-remark": "^2.8.13",
     "gatsby-transformer-sharp": "^2.5.3",
     "github-slugger": "^1.3.0",
     "lodash": "^4.17.15",
