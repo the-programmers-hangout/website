@@ -33,7 +33,7 @@ console.log(myVar);
 
 ## Dynamic Types
 
-Variables in Javascript do not have explicit types, as some other languages (eg: Java) do. This means that when declaring a variable, you only use `name = value`, and don't need to add a type as well. The type is automatically chosen based on the value.
+Variables in Javascript do not have explicit types, as some other languages (eg: Java, C++) do. This means that when declaring a variable, you only use `name = value`, and don't need to add a type as well. The type is automatically chosen based on the value.
 
 ```js
 let myString = "Hello";
@@ -76,10 +76,10 @@ myArray.push(5);
 console.log(myArray); // [1,2,3,4,5]
 
 const myObj = { foo: "bar" };
-console.log(myObj); // {foo: bar}
+console.log(myObj); // {foo: "bar"}
 
 myObj.foo = "re-assigned";
-console.log(myObj); // {foo: re-assigned}
+console.log(myObj); // {foo: "re-assigned"}
 ```
 
 This, however, will still not work:
@@ -87,7 +87,7 @@ This, however, will still not work:
 ```js
 const myArray = [1, 2, 3];
 
-myArray = [1, 2, 3, 4, 5]; // Error: myArray has already been defined
+myArray = [1, 2, 3, 4, 5]; // Error: Assignment to constant variable
 ```
 
 ## What about var?
@@ -118,12 +118,12 @@ This is fixed using `let`
 for (let i = 0; i < 5; i++) {
   console.log(i);
 }
-console.log(i); // Error: i is undefined
+console.log(i); // Error: i is not defined
 
 if (true) {
   let myVar = "test";
 }
-console.log(myVar); // Error: myVar is undefined
+console.log(myVar); // Error: myVar is not defined
 ```
 
 However, if the above code was in a function, this would not be the case. In the case of a function, the variable will be scoped to the given function, and not accessible outside it. Eg:
@@ -132,7 +132,7 @@ However, if the above code was in a function, this would not be the case. In the
 function myFunction() {
   var myVar = "test";
 }
-console.log(myVar); // Error: test is undefined
+console.log(myVar); // Error: test is not defined
 ```
 
 This can cause confusing behaviour, as `var` has different scoping behaviour depending on if its in a function or not. This is solved by using `let` or `const`.
