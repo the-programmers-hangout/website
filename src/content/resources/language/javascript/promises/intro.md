@@ -57,7 +57,7 @@ Promises are possibly the #1 most common source of confusion for beginners. In o
 to avoid falling in pitfalls yourself, you have to remember 2 things about Javascript when
 working with promises.
 
-1. Javascript does not wait.
+1. Javascript _does not_ wait.
 2. No seriously, Javascript won't wait for your promises!
 
 You may have tried doing something like this before.
