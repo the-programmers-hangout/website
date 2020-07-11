@@ -22,9 +22,9 @@ The addition operator is used to add two numeric values (can be hex, integers or
 1 + 4 # equals 5
 1.1 + 1.1 # equals 2.2
 0x100 + 0x100 # 512
-'hello'+' '+'word' # equals hello world
-[1,3]+[2] # equals [1,3,2]
-(1,1)+(2,2) # equals (1,1,2,2)
+'hello' + ' ' + 'word' # equals hello world
+[1,3] + [2] # equals [1,3,2]
+(1,1) + (2,2) # equals (1,1,2,2)
 ```
 
 ### Subtraction Operator - `-`
@@ -39,22 +39,12 @@ The subtraction operator is used to subtract two numeric values, subtracting the
 
 ### Division Operator - `/`
 
-The division operator is used to divide two numeric values, dividing the value on the left hand side by the one on the right hand side (can be hex, integers or floats), returning a base 10 number float.
-
-```python
-8 / 2 # equals 4.0
-8 / 3 # 2.6666666666666665
-10 / 1.1 # equals 9.09090909090909
-0x200 / 0x10 # 32.0
-```
-
-### Division Operator - `/`
-
 The division operator is used to divide two numeric values, dividing the operand on the left hand side by the operand on the right hand side (can be hex, integers or floats), returning a base 10 number float.
 
 ```python
 8 / 2 # equals 4.0
 8 / 3 # 2.6666666666666665
+10 / 1.1 # equals 9.09090909090909
 0x200 / 0x10 # 32.0
 ```
 
@@ -134,8 +124,8 @@ a == a # equals True
 Compares the two operands on either side of the operator, returning `True` if they are not equal and `False` if they are equal. Strict type comparison, therefore this operators acts as a not identical operator.
 
 ```python
-8 != 4+4 # equals False
-8 != 3+3 # equals True
+8 != 4 + 4 # equals False
+8 != 3 + 3 # equals True
 '8' != 8 # equals True
 ```
 
