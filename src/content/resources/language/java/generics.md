@@ -16,7 +16,7 @@ Here's an example where Java uses generics.
 ```java
 class Main {
   public static void main(String[] args) {
-    List<String> = new ArrayList<String>();
+    List<String> stringList = new ArrayList<String>();
   }
 }
 ```
