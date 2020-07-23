@@ -1,8 +1,8 @@
 ---
 authors:
-  - "YourDailyLlama#1127"
+  - "Llama#4092"
 created_at: "2020/05/24"
-title: "Deploying a site with Netlify and adding HTTPS"
+title: "Deploying a site with Netlify"
 external_resources:
   - text: Freenom
     href: "https://freenom.com"
@@ -10,7 +10,7 @@ external_resources:
     href: "https://netlify.com"
 ---
 
-Netlify is an awesome service for all kind of web apps and wesbites! Here you will learn how to deploy a site and add HTTPS security to it for free!
+Netlify is an awesome service for all kind of web apps and websites! Here you will learn how to deploy a site and add HTTPS security to it for free!
 
 ## Getting started
 
@@ -36,7 +36,7 @@ Now, almost at the bottom of the page there is a file drop section, now open you
 
 ## Changing domain
 
-### This is not sponsored, but https://freenom.com can provide you free fast domains if you don't have one already
+#### This is not sponsored, but https://freenom.com can provide you free fast domains if you don't have one already
 
 Now if you have your site running on Netlify, it's good also changing it's domain.
 Go to Settings > Domain management and there should be an option add domain (I dont really remember what it says)
