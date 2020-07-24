@@ -141,7 +141,7 @@ In this example, we are querying real data from the Rick & Morty API. This API h
 ### Let's also look at an example from Discord.js:
 
 ```js
-client.on("message", (msg) => {
+client.on("message", async (msg) => {
   if (msg.author.bot) return;
 
   if (msg.content === "ping") {
