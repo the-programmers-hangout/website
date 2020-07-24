@@ -16,8 +16,8 @@ GET /../config.yaml HTTP/1.0
 
 ```
 
-This request is a relative path. So your server accepts the path. Goes up one directory from the `www` directory. 
-Reads your *config* and sends it to the attacker.
+This request is a relative path. So your server accepts the path. Goes up one directory from the `www` directory.
+Reads your _config_ and sends it to the attacker.
 
 This is real bad. Imagine if your config had database passwords in it?
 Imagine if someone requested `../../../../etc/passwd` and your server replied with it!
@@ -30,13 +30,13 @@ You need to find a way to isolate the `www` directory we created so nobody can r
 - You could manually work out if `..` will take you above the `www` directory.
 - You could make the http server run as a different user and only give that user permission to read `www` directory.
 
-This is just one of many possible attacks against your web server. 
+This is just one of many possible attacks against your web server.
 
-You should look through guides for your language of choice and find ways to harden your application. 
+You should look through guides for your language of choice and find ways to harden your application.
 
 ## Goals
 
-- Solve the ability to read files outside of your `www` directory. 
+- Solve the ability to read files outside of your `www` directory.
 
 ## Bonus goals
 
