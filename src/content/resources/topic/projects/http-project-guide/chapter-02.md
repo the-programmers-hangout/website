@@ -10,7 +10,7 @@ title: "Chapter 2: So what are we building?"
 The actual final end goal is going to remain a mystery for the time being, but what I can tell you is that we are going
 to be building a server!
 
-What is a server? It's a program that accepts incoming connections, reads and writes to that connection and closing 
+What is a server? It's a program that accepts incoming connections, reads and writes to that connection and closing
 it eventually.
 
 You will hear the term socket used a lot in this project. Sockets are a way of connecting two devices on a network together.
@@ -21,7 +21,7 @@ on windows it's [Winsock](https://www.wikiwand.com/en/Winsock).
 
 This project will mostly be using berkeley sockets but if you want to use windows APIs feel free.
 
-In general there is a flow for sockets. On the client you follow a flow like this; 
+In general there is a flow for sockets. On the client you follow a flow like this;
 
 ```txt
     +---------+
@@ -52,13 +52,13 @@ On the server the flow is slightly more involved.
                |            |           |          |
                +------------+           +----------+
 ```
+
 When a server starts up and creates a socket, it binds that socket to an interface and a port.
-The server will then set the socket to listening for connections, 
-when a connection comes in it needs to accept that connection. 
+The server will then set the socket to listening for connections,
+when a connection comes in it needs to accept that connection.
 Once a connection has been accepted it can receive and send to the socket the same as the client and eventually close it.
 
 This overview is brushing over a few details and you are encouraged to do your own research
-
 
 ## Goals
 

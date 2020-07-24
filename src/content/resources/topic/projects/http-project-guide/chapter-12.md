@@ -9,7 +9,7 @@ title: "Chapter 11: Replying"
 
 Servers have a number of responses they can make to a request. These range from "OK" to "Not Found" a list can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 
-The ones we will focus on in this chapter is 
+The ones we will focus on in this chapter is
 
 - 200 - OK
 - 400 - Bad Request
@@ -27,11 +27,11 @@ Accept: */*
 
 Lets start by replying to the request given above.
 
-For this we need to have a directory for our web hosting files to live in. Lets call this `./www`. 
+For this we need to have a directory for our web hosting files to live in. Lets call this `./www`.
 Create the directory and add a test file in it called `test.txt` this file should contain some text of your choice.
 
 Now the request that came in asked for the `test.txt` file we are hosting.
-So to answer the request we must first check we have that resource, in this case we do. 
+So to answer the request we must first check we have that resource, in this case we do.
 So we are going to reply with the most common HTTP response. OK.
 
 The first line of the response looks like this. We include the version we support, the status number, and the human readable
@@ -41,12 +41,12 @@ description of that status number.
 HTTP/1.0 200 OK
 ```
 
-Once we have sent that line we can send any headers we want to send. 
+Once we have sent that line we can send any headers we want to send.
 There are no mandatory headers but there are some suggested ones we will cover later.
 
 Then we send an empty `\r\n` to indicate we are done sending the headers. Now we can send the body.
 
-We read the `test.txt` file in and we write that as the body. 
+We read the `test.txt` file in and we write that as the body.
 Once we are done sending we can simply close the connection to indicate we are done sending the body.
 
 The entire response might look something like this
@@ -54,16 +54,15 @@ The entire response might look something like this
 ```txt
 HTTP/1.0 200 OK
 
-Etiam bibendum sapien ut est posuere pretium. Vestibulum a justo at sapien pharetra sagittis in eget lacus. 
-Sed ullamcorper quam sed nulla molestie interdum. Vestibulum hendrerit, est vel tristique 
-luctus, urna nibh pulvinar ligula, vel scelerisque nisi orci ac mauris. Nam tempor, orci nec rutrum sodales, 
-nulla diam imperdiet enim, id pellentesque leo nibh et urna. Vivamus non tortor dapibus, efficitur ex sed, 
-blandit odio. Vivamus volutpat, nunc sed pulvinar pellentesque, ipsum ante vestibulum sem, vitae malesuada 
+Etiam bibendum sapien ut est posuere pretium. Vestibulum a justo at sapien pharetra sagittis in eget lacus.
+Sed ullamcorper quam sed nulla molestie interdum. Vestibulum hendrerit, est vel tristique
+luctus, urna nibh pulvinar ligula, vel scelerisque nisi orci ac mauris. Nam tempor, orci nec rutrum sodales,
+nulla diam imperdiet enim, id pellentesque leo nibh et urna. Vivamus non tortor dapibus, efficitur ex sed,
+blandit odio. Vivamus volutpat, nunc sed pulvinar pellentesque, ipsum ante vestibulum sem, vitae malesuada
 dui odio ut erat.
 ```
 
 Boom. Done.
-
 
 There are other replies we might send though, for example lets say someone requests `missing.txt` and we don't have that.
 We need to inform the client it doesn't exist. We do this by sending a 404. It's mostly the same as the previous but we change
@@ -75,16 +74,17 @@ HTTP/1.0 404 Not Found
 Sorry we don't have that file!
 ```
 
-The final response is a generic response when the client sends you something that doesn't make sense. 
+The final response is a generic response when the client sends you something that doesn't make sense.
 
 Imagine the client sent
 
 ```txt
-GasdasET /test.txt     
+GasdasET /test.txt
 !!!!!!
 WHAT/1.1
 
 ```
+
 That doesn't look like a valid request so we should tell them that by sending a Bad Request response.
 
 ```txt

@@ -7,7 +7,7 @@ title: "Chapter 4: Writing to the socket"
 
 ## Chapter 4: Writing to the socket.
 
-We have a server, but it doesn't really do anything. That isn't very useful really. 
+We have a server, but it doesn't really do anything. That isn't very useful really.
 
 In this chapter we will take it a step further and actually write a message to the connection.
 
@@ -29,12 +29,12 @@ conn.send("Hello Joe!\n");
 conn.close();
 ```
 
-When testing this with netcat we should see that when someone connects it prints out `Hello Joe!` in the terminal, 
+When testing this with netcat we should see that when someone connects it prints out `Hello Joe!` in the terminal,
 then closes the connection.
 
 For the time being we are going to stick to hard coded responses, but you can change that message to whatever you want.
 
-You can always send a message to a client that is *not* closed.
+You can always send a message to a client that is _not_ closed.
 
 ```js
 conn.send("hi ");
@@ -44,7 +44,7 @@ conn.send("slim shady\n");
 conn.close();
 ```
 
-This code will send `hi my name is slim shady` to anyone that connects. 
+This code will send `hi my name is slim shady` to anyone that connects.
 Notice it doesn't have to be all in one single send method
 
 ## Goals

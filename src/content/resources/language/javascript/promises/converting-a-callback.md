@@ -66,18 +66,18 @@ const weather = await getWeatherAsync("Los Angeles").catch((error) => {
 console.log(weather);
 ```
 
-In Node.js >v8.0.0 you can make use of the built-in `util` package which exposes a 
+In Node.js >v8.0.0 you can make use of the built-in `util` package which exposes a
 [promisify](https://nodejs.org/api/util.html#util_util_promisify_original) method. This method helps us convert our original function to a promise-based function so that it returns the callback.
 
 Using our example from earlier, we can write it as:
 
 ```js
-const util = require("util")
+const util = require("util");
 
-const getWeatherAsync = util.promisify(getWeather)
+const getWeatherAsync = util.promisify(getWeather);
 
-const weather = await getWeatherAync("Los Angeles").catch(console.log)
-console.log(weather)
+const weather = await getWeatherAync("Los Angeles").catch(console.log);
+console.log(weather);
 ```
 
 **Note:** the `promisify` method adds a extra argument to the arguments you passed in. In this case we are calling the custom function with a single parameter of type `String`, which means the original function should also accept `(String, Function)`, `Function` being the callback `(error, result)`.
