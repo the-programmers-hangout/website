@@ -26,6 +26,7 @@ export const HeaderBarebone: React.FC<IHeaderBareboneProps> = (props) => {
 
           <SC.Title
             className={cx({
+              "has-content-above": props.above,
               "has-content-below": props.content,
             })}
           >

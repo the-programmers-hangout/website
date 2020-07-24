@@ -4,9 +4,11 @@ import { fontFamily } from "../../design/typography"
 import { WavesTop, WavesBottom } from "../Waves"
 import Circles from "../../images/circles.svg"
 
+const height = 250
+
 export const HeaderWrapper = styled.div`
   width: 100%;
-  height: 391px;
+  height: ${height}px;
   padding-top: 67px;
   position: relative;
 
@@ -24,12 +26,12 @@ export const HeaderWrapper = styled.div`
     display: flex;
     align-items: flex-end;
     height: auto;
-    min-height: 391px;
+    min-height: ${height}px;
   }
 `
 
 export const BackgroundWrapper = styled.div`
-  height: 391px;
+  height: ${height}px;
   padding-top: 67px;
   overflow: hidden;
   position: absolute;
@@ -108,9 +110,13 @@ export const Title = styled.h1`
   line-height: 41px;
   letter-spacing: -1.75px;
   margin-top: 0;
-  margin: 0;
+  margin-bottom: 0;
+
+  &.has-content-above {
+    margin-top: 8px;
+  }
 
   &.has-content-below {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
   }
 `
