@@ -1,6 +1,7 @@
 import { Location } from "@reach/router"
 import { graphql } from "gatsby"
 import React, { Fragment } from "react"
+import * as SC from "../styles"
 
 import { FileConnection } from "../../../generated/graphql"
 import { ComponentQuery } from "../../../typings"
@@ -10,8 +11,10 @@ import { SEO } from "../../components/SEO"
 export default ({ data }: ComponentQuery<{ allFile: FileConnection }>) => (
   <Fragment>
     <SEO title="404: Resource Not found" />
-    <h1>RESOURCE NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <SC.StyledDiv>
+        <SC.StyledH1>RESOURCE NOT FOUND</SC.StyledH1>
+        <SC.StyledPara>You just hit a route that doesn&#39;t exist... the sadness.</SC.StyledPara>
+    </SC.StyledDiv>
     <Location>
       {({ location }) => (
         <PossibleCorrections
