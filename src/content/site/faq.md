@@ -4,7 +4,7 @@ path: /faq
 
 ## What are the roles and what do they mean?
 
-### Community-Member, Active Contributor, Chatterbox, Super-Talky-Guy, Bepis-Drinker, Conke-Commander, and Patriotic-Procrastinator
+### Community-Member,<br>Active Contributor,<br>Chatterbox,<br>Super-Talky-Guy,<br>Bepis-Drinker,<br>Conke-Commander,<br>and Patriotic-Procrastinator
 
 These are the activity roles of the server in the order you will be granted them. Different tiers will grant different perks, such as unlocking hidden channels, voice access, and nicknaming privileges. These roles are assigned automatically as you participate in the server, so don't ask for them.
 
