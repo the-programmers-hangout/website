@@ -7,11 +7,11 @@ import {
 } from "../../design/typography"
 
 function modularScaleCSS(power: number) {
-  const { fontSize, lineHeight } = modularScale(power)
+  const { fontSize } = modularScale(power)
 
   return css`
     font-size: ${fontSize}px;
-    line-height: ${lineHeight}px;
+    line-height: 1.4;
   `
 }
 
@@ -70,19 +70,19 @@ export const MarkdownWrapper = styled.div`
   }
 
   h2 + h3 {
-    margin-top: 0;
+    margin-top: ${BASE_LINE_HEIGHT}px;
   }
 
   h3 + h4 {
-    margin-top: 0;
+    margin-top: ${BASE_LINE_HEIGHT}px;
   }
 
   h4 + h5 {
-    margin-top: 0;
+    margin-top: ${BASE_LINE_HEIGHT}px;
   }
 
   h5 + h6 {
-    margin-top: 0;
+    margin-top: ${BASE_LINE_HEIGHT}px;
   }
 
   h2 ~ h2::before {
