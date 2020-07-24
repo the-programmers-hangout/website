@@ -26,8 +26,8 @@ async function getWeather() {
   return "sunny";
 }
 
-getPromise();
-// Promise<"sunny">
+getWeather();
+// Promise {<resolved>: "sunny"}
 ```
 
 This basic example will return a promise with the value of `getWeather`.
@@ -135,7 +135,7 @@ async function getCharacters() {
 In this example, we are querying real data from the Rick & Morty API. This API has a lot of information regarding Rick & Morty, but here, we are trying to retrieve all the characters.
 
 - The first thing we do is use `fetch` to retrieve the data from the API. `fetch` is a built in function in web browsers to do http requests, and returns a Promise by default. We `await` the result of this.
-- When we get the result, we need to get the `JSON` value of the data. To do this, the `.json()` method from fetch is used. We then return the results.
+- When we get the response, we need to get the `JSON` value of the data. To do this, the `.json()` method from fetch is used. We then return the results.
 - As `await` can only be used in an `async` function, we use the method from above to make this work. As `getCharacters()` returns a Promise due to it being `async`, we `await` the result. We surround this in a `try...catch` in case fetch returns an error. Then, if no error is returned, `characters` contains the information we want, and is logged to the console. If `getCharacters()` returns an error, that error is also logged.
 
 ### Let's also look at an example from Discord.js:

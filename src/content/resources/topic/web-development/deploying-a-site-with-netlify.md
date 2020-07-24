@@ -18,7 +18,7 @@ First you will have to navigate to https://netlify.com then login with your pref
 Now, there are two ways to deploy a site.
 
 1. From a Github repository
-2. Just drag and drop the files
+2. Just drag and drop the files.
    So if you got your site files or Github repository ready, let's get started!
 
 ## 1. Deploying site from a Github repository
