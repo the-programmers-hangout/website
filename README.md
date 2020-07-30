@@ -8,7 +8,7 @@
 
 # TPH Website
 
-The official website for [The Programmer's Hangout](https://discord.gg/programming).
+The official website for The Programmer's Hangout ([join us!](https://discord.gg/programming)), a programming community on Discord. See the website here: https://theprogrammershangout.com.
 
 ## Contributing
 
