@@ -170,7 +170,7 @@ const hasYoungUsers = users.some((user) => user.age < 18);
 
 // iterative way
 let hasYoungUsers = false;
-for (let i = 0; users.length > i; i++) {
+for (let i = 0; i < users.length; i++) {
   if (user.age < 18) {
     hasYoungUsers = true;
     break;
