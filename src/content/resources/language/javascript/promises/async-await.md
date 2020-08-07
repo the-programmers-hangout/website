@@ -148,7 +148,7 @@ client.on("message", async (msg) => {
     const message = await msg.channel.send("pong");
     message.react("⚠️");
   }
-})
+});
 ```
 
 ## Comparision with default Promises
