@@ -73,7 +73,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-helmet": "^6.1.0",
     "@types/react-scrollspy": "^3.3.2",
-    "@types/styled-components": "^5.1.0",
+    "@types/styled-components": "^5.1.2",
     "babel-plugin-polished": "^1.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "discord.js": "^12.2.0",
