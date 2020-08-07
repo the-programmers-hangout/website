@@ -95,13 +95,13 @@ export const PossibleCorrections: FC<IPossibleCorrections> = ({
   })
 
   // helpful message if no matches found
-  const found = displayArray.length === 0 ? <SC.StyledFound>Oops, nothing similar found.</SC.StyledFound> : ""
+  const found = displayArray.length === 0 && "Oops, nothing similar found."
 
   return (
     <Fragment>
       <SC.StyledDiv>
-          <h3>Based off of "{search}" you may have meant:</h3>
-          {found}
+        <h3>Based off of "{search}" you may have meant:</h3>
+        {found}
       </SC.StyledDiv>
       <ul>
         {displayArray.map((value, index) => {

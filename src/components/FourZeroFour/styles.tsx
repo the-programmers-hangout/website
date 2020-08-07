@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const Wrapper = styled.div`
+  width: 100%;
   padding: 100px 20px 20px 20px;
   display: flex;
   align-items: center;
@@ -18,4 +19,8 @@ export const Text = styled.p`
   margin: 0;
   padding: 10px;
   line-height: 2rem;
+`
+
+export const Spacer = styled.div`
+  height: 32px;
 `

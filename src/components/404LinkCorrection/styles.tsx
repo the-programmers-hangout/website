@@ -14,13 +14,11 @@ export const StyledLink = styled(Link)`
     transition: none;
   }
 `
-export const StyledFound = styled.div`
-  margin: 13px 10px 10px;
-  padding: 10px;
-`
+
 export const StyledDiv = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 `

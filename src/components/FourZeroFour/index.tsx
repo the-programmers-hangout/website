@@ -7,14 +7,13 @@ interface IPossibleCorrections {
 
 export const FourZeroFour: FC<IPossibleCorrections> = ({ children }) => {
   return (
-    <Fragment>
-      <SC.Wrapper>
-        <SC.Title>NOT FOUND</SC.Title>
-        <SC.Text>
-          You just hit a route that doesn&#39;t exist... the sadness.
-        </SC.Text>
-      </SC.Wrapper>
+    <SC.Wrapper>
+      <SC.Title>NOT FOUND</SC.Title>
+      <SC.Text>
+        You just hit a route that doesn&#39;t exist... the sadness.
+      </SC.Text>
+      {children && <SC.Spacer />}
       {children}
-    </Fragment>
+    </SC.Wrapper>
   )
 }
