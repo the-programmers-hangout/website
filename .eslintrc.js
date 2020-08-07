@@ -12,7 +12,12 @@ https://github.com/typescript-eslint/tslint-to-eslint-config/blob/master/docs/FA
 Happy linting! 💖
 */
 module.exports = {
-  extends: ["prettier", "prettier/@typescript-eslint"],
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: "tsconfig.json",
@@ -90,8 +95,10 @@ module.exports = {
     "no-param-reassign": "error",
     "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-this-alias": "error",
-    "@typescript-eslint/no-unused-expressions": "error",
-    "@typescript-eslint/no-unused-vars": "error",
+    "no-unused-expressions": "error",
+    "@typescript-eslint/no-unused-expressions": ["error"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/no-use-before-define": "off",
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/prefer-for-of": "error",
@@ -183,6 +190,7 @@ module.exports = {
     "prefer-object-spread": "error",
     "quote-props": "off",
     radix: "error",
+    "react/prop-types": "off",
     "react/jsx-curly-spacing": "off",
     "react/jsx-equals-spacing": "off",
     "space-before-function-paren": "off",
