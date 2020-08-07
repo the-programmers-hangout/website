@@ -55,14 +55,14 @@ function levenshteinDistance(term1: string, term2: string) {
   return matrix[term2.length][term1.length]
 }
 
-interface IPossibleCorrections {
+interface IFourZeroFourHint {
   basepath: string
   location: WindowLocation
   data: { allFile: FileConnection }
   threshold?: number
 }
 
-export const PossibleCorrections: FC<IPossibleCorrections> = ({
+export const FourZeroFourHint: FC<IFourZeroFourHint> = ({
   basepath,
   location,
   data,

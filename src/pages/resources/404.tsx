@@ -4,7 +4,7 @@ import React, { Fragment } from "react"
 
 import { FileConnection } from "../../../generated/graphql"
 import { ComponentQuery } from "../../../typings"
-import { PossibleCorrections } from "../../components/404LinkCorrection"
+import { FourZeroFourHint } from "../../components/FourZeroFourHint"
 import { SEO } from "../../components/SEO"
 import { FourZeroFour } from "../../components/FourZeroFour"
 
@@ -14,7 +14,7 @@ export default ({ data }: ComponentQuery<{ allFile: FileConnection }>) => (
     <FourZeroFour title="RESOURCE NOT FOUND">
       <Location>
         {({ location }) => (
-          <PossibleCorrections
+          <FourZeroFourHint
             basepath="resources/"
             location={location}
             data={data}

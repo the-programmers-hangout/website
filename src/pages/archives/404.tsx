@@ -6,7 +6,7 @@ import { FileConnection } from "../../../generated/graphql"
 import { ComponentQuery } from "../../../typings"
 import { SEO } from "../../components/SEO"
 
-import { PossibleCorrections } from "../../components/404LinkCorrection"
+import { FourZeroFourHint } from "../../components/FourZeroFourHint"
 import { FourZeroFour } from "../../components/FourZeroFour"
 
 export default ({ data }: ComponentQuery<{ allFile: FileConnection }>) => (
@@ -15,7 +15,7 @@ export default ({ data }: ComponentQuery<{ allFile: FileConnection }>) => (
     <FourZeroFour title="ARCHIVE NOT FOUND">
       <Location>
         {({ location }) => (
-          <PossibleCorrections
+          <FourZeroFourHint
             basepath="archives/"
             location={location}
             data={data}
