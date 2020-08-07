@@ -23,7 +23,7 @@
     "develop": "gatsby develop",
     "fetch-users": "node ./scripts/fetchUsers.js",
     "format": "prettier --write src/{**,**/**}/*.{js,ts,tsx,md}",
-    "lint": "tslint -p tsconfig.json -c tslint.json '{src,scripts}/**/*.{js,ts,tsx}'",
+    "lint": "eslint '{src,scripts}/**/*.{js,ts,tsx}'",
     "lint:fix": "npm run lint -- --fix",
     "serve": "gatsby serve",
     "start": "npm run develop",
@@ -74,14 +74,18 @@
     "@types/react-helmet": "^6.0.0",
     "@types/react-scrollspy": "^3.3.2",
     "@types/styled-components": "^5.1.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^3.8.0",
     "babel-plugin-polished": "^1.1.0",
     "babel-plugin-styled-components": "^1.10.7",
     "discord.js": "^12.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsdoc": "^30.2.1",
+    "eslint-plugin-prefer-arrow": "^1.2.2",
     "gatsby-plugin-remove-trailing-slashes": "^2.3.3",
     "prettier": "^2.0.5",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
-    "tslint-eslint-rules": "^5.4.0",
     "tslint-react-hooks": "^2.2.2"
   }
 }
