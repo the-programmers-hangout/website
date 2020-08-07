@@ -75,7 +75,7 @@
     "@types/react-scrollspy": "^3.3.2",
     "@types/styled-components": "^5.1.2",
     "babel-plugin-polished": "^1.1.0",
-    "babel-plugin-styled-components": "^1.10.7",
+    "babel-plugin-styled-components": "^1.11.1",
     "discord.js": "^12.2.0",
     "gatsby-plugin-remove-trailing-slashes": "^2.3.3",
     "prettier": "^2.0.5",
