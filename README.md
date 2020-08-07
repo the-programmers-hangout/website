@@ -64,4 +64,4 @@ external_resources:
 some content here
 ```
 
-You can look at other resources like [this one](/src/content/resources/javascript/promises/intro.md) for reference when creating your own. We use [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) as the date format to confuse both Americans and Europeans an equal amount.
+You can look at other resources like [this one](/src/content/resources/language/javascript/promises/intro.md) for reference when creating your own. We use [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) as the date format to confuse both Americans and Europeans an equal amount.
