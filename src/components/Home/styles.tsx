@@ -94,6 +94,7 @@ export const Menu = styled.nav`
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  margin-bottom: 32px;
 `
 
 export const MenuItemText = styled.div`
