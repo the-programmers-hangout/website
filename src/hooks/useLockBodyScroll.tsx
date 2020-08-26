@@ -1,3 +1,4 @@
+/* globals document */
 import { useState } from "react"
 
 export const useLockBodyScroll = () => {

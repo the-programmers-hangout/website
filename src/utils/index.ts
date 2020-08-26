@@ -146,7 +146,7 @@ export function buildToc(headings: Mdx["headings"]): ITocItem[] {
     return []
   }
 
-  const strip = (value: string) => value.replace(/^(\d*\-)(.*)/, "$2")
+  const strip = (value: string) => value.replace(/^(\d*-)(.*)/, "$2")
 
   slugger.reset()
 

@@ -11,7 +11,7 @@ interface ITocProps {
 }
 
 interface ITitle {
-  prefix?: string
+  prefix: string | null
   title: string
 }
 
@@ -20,7 +20,7 @@ function extractTitle(title: string): ITitle {
   const rest = maybePrefix ? title.replace(maybePrefix[0], "") : title
 
   return {
-    prefix: maybePrefix ? `${maybePrefix[0]} ` : undefined,
+    prefix: maybePrefix ? `${maybePrefix[0]} ` : null,
     title: rest.trim(),
   }
 }

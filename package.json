@@ -86,10 +86,10 @@
     "eslint-plugin-jsdoc": "^30.2.1",
     "eslint-plugin-prefer-arrow": "^1.2.2",
     "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^4.1.0",
     "gatsby-plugin-remove-trailing-slashes": "^2.3.3",
     "prettier": "^2.0.5",
     "tslint": "^6.1.2",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-react-hooks": "^2.2.2"
+    "tslint-config-prettier": "^1.18.0"
   }
 }

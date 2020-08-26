@@ -8,5 +8,5 @@ export default function useMatchingPath(path: string, callback: () => void) {
     if (isMatchingPath(path)) {
       callback()
     }
-  }, [])
+  }, [path, isMatchingPath, callback])
 }

@@ -4,7 +4,7 @@ import React, { FC, HTMLAttributes } from "react"
 import useBuildTree from "../../hooks/useBuildTree"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import useSidebar from "../../hooks/useSidebar"
-import { IAllArchivesQuery, IFileOrFolder } from "../../types"
+import { IFileOrFolder } from "../../types"
 import { humanize } from "../../utils"
 import { Sidebar } from "../Sidebar"
 import * as SC from "./styles"
@@ -50,7 +50,7 @@ export const ArchivesSidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
   return (
     <Sidebar {...props}>
       {sortedTree.map((node) => (
-        <Tree item={node} />
+        <Tree item={node} key={node.path} />
       ))}
     </Sidebar>
   )

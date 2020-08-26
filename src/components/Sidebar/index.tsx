@@ -28,7 +28,7 @@ export const Sidebar: FC<PropsWithChildren<HTMLAttributes<HTMLDivElement>>> = (
         <SC.Title to="/">
           The
           <br />
-          Programmer's
+          Programmer&apos;s
           <br />
           Hangout
         </SC.Title>

@@ -1,4 +1,6 @@
+/* globals module */
 const DEFAULT_AVATAR_MODULO = 5
+
 module.exports = {
   findMarkdownLink(absolutePath) {
     // We're assuming this path isn't going to change
@@ -28,7 +30,7 @@ module.exports = {
     return `https://cdn.discordapp.com/embed/avatars/${avatar}.png`
   },
   resolveAuthor(users, author) {
-    const target = users.find(user => user.identifier === author)
+    const target = users.find((user) => user.identifier === author)
     const [name, hash] = this.splitHash(author)
     const avatar = target ? target.avatar : this.getDefaultAvatar(hash)
 
@@ -39,6 +41,6 @@ module.exports = {
     }
   },
   resolveAuthors(users, authors) {
-    return authors.map(author => this.resolveAuthor(users, author))
+    return authors.map((author) => this.resolveAuthor(users, author))
   },
 }
