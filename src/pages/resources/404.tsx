@@ -8,7 +8,10 @@ import { FourZeroFourHint } from "../../components/FourZeroFourHint"
 import { SEO } from "../../components/SEO"
 import { FourZeroFour } from "../../components/FourZeroFour"
 
-export default ({ data }: ComponentQuery<{ allFile: FileConnection }>) => (
+// TODO: there has to be a better type for this
+const FourZeroFourPage: React.FC<{ data: { allFile: FileConnection } }> = ({
+  data,
+}: ComponentQuery<{ allFile: FileConnection }>) => (
   <Fragment>
     <SEO title="404: Resource Not found" />
     <FourZeroFour title="RESOURCE NOT FOUND">
@@ -24,6 +27,8 @@ export default ({ data }: ComponentQuery<{ allFile: FileConnection }>) => (
     </FourZeroFour>
   </Fragment>
 )
+
+export default FourZeroFourPage
 
 export const query = graphql`
   query {

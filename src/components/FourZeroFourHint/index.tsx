@@ -100,7 +100,7 @@ export const FourZeroFourHint: FC<IFourZeroFourHint> = ({
   return (
     <Fragment>
       <SC.StyledDiv>
-        <h3>Based off of "{search}" you may have meant:</h3>
+        <h3>Based off of &quot;{search}&quot; you may have meant:</h3>
         {found}
       </SC.StyledDiv>
       <ul>

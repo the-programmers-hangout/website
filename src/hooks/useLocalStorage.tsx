@@ -1,3 +1,4 @@
+/* globals window */
 import { useEffect, useState } from "react"
 
 export const useLocalStorage = (name: string, initialValue: string) => {

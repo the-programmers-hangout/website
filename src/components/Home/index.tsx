@@ -4,6 +4,7 @@ import { DiscordButton } from "../DiscordButton"
 import { HomePartner } from "../HomePartner"
 import { WavesBottom, WavesTop } from "../Waves"
 import * as SC from "./styles"
+import { OutMode, MoveDirection } from "react-particles-js"
 
 interface IMenuItemProps {
   to: string
@@ -33,6 +34,7 @@ export const Home: FC = () => {
       <SC.StyledParticles
         params={{
           particles: {
+            /* eslint-disable-next-line id-blacklist */
             number: { value: 5, density: { enable: true, value_area: 500 } },
             color: { value: "#ffffff" },
             opacity: {
@@ -51,10 +53,10 @@ export const Home: FC = () => {
             move: {
               enable: true,
               speed: 1.5,
-              direction: "top",
+              direction: MoveDirection.top,
               random: false,
               straight: false,
-              out_mode: "out",
+              out_mode: OutMode.out,
               bounce: false,
               attract: { enable: false },
             },
@@ -67,7 +69,7 @@ export const Home: FC = () => {
           <Link to="/">
             <SC.Logo />
           </Link>
-          <SC.Title>The Programmer's Hangout</SC.Title>
+          <SC.Title>The Programmer&apos;s Hangout</SC.Title>
         </SC.TitleWrapper>
         <SC.Menu>
           <MenuItem to="/about">about</MenuItem>

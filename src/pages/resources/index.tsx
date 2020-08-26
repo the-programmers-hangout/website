@@ -18,7 +18,7 @@ function ResourcesPage() {
             <p>
               This is meant as a small knowledge base for commonly answered
               questions on our Discord community,{" "}
-              <Link to="/about">The Programmer's Hangout</Link>.
+              <Link to="/about">The Programmer&apos;s Hangout</Link>.
             </p>
             <p>
               All of it is open source, and you can contribute to it on{" "}

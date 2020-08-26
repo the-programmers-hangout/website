@@ -24,7 +24,7 @@ export const SidebarProvider: FC = ({ children }) => {
     } else {
       setCurrent(null)
     }
-  }, [location])
+  }, [location, getSecondLevel])
 
   const memoizedContextValue = useMemo(
     () => ({

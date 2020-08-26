@@ -1,4 +1,4 @@
-import React, { FC, Fragment } from "react"
+import React, { FC } from "react"
 import * as SC from "./styles"
 
 interface IPossibleCorrections {

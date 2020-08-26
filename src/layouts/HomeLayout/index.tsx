@@ -15,7 +15,7 @@ export const HomeLayout: FC<RouteComponentProps> = () => {
     if (locked) {
       unlock()
     }
-  }, [locked])
+  }, [locked, unlock])
 
   return (
     <ThemeProvider>

@@ -15,9 +15,15 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "prettier",
     "prettier/@typescript-eslint",
   ],
+  settings: {
+    react: {
+      version: "16.13.1",
+    },
+  },
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: "tsconfig.json",
@@ -185,7 +191,6 @@ module.exports = {
     "no-var": "error",
     "object-shorthand": "error",
     "one-var": ["error", "never"],
-    "prefer-arrow/prefer-arrow-functions": "error",
     "prefer-const": "error",
     "prefer-object-spread": "error",
     "quote-props": "off",
@@ -208,9 +213,7 @@ module.exports = {
       "error",
       {
         rules: {
-          "object-curly-spacing": true,
           "prefer-conditional-expression": true,
-          "react-hooks-nesting": true,
           typedef: [
             true,
             "parameter",

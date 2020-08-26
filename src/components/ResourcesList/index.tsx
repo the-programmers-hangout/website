@@ -67,6 +67,8 @@ const Language = memo(
   }
 )
 
+Language.displayName = "Language"
+
 function sortTree(tree: IFileOrFolder[]) {
   return sort((a, b) => a.title.localeCompare(b.title), tree)
 }

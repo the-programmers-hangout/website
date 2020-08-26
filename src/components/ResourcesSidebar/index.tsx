@@ -141,6 +141,8 @@ const FirstLevelFolder = memo(({ item }: { item: IFolder }) => {
   )
 })
 
+FirstLevelFolder.displayName = "FirstLevelFolder"
+
 const ResourceList: FC<{
   items: IFileOrFolder[]
   setExpanded: React.Dispatch<React.SetStateAction<boolean>>

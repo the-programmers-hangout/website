@@ -17,7 +17,7 @@ function ArchivesPage() {
             This regroups the archives of our occasional, temporary channels
             that cover a piece of technology that might be unknown to part of
             our users. You can find those on{" "}
-            <Link to="/about">The Programmer's Hangout</Link>.
+            <Link to="/about">The Programmer&apos;s Hangout</Link>.
           </p>
         }
       />
