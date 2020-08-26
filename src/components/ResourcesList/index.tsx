@@ -15,7 +15,7 @@ const ALL_RESOURCES = graphql`
         node {
           relativePath
           relativeDirectory
-          childMarkdownRemark {
+          childMdx {
             frontmatter {
               authors
               title

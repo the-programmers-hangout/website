@@ -23,7 +23,7 @@ export interface IFileResourceQuery {
   node: {
     relativePath: string
     relativeDirectory: string
-    childMarkdownRemark: {
+    childMdx: {
       frontmatter: {
         author: string
         date: string

@@ -32,9 +32,11 @@ module.exports = {
     },
     `gatsby-plugin-layout`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
+        extensions: [`.mdx`, `.md`],
         plugins: [`gatsby-remark-auto-headers-improved`],
+        gatsbyRemarkPlugins: [`gatsby-remark-auto-headers-improved`],
       },
     },
     {
