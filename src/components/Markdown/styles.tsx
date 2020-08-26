@@ -167,7 +167,7 @@ export const MarkdownWrapper = styled.div`
     padding-left: ${BASE_LINE_HEIGHT}px;
   }
 
-  a:not(.anchor) {
+  a:not(.anchor):not(.button) {
     display: inline-block;
     position: relative;
     font-weight: 700;
