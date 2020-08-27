@@ -25,13 +25,17 @@ export const Sidebar: FC<PropsWithChildren<HTMLAttributes<HTMLDivElement>>> = (
   return (
     <SC.SidebarWrapper {...restProps}>
       <Scrollbar>
-        <SC.Title to="/">
-          The
-          <br />
-          Programmer&apos;s
-          <br />
-          Hangout
-        </SC.Title>
+        <SC.Header to="/">
+          <SC.Logo>
+            <SC.StyledLogo />
+          </SC.Logo>
+          <SC.Title>
+            The Programmer&apos;s
+            <br />
+            Hangout
+          </SC.Title>
+        </SC.Header>
+
         <SC.Inner>
           {children}
 

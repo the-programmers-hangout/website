@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import styled, { css } from "styled-components"
 import { transparentize } from "polished"
 import { fontFamily } from "../../design/typography"
+import TPHLogo from "../../images/tph-logo.svg"
 
 export const SidebarWrapper = styled.div`
   box-sizing: border-box;
@@ -29,19 +30,41 @@ export const SidebarWrapper = styled.div`
   }
 `
 
-export const Title = styled(Link)`
-  display: block;
-  color: ${(props) => props.theme.sidebar.foreground};
-  font-size: 30px;
-  line-height: 34px;
-  font-weight: 700;
-  padding: 20px 0 0 20px;
+export const Header = styled(Link)`
+  display: flex;
+  align-items: stretch;
   text-decoration: none;
-  font-family: ${fontFamily.header};
 
-  &:hover {
+  &:hover > * {
     opacity: 0.85;
   }
+`
+
+export const Logo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0b0f13;
+  width: 74px;
+  height: 74px;
+  flex: 0 0 74px;
+`
+
+export const StyledLogo = styled(TPHLogo)`
+  height: 50px;
+`
+
+export const Title = styled.div`
+  background: #263440;
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
+  color: ${(props) => transparentize(0.1, props.theme.sidebar.foreground)};
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  padding-left: 20px;
+  font-family: ${fontFamily.header};
 `
 
 export const Inner = styled.div`
