@@ -2,7 +2,7 @@
 authors:
   - "Kibb#4205"
 created_at: 2020/06/08
-title: "Chapter 12: Config"
+title: "Chapter 13: Config"
 ---
 
 ## Chapter 12: Config.
