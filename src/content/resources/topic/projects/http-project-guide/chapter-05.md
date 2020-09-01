@@ -2,10 +2,10 @@
 authors:
   - "Kibb#4205"
 created_at: 2020/06/08
-title: "Chapter 4: Reading from the socket"
+title: "Chapter 5: Reading from the socket"
 ---
 
-## Chapter 4: Reading from the socket.
+## Chapter 5: Reading from the socket.
 
 It's a good start, we have a server that can accept connections. It will write a message to the client.
 
