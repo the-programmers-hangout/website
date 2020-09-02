@@ -123,6 +123,8 @@ function Folder({ item }: { item: IFolder }) {
 const FirstLevelFolder = memo(({ item }: { item: IFolder }) => {
   const { setCurrent } = useSidebar()
 
+  const isProject = item.path.startsWith("/resources/projects")
+
   useMatchingPath(item.path, () => {
     setCurrent(item.title)
   })
@@ -133,9 +135,15 @@ const FirstLevelFolder = memo(({ item }: { item: IFolder }) => {
     <SC.TreeWrapper className="firstLevel">
       <SC.FirstLabel>{humanize(item.title)}</SC.FirstLabel>
       <SC.Children>
-        {sortedChildren.map((node) => (
-          <Tree key={node.title + "-tree"} item={node} />
-        ))}
+        {sortedChildren
+          .filter((child) => {
+            // TODO: clean me up, temporary fix
+            if (isProject && child.title === "intro") return false
+            return true
+          })
+          .map((node) => (
+            <Tree key={node.title + "-tree"} item={node} />
+          ))}
       </SC.Children>
     </SC.TreeWrapper>
   )
