@@ -21,6 +21,13 @@ export const MobileHeaderWrapper = styled.div`
   @media screen and (max-width: 767px) {
     display: flex;
   }
+
+  /* known bug: "} expected ts-styled-plugin(9999)" https://github.com/microsoft/typescript-styled-plugin/issues/51 */
+  @-moz-document url-prefix() {
+    & {
+      background: inherit;
+    }
+  }
 `
 
 export const LogoWrapper = styled.div`
