@@ -1,22 +1,25 @@
 import React from "react"
+import useId from "../hooks/useId"
 
 const JetbrainsLogo: React.FC = (props) => {
+  const id = useId()
+
   return (
     <svg fill="none" viewBox="0 0 121 131" {...props}>
       <path
-        fill="url(#jetbrains1)"
+        fill={`url(#jetbrains1-${id})`}
         d="M118.62 71.8a4.68 4.68 0 00-6.2-7l-83.8 45.9a10.07 10.07 0 00-1.1 18c3.4 2 7.5 1.8 10.7-.2.2-.2.5-.3.7-.5l78-54.8c.4-.3 1.5-1.1 1.7-1.4z"
       />
       <path
-        fill="url(#jetbrains2)"
+        fill={`url(#jetbrains2-${id})`}
         d="M118.82 65.1L55.02 2.5A7.7 7.7 0 1043.72 13c.4.4.8.7 1.2 1l67.4 57.7c.8.7 1.8 1.2 3 1.3 2.6.1 4.7-1.8 4.9-4.4a5 5 0 00-1.4-3.5z"
       />
       <path
-        fill="url(#jetbrains3)"
+        fill={`url(#jetbrains3-${id})`}
         d="M57.12 59.5c-.1 0-39.4-31-40.2-31.5l-1.8-.9a11.18 11.18 0 00-9.8 20c.7.4 1.3.7 2 .9.4.2 45.4 18.8 45.4 18.8a4.3 4.3 0 004.4-7.3z"
       />
       <path
-        fill="url(#jetbrains4)"
+        fill={`url(#jetbrains4-${id})`}
         d="M49.32 0c-1.7 0-3.3.6-4.6 1.5L4.92 28.3c-.1.1-.2.1-.2.2h-.1A11.14 11.14 0 007.32 48c3.6 1.4 7.5.7 10.4-1.4.7-.5 1.3-1 1.8-1.6l34.6-31.2c1.8-1.4 3-3.6 3-6.1 0-4.2-3.5-7.7-7.8-7.7z"
       />
       <path fill="#000" d="M85.62 37.4h-51v51h51v-51z" />
@@ -30,7 +33,7 @@ const JetbrainsLogo: React.FC = (props) => {
       />
       <defs>
         <linearGradient
-          id="jetbrains1"
+          id={`jetbrains1-${id}`}
           x1="31.86"
           x2="110.26"
           y1="120.56"
@@ -41,7 +44,7 @@ const JetbrainsLogo: React.FC = (props) => {
           <stop offset="1" stopColor="#F37B3D" />
         </linearGradient>
         <linearGradient
-          id="jetbrains2"
+          id={`jetbrains2-${id}`}
           x1="48.38"
           x2="119.94"
           y1="6.91"
@@ -53,7 +56,7 @@ const JetbrainsLogo: React.FC = (props) => {
           <stop offset="1" stopColor="#F37B3D" />
         </linearGradient>
         <linearGradient
-          id="jetbrains3"
+          id={`jetbrains3-${id}`}
           x1="52.97"
           x2="10.56"
           y1="63.64"
@@ -66,7 +69,7 @@ const JetbrainsLogo: React.FC = (props) => {
           <stop offset=".96" stopColor="#ED3D7D" />
         </linearGradient>
         <linearGradient
-          id="jetbrains4"
+          id={`jetbrains4-${id}`}
           x1="52.2"
           x2="10.79"
           y1="3.7"
