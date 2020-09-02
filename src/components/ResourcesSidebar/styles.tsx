@@ -113,7 +113,7 @@ export const ExpandIcon = styled(Expand)`
 
 export const ExpandResources = styled.div`
   padding-right: 15px;
-  margin: 20px 0;
+  margin-bottom: 20px;
 `
 
 export const ExpandResourcesHeader = styled.div`
@@ -123,6 +123,7 @@ export const ExpandResourcesHeader = styled.div`
   cursor: pointer;
   color: ${(props) => transparentize(0.5, props.theme.sidebar.foreground)};
   font-weight: 700;
+  margin-bottom: 8px;
 
   &:hover {
     opacity: 0.85;
@@ -130,13 +131,13 @@ export const ExpandResourcesHeader = styled.div`
 `
 
 export const StyledResourceList = styled.div`
-  padding-top: 16px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   overflow: hidden;
 
   & + & {
+    padding-top: 16px;
     margin-top: 16px;
     border-top: 1px solid
       ${(props) => transparentize(0.8, props.theme.sidebar.foreground)};

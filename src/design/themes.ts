@@ -30,12 +30,12 @@ export const darkTheme: ITheme = {
   ...baseColors,
   name: "dark",
   sidebar: {
-    background: "#22323f",
+    background: "#19222A",
     foreground: "#FFFFFF",
     active: "#00FCFF",
   },
   main: {
-    background: "#16212b",
+    background: "#202C36",
     foreground: "#FFFFFF",
     link: "#04B0A6",
   },

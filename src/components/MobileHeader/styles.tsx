@@ -1,7 +1,7 @@
 import { transparentize } from "polished"
 import styled from "styled-components"
 import { fontFamily } from "../../design/typography"
-import Logo from "../../images/tph-logo.svg"
+import Logo from "../../images/tph-logo"
 
 export const MobileHeaderWrapper = styled.div`
   z-index: 50;

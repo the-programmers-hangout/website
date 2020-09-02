@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import JetBrainsLogo from "../../images/jetbrains-logo.svg"
+import JetBrainsLogo from "../../images/jetbrains-logo"
 
 export const HomePartnerWrapper = styled.div`
   margin-top: 32px;

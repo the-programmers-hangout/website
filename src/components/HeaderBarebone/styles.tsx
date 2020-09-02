@@ -2,7 +2,7 @@ import { transparentize, darken } from "polished"
 import styled from "styled-components"
 import { fontFamily } from "../../design/typography"
 import { WavesTop, WavesBottom } from "../Waves"
-import Circles from "../../images/circles.svg"
+import Circles from "../../images/circles"
 
 const height = 250
 

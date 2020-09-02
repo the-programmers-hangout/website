@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import DiscordLogo from "../../images/discord-logo.svg"
+import DiscordLogo from "../../images/discord-logo"
 
 export const DiscordButtonWrapper = styled.a`
   display: inline-flex;
