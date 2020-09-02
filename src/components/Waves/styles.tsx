@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components"
-import WavesBottom from "../../images/waves-bot.svg"
-import WavesTop from "../../images/waves-top.svg"
+import WavesBottom from "../../images/waves-bot"
+import WavesTop from "../../images/waves-top"
 
 const waves = css`
   display: block;

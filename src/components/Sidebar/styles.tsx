@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import styled, { css } from "styled-components"
 import { transparentize } from "polished"
 import { fontFamily } from "../../design/typography"
-import TPHLogo from "../../images/tph-logo.svg"
+import TPHLogo from "../../images/tph-logo"
 
 export const SidebarWrapper = styled.div`
   box-sizing: border-box;

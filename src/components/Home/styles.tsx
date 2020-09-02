@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import Particles from "react-particles-js"
 import styled, { css } from "styled-components"
 import { fontFamily } from "../../design/typography"
-import TPHLogo from "../../images/tph-logo.svg"
+import TPHLogo from "../../images/tph-logo"
 
 export const HomeWrapper = styled.header`
   display: flex;
