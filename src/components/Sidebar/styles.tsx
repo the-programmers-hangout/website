@@ -12,7 +12,7 @@ export const SidebarWrapper = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 320px;
+  max-width: 320px;
 
   @media screen and (max-width: 767px) {
     z-index: 100;
@@ -25,7 +25,7 @@ export const SidebarWrapper = styled.div`
 
   &.is-open {
     left: 0;
-    right: 100px;
+    right: 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
 `
