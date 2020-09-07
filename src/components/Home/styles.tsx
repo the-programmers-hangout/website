@@ -30,7 +30,7 @@ export const Title = styled.h1`
   font-size: 88px;
   text-transform: uppercase;
   line-height: 1;
-  color: #fff;
+  color: ${(props) => props.theme.main.foreground};
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   margin: 32px 0;
   max-width: 100%;
@@ -110,7 +110,7 @@ export const MenuItemLine = styled.div`
   width: 100%;
   margin-top: -3px;
   bottom: 0;
-  background: #fff;
+  background: ${(props) => props.theme.main.foreground};
   transition: all 0.3s;
   left: 0;
 `
@@ -120,7 +120,7 @@ export const menuItemStyles = css`
   align-items: center;
   font-size: 22px;
   text-decoration: none;
-  color: #fff;
+  color: ${(props) => props.theme.main.foreground};
   position: relative;
   transition: color 0.3s;
   margin: 10px 20px 5px 0;
