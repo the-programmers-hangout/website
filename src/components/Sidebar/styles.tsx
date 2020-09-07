@@ -59,7 +59,7 @@ export const Title = styled.div`
   display: flex;
   flex: 1 0 auto;
   align-items: center;
-  color: ${(props) => transparentize(0.1, props.theme.sidebar.foreground)};
+  color: rgba(255, 255, 255, 0.9);
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
