@@ -8,6 +8,7 @@ export const HomePartnerWrapper = styled.div`
   font-family: "Oxygen Mono", monospace;
   text-transform: uppercase;
   font-size: 22px;
+  color: ${(props) => props.theme.main.foreground};
 `
 
 export const StyledJetBrainsLogo = styled(JetBrainsLogo)`
