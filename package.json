@@ -52,7 +52,7 @@
     "lodash": "^4.17.20",
     "polished": "^3.6.6",
     "prismjs": "^1.21.0",
-    "ramda": "^0.27.0",
+    "ramda": "^0.27.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
