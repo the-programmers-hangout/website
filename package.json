@@ -55,7 +55,7 @@
     "ramda": "^0.27.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^6.0.0",
+    "react-helmet": "^6.1.0",
     "react-highlight": "^0.12.0",
     "react-particles-js": "^3.2.1",
     "react-perfect-scrollbar": "^1.5.8",
