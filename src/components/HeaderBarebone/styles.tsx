@@ -101,6 +101,12 @@ export const Box = styled.div`
     bottom: auto;
     top: auto;
     margin: 32px 0;
+
+    @-moz-document url-prefix() {
+      & {
+        position: relative;
+      }
+    }
   }
 `
 
