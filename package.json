@@ -60,7 +60,7 @@
     "react-particles-js": "^3.3.0",
     "react-perfect-scrollbar": "^1.5.8",
     "react-scrollspy": "^3.4.3",
-    "styled-components": "^5.1.1",
+    "styled-components": "^5.2.0",
     "typescript": "^3.9.3",
     "uuid": "^8.3.0"
   },
