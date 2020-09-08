@@ -67,10 +67,7 @@ export const Box = styled.div`
 
     &::after {
       position: absolute;
-      margin-top: -6px;
-      top: 50%;
       left: 100%;
-      margin-left: 10px;
       display: block;
       content: "";
       /* I would prefer a svg, but could not get it to work */
