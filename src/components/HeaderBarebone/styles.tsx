@@ -4,18 +4,11 @@ import { fontFamily } from "../../design/typography"
 import { WavesTop, WavesBottom } from "../Waves"
 import Circles from "../../images/circles"
 
-const height = 250
-
 export const HeaderWrapper = styled.div`
   width: 100%;
-  height: ${height}px;
-  padding-top: 67px;
   position: relative;
-
-  &.shifted {
-    width: calc(100% - 305px);
-    padding-right: 305px;
-  }
+  display: flex;
+  justify-content: center;
 
   @media screen and (max-width: 1200px) {
     width: 100% !important;
@@ -26,13 +19,11 @@ export const HeaderWrapper = styled.div`
     display: flex;
     align-items: flex-end;
     height: auto;
-    min-height: ${height}px;
+    padding-top: 67px;
   }
 `
 
 export const BackgroundWrapper = styled.div`
-  height: ${height}px;
-  padding-top: 67px;
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -41,7 +32,6 @@ export const BackgroundWrapper = styled.div`
   bottom: 0;
 
   @media screen and (max-width: 767px) {
-    height: calc(100% - 67px);
     background: ${(props) => darken(0.2, props.theme.main.background)};
   }
 `
@@ -81,28 +71,22 @@ export const StyledWavesBottom = styled(WavesBottom)`
 export const Box = styled.div`
   display: inline-flex;
   flex-direction: column;
-  position: absolute;
-  bottom: 40px;
-  margin-left: -16px;
+  position: relative;
   background: ${(props) => transparentize(0.3, props.theme.main.background)};
   padding: 16px;
+  margin: 16px;
   backdrop-filter: blur(14px);
   max-width: 650px;
+  z-index: 1;
 
   @media screen and (max-width: 1200px) {
     max-width: 100%;
-    left: 32px;
-    right: 32px;
-    margin-left: 0;
   }
 
   @media screen and (max-width: 767px) {
     position: static;
     bottom: auto;
     top: auto;
-    margin: 32px 0;
-    left: 0px;
-    right: 0px;
 
     @-moz-document url-prefix() {
       & {
