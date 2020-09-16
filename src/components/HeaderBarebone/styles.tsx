@@ -9,10 +9,10 @@ export const HeaderWrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
+  padding: 0 32px;
 
   @media screen and (max-width: 1200px) {
     width: 100% !important;
-    padding-right: 0 !important;
   }
 
   @media screen and (max-width: 767px) {
@@ -76,12 +76,9 @@ export const Box = styled.div`
   padding: 16px;
   margin: 16px;
   backdrop-filter: blur(14px);
+  width: 100%;
   max-width: 650px;
   z-index: 1;
-
-  @media screen and (max-width: 1200px) {
-    max-width: 100%;
-  }
 
   @media screen and (max-width: 767px) {
     position: static;
