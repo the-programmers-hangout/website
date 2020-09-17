@@ -101,6 +101,8 @@ export const Box = styled.div`
     bottom: auto;
     top: auto;
     margin: 32px 0;
+    left: 0px;
+    right: 0px;
 
     @-moz-document url-prefix() {
       & {
