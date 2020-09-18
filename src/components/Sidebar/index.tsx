@@ -1,4 +1,4 @@
-import React, { FC, HTMLAttributes, PropsWithChildren } from "react"
+import React, { FC, HTMLAttributes } from "react"
 import Scrollbar from "react-perfect-scrollbar"
 import "react-perfect-scrollbar/dist/css/styles.css"
 import cx from "classnames"
@@ -17,9 +17,7 @@ const MenuItem: FC<IMenuItemProps> = ({ children, to }) => {
   )
 }
 
-export const Sidebar: FC<PropsWithChildren<HTMLAttributes<HTMLDivElement>>> = (
-  props
-) => {
+export const Sidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
   const { children, ...restProps } = props
 
   return (
