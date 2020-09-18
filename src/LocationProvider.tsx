@@ -1,5 +1,5 @@
 import { WindowLocation } from "@reach/router"
-import React, { FC, PropsWithChildren, useMemo } from "react"
+import React, { FC, useMemo } from "react"
 
 function appendSlashToPath(path: string): string {
   return path.endsWith("/") ? path : `${path}/`
@@ -26,9 +26,10 @@ export const LocationContext = React.createContext<ILocationContextInterface | n
   null
 )
 
-export const LocationProvider: FC<PropsWithChildren<
-  ILocationProviderProps
->> = ({ children, location }) => {
+export const LocationProvider: FC<ILocationProviderProps> = ({
+  children,
+  location,
+}) => {
   const memoizedContextValue = useMemo(
     () => ({
       location,
