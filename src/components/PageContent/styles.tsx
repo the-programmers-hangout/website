@@ -3,8 +3,7 @@ import fontFamily from "../../design/typography"
 import { darken } from "polished"
 
 export const Content = styled.div`
-  flex: 1 1 calc(100% - 305px);
-  width: calc(100% - 305px);
+  flex: 1 1 calc(1vw - 305px);
   padding: 64px 0;
 
   @media screen and (max-width: 1200px) {
