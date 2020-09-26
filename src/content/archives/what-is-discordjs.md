@@ -62,12 +62,6 @@ Open up the `.env` file and fill it out using the information
 DISCORD_TOKEN=your_token
 ```
 
-// Example
-
-```
-DISCORD_TOKEN=NzEyNTgwNDYyMzAzOTAzODA2.XsToSQ.ef6y_53oQbNCpNsDgWoWu7QSPU4 (not a real token)
-```
-
 The `index.js` file is where all our code goes.
 Lets talk through getting the core of our bot running:
 
