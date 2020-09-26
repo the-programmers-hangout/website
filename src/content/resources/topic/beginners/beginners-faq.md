@@ -1,3 +1,9 @@
+---
+authors:
+title: Beginners' FAQ
+created_at: 2020/09/25
+---
+
 ### 1. What language should I learn first?
 This question is so often asked that we have created a separate channel for it.
 See https://theprogrammershangout.com/resources/beginners/
