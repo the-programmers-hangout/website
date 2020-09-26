@@ -1,3 +1,9 @@
+---
+authors:
+title: Beginners
+created_at: 2020/09/25
+---
+
 # Beginners
 
 Whenever someone new starts programming, they always want to know the answer
