@@ -58,6 +58,7 @@ const createResources = async ({ createPage, graphql }) => {
           edges {
             node {
               relativePath
+              relativeDirectory
               sourceInstanceName
             }
           }
@@ -73,6 +74,7 @@ const createResources = async ({ createPage, graphql }) => {
           edges {
             node {
               relativePath
+              relativeDirectory
               sourceInstanceName
             }
           }
@@ -118,6 +120,7 @@ const createResources = async ({ createPage, graphql }) => {
         component: resourcePage,
         context: {
           file: node.relativePath,
+          directory: node.relativeDirectory,
           layout: LAYOUT_RESOURCES,
         },
       })
