@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import fontFamily from "../../design/typography"
 import ArrowRight from "../../icons/arrow-right.svg"
 
-export const Content = styled.div`
+export const PageNavigationWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-content: center;

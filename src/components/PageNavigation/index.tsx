@@ -13,7 +13,7 @@ interface IPageContentProps {
 
 export const PageNavigation: FC<IPageContentProps> = ({ previous, next }) => {
   return (
-    <SC.Content>
+    <SC.PageNavigationWrapper>
       {previous ? (
         <SC.PageContent>
           <SC.Text>Previous</SC.Text>
@@ -40,6 +40,6 @@ export const PageNavigation: FC<IPageContentProps> = ({ previous, next }) => {
       ) : (
         <div> </div>
       )}
-    </SC.Content>
+    </SC.PageNavigationWrapper>
   )
 }
