@@ -160,8 +160,9 @@ const ResourceList: FC<{
   return (
     <SC.StyledResourceList>
       {items.map((item) => (
-        <SC.Resource
+        <SC.PageLink
           key={item.title}
+          to={getPath(item)}
           className={current === item.title ? "active" : ""}
           onClick={() => {
             setCurrent(item.title)
@@ -169,7 +170,7 @@ const ResourceList: FC<{
           }}
         >
           {item.title}
-        </SC.Resource>
+        </SC.PageLink>
       ))}
     </SC.StyledResourceList>
   )
