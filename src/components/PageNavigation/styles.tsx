@@ -20,11 +20,6 @@ export const Text = styled.p`
 export const NavLink = styled(Link)`
   display: flex;
   text-decoration: none;
-  text-align: right;
-
-  & > svg ~ p {
-    text-align: left;
-  }
 
   &:hover,
   &:focus {
@@ -37,14 +32,18 @@ export const PageContent = styled.div`
   width: 200px;
   display: flex;
   flex-direction: column;
+`
 
-  &:last-of-type {
-    align-items: flex-end;
-  }
+export const PreviousPage = styled(PageContent)`
+  margin-right: auto;
+`
 
-  & > div {
-    display: flex;
-    justify-content: start;
+export const NextPage = styled(PageContent)`
+  margin-left: auto;
+
+  ${Text},
+  ${NavLink} {
+    text-align: right;
   }
 `
 
@@ -58,6 +57,7 @@ export const PageTitle = styled(Text)`
 
 export const NextArrow = styled(ArrowRight)`
   width: 8px;
+
   path {
     fill: #ff74a2;
   }
@@ -66,6 +66,7 @@ export const NextArrow = styled(ArrowRight)`
 export const PreviousArrow = styled(ArrowRight)`
   width: 8px;
   transform: rotate(180deg);
+
   path {
     fill: #feac71;
   }
