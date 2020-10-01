@@ -13,33 +13,25 @@ interface IPageContentProps {
 
 export const PageNavigation: FC<IPageContentProps> = ({ previous, next }) => {
   return (
-    <SC.Content>
-      {previous ? (
-        <SC.PageContent>
+    <SC.PageNavigationWrapper>
+      {previous && (
+        <SC.PreviousPage>
           <SC.Text>Previous</SC.Text>
           <SC.NavLink to={`/resources/${previous.relativePath}`}>
             <SC.PreviousArrow />
-            <SC.PageTitle>
-              {previous.title}
-            </SC.PageTitle>
+            <SC.PageTitle>{previous.title}</SC.PageTitle>
           </SC.NavLink>
-        </SC.PageContent>
-      ) : (
-        <div> </div>
+        </SC.PreviousPage>
       )}
-      {next ? (
-        <SC.PageContent>
+      {next && (
+        <SC.NextPage>
           <SC.Text>Next</SC.Text>
           <SC.NavLink to={`/resources/${next.relativePath}`}>
-            <SC.PageTitle>
-              {next.title}
-            </SC.PageTitle>
+            <SC.PageTitle>{next.title}</SC.PageTitle>
             <SC.NextArrow />
           </SC.NavLink>
-        </SC.PageContent>
-      ) : (
-        <div> </div>
+        </SC.NextPage>
       )}
-    </SC.Content>
+    </SC.PageNavigationWrapper>
   )
 }
