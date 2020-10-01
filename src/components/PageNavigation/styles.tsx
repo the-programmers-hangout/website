@@ -7,7 +7,6 @@ export const PageNavigationWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-content: center;
-}
 `
 
 export const Text = styled.p`
