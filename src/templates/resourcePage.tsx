@@ -33,15 +33,18 @@ const ResourcePage: FC<any> = ({ data }) => {
       toc.length
   )
 
-  const pages = sortWith([
-    descend((f: any) => {
-      if (f.node.relativePath.includes("intro")) {
-        return 1;
-      }
+  const pages = sortWith(
+    [
+      descend((f: any) => {
+        if (f.node.relativePath.includes("intro")) {
+          return 1
+        }
 
-      return -1;
-    })
-  ], data.allFile.edges)
+        return -1
+      }),
+    ],
+    data.allFile.edges
+  )
   const currentIndex = pages.findIndex(
     (x: any) => x.node.relativePath === relativePath
   )

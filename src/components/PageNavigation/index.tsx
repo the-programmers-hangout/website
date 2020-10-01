@@ -19,9 +19,7 @@ export const PageNavigation: FC<IPageContentProps> = ({ previous, next }) => {
           <SC.Text>Previous</SC.Text>
           <SC.NavLink to={`/resources/${previous.relativePath}`}>
             <SC.PreviousArrow />
-            <SC.PageTitle>
-              {previous.title}
-            </SC.PageTitle>
+            <SC.PageTitle>{previous.title}</SC.PageTitle>
           </SC.NavLink>
         </SC.PageContent>
       ) : (
@@ -31,9 +29,7 @@ export const PageNavigation: FC<IPageContentProps> = ({ previous, next }) => {
         <SC.PageContent>
           <SC.Text>Next</SC.Text>
           <SC.NavLink to={`/resources/${next.relativePath}`}>
-            <SC.PageTitle>
-              {next.title}
-            </SC.PageTitle>
+            <SC.PageTitle>{next.title}</SC.PageTitle>
             <SC.NextArrow />
           </SC.NavLink>
         </SC.PageContent>
