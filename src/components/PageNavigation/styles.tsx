@@ -4,6 +4,7 @@ import fontFamily from "../../design/typography"
 import ArrowRight from "../../icons/arrow-right.svg"
 
 export const PageNavigationWrapper = styled.div`
+  margin-top: 64px;
   display: flex;
   justify-content: space-between;
   align-content: center;
