@@ -3,21 +3,21 @@ import { Link } from "gatsby"
 import fontFamily from "../../design/typography"
 import ArrowRight from "../../icons/arrow-right.svg"
 
-export const PageNavigationContent = styled.div`
+export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   align-content: center;
 }
 `
 
-export const PageNavigationText = styled.p`
+export const Text = styled.p`
   font-family: ${fontFamily.body};
   font-weight: 700;
   font-size: 18px;
   margin: 0 19px 7px 17px;
 `
 
-export const PageNavigationLink = styled(Link)`
+export const NavLink = styled(Link)`
   display: flex;
   text-decoration: none;
   text-align: right;
@@ -33,7 +33,7 @@ export const PageNavigationLink = styled(Link)`
   }
 `
 
-export const PageNavigationPageContent = styled.div`
+export const PageContent = styled.div`
   width: 200px;
   display: flex;
   flex-direction: column;
@@ -48,7 +48,7 @@ export const PageNavigationPageContent = styled.div`
   }
 `
 
-export const PageNavigationPageTitle = styled(PageNavigationText)`
+export const PageTitle = styled(Text)`
   margin: 0 10px;
   margin-bottom: 0;
   background: -webkit-linear-gradient(91.81deg, #feaf6d 0%, #ff70a5 100%);
