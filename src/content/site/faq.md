@@ -31,3 +31,7 @@ This is harmless fun, if you just accept it, laugh and move on, no problem.
 If you get annoyed that you don't have your name and make a big deal out of it, you're gonna have a bad time. Everyone, including the staff, follows nickname trends and jokes.
 
 5.8% of people (yes, we have actually polled for this) dislike it, and much less actually leave because of it. Don't be the sour apple if you get nicknamed something funny.
+
+## How do I join The Programmer's Hangout GitHub organisation?
+
+The Programmer's Hangout has an [organisation on GitHub](https://github.com/the-programmers-hangout) and the best part is that you can join it too! To get yourself added to the organisation, send your GitHub username to the moderators via @ModMail#8255 and you'll be invited to the organisation. You even get a cool little badge on your GitHub profile!
