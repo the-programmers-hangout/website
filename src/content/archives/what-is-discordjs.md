@@ -58,14 +58,14 @@ Now let's create a few files that we'll need.
 The `.env` file here will be used to store our token. **If using git make sure you gitignore this file**
 Open up the `.env` file and fill it out using the information
 
-```
+```env
 DISCORD_TOKEN=your_token
 ```
 
-// Example
+For example:
 
-```
-DISCORD_TOKEN=NzEyNTgwNDYyMzAzOTAzODA2.XsToSQ.ef6y_53oQbNCpNsDgWoWu7QSPU4 (not a real token)
+```env
+DISCORD_TOKEN=NzEyNTgwNDYyMzAzOTAzODA2.XsToSQ.ef6y_53oQbNCpNsDgWoWu7QSPU4
 ```
 
 The `index.js` file is where all our code goes.
