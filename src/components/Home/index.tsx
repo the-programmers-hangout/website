@@ -75,6 +75,7 @@ export const Home: FC = () => {
           <MenuItem to="/about">about</MenuItem>
           <MenuItem to="/rules">rules</MenuItem>
           <MenuItem to="/faq">faq</MenuItem>
+          <MenuItem to="/bots">bots</MenuItem>
           <MenuItem to="/resources">resources</MenuItem>
           <MenuItem to="/archives">tech spotlights</MenuItem>
         </SC.Menu>
