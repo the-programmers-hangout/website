@@ -20,6 +20,10 @@ This role recognizes people who contribute their time and knowledge to the serve
 
 ChatMod/Moderator/Senior Moderator/Admin/Owner - These people ensure that the usage of this environment reflects the guidelines as illustrated in the rules. Staff is occasionally handpicked, and sometimes there is an application process. There is a trial period for all new staff of 2-4 weeks (sometimes more, sometimes less) which comes with a trial role, however, they are treated as full staff members during this time. Please respect all staff equally; if you have an issue with a specific staff member, talk to an administrator.
 
+Administrative Board Member/Senior Board Member/Board Member - This is for staff members who are currently not active moderators.
+
+Retired Staff - This role is for members who are no longer staff.
+
 ## Why can’t I change my nickname?
 
 On TPH, we enforce a nickname policy - this means that if your nickname is deemed too NSFW (not safe for work), or hard to read/tag (it uses weird characters, it's blank or it contains numbers), we can and will forcibly nickname you to something else.
