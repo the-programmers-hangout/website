@@ -20,7 +20,7 @@ This page details the bots you can interact with on our server. There are other 
 
 `++ask` - If a user is looking for DMs, waiting for "experts", or anything else to delay asking their question use this.
 
-`++beginner` - A more verbose version of `+beginners`.
+`++beginner` - A more verbose version of `++beginners`.
 
 `++beginners` - Redirect a user to the beginners channel. Their question has probably been answered there.
 
@@ -99,7 +99,7 @@ This page details the bots you can interact with on our server. There are other 
 
 **Description:** Keeper is a bot that allows you to bookmark messages by adding the `:bookmark:` emote reaction to a message. 
 
-**Prefix:** `keeperhelp`
+**Prefix:** `keeper!`
 
 ### Commands
 
