@@ -239,7 +239,7 @@ Below are the bots you will see in the server but you will not need to interact 
 
 **Description:** Skadi manages activity roles on the server.
 
-**Source:** This source isn't publically available. We don't want people trying to game the system.
+**Source:** This source isn't publicly available. We don't want people trying to game the system.
 
 
 ## Taboo
@@ -254,4 +254,4 @@ Below are the bots you will see in the server but you will not need to interact 
 
 **Description:** Watchdog guards the gates of our server against raids and bots.
 
-**Source:** This source isn't publically available.
+**Source:** This source isn't publicly available.
