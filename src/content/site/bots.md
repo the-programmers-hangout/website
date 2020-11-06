@@ -2,7 +2,8 @@
 path: /bots
 ---
 
-This page details the bots you can interact with on our server. There are other bots within the server, but they are strictly for usage by staff.
+This page details the bots you will see in our server. 
+Below are the bots you can interact with. There are other bots within the server, but they are strictly for usage by staff or are automatic in their nature. [Click here to jump to the passive bots](#passive-bots). 
 
 
 ## Aura
@@ -201,9 +202,9 @@ N/A
 
 
 
-# Passive bots
+## Passive bots
 
-These are bots you will see in the server but you will not need to interact with them. They automatically do their job!
+Below are the bots you will see in the server but you will not need to interact with them. They automatically do their job!
 
 ## EmbedBot
 
