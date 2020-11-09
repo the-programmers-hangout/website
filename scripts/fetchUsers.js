@@ -43,8 +43,10 @@ function execute() {
   client.login(BOT_TOKEN)
 }
 
+// TODO: restore me once intents are implemented
 if (process.env.BOT_TOKEN) {
-  execute()
+  console.log("skipped until intents are implemented")
+  // execute()
 } else {
   console.log("BOT_TOKEN missing, skipping.")
 }
