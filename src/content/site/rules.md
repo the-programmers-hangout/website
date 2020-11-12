@@ -80,7 +80,7 @@ We're an English server and our staff is primarily English speaking. We cannot m
 
 Don't pretend to be staff; this includes but is not limited to: copying their profile picture, putting a hammer emoji in your name, having the same name as a staff member and pretending to be a member of the staff team.
 
-### Follow the spirit of the rules and assume good-faith
+### Follow the spirit of the rules
 
 This speaks for itself: don't be difficult or generally a pain in the ass by trying to find loop holes in the rules or skirt around them.
 
