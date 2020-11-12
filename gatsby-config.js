@@ -13,15 +13,15 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Inter`,
-            variants: [`400`, `700`],
-          },
-          {
             family: `Montserrat`,
             variants: [`400`, `700`],
           },
           {
-            family: `Oxygen Mono`,
+            family: `IBM+Plex+Sans`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `IBM+Plex+Mono`,
             variants: [`400`],
           },
         ],

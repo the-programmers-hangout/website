@@ -111,7 +111,7 @@ export const MarkdownWrapper = styled.div`
     border-radius: 3px;
     letter-spacing: 0.25px;
     color: #ebedee;
-    font-family: "Oxygen Mono", monospace;
+    font-family: "IBM Plex Mono", monospace;
   }
 
   :not(pre) > code[class*="language-"],
