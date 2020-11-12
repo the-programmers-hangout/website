@@ -1,15 +1,19 @@
-import { transparentize, darken } from "polished"
-import styled from "styled-components"
+import { transparentize } from "polished"
+import styled, { css } from "styled-components"
 import { fontFamily } from "../../design/typography"
-import { WavesTop, WavesBottom } from "../Waves"
-import Circles from "../../images/circles"
+import Header2560 from "../../images/header-2560x1440.png"
+import Header1920 from "../../images/header-1920x1080.png"
+import Header1440 from "../../images/header-1440x900.png"
+import HeaderMobile from "../../images/header-mobile-375x300.png"
 
-const height = 250
+const spaceAbove = 67
+const height = 300 - spaceAbove
 
 export const HeaderWrapper = styled.div`
+  display: flex;
   width: 100%;
   height: ${height}px;
-  padding-top: 67px;
+  padding-top: ${spaceAbove}px;
   position: relative;
 
   &.shifted {
@@ -30,51 +34,34 @@ export const HeaderWrapper = styled.div`
   }
 `
 
-export const BackgroundWrapper = styled.div`
-  height: ${height}px;
-  padding-top: 67px;
-  overflow: hidden;
+export const Background = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
 
-  @media screen and (max-width: 767px) {
-    height: calc(100% - 67px);
-    background: ${(props) => darken(0.2, props.theme.main.background)};
+  // 2560x1400 screens
+  @media screen and (min-width: 2500px) {
+    background-image: url("${Header2560}");
   }
-`
 
-export const StyledCircles = styled(Circles)`
-  position: absolute;
-  top: 50%;
-  margin-top: -200px;
-
-  @media screen and (max-width: 768px) {
-    margin-top: -145px;
-    margin-left: -20px;
-    margin-right: -20px;
+  // 1920x1080 screens
+  @media screen and (min-width: 1800px) and (max-width: 2499px) {
+    background-image: url("${Header1920}");
   }
-`
 
-export const StyledWavesTop = styled(WavesTop)`
-  opacity: ${(props) => (props.theme.name === "dark" ? 0.8 : 0.2)};
-  top: -10%;
-  transform: scaleX(-1);
-
-  @media screen and (max-width: 767px) {
-    top: 0;
+  // 1440x900 screens
+  @media screen and (min-width: 768px) and (max-width: 1799px) {
+    background-image: url("${Header1440}");
   }
-`
 
-export const StyledWavesBottom = styled(WavesBottom)`
-  opacity: ${(props) => (props.theme.name === "dark" ? 0.8 : 0.2)};
-  bottom: -30%;
-  transform: scaleX(-1);
-
+  // mobile screens
   @media screen and (max-width: 767px) {
-    bottom: 0;
+    background-image: url("${HeaderMobile}");
   }
 `
 
@@ -112,13 +99,17 @@ export const Box = styled.div`
   }
 `
 
-export const Title = styled.h1`
+const title = css`
   font-family: ${fontFamily.header};
   font-size: 34px;
   line-height: 41px;
   letter-spacing: -1.75px;
   margin-top: 0;
   margin-bottom: 0;
+`
+
+export const Title = styled.h1`
+  ${title};
 
   &.has-content-above {
     margin-top: 8px;
@@ -126,5 +117,24 @@ export const Title = styled.h1`
 
   &.has-content-below {
     margin-bottom: 8px;
+  }
+`
+
+export const SingleTitle = styled(Title)`
+  ${title};
+  color: #fff;
+  position: absolute;
+  bottom: 100px;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 100%;
+    margin-top: 8px;
+    width: 100px;
+    height: 5px;
+    background: #fff;
   }
 `
