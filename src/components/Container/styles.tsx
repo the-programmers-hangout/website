@@ -7,10 +7,6 @@ export const ContainerWrapper = styled.div`
   padding: 0px var(--padding);
   margin: 0 auto;
 
-  @media screen and (max-width: 1200px) {
-    width: auto;
-  }
-
   @media screen and (max-width: 767px) {
     --padding: 32px;
   }

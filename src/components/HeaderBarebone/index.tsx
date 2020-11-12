@@ -11,30 +11,45 @@ interface IHeaderBareboneProps {
   className?: string
 }
 
+interface IBoxedTitleProps {
+  above?: React.ReactNode
+  content?: React.ReactNode
+}
+
+const BoxedTitle: React.FC<IBoxedTitleProps> = (props) => {
+  return (
+    <SC.Box>
+      {props.above}
+
+      <SC.Title
+        className={cx({
+          "has-content-above": props.above,
+          "has-content-below": props.content,
+        })}
+      >
+        {props.children}
+      </SC.Title>
+
+      {props.content}
+    </SC.Box>
+  )
+}
+
 export const HeaderBarebone: React.FC<IHeaderBareboneProps> = (props) => {
+  const isBoxed = props.above || props.content
+
   return (
     <SC.HeaderWrapper className={props.className}>
-      <SC.BackgroundWrapper>
-        <SC.StyledWavesBottom />
-        <SC.StyledWavesTop />
-        <SC.StyledCircles />
-      </SC.BackgroundWrapper>
+      <SC.Background />
 
       <Container>
-        <SC.Box>
-          {props.above}
-
-          <SC.Title
-            className={cx({
-              "has-content-above": props.above,
-              "has-content-below": props.content,
-            })}
-          >
+        {isBoxed && (
+          <BoxedTitle above={props.above} content={props.content}>
             {props.title}
-          </SC.Title>
+          </BoxedTitle>
+        )}
 
-          {props.content}
-        </SC.Box>
+        {!isBoxed && <SC.SingleTitle>{props.title}</SC.SingleTitle>}
       </Container>
     </SC.HeaderWrapper>
   )
