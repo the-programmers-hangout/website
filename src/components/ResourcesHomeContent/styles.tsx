@@ -49,10 +49,12 @@ export const Box = styled.div`
 
   a:not(.anchor) {
     position: relative;
-    color: #fff !important;
+    color: ${(props) =>
+      props.theme.name === "dark" ? "#fff" : "#000"} !important;
     font-weight: 400 !important;
     background: none !important;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid ${(props) =>
+      props.theme.name === "dark" ? "#fff" : "#000"};
     margin-bottom: 1px;
     display: inline-flex;
     align-items: center;
@@ -62,7 +64,8 @@ export const Box = styled.div`
     &:hover {
       background: none;
       -webkit-background-clip: none;
-      -webkit-text-fill-color: #fff;
+      -webkit-text-fill-color: ${(props) =>
+        props.theme.name === "dark" ? "#fff" : "#000"};
       border-bottom-width: 2px;
       margin-bottom: 0;
     }
@@ -75,6 +78,8 @@ export const Box = styled.div`
       content: "";
       /* I would prefer a svg, but could not get it to work */
       background-image: url("${externalLink}");
+      filter: ${(props) =>
+        props.theme.name === "dark" ? "invert(0%)" : "invert(100%)"} ;
       background-size: 16px 16px;
       width: 16px;
       height: 16px;
