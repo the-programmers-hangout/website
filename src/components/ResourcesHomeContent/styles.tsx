@@ -51,11 +51,13 @@ export const Box = styled.div`
     position: relative;
     color: #fff !important;
     font-weight: 400 !important;
+    background: none !important;
     border-bottom: 1px solid #fff;
     margin-bottom: 1px;
     display: inline-flex;
     align-items: center;
     font-size: 18px;
+    transition: none !important;
 
     &:hover {
       background: none;
@@ -66,6 +68,7 @@ export const Box = styled.div`
     }
 
     &::after {
+      margin-left: 4px;
       position: absolute;
       left: 100%;
       display: block;
