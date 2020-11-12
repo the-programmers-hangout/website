@@ -1,5 +1,5 @@
-const FONT_INTER = "Inter, sans-serif"
-const FONT_MONTSERRAT = "Montserrat, sans-serif"
+const FONT_BODY = "IBM Plex Sans, sans-serif"
+const FONT_HEADER = "Montserrat, sans-serif"
 
 export const BASE_FONT_SIZE = 20
 export const BASE_LINE_HEIGHT = 26
@@ -24,8 +24,8 @@ export function modularScale(power: number) {
 }
 
 export const fontFamily = {
-  header: FONT_MONTSERRAT,
-  body: FONT_INTER,
+  header: FONT_HEADER,
+  body: FONT_BODY,
 }
 
 export default fontFamily
