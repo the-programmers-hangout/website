@@ -9,7 +9,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-polished`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `@el7cosmos/gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
           {
@@ -20,14 +20,11 @@ module.exports = {
             family: `Montserrat`,
             variants: [`400`, `700`],
           },
+          {
+            family: `Oxygen Mono`,
+            variants: [`400`],
+          },
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Oxygen Mono\:400`],
-        display: "swap",
       },
     },
     `gatsby-plugin-layout`,
