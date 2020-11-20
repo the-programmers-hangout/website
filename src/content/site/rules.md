@@ -129,6 +129,6 @@ A few examples of when using ModMail is good practice
 - Would like to screen something with the staff before posting.
 
 ### Do NOT use ModMail for chitchat or asking for programming help
-### In extreme cases that need *immediate* attention, NSFW content, or an unnoticed raid, ping the `serious rule break` role.
+### In extreme cases that need *immediate* attention, NSFW content, or an unnoticed raid, ping the `Emergency Staff Ping` role.
 
 
