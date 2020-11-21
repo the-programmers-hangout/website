@@ -2,6 +2,8 @@
 path: /rules
 ---
 
+import { Role } from "../../components/Role"
+
 Below are the rules of the server. If you are unsure about any or wish to discuss in further detail, contact ModMail.
 
 ## 1. Keep the learning environment positive
@@ -123,12 +125,12 @@ Sending a direct message to @ModMail that opens a channel with the staff
 ### Use it when you see a rule break or want further clarifications
 
 A few examples of when using ModMail is good practice
+
 - You've noticed a heated argument in a channel and there's no staff around.
 - Wish to dispute an infraction you have received.
 - Would like more context about a rule.
 - Would like to screen something with the staff before posting.
 
 ### Do NOT use ModMail for chitchat or asking for programming help
-### In extreme cases that need *immediate* attention, NSFW content, or an unnoticed raid, ping the `Emergency Staff Ping` role.
 
-
+### In extreme cases that need _immediate_ attention, NSFW content, or an unnoticed raid, ping the <Role color="#babbbe">Emergency Staff Ping</Role> role.
