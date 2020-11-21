@@ -73,9 +73,11 @@ Content should be kept to a PG13 level. Always ask yourself "Would my boss be ok
 If you wish to discuss topics like politics, religion, philosophy and alike, head over to our sister server, Controversy Central.
 
 ## 4. Don't obstruct moderation
+
 These rules try to cover as much as possible but unforseenable situations could arise and will be up to the staff's discretion
 
 ### Use only English
+
 We're an English server and our staff is primarily English speaking. We cannot moderate what we cannot understand.
 
 ### Do not impersonate staff
@@ -90,7 +92,6 @@ This speaks for itself: don't be difficult or generally a pain in the ass by try
 
 Use ModMail if you want to discuss an infraction or mute: don't do it anywhere else on the server.
 
-
 ## 5. Stay on topic
 
 ### Don't derail constructive conversation
@@ -104,6 +105,7 @@ This includes, but is not limited to: relationship advice, depression or suicida
 ## 6. No solicitation or advertising
 
 ### No advertising
+
 Do not advertise anything you stand to benefit from. A few examples of this are: other Discord servers, websites, Youtube channels, and blog posts.
 
 Exceptions to this rule are rarely made; if you'd like to request such an exception, please contact ModMail directly.
