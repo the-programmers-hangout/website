@@ -76,7 +76,7 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-helmet": "^6.1.0",
     "@types/react-scrollspy": "^3.3.3",
-    "@types/styled-components": "^5.1.0",
+    "@types/styled-components": "^5.1.4",
     "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin-tslint": "^3.8.0",
     "babel-plugin-polished": "^1.1.0",
