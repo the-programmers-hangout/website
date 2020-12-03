@@ -61,7 +61,7 @@
     "react-scrollspy": "^3.4.3",
     "styled-components": "^5.2.1",
     "typescript": "^3.9.3",
-    "uuid": "^8.3.0"
+    "uuid": "^8.3.1"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.15.0",
