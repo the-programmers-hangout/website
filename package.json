@@ -38,7 +38,7 @@
     "gatsby": "^2.28.0",
     "gatsby-plugin-layout": "^1.6.0",
     "gatsby-plugin-manifest": "^2.8.0",
-    "gatsby-plugin-mdx": "^1.2.16",
+    "gatsby-plugin-mdx": "^1.6.0",
     "gatsby-plugin-polished": "^1.0.4",
     "gatsby-plugin-react-helmet": "^3.3.2",
     "gatsby-plugin-react-svg": "^3.0.0",
