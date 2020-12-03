@@ -88,7 +88,7 @@
     "eslint-plugin-prefer-arrow": "^1.2.2",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "gatsby-plugin-remove-trailing-slashes": "^2.3.3",
+    "gatsby-plugin-remove-trailing-slashes": "^2.6.0",
     "prettier": "^2.0.5",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0"
