@@ -74,6 +74,7 @@ export const Home: FC = () => {
         <SC.Menu>
           <MenuItem to="/about">about</MenuItem>
           <MenuItem to="/rules">rules</MenuItem>
+          <MenuItem to="/begginers">begginers</MenuItem>
           <MenuItem to="/faq">faq</MenuItem>
           <MenuItem to="/bots">bots</MenuItem>
           <MenuItem to="/resources">resources</MenuItem>
