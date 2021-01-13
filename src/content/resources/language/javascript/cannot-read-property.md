@@ -76,10 +76,10 @@ undefined
 
 #### `null` from failed queries
 
-Some functions, for example `getElementById` from the browser API, returns
+Some functions, for example `getElementById` from the browser API, return
 `null` if the function failed to find any result matching what is requested.
 If left unchecked and the returned value is used in other places, the "Cannot
-read property" might arise.
+read property" error might arise.
 
 ```html
 <!DOCTYPE html>
@@ -129,8 +129,8 @@ Uncaught TypeError: Cannot read property 'message' of undefined
 
 ## Fixing
 
-The way to fix the "Cannot read property `abc` of `null`/`undefined`" is of
-course, to make sure what is being retrieved properties from is not either
+The way to fix the "Cannot read property `abc` of `null`/`undefined`" error is
+of course, to make sure what is being retrieved properties from is not either
 `null` or `undefined`. Based on the reason behind the error, the programmer
 determines how the issue shall be fixed.
 
