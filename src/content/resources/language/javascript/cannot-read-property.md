@@ -56,9 +56,9 @@ This applies to nonexistent array indices as well.
 ```js
 > let keyMapping = {
     moveUp: "KeyW",
-	moveDown: "KeyS",
-	moveLeft: "KeyA",
-	moveRight: "KeyD"
+    moveDown: "KeyS",
+    moveLeft: "KeyA",
+    moveRight: "KeyD"
 };
 undefined
 > keyMapping.mvoeDown
@@ -84,22 +84,22 @@ read property" error might arise.
 ```html
 <!DOCTYPE html>
 <html>
-	<body>
-		<p id=paragraph-1>Welcome to <i>The programmer's hangout</i>.</p>
-		<p id=paragraph-2>
-			This is the place for programmers of any skill level to, well, hangout
-			with other fellow programmers. Whether you have just written 5 lines of
-			code or been a code nerd for 15 years, you are always welcome!
-		</p>
-		<script>
-			let element = document.getElementById("paragraph-3");
-			// The one writing this might think this will add another paragraph to
-			// the page, which is not how it works.
-			// The browser, failing to find any element with ID "paragraph-3" from
-			// the page, returns null.
-			element.innerText = "When joining, make sure you read the rules.";
-		</script>
-	</body>
+    <body>
+        <p id=paragraph-1>Welcome to <i>The programmer's hangout</i>.</p>
+        <p id=paragraph-2>
+            This is the place for programmers of any skill level to, well, hangout
+            with other fellow programmers. Whether you have just written 5 lines of
+            code or been a code nerd for 15 years, you are always welcome!
+        </p>
+        <script>
+            let element = document.getElementById("paragraph-3");
+            // The one writing this might think this will add another paragraph to
+            // the page, which is not how it works.
+            // The browser, failing to find any element with ID "paragraph-3" from
+            // the page, returns null.
+            element.innerText = "When joining, make sure you read the rules.";
+        </script>
+    </body>
 </html>
 ```
 
@@ -143,21 +143,21 @@ one can make sure what is in their hands isn't JavaScript's default
 ```js
 async function onCommand(channel, arguments) {
     // Assuming the command is not empty and
-	// there is always the first argument.
+    // there is always the first argument.
     let commandName = arguments[0];
-	switch (commandName) {
-	    // ...
-		case "getUser":
-		    if (arguments.length < 2)
-			    throw "Usage: /getUser <username>";
-			// It is guaranteed now that "arguments" has at least 2 elements
-			// and thus there is an index 1.
-			let username = arguments[1];
-			let user = await botClient.fetchUser(username);
-			channel.send(JSON.stringify(user);
-			break;
-		// ...
-	}
+    switch (commandName) {
+        // ...
+        case "getUser":
+            if (arguments.length < 2)
+                throw "Usage: /getUser <username>";
+            // It is guaranteed now that "arguments" has at least 2 elements
+            // and thus there is an index 1.
+            let username = arguments[1];
+            let user = await botClient.fetchUser(username);
+            channel.send(JSON.stringify(user);
+            break;
+        // ...
+    }
 }
 ```
 
@@ -170,8 +170,8 @@ sure that situation is handled properly.
 async function getUserID(username) {
     // Assuming "username" is guaranteed to be a string.
     let user = await botClient.fetchUser(username);
-	if (user == null) throw "There is no user with that name.";
-	// It is guaranteed now that "user" isn't null.
+    if (user == null) throw "There is no user with that name.";
+    // It is guaranteed now that "user" isn't null.
     return user.id;
 }
 ```
