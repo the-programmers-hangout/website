@@ -11,7 +11,7 @@ When running JavaScript code, a very common error that occurs is:
 console.log(someRandomThing.abc)
                             ^
 
-TypeError: Cannot read property "abc" of undefined
+TypeError: Cannot read property "abc" of undefined.
 ```
 
 This is a very basic error, yet people who are new to JavaScript (and maybe
@@ -33,7 +33,7 @@ $ node
 undefined
 > console.log(someRandomThing.abc);
 //            ---- Owner ----|Property
-Uncaught TypeError: Cannot read property 'abc' of undefined
+Uncaught TypeError: Cannot read property "abc" of undefined.
 ```
 
 The most important thing to note here is it's the "_owner_" that is being
@@ -124,7 +124,23 @@ undefined
 // and remains undefined.
 undefined
 > console.log(payload.message)
-Uncaught TypeError: Cannot read property 'message' of undefined
+Uncaught TypeError: Cannot read property "message" of undefined.
+```
+
+#### `undefined` from missing parameters
+
+If a function accepts a number of parameters, but the calling code passes fewer
+than that, the missing parameters are defaulted to `undefined`.
+
+```js
+> function getValue(object) {
+... return object.value;
+... }
+undefined
+> getValue({ value: 15 })
+15
+> getValue() // ! No value is given to "object", defaults to undefined.
+Uncaught TypeError: Cannot read property "value" of undefined.
 ```
 
 ## Fixing
@@ -190,4 +206,28 @@ else
     payload = { id: 173205, message: "TPH has been waiting for you." };
 // In either case, "payload" is guaranteed to be assigned an actual value.
 botClient.sendMessage(serverJoiner, payload.message);
+```
+
+#### Make sure a function is called correctly
+
+When calling a function, make sure enough parameters are passed as required, or
+provide default values for function arguments, if applicable.
+
+```js
+function sendEmbed(content, options = { color: "#888", dismissable: false }) {
+    let embed = botClient.createEmbed();
+    embed.setContent(content);
+    embed.setColor(options.color);
+    embed.setDismissable(options.dismissable);
+    botClient.sendEmbed(embed);
+}
+
+sendEmbed(
+    "The programmer's hangout: https://theprogrammershangout.com",
+	{ color: "#763989", dismissable: true }
+);
+
+sendEmbed("Example site: https://example.com");
+// No value is passed to "options" by the caller,
+// defaults to the value specified in the function declaration.
 ```
