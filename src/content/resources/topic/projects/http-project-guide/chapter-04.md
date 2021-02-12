@@ -1,6 +1,6 @@
 ---
 authors:
-  - "Kibb#4205"
+  - "Kibb#0001"
 created_at: 2020/06/08
 title: "Chapter 4: Writing to the socket"
 ---
