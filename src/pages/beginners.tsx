@@ -9,16 +9,16 @@ import { PageContent } from "../components/PageContent"
 import { HeaderBarebone } from "../components/HeaderBarebone"
 import { buildToc } from "../utils"
 
-function begginers({ data }: ComponentQuery<{ md: Mdx }>) {
+function Beginners({ data }: ComponentQuery<{ md: Mdx }>) {
   const { md } = data
 
   const toc = buildToc(md.headings!)
 
   return (
     <Fragment>
-      <SEO title="Begginers" />
+      <SEO title="Beginners" />
       <HeaderBarebone
-        title="Begginers"
+        title="Beginners"
         className={cx({ shifted: toc.length })}
       />
 
@@ -28,8 +28,8 @@ function begginers({ data }: ComponentQuery<{ md: Mdx }>) {
 }
 
 export const query = graphql`
-  query begginers {
-    md: mdx(frontmatter: { path: { eq: "/begginers" } }) {
+  query beginners {
+    md: mdx(frontmatter: { path: { eq: "/beginners" } }) {
       body
       headings {
         depth
@@ -39,4 +39,4 @@ export const query = graphql`
   }
 `
 
-export default begginers
+export default Beginners

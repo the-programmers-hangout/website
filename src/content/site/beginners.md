@@ -1,5 +1,5 @@
 ---
-path: /begginers
+path: /beginners
 ---
 
 ## Beginners
