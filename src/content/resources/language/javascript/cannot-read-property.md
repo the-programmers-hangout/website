@@ -84,22 +84,22 @@ read property" error might arise.
 ```html
 <!DOCTYPE html>
 <html>
-    <body>
-        <p id=paragraph-1>Welcome to <i>The programmer's hangout</i>.</p>
-        <p id=paragraph-2>
-            This is the place for programmers of any skill level to, well, hangout
-            with other fellow programmers. Whether you have just written 5 lines of
-            code or been a code nerd for 15 years, you are always welcome!
-        </p>
-        <script>
-            let element = document.getElementById("paragraph-3");
-            // The one writing this might think this will add another paragraph to
-            // the page, which is not how it works.
-            // The browser, failing to find any element with ID "paragraph-3" from
-            // the page, returns null.
-            element.innerText = "When joining, make sure you read the rules.";
-        </script>
-    </body>
+  <body>
+    <p id="paragraph-1">Welcome to <i>The programmer's hangout</i>.</p>
+    <p id="paragraph-2">
+      This is the place for programmers of any skill level to, well, hangout
+      with other fellow programmers. Whether you have just written 5 lines of
+      code or been a code nerd for 15 years, you are always welcome!
+    </p>
+    <script>
+      let element = document.getElementById("paragraph-3");
+      // The one writing this might think this will add another paragraph to
+      // the page, which is not how it works.
+      // The browser, failing to find any element with ID "paragraph-3" from
+      // the page, returns null.
+      element.innerText = "When joining, make sure you read the rules.";
+    </script>
+  </body>
 </html>
 ```
 
@@ -184,11 +184,11 @@ sure that situation is handled properly.
 
 ```js
 async function getUserID(username) {
-    // Assuming "username" is guaranteed to be a string.
-    let user = await botClient.fetchUser(username);
-    if (user == null) throw "There is no user with that name.";
-    // It is guaranteed now that "user" isn't null.
-    return user.id;
+  // Assuming "username" is guaranteed to be a string.
+  let user = await botClient.fetchUser(username);
+  if (user == null) throw "There is no user with that name.";
+  // It is guaranteed now that "user" isn't null.
+  return user.id;
 }
 ```
 
@@ -200,10 +200,8 @@ ultimately receive a value, the error won't be able to occur.
 ```js
 let payload;
 let rolledValue = Math.random();
-if (rolledValue > 0.5)
-    payload = { id: 169323, message: "Welcome to TPH." };
-else
-    payload = { id: 173205, message: "TPH has been waiting for you." };
+if (rolledValue > 0.5) payload = { id: 169323, message: "Welcome to TPH." };
+else payload = { id: 173205, message: "TPH has been waiting for you." };
 // In either case, "payload" is guaranteed to be assigned an actual value.
 botClient.sendMessage(serverJoiner, payload.message);
 ```
@@ -215,17 +213,17 @@ provide default values for function arguments, if applicable.
 
 ```js
 function sendEmbed(content, options = { color: "#888", dismissable: false }) {
-    let embed = botClient.createEmbed();
-    embed.setContent(content);
-    embed.setColor(options.color);
-    embed.setDismissable(options.dismissable);
-    botClient.sendEmbed(embed);
+  let embed = botClient.createEmbed();
+  embed.setContent(content);
+  embed.setColor(options.color);
+  embed.setDismissable(options.dismissable);
+  botClient.sendEmbed(embed);
 }
 
-sendEmbed(
-    "The programmer's hangout: https://theprogrammershangout.com",
-	{ color: "#763989", dismissable: true }
-);
+sendEmbed("The programmer's hangout: https://theprogrammershangout.com", {
+  color: "#763989",
+  dismissable: true,
+});
 
 sendEmbed("Example site: https://example.com");
 // No value is passed to "options" by the caller,
