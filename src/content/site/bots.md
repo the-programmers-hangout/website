@@ -6,6 +6,27 @@ This page details the bots you will see in our server.
 Below are the bots you can interact with. There are other bots within the server, but they are strictly for usage by staff or are automatic in their nature. [Click here to jump to the passive bots](#passive-bots). 
 
 
+## JudgeBot
+
+**Description** Judgebot is our main moderation bot. If you receive any warnings or infractions, JudgeBot will be the one to DM you.
+
+Judgebot has a 50-point system. Each infraction gives you points, and points decay over time. Warnings give 5 points. Strikes typically give 10 but can give more in exceptional circumstances.
+ - 10 points: 1-hour mute
+ - 20 points: 12-hour mute
+ - 30 points: 24-hour mute
+ - 40 points: 30-day mute
+ - 50 points: permanent ban
+
+**Source:** https://github.com/the-programmers-hangout/JudgeBot
+
+**Prefix:** `j!`
+
+### Commands
+
+`j!selfhistory` - Will DM your infraction history.
+`:stop_sign:` - Reacting to a message with this emote will alert staff to it. Use it if you see any potentially rule breaking content.
+
+
 ## Aura
 
 **Description:** Aura bot will hand out karma to users that earn it. Giving karma is as simple as mentioning (tagging) a user and thanking them in the same message.

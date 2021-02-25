@@ -124,15 +124,16 @@ If you have an open source project that meets our content policy, then you may p
 ModMail (@ModMail) is a bot that reports every direct message received to staff.
 Sending a direct message to @ModMail that opens a channel with the staff
 
+If you notice something that you believe is breaking our rules that requires staff attention you can react to the message with `:stop_sign:`
+
 ### Use it when you see a rule break or want further clarifications
 
 A few examples of when using ModMail is good practice
 
-- You've noticed a heated argument in a channel and there's no staff around.
 - Wish to dispute an infraction you have received.
 - Would like more context about a rule.
 - Would like to screen something with the staff before posting.
 
 ### Do NOT use ModMail for chitchat or asking for programming help
 
-### In extreme cases that need _immediate_ attention, NSFW content, or an unnoticed raid, ping the <Role color="#babbbe">Emergency Staff Ping</Role> role.
+### In extreme cases that need _immediate_ attention like NSFW content, or an unnoticed raid, ping the <Role color="#babbbe">Emergency Staff Ping</Role> role.
