@@ -40,7 +40,7 @@ export const Sidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
           <SC.Menu className={cx({ "has-border": Boolean(children) })}>
             <MenuItem to="/about">about</MenuItem>
             <MenuItem to="/rules">rules</MenuItem>
-            <MenuItem to="/begginers">begginers</MenuItem>
+            <MenuItem to="/beginners">beginners</MenuItem>
             <MenuItem to="/faq">faq</MenuItem>
             <MenuItem to="/bots">bots</MenuItem>
             <MenuItem to="/resources">resources</MenuItem>
