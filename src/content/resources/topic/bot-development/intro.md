@@ -24,4 +24,4 @@ title: Bot Development
 
 ###### Kotlin
 
-- [KUtils](https://gitlab.com/Aberrantfox/KUtils/-/wikis/home)
+- [DiscordKt](https://discordkt.github.io/)
