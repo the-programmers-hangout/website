@@ -39,7 +39,6 @@ const BoxedTitle: React.FC<IBoxedTitleProps> = (props) => {
   )
 }
 
-
 const debounce = (fn) => {
   let frame
   return (...params) => {
@@ -57,12 +56,15 @@ export class HeaderBarebone extends Component<IHeaderBareboneProps, HeaderBarebo
   constructor(props) {
     super(props)
     this.tick = this.tick.bind(this)
+    this.state = { scrollY: 0 }
   }
 
   tick() {
-    this.setState({
-      scrollY: window.scrollY
-    })
+    if (typeof window !== 'undefined') {
+      this.setState({
+        scrollY: window.scrollY
+      })
+    }
   }
 
   componentWillMount() {
