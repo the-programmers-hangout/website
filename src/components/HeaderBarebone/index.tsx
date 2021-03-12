@@ -17,7 +17,7 @@ interface IBoxedTitleProps {
 }
 
 type HeaderBareboneState = {
-  scrollY: Number
+  scrollY: number
 }
 
 const BoxedTitle: React.FC<IBoxedTitleProps> = (props) => {
@@ -39,6 +39,29 @@ const BoxedTitle: React.FC<IBoxedTitleProps> = (props) => {
   )
 }
 
+const StickyBoxedTitle: React.FC<IBoxedTitleProps> = (props) => {
+  return (
+    <SC.StickyBox>
+      {props.above}
+
+      <SC.Title
+        className={cx({
+          "has-content-above": props.above,
+          "has-content-below": props.content,
+        })}
+      >
+        {props.children}
+      </SC.Title>
+
+      {props.content}
+    </SC.StickyBox>
+  )
+}
+
+const StickyContainer: React.FC = ({ children, ...restProps }) => {
+  return <SC.StickyContainerWrapper {...restProps}>{children}</SC.StickyContainerWrapper>
+}
+
 const debounce = (fn) => {
   let frame
   return (...params) => {
@@ -52,11 +75,15 @@ const debounce = (fn) => {
 }
 
 export class HeaderBarebone extends Component<IHeaderBareboneProps, HeaderBareboneState> {
+  controller: AbortController
+  state: HeaderBareboneState = {
+    scrollY: 0
+  }
 
   constructor(props) {
     super(props)
     this.tick = this.tick.bind(this)
-    this.state = { scrollY: 0 }
+    this.controller = new AbortController()
   }
 
   tick() {
@@ -67,32 +94,51 @@ export class HeaderBarebone extends Component<IHeaderBareboneProps, HeaderBarebo
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
+    document.addEventListener('scroll', debounce(this.tick), { passive: true, signal: this.controller.signal })
     this.tick()
   }
 
-  componentDidMount() {
-    document.addEventListener('scroll', debounce(this.tick), { passive: true })
+  componentWillUnmount() {
+    this.controller.abort()
   }
 
   render() {
     const props = this.props;
     const isBoxed = props.above || props.content
 
-    return (
+    if (this.state.scrollY <= 250) {
+      return (
         <SC.HeaderWrapper className={props.className}>
-        <SC.Background />
+          <SC.Background />
 
-        <Container>
-            {(isBoxed && this.state.scrollY < 30) && (
-            <BoxedTitle above={props.above} content={props.content}>
+          <Container>
+            {isBoxed && (
+              <BoxedTitle above={props.above} content={props.content}>
                 {props.title}
-            </BoxedTitle>
+              </BoxedTitle>
             )}
 
             {!isBoxed && <SC.SingleTitle>{props.title}</SC.SingleTitle>}
-        </Container>
+          </Container>
         </SC.HeaderWrapper>
-    )
+      )
+    } else {
+      return (
+        <SC.HeaderWrapperSticky className={props.className}>
+          <SC.Background />
+
+          <StickyContainer>
+            {isBoxed && (
+              <StickyBoxedTitle above={props.above}>
+                {props.title}
+              </StickyBoxedTitle>
+            )}
+
+            {!isBoxed && <SC.SingleTitle>{props.title}</SC.SingleTitle>}
+          </StickyContainer>
+        </SC.HeaderWrapperSticky>
+      )
+    }
   }
 }

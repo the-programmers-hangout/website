@@ -9,12 +9,42 @@ import HeaderMobile from "../../images/header-mobile-375x300.png"
 const spaceAbove = 67
 const height = 300 - spaceAbove
 
+export const StickyContainerWrapper = styled.div`
+  margin: 0;
+  width: 100%;
+`
+
 export const HeaderWrapper = styled.div`
   display: flex;
   width: 100%;
   height: ${height}px;
   padding-top: ${spaceAbove}px;
   position: relative;
+
+  &.shifted {
+    width: calc(100% - 305px);
+    padding-right: 305px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 100% !important;
+    padding-right: 0 !important;
+  }
+
+  @media screen and (max-width: 767px) {
+    display: flex;
+    align-items: flex-end;
+    height: auto;
+    min-height: ${height}px;
+  }
+`
+
+export const HeaderWrapperSticky = styled.div`
+  display: flex;
+  width: 100%;
+  height: 7px;
+  padding-top: ${spaceAbove}px;
+  position: fixed;
 
   &.shifted {
     width: calc(100% - 305px);
@@ -75,6 +105,39 @@ export const Box = styled.div`
   padding: 16px;
   backdrop-filter: blur(14px);
   max-width: 650px;
+
+  @media screen and (max-width: 1200px) {
+    max-width: 100%;
+    left: 32px;
+    right: 32px;
+    margin-left: 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    position: static;
+    bottom: auto;
+    top: auto;
+    margin: 32px 0;
+    left: 0px;
+    right: 0px;
+
+    @-moz-document url-prefix() {
+      & {
+        position: relative;
+      }
+    }
+  }
+`
+
+export const StickyBox = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  background: ${(props) => transparentize(0.3, props.theme.main.background)};
+  padding: 16px;
+  backdrop-filter: blur(14px);
+  width: 100%;
 
   @media screen and (max-width: 1200px) {
     max-width: 100%;
