@@ -133,11 +133,12 @@ export const StickyBox = styled.div`
   display: inline-flex;
   flex-direction: column;
   position: absolute;
-  bottom: 0;
+  top: 0;
   background: ${(props) => transparentize(0.3, props.theme.main.background)};
-  padding: 16px;
+  padding: 0px 0px 16px 30px;
   backdrop-filter: blur(14px);
   width: 100%;
+  font-size: 16px
 
   @media screen and (max-width: 1200px) {
     max-width: 100%;
@@ -181,6 +182,15 @@ export const Title = styled.h1`
   &.has-content-below {
     margin-bottom: 8px;
   }
+`
+
+export const StickyTitle = styled.h1`
+  ${title};
+  font-size: 20px;
+
+  &.has-content-below {
+    margin-bottom: 16px;
+  px;
 `
 
 export const SingleTitle = styled(Title)`

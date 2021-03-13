@@ -44,14 +44,14 @@ const StickyBoxedTitle: React.FC<IBoxedTitleProps> = (props) => {
     <SC.StickyBox>
       {props.above}
 
-      <SC.Title
+      <SC.StickyTitle
         className={cx({
           "has-content-above": props.above,
           "has-content-below": props.content,
         })}
       >
         {props.children}
-      </SC.Title>
+      </SC.StickyTitle>
 
       {props.content}
     </SC.StickyBox>
@@ -83,7 +83,6 @@ export class HeaderBarebone extends Component<IHeaderBareboneProps, HeaderBarebo
   constructor(props) {
     super(props)
     this.tick = this.tick.bind(this)
-    this.controller = new AbortController()
   }
 
   tick() {
@@ -95,6 +94,7 @@ export class HeaderBarebone extends Component<IHeaderBareboneProps, HeaderBarebo
   }
 
   componentDidMount() {
+    this.controller = new AbortController()
     document.addEventListener('scroll', debounce(this.tick), { passive: true, signal: this.controller.signal })
     this.tick()
   }
