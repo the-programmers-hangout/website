@@ -1,19 +1,19 @@
-**What is Docker?**  
+## What is Docker?
 Docker is a platform for developers and sysadmins to develop, deploy, and run applications with containers. Containers allow for total application and environment isolation which makes it much easier to ensure an application runs with any necessary dependencies.
 
-**Why should I use Docker?**  
+## Why should I use Docker?
 The simplest use case for Docker is packaging an application into an image and then running it on any machine running the Docker platform. Think running your API locally on Windows, on your OSX laptop, or on a Linux server in a cloud without making any changes to your codebase, all with the same command.
 
 For more complex deployments consisting of multiple containers, Docker provides a tool called docker-compose. This will read a configuration of one or more Docker containers and run them for you and manage them as a single application.
 
 Another benefit is using it to perform builds or development on local machines to avoid needing to set up a development environment. As dependencies can be a nightmare in situations like this, requiring things like npm or virtualenv and other isolation techniques, containerization can greatly simplify things and shorten the time it takes for someone to get set up on a project. You can even pull down a container containing a language runtime and just start writing code immediately, for languages with REPLs you can use docker to launch a REPL shell for any language without needing to go install a runtime on your machine.
 
-**What's the difference between Docker and a VM?**  
+## What's the difference between Docker and a VM?
 VMs have been widely used to solve these problems. The key difference between VMs and containers is that containers are not a virtual OS. All containers running on a host share the same parent kernel. Container technology is enabled by core Linux kernel features for isolating applications. When you run a Linux container on a Windows machine using Docker for Windows, a single Linux VM must run as the host for the Linux containers, but when running natively on a Linux machine, no VM is required, and container applications run inside an isolated process, just like any other application.
 
 The advantage to this approach is that it's very lightweight since it doesn't require the overhead of a virtual guest operating system and virtual access to resources through a hypervisor.
 
-**Examples**  
+## Examples
 You can get a fully functional ubuntu machine by just running
 
 ```sh
@@ -68,7 +68,7 @@ OK
 "1234"
 ```
 
-**Resources**
+## Resources
 
 - The official get-started guide: https://docs.docker.com/get-started/
 - The public Docker registry: https://hub.docker.com/explore/

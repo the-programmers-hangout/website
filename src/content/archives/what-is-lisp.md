@@ -1,13 +1,12 @@
-**What is Lisp?**  
+## What is Lisp?
 Originally specified in 1958, Lisp is the second oldest high level programming language in use today. (Only younger than FORTRAN by one year!). There have been many different dialects of Lisp that have come and gone over the ages. In the modern day, some of the most known and used Lisp dialects (lisps) are Common Lisp, Clojure/ClojureScript, Racket and Scheme. The name "Lisp" was derived from "LISt Processor", and the list data structure is at the core of the language. Many recognizable language features were first developed in Lisp; dynamic typing, garbage collection, the read-eval-print loop, and more.
 
-**How hard are Lisps to learn?**  
+## How hard are Lisps to learn?
 The basics are not very difficult (especially because there aren't that many basics to learn). Experience with functional programming translates well. Most Lisps have a very small set of keywords and syntax rules, and rich libraries constructed atop those simple essentials. A lot of newcomers to Lisps are initially put off by a lot of parentheses, but most of those newcomers come to accept, and in some cases, admire the simplicity provided by, those parens. For example, Lisps usually have no concept of 'operator precedence' - the innermost parens are evaluated first.
 
 If you know python, this document may be of particular interest to you: http://norvig.com/python-lisp.html. Even if you don't know python, the second paragraph under the heading "Introducing Python" explains some Lisp philosophy of use.
 
-**What are some key features?**
-
+## What are some key features?
 - Homoiconicity: Lisps treat data and code similarly - that is to say, the code you write is in the form of lisp data structures (arbitrarily nested lists) that the lisp interpreter reads and evaluates. While this can feel awkward at first, it allows for what might be the simplest metaprogramming constructs.
 
 - Macros: Macros let you expand and redefine the syntax of the language itself. Think of it as having a hook into the interpreter... you get to write what feel like functions that return lisp expressions, and the interpreter will expand those macros, and then evaluate the code that the macro expands to. This is only possible because lisp code is written as s-expressions (lists enclosed in parens). As a result, you don't find any grunt-work in lisp. No need to type semi-similar chunks of code over and over again when you can just invent new syntax for it. How powerful are macros? As one example, Clojure's function and macro definition operators are both macros that use the 'special form' (roughly a keyword) "def".
@@ -36,7 +35,7 @@ If you know python, this document may be of particular interest to you: http://n
 - Racket:
   - Promotes itself as a "programming-language programming language", provides facilities for defining other languages (general purpose or domain specific) through Racket, and then writing programs in those languages to be compiled by Racket
 
-**Build systems, repos, notable libraries and other operational tooling:**
+## Build systems, repos, notable libraries and other operational tooling:
 
 - Common Lisp:
 
@@ -60,15 +59,15 @@ If you know python, this document may be of particular interest to you: http://n
 - Racket:
   - Racket ships with raco, a build tool that creates modules, standalone executables, documentation, etc
 
-**What platforms can Lisps run on?**
+## What platforms can Lisps run on?
 
 - Common Lisp: Various implementations, interpreted, compiles to native.
 - Clojure(Script): JVM/JS/CLR.
 - Racket: Runs on Windows, MacOS, and Linux, by building native binaries
 
-**Learning resources, blogs, sources of information:**
+## Learning resources, blogs, sources of information:
 
-- Common Lisp:
+### Common Lisp:
   - Practical Common Lisp (book available online): http://www.gigamonkeys.com/book/
   - Land of Lisp: http://landoflisp.com/
   - Common Lisp Hyperspec: http://clhs.lisp.se/
@@ -82,7 +81,7 @@ If you know python, this document may be of particular interest to you: http://n
   - Lisp subreddit: https://www.reddit.com/r/lisp/
   - Wikipedia article on CAR and CDR (a central concept in lisp lists): https://en.wikipedia.org/wiki/CAR_and_CDR
   - http://random-state.net/files/nikodemus-cl-faq.html
-- Clojure(Script):
+### Clojure(Script):
   - "Clojure for the Brave and True", a book somewhat akin to 'Automate the boring stuff', but aimed at Clojure: https://www.braveclojure.com/
   - Clojure Homepage: https://clojure.org/api/cheatsheet
   - Clojure GitHub: https://clojure.github.io/clojure/
@@ -92,16 +91,16 @@ If you know python, this document may be of particular interest to you: http://n
   - Clojure subreddit: https://www.reddit.com/r/Clojure/
   - Stand up a simple web app in Clojure: http://clojure-doc.org/articles/tutorials/basic_web_development.html
   - An article explaining the basics of laziness available in Clojure: http://clojure-doc.org/articles/language/laziness.html
-- Scheme:
+### Scheme:
   - Probably the de facto guide to Scheme is known as SICP - "Structure and Interpretation of Computer Programs". This is a book written by a couple of MIT professors, which was used as a textbook for introductory programming courses. It uses Scheme to teach principals of programming. It should probably be noted that this book and these courses are not focused on teaching Scheme (they cover the majority of the Scheme language in the first lecture/chapter) - they're focused on teaching computer programming concepts, and Scheme is just the language used to express those concepts.
     - The SICP book online (freely available): https://mitpress.mit.edu/sites/default/files/sicp/index.html
     - 2004 MIT SICP course playlist (higher quality, standalone video): https://www.youtube.com/playlist?list=PL7BcsI5ueSNFPCEisbaoQ0kXIDX9rR5FF
     - The 2010 UC Berkeley SICP course (recorded in classroom, somewhat lower fidelity): https://www.youtube.com/playlist?list=PLhMnuBfGeCDNgVzLPxF9o5UNKG1b-LFY9
-- Racket:
+### Racket:
 
   - The jumping-off point for Racket info (documentation, tools, getting started, etc) is https://racket-lang.org/.
 
-- IDEs/editors:
+### IDEs/editors:
 
   - Lisps in general: Emacs - Emacs has been called "a great operating system, lacking only a decent editor". The Emacs community has a lot of lispers, partially because Emacs plugin are written mostly in ELisp - a dialect of Lisp that is at the core of Emacs' extendability. As such, many Lisps have Emacs packages for editing, running, debugging, project maintenance, etc, and Emacs has packages for version control, file/directory management, and even things like personal organization (basically all done in text buffers).
 
@@ -111,15 +110,15 @@ If you know python, this document may be of particular interest to you: http://n
 
   - Racket: By default, Racket comes with DrRacket, an IDE with extensive documentation of the language
 
-**Other resources:**
+## Other resources:
 
 - A couple of talks given by Rich Hickey, creator of Clojure
   - Simple Made Easy - an examination of the definitions of simple, easy, and complex, and some of the powers of simplicity: https://www.infoq.com/presentations/Simple-Made-Easy
   - Clojure, Made Simple - a talk about shortcomings and incidental complexity associated with OO programming, and Clojure's responses to them: https://www.youtube.com/watch?v=VSdnJDO-xdg
 
-**Code examples:**
+## Code examples:
 
-- Hello World
+### Hello World
 
 Common Lisp:
 
@@ -160,7 +159,7 @@ begin
 end
 ```
 
-- Take two numbers as input, add them, and format an output string
+### Take two numbers as input, add them, and format an output string
 
 Common Lisp:
 
@@ -196,7 +195,7 @@ Racket:
   (printf "The sum of ~s and ~s is ~s" first second (+ first second)))
 ```
 
-- A very basic macro in Clojure
+A very basic macro in Clojure:
 
 ```clojure
 ;; definition - we'll take an expression, evaluate it once, print the formatted string, and then return the result
@@ -213,7 +212,7 @@ Racket:
 ;; and returns 45
 ```
 
-- A really simple Clojure web site using the ring and compojure libraries
+A really simple Clojure web site using the ring and compojure libraries:
 
 ```clojure
 ;; define a namespace for our functions, and import routing and default request handling functions
@@ -232,7 +231,7 @@ Racket:
   (wrap-defaults app-routes site-defaults))
 ```
 
-- Memoizing pure functions in Clojure
+Memoizing pure functions in Clojure:
 
 ```clojure
 (defn expensive
@@ -255,7 +254,7 @@ Racket:
     (println "Memoization caches the output of functions, so that expensive pure functions can be computed once.")))
 ```
 
-- Lazy sequences in Clojure
+Lazy sequences in Clojure:
 
 ```clojure
 (defn fib-seq
@@ -271,7 +270,7 @@ Racket:
   (println "The first 20 fibonacci numbers, obtained from a lazy sequence:" (take 20 (fib-seq))))
 ```
 
-- Collatz sequence in Scheme
+Collatz sequence in Scheme:
 
 ```clojure
 (define (collatz n)
@@ -282,7 +281,7 @@ Racket:
 
 ```
 
-- FizzBuzz from 1 to n using lazy evaluation in Racket
+FizzBuzz from 1 to n using lazy evaluation in Racket:
 
 ```clojure
 #lang lazy

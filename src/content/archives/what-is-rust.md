@@ -1,4 +1,4 @@
-**What is Rust?**
+## What is Rust?
 
 "Rust is a systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety."
 In other terms, Rust is a language that offers the performance of C or C++ along with some higher level constructs
@@ -8,7 +8,7 @@ memory, or yield odd results because of race conditions in your code. Rust, simi
 are called "Zero-cost" abstractions, which in essence means that the idiomatic/ pretty way of writing a piece
 of code will be as performant as writing your own code.
 
-**How is Rust safe?**
+## How is Rust safe?
 
 Rust adds an extra layer of safety by having a concept of ownership at the type level, and by
 strongly distinguishing mutability over immutability. By keeping track of where a resource is owned,
@@ -23,7 +23,7 @@ out when to safely drop resources. Unlike in C, where you could leak memory by f
 some resource, or crash your program by using memory that has already been freed, Rust avoids errors like
 these by keeping track of who owns what resource at compile time.
 
-**What high level constructs does Rust offer?**
+## What high level constructs does Rust offer?
 
 Rust comes with a very good standard library, if you're not building on an embedded platform, of course.
 The standard library allows you to work with vectors and arrays using concise .maps and .filters instead
@@ -41,17 +41,17 @@ you can match on a hashmap with a certain value at a certain key.
 One of the external aspects that makes the language easy to work with is the build tool "Cargo". Cargo
 makes fetching dependencies for a project and building a project a breeze!
 
-**Where do I get Rust?**
+## Where do I get Rust?
 
 Installation instructions can be found here: https://www.rust-lang.org/en-US/install.html
 
-**Where do I learn more?**
+## Where do I learn more?
 
 Rust has a great book for learning the language, that can be found here (online book): https://doc.rust-lang.org/book/second-edition/index.html
 
-**Code Examples**
+## Code Examples
 
-**Hello World**
+### Hello World
 
 ```rust
 fn main() {
@@ -59,7 +59,7 @@ fn main() {
 }
 ```
 
-**Pattern Matching Example**
+### Pattern Matching Example
 
 ```rust
 fn main() {
@@ -73,7 +73,7 @@ fn main() {
 }
 ```
 
-**Sum of Squared Odd Numbers under 1000**
+### Sum of Squared Odd Numbers under 1000
 
 ```rust
 fn is_odd(n: u32) -> bool {
@@ -113,7 +113,7 @@ fn main() {
 }
 ```
 
-**Traits Example**
+### Traits Example
 
 ```rust
 pub trait Summary {

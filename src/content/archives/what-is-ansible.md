@@ -1,9 +1,9 @@
-### What is Ansible?
+## What is Ansible?
 
 Ansible is an open-source software provisioning, configuration management, and application deployment tool enabling Infrastructure as code. It handles configuration management, application deployment, cloud provisioning, ad-hoc task execution, network automation, and multi-node orchestration.
 
 
-### What are the advantages of Ansible over other configuration management tools such as Chef or cfengine?
+## What are the advantages of Ansible over other configuration management tools such as Chef or cfengine?
 
 A big problem with other configuration management systems was that they relied on an agent to manage their systems, this creates a new problem of "managing the management" because the agents must be bootstrapped and kept updated which adds complexity. Ansible however is agentless. Ansible takes advantage of existing remote management systems like ssh and winrm to do it’s execution and not require managing another agent. While incoming ssh and winrm are never enabled by default in these operating systems, ansible is also a provisioning tool, which means it can provision systems with those two enabled. Rules can be set to ensure restarting these daemons if they crash, or restoring the state of the system in case ansible can’t reach them, further reducing the need of human intervention.
 
@@ -12,7 +12,7 @@ Another important advantage of ansible over chef is the “source of truth”. A
 Another big advantage Ansible has over other Configuration Management systems is the ability to use dynamic inventory. With Chef, for example, you have to manually configure what system is being managed by Chef. With Ansible, you can poll data from an external source. This external source can be a system managed by Ansible itself, with ansible itself providing the data for when a new system is provisioned in the private or public cloud, making ansible self-reliant.
 
 
-### Why use Ansible when I can just use bash & perl?
+## Why use Ansible when I can just use bash & perl?
 
 Ansible provides five major advantages to using bash & perl.
 
@@ -27,22 +27,22 @@ Ansible provides five major advantages to using bash & perl.
 **5.** Ansible comes with the ultimate oh shit button. Paid support.
 
 
-### How do I get ansible?
+## How do I get ansible?
 
 You can get Ansible as a control node on most major platforms except Windows. Windows can be managed by Ansible, but it cannot be a control node.
 
 On Fedora: 
-```
+```sh
 $ sudo dnf install ansible
 ```
 
 On RHEL/CentOS:
-```
+```sh
 $ sudo yum install ansible
 ```
 
 On Ubuntu:
-```
+```sh
 $ sudo apt update
 $ sudo apt install software-properties-common
 $ sudo apt-add-repository --yes --update ppa:ansible/ansible
@@ -50,27 +50,27 @@ $ sudo apt install ansible
 ```
 
 On Gentoo:
-```
+```sh
 $ merge -av app-admin/ansible
 ```
 
 On FreeBSD:
-```
+```sh
 $ sudo pkg install py36-ansible
 ```
 
 Instructions to install on other targets can be found on https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html.
 
-### How do I use ansible?
+## How do I use ansible?
 
 Running an ansible playbook is simple.
-```
+```sh
 $ ansible -i inventory playbook.yml
 ```
 `-i` is to give the inventory, or the hosts where this playbook would run. This file contains the hostname/ip of the machine.
 
 An example inventory file:
-```
+```yml
 [all:vars]
 ansible_user=tph_admin
 ansible_ssh_pass=hunter2
@@ -104,14 +104,14 @@ To explain, `[all:vars]` are the default variables for all nodes in this invento
 Examples of ansible playbooks are in the section right below this section.
 In your working directory, you can create a file named .ansible.cfg, and list this inventory there. By doing that, you don’t have to provide an inventory file each time.
 
-```
+```sh
 $ cat .ansible.cfg
 [defaults]
 Inventory = /path/to/inventory
 ```
 
 This simplifies your commands a little. Now you can do things such as:
-```
+```sh
 $ ansible web --list-hosts
 $ ansible web, ansible --lists-hosts
 $ ansible ‘node*’ --list-hosts
@@ -120,7 +120,7 @@ $ ansible all --list-hosts
  
 If you don’t set the inventory variable in .ansible.cfg file you can still do the same but you need to prepend the inventory.
 
-```
+```sh
 $ ansible -i inventory all --list-hosts
 ```
 
@@ -128,13 +128,13 @@ From this point we assume you have already set up .ansible.cfg file but you don�
 
 Sometimes you just want to run a single module against all your hosts, such as maybe pinging all your machines to ensure those are alive. Writing a playbook for this is easy but also overkill. Instead, you can do:
 
-```
+```sh
 $ ansible web -m ping
 ```
 
 Remember, you don’t have to run a command over a group. You can also run it over a node.
 
-```
+```sh
 $ ansible node1 -m ping
 ```
 
@@ -142,18 +142,18 @@ Ping is a module that comes built into ansible. We specify it will be a module u
 
 Sometimes modules might not exist for your command. Maybe you are using a custom thing. In that case you can run ad-hoc commands over ansible.
 
-```
+```sh
 $ ansible node1 -m command -a “ping”
 ```
 In this case command is a module and `-a` is followed by the command that will be run.
 
-### Examples of Ansible Playbooks
+## Examples of Ansible Playbooks
 
 Ansible playbooks are yaml files. They have their own syntax, however the syntax is so dead simple, you can figure it out after a couple hours, we will try to provide examples to make it easy to understand, but you are recommended to read ansible documentation on writing playbooks since writing the same content from that over here is unnecessary.
 
 A playbook to install cockpit on your CentOS web server.
 
-```
+```yml
 ---
 - name: Cockpit is installed
   hosts: web # can be a single node as well
@@ -172,14 +172,14 @@ A playbook to install cockpit on your CentOS web server.
 
 YAML is a pain to write and syntax errors can occur. However, ansible comes with a tool to ensure there’s no syntax error. Check your playbook with: 
 
-```
+```sh
 $ ansible-playbook --syntax-check playbook.yml
 ```
 
 In fact, that playbook is incorrect. Run that command to see where it’s incorrect!
 
 Then you can run it using:
-```
+```sh
 $ ansible-playbook playbook.yml
 ```
 
@@ -188,7 +188,7 @@ You can also use the previous command we listed in the previous section and do t
 Note, since ansible is stateless we just tell ansible what to do. If the cockpit is already there it doesn’t care and just says ok. If it’s not there, it’ll install a cockpit. If it’s not the latest version, it will update it. Ansible playbooks are for most parts declarative, meaning you tell it what to do, and not how to do it. Sometimes there is no module and you have to tell it exactly what to do using commands.
 A playbook to ensure certain users are present in a node.
 
-```
+```yml
 ---
 - name: Ensure Users are present
   hosts: web
@@ -206,7 +206,7 @@ A playbook to ensure certain users are present in a node.
 ```
 
 Create a VM on vsphere ESXi from a template.
-```
+```yml
 ---
 - name: Create a VM from a template
   hosts: localhost
@@ -233,15 +233,15 @@ We also have a playbook that we use for provisioning virtual storage clusters on
 
 There’s a lot more you can do with it, so go on and experiment with things you do daily and see what you can automate!
 
-### When should I not use ansible? 
+## When should I not use ansible? 
 
 When it’s trivial to do something with a couple lines of bash or perl. Say opening a zip file, exporting all the test data from it to make a graph. This might seem like a stupid thing to point out, but people do it all the time.
 
-### Resources
+## Resources
 
 https://docs.ansible.com/
 
-### Ansible AWX & Tower
+## Ansible AWX & Tower
 
 Ansible comes with a web dashboard, and it is highly recommended you install it. It’s mindlessly easy to install, and makes using ansible a breeze. It exposes a REST API, that you can use to automate ansible even further. You shouldn’t be using Ansible without it! 
 
@@ -251,7 +251,7 @@ After you have installed Ansible, to install AWX you need to install some depend
 
 To set up awx:
 
-```
+```sh
 $ git clone https://github.com/ansible/awx
 $ cd awx/installer/
 $ ansible-playbook -i inventory install.yml
