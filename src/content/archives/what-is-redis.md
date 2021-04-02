@@ -1,34 +1,34 @@
-**What is Redis?**
+## What is Redis?
 
 Redis is an in-memory datastore. It supports on-disk persistence, cache eviction, various data structures, Pub/Sub, scripting, and other features that put it in a middle ground between simple key-value store, and a more complex database.
 
-**When should I use Redis?**
+## When should I use Redis?
 
 While Redis can be used in place of any persistent datastore, it's strongest when you need a speedy, easy cache. Because Redis keeps all data in memory, it's able to respond very quickly.
 
-**When shouldn't I use Redis?**
+## When shouldn't I use Redis?
 
 If you need data relations, that's typically better served by a traditional SQL-based database. If you have huge amounts of data, having enough RAM to allow Redis to work with all of it may prove expensive, or prohibitive. Redis also only writes its data to disk on an interval, so if Redis is killed before it can write to disk, you may lose data between the time it was killed, and the last time it wrote to disk. (Although Redis offers different, configurable persistence strategies.)
 
-**About Redis' Persistence Strategies**
+## About Redis' Persistence Strategies
 
 Redis includes several persistence strategies. RDB, AOF, and AOF fsync.
 
-**RDB**
+## RDB
 
 RDB is a snapshot format, where it will provide an entire snapshot of your data at any point of time. This also is the fastest time-to-restart format for Redis with large datasets. However, because syncing the entire collection to disk is taxing on both the CPU and disk writing, it's impractical to do a full snapshot with every write. Exactly when a snapshot is produced is configurable, based on time passed, and the number of writes against the data set.
 
-**AOF**
+## AOF
 
 AOF is short for Append-Only File. This writes every command and transaction sent to Redis to a file, and reconstructs the data by replaying the file at startup. When the file becomes too large, Redis automatically creates a new one in the background by reading all in-memory data, and dumping it to a new AOF-formatted file. The cost to this is restarts with large datasets/many commands are slower than reloading a comparable RDB file, due to replaying the commands.
 
-**AOF fsync**
+## AOF fsync
 
 AOF fsync is simply how often AOF is flushed to disk. You can use it without fsync at all, leaving it up to the operating system to flush your disk writes automatically, which depends on the operating system's configuration. You can also set it to fsync every second, meaning it will flush changes to disk every second, which is the default configuration. Finally, you can set it to flush to disk with every single write, which sacrifices speed for ensuring data is always written to disk.
 
 It's not uncommon to use both RDB and AOF together to take advantage of the increased speed and durability of AOF, with the easily backed-up, quicker-to-restart RDB.
 
-**Examples**
+## Examples
 
 The simplest operation in Redis is `GET`/`SET`.
 
@@ -235,7 +235,7 @@ A subscribed client would recieve the following:
 
 Redis supports a lot more features, like clustering, transactions, scripting, and more datatypes like HyperLogLogs and Streams, this is just a taste of Redis' usefulness. In addition, Redis' functionality can be extended via scripts and modules.
 
-**More Resources**
+## More Resources
 
 - https://redis.io/commands
 - https://try.redis.io/

@@ -1,19 +1,19 @@
-**What is Svelte?**  
+## What is Svelte? 
 Svelte is a front-end technology similar in use to React, Vue, Angular, and the like. However, instead of loading a framework on the client-side, Svelte wires everything up during the build step, meaning it doesn't have to interpret any additional information at runtime. However, it's still in its relative infancy.
 
-**When should you use Svelte?**
+## When should you use Svelte?
 
 - If you want to try out a framework that builds into an app, rather one that uses a framework at runtime.
 - If you feel like React, Vue, Angular, etc. might be too "heavy".
 - If you like trying new things.
 
-**When should you not use Svelte?**
+## When should you not use Svelte?
 
 - If you need an extremely battle-tested, extremely community supported framework.
 - If you don't need interactivity/data binding.
 
-**Examples**  
-Styling a component:
+## Examples
+### Styling a component
 
 ```html
 <style>
@@ -29,7 +29,7 @@ Styling a component:
 
 https://svelte.dev/examples#styling
 
-Bound Text Input:
+### Bound Text Input
 
 ```js
 <script>
@@ -42,7 +42,7 @@ Bound Text Input:
 
 https://svelte.dev/examples#text-inputs
 
-Reactive statement on a button:
+### Reactive statement on a button
 
 ```js
 <script>
@@ -65,7 +65,7 @@ Reactive statement on a button:
 
 https://svelte.dev/examples#reactive-statements
 
-CSS class bindings:
+### CSS class bindings
 
 ```html
 <script>
@@ -98,7 +98,7 @@ CSS class bindings:
 
 https://svelte.dev/examples#classes
 
-Built-in animation transitions:
+### Built-in animation transitions
 
 ```html
 <script>
@@ -120,7 +120,7 @@ Built-in animation transitions:
 
 https://svelte.dev/examples#in-and-out
 
-**Other resources**
+## Other resources
 
 - https://svelte.dev/
 - https://svelte.dev/tutorial/basics

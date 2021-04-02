@@ -1,11 +1,11 @@
-**What is Julia?**  
+## What is Julia?
 Julia is a high-level dynamic programming language for numerical computing. It is free and open-source: under the MIT license.
 Although Julia is still in its youth (the current release is v1.2), Julia provides a lot of support for mathematical analysis and data science.
 
-**How hard is Julia to learn?**  
+## How hard is Julia to learn?
 Julia is a fairly complex language but has some very simple behaviors which are easy to pick up. It is mainly used for data science and mathematical analysis, so those complexities come with it. You must understand some mathematical principles to use the language well. Julia uses certain expressions differently from other languages as well making it a bit harder to pick up; however, it makes sense. For example, string concatenation is done with \*, and not +. Julia is heavily documented and low-level, so learning the standard syntax is easy to do by following the tutorial along with other resources.
 
-**What's so great about Julia?**
+## What's so great about Julia?
 
 - Multiple dispatch: providing ability to define function behavior across many combinations of argument types
 - Dynamic type system: types for documentation, optimization, and dispatch
@@ -22,13 +22,13 @@ Julia is a fairly complex language but has some very simple behaviors which are 
 - Elegant and extensible conversions and promotions for numeric and other types
 - Efficient support for Unicode, including but not limited to UTF-8
 
-**What platforms can Julia run on?**  
+## What platforms can Julia run on?
 Julia can run on most popular platforms such as MacOSX, most Linux builds, Windows, and others. This is due to it compiling to a native binary. However, it does not have broad support for front-end development, but there is a library for Qt bindings.
 
-**CLI**  
+## CLI
 The Julia download comes with a CLI environment. With the CLI you can try out Julia functions and expressions in the command line. (Binary languages rarely have a CLI, so this is pretty cool)
 
-**Code Examples:**  
+## Code Examples:
 Hello world:
 
 ```julia
@@ -52,7 +52,7 @@ mean([1, 3, 5, 7]) # 4
 middle([1, 3, 5]) # 3
 ```
 
-**Syntax and Operation Features:**
+## Syntax and Operation Features:
 
 Matrices in Julia are easy and fun!
 
@@ -132,7 +132,7 @@ for x=0:4:11
 end
 ```
 
-**Resources:**  
+## Resources:
 Julia documentation: <https://docs.julialang.org>
 
 Try it out online! <https://juliabox.com>, and <https://www.tutorialspoint.com/execute_julia_online.php>

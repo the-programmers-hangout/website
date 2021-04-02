@@ -35,7 +35,7 @@ A bot account.
 - Click **Add Bot** and then **yes, do it**
 - Copy the **token** and make a note of it. You'll need that later too.
 
-##### TOKEN WARNING
+#### TOKEN WARNING
 
 Do not share this token, anywhere. Ever. Do not commit it to github. Keep it private.
 If you do accidentally share it on github or alike its important that you regenerate it ASAP.
