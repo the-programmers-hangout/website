@@ -45,14 +45,18 @@ export const Header: React.FC<IHeaderProps> = ({
           {authors && (
             <SC.Meta>
               <StackedAvatars authors={authors} />
-              <SC.PopoverToggler>
-                {authors.length} contributor{authors.length > 1 && "s"}
-                <SC.Popover>
-                  {authors
-                    .map((author) => `${author.name}#${author.hash}`)
-                    .join(", ")}
-                </SC.Popover>
-              </SC.PopoverToggler>
+              {authors.length > 1 ? (
+                <SC.PopoverToggler>
+                  {authors.length} contributor{authors.length > 1 && "s"}
+                  <SC.Popover>
+                    {authors
+                      .map((author) => `${author.name}#${author.hash}`)
+                      .join(", ")}
+                  </SC.Popover>
+                </SC.PopoverToggler>
+              ) : (
+                `${authors[0].name}#${authors[0].hash}`
+              )}
             </SC.Meta>
           )}
           {dateToHuman && <SC.Meta>{dateToHuman}</SC.Meta>}
