@@ -6,7 +6,7 @@ import { Role } from "../../components/Role"
 
 ## What are the roles and what do they mean?
 
-### <Role color="#babbbe">Community-Member</Role><br /><Role color="#e9c545">Active</Role><br /><Role color="#3b74d1">Chatterbox</Role><br /><Role color="#ce4ac6">Super-Talky-Guy</Role><br /><Role color="#62ccbd">Bepis-Drinker</Role><br /><Role color="#d45846">Conke-Commander</Role><br /><Role color="#985bf6">Patriotic-Procrastinator</Role>
+### <Role color="#babbbe">Community-Member</Role><br /><Role color="#e9c545">Active</Role><br /><Role color="#3b74d1">Chatterbox</Role><br /><Role color="#ce4ac6">Super-Talky</Role><br /><Role color="#62ccbd">Bepis-Drinker</Role><br /><Role color="#d45846">Conke-Commander</Role><br /><Role color="#985bf6">Patriotic-Procrastinator</Role>
 
 These are the activity roles of the server in the order you will be granted them. Different tiers will grant different perks, such as unlocking hidden channels, voice access, and nicknaming privileges. These roles are assigned automatically as you participate in the server, so don't ask for them.
 

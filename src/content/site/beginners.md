@@ -54,7 +54,7 @@ You need a few things. You need a means to learn this language, and you need a p
 - StackOverflow
 - This Server
 - Reddit
-- Class - if you're in class and you don't know something, raise your hand man!
+- Class - if you're in class and you don't know something, raise your hand!
 
 Remember that googling is a skill; you're asking the internet "what is this thing?" Be specific about what you don't know, and it will help you.
 ‎
