@@ -1,34 +1,36 @@
 import Prism from "prismjs"
 
-if (supportsLookBehind()) {
-    Prism.languages.env = {
-        property: {
-            pattern: /(.*.)(?==)/,
-        },
-        string: {
-            pattern: /(?<==)(.*.)/g,
-            global: true,
-        },
-        operator: {
-            pattern: /=/
-        }
-    }   
-} else {
-    Prism.languages.env = {
-        property: {
-            pattern: /(.*.)(?==)/,
-        },
-        operator: {
-            pattern: /=/
-        }
-    }
-}
-
+import type { Grammar } from "prismjs"
 
 function supportsLookBehind() {
     try {
-        return /(?<==)(.*)/.test("=hello")
+        const lookbehindRegexp = new RegExp("(?<==)(.*)");
+
+        return lookbehindRegexp.test("=hello");
     } catch(e) {
         return false;
     }
 }
+
+function configurePrismJS() {
+    const config: Grammar = {
+        property: {
+            pattern: /(.*.)(?==)/,
+        },
+        operator: {
+            pattern: /=/
+        }
+    }
+
+    if (supportsLookBehind()) {
+        /* eslint-disable-next-line id-blacklist */
+        config.string = {
+            pattern: new RegExp("(?<==)(.*.)", "g"),
+            global: true,
+        }  
+    }
+
+    Prism.languages.env = config;
+}
+
+configurePrismJS();
