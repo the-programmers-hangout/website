@@ -6,6 +6,7 @@ const Discord = require("discord.js")
 const fs = require("fs")
 const { Readable } = require("stream")
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function execute() {
   const client = new Discord.Client()
 
