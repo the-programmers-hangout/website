@@ -46,6 +46,10 @@ This means cheating on your school work, paying someone to do your school work o
 
 Treat everyone with respect regardless of their skill level or differences in thoughts.
 
+### Do not bring other server drama to TPH
+
+TPH is not the place to bring up drama that happened outside the server.
+
 ### Arguing from authority
 
 Nobody likes a know-it-all, and presenting your opinion as fact isn't the way to participate constructively. If you're sharing an anecdote or example from your experience, that's totally fine, but make that clear, and don't present it as concrete evidence of something being a certain way.
@@ -72,6 +76,12 @@ Content should be kept to a PG13 level. Always ask yourself "Would my boss be ok
 
 If you wish to discuss topics like politics, religion, philosophy and alike, head over to our sister server, Controversy Central.
 
+### Don't discuss web scraping unless approved
+
+Discord ToS prohibits facilitating discussions that violate ToS of any service. Therefore, discussions regarding web scraping are forbidden here unless proven otherwise.
+
+You can do so by citing a passage from ToS of a service you're trying to scrape via modmail. Until then, the conversation is prohibited.
+
 ## 4. Don't obstruct moderation
 
 These rules try to cover as much as possible but unforseenable situations could arise and will be up to the staff's discretion
@@ -87,6 +97,14 @@ Don't pretend to be staff; this includes but is not limited to: copying their pr
 ### Follow the spirit of the rules
 
 This speaks for itself: don't be difficult or generally a pain in the ass by trying to find loop holes in the rules or skirt around them.
+
+### No Minimodding
+
+Minimodding will not be tolerated in the server.
+
+A user is considered minimodding if they try to moderate a conversation without being a staff member. This includes pointing out to a user that something is against the rules.
+
+If you suspect a member is breaking a rule, do not engage, regardless of a moderator being in the chat or not. Alert one of our staff members either through Modmail or reacting to the message using the `:stop_sign:` emoji. 
 
 ### Do not discuss infractions in public
 
