@@ -41,7 +41,7 @@
     "gatsby-plugin-mdx": "^2.6.0",
     "gatsby-plugin-polished": "^1.0.4",
     "gatsby-plugin-react-helmet": "^4.6.0",
-    "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-sharp": "^2.10.0",
     "gatsby-plugin-styled-components": "^3.6.0",
     "gatsby-remark-auto-headers-improved": "^1.0.4",
