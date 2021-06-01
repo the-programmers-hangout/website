@@ -17,7 +17,6 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "prettier",
-    "prettier/@typescript-eslint",
   ],
   settings: {
     react: {
@@ -36,6 +35,10 @@ module.exports = {
     "jsdoc",
     "prefer-arrow",
   ],
+  globals: {
+    React: true,
+    JSX: true,
+  },
   rules: {
     "@typescript-eslint/adjacent-overload-signatures": "error",
     "@typescript-eslint/array-type": [
@@ -92,7 +95,7 @@ module.exports = {
         },
       },
     ],
-    "@typescript-eslint/naming-convention": "error",
+    "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/no-empty-function": "error",
     "@typescript-eslint/no-empty-interface": "error",
     "@typescript-eslint/no-explicit-any": "off",
