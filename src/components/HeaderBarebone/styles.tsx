@@ -138,7 +138,7 @@ export const StickyBox = styled.div`
   padding: 0px 0px 16px 30px;
   backdrop-filter: blur(14px);
   width: 100%;
-  font-size: 16px
+  font-size: 16px;
 
   @media screen and (max-width: 1200px) {
     max-width: 100%;
@@ -190,7 +190,7 @@ export const StickyTitle = styled.h1`
 
   &.has-content-below {
     margin-bottom: 16px;
-  px;
+  }
 `
 
 export const SingleTitle = styled(Title)`
