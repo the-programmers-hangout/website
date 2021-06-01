@@ -37,7 +37,7 @@
     "classnames": "^2.3.1",
     "gatsby": "^3.6.1",
     "gatsby-plugin-layout": "^2.6.0",
-    "gatsby-plugin-manifest": "^2.8.0",
+    "gatsby-plugin-manifest": "^3.6.0",
     "gatsby-plugin-mdx": "^1.6.0",
     "gatsby-plugin-polished": "^1.0.4",
     "gatsby-plugin-react-helmet": "^3.6.0",
