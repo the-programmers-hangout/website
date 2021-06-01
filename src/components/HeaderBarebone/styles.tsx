@@ -42,9 +42,21 @@ export const HeaderWrapper = styled.div`
 export const HeaderWrapperSticky = styled.div`
   display: flex;
   width: 100%;
-  height: 7px;
-  padding-top: ${spaceAbove}px;
+  height: 74px;
   position: fixed;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 14px;
+    left: 0;
+    z-index: 1;
+  }
 
   &.shifted {
     width: calc(100% - 305px);
@@ -73,25 +85,36 @@ export const Background = styled.div`
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
+  background-image: var(--headerImage);
+
+  // Overlaid gradient for a sticky header
+  ${HeaderWrapperSticky} & {
+    background-image: linear-gradient(
+        to left,
+        ${transparentize(1, "#263440")} 0,
+        #263440 100%
+      ),
+      var(--headerImage);
+  }
 
   // 2560x1400 screens
   @media screen and (min-width: 2500px) {
-    background-image: url("${Header2560}");
+    --headerImage: url("${Header2560}");
   }
 
   // 1920x1080 screens
   @media screen and (min-width: 1800px) and (max-width: 2499px) {
-    background-image: url("${Header1920}");
+    --headerImage: url("${Header1920}");
   }
 
   // 1440x900 screens
   @media screen and (min-width: 768px) and (max-width: 1799px) {
-    background-image: url("${Header1440}");
+    --headerImage: url(${Header1440});
   }
 
   // mobile screens
   @media screen and (max-width: 767px) {
-    background-image: url("${HeaderMobile}");
+    --headerImage: url(${HeaderMobile});
   }
 `
 
@@ -131,11 +154,12 @@ export const Box = styled.div`
 
 export const StickyBox = styled.div`
   display: inline-flex;
+  justify-content: center;
   flex-direction: column;
   position: absolute;
   top: 0;
-  background: ${(props) => transparentize(0.3, props.theme.main.background)};
-  padding: 0px 0px 16px 30px;
+  bottom: 0;
+  padding-left: 64px;
   backdrop-filter: blur(14px);
   width: 100%;
   font-size: 16px;
@@ -187,6 +211,8 @@ export const Title = styled.h1`
 export const StickyTitle = styled.h1`
   ${title};
   font-size: 20px;
+  line-height: 1;
+  margin-bottom: 8px;
 
   &.has-content-below {
     margin-bottom: 16px;
