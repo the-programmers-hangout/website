@@ -212,7 +212,10 @@ export const StickyTitle = styled.h1`
   ${title};
   font-size: 20px;
   line-height: 1;
-  margin-bottom: 8px;
+
+  &.has-content-above {
+    margin-bottom: 8px;
+  }
 
   &.has-content-below {
     margin-bottom: 16px;

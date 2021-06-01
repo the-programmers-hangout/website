@@ -88,11 +88,7 @@ export const HeaderBarebone = (props: IHeaderBareboneProps) => {
       <SC.Background />
 
       <StickyContainer>
-        {isBoxed && (
-          <StickyBoxedTitle above={props.above}>{props.title}</StickyBoxedTitle>
-        )}
-
-        {!isBoxed && <SC.SingleTitle>{props.title}</SC.SingleTitle>}
+        <StickyBoxedTitle above={props.above}>{props.title}</StickyBoxedTitle>
       </StickyContainer>
     </SC.HeaderWrapperSticky>
   )
