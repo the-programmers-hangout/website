@@ -73,7 +73,7 @@
     "@types/lodash": "^4.14.170",
     "@types/prismjs": "^1.16.5",
     "@types/ramda": "^0.27.40",
-    "@types/react": "^16.9.35",
+    "@types/react": "^17.0.8",
     "@types/react-dom": "^16.9.8",
     "@types/react-helmet": "^6.1.0",
     "@types/react-scrollspy": "^3.3.3",
