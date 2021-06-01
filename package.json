@@ -90,7 +90,7 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gatsby-plugin-remove-trailing-slashes": "^3.6.0",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.0",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0"
   }
