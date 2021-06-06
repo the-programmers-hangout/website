@@ -102,9 +102,9 @@ This speaks for itself: don't be difficult or generally a pain in the ass by try
 
 Minimodding will not be tolerated in the server.
 
-A user is considered minimodding if they try to moderate a conversation without being a staff member. This includes pointing out to a user that something is against the rules.
+A user is considered minimodding if they try to moderate a conversation without being a staff member. This includes repeatedly pointing out to a user that something is against the rules.
 
-If you suspect a member is breaking a rule, do not engage, regardless of a moderator being in the chat or not. Alert one of our staff members either through Modmail or reacting to the message using the `:stop_sign:` emoji. 
+If you suspect a member is breaking a rule, do not engage. Avoid piling on the user with macros or redirects. Alert one of our staff members either through Modmail or reacting to the message using the `:stop_sign:` emoji. 
 
 ### Do not discuss infractions in public
 
