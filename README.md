@@ -3,7 +3,7 @@
 </a>
 
 <a href="https://discord.gg/programming">
-  <img src="https://cdn.discordapp.com/banners/244230771232079873/926cef2bb5f6fc981994fd198033b8aa.jpg?size=1024" />
+  <img src="https://cdn.discordapp.com/banners/244230771232079873/776f2cfdddf58762e8c45382b02cf969.jpg?size=1024" />
 </a>
 
 # TPH Website
