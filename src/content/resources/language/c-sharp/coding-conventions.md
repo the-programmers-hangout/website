@@ -104,20 +104,30 @@ public bool IsAvailable()
 - Add at least one blank line between method definitions and property definitions.
 - Use parentheses to make clauses in an expression apparent, as shown in the following code.
 
+```cs
+//Do:
+string password = Console.ReadLine();
+if(password == "1234")
+{
+    Console.WriteLine("Correct password!");
+}
+
+//Don't:
+string password = Console.ReadLine();
+if(password == "1234") { Console.WriteLine("Correct password!"); }
+
+if(password == "4321") 
+{ 
+Console.WriteLine("Correct password!"); 
+}
+```
+
 ## Commenting conventions
 
 - Place the comment on a separate line, not at the end of a line of code.
 - Begin comment text with an uppercase letter.
 - End comment text with a period.
 - Insert one space between the comment delimiter (//) and the comment text, as shown in the following example
-
-```cs
-string password = Console.ReadLine();
-if(password == "1234")
-{
-    Console.WriteLine("Correct password!");
-}
-```
 
 ```cs
 //Do:
