@@ -71,6 +71,7 @@ Do not use Hungarian notation or any other type identification in identifiers.
 //Do:
 int age;
 string name;
+
 //Don't:
 int iAge;
 string strName;
@@ -82,7 +83,8 @@ Use meaningful names for variables.
 //Do:
 string factoryName;
 int age;
-//Don't
+
+//Don't:
 string str;
 int i;
 ```
