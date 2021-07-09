@@ -134,7 +134,7 @@ Console.WriteLine("Correct password!");
 ```cs
 //Do:
 
-/// Calculates something.
+// Calculates something.
 public int Calculate()
 {
 }
