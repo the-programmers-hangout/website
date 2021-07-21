@@ -238,7 +238,7 @@ Below are the bots you will see in the server but you will not need to interact 
 
 **Description:** Emourge tracks emote usage. We use this to help us identify the least used emotes incase we want to add some new ones!
 
-**Source:** https://github.com/dfireBird/emourge
+**Source:** https://github.com/dfireBird/emourge-mongo
 
 
 ## Hawk
