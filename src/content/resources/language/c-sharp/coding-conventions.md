@@ -2,7 +2,7 @@
 authors:
   - "Stone_Red#2890"
 created_at: 2021/08/07
-title: C#
+title: Coding Conventions
 external_resources:
   - text: Coding Conventions
     href: "https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions"
