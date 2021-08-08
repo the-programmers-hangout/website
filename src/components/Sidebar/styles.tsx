@@ -68,7 +68,7 @@ export const Title = styled.div`
 `
 
 export const Inner = styled.div`
-  padding: 20px 0 30px 20px;
+  padding: 20px 20px 30px 20px;
 `
 
 export const Menu = styled.nav`

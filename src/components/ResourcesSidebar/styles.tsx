@@ -112,7 +112,6 @@ export const ExpandIcon = styled(Expand)`
 `
 
 export const ExpandResources = styled.div`
-  padding-right: 15px;
   margin-bottom: 20px;
 `
 
