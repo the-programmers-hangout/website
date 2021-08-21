@@ -50,6 +50,13 @@ Judgebot has a 50-point system. Each infraction gives you points, and points dec
 `karma!reactions` - Details the reactions that Aura can add to messages.
 
 
+## DocsBot
+
+**Description:** DocsBot can retrieve documentation for discord.js
+
+**Source:** https://github.com/the-programmers-hangout/tph-docs-bot
+
+**Prefix:** `docs!`
 
 ## HangoutBot
 
@@ -222,10 +229,30 @@ N/A
 N/A
 
 
+## SuggestionBot
+
+**Description:** SuggestionBot manages suggestions for the server. Send in your suggestion and we can put it to a vote!
+
+**Source:** https://github.com/the-programmers-hangout/SuggestionBot
+
+**Prefix:** `s!`
+
+### commands
+
+`s!suggest your suggest message here` - Send in your suggestion message
+
+
 
 ## Passive bots
 
 Below are the bots you will see in the server but you will not need to interact with them. They automatically do their job!
+
+## Clerky
+
+**Description:** Clerky manages our voice group channels. If you join a voice group a new one will automatically be created for other people to use!
+
+**Source:** https://github.com/itsHobbes/clerky
+
 
 ## EmbedBot
 
@@ -261,6 +288,13 @@ Below are the bots you will see in the server but you will not need to interact 
 **Description:** Skadi manages activity roles on the server.
 
 **Source:** This source isn't publicly available. We don't want people trying to game the system.
+
+
+## Slothbot
+
+**Description:** Slothbot manages slowmode across the server.
+
+**Source:** https://github.com/the-programmers-hangout/slothbot
 
 
 ## Taboo
