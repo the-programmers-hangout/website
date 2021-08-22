@@ -1,3 +1,11 @@
+---
+authors:
+  - "mox#1000"
+  - "Plastic#8387"
+created_at: "2018/04/28"
+title: What is Docker?
+---
+
 ## What is Docker?
 Docker is a platform for developers and sysadmins to develop, deploy, and run applications with containers. Containers allow for total application and environment isolation which makes it much easier to ensure an application runs with any necessary dependencies.
 

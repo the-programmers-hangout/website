@@ -1,3 +1,10 @@
+---
+authors:
+  - "moss#0001"
+created_at: "2019/10/09"
+title: What is Julia?
+---
+
 ## What is Julia?
 Julia is a high-level dynamic programming language for numerical computing. It is free and open-source: under the MIT license.
 Although Julia is still in its youth (the current release is v1.2), Julia provides a lot of support for mathematical analysis and data science.

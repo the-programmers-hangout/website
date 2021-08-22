@@ -1,3 +1,10 @@
+---
+authors:
+  - "Fox#0001"
+created_at: "2018/10/08"
+title: What is Rust?
+---
+
 ## What is Rust?
 
 "Rust is a systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety."

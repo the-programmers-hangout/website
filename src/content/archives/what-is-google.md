@@ -1,3 +1,10 @@
+---
+authors:
+  - "itsHobbes#1985"
+created_at: "2021/04/08"
+title: What is Google?
+---
+
 ## What is Google?
 Google allows us smooth brained chumps to keep our jobs while looking like we know what we're doing.
 

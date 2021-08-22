@@ -1,3 +1,11 @@
+---
+authors:
+  - "Fox#0001"
+  - "Cronokirby#0753"
+created_at: "2018/04/10"
+title: What is Haskell?
+---
+
 ## What is Haskell?
 "Haskell is a computer programming language. In particular, it is a polymorphically statically typed, lazy, purely functional language, quite different from most other programming languages. The language is named for Haskell Brooks Curry, whose work in mathematical logic serves as a foundation for functional languages. Haskell is based on the lambda calculus, hence the lambda we use as a logo." - Haskell Wiki
 The above being said, if you perceive yourself to be "bad" at math, don't feed into it. If you are interested in using it and you apply yourself it will work out.

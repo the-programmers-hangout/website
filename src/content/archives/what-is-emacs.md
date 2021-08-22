@@ -1,3 +1,14 @@
+---
+authors:
+  - "Fox#0001"
+  - "Dreameh#0001"
+  - "speckledlemon#0470"
+  - "shan#6094"
+  - "lgneous#0001"
+created_at: "2020/03/14"
+title: What is Emacs?
+---
+
 ## What is Emacs?
 
 Emacs is a Lisp interpreter. It is commonly used as a **text editor** for reading and writing code, although you can use

@@ -1,3 +1,10 @@
+---
+authors:
+  - "Kibb#0001"
+created_at: "2019/09/02"
+title: What is Sqlite?
+---
+
 ## What is SQLite?
 
 Sqlite is a small self-contained SQL database engine written in ANSI C. It allows for creating an SQL database both on disk as a single file, and in memory.

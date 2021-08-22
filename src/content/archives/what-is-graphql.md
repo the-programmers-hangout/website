@@ -1,3 +1,11 @@
+---
+authors:
+  - "veksen#1060"
+created_at: "2018/07/18"
+title: What is GraphQL?
+---
+
+
 ## What is GraphQL?
 GraphQL is a query language for APIs, meant to challenge and replace REST. At its core, GraphQL enables declarative data fetching where a client can specify exactly what data it needs from an API. Put bluntly, a lot of people claim GraphQL to be REST 2.0.
 

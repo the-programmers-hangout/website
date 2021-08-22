@@ -1,3 +1,10 @@
+---
+authors:
+  - "SlashDevSlashRandom#2112"
+created_at: "2018/06/24"
+title: What is Lisp?
+---
+
 ## What is Lisp?
 Originally specified in 1958, Lisp is the second oldest high level programming language in use today. (Only younger than FORTRAN by one year!). There have been many different dialects of Lisp that have come and gone over the ages. In the modern day, some of the most known and used Lisp dialects (lisps) are Common Lisp, Clojure/ClojureScript, Racket and Scheme. The name "Lisp" was derived from "LISt Processor", and the list data structure is at the core of the language. Many recognizable language features were first developed in Lisp; dynamic typing, garbage collection, the read-eval-print loop, and more.
 

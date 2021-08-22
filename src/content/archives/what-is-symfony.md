@@ -1,3 +1,10 @@
+---
+authors:
+  - "_JustDylan_#8625"
+created_at: "2021/01/15"
+title: What is Symfony?
+---
+
 ## What is Symfony
 
 Symfony is an Open Source full stack PHP framework for web applications and a set of reusable PHP libraries. Thousands of web sites and applications rely on Symfony as the foundation of their web services. And most of the leading PHP projects, such as Drupal and Laravel use Symfony components to build their applications.

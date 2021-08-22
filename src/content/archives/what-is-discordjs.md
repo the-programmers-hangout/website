@@ -1,3 +1,10 @@
+---
+authors:
+  - "moe#9999"
+created_at: "2020/05/21"
+title: What is DiscordJS?
+---
+
 ## What is Discord.js?
 
 discord.js is a powerful node.js module that allows you to interact with the Discord API very easily. It takes a much more object-oriented approach than most other JS Discord libraries, making your bot's code significantly tidier and easier to comprehend.

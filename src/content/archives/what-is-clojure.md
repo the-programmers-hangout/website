@@ -1,3 +1,11 @@
+---
+authors:
+  - "vishon05#4039"
+  - "SlashDevSlashRandom#2112"
+created_at: "2021/08/08"
+title: What is Clojure?
+---
+
 ## What is Clojure?
 
 Clojure is a dynamically typed high level lisp designed with interactive development in mind. As a lisp it has features such as homoiconicity, so code as data, macros which let you manipulate the Abstract Syntax Tree of the program itself, and lots and lots of parentheses. This language emphasises concurrency and functional programming.

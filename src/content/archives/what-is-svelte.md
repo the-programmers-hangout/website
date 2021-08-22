@@ -1,3 +1,10 @@
+---
+authors:
+  - "caffeinewriter#0001"
+created_at: "2019/12/04"
+title: What is Svelte?
+---
+
 ## What is Svelte? 
 Svelte is a front-end technology similar in use to React, Vue, Angular, and the like. However, instead of loading a framework on the client-side, Svelte wires everything up during the build step, meaning it doesn't have to interpret any additional information at runtime. However, it's still in its relative infancy.
 

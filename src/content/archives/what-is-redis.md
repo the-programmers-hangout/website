@@ -1,3 +1,10 @@
+---
+authors:
+  - "caffeinewriter#0001"
+created_at: "2019/08/05"
+title: What is Redis?
+---
+
 ## What is Redis?
 
 Redis is an in-memory datastore. It supports on-disk persistence, cache eviction, various data structures, Pub/Sub, scripting, and other features that put it in a middle ground between simple key-value store, and a more complex database.

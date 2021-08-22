@@ -1,3 +1,10 @@
+---
+authors:
+  - "Fox#0001"
+created_at: "2018/05/12"
+title: What is Kotlin?
+---
+
 ## What is kotlin?
 Kotlin is a statically typed programming language that runs on the JVM (Java Virtual Machine).
 

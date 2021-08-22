@@ -1,3 +1,10 @@
+---
+authors:
+  - "Fox#0001"
+created_at: "2018/08/30"
+title: What is Elixir?
+---
+
 ## What is Elixir?
 Elixir is a dynamically typed, functional programming language, with an emphasis on concurrency.
 Elixir, despite being a young language, has grown quite rapidly, and has surprisingly fleshed out libraries and documentation.

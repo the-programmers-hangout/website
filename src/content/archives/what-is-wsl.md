@@ -1,3 +1,10 @@
+---
+authors:
+  - "Drac#9999"
+created_at: "2021/07/08"
+title: What is WSL?
+---
+
 ## What is WSL?
 
 A lot of people shy away from developing on Windows under the misconception that it’s a terrible environment to develop on, instead, dual booting Windows and Linux, or even switching over to Linux entirely! 

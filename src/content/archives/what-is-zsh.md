@@ -1,3 +1,10 @@
+---
+authors:
+  - "elkell#6226"
+created_at: "2019/11/05"
+title: What is Zsh?
+---
+
 ## What is Zsh?
 Zsh, or Z Shell, is a popular alternative shell that extends the most common one, bash. It supports history enhancements, path expansion, environment variable expansion, improved tab completion, improved globbing (searching files), and hundreds more. Zsh has too many features to list here. For a developer, zsh can save tons of time while using a terminal window.
 

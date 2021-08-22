@@ -1,3 +1,10 @@
+---
+authors:
+  - "cro#7281"
+created_at: "2020/09/15"
+title: What is Ansible?
+---
+
 ## What is Ansible?
 
 Ansible is an open-source software provisioning, configuration management, and application deployment tool enabling Infrastructure as code. It handles configuration management, application deployment, cloud provisioning, ad-hoc task execution, network automation, and multi-node orchestration.

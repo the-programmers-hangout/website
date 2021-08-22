@@ -1,3 +1,12 @@
+---
+authors:
+  - "hayden#5432"
+  - "squed#2021"
+  - "Clements#9925"
+created_at: "2021/05/08"
+title: What is Vim?
+---
+
 ## What is Vim?
 Slated as the 'ubiquitous text editor', "Vim is a highly configurable text editor built to make creating and changing any kind of text very efficient." according to its website at <https://www.vim.org>. It is a command-based text editor, so instead of menus and icons, it relies solely on keybinds and commands a user can type into it.
 
