@@ -19,7 +19,7 @@ title: C#
 
 - [Fundamentals of Computer Programming with C#](https://introprogramming.info/english-intro-csharp-book/)
 
-###### Others
+###### Discord (bot) libraries
 
 - [D#+](https://github.com/DSharpPlus/DSharpPlus/)
 - [D#+ Documentation](https://dsharpplus.github.io/)
