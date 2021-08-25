@@ -1,12 +1,7 @@
-<a href="https://discord.gg/programming">
-  <img src="https://img.shields.io/discord/244230771232079873?color=%23dc1529&label=The%20Programmers%20Hangout" />
-</a>
-
-<a href="https://discord.gg/programming">
-  <img src="https://cdn.discordapp.com/banners/244230771232079873/776f2cfdddf58762e8c45382b02cf969.jpg?size=1024" />
-</a>
+[![](https://cdn.discordapp.com/banners/244230771232079873/776f2cfdddf58762e8c45382b02cf969.jpg?size=1024)](https://discord.gg/programming)
 
 # TPH Website
+[![](https://img.shields.io/discord/244230771232079873?color=%23dc1529&label=The%20Programmers%20Hangout)](https://discord.gg/programming)
 
 The official website for The Programmer's Hangout ([join us!](https://discord.gg/programming)), a programming community on Discord. See the website here: https://theprogrammershangout.com.
 
@@ -22,7 +17,7 @@ allowing for static asset generation along with improved SEO.
 1. Clone the repo
 2. `npm install`
 3. `npm run develop`
-4. Nagivate to http://localhost:8000
+4. Navigate to http://localhost:8000
 5. :tada:
 
 ### Resources
@@ -48,7 +43,7 @@ Frontmatter is the optional metadata attached to every markdown file, like the l
 
 An example frontmatter might look like this
 
-```md
+```markdown
 ---
 authors:
   - "Xetera#0001"
