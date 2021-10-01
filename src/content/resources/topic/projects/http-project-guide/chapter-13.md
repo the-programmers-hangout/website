@@ -1,11 +1,11 @@
 ---
 authors:
-  - "Kibb#4205"
+  - "Kibb#0001"
 created_at: 2020/06/08
 title: "Chapter 13: Config"
 ---
 
-## Chapter 12: Config.
+## Chapter 13: Config.
 
 For the time being we have been hard coding all the various values like the port and the web directory,
 it's about time we made this configurable.

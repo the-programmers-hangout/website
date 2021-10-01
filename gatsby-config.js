@@ -6,28 +6,26 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-polished`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `@el7cosmos/gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Inter`,
-            variants: [`400`, `700`],
-          },
           {
             family: `Montserrat`,
             variants: [`400`, `700`],
           },
+          {
+            family: `IBM+Plex+Sans`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `IBM+Plex+Mono`,
+            variants: [`400`],
+          },
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Oxygen Mono\:400`],
-        display: "swap",
       },
     },
     `gatsby-plugin-layout`,

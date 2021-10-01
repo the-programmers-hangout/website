@@ -4,6 +4,7 @@ import { darken } from "polished"
 
 export const Content = styled.div`
   flex: 1 1 calc(1vw - 305px);
+  width: calc(100% - 305px);
   padding: 64px 0;
 
   @media screen and (max-width: 1200px) {
@@ -20,7 +21,7 @@ export const Sidebar = styled.div`
   margin: 64px 0;
   padding: 0 32px;
   position: sticky;
-  top: 32px;
+  top: 100px;
 
   &:empty {
     display: none;

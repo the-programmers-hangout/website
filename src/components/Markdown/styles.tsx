@@ -111,7 +111,7 @@ export const MarkdownWrapper = styled.div`
     border-radius: 3px;
     letter-spacing: 0.25px;
     color: #ebedee;
-    font-family: "Oxygen Mono", monospace;
+    font-family: "IBM Plex Mono", monospace;
   }
 
   :not(pre) > code[class*="language-"],
@@ -168,29 +168,18 @@ export const MarkdownWrapper = styled.div`
   }
 
   a:not(.anchor):not(.button) {
-    display: inline-block;
-    position: relative;
-    font-weight: 700;
-    color: ${(props) => (props.theme.name === "dark" ? "#f9f9f9" : "#172129")};
     text-decoration: none;
-    word-break: break-word;
-    cursor: pointer;
-
-    &::after {
-      content: "";
-      display: block;
-      width: 100%;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(92.97deg, #feaf6d 0%, #ff70a5 100%);
-    }
+    color: inherit;
+    background-image: linear-gradient(120deg, #feaf6d 0%, #ff70a5 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 3px;
+    background-position: 0 100%;
+    transition: all 0.125s ease-in;
+    font-weight: 700;
 
     &:hover {
-      background: linear-gradient(92.97deg, #feaf6d 0%, #ff70a5 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: black;
+      background-size: 100% 100%;
     }
   }
 `

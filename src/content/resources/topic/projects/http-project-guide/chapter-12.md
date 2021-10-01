@@ -1,11 +1,11 @@
 ---
 authors:
-  - "Kibb#4205"
+  - "Kibb#0001"
 created_at: 2020/06/08
 title: "Chapter 12: Replying"
 ---
 
-## Chapter 11: Replying.
+## Chapter 12: Replying.
 
 Servers have a number of responses they can make to a request. These range from "OK" to "Not Found" a list can be found [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 

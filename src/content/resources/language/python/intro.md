@@ -23,7 +23,7 @@ title: Python
 
 ###### Books
 
-- [Free](https://goo.gl/Lxhp7i)
+- [Free](https://github.com/EbookFoundation/free-programming-books/blob/master/books/free-programming-books.md#python)
 - [Python Crash Course - paid](https://goo.gl/XQ7Nx6)
 - [Advanced - paid](https://wiki.python.org/moin/AdvancedBooks)
 

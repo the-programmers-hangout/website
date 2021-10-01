@@ -58,6 +58,7 @@ const createResources = async ({ createPage, graphql }) => {
           edges {
             node {
               relativePath
+              relativeDirectory
               sourceInstanceName
             }
           }
@@ -73,6 +74,7 @@ const createResources = async ({ createPage, graphql }) => {
           edges {
             node {
               relativePath
+              relativeDirectory
               sourceInstanceName
             }
           }
@@ -102,7 +104,7 @@ const createResources = async ({ createPage, graphql }) => {
     // create home page for each resources
     resources.forEach((resource) => {
       createPage({
-        path: path.join("resources", resource),
+        path: path.posix.join("resources", resource),
         component: resourceHome,
         context: {
           resourceType: key,
@@ -114,10 +116,11 @@ const createResources = async ({ createPage, graphql }) => {
 
     query.data.allFile.edges.forEach(({ node }) => {
       createPage({
-        path: path.join("resources", node.relativePath),
+        path: path.posix.join("resources", node.relativePath),
         component: resourcePage,
         context: {
           file: node.relativePath,
+          directory: node.relativeDirectory,
           layout: LAYOUT_RESOURCES,
         },
       })
@@ -147,7 +150,7 @@ const createArchives = async ({ createPage, graphql }) => {
 
   return result.data.allFile.edges.forEach(({ node }) => {
     createPage({
-      path: path.join("archives", node.relativePath),
+      path: path.posix.join("archives", node.relativePath),
       component: archive,
       context: {
         file: node.relativePath,
