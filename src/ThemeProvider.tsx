@@ -26,7 +26,9 @@ const ThemeProvider: FC<IScopedDownChildren> = ({ children }) => {
 
   // App's current theme
   const [theme, setTheme] = useState<ThemeType>(
-    localTheme === "unset" ? "dark" : localTheme
+    document.documentElement.style.getPropertyValue(
+      "--initial-theme"
+    ) as ThemeType
   )
 
   const themeObject = useMemo(
@@ -39,8 +41,6 @@ const ThemeProvider: FC<IScopedDownChildren> = ({ children }) => {
       const prefersLightTheme = window.matchMedia(
         "(prefers-color-scheme: light)"
       )
-
-      setTheme(prefersLightTheme.matches ? "light" : "dark")
 
       prefersLightTheme.onchange = ({ matches }) =>
         setTheme(matches ? "light" : "dark")
