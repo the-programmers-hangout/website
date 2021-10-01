@@ -16,16 +16,14 @@ export const SidebarWrapper = styled.div`
 
   @media screen and (max-width: 767px) {
     z-index: 100;
-    width: auto;
-    /* TODO: maybe find a less "awkward" way to animate this */
-    left: calc(-100% - 100px);
-    right: calc(100% - 0px);
-    transition: left 0.3s, right 0.3s;
+    width: calc(100vw - 100px);
+    transition: transform 0.2s ease-in-out;
+    transform: translateX(-100vw)
   }
 
   &.is-open {
-    left: 0;
-    right: 100px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
 `
@@ -34,7 +32,11 @@ export const Header = styled(Link)`
   display: flex;
   align-items: stretch;
   text-decoration: none;
-
+  height: 74px; /* previously logo chose the height of the header */
+  @media screen and (max-width: 767px) {
+    /* match mobile header height  */
+    height:calc(35px + 32px);
+  }
   &:hover > * {
     opacity: 0.85;
   }
@@ -45,9 +47,9 @@ export const Logo = styled.div`
   justify-content: center;
   align-items: center;
   background: #0b0f13;
-  width: 74px;
-  height: 74px;
+  height: 100%; /* match height of the header*/
   flex: 0 0 74px;
+
 `
 
 export const StyledLogo = styled(TPHLogo)`
