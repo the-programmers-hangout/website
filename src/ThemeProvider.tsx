@@ -26,9 +26,11 @@ const ThemeProvider: FC<IScopedDownChildren> = ({ children }) => {
 
   // App's current theme
   const [theme, setTheme] = useState<ThemeType>(
-    document.documentElement.style.getPropertyValue(
-      "--initial-theme"
-    ) as ThemeType
+    typeof document !== "undefined"
+      ? (document.documentElement.style.getPropertyValue(
+          "--initial-theme"
+        ) as ThemeType)
+      : "dark"
   )
 
   const themeObject = useMemo(

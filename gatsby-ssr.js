@@ -14,6 +14,8 @@ const ThemeScript = () => {
     else return "dark"
   }
 
+  if (typeof document === "undefined") return;
+
   document.documentElement.style.setProperty(
     "--initial-theme",
     getInitialTheme()
