@@ -51,7 +51,7 @@ const ThemeProvider: FC<IScopedDownChildren> = ({ children }) => {
         prefersLightTheme.onchange = null
       }
     }
-  }, [])
+  }, [localTheme])
 
   const contextValue = useMemo(
     () => ({
@@ -63,7 +63,7 @@ const ThemeProvider: FC<IScopedDownChildren> = ({ children }) => {
         setLocalTheme(newTheme)
       },
     }),
-    [theme, setTheme]
+    [theme, setTheme, setLocalTheme]
   )
 
   return (
