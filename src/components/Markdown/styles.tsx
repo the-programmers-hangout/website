@@ -39,6 +39,7 @@ export const MarkdownWrapper = styled.div`
   h6 {
     font-family: ${fontFamily.header};
     letter-spacing: -1.75px;
+    overflow-wrap: break-word;
     margin-top: ${BASE_LINE_HEIGHT * 2}px;
     margin-bottom: ${BASE_LINE_HEIGHT}px;
   }
