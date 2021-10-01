@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useDebounce, useWindowScroll } from "react-use"
+import { useDebounce, useMotion, useWindowScroll } from "react-use"
 import cx from "classnames"
 
 import * as SC from "./styles"
@@ -74,6 +74,7 @@ export const HeaderBarebone = (props: IHeaderBareboneProps) => {
     10,
     [y]
   )
+  const deviceMotion = useMotion()
 
   useEffect(() => {
     return () => {
@@ -108,7 +109,7 @@ export const HeaderBarebone = (props: IHeaderBareboneProps) => {
           {!isBoxed && <SC.SingleTitle>{props.title}</SC.SingleTitle>}
         </Container>
       </SC.HeaderWrapper>
-      {scrollY >= 270 && stickyHeader}
+      {scrollY >= 270 && deviceMotion.acceleration.x == null && stickyHeader}
     </>
   )
 }
