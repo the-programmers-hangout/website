@@ -1,12 +1,13 @@
-import React, { createContext, FC, useMemo } from "react"
+import React, { createContext, FC, useEffect, useMemo, useState } from "react"
 import { ThemeProvider as BaseThemeProvider } from "styled-components"
 
 import { darkTheme, lightTheme } from "./design/themes"
 import { useLocalStorage } from "./hooks/useLocalStorage"
 
+type ThemeType = "dark" | "light"
+
 export interface IThemeContext {
-  theme: "dark" | "light"
-  setTheme: () => void
+  theme: ThemeType
   toggleTheme: () => void
 }
 
@@ -17,19 +18,47 @@ interface IScopedDownChildren {
 export const ThemeContext = createContext<IThemeContext | null>(null)
 
 const ThemeProvider: FC<IScopedDownChildren> = ({ children }) => {
-  const [theme, setTheme] = useLocalStorage("theme", "dark")
+  // User's explicitly set theme
+  const [localTheme, setLocalTheme] = useLocalStorage<ThemeType | "unset">(
+    "theme",
+    "unset"
+  )
+
+  // App's current theme
+  const [theme, setTheme] = useState<ThemeType>(
+    localTheme === "unset" ? "dark" : localTheme
+  )
 
   const themeObject = useMemo(
     () => (theme === "dark" ? darkTheme : lightTheme),
     [theme]
   )
 
+  useEffect(() => {
+    if (localTheme === "unset") {
+      const prefersLightTheme = window.matchMedia(
+        "(prefers-color-scheme: light)"
+      )
+
+      setTheme(prefersLightTheme.matches ? "light" : "dark")
+
+      prefersLightTheme.onchange = ({ matches }) =>
+        setTheme(matches ? "light" : "dark")
+
+      return () => {
+        prefersLightTheme.onchange = null
+      }
+    }
+  }, [])
+
   const contextValue = useMemo(
     () => ({
       theme,
-      setTheme,
+
       toggleTheme: () => {
-        setTheme(theme === "light" ? "dark" : "light")
+        const newTheme = theme === "light" ? "dark" : "light"
+        setTheme(newTheme)
+        setLocalTheme(newTheme)
       },
     }),
     [theme, setTheme]
