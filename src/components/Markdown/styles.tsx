@@ -39,6 +39,7 @@ export const MarkdownWrapper = styled.div`
   h6 {
     font-family: ${fontFamily.header};
     letter-spacing: -1.75px;
+    overflow-wrap: break-word;
     margin-top: ${BASE_LINE_HEIGHT * 2}px;
     margin-bottom: ${BASE_LINE_HEIGHT}px;
   }
@@ -112,6 +113,7 @@ export const MarkdownWrapper = styled.div`
     letter-spacing: 0.25px;
     color: #ebedee;
     font-family: "IBM Plex Mono", monospace;
+    
   }
 
   :not(pre) > code[class*="language-"],
@@ -124,7 +126,10 @@ export const MarkdownWrapper = styled.div`
   pre > code[class*="language-"] {
     padding: 0;
   }
-
+  pre{
+    overflow-x: auto;
+    min-height:28px; /* to fix line-height causing Y overflow */
+  }
   img {
     max-width: 100%;
   }
@@ -176,7 +181,7 @@ export const MarkdownWrapper = styled.div`
     background-position: 0 100%;
     transition: all 0.125s ease-in;
     font-weight: 700;
-
+    word-break: break-all;
     &:hover {
       color: black;
       background-size: 100% 100%;
