@@ -3610,7 +3610,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^4.29.3":
+"@typescript-eslint/eslint-plugin@npm:^4.29.3, @typescript-eslint/eslint-plugin@npm:^4.32.0":
   version: 4.32.0
   resolution: "@typescript-eslint/eslint-plugin@npm:4.32.0"
   dependencies:
@@ -3648,7 +3648,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^4.29.3":
+"@typescript-eslint/parser@npm:^4.29.3, @typescript-eslint/parser@npm:^4.32.0":
   version: 4.32.0
   resolution: "@typescript-eslint/parser@npm:4.32.0"
   dependencies:
@@ -18669,7 +18669,9 @@ resolve@^2.0.0-next.3:
     "@types/react-scrollspy": ^3.3.3
     "@types/styled-components": ^5.1.9
     "@types/uuid": ^8.3.0
+    "@typescript-eslint/eslint-plugin": ^4.32.0
     "@typescript-eslint/eslint-plugin-tslint": ^4.26.0
+    "@typescript-eslint/parser": ^4.32.0
     babel-plugin-polished: ^1.1.0
     babel-plugin-styled-components: ^1.13.2
     classnames: ^2.3.1
