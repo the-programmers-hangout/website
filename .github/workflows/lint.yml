@@ -14,10 +14,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: "14.x"
 
       - name: Install dependencies
-        run: npm ci
+        run: yarn install
 
-      - name: Run "npm run lint"
-        run: npm run lint
+      - name: Run "yarn run lint"
+        run: yarn run lint
