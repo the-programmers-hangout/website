@@ -1,8 +1,10 @@
-import React, { createContext, FC, useEffect, useMemo, useState } from "react"
+import React, { createContext, FC, useMemo } from "react"
 import { ThemeProvider as BaseThemeProvider } from "styled-components"
 
 import { darkTheme, lightTheme } from "./design/themes"
+import { useIsBrowser } from "./hooks/useIsBrowser"
 import { useLocalStorage } from "./hooks/useLocalStorage"
+import { useMedia } from "./hooks/useMedia"
 
 type ThemeType = "dark" | "light"
 
@@ -17,20 +19,20 @@ interface IScopedDownChildren {
 
 export const ThemeContext = createContext<IThemeContext | null>(null)
 
-const ThemeProvider: FC<IScopedDownChildren> = ({ children }) => {
-  // User's explicitly set theme
-  const [localTheme, setLocalTheme] = useLocalStorage<ThemeType | "unset">(
-    "theme",
-    "unset"
+function useTheme() {
+  const preferredTheme = useMedia<ThemeType>(
+    ["(prefers-color-scheme: light)", "(prefers-color-scheme: dark)"],
+    ["light", "dark"],
+    "dark"
   )
 
-  // App's current theme
-  const [theme, setTheme] = useState<ThemeType>(
-    typeof document !== "undefined"
-      ? (document.documentElement.style.getPropertyValue(
-          "--initial-theme"
-        ) as ThemeType)
-      : "dark"
+  const [userSelectedTheme, setUserSelectedTheme] = useLocalStorage<
+    ThemeType | "unset"
+  >("user-selected-theme", "unset")
+
+  const theme = useMemo(
+    () => (userSelectedTheme !== "unset" ? userSelectedTheme : preferredTheme),
+    [preferredTheme, userSelectedTheme]
   )
 
   const themeObject = useMemo(
@@ -38,37 +40,30 @@ const ThemeProvider: FC<IScopedDownChildren> = ({ children }) => {
     [theme]
   )
 
-  useEffect(() => {
-    if (localTheme === "unset") {
-      const prefersLightTheme = window.matchMedia(
-        "(prefers-color-scheme: light)"
-      )
+  return {
+    theme,
+    themeObject,
+    setTheme: setUserSelectedTheme,
+  }
+}
 
-      prefersLightTheme.onchange = ({ matches }) =>
-        setTheme(matches ? "light" : "dark")
-
-      return () => {
-        prefersLightTheme.onchange = null
-      }
-    }
-  }, [localTheme])
+const ThemeProvider: FC<IScopedDownChildren> = ({ children }) => {
+  const isBrowser = useIsBrowser()
+  const { theme, themeObject, setTheme } = useTheme()
 
   const contextValue = useMemo(
     () => ({
       theme,
-
-      toggleTheme: () => {
-        const newTheme = theme === "light" ? "dark" : "light"
-        setTheme(newTheme)
-        setLocalTheme(newTheme)
-      },
+      toggleTheme: () => setTheme(theme === "light" ? "dark" : "light"),
     }),
-    [theme, setTheme, setLocalTheme]
+    [theme, setTheme]
   )
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      <BaseThemeProvider theme={themeObject}>{children}</BaseThemeProvider>
+      <BaseThemeProvider theme={themeObject}>
+        {isBrowser ? children : undefined}
+      </BaseThemeProvider>
     </ThemeContext.Provider>
   )
 }
