@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useDebounce, useWindowScroll, useWindowSize } from "react-use"
+import { useDebounce, useWindowScroll } from "react-use"
 import cx from "classnames"
 
 import * as SC from "./styles"
@@ -66,7 +66,6 @@ const StickyContainer: React.FC = ({ children, ...restProps }) => {
 export const HeaderBarebone = (props: IHeaderBareboneProps) => {
   const { y } = useWindowScroll()
   const [scrollY, setScrollY] = useState(0)
-  const {height} = useWindowSize()
 
   const [, cancel] = useDebounce(
     () => {
@@ -109,7 +108,7 @@ export const HeaderBarebone = (props: IHeaderBareboneProps) => {
           {!isBoxed && <SC.SingleTitle>{props.title}</SC.SingleTitle>}
         </Container>
       </SC.HeaderWrapper>
-      {scrollY >= 270 && height >= 768 && stickyHeader}
+      {scrollY >= 270 && stickyHeader}
     </>
   )
 }
