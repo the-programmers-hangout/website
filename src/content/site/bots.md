@@ -24,6 +24,7 @@ Judgebot has a 50-point system. Each infraction gives you points, and points dec
 ### Commands
 
 `j!selfhistory` - Will DM your infraction history.
+
 `:stop_sign:` - Reacting to a message with this emote will alert staff to it. Use it if you see any potentially rule breaking content.
 
 
@@ -261,11 +262,13 @@ Below are the bots you will see in the server but you will not need to interact 
 **Source:** https://github.com/JakeJMattson/EmbedBot
 
 
+
 ## Emourge
 
 **Description:** Emourge tracks emote usage. We use this to help us identify the least used emotes incase we want to add some new ones!
 
 **Source:** https://github.com/dfireBird/emourge-mongo
+
 
 
 ## Hawk
@@ -283,11 +286,21 @@ Below are the bots you will see in the server but you will not need to interact 
 **Source:** https://github.com/the-programmers-hangout/Nano
 
 
+
+## RaffleBot
+
+**Description:** RaffleBot is a discord bot built originally for The Programmer's Hangout that focuses on managing giveaways. 
+
+**Source:** https://github.com/Abzylicious/RaffleBot
+
+
+
 ## Skadi
 
 **Description:** Skadi manages activity roles on the server.
 
 **Source:** This source isn't publicly available. We don't want people trying to game the system.
+
 
 
 ## Slothbot
