@@ -24,6 +24,7 @@ Judgebot has a 50-point system. Each infraction gives you points, and points dec
 ### Commands
 
 `j!selfhistory` - Will DM your infraction history.
+
 `:stop_sign:` - Reacting to a message with this emote will alert staff to it. Use it if you see any potentially rule breaking content.
 
 

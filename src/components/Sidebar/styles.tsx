@@ -14,7 +14,7 @@ export const SidebarWrapper = styled.div`
   bottom: 0;
   width: 320px;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     z-index: 100;
     width: calc(100vw - 100px);
     transition: transform 0.2s ease-in-out;
