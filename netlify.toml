@@ -1,0 +1,2 @@
+[build]
+  command = "yarn run fetch-users && yarn run build"
