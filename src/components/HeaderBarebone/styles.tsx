@@ -68,13 +68,6 @@ export const HeaderWrapperSticky = styled.div`
     width: 100% !important;
     padding-right: 0 !important;
   }
-
-  @media screen and (max-width: 767px) {
-    display: flex;
-    align-items: flex-end;
-    height: auto;
-    min-height: ${height}px;
-  }
 `
 
 export const Background = styled.div`
