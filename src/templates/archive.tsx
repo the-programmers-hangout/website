@@ -8,8 +8,8 @@ import { PageContent } from "../components/PageContent"
 
 // @todo maybe find alternative type for data
 const Archive: FC<any> = ({ data }) => {
-  const { relativePath, ctime } = data.file
-  const { body, excerpt, fields, timeToRead } = data.file.post
+  const { relativePath } = data.file
+  const { body, excerpt, fields, timeToRead, frontmatter } = data.file.post
 
   const title = humanize(relativePath)
 
@@ -21,7 +21,7 @@ const Archive: FC<any> = ({ data }) => {
         basePath="/archives"
         title={title}
         authors={fields.authors}
-        createdAt={ctime}
+        createdAt={frontmatter.created_at}
         timeToRead={timeToRead}
         shifted={false}
       />
@@ -36,7 +36,6 @@ export const query = graphql`
   query Archive($file: String!) {
     file(relativePath: { eq: $file }) {
       relativePath
-      ctime
       post: childMdx {
         body
         excerpt
@@ -46,6 +45,9 @@ export const query = graphql`
             hash
             avatar
           }
+        }
+        frontmatter {
+          created_at
         }
         timeToRead
       }
