@@ -2,7 +2,7 @@
 authors:
   - "Stone_Red#2890"
 created_at: 2021/08/07
-title: C#
+title: Access Modifiers
 external_resources:
   - text: Access Modifiers
     href: "https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers"
