@@ -1,9 +1,13 @@
 /* globals window */
 import { useEffect, useState } from "react"
 
-export const useLocalStorage = (name: string, initialValue: string) => {
+export const useLocalStorage = <Value extends unknown = unknown>(
+  name: string,
+  initialValue: Value
+) => {
   const windowGlobal = typeof window !== "undefined" && window
-  const [value, setValue] = useState(() => {
+
+  const [value, setValue] = useState<Value>(() => {
     if (windowGlobal) {
       const currentValue = windowGlobal.localStorage.getItem(name)
       return currentValue ? JSON.parse(currentValue) : initialValue
@@ -17,5 +21,5 @@ export const useLocalStorage = (name: string, initialValue: string) => {
     }
   }, [name, value, windowGlobal])
 
-  return [value, setValue]
+  return [value, setValue] as const
 }
