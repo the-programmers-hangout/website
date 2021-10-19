@@ -68,7 +68,7 @@ Remember that googling is a skill; you're asking the internet "what is this thin
 **Any relevant code**
 ‎
 
-4. If you're going to provide code, try to provide the minimum amount of code possible that still demonstrates the broken behaviour. Use a service like https://hasteb.in/ to paste your code and then link it here. Pasting a big blob of code with no formatting will make people not want to help you. Make yourself easy to help!
+4. If you're going to provide code, try to provide the minimum amount of code possible that still demonstrates the broken behaviour. Use a service like https://hastebin.com or https://pastecord.com to paste your code and then link it here. Pasting a big blob of code with no formatting will make people not want to help you. Make yourself easy to help!
    ‎
 5. Take breaks! Don't bang your head against something for 10 hours without a break.
    ‎
