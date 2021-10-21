@@ -8,7 +8,9 @@ const { Readable } = require("stream")
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function execute() {
-  const client = new Discord.Client()
+  const client = new Discord.Client({
+    intents: [Discord.Intents.FLAGS.GUILD_MEMBERS],
+  })
 
   const { BOT_TOKEN } = process.env
   const TPH = "244230771232079873"
@@ -44,10 +46,8 @@ function execute() {
   client.login(BOT_TOKEN)
 }
 
-// TODO: restore me once intents are implemented
 if (process.env.BOT_TOKEN) {
-  console.log("skipped until intents are implemented")
-  // execute()
+  execute()
 } else {
   console.log("BOT_TOKEN missing, skipping.")
 }
