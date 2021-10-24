@@ -7,7 +7,7 @@ const fs = require("fs")
 const requiredArticleFrontmatter = ["authors", "date"]
 
 const LAYOUT_RESOURCES = "resources"
-const LAYOUT_ARCHIVES = "archives"
+const LAYOUT_ARCHIVES = "spotlights"
 const LAYOUT_REGULAR = "regular"
 const LAYOUT_HOME = "home"
 
@@ -20,7 +20,7 @@ function resolveLayout(path) {
     return LAYOUT_RESOURCES
   }
 
-  if (path.match(/archives/)) {
+  if (path.match(/spotlights/)) {
     return LAYOUT_ARCHIVES
   }
 
@@ -133,7 +133,7 @@ const createArchives = async ({ createPage, graphql }) => {
 
   const result = await graphql(`
     query FetchArchives {
-      allFile(filter: { sourceInstanceName: { eq: "what-is-archive" } }) {
+      allFile(filter: { sourceInstanceName: { eq: "spotlights" } }) {
         edges {
           node {
             relativePath
@@ -150,7 +150,7 @@ const createArchives = async ({ createPage, graphql }) => {
 
   return result.data.allFile.edges.forEach(({ node }) => {
     createPage({
-      path: path.posix.join("archives", node.relativePath),
+      path: path.posix.join("spotlights", node.relativePath),
       component: archive,
       context: {
         file: node.relativePath,
@@ -163,7 +163,7 @@ const createArchives = async ({ createPage, graphql }) => {
 exports.onCreateNode = async ({ node, getNode, actions }) => {
   const { createPage, createNodeField } = actions
   // TODO: find a better way to avoid handling non-resources
-  // or better, attach authors to what-is archives
+  // or better, attach authors to spotlights
   if (node.internal.type === "Mdx" && node.frontmatter.authors) {
     const { frontmatter } = node
     const isDoc = Boolean(!frontmatter.path)
@@ -197,9 +197,9 @@ exports.onCreatePage = async ({ page, actions }) => {
     const oldPage = { ...page }
     page.matchPath = `/resources/*`
     deletePage(oldPage)
-  } else if (page.path.match(/^\/archives\/404/)) {
+  } else if (page.path.match(/^\/spotlights\/404/)) {
     const oldPage = { ...page }
-    page.matchPath = `/archives/*`
+    page.matchPath = `/spotlights/*`
     deletePage(oldPage)
   }
 

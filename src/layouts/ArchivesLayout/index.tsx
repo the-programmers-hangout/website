@@ -6,7 +6,7 @@ import { ColumnLayout } from "../ColumnLayout"
 export const ArchivesLayout: FC = ({ children }) => {
   return (
     <ColumnLayout
-      title="Archives"
+      title="Spotlights"
       sidebar={ArchivesSidebar}
       content={children}
     />

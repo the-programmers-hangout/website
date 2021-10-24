@@ -18,7 +18,7 @@ const Archive: FC<any> = ({ data }) => {
       <SEO title={title} description={excerpt} />
       <Header
         relativePath={relativePath}
-        basePath="/archives"
+        basePath="/spotlights"
         title={title}
         authors={fields.authors}
         createdAt={frontmatter.created_at}

@@ -21,7 +21,7 @@ const BaseLayout: FC<IBaseLayout> = (props) => {
     switch (props.pageContext.layout) {
       case "resources":
         return ResourcesLayout
-      case "archives":
+      case "spotlights":
         return ArchivesLayout
       case "regular":
         return PageLayout
