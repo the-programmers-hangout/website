@@ -5,7 +5,7 @@ import { Link } from "../../components/Link"
 import { PageContent } from "../../components/PageContent"
 import { SEO } from "../../components/SEO"
 
-function ArchivesPage() {
+function SpotlightsPage() {
   return (
     <Fragment>
       <SEO title="Tech Spotlights" />
@@ -25,4 +25,4 @@ function ArchivesPage() {
   )
 }
 
-export default ArchivesPage
+export default SpotlightsPage

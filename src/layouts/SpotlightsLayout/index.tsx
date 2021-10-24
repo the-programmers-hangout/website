@@ -1,13 +1,13 @@
 import React, { FC } from "react"
 
-import { ArchivesSidebar } from "../../components/ArchivesSidebar"
+import { SpotlightsSidebar } from "../../components/SpotlightsSidebar"
 import { ColumnLayout } from "../ColumnLayout"
 
-export const ArchivesLayout: FC = ({ children }) => {
+export const SpotlightsLayout: FC = ({ children }) => {
   return (
     <ColumnLayout
       title="Spotlights"
-      sidebar={ArchivesSidebar}
+      sidebar={SpotlightsSidebar}
       content={children}
     />
   )

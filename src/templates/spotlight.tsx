@@ -7,7 +7,7 @@ import { humanize } from "../utils"
 import { PageContent } from "../components/PageContent"
 
 // @todo maybe find alternative type for data
-const Archive: FC<any> = ({ data }) => {
+const Spotlight: FC<any> = ({ data }) => {
   const { relativePath } = data.file
   const { body, excerpt, fields, timeToRead, frontmatter } = data.file.post
 
@@ -30,10 +30,10 @@ const Archive: FC<any> = ({ data }) => {
   )
 }
 
-export default Archive
+export default Spotlight
 
 export const query = graphql`
-  query Archive($file: String!) {
+  query Spotlight($file: String!) {
     file(relativePath: { eq: $file }) {
       relativePath
       post: childMdx {

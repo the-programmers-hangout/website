@@ -7,7 +7,7 @@ const fs = require("fs")
 const requiredArticleFrontmatter = ["authors", "date"]
 
 const LAYOUT_RESOURCES = "resources"
-const LAYOUT_ARCHIVES = "spotlights"
+const LAYOUT_SPOTLIGHTS = "spotlights"
 const LAYOUT_REGULAR = "regular"
 const LAYOUT_HOME = "home"
 
@@ -21,7 +21,7 @@ function resolveLayout(path) {
   }
 
   if (path.match(/spotlights/)) {
-    return LAYOUT_ARCHIVES
+    return LAYOUT_SPOTLIGHTS
   }
 
   return LAYOUT_REGULAR
@@ -128,11 +128,11 @@ const createResources = async ({ createPage, graphql }) => {
   }
 }
 
-const createArchives = async ({ createPage, graphql }) => {
-  const archive = path.resolve(`src/templates/archive.tsx`)
+const createSpotlights = async ({ createPage, graphql }) => {
+  const spotlights = path.resolve(`src/templates/spotlight.tsx`)
 
   const result = await graphql(`
-    query FetchArchives {
+    query FetchSpotlights {
       allFile(filter: { sourceInstanceName: { eq: "spotlights" } }) {
         edges {
           node {
@@ -151,10 +151,10 @@ const createArchives = async ({ createPage, graphql }) => {
   return result.data.allFile.edges.forEach(({ node }) => {
     createPage({
       path: path.posix.join("spotlights", node.relativePath),
-      component: archive,
+      component: spotlights,
       context: {
         file: node.relativePath,
-        layout: LAYOUT_ARCHIVES,
+        layout: LAYOUT_SPOTLIGHTS,
       },
     })
   })
@@ -211,7 +211,7 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
   return Promise.all([
-    createArchives({ createPage, graphql }),
+    createSpotlights({ createPage, graphql }),
     createResources({ createPage, graphql }),
   ])
 }

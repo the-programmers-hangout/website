@@ -32,7 +32,7 @@ export interface IFileResourceQuery {
   }
 }
 
-export interface IFileArchiveQuery {
+export interface IFileSpotlightQuery {
   node: {
     relativePath: string
   }
@@ -50,9 +50,9 @@ export interface IAllResourcesQuery extends IAllFilesQuery {
   }
 }
 
-export interface IAllArchivesQuery extends IAllFilesQuery {
+export interface IAllSpotlightsQuery extends IAllFilesQuery {
   allFile: {
-    edges: IFileArchiveQuery[]
+    edges: IFileSpotlightQuery[]
   }
 }
 

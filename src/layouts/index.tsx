@@ -1,7 +1,7 @@
 import { WindowLocation } from "@reach/router"
 import React, { FC, useMemo } from "react"
 import { LocationProvider } from "../LocationProvider"
-import { ArchivesLayout } from "./ArchivesLayout"
+import { SpotlightsLayout } from "./SpotlightsLayout"
 import { HomeLayout } from "./HomeLayout"
 import { PageLayout } from "./PageLayout"
 import { ResourcesLayout } from "./ResourcesLayout"
@@ -22,7 +22,7 @@ const BaseLayout: FC<IBaseLayout> = (props) => {
       case "resources":
         return ResourcesLayout
       case "spotlights":
-        return ArchivesLayout
+        return SpotlightsLayout
       case "regular":
         return PageLayout
       default:
