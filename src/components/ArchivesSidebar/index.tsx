@@ -11,7 +11,7 @@ import * as SC from "./styles"
 
 const ALL_ARCHIVES = graphql`
   query {
-    archives: allFile(
+    spotlights: allFile(
       filter: { sourceInstanceName: { eq: "spotlights" } }
     ) {
       edges {

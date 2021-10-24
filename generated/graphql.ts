@@ -2973,7 +2973,7 @@ export type Unnamed_1_QueryVariables = {};
 
 export type Unnamed_1_Query = (
   { __typename?: 'Query' }
-  & { archives: (
+  & { spotlights: (
     { __typename?: 'FileConnection' }
     & { edges: Array<(
       { __typename?: 'FileEdge' }
