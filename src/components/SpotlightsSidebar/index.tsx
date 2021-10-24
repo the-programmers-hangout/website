@@ -9,10 +9,10 @@ import { humanize } from "../../utils"
 import { Sidebar } from "../Sidebar"
 import * as SC from "./styles"
 
-const ALL_ARCHIVES = graphql`
+const ALL_SPOTLIGHTS = graphql`
   query {
-    archives: allFile(
-      filter: { sourceInstanceName: { eq: "what-is-archive" } }
+    spotlights: allFile(
+      filter: { sourceInstanceName: { eq: "spotlights" } }
     ) {
       edges {
         node {
@@ -42,9 +42,9 @@ function Tree({ item }: { item: IFileOrFolder }) {
   )
 }
 
-export const ArchivesSidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
-  const { archives } = useStaticQuery(ALL_ARCHIVES)
-  const tree = useBuildTree(archives, "/archives")
+export const SpotlightsSidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
+  const { spotlights } = useStaticQuery(ALL_SPOTLIGHTS)
+  const tree = useBuildTree(spotlights, "/spotlights")
   const sortedTree = sort((a, b) => a.title.localeCompare(b.title), tree)
 
   return (

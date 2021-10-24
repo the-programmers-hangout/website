@@ -14,12 +14,12 @@ const FourZeroFourPage: React.FC<{ data: { allFile: FileConnection } }> = ({
   data,
 }: ComponentQuery<{ allFile: FileConnection }>) => (
   <Fragment>
-    <SEO title="404: Archive Not found" />
-    <FourZeroFour title="ARCHIVE NOT FOUND">
+    <SEO title="404: Spotlight Not found" />
+    <FourZeroFour title="SPOTLIGHT NOT FOUND">
       <Location>
         {({ location }) => (
           <FourZeroFourHint
-            basepath="archives/"
+            basepath="spotlights/"
             location={location}
             data={data}
           />
@@ -33,7 +33,7 @@ export default FourZeroFourPage
 
 export const query = graphql`
   query {
-    allFile(filter: { sourceInstanceName: { eq: "what-is-archive" } }) {
+    allFile(filter: { sourceInstanceName: { eq: "spotlights" } }) {
       edges {
         node {
           relativePath

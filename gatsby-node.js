@@ -7,7 +7,7 @@ const fs = require("fs")
 const requiredArticleFrontmatter = ["authors", "date"]
 
 const LAYOUT_RESOURCES = "resources"
-const LAYOUT_ARCHIVES = "archives"
+const LAYOUT_SPOTLIGHTS = "spotlights"
 const LAYOUT_REGULAR = "regular"
 const LAYOUT_HOME = "home"
 
@@ -20,8 +20,8 @@ function resolveLayout(path) {
     return LAYOUT_RESOURCES
   }
 
-  if (path.match(/archives/)) {
-    return LAYOUT_ARCHIVES
+  if (path.match(/spotlights/)) {
+    return LAYOUT_SPOTLIGHTS
   }
 
   return LAYOUT_REGULAR
@@ -128,12 +128,12 @@ const createResources = async ({ createPage, graphql }) => {
   }
 }
 
-const createArchives = async ({ createPage, graphql }) => {
-  const archive = path.resolve(`src/templates/archive.tsx`)
+const createSpotlights = async ({ createPage, graphql }) => {
+  const spotlights = path.resolve(`src/templates/spotlight.tsx`)
 
   const result = await graphql(`
-    query FetchArchives {
-      allFile(filter: { sourceInstanceName: { eq: "what-is-archive" } }) {
+    query FetchSpotlights {
+      allFile(filter: { sourceInstanceName: { eq: "spotlights" } }) {
         edges {
           node {
             relativePath
@@ -150,11 +150,11 @@ const createArchives = async ({ createPage, graphql }) => {
 
   return result.data.allFile.edges.forEach(({ node }) => {
     createPage({
-      path: path.posix.join("archives", node.relativePath),
-      component: archive,
+      path: path.posix.join("spotlights", node.relativePath),
+      component: spotlights,
       context: {
         file: node.relativePath,
-        layout: LAYOUT_ARCHIVES,
+        layout: LAYOUT_SPOTLIGHTS,
       },
     })
   })
@@ -163,7 +163,7 @@ const createArchives = async ({ createPage, graphql }) => {
 exports.onCreateNode = async ({ node, getNode, actions }) => {
   const { createPage, createNodeField } = actions
   // TODO: find a better way to avoid handling non-resources
-  // or better, attach authors to what-is archives
+  // or better, attach authors to spotlights
   if (node.internal.type === "Mdx" && node.frontmatter.authors) {
     const { frontmatter } = node
     const isDoc = Boolean(!frontmatter.path)
@@ -197,9 +197,9 @@ exports.onCreatePage = async ({ page, actions }) => {
     const oldPage = { ...page }
     page.matchPath = `/resources/*`
     deletePage(oldPage)
-  } else if (page.path.match(/^\/archives\/404/)) {
+  } else if (page.path.match(/^\/spotlights\/404/)) {
     const oldPage = { ...page }
-    page.matchPath = `/archives/*`
+    page.matchPath = `/spotlights/*`
     deletePage(oldPage)
   }
 
@@ -211,7 +211,7 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
   return Promise.all([
-    createArchives({ createPage, graphql }),
+    createSpotlights({ createPage, graphql }),
     createResources({ createPage, graphql }),
   ])
 }

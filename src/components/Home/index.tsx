@@ -78,7 +78,7 @@ export const Home: FC = () => {
           <MenuItem to="/faq">faq</MenuItem>
           <MenuItem to="/bots">bots</MenuItem>
           <MenuItem to="/resources">resources</MenuItem>
-          <MenuItem to="/archives">tech spotlights</MenuItem>
+          <MenuItem to="/spotlights">tech spotlights</MenuItem>
         </SC.Menu>
         <DiscordButton>join us</DiscordButton>
         <HomePartner />

@@ -68,8 +68,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `what-is-archive`,
-        path: `${__dirname}/src/content/archives`,
+        name: `spotlights`,
+        path: `${__dirname}/src/content/spotlights`,
       },
     },
     `gatsby-transformer-sharp`,
