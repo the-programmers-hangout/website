@@ -113,7 +113,6 @@ export const MarkdownWrapper = styled.div`
     letter-spacing: 0.25px;
     color: #ebedee;
     font-family: "IBM Plex Mono", monospace;
-    
   }
 
   :not(pre) > code[class*="language-"],
@@ -126,9 +125,9 @@ export const MarkdownWrapper = styled.div`
   pre > code[class*="language-"] {
     padding: 0;
   }
-  pre{
+  pre {
     overflow-x: auto;
-    min-height:28px; /* to fix line-height causing Y overflow */
+    min-height: 28px; /* to fix line-height causing Y overflow */
   }
   img {
     max-width: 100%;

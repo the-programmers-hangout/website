@@ -5,7 +5,8 @@ created_at: "2019/12/04"
 title: What is Svelte?
 ---
 
-## What is Svelte? 
+## What is Svelte?
+
 Svelte is a front-end technology similar in use to React, Vue, Angular, and the like. However, instead of loading a framework on the client-side, Svelte wires everything up during the build step, meaning it doesn't have to interpret any additional information at runtime. However, it's still in its relative infancy.
 
 ## When should you use Svelte?
@@ -20,6 +21,7 @@ Svelte is a front-end technology similar in use to React, Vue, Angular, and the 
 - If you don't need interactivity/data binding.
 
 ## Examples
+
 ### Styling a component
 
 ```html
@@ -119,9 +121,7 @@ https://svelte.dev/examples#classes
 </label>
 
 {#if visible}
-<p in:fly="{{ y: 200, duration: 2000 }}" out:fade>
-  Flies in, fades out
-</p>
+<p in:fly="{{ y: 200, duration: 2000 }}" out:fade>Flies in, fades out</p>
 {/if}
 ```
 

@@ -18,7 +18,7 @@ export const SidebarWrapper = styled.div`
     z-index: 100;
     width: calc(100vw - 100px);
     transition: transform 0.2s ease-in-out;
-    transform: translateX(-100vw)
+    transform: translateX(-100vw);
   }
 
   &.is-open {
@@ -35,7 +35,7 @@ export const Header = styled(Link)`
   height: 74px; /* previously logo chose the height of the header */
   @media screen and (max-width: 767px) {
     /* match mobile header height  */
-    height:calc(35px + 32px);
+    height: calc(35px + 32px);
   }
   &:hover > * {
     opacity: 0.85;
@@ -49,7 +49,6 @@ export const Logo = styled.div`
   background: #0b0f13;
   height: 100%; /* match height of the header*/
   flex: 0 0 74px;
-
 `
 
 export const StyledLogo = styled(TPHLogo)`

@@ -9,15 +9,13 @@ title: What is Ansible?
 
 Ansible is an open-source software provisioning, configuration management, and application deployment tool enabling Infrastructure as code. It handles configuration management, application deployment, cloud provisioning, ad-hoc task execution, network automation, and multi-node orchestration.
 
-
 ## What are the advantages of Ansible over other configuration management tools such as Chef or cfengine?
 
 A big problem with other configuration management systems was that they relied on an agent to manage their systems, this creates a new problem of "managing the management" because the agents must be bootstrapped and kept updated which adds complexity. Ansible however is agentless. Ansible takes advantage of existing remote management systems like ssh and winrm to do it’s execution and not require managing another agent. While incoming ssh and winrm are never enabled by default in these operating systems, ansible is also a provisioning tool, which means it can provision systems with those two enabled. Rules can be set to ensure restarting these daemons if they crash, or restoring the state of the system in case ansible can’t reach them, further reducing the need of human intervention.
 
-Another important advantage of ansible over chef is the “source of truth”. Ansible uses "playbooks" which are the set of instructions to be performed, that act as the source of truth. These playbooks can be stored in git and allow ansible to fetch them directly from the git server as required providing all the advantages of Infrastructure as Code.  With other configuration management tools such as Chef, you have to upload the “cookbooks” to one of the Chef Servers, and there is no straightforward way of making sure they stay consistent.
+Another important advantage of ansible over chef is the “source of truth”. Ansible uses "playbooks" which are the set of instructions to be performed, that act as the source of truth. These playbooks can be stored in git and allow ansible to fetch them directly from the git server as required providing all the advantages of Infrastructure as Code. With other configuration management tools such as Chef, you have to upload the “cookbooks” to one of the Chef Servers, and there is no straightforward way of making sure they stay consistent.
 
 Another big advantage Ansible has over other Configuration Management systems is the ability to use dynamic inventory. With Chef, for example, you have to manually configure what system is being managed by Chef. With Ansible, you can poll data from an external source. This external source can be a system managed by Ansible itself, with ansible itself providing the data for when a new system is provisioned in the private or public cloud, making ansible self-reliant.
-
 
 ## Why use Ansible when I can just use bash & perl?
 
@@ -33,22 +31,24 @@ Ansible provides five major advantages to using bash & perl.
 
 **5.** Ansible comes with the ultimate oh shit button. Paid support.
 
-
 ## How do I get ansible?
 
 You can get Ansible as a control node on most major platforms except Windows. Windows can be managed by Ansible, but it cannot be a control node.
 
-On Fedora: 
+On Fedora:
+
 ```sh
 $ sudo dnf install ansible
 ```
 
 On RHEL/CentOS:
+
 ```sh
 $ sudo yum install ansible
 ```
 
 On Ubuntu:
+
 ```sh
 $ sudo apt update
 $ sudo apt install software-properties-common
@@ -57,11 +57,13 @@ $ sudo apt install ansible
 ```
 
 On Gentoo:
+
 ```sh
 $ merge -av app-admin/ansible
 ```
 
 On FreeBSD:
+
 ```sh
 $ sudo pkg install py36-ansible
 ```
@@ -71,12 +73,15 @@ Instructions to install on other targets can be found on https://docs.ansible.co
 ## How do I use ansible?
 
 Running an ansible playbook is simple.
+
 ```sh
 $ ansible -i inventory playbook.yml
 ```
+
 `-i` is to give the inventory, or the hosts where this playbook would run. This file contains the hostname/ip of the machine.
 
 An example inventory file:
+
 ```yml
 [all:vars]
 ansible_user=tph_admin
@@ -118,13 +123,14 @@ Inventory = /path/to/inventory
 ```
 
 This simplifies your commands a little. Now you can do things such as:
+
 ```sh
 $ ansible web --list-hosts
 $ ansible web, ansible --lists-hosts
 $ ansible ‘node*’ --list-hosts
 $ ansible all --list-hosts
 ```
- 
+
 If you don’t set the inventory variable in .ansible.cfg file you can still do the same but you need to prepend the inventory.
 
 ```sh
@@ -145,13 +151,14 @@ Remember, you don’t have to run a command over a group. You can also run it ov
 $ ansible node1 -m ping
 ```
 
-Ping is a module that comes built into ansible. We specify it will be a module using `-m`. It has built in error handling. All major unix commands are built into ansible as modules. You can find a list of all ansible modules using `$ ansible-doc -l`. Use grep to pinpoint modules. 
+Ping is a module that comes built into ansible. We specify it will be a module using `-m`. It has built in error handling. All major unix commands are built into ansible as modules. You can find a list of all ansible modules using `$ ansible-doc -l`. Use grep to pinpoint modules.
 
 Sometimes modules might not exist for your command. Maybe you are using a custom thing. In that case you can run ad-hoc commands over ansible.
 
 ```sh
 $ ansible node1 -m command -a “ping”
 ```
+
 In this case command is a module and `-a` is followed by the command that will be run.
 
 ## Examples of Ansible Playbooks
@@ -167,17 +174,17 @@ A playbook to install cockpit on your CentOS web server.
   become: yes # become a superuser
   tasks:
   -   name: Cockpit is installed and is updated
-    yum : 
+    yum :
       name: cockpit # name of package
       state: latest # make sure it’s updated if it’s not the latest release
    -   name: Cockpit enabled and running
-     service: 
+     service:
        name: cockpit
        enabled: true
        state: started
 ```
 
-YAML is a pain to write and syntax errors can occur. However, ansible comes with a tool to ensure there’s no syntax error. Check your playbook with: 
+YAML is a pain to write and syntax errors can occur. However, ansible comes with a tool to ensure there’s no syntax error. Check your playbook with:
 
 ```sh
 $ ansible-playbook --syntax-check playbook.yml
@@ -186,6 +193,7 @@ $ ansible-playbook --syntax-check playbook.yml
 In fact, that playbook is incorrect. Run that command to see where it’s incorrect!
 
 Then you can run it using:
+
 ```sh
 $ ansible-playbook playbook.yml
 ```
@@ -201,18 +209,18 @@ A playbook to ensure certain users are present in a node.
   hosts: web
   become: true
 
-  tasks: 
-   - name: Ensure three users are present
-     user:
-       name: “{{ whatver_name_you_want_this_to_be }}”
-       state: present
-       loop: 
-         dev_user
-         qa_user
-         prod_user
+  tasks:
+    - name: Ensure three users are present
+      user:
+        name: “{{ whatver_name_you_want_this_to_be }}”
+        state: present
+        loop: dev_user
+          qa_user
+          prod_user
 ```
 
 Create a VM on vsphere ESXi from a template.
+
 ```yml
 ---
 - name: Create a VM from a template
@@ -220,27 +228,26 @@ Create a VM on vsphere ESXi from a template.
   connection: local
   gather_facts: no
   tasks:
-  - name: Clone the template
-    vmware_guest:
-      hostname: 192.0.2.44
-      username: administrator@vsphere.local
-      password: vmware
-      validate_certs: False
-      name: testvm_2
-      template: template_el7
-      datacenter: DC1
-      folder: /DC1/vm
-      state: poweredon
-      wait_for_ip_address: yes
+    - name: Clone the template
+      vmware_guest:
+        hostname: 192.0.2.44
+        username: administrator@vsphere.local
+        password: vmware
+        validate_certs: False
+        name: testvm_2
+        template: template_el7
+        datacenter: DC1
+        folder: /DC1/vm
+        state: poweredon
+        wait_for_ip_address: yes
 ```
 
-
 These are very simple playbooks. However you can go beyond and do wonders. At my workplace we have a playbook that checks the make of storage nodes we sell, then determines what version of esxi we support on it, and starts the work to set up initial storage volume pools. It then starts migrating data from customer’s old pools to our own pools. If for some reason it fails, and it is not the customer’s fault (invalid input for example), it writes an email with all the logs and sends it to the customer’s representative in our company, who upon getting the email, calls the customer and starts troubleshooting things with them.
-We also have a playbook that we use for provisioning virtual storage clusters on KVM, ESXi, Xen and HyperV, runs stress tests against them to ensure the software is working properly, and then goes ahead to use PXE Boot on 15 racks of physical hardware located all over the country to install the new software, including two racks stored in high temperature and low temperature conditions and run the same set of stress tests to ensure it works on Physical hardware as well. 
+We also have a playbook that we use for provisioning virtual storage clusters on KVM, ESXi, Xen and HyperV, runs stress tests against them to ensure the software is working properly, and then goes ahead to use PXE Boot on 15 racks of physical hardware located all over the country to install the new software, including two racks stored in high temperature and low temperature conditions and run the same set of stress tests to ensure it works on Physical hardware as well.
 
 There’s a lot more you can do with it, so go on and experiment with things you do daily and see what you can automate!
 
-## When should I not use ansible? 
+## When should I not use ansible?
 
 When it’s trivial to do something with a couple lines of bash or perl. Say opening a zip file, exporting all the test data from it to make a graph. This might seem like a stupid thing to point out, but people do it all the time.
 
@@ -250,11 +257,11 @@ https://docs.ansible.com/
 
 ## Ansible AWX & Tower
 
-Ansible comes with a web dashboard, and it is highly recommended you install it. It’s mindlessly easy to install, and makes using ansible a breeze. It exposes a REST API, that you can use to automate ansible even further. You shouldn’t be using Ansible without it! 
+Ansible comes with a web dashboard, and it is highly recommended you install it. It’s mindlessly easy to install, and makes using ansible a breeze. It exposes a REST API, that you can use to automate ansible even further. You shouldn’t be using Ansible without it!
 
-There are two dashboards. Ansible AWX and Ansible Tower. Ansible AWX is the upstream version of the dashboard. Tower is the paid version, comes with support, and guarantees back compatibility to a specific release. 
+There are two dashboards. Ansible AWX and Ansible Tower. Ansible AWX is the upstream version of the dashboard. Tower is the paid version, comes with support, and guarantees back compatibility to a specific release.
 
-After you have installed Ansible, to install AWX you need to install some dependencies. Ensure you have git, docker, gnu make and docker-compose installed. You also need to install docker python module through pip. 
+After you have installed Ansible, to install AWX you need to install some dependencies. Ensure you have git, docker, gnu make and docker-compose installed. You also need to install docker python module through pip.
 
 To set up awx:
 
@@ -268,8 +275,8 @@ You can edit the inventory file to change different variables such as username a
 
 With the default configuration options, assuming you didn’t edit the inventory file, you can access your dashboard at http://localhost/
 
-The username is admin, and the password is password. Please change them if you haven't already pre-install. 
+The username is admin, and the password is password. Please change them if you haven't already pre-install.
 
-For tower, contact the paid support you are paying for. 
+For tower, contact the paid support you are paying for.
 
 We will not be covering awx in detail in this spotlight as it's complex enough to have it's own spotlight. However, don't let that stop you from asking questions about it!

@@ -46,7 +46,6 @@ If you get annoyed that you don't have your name and make a big deal out of it, 
 
 The Programmer's Hangout has an [organisation on GitHub](https://github.com/the-programmers-hangout) and the best part is that you can join it too! To get yourself added to the organisation, send your GitHub username to the moderators via @ModMail#8255 and you'll be invited to the organisation. You even get a cool little badge on your GitHub profile!
 
-
 ## How do I appeal my ban?
 
 We accept ban appeals 30 days after the initial ban date. You can appeal your ban through [this google form.](https://forms.gle/TZEmvxnMbVNfCe4o7)

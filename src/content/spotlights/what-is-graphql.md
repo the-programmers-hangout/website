@@ -5,11 +5,12 @@ created_at: "2018/07/18"
 title: What is GraphQL?
 ---
 
-
 ## What is GraphQL?
+
 GraphQL is a query language for APIs, meant to challenge and replace REST. At its core, GraphQL enables declarative data fetching where a client can specify exactly what data it needs from an API. Put bluntly, a lot of people claim GraphQL to be REST 2.0.
 
 ## Why does GraphQL exist?
+
 GraphQL was created internally by Facebook in 2012, mainly to optimize the network load for mobile devices. Interestingly, other companies like Netflix or Coursera were working on comparable ideas to make API interactions more efficient. When Facebook announced GraphQL, Coursera abandoned their efforts and jumped on GraphQL.
 
 ## What makes GraphQL better than REST?
@@ -85,6 +86,7 @@ query user(id: "5") {
 3. Strong-typing. Contrary to working with JSON responses limited to string and numeric, and the discrepancy between front-end (JS) and any back-end language being lost in translation.
 
 ## Core concepts
+
 GraphQL has three types of operations:
 
 - queries (fetching data),
@@ -147,6 +149,7 @@ http://myapi/graphql?query={me{name}}
 ```
 
 ## How can I start using GraphQL?
+
 While it is possible to convert an existing REST endpoint to GraphQL, either through automated tools, or manually, the best case scenario would be on an entirely new project.
 
 ## Common misconceptions
@@ -157,7 +160,8 @@ While it is possible to convert an existing REST endpoint to GraphQL, either thr
 
 - When it was first announced by Facebook, a lot of people thought it was React exclusive! This is not true. GraphQL can work on any tech stack (although some languages have more complete tooling than others)
 
-## Closing notes  
+## Closing notes
+
 Today, GraphQL is used in production by lots of different companies such as GitHub, Twitter, Yelp and Shopify - to name only a few. We are seeing month after month, small and large companies converting to it.
 
 ## Related projects and libraries

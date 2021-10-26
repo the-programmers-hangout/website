@@ -11,9 +11,7 @@ import * as SC from "./styles"
 
 const ALL_SPOTLIGHTS = graphql`
   query {
-    spotlights: allFile(
-      filter: { sourceInstanceName: { eq: "spotlights" } }
-    ) {
+    spotlights: allFile(filter: { sourceInstanceName: { eq: "spotlights" } }) {
       edges {
         node {
           relativePath
@@ -42,7 +40,9 @@ function Tree({ item }: { item: IFileOrFolder }) {
   )
 }
 
-export const SpotlightsSidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
+export const SpotlightsSidebar: FC<HTMLAttributes<HTMLDivElement>> = (
+  props
+) => {
   const { spotlights } = useStaticQuery(ALL_SPOTLIGHTS)
   const tree = useBuildTree(spotlights, "/spotlights")
   const sortedTree = sort((a, b) => a.title.localeCompare(b.title), tree)

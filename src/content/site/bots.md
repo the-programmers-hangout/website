@@ -2,20 +2,20 @@
 path: /bots
 ---
 
-This page details the bots you will see in our server. 
-Below are the bots you can interact with. There are other bots within the server, but they are strictly for usage by staff or are automatic in their nature. [Click here to jump to the passive bots](#passive-bots). 
-
+This page details the bots you will see in our server.
+Below are the bots you can interact with. There are other bots within the server, but they are strictly for usage by staff or are automatic in their nature. [Click here to jump to the passive bots](#passive-bots).
 
 ## JudgeBot
 
 **Description** Judgebot is our main moderation bot. If you receive any warnings or infractions, JudgeBot will be the one to DM you.
 
 Judgebot has a 50-point system. Each infraction gives you points, and points decay over time. Warnings give 5 points. Strikes typically give 10 but can give more in exceptional circumstances.
- - 10 points: 1-hour mute
- - 20 points: 12-hour mute
- - 30 points: 24-hour mute
- - 40 points: 30-day mute
- - 50 points: permanent ban
+
+- 10 points: 1-hour mute
+- 20 points: 12-hour mute
+- 30 points: 24-hour mute
+- 40 points: 30-day mute
+- 50 points: permanent ban
 
 **Source:** https://github.com/the-programmers-hangout/JudgeBot
 
@@ -26,7 +26,6 @@ Judgebot has a 50-point system. Each infraction gives you points, and points dec
 `j!selfhistory` - Will DM your infraction history.
 
 `:stop_sign:` - Reacting to a message with this emote will alert staff to it. Use it if you see any potentially rule breaking content.
-
 
 ## Aura
 
@@ -49,7 +48,6 @@ Judgebot has a 50-point system. Each infraction gives you points, and points dec
 `karma!profile` - Gives a karma breakdown per channel.
 
 `karma!reactions` - Details the reactions that Aura can add to messages.
-
 
 ## DocsBot
 
@@ -87,11 +85,9 @@ Judgebot has a 50-point system. Each infraction gives you points, and points dec
 
 `tph!userinfo` - Displays info for a user.
 
-
-
 ## Keeper
 
-**Description:** Keeper is a bot that allows you to bookmark messages by adding the `:bookmark:` emote reaction to a message. 
+**Description:** Keeper is a bot that allows you to bookmark messages by adding the `:bookmark:` emote reaction to a message.
 
 **Source:** https://github.com/ddivad195/keeper
 
@@ -101,8 +97,6 @@ Judgebot has a 50-point system. Each infraction gives you points, and points dec
 
 N/A
 
-
-
 ## ModMail
 
 **Description:** This bot lets you privately contact the staff team. DM it to start a discussion!
@@ -110,8 +104,6 @@ N/A
 **Source:** https://github.com/JakeJMattson/ModMail
 
 **Usage:** All you need to do is send a message. We'll see any edits you make to your message too!
-
-
 
 ## Mimic
 
@@ -145,11 +137,9 @@ N/A
 
 `mimic!stats` - Display statistics of your messages
 
-
-
 ## Polly
 
-**Description:** Polly is our macro bot. 
+**Description:** Polly is our macro bot.
 
 **Source:** https://github.com/the-programmers-hangout/Polly
 
@@ -181,7 +171,7 @@ N/A
 
 `++imageofcode` - Images of code can be really hard to read, let people know they should post the code as text instead.
 
-`++noresearch` - Research is an important part of programming. Encourage people to research *then* ask! Ask them what they found if anything.
+`++noresearch` - Research is an important part of programming. Encourage people to research _then_ ask! Ask them what they found if anything.
 
 `++patience` - Remind users not to pester others in channels.
 
@@ -190,8 +180,6 @@ N/A
 `++voice` - Inform a user why they cannot see voice channels.
 
 `++wrapmini` - Instruct a user to wrap their code.
-
-
 
 ## ReWizard
 
@@ -215,8 +203,6 @@ N/A
 
 `re!valid` - Tests whether the given regex is valid.
 
-
-
 ## StandupBot
 
 **Description:** StandupBot is a bot that controls the standup channel. It enforces a strict message format. Once you have successfully sent a message you will no longer be able to post in the standup channel for 20 hours.
@@ -228,7 +214,6 @@ N/A
 ### Commands
 
 N/A
-
 
 ## SuggestionBot
 
@@ -242,8 +227,6 @@ N/A
 
 `s!suggest your suggest message here` - Send in your suggestion message
 
-
-
 ## Passive bots
 
 Below are the bots you will see in the server but you will not need to interact with them. They automatically do their job!
@@ -254,14 +237,11 @@ Below are the bots you will see in the server but you will not need to interact 
 
 **Source:** https://github.com/itsHobbes/clerky
 
-
 ## EmbedBot
 
 **Description:** EmbedBot allows staff to manage and post embed messages into various channels.
 
 **Source:** https://github.com/JakeJMattson/EmbedBot
-
-
 
 ## Emourge
 
@@ -269,15 +249,11 @@ Below are the bots you will see in the server but you will not need to interact 
 
 **Source:** https://github.com/dfireBird/emourge-mongo
 
-
-
 ## Hawk
 
 **Description:** Hawk manages nickname prefixes & suffixes. It adds 🔨 to staff nicks and organises the occasional nick party!
 
 **Source:** https://github.com/the-programmers-hangout/Hawk
-
-
 
 ## Nano
 
@@ -285,15 +261,11 @@ Below are the bots you will see in the server but you will not need to interact 
 
 **Source:** https://github.com/the-programmers-hangout/Nano
 
-
-
 ## RaffleBot
 
-**Description:** RaffleBot is a discord bot built originally for The Programmer's Hangout that focuses on managing giveaways. 
+**Description:** RaffleBot is a discord bot built originally for The Programmer's Hangout that focuses on managing giveaways.
 
 **Source:** https://github.com/Abzylicious/RaffleBot
-
-
 
 ## Skadi
 
@@ -301,22 +273,17 @@ Below are the bots you will see in the server but you will not need to interact 
 
 **Source:** This source isn't publicly available. We don't want people trying to game the system.
 
-
-
 ## Slothbot
 
 **Description:** Slothbot manages slowmode across the server.
 
 **Source:** https://github.com/the-programmers-hangout/slothbot
 
-
 ## Taboo
 
 **Description:** Taboo makes sure only accepted file formats are uploaded.
 
 **Source:** https://github.com/the-programmers-hangout/Taboo
-
-
 
 ## Watchdog
 

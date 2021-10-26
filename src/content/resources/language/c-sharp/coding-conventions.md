@@ -118,9 +118,9 @@ if(password == "1234")
 string password = Console.ReadLine();
 if(password == "1234") { Console.WriteLine("Correct password!"); }
 
-if(password == "4321") 
-{ 
-Console.WriteLine("Correct password!"); 
+if(password == "4321")
+{
+Console.WriteLine("Correct password!");
 }
 ```
 

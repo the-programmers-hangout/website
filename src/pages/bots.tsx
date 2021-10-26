@@ -17,10 +17,7 @@ function BotPage({ data }: ComponentQuery<{ md: Mdx }>) {
   return (
     <Fragment>
       <SEO title="BOTS" />
-      <HeaderBarebone
-        title="Bots"
-        className={cx({ shifted: toc.length })}
-      />
+      <HeaderBarebone title="Bots" className={cx({ shifted: toc.length })} />
 
       <PageContent content={<Markdown content={md.body!} />} toc={toc} />
     </Fragment>

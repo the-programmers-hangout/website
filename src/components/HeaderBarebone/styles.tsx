@@ -45,7 +45,7 @@ export const HeaderWrapperSticky = styled.div`
   height: 74px;
   position: fixed;
   overflow: hidden;
-  z-index:1;
+  z-index: 1;
 
   &::before {
     content: "";
