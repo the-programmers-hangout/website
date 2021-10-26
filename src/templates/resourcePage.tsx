@@ -16,14 +16,8 @@ import { buildToc } from "../utils"
 const ResourcePage: FC<any> = ({ data }) => {
   const { current: language } = useSidebar()
   const { relativePath } = data.file
-  const {
-    body,
-    headings,
-    excerpt,
-    fields,
-    frontmatter,
-    timeToRead,
-  } = data.file.post
+  const { body, headings, excerpt, fields, frontmatter, timeToRead } =
+    data.file.post
 
   const toc = buildToc(headings)
 

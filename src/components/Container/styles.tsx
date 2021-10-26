@@ -13,7 +13,7 @@ export const ContainerWrapper = styled.div`
 
   // Offsets anchor links while taking the fixed header into consideration
   [id]::before {
-    content: '';
+    content: "";
     display: block;
     height: 80px;
     margin-top: -80px;

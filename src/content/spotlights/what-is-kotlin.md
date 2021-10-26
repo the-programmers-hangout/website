@@ -6,12 +6,15 @@ title: What is Kotlin?
 ---
 
 ## What is kotlin?
+
 Kotlin is a statically typed programming language that runs on the JVM (Java Virtual Machine).
 
 ## Why does kotlin exist?
+
 Kotlin exists as a modern roll of Java - Java was built from the ground up to suit OOP, and that's a task that it does pretty well. Later, functional programming was added in, by contrast, kotlin was made with both paradigms in mind, picking the good, easy to adopt parts up and adding them all into one neat language. Kotlin also had a requirement: Allow interop with Java code - to which it does (works great on android!)
 
 ## How hard is kotlin to learn?
+
 Well, that depends a lot on where you are coming from. If you already know Java, it'll be exceptionally easy to pick up. Everything has a very "right" feeling to it compared to the older style, it's almost like a natural progression.
 
 If you don't know Java, that's a bit trickier to answer. You can certainly learn it, as a first language either, but there are some Java things you will need to know. If I were learning it as a first language, I'd try to heavily rely on the documentation and understand each feature that exists in kotlin, and why they exist. The most important is the concept of nullable types.
@@ -19,6 +22,7 @@ If you don't know Java, that's a bit trickier to answer. You can certainly learn
 Java will allow anything to be null, but in kotlin there is a distinct separation. a `String` is very different to a `String?` - the second one can have a value of null, the first cannot. When interoping with Java code, it's always best to assume anything can be null.
 
 ## What are some key features of kotlin?
+
 If you're a Java user, here is a comparison list made by Jetbrains: <https://kotlinlang.org/docs/reference/comparison-to-java.html>
 
 Some key ones to point out of this list:
@@ -28,18 +32,23 @@ Some key ones to point out of this list:
 - Extension functions - great for fixing up a library class that is missing a method. No pretty print function? That's cool, just define it yourself. `LibraryClass.newFunction() = ...` (Yes, like C#)
 
 ## What platforms can kotlin run on?
+
 Anything and everything. Let's break that down:
 
 ## The JVM
+
 This is primary compile target, the JVM as a piece of kit allows you to write some code and have it work without separate compilations on Windows, Mac and Linux - so you've got all of your bases covered there.
 
 ## Android
+
 Yea, it's also a first class language on android, the only other language supported by google: <https://youtu.be/d8ALcQiuPWs>
 
 ## Native
+
 If you don't like the JVM and you're not an android dev, well, you can just target native: <https://kotlinlang.org/docs/reference/native-overview.html>
 
 ## JavaScript
+
 Yea, you can make kotlin compile to JavaScript, see here: <https://kotlinlang.org/docs/tutorials/javascript/kotlin-to-javascript/kotlin-to-javascript.html>
 
 Here are some extra points that don't fit into any of the headings above

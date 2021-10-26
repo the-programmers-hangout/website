@@ -6,6 +6,7 @@ title: What is Google?
 ---
 
 ## What is Google?
+
 Google allows us smooth brained chumps to keep our jobs while looking like we know what we're doing.
 
 "What!?!?" I hear you say. That's right. Google can almost always give you the answers you're looking for and in this spotlight we'll show you how!
@@ -14,7 +15,7 @@ Google allows us smooth brained chumps to keep our jobs while looking like we kn
 
 ## How do I use google?
 
-It's easy! Unbelievably easy. Alright, let's imagine you have a question, say "How do I create an array in java?". 
+It's easy! Unbelievably easy. Alright, let's imagine you have a question, say "How do I create an array in java?".
 
 Step 1. open <https://www.google.com/>
 
@@ -28,7 +29,7 @@ That's all folks.
 
 🦗
 
-**But... I want to *really* know how to use google!**
+**But... I want to _really_ know how to use google!**
 
 Alright alright. Pull your chair up close and I'll tell you the secrets big search don't want you to know! You didn't hear it from me though!
 
@@ -37,6 +38,7 @@ Alright alright. Pull your chair up close and I'll tell you the secrets big sear
 One of the most important things to know is that google uses various keyword and punctuation combinations as filter operators. Let's take a look at what they are, and how they affect your search results.
 
 ### 1. The colon
+
 `site:` - Imagine you're looking for that one specific stack overflow post. You remember seeing it way back when you were just a wee little programming child typing on your keyboard with your index fingers only. We can use `site:` to filter our results to a specific website.
 
 Example: `site:stackoverflow.com html regex` - One of the top results here should be an infamous SO post on parsing HTML with regex. If you haven't read it take a look!
@@ -54,14 +56,16 @@ Example: `cache:https://stackoverflow.com/questions` - Now you need not panic wh
 Example: `filetype:pdf On Computable Numbers` - PDF results for one of Alan Turing's papers.
 
 ### 2. The dash
+
 `-` this little guy is a tricksy fellow. The echos of enraged Java programmers shattered through the lands as they searched `-xmx` and were given no results. As it turns out, using a dash will **exclude** the following word from the results
 
 Example: `-xmx` - will give you no results.
 
 ### 3. Quotes
+
 `"` - When you make a search on google, if you put a word or phrase in quotes, google will look for an exact match. Useful if you're looking for a very specific error.
 
-Example: `"Fly, you fools"` 
+Example: `"Fly, you fools"`
 
 ### 4. Range ..
 
@@ -76,6 +80,7 @@ If you're looking for research papers for school/college/uni/fun then Google Sch
 <https://scholar.google.com/>
 
 ## Advanced Search
+
 Still stuck trying to find what you want? Try Google's Advanced Search page <https://www.google.com/advanced_search>
 This page is a slightly more UX friendly version of all the above filters and more!
 Image advanced search: <https://www.google.com/advanced_image_search>

@@ -116,9 +116,9 @@ async function getCharacters() {
 
 // or, mixed
 async function getCharacters() {
-  const data = await fetch(
-    `https://rickandmortyapi.com/api/character`
-  ).then((res) => res.json());
+  const data = await fetch(`https://rickandmortyapi.com/api/character`).then(
+    (res) => res.json()
+  );
   return data.results;
 }
 

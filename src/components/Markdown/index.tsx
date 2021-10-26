@@ -16,7 +16,7 @@ import "prismjs/plugins/line-numbers/prism-line-numbers.css"
 import React, { FC, useEffect } from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import * as SC from "./styles"
-import "./env";
+import "./env"
 
 interface IMarkdownProps {
   content: string
@@ -31,9 +31,7 @@ export const Markdown: FC<IMarkdownProps> = ({ content, ...restProps }) => {
     Prism.highlightAll()
   }, [])
   return (
-    <SC.MarkdownWrapper
-      {...restProps}
-    >
+    <SC.MarkdownWrapper {...restProps}>
       <MDXRenderer>{content}</MDXRenderer>
     </SC.MarkdownWrapper>
   )
