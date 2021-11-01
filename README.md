@@ -15,8 +15,8 @@ allowing for static asset generation along with improved SEO.
 ### Setup
 
 1. Clone the repo
-2. `npm install`
-3. `npm run develop`
+2. `yarn install`
+3. `yarn run develop`
 4. Navigate to http://localhost:8000
 5. :tada:
 
