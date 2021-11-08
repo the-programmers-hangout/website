@@ -1,6 +1,8 @@
 ---
 authors:
   - "Daniell#4062"
+  - "ddivad#0001"
+  - "Xetera#0001"
 created_at: "2021/09/08"
 title: What is TypeScript?
 ---

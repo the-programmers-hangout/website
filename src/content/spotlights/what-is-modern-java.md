@@ -1,6 +1,9 @@
 ---
 authors:
   - "itsHobbes#1985"
+  - "Lana#4231"
+  - "Dreameh#0001"
+  - "Shirleh#9716"
 created_at: "2021/10/08"
 title: What is Modern Java?
 ---
