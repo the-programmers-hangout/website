@@ -82,6 +82,10 @@ Discord ToS prohibits facilitating discussions that violate ToS of any service. 
 
 You can do so by citing a passage from ToS of a service you're trying to scrape via modmail. Until then, the conversation is prohibited.
 
+### Do not discuss crypto currencies, NFTs, and blockchain development. 
+All discussions of crypto currencies, including but not limited to investing advice, market state, environmental impact and technology changes are banned. Similarly all discussions of NFTs are banned. 
+Blockchain development project discussions are also banned unless approved by the staff team on a case by case basis. If you have questions contact modmail.
+
 ## 4. Don't obstruct moderation
 
 These rules try to cover as much as possible but unforseenable situations could arise and will be up to the staff's discretion
