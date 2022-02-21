@@ -87,7 +87,7 @@ All discussions of crypto currencies, including but not limited to investing adv
 
 ## 4. Don't obstruct moderation
 
-These rules try to cover as much as possible but unforseenable situations could arise and will be up to the staff's discretion
+These rules try to cover as much as possible but unforeseeable situations could arise and will be up to the staff's discretion
 
 ### Use only English
 
