@@ -126,8 +126,8 @@ The Typescript compiler has native support for JSX, which provides a better way 
 ### Virtual DOM
 React uses something called a "Virtual DOM". Virtual DOM is a programming concept where an ideal, or "virtual", representation of a UI is kept in memory and synced with the "real" DOM by a library such as react-dom. This process is called reconciliation. This approach enables the declarative API of React - you tell React what state you want the UI to be in, and it makes sure the DOM matches that state. This abstracts out the attribute manipulation, event handling, and manual DOM updating that you would otherwise have to use to build your app.
 
-[More on Virtual DOM](https://reactjs.org/docs/faq-internals.html)
-[More on Reconciliation](https://reactjs.org/docs/reconciliation.html)
+* [More on Virtual DOM](https://reactjs.org/docs/faq-internals.html)
+* [More on Reconciliation](https://reactjs.org/docs/reconciliation.html)
 
 ## Okay, this sounds great! So, how do I get started with React?
 
@@ -143,12 +143,12 @@ It will automatically create a new folder called my-app and will process a few t
 
 `npx create-react-app my-app --template typescript`
 
-For more customization options, visit - https://create-react-app.dev/.
+For more customization options, visit the [create react app website](https://create-react-app.dev/).
 
 Although CRA is a good choice for beginners, there may be a better choice for you depending on the type of your project:
  - For single-page apps (SPA) or basic React projects, use CRA.
- - For a static, content-oriented website, use Gatsby (https://www.gatsbyjs.org/).
- - For a server-rendered website with Node.js, use Next.js (https://nextjs.org/). Next.js supports Server-Side Rendering (SSR), Static Site Generation (SSG), or hybrid static and server-side rendering.
+ - For a static, content-oriented website, use [Gatsby](https://www.gatsbyjs.org/).
+ - For a server-rendered website with Node.js, use [Next.js](https://nextjs.org/). Next.js supports Server-Side Rendering (SSR), Static Site Generation (SSG), or hybrid static and server-side rendering.
  
 ### Props
 Data in React is handled and managed by the state and props of a component. Every react component accepts arbitrary inputs called "props" (short for properties). React props are comparable to HTML attributes. While HTML elements have attributes, React components have props. You can pass data from a parent component to a child component using properties.
@@ -186,11 +186,11 @@ class Parent extends React.Component {
 
 From the examples above, you may have guessed it, but the data flow is unidirectional. You can only pass props data from the parent to child, not the other way around. Props of a component are read-only and should not be changed. React has a strict rule — "All React components must act like pure functions with respect to their props."
 React also offers a special Context API that allows you to pass data through the component tree without having to pass props down manually at every level.
-For more information about this context API, refer - https://reactjs.org/docs/context.html
-This is a nice guide on this context API - https://tania.dev/react-context-api-hooks/
+For more information about this context API [check out the docs](https://reactjs.org/docs/context.html)
+[This is a nice guide on this context API](https://tania.dev/react-context-api-hooks/)
 
 React has a special prop called children, for JSX elements that contain both an opening and a closing tag. This prop is used to pass the content between those tags.
-For more on children, refer - https://reactjs.org/docs/jsx-in-depth.html#children-in-jsx
+For more on children, refer to [the react docs](https://reactjs.org/docs/jsx-in-depth.html#children-in-jsx)
 
 ### State
 All React components have their states. The state of a component is like its props, but it is private and fully controlled by the component. For functional components, you need to use the useState hook to manage the state. Whenever the state of the component changes, the entire component re-renders. For example:
@@ -283,7 +283,7 @@ class MyComponent extends React.Component {
 }
 ```
 
-Learn more about lifecycle methods - https://reactjs.org/docs/react-component.html#the-component-lifecycle
+[Learn more about lifecycle methods](https://reactjs.org/docs/react-component.html#the-component-lifecycle)
 
 ### Alternative for Functional Components
 React provides a useEffect hook to implement the above lifecycle methods in functional components. Here's how to use it:
@@ -306,8 +306,8 @@ function MyComponent() {
 
 As you can see above, this new hook is not an exact migration — there are some changes. Firstly, there are no individual sections that separate componentDidMount and componentDidUpdate (unless you make them). Next, you see that there is a callback function to the callback function inside the hook. The function returned by the main callback function contains the logic for componentWillUnmount.
 
-Learn more about the useEffect hook - https://reactjs.org/docs/hooks-reference.html#useeffect
-Learn more about how classes convert to hooks - https://reactjs.org/docs/hooks-faq.html#from-classes-to-hooks
+[Learn more about the useEffect hook](https://reactjs.org/docs/hooks-reference.html#useeffect)
+[Learn more about how classes convert to hooks](https://reactjs.org/docs/hooks-faq.html#from-classes-to-hooks)
 
 ## Styling in React
 
@@ -372,7 +372,7 @@ const MyComponent = () => (
 ```
 
 
-The Button component above will have all the properties and attributes of a standard button element along with all the styles you applied to it. There are a lot more possibilities. Learn more about styled-components on their official website - https://styled-components.com/.
+The Button component above will have all the properties and attributes of a standard button element along with all the styles you applied to it. There are a lot more possibilities. Learn more about styled-components on their [official website](https://styled-components.com/).
 
 ### Emotion
 Emotion is another CSS-in-JS library. What sets it apart is that it comes in many different "flavors" or packages. @emotion/css is the standard one. Example:
@@ -395,21 +395,21 @@ const MyComponent = () => (
 ```
 
 
-Here, you apply all the CSS styles within the className attribute of the element. This example is just one bit of all the gigabytes of possibilities with this library. Learn more about emotion on their official website - https://emotion.sh/
+Here, you apply all the CSS styles within the className attribute of the element. This example is just one bit of all the gigabytes of possibilities with this library. Learn more about emotion on their [official website](https://emotion.sh/)
 
 ## UI Libraries
 There are hundreds of different UI libraries available on the internet. UI libraries are usually a part of the company's or the project's design system. They provide ready-made components that you can use in your project. Most UI libraries allow you to tweak their offerings according to your project needs. Here are a few popular UI libraries:
- - Material Design (https://material-ui.com/)
- - Ant Design (https://ant.design/)
- - Semantic UI (https://semantic-ui.com/)
- - Fluent UI (https://developer.microsoft.com/en-us/fluentui#/get-started/web)
- - Chakra UI (https://chakra-ui.com/)
+ - [Material Design](https://material-ui.com/)
+ - [Ant Design](https://ant.design/)
+ - [Semantic UI](https://semantic-ui.com/)
+ - [Fluent UI](https://developer.microsoft.com/en-us/fluentui#/get-started/web)
+ - [Chakra UI](https://chakra-ui.com/)
 And the list of UI libraries goes on and on.
 
 ## CSS Frameworks
 CSS Frameworks provide you with ready-made classes. Depending on the framework you use, these classes contain different utility functions, UI components, etc. You can easily apply classes from the selected framework to your elements. Here are a few popular CSS frameworks:
- - TailwindCSS(https://tailwindcss.com/)
- - Bootstrap (https://getbootstrap.com/)
- - Foundation (https://get.foundation/)
- - Bulma (https://bulma.io/)
+ - [TailwindCSS](https://tailwindcss.com/)
+ - [Bootstrap](https://getbootstrap.com/)
+ - [Foundation](https://get.foundation/)
+ - [Bulma](https://bulma.io/)
 Some CSS frameworks like Bootstrap or TailwindCSS also have their UI libraries that you can use in your project.
