@@ -69,64 +69,63 @@ In this section I would like to throw a light on some lesser known extensions
 
 ### Autocomplete
 
-- Tabnine: https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode
-- Kite: https://marketplace.visualstudio.com/items?itemName=kiteco.kite
-- Intellicode:(different from intellisense which is the inbuilt autocomplete engine): https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode
-- Path intellisense: (Autocompletes your path. Exactly what the name says. Isn't that nice): https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense
+- [Tabnine](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode)
+- [Kite](https://marketplace.visualstudio.com/items?itemName=kiteco.kite)
+- [Intellicode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode): different from intellisense which is the inbuilt autocomplete engine.
+- [Path intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense): Autocompletes your path. Exactly what the name says. Isn't that nice.
 
 ### Syntax
 
-- Prettier: Formats your code in a very pretty fashion (hence the name): https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
-- Bracket Pair Colorizer 2: Color codes bracket pairs so you known where your brackets end and start (This is a native feature now): https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2
-- Indent-Rainbow: So sort of like Bracket Pair Colorizer, it rainbow colorizes the indent so you know what level of your horrible multi nested if statements. Seriously, refactor that, please: https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow
-- Better align: Aligns your colons and your = signs etc making it all very neat looking: https://marketplace.visualstudio.com/items?itemName=wwm.better-align
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode): Formats your code in a very pretty fashion (hence the name)
+- [Indent-Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow): So sort of like Bracket Pair Colorizer, it rainbow colorizes the indent so you know what level of your horrible multi nested if statements. Seriously, refactor that, please
+- [Better align](https://marketplace.visualstudio.com/items?itemName=wwm.better-align): Aligns your colons and your = signs etc making it all very neat looking
 
 ### Keymaps
 
 Want to try out VSCode but don't want to learn Keybindings? Fret not, for it has plugins for those too.
 
-- Vim: https://marketplace.visualstudio.com/items?itemName=vscodevim.vim
-- Atom: https://marketplace.visualstudio.com/items?itemName=ms-vscode.atom-keybindings
-- Sublime text: https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings
+- [Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)
+- [Atom](https://marketplace.visualstudio.com/items?itemName=ms-vscode.atom-keybindings)
+- [Sublime text](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
 
 VSC has it all. 
 
 ### File Editing
 
-- Snippets: (this one has countless of em. Sometimes packaged into other extensions or found by itself): Short phrase for expansion into a code block
-- Better Comments: Allows more human readable and highlighted comments on code, such as TODOs, errors, highlighting etchttps://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments
-- Markdown all in one: Takes care of your preview, syntax highlighting, autocompletehttps://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one
-- Import Cost: Shows the size of the package your importing into your projecthttps://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost
-- Code Spell Checker: Ever had a compile error because you made a grammatical error in one line? Yeah me too. This will make sure that this embarrassing reason for failed compile will never happen againhttps://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
-- Live Share: Ever wanted to work on a project with a buddy simultaneously, without waiting for the git commits to come? Well heres a extension sthat comes to the rescuehttps://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare
+- Snippets: Short phrase for expansion into a code block
+- [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments): Allows more human readable and highlighted comments on code, such as TODOs, errors, highlighting etc
+- [Markdown all in one](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one): Takes care of your preview, syntax highlighting, autocomplete
+- [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost): Shows the size of the package your importing into your project
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker): Ever had a compile error because you made a grammatical error in one line? Yeah me too. This will make sure that this embarrassing reason for failed compile will never happen again
+- [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare): Ever wanted to work on a project with a buddy simultaneously, without waiting for the git commits to come? Well heres a extension that comes to the rescue
 
 ### WebDev
 
 There's a lot of web-dev plugins so i am giving it its own special section
 
-- Auto Rename Tag: You rename the beginning of a tag and it will edit the closing tag as well. https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag
-- Live Server: Launches a local development server that live reloads. Very useful https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+- [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag): You rename the beginning of a tag and it will edit the closing tag as well. 
+- [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer): Launches a local development server that live reloads.
 
 
 ### Database
 
 Theres extensions for you folks too with database problems
 
-- vscode-database: Lets you connect to MySQl Server https://marketplace.visualstudio.com/items?itemName=bajdzis.vscode-database
-- SQLTools: Allows you to connect to basicly any SQL in the world https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools
+- [vscode-database](https://marketplace.visualstudio.com/items?itemName=bajdzis.vscode-database): Lets you connect to MySQl Server 
+- [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools): Allows you to connect to basicly any SQL in the world 
 
 ### Git
 
 Who can forget Git. Here's some for git usage
 
-- Git Lens: It does a ton of things to supercharge your git workflow including seeing who wrote what via git blame so you can blame then when you notice bad code that shouldve been refactored. https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
-- Git History: Look at the git log and the timeline of commits so you can be proud of how many commits you make to your own code. https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory
+- [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens): It does a ton of things to supercharge your git workflow including seeing who wrote what via git blame so you can blame then when you notice bad code that shouldve been refactored. 
+- [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory): Look at the git log and the timeline of commits so you can be proud of how many commits you make to your own code. 
 
 ### Language Specific Alternatives
 Sometimes wonder whether there are better alternatives for language support than the official one? Well yeah there are
 
-- Rust-Analyser: Its not fully stable so its not official, but the speed and features make it worth it https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer
-- Pylance: Its from Microsoft, and non open source. Now wait wait wait, its good. it works with the python plugin and enhances it https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance
+- [Rust-Analyser](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer): Its not fully stable so its not official, but the speed and features make it worth it 
+- [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance): Its from Microsoft, and non open source. Now wait wait wait, its good. it works with the python plugin and enhances it 
 
 ### How do I install these?
 
