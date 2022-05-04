@@ -5,6 +5,8 @@ path: /bots
 This page details the bots you will see in our server.
 Below are the bots you can interact with. There are other bots within the server, but they are strictly for usage by staff or are automatic in their nature. [Click here to jump to the passive bots](#passive-bots).
 
+By typing `/` you can pop up a scrollable list of the commands of some, but not all, of the bots.
+
 ## JudgeBot
 
 **Description** Judgebot is our main moderation bot. If you receive any warnings or infractions, JudgeBot will be the one to DM you.
@@ -55,7 +57,13 @@ Judgebot has a 50-point system. Each infraction gives you points, and points dec
 
 **Source:** https://github.com/the-programmers-hangout/tph-docs-bot
 
-**Prefix:** `docs!`
+**Prefix:** `/`
+
+### Commands
+
+`/djs` - Search discord.js documentation.
+
+`/mdn` - Search MDN Web Docs.
 
 ## HangoutBot
 
