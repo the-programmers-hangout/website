@@ -38,14 +38,20 @@ The first step is the choice of whether to only have Linux or dual boot with ano
 ## The steps are as following:
 
 • Go to the distro’s website and download the distribution, often in the form of a ISO file.
+
 • Always remember to backup everything beforehand which you might wanna save.
+
 • Get yourself a USB stick and use a image flasher such as Balena Etcher or Rufus, which can turn the USB stick into a bootable USB used for installing the distribution.
+
 • Continue following the instructions from the distribution’s website, as most have a very good guide on how to install the distribution of choice.
 
 ## Installation Resources
 • [Dual booting Linux & Windows](https://opensource.com/article/18/5/dual-boot-linux)
+
 • [Rufus](https://rufus.ie/en/)
+
 • [Balena Etcher](https://www.balena.io/etcher/)
+
 • [Example installation of Ubuntu](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview)
 
 ## Installation of packages
@@ -96,6 +102,7 @@ Now, a shell need not be textual, so modern day OS have a graphical shell. But t
 
 ## Linux command-line resources
 https://ubuntu.com/tutorials/command-line-for-beginners
+
 https://www.freecodecamp.org/news/the-linux-commands-handbook/ 
 
 ## What is bash
@@ -104,8 +111,11 @@ There are 3 (technically 4) parts to every command, it’s name, token, and para
 
 ## Bash learning resources
 https://linuxconfig.org/bash-scripting-tutorial-for-beginners
+
 https://tldp.org/LDP/Bash-Beginners-Guide/Bash-Beginners-Guide.pdf
+
 https://docs.microsoft.com/en-us/learn/modules/bash-introduction/
+
 https://learnxinyminutes.com/docs/bash/
 
 ## Why use commands?

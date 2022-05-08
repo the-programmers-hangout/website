@@ -186,10 +186,15 @@ The installation is really easy regardless of the operating system you have, sim
 Here’s a really good list of learning resources. The tour is a nice place to begin, however these are all great places to improve as a Go developer.
 
 • [Tour of Go](https://go.dev/tour/welcome/1)
+
 • [Go By Example](https://gobyexample.com/)
+
 • [Effective Go](https://go.dev/doc/effective_go)
+
 • [Gopher Reading List](https://github.com/enocom/gopher-reading-list)
+
 • [Learn Go With Tests](https://quii.gitbook.io/learn-go-with-tests/)
+
 • [Go Proverbs](https://www.youtube.com/watch?v=PAAkCSZUG1c)
 
 We hope to welcome you as a fellow Gopher! 
