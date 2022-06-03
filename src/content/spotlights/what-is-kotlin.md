@@ -5,15 +5,15 @@ created_at: "2018/05/12"
 title: What is Kotlin?
 ---
 
-## What is kotlin?
+## What is Kotlin?
 
 Kotlin is a statically typed programming language that runs on the JVM (Java Virtual Machine).
 
-## Why does kotlin exist?
+## Why does Kotlin exist?
 
 Kotlin exists as a modern roll of Java - Java was built from the ground up to suit OOP, and that's a task that it does pretty well. Later, functional programming was added in, by contrast, kotlin was made with both paradigms in mind, picking the good, easy to adopt parts up and adding them all into one neat language. Kotlin also had a requirement: Allow interop with Java code - to which it does (works great on android!)
 
-## How hard is kotlin to learn?
+## How hard is Kotlin to learn?
 
 Well, that depends a lot on where you are coming from. If you already know Java, it'll be exceptionally easy to pick up. Everything has a very "right" feeling to it compared to the older style, it's almost like a natural progression.
 
@@ -21,7 +21,7 @@ If you don't know Java, that's a bit trickier to answer. You can certainly learn
 
 Java will allow anything to be null, but in kotlin there is a distinct separation. a `String` is very different to a `String?` - the second one can have a value of null, the first cannot. When interoping with Java code, it's always best to assume anything can be null.
 
-## What are some key features of kotlin?
+## What are some key features of Kotlin?
 
 If you're a Java user, here is a comparison list made by Jetbrains: <https://kotlinlang.org/docs/reference/comparison-to-java.html>
 
