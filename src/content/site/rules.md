@@ -10,7 +10,7 @@ Below are the rules of the server. If you are unsure about any or wish to discus
 
 Everybody is here for the same reason: to learn and talk about programming.
 
-These rules are here to make sure the community stays a place where people of all skill levels and backgrounds can flourish.
+These rules are here to make sure the community stays a place where people of all skill levels and backgrounds can flourish. Mocking members for their lack of ability or knowledge will not be tolerated.
 
 ### Spoon Feeding
 
@@ -42,9 +42,9 @@ This means cheating on your school work, paying someone to do your school work o
 
 ## 2. Be nice
 
-### Remember the human
+### TPH is a community where everyone is welcome
 
-Treat everyone with respect regardless of their skill level or differences in thoughts.
+Treat everyone with respect. TPH does not tolerate racism, homophobia, hate-speech, or any other form of hateful and discriminatory conduct. We are committed to upholding the [Discord community guidelines](https://discord.com/guidelines) and making TPH a community where everyone feels welcome.
 
 ### Do not bring other server drama to TPH
 
