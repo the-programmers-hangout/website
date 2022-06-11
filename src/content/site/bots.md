@@ -9,7 +9,7 @@ By typing `/` you can pop up a scrollable list of the commands of some, but not 
 
 ## JudgeBot
 
-**Description** Judgebot is our main moderation bot. If you receive any warnings or infractions, JudgeBot will be the one to DM you.
+**Description:** Judgebot is our main moderation bot. If you receive any warnings or infractions, JudgeBot will be the one to DM you.
 
 Judgebot has a 50-point system. Each infraction gives you points, and points decay over time. Warnings give 5 points. Strikes typically give 10 but can give more in exceptional circumstances.
 
