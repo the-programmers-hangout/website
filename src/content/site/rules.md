@@ -78,9 +78,9 @@ If you wish to discuss topics like politics, religion, philosophy and alike, hea
 
 ### Don't discuss web scraping unless approved
 
-Discord ToS prohibits facilitating discussions that violate ToS of any service. Therefore, discussions regarding web scraping are forbidden here unless proven otherwise.
+Web scraping has many valid uses cases in programming. It also has many unethical/controversial uses cases as such discussions regarding web scraping are forbidden here unless it has been approved at staff's discretion.
 
-You can do so by citing a passage from ToS of a service you're trying to scrape via modmail. Until then, the conversation is prohibited.
+You can get an excemption by sending some project information to modmail. Tell us about your project, why you are scraping, send screenshots. Until then, the conversation is prohibited.
 
 ### Do not discuss crypto currencies, NFTs, and blockchain development. 
 All discussions of crypto currencies, including but not limited to investing advice, market state, environmental impact and technology changes are banned. Similarly all discussions of NFTs are banned. 
