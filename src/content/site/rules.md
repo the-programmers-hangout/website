@@ -38,7 +38,7 @@ The FAQ and beginner guide represent many hours of discussion to find well-round
 
 ### Academic dishonesty
 
-This means cheating on your school work, paying someone to do your school work or trying to avoid your school work in any way. It's unethical and will not be tolerated here.
+This means cheating on your school work, paying someone to do your school work or trying to avoid your school work in any way. In addition this encompases attempting to get help on school tests or interview tests. It's unethical and will not be tolerated here.
 
 ## 2. Be nice
 
