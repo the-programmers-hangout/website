@@ -3,7 +3,7 @@ authors:
   - "Stone_Red#0001"
   - "Draxis#1559"
   - "HueByte#1388"
-created_at: "2022/08/06"
+created_at: "2022/06/08"
 title: What is Dot net?
 ---
 
@@ -11,7 +11,8 @@ title: What is Dot net?
 ## What is .NET?
 
 > .NET is a platform for building stuff
-- Scott Hanselman
+
+\- Scott Hanselman
 
 .NET is a developer platform by Microsoft that was made for Windows, but later expanded to other operating systems with .NET Core. It’s free, cross-platform, and open-source starting with .NET Core 2.1. .NET is part of the .NET Foundation. The .NET Foundation is an independent, non-profit organization that supports the open source ecosystem around the .NET platform.
 
@@ -65,7 +66,7 @@ For a cli program that can convert files, the sln can be Converter.sln with 2 pr
 
 ### The CLR
 The Common Language Runtime is the virtual machine component of the Common Language Infrastructure (CLI) and supports many languages, with the most common being C#, F#, PowerShell, and VB.NET :visualbasic:, although there are many others.
-A complete list can be found at https://en.wikipedia.org/wiki/List_of_CLI_languages.
+[A complete list can be found here.](https://en.wikipedia.org/wiki/List_of_CLI_languages)
 The CLR works by using a Just-in-time (JIT) compiler to convert managed (compiled Common Intermediate Language (CIL)) code into machine code.
 The CLR has many other features like security, type safety, exception handling, garbage collection and thread management. All code in any CLR language is converted to CIL first which is then run by the CLR.
 
@@ -113,9 +114,9 @@ NuGet is the .NET package manager. A NuGet package is a single zip file with the
 
 ## Try it out
 By far the simplest way to try out .NET is on the following websites.
-* TryDotNet https://try.dot.net/
-* SharpLab https://sharplab.io/
-* .NET Fiddle https://dotnetfiddle.net/
+* [TryDotNet](https://try.dot.net/)
+* [SharpLab](https://sharplab.io/)
+* [.NET Fiddle](https://dotnetfiddle.net/)
 
 You can also try it on your own PC if you wish. First grab yourself an IDE, the best two are Visual Studio or VSCode, then grab the latest release of the .NET SDK https://dotnet.microsoft.com/download. Once you have both of those, you can either start a new console project in Visual Studio or use the Command Line Tools of .NET to make yourself a project to open in VSCode.
 https://dotnet.microsoft.com/en-us/learn/dotnet/hello-world-tutorial/intro
