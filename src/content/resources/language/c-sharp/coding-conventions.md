@@ -1,6 +1,6 @@
 ---
 authors:
-  - "Stone_Red#2890"
+  - "Stone_Red#0001"
 created_at: 2021/08/07
 title: Coding Conventions
 external_resources:
