@@ -83,8 +83,7 @@ Web scraping has many valid uses cases in programming. It also has many unethica
 You can get an excemption by sending some project information to modmail. Tell us about your project, why you are scraping, send screenshots. Until then, the conversation is prohibited.
 
 ### Do not discuss crypto currencies, NFTs, and blockchain development. 
-All discussions of crypto currencies, including but not limited to investing advice, market state, environmental impact and technology changes are banned. Similarly all discussions of NFTs are banned. 
-Blockchain development project discussions are also banned unless approved by the staff team on a case by case basis. If you have questions contact modmail.
+All discussions of crypto currencies, including but not limited to investing advice, market state, environmental impact and technology changes are banned. Similarly all discussions of NFTs and blockchain are banned.
 
 ## 4. Don't obstruct moderation
 
