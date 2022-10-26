@@ -1,6 +1,9 @@
 ---
 authors:
-  - "Stone_Red#2890"
+  - "Stone_Red#0001"
+  - "HueByte#1388"
+  - "sfn#3771"
+  - "Draxis#1559"
 created_at: 2021/08/07
 title: C#
 ---
@@ -18,6 +21,9 @@ title: C#
 ###### Books
 
 - [Fundamentals of Computer Programming with C#](https://introprogramming.info/english-intro-csharp-book/)
+- [C# 10 in a Nutshell](https://www.oreilly.com/library/view/c-10-in/9781098121945/)
+- [C# 10 Pocket Reference](https://www.oreilly.com/library/view/c-10-pocket/9781098122034/)
+- [Concurrency in C# Cookbook](https://www.oreilly.com/library/view/concurrency-in-c/9781492054498/)
 
 ###### Discord (bot) libraries
 
