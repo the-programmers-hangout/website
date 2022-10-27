@@ -87,7 +87,7 @@
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/eslint-plugin-tslint": "^5.41.0",
-    "@typescript-eslint/parser": "^4.32.0",
+    "@typescript-eslint/parser": "^5.41.0",
     "babel-plugin-polished": "^1.1.0",
     "babel-plugin-styled-components": "^1.13.2",
     "discord.js": "^13.2.0",
