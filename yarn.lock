@@ -10703,14 +10703,14 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-layout@npm:^2.14.0":
-  version: 2.14.0
-  resolution: "gatsby-plugin-layout@npm:2.14.0"
+"gatsby-plugin-layout@npm:^3.24.0":
+  version: 3.24.0
+  resolution: "gatsby-plugin-layout@npm:3.24.0"
   dependencies:
     "@babel/runtime": ^7.15.4
   peerDependencies:
-    gatsby: ^3.0.0-next.0
-  checksum: c1d3743d8ceb89c159fd1854894a055b4cf747c337e4e65ee57a807b1bb357fcab18859016e4bc70d6fd74e2a25e75c2e04f0177e9fa951c91f57f49b9f460da
+    gatsby: ^4.0.0-next
+  checksum: 2f498589f00be2a5fc8029fd27bc768d3b6d7d48a1d27bcbd9237543d1e312958e8351045bff065e46d0b92e076beb8f473bf3bd2e93f99d08409be9bb31710b
   languageName: node
   linkType: hard
 
@@ -21403,7 +21403,7 @@ resolve@^2.0.0-next.3:
     eslint-plugin-react: ^7.26.1
     eslint-plugin-react-hooks: ^4.2.0
     gatsby: ^4.24.5
-    gatsby-plugin-layout: ^2.14.0
+    gatsby-plugin-layout: ^3.24.0
     gatsby-plugin-manifest: ^3.14.0
     gatsby-plugin-mdx: ^2.14.0
     gatsby-plugin-polished: ^1.0.4
