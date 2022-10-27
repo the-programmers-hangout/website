@@ -85,7 +85,7 @@
     "@types/react-scrollspy": "^3.3.5",
     "@types/styled-components": "^5.1.26",
     "@types/uuid": "^8.3.4",
-    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/eslint-plugin-tslint": "^4.26.0",
     "@typescript-eslint/parser": "^4.32.0",
     "babel-plugin-polished": "^1.1.0",
