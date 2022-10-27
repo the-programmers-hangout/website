@@ -60,7 +60,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-highlight": "^0.14.0",
-    "react-is": "^17.0.2",
+    "react-is": "^18.2.0",
     "react-particles-js": "^3.5.3",
     "react-perfect-scrollbar": "^1.5.8",
     "react-scrollspy": "^3.4.3",
