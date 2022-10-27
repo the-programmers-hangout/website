@@ -4,7 +4,6 @@ import { DiscordButton } from "../DiscordButton"
 import { HomePartner } from "../HomePartner"
 import { WavesBottom, WavesTop } from "../Waves"
 import * as SC from "./styles"
-import { OutMode, MoveDirection } from "react-particles-js"
 
 interface IMenuItemProps {
   to: string
@@ -53,10 +52,10 @@ export const Home: FC = () => {
             move: {
               enable: true,
               speed: 1.5,
-              direction: MoveDirection.top,
+              direction: "top",
               random: false,
               straight: false,
-              out_mode: OutMode.out,
+              out_mode: "out",
               bounce: false,
               attract: { enable: false },
             },
