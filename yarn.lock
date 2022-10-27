@@ -17396,9 +17396,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"react-use@npm:^17.3.1":
-  version: 17.3.1
-  resolution: "react-use@npm:17.3.1"
+"react-use@npm:^17.4.0":
+  version: 17.4.0
+  resolution: "react-use@npm:17.4.0"
   dependencies:
     "@types/js-cookie": ^2.2.6
     "@xobotyi/scrollbar-width": ^1.9.5
@@ -17415,9 +17415,9 @@ fsevents@~2.3.2:
     ts-easing: ^0.2.0
     tslib: ^2.1.0
   peerDependencies:
-    react: ^16.8.0  || ^17.0.0
-    react-dom: ^16.8.0  || ^17.0.0
-  checksum: 0489a2603dc1a5e2666ae7643b42ec82d747a70476087b0965ee67048940a8dee912cd982d568ff97af703365914c8d8208216301b8489082be61d86561fb858
+    react: ^16.8.0  || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0  || ^17.0.0 || ^18.0.0
+  checksum: 0889da919b49a186de375ec15d2778b954ae981c523acd17dd496e4a4da7b6190efe7993491e1b85fdd6de3e745d08a4eaba4caa35408d570b5f1de550f35d11
   languageName: node
   linkType: hard
 
@@ -19951,7 +19951,7 @@ resolve@^2.0.0-next.3:
     react-particles-js: ^3.5.3
     react-perfect-scrollbar: ^1.5.8
     react-scrollspy: ^3.4.3
-    react-use: ^17.3.1
+    react-use: ^17.4.0
     styled-components: ^5.3.1
     svg-react-loader: ^0.4.6
     tslint: ^6.1.3
