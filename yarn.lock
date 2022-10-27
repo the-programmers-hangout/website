@@ -10596,15 +10596,15 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-react-helmet@npm:^4.14.0":
-  version: 4.14.0
-  resolution: "gatsby-plugin-react-helmet@npm:4.14.0"
+"gatsby-plugin-react-helmet@npm:^5.24.0":
+  version: 5.24.0
+  resolution: "gatsby-plugin-react-helmet@npm:5.24.0"
   dependencies:
     "@babel/runtime": ^7.15.4
   peerDependencies:
-    gatsby: ^3.0.0-next.0
+    gatsby: ^4.0.0-next
     react-helmet: ^5.1.3 || ^6.0.0
-  checksum: c5c2150d663cbdbedb1bf93ea11b6cb4a08e225bc1f400ad12c41f5b44f7d4a1ed63a4fe10dbdffc46b3fa7def593bfb334c337ea3794d62bfddd8985e77f9ca
+  checksum: 9f9c44b3bc664edecb05e975506de61c5b60cf621a34c9c5c14a8fcc1e7bd7f5ed34e51ce05085fcb1025cc3c95ce9ba6436a9c2125a22bbf357bee7cb2ae22f
   languageName: node
   linkType: hard
 
@@ -20801,7 +20801,7 @@ resolve@^2.0.0-next.3:
     gatsby-plugin-mdx: ^4.3.0
     gatsby-plugin-polished: ^1.0.4
     gatsby-plugin-postcss: ^5.24.0
-    gatsby-plugin-react-helmet: ^4.14.0
+    gatsby-plugin-react-helmet: ^5.24.0
     gatsby-plugin-react-svg: ^3.0.1
     gatsby-plugin-remove-trailing-slashes: ^3.14.0
     gatsby-plugin-sharp: ^3.14.0
