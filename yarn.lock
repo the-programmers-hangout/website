@@ -10649,18 +10649,18 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-styled-components@npm:^4.14.0":
-  version: 4.14.0
-  resolution: "gatsby-plugin-styled-components@npm:4.14.0"
+"gatsby-plugin-styled-components@npm:^5.24.0":
+  version: 5.24.0
+  resolution: "gatsby-plugin-styled-components@npm:5.24.0"
   dependencies:
     "@babel/runtime": ^7.15.4
   peerDependencies:
     babel-plugin-styled-components: ">1.5.0"
-    gatsby: ^3.0.0-next.0
-    react: ^16.9.0 || ^17.0.0
-    react-dom: ^16.9.0 || ^17.0.0
+    gatsby: ^4.0.0-next
+    react: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
+    react-dom: ^16.9.0 || ^17.0.0 || ^18.0.0 || ^0.0.0
     styled-components: ">=2.0.0"
-  checksum: c21fe6f87530739aea3ff9940f6bf1e35aac96193a83858d3991123dc835e506ee5b3599116388b82cd12c3a2911733736f2de1df726fa1ae24f772c806fb16d
+  checksum: 0e92f5f4437bb0224fe93ddb936ccdda6f794c9c9de49a5604feaa3ef9a6e039e5d9023f7cff7a85ad1e02445fc55f3d5df0b413ef9798663362d0065ee4e262
   languageName: node
   linkType: hard
 
@@ -20705,7 +20705,7 @@ resolve@^2.0.0-next.3:
     gatsby-plugin-react-svg: ^3.1.0
     gatsby-plugin-remove-trailing-slashes: ^3.14.0
     gatsby-plugin-sharp: ^4.24.0
-    gatsby-plugin-styled-components: ^4.14.0
+    gatsby-plugin-styled-components: ^5.24.0
     gatsby-remark-auto-headers-improved: ^1.0.4
     gatsby-source-filesystem: ^3.14.0
     gatsby-transformer-sharp: ^3.14.0
