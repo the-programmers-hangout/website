@@ -16879,10 +16879,10 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"prismjs@npm:^1.25.0":
-  version: 1.25.0
-  resolution: "prismjs@npm:1.25.0"
-  checksum: 04d8eae9d1b26b76c350bc65621584c8f8cab80ace7da3953f8aef2f9a8dd4b4f71c1d15bc5c67f126ddc90cd5af613919dc1340589a6c57355bed86fa3ac010
+"prismjs@npm:^1.29.0":
+  version: 1.29.0
+  resolution: "prismjs@npm:1.29.0"
+  checksum: 007a8869d4456ff8049dc59404e32d5666a07d99c3b0e30a18bd3b7676dfa07d1daae9d0f407f20983865fd8da56de91d09cb08e6aa61f5bc420a27c0beeaf93
   languageName: node
   linkType: hard
 
@@ -19944,7 +19944,7 @@ resolve@^2.0.0-next.3:
     polished: ^4.2.2
     postcss: ^8.4.18
     prettier: ^2.4.1
-    prismjs: ^1.25.0
+    prismjs: ^1.29.0
     ramda: ^0.27.1
     react: ^17.0.2
     react-dom: ^17.0.2
