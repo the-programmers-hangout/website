@@ -3908,12 +3908,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-scrollspy@npm:^3.3.3":
-  version: 3.3.4
-  resolution: "@types/react-scrollspy@npm:3.3.4"
+"@types/react-scrollspy@npm:^3.3.5":
+  version: 3.3.5
+  resolution: "@types/react-scrollspy@npm:3.3.5"
   dependencies:
     "@types/react": "*"
-  checksum: 8b10fd1a0ddda9df2bf317baa938199f3422b543f2ab09d8651a646dddb041fc4945d9ce1930ac43138ebe98bf5ae2ee6e6fda292ff0bb867d171b12122eb06e
+  checksum: f954e5afb20dae685cd419d38dca1bf033a92a1a994e972b846f250707cb0d29878cd45cedaabe1a9359c283f8d612c622b3f528a1c5bd99bb10d31333d6073f
   languageName: node
   linkType: hard
 
@@ -19612,7 +19612,7 @@ resolve@^2.0.0-next.3:
     "@types/react": ^18.0.24
     "@types/react-dom": ^18.0.8
     "@types/react-helmet": ^6.1.5
-    "@types/react-scrollspy": ^3.3.3
+    "@types/react-scrollspy": ^3.3.5
     "@types/styled-components": ^5.1.9
     "@types/uuid": ^8.3.0
     "@typescript-eslint/eslint-plugin": ^4.32.0

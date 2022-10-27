@@ -82,7 +82,7 @@
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@types/react-helmet": "^6.1.5",
-    "@types/react-scrollspy": "^3.3.3",
+    "@types/react-scrollspy": "^3.3.5",
     "@types/styled-components": "^5.1.9",
     "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
