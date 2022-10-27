@@ -46,7 +46,7 @@
     "gatsby-plugin-sharp": "^4.24.0",
     "gatsby-plugin-styled-components": "^5.24.0",
     "gatsby-remark-auto-headers-improved": "^1.0.4",
-    "gatsby-source-filesystem": "^3.14.0",
+    "gatsby-source-filesystem": "^4.24.0",
     "gatsby-transformer-sharp": "^3.14.0",
     "github-slugger": "^1.4.0",
     "graphql": "^15.6.0",
