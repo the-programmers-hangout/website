@@ -10714,18 +10714,18 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-manifest@npm:^3.14.0":
-  version: 3.14.0
-  resolution: "gatsby-plugin-manifest@npm:3.14.0"
+"gatsby-plugin-manifest@npm:^4.24.0":
+  version: 4.24.0
+  resolution: "gatsby-plugin-manifest@npm:4.24.0"
   dependencies:
     "@babel/runtime": ^7.15.4
-    gatsby-core-utils: ^2.14.0
-    gatsby-plugin-utils: ^1.14.0
-    semver: ^7.3.5
-    sharp: ^0.29.0
+    gatsby-core-utils: ^3.24.0
+    gatsby-plugin-utils: ^3.18.0
+    semver: ^7.3.7
+    sharp: ^0.30.7
   peerDependencies:
-    gatsby: ^3.0.0-next.0
-  checksum: 4abbfe8953b95c062491b6d1523d70b7c32766b5b2cdad36eb09e7452acef0a18c5dd7ce519ad03aae218998d1446bedb8d6ef2cfbd14e37f4a00117e1d538c9
+    gatsby: ^4.0.0-next
+  checksum: 5040a3844e5cc0444440a7acedbc92c80d4ca05e2ef79ce61c05ae218e53ff4c6aff98af59548cfc7de0f74618d61bce45bc962406595ff923f9bc7ffa01d573
   languageName: node
   linkType: hard
 
@@ -21404,7 +21404,7 @@ resolve@^2.0.0-next.3:
     eslint-plugin-react-hooks: ^4.2.0
     gatsby: ^4.24.5
     gatsby-plugin-layout: ^3.24.0
-    gatsby-plugin-manifest: ^3.14.0
+    gatsby-plugin-manifest: ^4.24.0
     gatsby-plugin-mdx: ^2.14.0
     gatsby-plugin-polished: ^1.0.4
     gatsby-plugin-postcss: ^4.14.0
