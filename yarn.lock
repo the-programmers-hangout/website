@@ -3890,12 +3890,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^17.0.5":
-  version: 17.0.9
-  resolution: "@types/react-dom@npm:17.0.9"
+"@types/react-dom@npm:^18.0.8":
+  version: 18.0.8
+  resolution: "@types/react-dom@npm:18.0.8"
   dependencies:
     "@types/react": "*"
-  checksum: b7e898e1a22643a371f58e801a3d1d8cf13a82d77063c24be73e840ef8d877ca1d04adc5db168d0dac3167dc050a26b1d70efc5fe8566a7f46a3c488a8322989
+  checksum: 522e5e949d05f35c6037a2290838c9c7ff92a9d06f7d96b993c7c3f5a86d8f3a6337e059c94e6fb0920227f445e5d1ce10fbfe3d9bbd95fb82a5539249d90646
   languageName: node
   linkType: hard
 
@@ -19610,7 +19610,7 @@ resolve@^2.0.0-next.3:
     "@types/prismjs": ^1.26.0
     "@types/ramda": ^0.28.18
     "@types/react": ^18.0.24
-    "@types/react-dom": ^17.0.5
+    "@types/react-dom": ^18.0.8
     "@types/react-helmet": ^6.1.1
     "@types/react-scrollspy": ^3.3.3
     "@types/styled-components": ^5.1.9
