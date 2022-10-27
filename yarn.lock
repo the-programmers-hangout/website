@@ -10583,16 +10583,16 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-postcss@npm:^4.14.0":
-  version: 4.14.0
-  resolution: "gatsby-plugin-postcss@npm:4.14.0"
+"gatsby-plugin-postcss@npm:^5.24.0":
+  version: 5.24.0
+  resolution: "gatsby-plugin-postcss@npm:5.24.0"
   dependencies:
     "@babel/runtime": ^7.15.4
     postcss-loader: ^4.3.0
   peerDependencies:
-    gatsby: ^3.0.0-next.0
+    gatsby: ^4.0.0-next
     postcss: ^8.0.5
-  checksum: 526c180f2493496e9cad1154744953ebd53ec44b44d05d8f086b0ed34371aabef3221e732cc0bbee7da584b6376847a387e1ea3c6bc1fe61e14ddb698b121d53
+  checksum: 50a0b9895d24a592910e36357da87220016208ff948acc4bae4e7458a314bdbcd3056541c7a646a23f32dcaf45ae2d3a9c00f931e15f749f280d18f2da24a0d2
   languageName: node
   linkType: hard
 
@@ -20800,7 +20800,7 @@ resolve@^2.0.0-next.3:
     gatsby-plugin-manifest: ^4.24.0
     gatsby-plugin-mdx: ^4.3.0
     gatsby-plugin-polished: ^1.0.4
-    gatsby-plugin-postcss: ^4.14.0
+    gatsby-plugin-postcss: ^5.24.0
     gatsby-plugin-react-helmet: ^4.14.0
     gatsby-plugin-react-svg: ^3.0.1
     gatsby-plugin-remove-trailing-slashes: ^3.14.0
