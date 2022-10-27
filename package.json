@@ -49,7 +49,7 @@
     "gatsby-source-filesystem": "^4.24.0",
     "gatsby-transformer-sharp": "^4.24.0",
     "github-slugger": "^1.5.0",
-    "graphql": "^15.6.0",
+    "graphql": "^16.6.0",
     "graphql-tag": "^2.12.5",
     "lodash": "^4.17.21",
     "polished": "^4.1.3",
