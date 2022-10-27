@@ -10654,14 +10654,14 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"github-slugger@npm:^1.0.0":
+"github-slugger@npm:^1.0.0, github-slugger@npm:^1.5.0":
   version: 1.5.0
   resolution: "github-slugger@npm:1.5.0"
   checksum: c70988224578b3bdaa25df65973ffc8c24594a77a28550c3636e495e49d17aef5cdb04c04fa3f1744babef98c61eecc6a43299a13ea7f3cc33d680bf9053ffbe
   languageName: node
   linkType: hard
 
-"github-slugger@npm:^1.2.0, github-slugger@npm:^1.4.0":
+"github-slugger@npm:^1.2.0":
   version: 1.4.0
   resolution: "github-slugger@npm:1.4.0"
   checksum: 4f52e7a21f5c6a4c5328f01fe4fe13ae8881fea78bfe31f9e72c4038f97e3e70d52fb85aa7633a52c501dc2486874474d9abd22aa61cbe9b113099a495551c6b
@@ -19926,7 +19926,7 @@ resolve@^2.0.0-next.3:
     gatsby-remark-auto-headers-improved: ^1.0.4
     gatsby-source-filesystem: ^4.24.0
     gatsby-transformer-sharp: ^4.24.0
-    github-slugger: ^1.4.0
+    github-slugger: ^1.5.0
     graphql: ^15.6.0
     graphql-tag: ^2.12.5
     lodash: ^4.17.21
