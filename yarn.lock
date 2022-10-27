@@ -3872,12 +3872,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ramda@npm:^0.27.40":
-  version: 0.27.45
-  resolution: "@types/ramda@npm:0.27.45"
+"@types/ramda@npm:^0.28.18":
+  version: 0.28.18
+  resolution: "@types/ramda@npm:0.28.18"
   dependencies:
     ts-toolbelt: ^6.15.1
-  checksum: 524ca41dd99430e9fd86b402bf646e41aca5ba0db50c37f345d23894d5a109e3b76937de8c97027fa554cce366863f6f0257ae0992bedbf469c3fae9e1c41b0d
+  checksum: b140b062efefb3f293811783fdaabf43059d0ec1d78c1bc54884e6fc2bcd909ffe845d99d876b4a13972cc57109097c56f2c3a70e31401ede189a035a840465d
   languageName: node
   linkType: hard
 
@@ -19608,7 +19608,7 @@ resolve@^2.0.0-next.3:
     "@types/classnames": ^2.3.0
     "@types/lodash": ^4.14.186
     "@types/prismjs": ^1.26.0
-    "@types/ramda": ^0.27.40
+    "@types/ramda": ^0.28.18
     "@types/react": ^17.0.8
     "@types/react-dom": ^17.0.5
     "@types/react-helmet": ^6.1.1
