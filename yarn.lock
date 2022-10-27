@@ -2126,17 +2126,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/typescript@npm:1.22.1":
-  version: 1.22.1
-  resolution: "@graphql-codegen/typescript@npm:1.22.1"
+"@graphql-codegen/typescript@npm:2.8.0, @graphql-codegen/typescript@npm:^2.4.8, @graphql-codegen/typescript@npm:^2.7.5":
+  version: 2.8.0
+  resolution: "@graphql-codegen/typescript@npm:2.8.0"
   dependencies:
-    "@graphql-codegen/plugin-helpers": ^1.18.7
-    "@graphql-codegen/visitor-plugin-common": 1.21.0
+    "@graphql-codegen/plugin-helpers": ^2.6.2
+    "@graphql-codegen/schema-ast": ^2.5.1
+    "@graphql-codegen/visitor-plugin-common": 2.13.0
     auto-bind: ~4.0.0
-    tslib: ~2.2.0
+    tslib: ~2.4.0
   peerDependencies:
-    graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
-  checksum: e3b72f64c576f0686c19e42a93f44a277f98a38263721dfe2ca2c3c72e459f0aca86898a9fe78952d844de1e3e23fb3cedb6104a1b7b572b674ab3f727cf34ae
+    graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+  checksum: 45550613384c930d046f1ca8bfd73c25e1219fc45315b1885017e08577a517547d5af86908162f61eee0670689df5c926b5e394b318d5c3d94ee5eef5ac1bc52
   languageName: node
   linkType: hard
 
@@ -2151,21 +2152,6 @@ __metadata:
   peerDependencies:
     graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
   checksum: 118f06965cd708288abee3543d3c62d26702c344c9b2bee0c8dec065ff22d2f7de36e2b311c3ad611056889f58538710c116575faa17554ba8bcd3c157088904
-  languageName: node
-  linkType: hard
-
-"@graphql-codegen/typescript@npm:^2.4.8, @graphql-codegen/typescript@npm:^2.7.5":
-  version: 2.8.0
-  resolution: "@graphql-codegen/typescript@npm:2.8.0"
-  dependencies:
-    "@graphql-codegen/plugin-helpers": ^2.6.2
-    "@graphql-codegen/schema-ast": ^2.5.1
-    "@graphql-codegen/visitor-plugin-common": 2.13.0
-    auto-bind: ~4.0.0
-    tslib: ~2.4.0
-  peerDependencies:
-    graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
-  checksum: 45550613384c930d046f1ca8bfd73c25e1219fc45315b1885017e08577a517547d5af86908162f61eee0670689df5c926b5e394b318d5c3d94ee5eef5ac1bc52
   languageName: node
   linkType: hard
 
@@ -19787,7 +19773,7 @@ resolve@^2.0.0-next.3:
   dependencies:
     "@el7cosmos/gatsby-plugin-prefetch-google-fonts": ^2.0.3
     "@graphql-codegen/cli": ^2.13.8
-    "@graphql-codegen/typescript": 1.22.1
+    "@graphql-codegen/typescript": 2.8.0
     "@graphql-codegen/typescript-operations": 1.18.0
     "@graphql-codegen/typescript-react-apollo": 2.2.5
     "@mdx-js/mdx": ^2.1.5
