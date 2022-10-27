@@ -81,7 +81,7 @@
     "@types/ramda": "^0.28.18",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
-    "@types/react-helmet": "^6.1.1",
+    "@types/react-helmet": "^6.1.5",
     "@types/react-scrollspy": "^3.3.3",
     "@types/styled-components": "^5.1.9",
     "@types/uuid": "^8.3.0",
