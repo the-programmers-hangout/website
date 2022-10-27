@@ -4038,17 +4038,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin-tslint@npm:^4.26.0":
-  version: 4.32.0
-  resolution: "@typescript-eslint/eslint-plugin-tslint@npm:4.32.0"
+"@typescript-eslint/eslint-plugin-tslint@npm:^5.41.0":
+  version: 5.41.0
+  resolution: "@typescript-eslint/eslint-plugin-tslint@npm:5.41.0"
   dependencies:
-    "@typescript-eslint/experimental-utils": 4.32.0
+    "@typescript-eslint/utils": 5.41.0
     lodash: ^4.17.21
   peerDependencies:
-    eslint: ^5.0.0 || ^6.0.0 || ^7.0.0
+    eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
     tslint: ^5.0.0 || ^6.0.0
     typescript: "*"
-  checksum: 14e6d91f26ad42ed95b758b38469eb4f62eb2ec5f4f2e680a1c75769fb17c1593e48b56a00e7db46fd674172095cb155e1998c23162ae7feaee510f33490772e
+  checksum: c82f488cdbd4bc3e0671b8b6f1dd7b94f124fe148f4a2dfa19438e2d8704883d727fa607a457d05d3d554d8be1033e029b34a93ea8a0c5c551c104b50968e351
   languageName: node
   linkType: hard
 
@@ -4093,22 +4093,6 @@ __metadata:
     typescript:
       optional: true
   checksum: b6f08244059a8e02dbb305e914e6455a2b6bfabe6c0fd355bd3a0a732ed44a503ad47d4beb5f617e29274b5a8b8249d80cf4600babf05d8e35958ff64a546da4
-  languageName: node
-  linkType: hard
-
-"@typescript-eslint/experimental-utils@npm:4.32.0":
-  version: 4.32.0
-  resolution: "@typescript-eslint/experimental-utils@npm:4.32.0"
-  dependencies:
-    "@types/json-schema": ^7.0.7
-    "@typescript-eslint/scope-manager": 4.32.0
-    "@typescript-eslint/types": 4.32.0
-    "@typescript-eslint/typescript-estree": 4.32.0
-    eslint-scope: ^5.1.1
-    eslint-utils: ^3.0.0
-  peerDependencies:
-    eslint: "*"
-  checksum: bad0072df9f7f7804a3bd9aeccfe6a0b117e47ad7f58d091674a276c84171be2c525c977c304d39c6d0cd31706a2d9a4f797466a505dda7985535cd3ad9b5830
   languageName: node
   linkType: hard
 
@@ -19710,7 +19694,7 @@ resolve@^2.0.0-next.3:
     "@types/styled-components": ^5.1.26
     "@types/uuid": ^8.3.4
     "@typescript-eslint/eslint-plugin": ^5.41.0
-    "@typescript-eslint/eslint-plugin-tslint": ^4.26.0
+    "@typescript-eslint/eslint-plugin-tslint": ^5.41.0
     "@typescript-eslint/parser": ^4.32.0
     babel-plugin-polished: ^1.1.0
     babel-plugin-styled-components: ^1.13.2
