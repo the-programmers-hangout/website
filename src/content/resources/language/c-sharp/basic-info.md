@@ -12,7 +12,7 @@ It's multi-paradigm: *structured, imperative, object-oriented, event-driven, tas
 
 C# has many features to develop robust and durable applications.
 
-- Garbe collections take care of automatically reclaim occupied memory by unreachable unused objects. 
+- Garbage collections take care of automatically reclaiming occupied memory by unreachable unused objects. 
 
 - Nullable types guard against variables that don't refer to allocated objects.
 
