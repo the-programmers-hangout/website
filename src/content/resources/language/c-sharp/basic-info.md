@@ -53,6 +53,7 @@ The types can reference each other as if they were written in the same language.
 
 In addition to the run time services, .NET also includes extensive libraries like `Base Class Library` (`BCL`). These libraries support many different workloads. They're organized into namespaces that provide a wide variety of useful functionality. The libraries include everything from file input and output to string manipulation to XML parsing, to web application frameworks to Windows Forms controls. The typical C# app uses the .NET class library extensively to handle common "plumbing" chores. 
 
+> Fully defined **Hello World** program
 ## Hello World
 ```cs
 using System;
@@ -70,6 +71,12 @@ The program starts with a `using` **directive** that references the `System` nam
 
 The `Hello` class has a single member, the method `Main`. `Main` method is declared with the `static` **modifier**. Static methods operate without reference to a particular object. By convention, a static method named `Main` serves as the entry point of a C# program
 
+<br />
+
+> New minimalistic approach (since .NET 6)
+```cs
+Console.WriteLine("Hello World");
+```
 
 
 
