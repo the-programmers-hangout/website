@@ -1,7 +1,7 @@
 ---
 authors:
   - "Stone_Red#0001"
-  - "HueByte#1388"
+  - "HueByte#0001"
   - "sfn#3771"
   - "Draxis#1559"
 created_at: 2021/08/07

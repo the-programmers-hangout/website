@@ -2,7 +2,7 @@
 authors:
   - "Stone_Red#0001"
   - "Draxis#1559"
-  - "HueByte#1388"
+  - "HueByte#0001"
 created_at: "2022/06/08"
 title: What is Dot net?
 ---
