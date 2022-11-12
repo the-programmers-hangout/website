@@ -7,13 +7,13 @@ title: What is Visual Studio Code?
 
 ## What is Visual Studio Code?
 
-VSCode is an open-source text editor supported by Microsoft, available for Windows, macOS, and every distro of Linux. Like all the other text editors, you can write whatever you want. 
-Install an extension for the language of your choice, start writing code and run it. There, that's all you need to get started with VSCode. 
+VSCode is an open-source text editor supported by Microsoft, available for Windows, macOS, and every distro of Linux. Like all the other text editors, you can write whatever you want.
+Install an extension for the language of your choice, start writing code and run it. There, that's all you need to get started with VSCode.
 But, VSCode is much more than that. The biggest superpower of VSCode is its wide array of plugins. Plugins allow you to get different themes, functionality, language support (syntax highlighting, code snippets), etc.
 
 ## Why VSCode?
 
-Now I hear you, you're already familiar with the software you use and are wondering why should you even bother. Well, you should. 
+Now I hear you, you're already familiar with the software you use and are wondering why should you even bother. Well, you should.
 
 Not only is it one of the most popular text editors according to the stack overflow developer survey 2019, but it's also very lightweight and easy to use. Even though it's built with electron, which is notorious for high ram usage, vscode is snappy and fast. It has a simple and straightforward design, everything is where it's supposed to be and lets you just code. I personally think of it as a more beginner-friendly version of vim or emacs.
 
@@ -39,7 +39,7 @@ There's actually a lot of features that vscode offers in terms of cli outside of
 
 ![Launch vscode via terminal](https://i.imgur.com/SgfP0kg.gif)
 
-`--diff <file1> <file2>`  - This will take in two files as input and then show the differences in split view
+`--diff <file1> <file2>` - This will take in two files as input and then show the differences in split view
 
 #### `—goto`
 
@@ -51,7 +51,7 @@ You can even specify the line and character to open at. For example,
 
 `code --goto <path-to-file>:<line>:<character>`
 
-For more commands and advanced usage, you can check it out at https://code.visualstudio.com/docs/editor/command-line 
+For more commands and advanced usage, you can check it out at https://code.visualstudio.com/docs/editor/command-line
 
 ### Useful keyboard shortcuts
 
@@ -88,7 +88,7 @@ Want to try out VSCode but don't want to learn Keybindings? Fret not, for it has
 - [Atom](https://marketplace.visualstudio.com/items?itemName=ms-vscode.atom-keybindings)
 - [Sublime text](https://marketplace.visualstudio.com/items?itemName=ms-vscode.sublime-keybindings)
 
-VSC has it all. 
+VSC has it all.
 
 ### File Editing
 
@@ -103,29 +103,29 @@ VSC has it all.
 
 There's a lot of web-dev plugins so i am giving it its own special section
 
-- [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag): You rename the beginning of a tag and it will edit the closing tag as well. 
+- [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag): You rename the beginning of a tag and it will edit the closing tag as well.
 - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer): Launches a local development server that live reloads.
-
 
 ### Database
 
 Theres extensions for you folks too with database problems
 
-- [vscode-database](https://marketplace.visualstudio.com/items?itemName=bajdzis.vscode-database): Lets you connect to MySQl Server 
-- [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools): Allows you to connect to basicly any SQL in the world 
+- [vscode-database](https://marketplace.visualstudio.com/items?itemName=bajdzis.vscode-database): Lets you connect to MySQl Server
+- [SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools): Allows you to connect to basicly any SQL in the world
 
 ### Git
 
 Who can forget Git. Here's some for git usage
 
-- [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens): It does a ton of things to supercharge your git workflow including seeing who wrote what via git blame so you can blame then when you notice bad code that shouldve been refactored. 
-- [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory): Look at the git log and the timeline of commits so you can be proud of how many commits you make to your own code. 
+- [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens): It does a ton of things to supercharge your git workflow including seeing who wrote what via git blame so you can blame then when you notice bad code that shouldve been refactored.
+- [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory): Look at the git log and the timeline of commits so you can be proud of how many commits you make to your own code.
 
 ### Language Specific Alternatives
+
 Sometimes wonder whether there are better alternatives for language support than the official one? Well yeah there are
 
-- [Rust-Analyser](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer): Its not fully stable so its not official, but the speed and features make it worth it 
-- [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance): Its from Microsoft, and non open source. Now wait wait wait, its good. it works with the python plugin and enhances it 
+- [Rust-Analyser](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer): Its not fully stable so its not official, but the speed and features make it worth it
+- [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance): Its from Microsoft, and non open source. Now wait wait wait, its good. it works with the python plugin and enhances it
 
 ### How do I install these?
 
@@ -136,13 +136,14 @@ Well There are three ways.
 3. Open the command palette using `ctrl + shift + p` https://i.imgur.com/qm8yI0n.png And then copy paste the code found on the extension page.
 
 ## VSC Web
+
 Wait what? Vscode on the web? You mean I can run vscode in my browser to make quick code changes wherever I am?
 
 Well that was awfully specific, but yes!
 You can go to https://vscode.dev/ in your browser for it!
 
-Its got pretty much everything vscode has, even extensions. 
-There are some limitations, which you can read more about here: https://code.visualstudio.com/docs/editor/vscode-web#_current-limitations 
+Its got pretty much everything vscode has, even extensions.
+There are some limitations, which you can read more about here: https://code.visualstudio.com/docs/editor/vscode-web#_current-limitations
 
 Read more about the entire thing right here:
 https://code.visualstudio.com/docs/editor/vscode-web

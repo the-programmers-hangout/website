@@ -25,28 +25,28 @@ Let's see static typing in action. Assume a third party library provides us with
 
 ```ts
 type Stock = {
-  fruits: Fruit[]
-  leftovers?: Leftover[]
-}
+  fruits: Fruit[];
+  leftovers?: Leftover[];
+};
 
-declare function getStock(): Stock
+declare function getStock(): Stock;
 ```
 
 When we run this code in JavaScript:
 
 ```ts
-const stock = getStock()
-stock.leftovers.forEach(leftover => console.log(leftover))
+const stock = getStock();
+stock.leftovers.forEach((leftover) => console.log(leftover));
 // Cannot read property 'leftovers' of undefined
 ```
 
 We lost millions because of this bug :(. You might be wondering how TypeScript could have saved us here:
 
 ```ts
-const stock = getStock()
+const stock = getStock();
 // leftovers?: Leftover[] | undefined
 // Object is possibly 'undefined'.(2532)
-stock.leftovers.forEach(leftover => console.log(leftover))
+stock.leftovers.forEach((leftover) => console.log(leftover));
 ```
 
 Our editor warns us as we code! We would also not be able to transpile this code to JavaScript before we fix it by either using optional chaining `stock.leftovers?.forEach(...` , or by writing an if statement which checks for the existence of `leftovers` before using it.
@@ -110,7 +110,7 @@ TypeScript provides an additional layer of documentation. Type annotations make 
 
 ```ts
 function add(a: number, b: number) {
-  return a + b
+  return a + b;
 }
 ```
 
@@ -118,20 +118,20 @@ function add(a: number, b: number) {
 
 ```ts
 class Person {
-  protected name: string
-  private age: number
-  readonly numberOfLives = 1
-  public favouriteLanguage: string
+  protected name: string;
+  private age: number;
+  readonly numberOfLives = 1;
+  public favouriteLanguage: string;
 
   constructor(name: string, age: number, favouriteLanguage = "TypeScript") {
-    this.name = name
-    this.age = age
-    this.favouriteLanguage = favouriteLanguage
+    this.name = name;
+    this.age = age;
+    this.favouriteLanguage = favouriteLanguage;
   }
 
   @CatchErrorAndLog // Did you know that TypeScript also supports decorators?
   public someMethod() {
-    throw new Error("method not implemented")
+    throw new Error("method not implemented");
   }
 }
 ```
@@ -146,17 +146,17 @@ Let's say we want to create a function which accepts an object and a key of that
 const member = {
   username: "moe",
   isShid: true,
-}
+};
 
 function getValueByKey<T, K extends keyof T>(obj: T, key: K): T[K] {
-  return obj[key]
+  return obj[key];
 }
 
-getValueByKey(member, "username") // string
-getValueByKey(member, "isShid") // boolean
+getValueByKey(member, "username"); // string
+getValueByKey(member, "isShid"); // boolean
 ```
 
-This function accepts 2 generic parameters (you could think of them as placeholders): `T` and `K`, we assign the first parameter of this function to generic type T, you might be wondering about the `extends` keyword, basically this adds a constraint to generic parameter `K`, you could read it as "Type `K` must be a key of type `T`". 
+This function accepts 2 generic parameters (you could think of them as placeholders): `T` and `K`, we assign the first parameter of this function to generic type T, you might be wondering about the `extends` keyword, basically this adds a constraint to generic parameter `K`, you could read it as "Type `K` must be a key of type `T`".
 
 Finally we declare the return type by indexing type `T` using our second parameter which is the key, this is referred to as a "indexed access type". TypeScript will now warn us whenever we provide a key that does not exist in the object. We achieved type safety without knowing what object the user would pass in to our function.
 
@@ -168,20 +168,20 @@ What if we want to create a function or compose other types based on certain cri
 
 ```ts
 // Conditional types uses the same syntax you know of ternaries
-type IsNumber<T> = T extends number ? true : false
-type Result = IsNumber<7> // true
+type IsNumber<T> = T extends number ? true : false;
+type Result = IsNumber<7>; // true
 
 // Inferring typed within conditional types using the "infer" keyword.
 // This example uses variadic tuple types
-type LastElementType<T> = T extends [...infer _Head, infer Tail] ? Tail : never
-type Last = LastElementType<[string, boolean, number]> // number
+type LastElementType<T> = T extends [...infer _Head, infer Tail] ? Tail : never;
+type Last = LastElementType<[string, boolean, number]>; // number
 ```
 
 ## Other examples
 
 ```ts
 // Template literal types
-type Border = `border-${"top" | "bottom" | "left" | "right"}`
+type Border = `border-${"top" | "bottom" | "left" | "right"}`;
 
 // Narrowing down union types
 type APIResponseSuccess = {
@@ -243,10 +243,12 @@ TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html: St
 Playground: https://www.typescriptlang.org/play: Try TypeScript in your browser!
 
 ## Books
+
 typescript-book: https://github.com/basarat/typescript-book: Free online guide to TypeScript.
 Programming TypeScript: https://www.oreilly.com/library/view/programming-typescript/9781492037644/: Solid book for beginners.
 Effective TypeScript: https://effectivetypescript.com/: Improve your use of TypeScript (best for experienced programmers).
 Tackling TypeScript: https://exploringjs.com/tackling-ts/index.html: Adopt TypeScript as a JavaScript programmer.
 
 ## Videos
+
 Courses on egghead.io: https://egghead.io/q/typescript
