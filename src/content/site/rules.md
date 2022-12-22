@@ -40,6 +40,10 @@ The FAQ and beginner guide represent many hours of discussion to find well-round
 
 This means cheating on your school work, paying someone to do your school work or trying to avoid your school work in any way. In addition this encompasses attempting to get help on school tests or interview tests. It's unethical and will not be tolerated here.
 
+### Do not use AI to generate answers
+
+AI text generators including, but not limited to ChatGPT are completely forbidden. Do not use these tools to attempt to generate answers to questions found in our server. [See our server announcement for more information.](https://discord.com/channels/244230771232079873/244238073955745796/1049803308874858546)
+
 ## 2. Be nice
 
 ### TPH is a community where everyone is welcome
