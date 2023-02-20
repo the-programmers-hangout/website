@@ -15,7 +15,7 @@ Judgebot has a 50-point system. Each infraction gives you points, and points dec
 
 - 10 points: 1-hour mute
 - 20 points: 12-hour mute
-- 30 points: 24-hour mute
+- 30 points: 7-day mute
 - 40 points: 30-day mute
 - 50 points: permanent ban
 
