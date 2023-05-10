@@ -12,7 +12,7 @@ These are the activity roles of the server in the order you will be granted them
 
 ### <Role color="#915db1">Wizard</Role>
 
-This is for helpful members who have shown exceptional aptitude or expertise in some field. This is given out at the discretion of the Admin team, though other staff members may suggest someone by using ModMail. Less than 0.001% of users get this role.
+This is given out at the discretion of the Staff team, though any regular members may suggest someone by using ModMail. Less than 0.001% of users get this role.
 
 ### <Role color="#968ce3">Solid Contributor</Role>
 
