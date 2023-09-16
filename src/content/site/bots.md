@@ -21,35 +21,21 @@ Judgebot has a 50-point system. Each infraction gives you points, and points dec
 
 **Source:** https://github.com/the-programmers-hangout/JudgeBot
 
-**Prefix:** `j!`
+**Prefix:** `/`
 
 ### Commands
 
-`j!selfhistory` - Will DM your infraction history.
+`/help` - Displays a help menu.
+
+`/info` - Bot info for JudgeBot.
+
+`/rules` - List the rules of this guild.
+
+`/selfhistory` - View your infraction history.
+
+`/viewrule` - List a rule from this guild.
 
 `:stop_sign:` - Reacting to a message with this emote will alert staff to it. Use it if you see any potentially rule breaking content.
-
-## Aura
-
-**Description:** Aura bot will hand out karma to users that earn it. Giving karma is as simple as mentioning (tagging) a user and thanking them in the same message.
-
-**Source:** https://github.com/the-programmers-hangout/aura
-
-**Prefix:** `karma!`
-
-### Commands
-
-`karma!explain` - Details how the karma system works.
-
-`karma!help` - Displays help information.
-
-`karma!karma` - Displays your karma.
-
-`karma!leaderboard` - Displays the karma leaderboard.
-
-`karma!profile` - Gives a karma breakdown per channel.
-
-`karma!reactions` - Details the reactions that Aura can add to messages.
 
 ## DocsBot
 
@@ -65,33 +51,51 @@ Judgebot has a 50-point system. Each infraction gives you points, and points dec
 
 `/mdn` - Search MDN Web Docs.
 
+## FormatBot
+
+**Description:** FormatBot is a bot that uses interactions to format code snippets.
+
+**Source:** https://github.com/tatupesonen/formatbot
+
+**Prefix:** `/`
+
+### Commands
+
+`/format` - Formats a message that's given as an argument.
+
+`/tex` - Formats LaTeX.
+
 ## HangoutBot
 
 **Description:** HangoutBot is a general usage bot, replacing some of the functionality of HotBot.
 
 **Source:** https://github.com/the-programmers-hangout/HangoutBot
 
-**Prefix:** `tph!`
+**Prefix:** `/`
 
 ### Commands
 
-`tph!avatar` - View the avatar of a user.
+`/dadjoke` - Returns a random dad joke.
 
-`tph!help` - Displays help information for the bot or a command.
+`/details server` - Display a message giving basic server information.
 
-`tph!invite` - View the server invite link.
+`/details user` - Displays information about the given user.
 
-`tph!listreminders` - List your reminders.
+`/details role` - Displays information about the given role.
 
-`tph!productivemute` - Mutes all non-productive channels. (e.g hangout)
+`/details avatar` - Gets the avatar from the given user.
 
-`tph!remindme` - Sets a reminder.
+`/flip` - Choose one of the given choices.
 
-`tph!selfmute` - Mutes all channels.
+`/help` - Displays a help menu.
 
-`tph!serverinfo` - Displays server information.
+`/info` - Bot info for HangoutBot.
 
-`tph!userinfo` - Displays info for a user.
+`/productivemute` - Hide social channels for a given amount of time.
+
+`/remindme` - A command that'll remind you about something after the specified time.
+
+`/selfmute` - Mute yourself for the given amount of time.
 
 ## Keeper
 
@@ -99,11 +103,19 @@ Judgebot has a 50-point system. Each infraction gives you points, and points dec
 
 **Source:** https://github.com/ddivad195/keeper
 
-**Prefix:** `keeper!`
+**Prefix:** `/`
 
 ### Commands
 
-N/A
+`/bookmark` - Bookmark this message.
+
+`/help` - Display a help menu.
+
+`/info` - Bot info for Keeper.
+
+`/reminder` - Set a reminder about a message.
+
+`/stats` - View Keeper statistics.
 
 ## ModMail
 
@@ -113,6 +125,7 @@ N/A
 
 **Usage:** All you need to do is send a message. We'll see any edits you make to your message too!
 
+<!--
 ## Mimic
 
 **Description:** Mimic is a bot that talks like you! If you opt-in it will save your messages and build markov chains in order to generate sentences that mimic how you and other users type!
@@ -144,6 +157,7 @@ N/A
 `mimic!start` - Provide the start of a sentence and let mimic finish it! Use quotations around your sentence!
 
 `mimic!stats` - Display statistics of your messages
+-->
 
 ## Polly
 
@@ -151,13 +165,23 @@ N/A
 
 **Source:** https://github.com/the-programmers-hangout/Polly
 
-**Prefix:** `++` or `+` for a self destructing invocation
+**Prefix:** `/` for commands and `++` or `+` for macros.
 
 ### Commands
 
 #### Help
 
-`++listmacros` - Lists all of the available macros
+`/listallmacros` - Lists all macros available in the guild, grouped by channel.
+
+`/listmacros` - List all macros in the current channel.
+
+`/macro` - Search and send a macro.
+
+`/macroinfo` - Get information for a macro.
+
+`/macrostats` - Get statistics on the most and least used macros.
+
+`/searchmacros` - Search the available macros.
 
 #### Here are some commonly used macros
 
@@ -229,11 +253,15 @@ N/A
 
 **Source:** https://github.com/the-programmers-hangout/SuggestionBot
 
-**Prefix:** `s!`
+**Prefix:** `/`
 
-### commands
+### Commands
 
-`s!suggest your suggest message here` - Send in your suggestion message
+`/help` - Display a help menu.
+
+`/info` Bot info for SuggestionBot.
+
+`/suggest` - Make a suggestion.
 
 ## Passive bots
 
@@ -253,13 +281,13 @@ Below are the bots you will see in the server but you will not need to interact 
 
 ## Emourge
 
-**Description:** Emourge tracks emote usage. We use this to help us identify the least used emotes incase we want to add some new ones!
+**Description:** Emourge tracks emote usage. We use this to help us identify the least used emotes in case we want to add some new ones!
 
 **Source:** https://github.com/dfireBird/emourge-mongo
 
 ## Hawk
 
-**Description:** Hawk manages nickname prefixes & suffixes. It adds 🔨 to staff nicks and organises the occasional nick party!
+**Description:** Hawk manages nicknames and organises the occasional nick party!
 
 **Source:** https://github.com/the-programmers-hangout/Hawk
 
