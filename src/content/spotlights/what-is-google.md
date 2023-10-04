@@ -90,4 +90,4 @@ Scholar advanced search: <https://scholar.google.com/#d=gs_asd>
 
 ## Here is a handy cheatsheet!
 
-https://cdn.discordapp.com/attachments/825348974164049920/829494747910504498/google-online-research-cheat-sheet.png
+https://i.imgur.com/pylCpkT.png
