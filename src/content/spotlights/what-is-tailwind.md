@@ -1,9 +1,9 @@
 ---
 authors:
-  - "thias."
-  - "jun_ok"
-  - "shan__"
-  - "propagandalf"
+  - "Thias#8888"
+  - "jun_ok#0001"
+  - "shan#6094"
+  - "propagandalf#0001"
 created_at: "2023/09/10"
 title: What is Tailwind?
 ---
