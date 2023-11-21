@@ -42,12 +42,12 @@ This means cheating on your school work, paying someone to do your school work o
 
 ### Do not use AI to generate answers
 
-AI text generators including, but not limited to ChatGPT are completely forbidden. Do not use these tools to attempt to generate answers to questions found in our server. [See our server announcement for more information.](https://discord.com/channels/244230771232079873/244238073955745796/1049803308874858546)
+AI text generators including, but not limited to ChatGPT are completely forbidden. Do not use these tools to attempt to generate answers to questions found in our server. Do not suggest these tools as a source for learning. Their incorrect confidence can lead learners astray. [See our server announcement for more information.](https://discord.com/channels/244230771232079873/244238073955745796/1049803308874858546)
 
 ### Do not expect us to fix AI generated code
 
 Do not generate code with AI language models and expect our members to fix it for you. TPH is a learning community and we expect people to put clear effort into learning and understanding how to program.
-[See our server announcement for more information.]([https://chat.openai.com/chat](https://discord.com/channels/244230771232079873/244238073955745796/1090268481997512714))
+[See our server announcement for more information.](https://discord.com/channels/244230771232079873/244238073955745796/1090268481997512714)
 
 ## 2. Be nice
 
