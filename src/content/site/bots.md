@@ -21,35 +21,13 @@ Judgebot has a 50-point system. Each infraction gives you points, and points dec
 
 **Source:** https://github.com/the-programmers-hangout/JudgeBot
 
-**Prefix:** `j!`
+**Prefix:** `/`
 
 ### Commands
 
-`j!selfhistory` - Will DM your infraction history.
+`/selfhistory` - Will DM your infraction history.
 
 `:stop_sign:` - Reacting to a message with this emote will alert staff to it. Use it if you see any potentially rule breaking content.
-
-## Aura
-
-**Description:** Aura bot will hand out karma to users that earn it. Giving karma is as simple as mentioning (tagging) a user and thanking them in the same message.
-
-**Source:** https://github.com/the-programmers-hangout/aura
-
-**Prefix:** `karma!`
-
-### Commands
-
-`karma!explain` - Details how the karma system works.
-
-`karma!help` - Displays help information.
-
-`karma!karma` - Displays your karma.
-
-`karma!leaderboard` - Displays the karma leaderboard.
-
-`karma!profile` - Gives a karma breakdown per channel.
-
-`karma!reactions` - Details the reactions that Aura can add to messages.
 
 ## DocsBot
 
@@ -65,33 +43,43 @@ Judgebot has a 50-point system. Each infraction gives you points, and points dec
 
 `/mdn` - Search MDN Web Docs.
 
+## FormatBot
+
+**Description:** FormatBot is a bot that uses interactions to format code snippets.
+
+**Source:** https://github.com/tatupesonen/formatbot
+
+**Prefix:** `/`
+
+### Commands
+
+`/format` - Formats a message that's given as an argument.
+
+`/tex` - Formats LaTeX.
+
 ## HangoutBot
 
 **Description:** HangoutBot is a general usage bot, replacing some of the functionality of HotBot.
 
 **Source:** https://github.com/the-programmers-hangout/HangoutBot
 
-**Prefix:** `tph!`
+**Prefix:** `/`
 
 ### Commands
 
-`tph!avatar` - View the avatar of a user.
+`/help` - Displays help information for the bot or a command.
 
-`tph!help` - Displays help information for the bot or a command.
+`/productivemute` - Mutes all non-productive channels. (e.g hangout)
 
-`tph!invite` - View the server invite link.
+`/remindme` - Sets a reminder.
 
-`tph!listreminders` - List your reminders.
+`/selfmute` - Mutes all channels.
 
-`tph!productivemute` - Mutes all non-productive channels. (e.g hangout)
+`/details server` - Displays server information.
 
-`tph!remindme` - Sets a reminder.
+`/details avatar <userid>` - View the avatar of a user.
 
-`tph!selfmute` - Mutes all channels.
-
-`tph!serverinfo` - Displays server information.
-
-`tph!userinfo` - Displays info for a user.
+`/details user` - Displays info for a user.
 
 ## Keeper
 
@@ -99,7 +87,7 @@ Judgebot has a 50-point system. Each infraction gives you points, and points dec
 
 **Source:** https://github.com/ddivad195/keeper
 
-**Prefix:** `keeper!`
+**Prefix:** `/`
 
 ### Commands
 
@@ -157,9 +145,11 @@ N/A
 
 #### Help
 
-`++listmacros` - Lists all of the available macros
+`/listmacros` - Lists all of the available macros
 
 #### Here are some commonly used macros
+
+_Note: macros can also be invoked using `/macro <name of macro here>`_
 
 `++ask` - If a user is looking for DMs, waiting for "experts", or anything else to delay asking their question use this.
 
@@ -189,52 +179,6 @@ N/A
 
 `++wrapmini` - Instruct a user to wrap their code.
 
-## ReWizard
-
-**Description:** ReWizard is a utility bot for regex. It can find, replace, split, and test regular expressions.
-
-**Source:** https://github.com/jkbbwr/rewizard
-
-**Prefix:** `re!`
-
-### Commands
-
-`re!find` - Finds the first match of the given regex in the target.
-
-`re!find_all` - Finds all matches of the given regex in the target.
-
-`re!help` - Displays help information for the bot and the commands.
-
-`re!replace` - Replaces all matches of the given regex in the target with a replacement.
-
-`re!split` - Splits the target by the given regex.
-
-`re!valid` - Tests whether the given regex is valid.
-
-## StandupBot
-
-**Description:** StandupBot is a bot that controls the standup channel. It enforces a strict message format. Once you have successfully sent a message you will no longer be able to post in the standup channel for 20 hours.
-
-**Source:** https://github.com/the-programmers-hangout/standup
-
-**Prefix:** N/A
-
-### Commands
-
-N/A
-
-## SuggestionBot
-
-**Description:** SuggestionBot manages suggestions for the server. Send in your suggestion and we can put it to a vote!
-
-**Source:** https://github.com/the-programmers-hangout/SuggestionBot
-
-**Prefix:** `s!`
-
-### commands
-
-`s!suggest your suggest message here` - Send in your suggestion message
-
 ## Passive bots
 
 Below are the bots you will see in the server but you will not need to interact with them. They automatically do their job!
@@ -259,7 +203,7 @@ Below are the bots you will see in the server but you will not need to interact 
 
 ## Hawk
 
-**Description:** Hawk manages nickname prefixes & suffixes. It adds 🔨 to staff nicks and organises the occasional nick party!
+**Description:** Hawk manages nickname prefixes & suffixes. It also organises the occasional nick party!
 
 **Source:** https://github.com/the-programmers-hangout/Hawk
 
