@@ -24,9 +24,9 @@
     "fetch-users": "node ./scripts/fetchUsers.js",
     "format": "prettier --write src/{**,**/**}/*.{js,ts,tsx,md}",
     "lint": "eslint '{src,scripts}/**/*.{js,ts,tsx}'",
-    "lint:fix": "yarn run lint -- --fix",
+    "lint:fix": "npm run lint -- --fix",
     "serve": "gatsby serve",
-    "start": "yarn run develop",
+    "start": "npm run develop",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {

@@ -1,5 +1,5 @@
 [build]
-  command = "yarn run fetch-users && yarn run build"
+  command = "npm run fetch-users && npm run build"
 
 [[plugins]]
     package = "netlify-plugin-gatsby-cache"
