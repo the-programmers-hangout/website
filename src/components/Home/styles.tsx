@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import Particles from "react-particles-js"
+import Particles from "@tsparticles/react"
 import styled, { css } from "styled-components"
 import { fontFamily } from "../../design/typography"
 import TPHLogo from "../../images/tph-logo"

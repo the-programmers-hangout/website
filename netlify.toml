@@ -1,5 +1,8 @@
 [build]
-  command = "yarn run fetch-users && yarn run build"
+  command = "npm run fetch-users && npm run build"
+
+[build.environment]
+  NPM_FLAGS = "--legacy-peer-deps"
 
 [[plugins]]
     package = "netlify-plugin-gatsby-cache"

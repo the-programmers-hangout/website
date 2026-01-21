@@ -10,20 +10,20 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-polished`,
     {
-      resolve: `@el7cosmos/gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
         fonts: [
           {
             family: `Montserrat`,
-            variants: [`400`, `700`],
+            weights: [`400`, `700`],
           },
           {
-            family: `IBM+Plex+Sans`,
-            variants: [`400`, `700`],
+            family: `IBM Plex Sans`,
+            weights: [`400`, `700`],
           },
           {
-            family: `IBM+Plex+Mono`,
-            variants: [`400`],
+            family: `IBM Plex Mono`,
+            weights: [`400`],
           },
         ],
       },

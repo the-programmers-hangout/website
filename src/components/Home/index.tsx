@@ -1,10 +1,11 @@
 import { Link } from "gatsby"
-import React, { FC } from "react"
+import React, { FC, useEffect, useState } from "react"
+import { initParticlesEngine } from "@tsparticles/react"
+import { loadSlim } from "@tsparticles/slim"
 import { DiscordButton } from "../DiscordButton"
 import { HomePartner } from "../HomePartner"
 import { WavesBottom, WavesTop } from "../Waves"
 import * as SC from "./styles"
-import { OutMode, MoveDirection } from "react-particles-js"
 
 interface IMenuItemProps {
   to: string
@@ -24,6 +25,16 @@ const MenuItem: FC<IMenuItemProps> = ({ children, to }) => {
 }
 
 export const Home: FC = () => {
+  const [init, setInit] = useState(false)
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine)
+    }).then(() => {
+      setInit(true)
+    })
+  }, [])
+
   return (
     <SC.HomeWrapper>
       <WavesTop />
@@ -31,39 +42,38 @@ export const Home: FC = () => {
         <WavesBottom />
       </SC.FadedBottomWave>
 
-      <SC.StyledParticles
-        params={{
-          particles: {
-            /* eslint-disable-next-line id-blacklist */
-            number: { value: 5, density: { enable: true, value_area: 500 } },
-            color: { value: "#ffffff" },
-            opacity: {
-              value: 0.5,
-              random: false,
-              anim: { enable: false },
+      {init && (
+        <SC.StyledParticles
+          id="tsparticles"
+          options={{
+            particles: {
+              /* eslint-disable-next-line id-blacklist */
+              number: {
+                value: 20,
+                density: { enable: true, width: 1920, height: 1080 },
+              },
+              color: { value: "#ffffff" },
+              opacity: {
+                value: 0.5,
+              },
+              size: {
+                value: { min: 10, max: 36 },
+              },
+              links: {
+                enable: false,
+              },
+              move: {
+                enable: true,
+                speed: 1.5,
+                direction: "top",
+                straight: false,
+                outModes: { default: "out" },
+              },
             },
-            size: {
-              value: 36,
-              random: true,
-              anim: { enable: false },
-            },
-            line_linked: {
-              enable: false,
-            },
-            move: {
-              enable: true,
-              speed: 1.5,
-              direction: MoveDirection.top,
-              random: false,
-              straight: false,
-              out_mode: OutMode.out,
-              bounce: false,
-              attract: { enable: false },
-            },
-          },
-          retina_detect: true,
-        }}
-      />
+            detectRetina: true,
+          }}
+        />
+      )}
       <SC.InnerWrapper>
         <SC.TitleWrapper>
           <Link to="/">
