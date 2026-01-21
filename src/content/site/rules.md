@@ -83,7 +83,7 @@ Content should be kept to a PG13 level. Always ask yourself "Would my boss be ok
 
 ### Don't post controversial content
 
-If you wish to discuss topics like politics, religion, philosophy and alike, head over to our sister server, Controversy Central.
+Refrain from discussing controversial topics such as politics, religion, and philosophy.
 
 ### Don't discuss web scraping unless approved
 
