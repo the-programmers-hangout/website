@@ -159,7 +159,7 @@ _Note: macros can also be invoked using `/macro <name of macro here>`_
 
 `++bots` - Displays a link to this page.
 
-`++cc` - Redirect a user to our sister server Controversy Central.
+`++cc` - Remind a user of the controversial content rule.
 
 `++faq` - Displays a link to the FAQ page.
 
