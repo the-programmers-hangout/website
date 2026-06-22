@@ -7,7 +7,7 @@ const extraLink = css`
   word-break: break-word;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     text-decoration: underline;
   }
 `

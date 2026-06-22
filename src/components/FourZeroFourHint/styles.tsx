@@ -9,7 +9,7 @@ export const StyledLink = styled(Link)`
   transition: color 0.3s;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     color: #5dbbea;
     transition: none;
   }
