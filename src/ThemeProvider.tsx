@@ -1,4 +1,5 @@
 import React, { createContext, FC, useMemo } from "react"
+import { Helmet } from "react-helmet"
 import { ThemeProvider as BaseThemeProvider } from "styled-components"
 
 import { darkTheme, lightTheme } from "./design/themes"
@@ -62,6 +63,11 @@ const ThemeProvider: FC<IScopedDownChildren> = ({ children }) => {
   return (
     <ThemeContext.Provider value={contextValue}>
       <BaseThemeProvider theme={themeObject}>
+        <Helmet
+          meta={[
+            { name: "theme-color", content: themeObject.main.background },
+          ]}
+        />
         {isBrowser ? children : undefined}
       </BaseThemeProvider>
     </ThemeContext.Provider>
