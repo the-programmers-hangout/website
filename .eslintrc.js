@@ -186,7 +186,7 @@ module.exports = {
     "no-template-curly-in-string": "error",
     // Web interface guidelines — mechanical design rules enforced inside
     // styled-components template literals.
-    // See .context/design/web-interface-guidelines.md
+    // See docs/design/web-interface-guidelines.md
     "no-restricted-syntax": [
       "error",
       {
