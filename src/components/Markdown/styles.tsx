@@ -178,7 +178,7 @@ export const MarkdownWrapper = styled.div`
     background-repeat: no-repeat;
     background-size: 100% 3px;
     background-position: 0 100%;
-    transition: all 0.125s ease-in;
+    transition: color 0.125s ease-in, background-size 0.125s ease-in;
     font-weight: 700;
     word-break: break-all;
     &:hover {
