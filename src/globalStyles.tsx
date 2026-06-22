@@ -8,6 +8,7 @@ import {
 export const GlobalStyles = createGlobalStyle`
   html {
     font-family: ${fontFamily.body};
+    color-scheme: ${(props) => props.theme.name};
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
   }
