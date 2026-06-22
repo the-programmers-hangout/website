@@ -1,7 +1,17 @@
 import { transparentize } from "polished"
 import styled from "styled-components"
 
-export const ThemeTogglerWrapper = styled.div``
+export const ThemeTogglerWrapper = styled.button`
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+`
 
 export const Link = styled.span`
   display: inline-block;
