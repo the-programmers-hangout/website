@@ -35,10 +35,11 @@ const InnerColumnLayout: FC<IColumnLayoutProps> = ({
   return (
     <Fragment>
       <GlobalStyles />
+      <SC.SkipLink href="#main-content">Skip to content</SC.SkipLink>
       <SC.Main>
         <MobileHeader openMenu={openMenu}>{title}</MobileHeader>
         {sidebar({ className: openOnMobile ? "is-open" : "" })}
-        <SC.MainContent>{content}</SC.MainContent>
+        <SC.MainContent id="main-content">{content}</SC.MainContent>
       </SC.Main>
       <SC.Overlay
         className={openOnMobile ? "is-open" : ""}
