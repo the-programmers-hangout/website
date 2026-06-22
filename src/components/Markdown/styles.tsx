@@ -42,6 +42,7 @@ export const MarkdownWrapper = styled.div`
     overflow-wrap: break-word;
     margin-top: ${BASE_LINE_HEIGHT * 2}px;
     margin-bottom: ${BASE_LINE_HEIGHT}px;
+    scroll-margin-top: 80px;
   }
 
   h1 {
