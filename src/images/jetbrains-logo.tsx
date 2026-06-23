@@ -1,11 +1,19 @@
 import React from "react"
 import useId from "../hooks/useId"
 
-const JetbrainsLogo: React.FC = (props) => {
+const JetbrainsLogo: React.FC<{ alt: string }> = ({ alt, ...props }) => {
   const id = useId()
+  const titleId = `jetbrains-logo-title-${id}`
 
   return (
-    <svg fill="none" viewBox="0 0 121 131" {...props}>
+    <svg
+      fill="none"
+      viewBox="0 0 121 131"
+      role="img"
+      aria-labelledby={titleId}
+      {...props}
+    >
+      <title id={titleId}>{alt}</title>
       <path
         fill={`url(#jetbrains1-${id})`}
         d="M118.62 71.8a4.68 4.68 0 00-6.2-7l-83.8 45.9a10.07 10.07 0 00-1.1 18c3.4 2 7.5 1.8 10.7-.2.2-.2.5-.3.7-.5l78-54.8c.4-.3 1.5-1.1 1.7-1.4z"
