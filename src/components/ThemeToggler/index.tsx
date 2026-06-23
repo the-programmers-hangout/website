@@ -6,7 +6,7 @@ export const ThemeToggler: FC = () => {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <SC.ThemeTogglerWrapper onClick={toggleTheme}>
+    <SC.ThemeTogglerWrapper type="button" onClick={toggleTheme}>
       <SC.Link>Switch to {theme === "dark" ? "light" : "dark"} mode</SC.Link>
     </SC.ThemeTogglerWrapper>
   )

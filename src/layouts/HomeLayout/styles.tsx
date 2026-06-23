@@ -29,7 +29,7 @@ export const MainContent = styled.main`
     transition: color 0.3s;
 
     &:hover,
-    &:focus {
+    &:focus-visible {
       color: #5dbbea;
       transition: none;
     }

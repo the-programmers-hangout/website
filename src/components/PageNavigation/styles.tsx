@@ -22,7 +22,7 @@ export const NavLink = styled(Link)`
   text-decoration: none;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     color: ${(props) => props.theme.main.foreground};
     text-decoration: underline;
   }

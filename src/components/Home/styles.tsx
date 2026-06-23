@@ -111,7 +111,8 @@ export const MenuItemLine = styled.div`
   margin-top: -3px;
   bottom: 0;
   background: ${(props) => props.theme.main.foreground};
-  transition: all 0.3s;
+  transition: padding 0.3s, height 0.3s, background 0.3s, box-shadow 0.3s,
+    margin 0.3s, border-radius 0.3s;
   left: 0;
 `
 

@@ -184,6 +184,27 @@ module.exports = {
     ],
     "no-sparse-arrays": "error",
     "no-template-curly-in-string": "error",
+    // Web interface guidelines — mechanical design rules enforced inside
+    // styled-components template literals.
+    // See docs/design/web-interface-guidelines.md
+    "no-restricted-syntax": [
+      "error",
+      {
+        selector: "TemplateElement[value.raw=/transition:\\s*all/]",
+        message:
+          "Avoid `transition: all` — list only the properties you animate (web interface guidelines).",
+      },
+      {
+        selector: "TemplateElement[value.raw=/[^-\\w]:focus(?![-\\w])/]",
+        message:
+          "Prefer `:focus-visible` over `:focus` for focus styling (web interface guidelines).",
+      },
+      {
+        selector: "TemplateElement[value.raw=/outline:\\s*(none|0)\\b/]",
+        message:
+          "Don't remove `outline` without a visible focus replacement (web interface guidelines).",
+      },
+    ],
     "no-throw-literal": "error",
     "no-trailing-spaces": "off",
     "no-undef-init": "error",

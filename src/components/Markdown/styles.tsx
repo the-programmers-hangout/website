@@ -42,6 +42,7 @@ export const MarkdownWrapper = styled.div`
     overflow-wrap: break-word;
     margin-top: ${BASE_LINE_HEIGHT * 2}px;
     margin-bottom: ${BASE_LINE_HEIGHT}px;
+    scroll-margin-top: 80px;
   }
 
   h1 {
@@ -178,7 +179,7 @@ export const MarkdownWrapper = styled.div`
     background-repeat: no-repeat;
     background-size: 100% 3px;
     background-position: 0 100%;
-    transition: all 0.125s ease-in;
+    transition: color 0.125s ease-in, background-size 0.125s ease-in;
     font-weight: 700;
     word-break: break-all;
     &:hover {

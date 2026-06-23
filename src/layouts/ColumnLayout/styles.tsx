@@ -1,5 +1,24 @@
 import styled from "styled-components"
 
+export const SkipLink = styled.a`
+  position: fixed;
+  left: 8px;
+  top: -56px;
+  z-index: 200;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background: ${(props) => props.theme.main.background};
+  color: ${(props) => props.theme.main.foreground};
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: top 0.15s ease-in;
+
+  &:focus-visible {
+    top: 8px;
+  }
+`
+
 export const Main = styled.div`
   display: flex;
   width: 100%;

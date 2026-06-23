@@ -8,6 +8,7 @@ import {
 export const GlobalStyles = createGlobalStyle`
   html {
     font-family: ${fontFamily.body};
+    color-scheme: ${(props) => props.theme.name};
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
   }
@@ -18,5 +19,24 @@ export const GlobalStyles = createGlobalStyle`
     line-height: ${BASE_LINE_HEIGHT}px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  a,
+  button,
+  label,
+  summary,
+  [role="button"] {
+    touch-action: manipulation;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 `

@@ -23,7 +23,7 @@ const linkStyle = css`
   }
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     background: linear-gradient(92.97deg, #feaf6d 0%, #ff70a5 100%);
     background-clip: text;
     -webkit-background-clip: text;
