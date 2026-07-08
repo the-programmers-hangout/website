@@ -1,0 +1,15 @@
+---
+import Base from "../../layouts/Base.astro"
+import Spotlights404Island from "../../islands/Spotlights404Island.tsx"
+import { getResourceData } from "../../lib/content"
+
+const resourceData = getResourceData()
+---
+
+<Base title="404: Spotlight Not found">
+  <Spotlights404Island
+    client:only="react"
+    pathname="/spotlights/404"
+    resourceData={resourceData}
+  />
+</Base>

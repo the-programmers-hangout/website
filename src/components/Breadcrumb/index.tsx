@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 
-import ChevronUp from "../../icons/chevron-up.svg"
+import ChevronUp from "../../icons/chevron-up.svg?react"
 import { IFileOrFolder } from "../../types"
 import { humanize, traversePaths } from "../../utils"
 import * as SC from "./styles"

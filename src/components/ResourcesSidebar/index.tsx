@@ -1,47 +1,16 @@
-import { graphql, useStaticQuery } from "gatsby"
 import descend from "ramda/es/descend"
 import sortWith from "ramda/es/sortWith"
 import React, { FC, HTMLAttributes, memo, useState } from "react"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import useSidebar from "../../hooks/useSidebar"
-import TriangleDown from "../../icons/triangle-down.svg"
+import { useResourceData } from "../../context/ResourceDataContext"
+import TriangleDown from "../../icons/triangle-down.svg?react"
 import { IFileOrFolder, IFolder } from "../../types"
 import { getPath, humanize } from "../../utils"
 import { Sidebar } from "../Sidebar"
 import * as SC from "./styles"
 import useMatchingPath from "./useMatchingPath"
 import useTree from "./useTree"
-
-const ALL_RESOURCES = graphql`
-  query AllTopicsAndAllLanguages {
-    languages: allFile(filter: { sourceInstanceName: { eq: "languages" } }) {
-      edges {
-        node {
-          relativePath
-          childMdx {
-            frontmatter {
-              authors
-              title
-            }
-          }
-        }
-      }
-    }
-    topics: allFile(filter: { sourceInstanceName: { eq: "topics" } }) {
-      edges {
-        node {
-          relativePath
-          childMdx {
-            frontmatter {
-              authors
-              title
-            }
-          }
-        }
-      }
-    }
-  }
-`
 
 const childrenSort = sortWith<IFileOrFolder>([
   descend((f) => {
@@ -200,7 +169,7 @@ const ExpandResources: FC<{
 
 export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
   const [expanded, setExpanded] = useState(false)
-  const resources = useStaticQuery(ALL_RESOURCES)
+  const resources = useResourceData()
   const languagesTree = useTree(resources.languages)
   const topicsTree = useTree(resources.topics)
   const { current } = useSidebar()

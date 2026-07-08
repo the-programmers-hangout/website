@@ -1,8 +1,10 @@
-import { WindowLocation } from "@reach/router"
 import React, { FC, Fragment } from "react"
 import * as SC from "./styles"
+import type { AppLocation } from "../../appTypes"
 
-import { FileConnection } from "../../../generated/graphql"
+interface FileConnection {
+  edges: { node: { relativePath: string } }[]
+}
 
 // helper function to make matrix generation easier
 // credits to https://stackoverflow.com/a/13808461
@@ -57,7 +59,7 @@ function levenshteinDistance(term1: string, term2: string) {
 
 interface IFourZeroFourHint {
   basepath: string
-  location: WindowLocation
+  location: AppLocation
   data: { allFile: FileConnection }
   threshold?: number
 }

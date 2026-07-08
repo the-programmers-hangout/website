@@ -14,11 +14,14 @@ export const useLockBodyScroll = () => {
   }
 
   const body = documentGlobal && document.querySelector("body")
-  const gatsbyNode =
-    documentGlobal && document.querySelector<HTMLDivElement>("#___gatsby")
-  if (body && gatsbyNode) {
+  const rootNode =
+    documentGlobal &&
+    document.querySelector<HTMLElement>("#___tph, astro-island")
+  if (body) {
     body.style.overflow = locked ? "hidden" : ""
-    gatsbyNode.style.overflowY = locked ? "scroll" : ""
+    if (rootNode) {
+      rootNode.style.overflowY = locked ? "scroll" : ""
+    }
   }
 
   return { locked, lock, unlock }

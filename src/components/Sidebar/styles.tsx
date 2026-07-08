@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import { AppLink as Link } from "../AppLink"
 import styled, { css } from "styled-components"
 import { transparentize } from "polished"
 import { fontFamily } from "../../design/typography"

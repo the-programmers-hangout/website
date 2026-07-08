@@ -1,4 +1,3 @@
-import { RouteComponentProps } from "@reach/router"
 import React, { FC, useEffect } from "react"
 
 import { Home } from "../../components/Home"
@@ -8,7 +7,7 @@ import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import { ThemeProvider } from "../../ThemeProvider"
 import * as SC from "./styles"
 
-export const HomeLayout: FC<RouteComponentProps> = () => {
+export const HomeLayout: FC = () => {
   const { locked, unlock } = useLockBodyScroll()
 
   useEffect(() => {

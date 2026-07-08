@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components"
-import { Link } from "gatsby"
+import { AppLink as Link } from "../AppLink"
 
 const extraLink = css`
   color: ${(props) => props.theme.main.foreground};

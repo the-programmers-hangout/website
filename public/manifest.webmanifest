@@ -1,0 +1,15 @@
+{
+  "name": "The Programmers Hangout",
+  "short_name": "TPH",
+  "start_url": "/",
+  "background_color": "#1f2a34",
+  "theme_color": "#2874fe",
+  "display": "minimal-ui",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

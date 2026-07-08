@@ -1,0 +1,64 @@
+---
+import "prismjs/themes/prism-tomorrow.css"
+
+export interface Props {
+  title: string
+  description?: string
+  subCategory?: string | null
+  lang?: string
+}
+
+const { title, description, subCategory, lang = "en" } = Astro.props
+
+const siteTitle = "The Programmers Hangout"
+const siteDescription = "A cozy community of programmers on Discord"
+const siteAuthor = "TPH Community"
+
+const metaDescription = description || siteDescription
+const displayTitle = subCategory ? `${title} - ${subCategory}` : title
+const fullTitle = `${displayTitle} | ${siteTitle}`
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={metaDescription} />
+
+    <meta property="og:title" content={displayTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content={siteAuthor} />
+    <meta name="twitter:title" content={displayTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+
+    <link rel="icon" href="/icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#2874fe" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&family=Montserrat:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+</style>

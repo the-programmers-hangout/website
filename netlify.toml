@@ -1,8 +1,16 @@
 [build]
-  command = "npm run fetch-users && npm run build"
+  command = "npm run build"
+  publish = "dist"
 
-[build.environment]
-  NPM_FLAGS = "--legacy-peer-deps"
+# Serve the bespoke "not found" pages for unknown resource / spotlight URLs,
+# mirroring Gatsby's /resources/* and /spotlights/* matchPath fallbacks.
+# force is false by default, so real pages are still served directly.
+[[redirects]]
+  from = "/resources/*"
+  to = "/resources/404/index.html"
+  status = 404
 
-[[plugins]]
-    package = "netlify-plugin-gatsby-cache"
+[[redirects]]
+  from = "/spotlights/*"
+  to = "/spotlights/404/index.html"
+  status = 404

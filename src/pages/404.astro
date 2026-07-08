@@ -1,0 +1,15 @@
+---
+import Base from "../layouts/Base.astro"
+import Root404Island from "../islands/Root404Island.tsx"
+import { getResourceData } from "../lib/content"
+
+const resourceData = getResourceData()
+---
+
+<Base title="404: Not found">
+  <Root404Island
+    client:only="react"
+    pathname="/404"
+    resourceData={resourceData}
+  />
+</Base>

@@ -1,4 +1,4 @@
-import { WindowLocation } from "@reach/router"
+import type { AppLocation } from "./appTypes"
 import React, { FC, useMemo } from "react"
 
 function appendSlashToPath(path: string): string {
@@ -12,14 +12,14 @@ function getSecondLevel(path: string): string | void {
 }
 
 export interface ILocationContextInterface {
-  location: WindowLocation | void
+  location: AppLocation | void
   isHome: boolean
   isMatchingPath: (path: string) => boolean
   getSecondLevel: (path: string) => string | void
 }
 
 interface ILocationProviderProps {
-  location: WindowLocation | void
+  location: AppLocation | void
 }
 
 export const LocationContext = React.createContext<ILocationContextInterface | null>(

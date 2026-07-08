@@ -1,0 +1,19 @@
+---
+import Base from "../layouts/Base.astro"
+import SitePageIsland from "../islands/SitePageIsland.tsx"
+import { getSitePageData, getResourceData } from "../lib/content"
+
+const data = await getSitePageData("/faq")
+const resourceData = getResourceData()
+---
+
+<Base title="FAQ">
+  <SitePageIsland
+    client:only="react"
+    pathname="/faq"
+    headerTitle="Frequently Asked Questions"
+    html={data.html}
+    headings={data.headings}
+    resourceData={resourceData}
+  />
+</Base>

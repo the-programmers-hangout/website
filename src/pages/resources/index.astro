@@ -1,0 +1,15 @@
+---
+import Base from "../../layouts/Base.astro"
+import ResourcesIndexIsland from "../../islands/ResourcesIndexIsland.tsx"
+import { getResourceData } from "../../lib/content"
+
+const resourceData = getResourceData()
+---
+
+<Base title="Resources">
+  <ResourcesIndexIsland
+    client:only="react"
+    pathname="/resources"
+    resourceData={resourceData}
+  />
+</Base>

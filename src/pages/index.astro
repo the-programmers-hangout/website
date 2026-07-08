@@ -1,0 +1,11 @@
+---
+import Base from "../layouts/Base.astro"
+import HomeIsland from "../islands/HomeIsland.tsx"
+---
+
+<Base
+  title="Home"
+  description="The Programmer's Hangout (TPH) is a discord community geared towards programming."
+>
+  <HomeIsland client:only="react" />
+</Base>

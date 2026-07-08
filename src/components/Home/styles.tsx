@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import { AppLink as Link } from "../AppLink"
 import Particles from "@tsparticles/react"
 import styled, { css } from "styled-components"
 import { fontFamily } from "../../design/typography"

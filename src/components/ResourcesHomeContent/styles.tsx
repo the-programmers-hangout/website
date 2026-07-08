@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import fontFamily, { BASE_LINE_HEIGHT } from "../../design/typography"
-import externalLink from "../../icons/external-link.png"
+import externalLink from "../../icons/external-link.png?url"
 
 export const ResourcesHomeContentWrapper = styled.div``
 

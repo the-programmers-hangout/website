@@ -14,11 +14,11 @@ import "prismjs/components/prism-python"
 import "prismjs/components/prism-yaml"
 import "prismjs/plugins/line-numbers/prism-line-numbers.css"
 import React, { FC, useEffect } from "react"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import * as SC from "./styles"
 import "./env"
 
 interface IMarkdownProps {
+  // Pre-rendered HTML (built at compile time from Markdown/MDX content).
   content: string
 }
 
@@ -29,10 +29,12 @@ interface IMarkdownProps {
 export const Markdown: FC<IMarkdownProps> = ({ content, ...restProps }) => {
   useEffect(() => {
     Prism.highlightAll()
-  }, [])
+  }, [content])
+
   return (
-    <SC.MarkdownWrapper {...restProps}>
-      <MDXRenderer>{content}</MDXRenderer>
-    </SC.MarkdownWrapper>
+    <SC.MarkdownWrapper
+      {...restProps}
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
   )
 }

@@ -1,0 +1,19 @@
+---
+import Base from "../layouts/Base.astro"
+import SitePageIsland from "../islands/SitePageIsland.tsx"
+import { getSitePageData, getResourceData } from "../lib/content"
+
+const data = await getSitePageData("/rules")
+const resourceData = getResourceData()
+---
+
+<Base title="Rules">
+  <SitePageIsland
+    client:only="react"
+    pathname="/rules"
+    headerTitle="Rules"
+    html={data.html}
+    headings={data.headings}
+    resourceData={resourceData}
+  />
+</Base>

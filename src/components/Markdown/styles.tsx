@@ -186,4 +186,48 @@ export const MarkdownWrapper = styled.div`
       background-size: 100% 100%;
     }
   }
+
+  /* Headings wrapped by rehype-autolink-headings — keep them looking like text. */
+  a.anchor {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* <Role> pills from MDX content (see lib/markdown preprocess). */
+  .role {
+    display: inline-block;
+    font-weight: 400 !important;
+    border: 2px solid;
+    border-radius: 40px;
+    margin: 2px 0;
+    padding: 3px 12px;
+  }
+
+  /* <DiscordButton> from MDX content. Mirrors DiscordButton styled component. */
+  .discord-button {
+    display: inline-flex;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: ${(props) => props.theme.discord.base};
+    color: #fff;
+    padding: 18px 28px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    cursor: pointer;
+    box-shadow: 0 3px 18px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      background: ${(props) => props.theme.discord.darker};
+    }
+
+    .discord-logo {
+      width: 30px;
+      height: 30px;
+      margin-right: 13px;
+    }
+  }
 `

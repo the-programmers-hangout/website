@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import { AppLink as Link } from "../AppLink"
 import React, { FC, useEffect, useState } from "react"
 import { initParticlesEngine } from "@tsparticles/react"
 import { loadSlim } from "@tsparticles/slim"

@@ -88,9 +88,8 @@ out
 .nuxt
 dist
 
-# Gatsby files
-.cache/
-public
+# Astro
+.astro/
 
 # vuepress build output
 .vuepress/dist

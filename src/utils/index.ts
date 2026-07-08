@@ -5,7 +5,7 @@ import pipe from "ramda/es/pipe"
 import sort from "ramda/es/sort"
 
 import { IFile, IFileOrFolder, IFolder, ITocItem } from "../types"
-import { Mdx } from "../../generated/graphql"
+import type { Heading } from "../lib/markdown"
 
 const slugger = new GithubSlugger()
 
@@ -141,7 +141,7 @@ export function join([head, ...tail]: IFileOrFolder[]): IFileOrFolder[] {
   return [current, ...join(remaining)]
 }
 
-export function buildToc(headings: Mdx["headings"]): ITocItem[] {
+export function buildToc(headings: Heading[] | null | undefined): ITocItem[] {
   if (!headings) {
     return []
   }

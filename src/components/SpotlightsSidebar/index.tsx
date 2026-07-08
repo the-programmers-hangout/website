@@ -1,25 +1,13 @@
-import { graphql, useStaticQuery } from "gatsby"
 import sort from "ramda/es/sort"
 import React, { FC, HTMLAttributes } from "react"
 import useBuildTree from "../../hooks/useBuildTree"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import useSidebar from "../../hooks/useSidebar"
+import { useResourceData } from "../../context/ResourceDataContext"
 import { IFileOrFolder } from "../../types"
 import { humanize } from "../../utils"
 import { Sidebar } from "../Sidebar"
 import * as SC from "./styles"
-
-const ALL_SPOTLIGHTS = graphql`
-  query {
-    spotlights: allFile(filter: { sourceInstanceName: { eq: "spotlights" } }) {
-      edges {
-        node {
-          relativePath
-        }
-      }
-    }
-  }
-`
 
 function Tree({ item }: { item: IFileOrFolder }) {
   const { setOpenOnMobile } = useSidebar()
@@ -43,7 +31,7 @@ function Tree({ item }: { item: IFileOrFolder }) {
 export const SpotlightsSidebar: FC<HTMLAttributes<HTMLDivElement>> = (
   props
 ) => {
-  const { spotlights } = useStaticQuery(ALL_SPOTLIGHTS)
+  const { spotlights } = useResourceData()
   const tree = useBuildTree(spotlights, "/spotlights")
   const sortedTree = sort((a, b) => a.title.localeCompare(b.title), tree)
 

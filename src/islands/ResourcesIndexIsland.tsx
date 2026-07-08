@@ -1,16 +1,20 @@
 import React from "react"
+import { Shell } from "./Shell"
+import { HeaderBarebone } from "../components/HeaderBarebone"
+import { Link } from "../components/Link"
+import { PageContent } from "../components/PageContent"
+import { ResourcesList } from "../components/ResourcesList"
+import packageJson from "../../package.json"
+import type { ResourceDataShape } from "../lib/content"
 
-import packageJson from "../../../package.json"
-import { HeaderBarebone } from "../../components/HeaderBarebone"
-import { Link } from "../../components/Link"
-import { PageContent } from "../../components/PageContent"
-import { ResourcesList } from "../../components/ResourcesList"
-import { SEO } from "../../components/SEO"
+interface Props {
+  pathname: string
+  resourceData: ResourceDataShape
+}
 
-function ResourcesPage() {
+export default function ResourcesIndexIsland({ pathname, resourceData }: Props) {
   return (
-    <>
-      <SEO title="Resources" />
+    <Shell layout="resources" pathname={pathname} resourceData={resourceData}>
       <HeaderBarebone
         title="Welcome to the TPH resources"
         content={
@@ -27,10 +31,7 @@ function ResourcesPage() {
           </>
         }
       />
-
       <PageContent content={<ResourcesList />} />
-    </>
+    </Shell>
   )
 }
-
-export default ResourcesPage

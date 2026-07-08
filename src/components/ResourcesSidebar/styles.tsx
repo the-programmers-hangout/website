@@ -1,9 +1,9 @@
-import { Link } from "gatsby"
+import { AppLink as Link } from "../AppLink"
 import { transparentize } from "polished"
 import styled, { css } from "styled-components"
-import ChevronUp from "../../icons/chevron-up.svg"
-import Collapse from "../../icons/collapse.svg"
-import Expand from "../../icons/expand.svg"
+import ChevronUp from "../../icons/chevron-up.svg?react"
+import Collapse from "../../icons/collapse.svg?react"
+import Expand from "../../icons/expand.svg?react"
 
 export const Children = styled.div`
   padding-left: 16px;

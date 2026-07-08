@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import { AppLink as Link } from "../AppLink"
 import styled from "styled-components"
 
 export const StyledLink = styled(Link)`

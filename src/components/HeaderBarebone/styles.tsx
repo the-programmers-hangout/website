@@ -1,10 +1,10 @@
 import { transparentize } from "polished"
 import styled, { css } from "styled-components"
 import { fontFamily } from "../../design/typography"
-import Header2560 from "../../images/header-2560x1440.png"
-import Header1920 from "../../images/header-1920x1080.png"
-import Header1440 from "../../images/header-1440x900.png"
-import HeaderMobile from "../../images/header-mobile-375x300.png"
+import Header2560 from "../../images/header-2560x1440.png?url"
+import Header1920 from "../../images/header-1920x1080.png?url"
+import Header1440 from "../../images/header-1440x900.png?url"
+import HeaderMobile from "../../images/header-mobile-375x300.png?url"
 
 const spaceAbove = 67
 const height = 300 - spaceAbove

@@ -1,0 +1,15 @@
+---
+import Base from "../../layouts/Base.astro"
+import SpotlightsIndexIsland from "../../islands/SpotlightsIndexIsland.tsx"
+import { getResourceData } from "../../lib/content"
+
+const resourceData = getResourceData()
+---
+
+<Base title="Tech Spotlights">
+  <SpotlightsIndexIsland
+    client:only="react"
+    pathname="/spotlights"
+    resourceData={resourceData}
+  />
+</Base>

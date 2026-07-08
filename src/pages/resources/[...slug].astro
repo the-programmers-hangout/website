@@ -1,0 +1,73 @@
+---
+import Base from "../../layouts/Base.astro"
+import ResourceHomeIsland from "../../islands/ResourceHomeIsland.tsx"
+import ResourcePageIsland from "../../islands/ResourcePageIsland.tsx"
+import {
+  getResourceCategories,
+  getResourceArticlePaths,
+  getResourceHomeData,
+  getResourcePageData,
+  getResourceData,
+} from "../../lib/content"
+
+export async function getStaticPaths() {
+  const paths = []
+  for (const { category } of getResourceCategories()) {
+    paths.push({ params: { slug: category }, props: { kind: "home", category } })
+  }
+  for (const relativePath of getResourceArticlePaths()) {
+    paths.push({
+      params: { slug: relativePath },
+      props: { kind: "article", relativePath },
+    })
+  }
+  return paths
+}
+
+const props = Astro.props as
+  | { kind: "home"; category: string }
+  | { kind: "article"; relativePath: string }
+
+const resourceData = getResourceData()
+
+let title: string
+let subCategory: string
+let description: string
+let pathname: string
+let homeData
+let articleData
+
+if (props.kind === "home") {
+  homeData = await getResourceHomeData(props.category)
+  title = homeData.title
+  subCategory = props.category
+  description = homeData.excerpt
+  pathname = `/resources/${props.category}/`
+} else {
+  articleData = await getResourcePageData(props.relativePath)
+  title = articleData.title
+  subCategory = props.relativePath.split("/")[0]
+  description = articleData.excerpt
+  pathname = `/resources/${props.relativePath}`
+}
+---
+
+<Base title={title} subCategory={subCategory} description={description}>
+  {
+    props.kind === "home" ? (
+      <ResourceHomeIsland
+        client:only="react"
+        pathname={pathname}
+        data={homeData}
+        resourceData={resourceData}
+      />
+    ) : (
+      <ResourcePageIsland
+        client:only="react"
+        pathname={pathname}
+        data={articleData}
+        resourceData={resourceData}
+      />
+    )
+  }
+</Base>

@@ -9,7 +9,7 @@ export const Footer: FC = () => {
       <p>
         © {new Date().getFullYear()}, Built with
         {` `}
-        <Link to="https://www.gatsbyjs.org">Gatsby</Link> - Source on{" "}
+        <Link to="https://astro.build">Astro</Link> - Source on{" "}
         <Link to={packageJson.repository.url}>GitHub</Link>
       </p>
     </SC.FooterWrapper>

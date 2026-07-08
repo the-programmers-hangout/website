@@ -1,0 +1,29 @@
+---
+import Base from "../../layouts/Base.astro"
+import SpotlightIsland from "../../islands/SpotlightIsland.tsx"
+import {
+  getSpotlightPaths,
+  getSpotlightData,
+  getResourceData,
+} from "../../lib/content"
+
+export async function getStaticPaths() {
+  return getSpotlightPaths().map((relativePath) => ({
+    params: { slug: relativePath },
+    props: { relativePath },
+  }))
+}
+
+const { relativePath } = Astro.props as { relativePath: string }
+const data = await getSpotlightData(relativePath)
+const resourceData = getResourceData()
+---
+
+<Base title={data.title} description={data.excerpt}>
+  <SpotlightIsland
+    client:only="react"
+    pathname={`/spotlights/${relativePath}`}
+    data={data}
+    resourceData={resourceData}
+  />
+</Base>

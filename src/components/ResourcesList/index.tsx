@@ -1,31 +1,12 @@
 import cx from "classnames"
-import { graphql, useStaticQuery } from "gatsby"
 import sort from "ramda/es/sort"
 import React, { FC, HTMLAttributes, memo, useMemo } from "react"
 import "react-perfect-scrollbar/dist/css/styles.css"
-import { IAllResourcesQuery, IFileOrFolder, IFolder } from "../../types"
+import { useResourceData } from "../../context/ResourceDataContext"
+import { IFileOrFolder, IFolder } from "../../types"
 import { getPath, humanize } from "../../utils"
 import * as SC from "./styles"
 import useBuildTree from "./useBuildTree"
-
-const ALL_RESOURCES = graphql`
-  query {
-    allFile(filter: { sourceInstanceName: { eq: "resources" } }) {
-      edges {
-        node {
-          relativePath
-          relativeDirectory
-          childMdx {
-            frontmatter {
-              authors
-              title
-            }
-          }
-        }
-      }
-    }
-  }
-`
 
 function plantTree(item: IFileOrFolder, single?: boolean) {
   if (item.type === "file") {
@@ -78,7 +59,7 @@ interface IResourcesList extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const ResourcesList: FC<IResourcesList> = (props) => {
-  const resources = useStaticQuery<IAllResourcesQuery>(ALL_RESOURCES)
+  const resources = { allFile: useResourceData().resourcesAll }
 
   const filteredResources = {
     ...resources,

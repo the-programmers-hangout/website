@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import { Link } from "gatsby"
+import { AppLink as Link } from "../AppLink"
 import fontFamily from "../../design/typography"
-import ArrowRight from "../../icons/arrow-right.svg"
+import ArrowRight from "../../icons/arrow-right.svg?react"
 
 export const PageNavigationWrapper = styled.div`
   margin-top: 64px;
