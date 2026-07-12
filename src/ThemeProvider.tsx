@@ -1,5 +1,8 @@
 import React, { createContext, FC, useMemo } from "react"
-import { ThemeProvider as BaseThemeProvider } from "styled-components"
+import {
+  ThemeProvider as BaseThemeProvider,
+  StyleSheetManager,
+} from "styled-components"
 
 import { darkTheme, lightTheme } from "./design/themes"
 import { useIsBrowser } from "./hooks/useIsBrowser"
@@ -61,9 +64,17 @@ const ThemeProvider: FC<IScopedDownChildren> = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      <BaseThemeProvider theme={themeObject}>
-        {isBrowser ? children : undefined}
-      </BaseThemeProvider>
+      {/*
+        disableCSSOMInjection keeps styled-components' rules in the <style> tag's
+        text content (not the CSSOM), so they survive being moved into the next
+        document during Astro's client-side navigation (see ClientRouter hook in
+        Base.astro). Without this the next page renders unstyled.
+      */}
+      <StyleSheetManager disableCSSOMInjection>
+        <BaseThemeProvider theme={themeObject}>
+          {isBrowser ? children : undefined}
+        </BaseThemeProvider>
+      </StyleSheetManager>
     </ThemeContext.Provider>
   )
 }
