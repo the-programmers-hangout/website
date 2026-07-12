@@ -3,6 +3,7 @@ import sortWith from "ramda/es/sortWith"
 import React, { FC, HTMLAttributes, memo, useState } from "react"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import useSidebar from "../../hooks/useSidebar"
+import useLocation from "../../hooks/useLocation"
 import { useResourceData } from "../../context/ResourceDataContext"
 import TriangleDown from "../../icons/triangle-down.svg?react"
 import { IFileOrFolder, IFolder } from "../../types"
@@ -63,7 +64,10 @@ function Tree({
 }
 
 function Folder({ item }: { item: IFolder }) {
-  const [collapsed, setCollapse] = useState(true)
+  const { isMatchingPath } = useLocation()
+  // Start expanded if the current page is inside this folder, so it doesn't
+  // expand a frame later (which reads as a "jump" under MPA navigation).
+  const [collapsed, setCollapse] = useState(() => !isMatchingPath(item.path))
 
   useMatchingPath(item.path, () => {
     setCollapse(false)
