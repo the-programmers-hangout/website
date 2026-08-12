@@ -25,8 +25,9 @@ export const Sidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
       {...restProps}
       className={cn(
         "fixed top-0 bottom-0 box-border w-80 flex-[0_0_320px] bg-sidebar text-sidebar-fg",
-        "max-md:z-[100] max-md:w-[calc(100vw-100px)] max-md:-translate-x-[100vw] max-md:transition-transform max-md:duration-200 max-md:ease-in-out",
-        "[&.is-open]:translate-x-0 [&.is-open]:shadow-[0_4px_10px_rgba(0,0,0,0.2)] [&.is-open]:transition-transform [&.is-open]:duration-300 [&.is-open]:ease-in-out",
+        // Inside the mobile Base UI Drawer the panel fills the popup instead of
+        // being a fixed column.
+        "[&.in-drawer]:static [&.in-drawer]:h-full [&.in-drawer]:w-full [&.in-drawer]:flex-none",
         className
       )}
     >
