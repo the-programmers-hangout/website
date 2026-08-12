@@ -1,22 +1,30 @@
 import React, { FC } from "react"
-import * as SC from "./styles"
+import { AppLink } from "../AppLink"
+import { cn } from "../../lib/cn"
 
 interface ILinkProps {
   to: string
+  className?: string
 }
 
-export const Link: FC<ILinkProps> = ({ children, to, ...props }) => {
+export const Link: FC<ILinkProps> = ({ children, to, className, ...props }) => {
   if (!to.match(/^(https?:\/\/)/)) {
     return (
-      <SC.LinkInternal {...props} to={to}>
+      <AppLink {...props} to={to} className={cn("link-gradient", className)}>
         {children}
-      </SC.LinkInternal>
+      </AppLink>
     )
   }
 
   return (
-    <SC.LinkExternal {...props} rel="noreferrer" href={to} target="_blank">
+    <a
+      {...props}
+      rel="noreferrer"
+      href={to}
+      target="_blank"
+      className={cn("link-gradient", className)}
+    >
       {children}
-    </SC.LinkExternal>
+    </a>
   )
 }

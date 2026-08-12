@@ -1,9 +1,9 @@
 import React, { FC } from "react"
 
 import ChevronUp from "../../icons/chevron-up.svg?react"
+import { AppLink } from "../AppLink"
 import { IFileOrFolder } from "../../types"
 import { humanize, traversePaths } from "../../utils"
-import * as SC from "./styles"
 
 interface ILinkProps {
   item: IFileOrFolder
@@ -14,8 +14,16 @@ interface IBreadcrumbProps {
   basePath: string
 }
 
+// flex + fixed height + rotated chevron whose path fill follows the theme.
+const linkWrapperClass =
+  "flex items-center h-[30px] whitespace-nowrap [&_svg]:m-1.5 [&_svg]:w-3 [&_svg]:rotate-90 [&_svg_path]:fill-[#172129] dark:[&_svg_path]:fill-[#f9f9f9]"
+
 const LinkItem: FC<ILinkProps> = ({ item }) => {
-  return <SC.StyledLink to={item.path}>{humanize(item.title)}</SC.StyledLink>
+  return (
+    <AppLink to={item.path} className="link-breadcrumb">
+      {humanize(item.title)}
+    </AppLink>
+  )
 }
 
 function flatten([
@@ -34,14 +42,14 @@ export function Breadcrumb({ relativePath, basePath }: IBreadcrumbProps) {
   const breadcrumbItems = flatten([traversePaths(paths, basePath)])
   let foldersDepth = 0
   return (
-    <SC.BreadcrumbWrapper>
-      <SC.LinkWrapper>
+    <div className="flex flex-wrap items-start max-md:mb-4">
+      <div className={linkWrapperClass}>
         <LinkItem
           item={{ path: "/", title: "home", type: "folder", children: [] }}
         />
         <ChevronUp />
-      </SC.LinkWrapper>
-      <SC.LinkWrapper>
+      </div>
+      <div className={linkWrapperClass}>
         <LinkItem
           item={{
             path: basePath,
@@ -51,34 +59,37 @@ export function Breadcrumb({ relativePath, basePath }: IBreadcrumbProps) {
           }}
         />
         <ChevronUp />
-      </SC.LinkWrapper>
+      </div>
 
       {breadcrumbItems.map((item) => {
         if (item.type === "folder") {
           foldersDepth++
           if (foldersDepth > 1) {
             return (
-              <SC.LinkWrapper key={item.path}>
+              <div className={linkWrapperClass} key={item.path}>
                 {item.title}
                 <ChevronUp />
-              </SC.LinkWrapper>
+              </div>
             )
           } else {
             return (
-              <SC.LinkWrapper key={item.path}>
+              <div className={linkWrapperClass} key={item.path}>
                 <LinkItem item={item} />
                 <ChevronUp />
-              </SC.LinkWrapper>
+              </div>
             )
           }
         }
 
         return (
-          <SC.CurrentPage key={item.path}>
+          <div
+            className="flex h-[30px] items-center whitespace-nowrap"
+            key={item.path}
+          >
             {humanize(item.title)}
-          </SC.CurrentPage>
+          </div>
         )
       })}
-    </SC.BreadcrumbWrapper>
+    </div>
   )
 }

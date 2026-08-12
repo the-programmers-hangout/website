@@ -1,14 +1,14 @@
 import React, { FC } from "react"
-import * as SC from "./styles"
+import JetBrainsLogo from "../../images/jetbrains-logo"
 
 export const HomePartner: FC = () => {
   return (
-    <SC.HomePartnerWrapper>
+    <div className="mt-8 flex items-center font-mono text-[22px] uppercase text-main-fg">
       Member of
       <a rel="noreferrer" target="_blank" href="https://jetbrains.com">
-        <SC.StyledJetBrainsLogo alt="JetBrains" />
+        <JetBrainsLogo alt="JetBrains" className="mx-4 h-[110px]" />
       </a>
       Supported user groups
-    </SC.HomePartnerWrapper>
+    </div>
   )
 }

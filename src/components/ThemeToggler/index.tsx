@@ -1,13 +1,14 @@
 import React, { FC } from "react"
 import useTheme from "../../hooks/useTheme"
-import * as SC from "./styles"
 
 export const ThemeToggler: FC = () => {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <SC.ThemeTogglerWrapper onClick={toggleTheme}>
-      <SC.Link>Switch to {theme === "dark" ? "light" : "dark"} mode</SC.Link>
-    </SC.ThemeTogglerWrapper>
+    <div onClick={toggleTheme}>
+      <span className="inline-block cursor-pointer border-b-2 border-transparent hover:border-sidebar-fg/40">
+        Switch to {theme === "dark" ? "light" : "dark"} mode
+      </span>
+    </div>
   )
 }

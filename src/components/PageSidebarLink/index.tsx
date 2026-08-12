@@ -1,7 +1,9 @@
 import React, { FC } from "react"
-
+import { AppLink } from "../AppLink"
 import { humanize } from "../../utils"
-import * as SC from "./styles"
+
+const linkClass =
+  "text-main-fg no-underline break-words hover:underline focus:underline"
 
 interface IPageSidebarLinkProps {
   href: string
@@ -16,22 +18,26 @@ export const PageSidebarLink: FC<IPageSidebarLinkProps> = ({
   type = "internal",
 }) => {
   if (type === "anchor") {
-    return <SC.Anchor href={href}>{text}</SC.Anchor>
+    return (
+      <a href={href} className={linkClass}>
+        {text}
+      </a>
+    )
   }
 
   if (type === "external") {
     return (
-      <SC.External href={href} target="_blank">
+      <a href={href} target="_blank" className={linkClass}>
         {text}
-      </SC.External>
+      </a>
     )
   }
 
   const [internalText] = href.split("/").slice(-1)
 
   return (
-    <SC.Internal to={`/resources/${href}.md`}>
+    <AppLink to={`/resources/${href}.md`} className={linkClass}>
       {text || humanize(internalText)}
-    </SC.Internal>
+    </AppLink>
   )
 }

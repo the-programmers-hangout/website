@@ -3,7 +3,7 @@ import React, { FC } from "react"
 import Scrollspy from "react-scrollspy"
 import { PageSidebarLink } from "../PageSidebarLink"
 import { ITocItem } from "../../types"
-import * as SC from "./styles"
+import { cn } from "../../lib/cn"
 
 interface ITocProps {
   header: React.ReactNode
@@ -25,17 +25,22 @@ function extractTitle(title: string): ITitle {
   }
 }
 
+const ScrollspyWrapper: FC<{ className?: string }> = ({
+  className,
+  ...props
+}) => <div {...props} className={cn("flex flex-col", className)} />
+
 export const Toc: FC<ITocProps> = ({ header, items }) => {
   const [scrollSpyCache, setScrollSpyCache] = React.useState<string>()
 
   return (
-    <SC.TocWrapper>
+    <div className="flex flex-col">
       {header}
       <Scrollspy
         items={items.map((item) => item.link.substring(1))}
         currentClassName="scrollspy-current"
         scrolledPastClassName="scrollspy-past"
-        componentTag={SC.ScrollspyWrapper}
+        componentTag={ScrollspyWrapper}
         onUpdate={(updatedElement: HTMLDivElement) => {
           // @ts-ignore
           const id = updatedElement?.id
@@ -48,18 +53,18 @@ export const Toc: FC<ITocProps> = ({ header, items }) => {
           const { prefix, title } = extractTitle(item.title)
 
           return (
-            <SC.TocItem
+            <div
               key={item.link}
-              className={cx(`depth-${item.depth}`, {
+              className={cx("toc-item", `depth-${item.depth}`, {
                 "scrollspy-cached": scrollSpyCache === item.link.substring(1),
               })}
             >
               {prefix}
               <PageSidebarLink href={item.link} text={title} type="anchor" />
-            </SC.TocItem>
+            </div>
           )
         })}
       </Scrollspy>
-    </SC.TocWrapper>
+    </div>
   )
 }

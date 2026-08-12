@@ -2,10 +2,8 @@ import React, { FC, useEffect } from "react"
 
 import { Home } from "../../components/Home"
 import { SEO } from "../../components/SEO"
-import { GlobalStyles } from "../../globalStyles"
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import { ThemeProvider } from "../../ThemeProvider"
-import * as SC from "./styles"
 
 export const HomeLayout: FC = () => {
   const { locked, unlock } = useLockBodyScroll()
@@ -18,14 +16,13 @@ export const HomeLayout: FC = () => {
 
   return (
     <ThemeProvider>
-      <SC.LayoutWrapper>
-        <GlobalStyles />
+      <div className="relative flex flex-col items-center bg-[#1f2a34] text-white">
         <SEO
           title="Home"
           description="The Programmer's Hangout (TPH) is a discord community geared towards programming."
         />
         <Home />
-      </SC.LayoutWrapper>
+      </div>
     </ThemeProvider>
   )
 }

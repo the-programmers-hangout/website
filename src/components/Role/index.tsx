@@ -1,5 +1,4 @@
 import React, { FC } from "react"
-import * as SC from "./styles"
 
 interface IRoleProps {
   color: string
@@ -7,8 +6,12 @@ interface IRoleProps {
 
 export const Role: FC<IRoleProps> = ({ children, color, ...props }) => {
   return (
-    <SC.RoleWrapper {...props} color={color}>
+    <span
+      {...props}
+      className="my-0.5 inline-block rounded-[40px] border-2 px-3 py-[3px] font-normal!"
+      style={{ color, borderColor: color }}
+    >
       {children}
-    </SC.RoleWrapper>
+    </span>
   )
 }
