@@ -1,11 +1,12 @@
 import { AppLink as Link } from "../AppLink"
 import React, { FC, useEffect, useState } from "react"
-import { initParticlesEngine } from "@tsparticles/react"
+import { initParticlesEngine, Particles } from "@tsparticles/react"
 import { loadSlim } from "@tsparticles/slim"
 import { DiscordButton } from "../DiscordButton"
 import { HomePartner } from "../HomePartner"
 import { WavesBottom, WavesTop } from "../Waves"
-import * as SC from "./styles"
+import TPHLogo from "../../images/tph-logo"
+import { cn } from "../../lib/cn"
 
 interface IMenuItemProps {
   to: string
@@ -13,14 +14,14 @@ interface IMenuItemProps {
 
 const MenuItem: FC<IMenuItemProps> = ({ children, to }) => {
   return (
-    <SC.MenuItem
+    <Link
       to={to}
       activeClassName="active"
-      className={to === "/" ? "disabled" : ""}
+      className={cn("home-menu-item", to === "/" && "disabled")}
     >
-      <SC.MenuItemText>{children}</SC.MenuItemText>
-      <SC.MenuItemLine />
-    </SC.MenuItem>
+      <span className="relative z-[5]">{children}</span>
+      <span className="home-menu-line" />
+    </Link>
   )
 }
 
@@ -36,15 +37,16 @@ export const Home: FC = () => {
   }, [])
 
   return (
-    <SC.HomeWrapper>
+    <header className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-main">
       <WavesTop />
-      <SC.FadedBottomWave>
+      <div className="pointer-events-none absolute right-0 bottom-0 left-0 [&_svg]:static">
         <WavesBottom />
-      </SC.FadedBottomWave>
+      </div>
 
       {init && (
-        <SC.StyledParticles
+        <Particles
           id="tsparticles"
+          className="home-particles"
           options={{
             particles: {
               /* eslint-disable-next-line id-blacklist */
@@ -74,14 +76,16 @@ export const Home: FC = () => {
           }}
         />
       )}
-      <SC.InnerWrapper>
-        <SC.TitleWrapper>
+      <div className="relative flex w-[800px] max-w-[calc(100%-64px)] flex-col items-start p-8">
+        <div className="mb-[22px] flex max-w-full flex-col items-start">
           <Link to="/">
-            <SC.Logo />
+            <TPHLogo className="relative z-[3] mr-[15px] w-[98px]" />
           </Link>
-          <SC.Title>The Programmer&apos;s Hangout</SC.Title>
-        </SC.TitleWrapper>
-        <SC.Menu>
+          <h1 className="m-0 my-8 max-w-full font-header text-[88px] leading-none font-bold uppercase text-main-fg [text-shadow:0_2px_5px_rgba(0,0,0,0.3)] max-[991px]:text-[58px] max-md:text-[32px]">
+            The Programmer&apos;s Hangout
+          </h1>
+        </div>
+        <nav className="mb-8 flex flex-wrap justify-start">
           <MenuItem to="/about">about</MenuItem>
           <MenuItem to="/rules">rules</MenuItem>
           <MenuItem to="/beginners">beginners</MenuItem>
@@ -89,10 +93,10 @@ export const Home: FC = () => {
           <MenuItem to="/bots">bots</MenuItem>
           <MenuItem to="/resources">resources</MenuItem>
           <MenuItem to="/spotlights">tech spotlights</MenuItem>
-        </SC.Menu>
+        </nav>
         <DiscordButton>join us</DiscordButton>
         <HomePartner />
-      </SC.InnerWrapper>
-    </SC.HomeWrapper>
+      </div>
+    </header>
   )
 }

@@ -75,16 +75,6 @@ const fullTitle = `${displayTitle} | ${siteTitle}`
 
     {/* Client-side (SPA-like) navigation, matching Gatsby's router. */}
     <ClientRouter />
-    <script is:inline>
-      // styled-components injects runtime <style> tags that Astro's head swap
-      // would drop, leaving the next page unstyled. Move them into the incoming
-      // document so they persist across client-side navigations.
-      document.addEventListener("astro:before-swap", (event) => {
-        document
-          .querySelectorAll("style[data-styled]")
-          .forEach((tag) => event.newDocument.head.appendChild(tag))
-      })
-    </script>
   </head>
   <body>
     <slot />

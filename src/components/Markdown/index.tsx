@@ -14,7 +14,6 @@ import "prismjs/components/prism-python"
 import "prismjs/components/prism-yaml"
 import "prismjs/plugins/line-numbers/prism-line-numbers.css"
 import React, { FC, useEffect } from "react"
-import * as SC from "./styles"
 import "./env"
 
 interface IMarkdownProps {
@@ -23,17 +22,17 @@ interface IMarkdownProps {
 }
 
 /*
-  This component is used as a wrapper around Markdown generated content,
-  mainly to provide styles to the html generated.
+  Wraps Markdown-generated HTML. `prose` (typography plugin) is the base and the
+  `.markdown` layer (global.css) reproduces the TPH-specific design.
 */
-export const Markdown: FC<IMarkdownProps> = ({ content, ...restProps }) => {
+export const Markdown: FC<IMarkdownProps> = ({ content }) => {
   useEffect(() => {
     Prism.highlightAll()
   }, [content])
 
   return (
-    <SC.MarkdownWrapper
-      {...restProps}
+    <div
+      className="markdown prose max-w-none"
       dangerouslySetInnerHTML={{ __html: content }}
     />
   )

@@ -6,25 +6,26 @@ import useSidebar from "../../hooks/useSidebar"
 import { useResourceData } from "../../context/ResourceDataContext"
 import { IFileOrFolder } from "../../types"
 import { humanize } from "../../utils"
+import { AppLink } from "../AppLink"
 import { Sidebar } from "../Sidebar"
-import * as SC from "./styles"
 
 function Tree({ item }: { item: IFileOrFolder }) {
   const { setOpenOnMobile } = useSidebar()
   const { unlock } = useLockBodyScroll()
 
   return (
-    <SC.PageLink
+    <AppLink
       key={item.title}
       to={item.path}
       activeClassName="active"
+      className="spotlight-link"
       onClick={() => {
         setOpenOnMobile(false)
         unlock()
       }}
     >
       {humanize(item.title)}
-    </SC.PageLink>
+    </AppLink>
   )
 }
 

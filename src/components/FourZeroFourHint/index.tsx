@@ -1,5 +1,5 @@
 import React, { FC, Fragment } from "react"
-import * as SC from "./styles"
+import { AppLink } from "../AppLink"
 import type { AppLocation } from "../../appTypes"
 
 interface FileConnection {
@@ -101,17 +101,20 @@ export const FourZeroFourHint: FC<IFourZeroFourHint> = ({
 
   return (
     <Fragment>
-      <SC.StyledDiv>
+      <div className="flex w-full flex-col items-center justify-center">
         <h3>Based off of &quot;{search}&quot; you may have meant:</h3>
         {found}
-      </SC.StyledDiv>
+      </div>
       <ul>
         {displayArray.map((value, index) => {
           return (
             <li key={index}>
-              <SC.StyledLink to={`${basepath}${value.node.relativePath}`}>
+              <AppLink
+                to={`${basepath}${value.node.relativePath}`}
+                className="border-b-2 font-bold text-[#0090d8] no-underline transition-colors duration-300 hover:text-[#5dbbea] focus:text-[#5dbbea]"
+              >
                 {value.node.relativePath}
-              </SC.StyledLink>
+              </AppLink>
             </li>
           )
         })}

@@ -1,10 +1,5 @@
 import React, { createContext, FC, useEffect, useMemo } from "react"
-import {
-  ThemeProvider as BaseThemeProvider,
-  StyleSheetManager,
-} from "styled-components"
 
-import { darkTheme, lightTheme } from "./design/themes"
 import { useIsBrowser } from "./hooks/useIsBrowser"
 import { useLocalStorage } from "./hooks/useLocalStorage"
 import { useMedia } from "./hooks/useMedia"
@@ -38,25 +33,17 @@ function useTheme() {
     [preferredTheme, userSelectedTheme]
   )
 
-  const themeObject = useMemo(
-    () => (theme === "dark" ? darkTheme : lightTheme),
-    [theme]
-  )
-
   return {
     theme,
-    themeObject,
     setTheme: setUserSelectedTheme,
   }
 }
 
 const ThemeProvider: FC<IScopedDownChildren> = ({ children }) => {
   const isBrowser = useIsBrowser()
-  const { theme, themeObject, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
 
-  // Bridge to the Tailwind side: drive the data-theme attribute the CSS variables
-  // key off. (Once every component is on Tailwind, styled-components + this
-  // provider go away and only the attribute remains.)
+  // Drive the data-theme attribute the Tailwind CSS variables key off.
   useEffect(() => {
     document.documentElement.dataset.theme = theme
   }, [theme])
@@ -71,17 +58,7 @@ const ThemeProvider: FC<IScopedDownChildren> = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      {/*
-        disableCSSOMInjection keeps styled-components' rules in the <style> tag's
-        text content (not the CSSOM), so they survive being moved into the next
-        document during Astro's client-side navigation (see ClientRouter hook in
-        Base.astro). Without this the next page renders unstyled.
-      */}
-      <StyleSheetManager disableCSSOMInjection>
-        <BaseThemeProvider theme={themeObject}>
-          {isBrowser ? children : undefined}
-        </BaseThemeProvider>
-      </StyleSheetManager>
+      {isBrowser ? children : undefined}
     </ThemeContext.Provider>
   )
 }

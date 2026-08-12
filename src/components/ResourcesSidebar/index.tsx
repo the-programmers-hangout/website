@@ -6,10 +6,13 @@ import useSidebar from "../../hooks/useSidebar"
 import useLocation from "../../hooks/useLocation"
 import { useResourceData } from "../../context/ResourceDataContext"
 import TriangleDown from "../../icons/triangle-down.svg?react"
+import Collapse from "../../icons/collapse.svg?react"
+import Expand from "../../icons/expand.svg?react"
+import { AppLink } from "../AppLink"
 import { IFileOrFolder, IFolder } from "../../types"
 import { getPath, humanize } from "../../utils"
+import { cn } from "../../lib/cn"
 import { Sidebar } from "../Sidebar"
-import * as SC from "./styles"
 import useMatchingPath from "./useMatchingPath"
 import useTree from "./useTree"
 
@@ -42,17 +45,18 @@ function Tree({
     const path = getPath(item)
 
     return (
-      <SC.PageLink
+      <AppLink
         key={item.title}
         to={path}
         activeClassName="active"
+        className="rs-item"
         onClick={() => {
           setOpenOnMobile(false)
           unlock()
         }}
       >
         {humanize(item.title)}
-      </SC.PageLink>
+      </AppLink>
     )
   }
 
@@ -65,8 +69,6 @@ function Tree({
 
 function Folder({ item }: { item: IFolder }) {
   const { isMatchingPath } = useLocation()
-  // Start expanded if the current page is inside this folder, so it doesn't
-  // expand a frame later (which reads as a "jump" under MPA navigation).
   const [collapsed, setCollapse] = useState(() => !isMatchingPath(item.path))
 
   useMatchingPath(item.path, () => {
@@ -80,16 +82,16 @@ function Folder({ item }: { item: IFolder }) {
   const sortedChildren = childrenSort(item.children)
 
   return (
-    <SC.TreeWrapper collapsed={collapsed}>
-      <SC.Label onClick={toggleCollapse}>
+    <div className={cn("rs-tree", collapsed && "collapsed")}>
+      <div className="rs-label" onClick={toggleCollapse}>
         <TriangleDown /> {humanize(item.title)}
-      </SC.Label>
-      <SC.Children>
+      </div>
+      <div className="rs-children">
         {sortedChildren.map((node) => (
           <Tree key={node.title + "-tree"} item={node} />
         ))}
-      </SC.Children>
-    </SC.TreeWrapper>
+      </div>
+    </div>
   )
 }
 
@@ -105,9 +107,9 @@ const FirstLevelFolder = memo(({ item }: { item: IFolder }) => {
   const sortedChildren = childrenSort(item.children)
 
   return (
-    <SC.TreeWrapper className="firstLevel">
-      <SC.FirstLabel>{humanize(item.title)}</SC.FirstLabel>
-      <SC.Children>
+    <div className="rs-tree firstLevel">
+      <div className="rs-first-label">{humanize(item.title)}</div>
+      <div className="rs-children">
         {sortedChildren
           .filter((child) => {
             // TODO: clean me up, temporary fix
@@ -117,8 +119,8 @@ const FirstLevelFolder = memo(({ item }: { item: IFolder }) => {
           .map((node) => (
             <Tree key={node.title + "-tree"} item={node} />
           ))}
-      </SC.Children>
-    </SC.TreeWrapper>
+      </div>
+    </div>
   )
 })
 
@@ -131,21 +133,21 @@ const ResourceList: FC<{
   const { current, setCurrent } = useSidebar()
 
   return (
-    <SC.StyledResourceList>
+    <div className="rs-list">
       {items.map((item) => (
-        <SC.PageLink
+        <AppLink
           key={item.title}
           to={getPath(item)}
-          className={current === item.title ? "active" : ""}
+          className={cn("rs-item", current === item.title && "active")}
           onClick={() => {
             setCurrent(item.title)
             setExpanded(false)
           }}
         >
           {item.title}
-        </SC.PageLink>
+        </AppLink>
       ))}
-    </SC.StyledResourceList>
+    </div>
   )
 }
 
@@ -158,16 +160,17 @@ const ExpandResources: FC<{
   const showList = expanded || !current
 
   return (
-    <SC.ExpandResources>
+    <div className="rs-expand">
       {current && (
-        <SC.ExpandResourcesHeader
+        <div
+          className="rs-expand-header"
           onClick={() => setExpanded((prevState) => !prevState)}
         >
-          Expand resources {expanded ? <SC.CollapseIcon /> : <SC.ExpandIcon />}
-        </SC.ExpandResourcesHeader>
+          Expand resources {expanded ? <Collapse /> : <Expand />}
+        </div>
       )}
       {showList && children}
-    </SC.ExpandResources>
+    </div>
   )
 }
 

@@ -5,8 +5,10 @@ import "react-perfect-scrollbar/dist/css/styles.css"
 import { useResourceData } from "../../context/ResourceDataContext"
 import { IFileOrFolder, IFolder } from "../../types"
 import { getPath, humanize } from "../../utils"
-import * as SC from "./styles"
+import { Link } from "../Link"
 import useBuildTree from "./useBuildTree"
+
+const pageLinkClass = "inline-block text-lg font-normal [&+&]:mt-2"
 
 function plantTree(item: IFileOrFolder, single?: boolean) {
   if (item.type === "file") {
@@ -15,9 +17,9 @@ function plantTree(item: IFileOrFolder, single?: boolean) {
     const path = getPath(item)
 
     return (
-      <SC.PageLink key={item.title} to={path}>
+      <Link key={item.title} to={path} className={pageLinkClass}>
         {cleanedUpPath.map((node) => humanize(node)).join(" / ")}
-      </SC.PageLink>
+      </Link>
     )
   }
 
@@ -38,12 +40,21 @@ const Language = memo(
     }, [item.children, single])
 
     return (
-      <SC.TreeWrapper>
-        {!single && <SC.LanguageLabel>{humanize(item.title)}</SC.LanguageLabel>}
-        <SC.Children className={cx({ "is-single": single })}>
+      <div className="flex w-full flex-col text-base [&+&]:mt-8">
+        {!single && (
+          <div className="box-border flex w-full items-center py-1 pr-[15px] font-bold text-sidebar-fg/50">
+            {humanize(item.title)}
+          </div>
+        )}
+        <div
+          className={cx(
+            "flex flex-col items-start overflow-hidden pb-2 pl-4",
+            { "pl-0": single }
+          )}
+        >
           {children.map((node) => plantTree(node))}
-        </SC.Children>
-      </SC.TreeWrapper>
+        </div>
+      </div>
     )
   }
 )
@@ -81,8 +92,8 @@ export const ResourcesList: FC<IResourcesList> = (props) => {
   const isSingle = Boolean(props.relativeDirectory)
 
   return (
-    <SC.ResourcesListWrapper {...props}>
+    <div className="box-border text-main-fg">
       {sortedTree.map((node) => plantTree(node, isSingle))}
-    </SC.ResourcesListWrapper>
+    </div>
   )
 }

@@ -144,3 +144,521 @@
     height: 100%;
   }
 }
+
+/* Responsive header banner background image (ported from HeaderBarebone).
+   Vite resolves + hashes these url() paths relative to this file. */
+.header-bg {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-image: var(--header-image);
+}
+.header-sticky .header-bg {
+  background-image:
+    linear-gradient(to left, rgba(38, 52, 64, 0) 0, #263440 100%),
+    var(--header-image);
+}
+@media (min-width: 2500px) {
+  .header-bg {
+    --header-image: url("../images/header-2560x1440.png");
+  }
+}
+@media (min-width: 1800px) and (max-width: 2499px) {
+  .header-bg {
+    --header-image: url("../images/header-1920x1080.png");
+  }
+}
+@media (min-width: 768px) and (max-width: 1799px) {
+  .header-bg {
+    --header-image: url("../images/header-1440x900.png");
+  }
+}
+@media (max-width: 767px) {
+  .header-bg {
+    --header-image: url("../images/header-mobile-375x300.png");
+  }
+}
+
+/* Header meta row items, separated by a bullet (ported from Header). */
+.header-meta {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  color: color-mix(in oklab, var(--main-fg) 90%, transparent);
+}
+.header-meta + .header-meta::before {
+  content: "•";
+  margin: 0 8px;
+}
+@media (max-width: 1200px) {
+  .header-meta + .header-meta {
+    margin-top: 8px;
+  }
+  .header-meta + .header-meta::before {
+    display: none;
+  }
+}
+
+/* Spotlights sidebar link (ported from SpotlightsSidebar). */
+.spotlight-link {
+  display: block;
+  padding-top: 4px;
+  color: var(--sidebar-fg);
+  align-self: flex-start;
+  text-decoration: none;
+}
+.spotlight-link:hover {
+  text-decoration: underline;
+}
+.spotlight-link + .spotlight-link {
+  margin-top: 4px;
+}
+.spotlight-link.active {
+  font-weight: 700;
+  color: var(--sidebar-active);
+}
+
+/* Resources sidebar tree (ported from ResourcesSidebar). transparentize(n) maps
+   to color-mix at (1-n) opacity. */
+.rs-children {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-bottom: 8px;
+}
+.rs-children:last-child {
+  padding-bottom: 0;
+}
+.rs-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 8px 0 0;
+  margin-bottom: 6px;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 2px solid transparent;
+}
+.rs-label:hover {
+  border-color: color-mix(in oklab, var(--sidebar-fg) 30%, transparent);
+}
+.rs-label svg {
+  position: absolute;
+  right: 100%;
+  margin-right: 5px;
+  width: 7px;
+  fill: var(--sidebar-fg);
+}
+.rs-first-label {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 15px 12px 0;
+  font-weight: 700;
+  color: var(--sidebar-fg);
+  cursor: pointer;
+  user-select: none;
+}
+.rs-tree {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 20px;
+}
+.rs-tree.firstLevel {
+  overflow: hidden;
+  border-top: 1px solid color-mix(in oklab, var(--sidebar-fg) 20%, transparent);
+}
+.rs-tree.collapsed .rs-children {
+  display: none;
+}
+.rs-tree.collapsed > .rs-label svg {
+  transform: rotate(-90deg);
+}
+.rs-expand {
+  padding-right: 15px;
+  margin-bottom: 20px;
+}
+.rs-expand-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: color-mix(in oklab, var(--sidebar-fg) 50%, transparent);
+  cursor: pointer;
+  user-select: none;
+}
+.rs-expand-header:hover {
+  opacity: 0.85;
+}
+.rs-expand-header svg {
+  margin-left: auto;
+}
+.rs-expand-header svg path {
+  fill: color-mix(in oklab, var(--sidebar-fg) 50%, transparent);
+}
+.rs-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.rs-list + .rs-list {
+  padding-top: 16px;
+  margin-top: 16px;
+  border-top: 1px solid color-mix(in oklab, var(--sidebar-fg) 20%, transparent);
+}
+.rs-item {
+  display: block;
+  align-self: flex-start;
+  margin-bottom: 4px;
+  color: var(--sidebar-fg);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+.rs-item:hover {
+  border-color: color-mix(in oklab, var(--sidebar-fg) 30%, transparent);
+}
+.rs-item + .rs-item,
+.rs-tree + .rs-item {
+  padding: 8px 0 0;
+}
+.rs-item.active {
+  font-weight: 700;
+  color: var(--sidebar-active);
+}
+.rs-item.active:hover {
+  border-color: color-mix(in oklab, var(--sidebar-active) 30%, transparent);
+}
+
+/* "Extra resources" box on resource home pages (ported from ResourcesHomeContent).
+   Styles the markdown injected inside it. */
+.resources-home-box {
+  background: var(--sidebar-bg);
+  margin: 32px -16px;
+  padding: 16px;
+}
+.resources-home-box > h2:first-child {
+  margin-top: 0;
+}
+.resources-home-box h6 {
+  margin-top: 26px;
+}
+.resources-home-box h6 ~ h6::before {
+  display: block;
+  margin-bottom: 26px;
+  content: "";
+  height: 1px;
+  background: var(--rule);
+}
+.resources-home-box ul {
+  list-style: none;
+  padding: 0;
+}
+.resources-home-box ul li + li {
+  margin-top: 8px;
+}
+.resources-home-box a:not(.anchor) {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400 !important;
+  color: var(--main-fg) !important;
+  background: none !important;
+  border-bottom: 1px solid var(--main-fg);
+  margin-bottom: 1px;
+  transition: none !important;
+}
+.resources-home-box a:not(.anchor):hover {
+  border-bottom-width: 2px;
+  margin-bottom: 0;
+  -webkit-text-fill-color: var(--main-fg);
+}
+.resources-home-box a:not(.anchor)::after {
+  position: absolute;
+  left: 100%;
+  display: block;
+  margin-left: 4px;
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-image: url("../icons/external-link.png");
+  background-size: 16px 16px;
+  filter: invert(100%);
+}
+[data-theme="dark"] .resources-home-box a:not(.anchor)::after {
+  filter: invert(0%);
+}
+
+/* Home menu items with the animated underline bar (ported from Home). */
+.home-menu-line {
+  /* content-box so the hover padding expands the pill (Tailwind preflight
+     otherwise forces border-box, which crushes it around the text). */
+  box-sizing: content-box;
+  position: absolute;
+  z-index: 4;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  margin-top: -3px;
+  background: var(--main-fg);
+  transition: all 0.3s;
+}
+.home-menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 10px 20px 5px 0;
+  font-family: var(--font-mono);
+  font-size: 22px;
+  color: var(--main-fg);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.home-menu-item:hover {
+  color: #fff;
+}
+.home-menu-item:hover .home-menu-line {
+  height: 100%;
+  padding: 8px;
+  margin-left: -8px;
+  margin-bottom: -8px;
+  border-radius: 3px;
+  background: #dd66a1;
+  box-shadow:
+    0 3px 5px rgba(0, 0, 0, 0.1),
+    0 5px 11px rgba(0, 0, 0, 0.25);
+}
+.home-menu-item.disabled {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.7;
+  color: #fff !important;
+}
+.home-menu-item.disabled .home-menu-line {
+  bottom: 50%;
+  background: #fff !important;
+}
+.home-menu-item.active {
+  font-weight: 700;
+  color: #dd66a1;
+}
+.home-menu-item.active .home-menu-line {
+  background: #dd66a1;
+}
+.home-menu-item.active:hover {
+  color: #fff;
+}
+.home-menu-item.active:hover .home-menu-line {
+  background: #dd66a1;
+}
+
+/* Markdown content. `prose` (typography plugin, zero-specificity :where rules)
+   provides the base; this .markdown layer wins and reproduces the TPH design
+   (ported from the old MarkdownWrapper). */
+.markdown {
+  --tw-prose-body: var(--main-fg);
+  --tw-prose-headings: var(--main-fg);
+  --tw-prose-bold: var(--main-fg);
+  --tw-prose-links: var(--main-fg);
+  --tw-prose-bullets: var(--main-fg);
+  --tw-prose-counters: var(--main-fg);
+  --tw-prose-quote-borders: var(--main-fg);
+  --tw-prose-hr: var(--rule);
+  font-size: 20px;
+  line-height: 26px;
+}
+.markdown > :first-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.markdown p {
+  margin: 26px 0;
+}
+.markdown :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-header);
+  letter-spacing: -1.75px;
+  overflow-wrap: break-word;
+  margin-top: 52px;
+  margin-bottom: 26px;
+}
+.markdown h1 {
+  font-size: 41.472px;
+  line-height: 1.4;
+}
+.markdown h2 {
+  font-size: 34.56px;
+  line-height: 1.4;
+}
+.markdown h3 {
+  font-size: 28.8px;
+  line-height: 1.4;
+}
+.markdown h4 {
+  font-size: 24px;
+  line-height: 1.4;
+}
+.markdown :is(h5, h6) {
+  font-size: 20px;
+  line-height: 26px;
+}
+@media (min-width: 1440px) {
+  .markdown h2 {
+    margin-left: -27px;
+  }
+}
+.markdown h2 + h3,
+.markdown h3 + h4,
+.markdown h4 + h5,
+.markdown h5 + h6 {
+  margin-top: 26px;
+}
+.markdown h2 ~ h2::before {
+  display: block;
+  margin-bottom: 52px;
+  margin-right: -27px;
+  content: "";
+  height: 1px;
+  background: var(--rule);
+}
+.markdown :is(h1, h2, h3, h4, h5, h6) .anchor svg {
+  fill: var(--main-fg);
+}
+.markdown code {
+  display: inline;
+  padding: 2px 4px;
+  border-radius: 3px;
+  letter-spacing: 0.25px;
+  color: #ebedee;
+  background: var(--color-code-bg);
+  font-family: "IBM Plex Mono", monospace;
+}
+.markdown code::before,
+.markdown code::after {
+  content: none;
+}
+.markdown :not(pre) > code[class*="language-"],
+.markdown pre[class*="language-"] {
+  overflow-x: auto;
+  background: var(--color-code-bg);
+  font-size: 18px;
+}
+.markdown pre > code[class*="language-"] {
+  padding: 0;
+}
+.markdown pre {
+  overflow-x: auto;
+  min-height: 28px;
+}
+.markdown img {
+  max-width: 100%;
+}
+.markdown pre[class*="language-"] .token.boolean,
+.markdown pre[class*="language-"] .token.number,
+.markdown pre[class*="language-"] .token.function {
+  color: #eca371;
+}
+.markdown pre[class*="language-"] .token.property,
+.markdown pre[class*="language-"] .token.class-name,
+.markdown pre[class*="language-"] .token.constant,
+.markdown pre[class*="language-"] .token.symbol {
+  color: #ffd664;
+}
+.markdown pre[class*="language-"] .token.operator,
+.markdown pre[class*="language-"] .token.entity,
+.markdown pre[class*="language-"] .token.url {
+  color: #11beea;
+}
+.markdown pre[class*="language-"] .token.selector,
+.markdown pre[class*="language-"] .token.important,
+.markdown pre[class*="language-"] .token.atrule,
+.markdown pre[class*="language-"] .token.keyword,
+.markdown pre[class*="language-"] .token.builtin {
+  color: #ee5cb2;
+}
+.markdown blockquote {
+  border-left: 2px solid var(--main-fg);
+  margin: 26px 52px 26px 0;
+  padding-left: 26px;
+  font-style: normal;
+  font-weight: normal;
+}
+.markdown a.anchor {
+  color: inherit;
+  text-decoration: none;
+}
+.markdown a:not(.anchor):not(.button) {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  word-break: break-all;
+  background-image: linear-gradient(120deg, #feaf6d 0%, #ff70a5 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 3px;
+  background-position: 0 100%;
+  transition: all 0.125s ease-in;
+}
+.markdown a:not(.anchor):not(.button):hover {
+  color: black;
+  background-size: 100% 100%;
+}
+.markdown .role {
+  display: inline-block;
+  margin: 2px 0;
+  padding: 3px 12px;
+  border: 2px solid;
+  border-radius: 40px;
+  font-weight: 400 !important;
+}
+.markdown .discord-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 18px 28px;
+  border-radius: 5px;
+  font-family: var(--font-header);
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background: var(--color-discord);
+  cursor: pointer;
+  box-shadow: 0 3px 18px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s;
+}
+.markdown .discord-button:hover {
+  background: var(--color-discord-darker);
+}
+.markdown .discord-button .discord-logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 13px;
+}
+
+.home-particles {
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 5%,
+    rgba(0, 0, 0, 1) 25%,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(0, 0, 0, 0) 95%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 5%,
+    rgba(0, 0, 0, 1) 25%,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(0, 0, 0, 0) 95%
+  );
+}
