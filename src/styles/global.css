@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/*
+  Manual light/dark: the `dark:` variant follows the data-theme attribute on
+  <html> (set by the no-flash script in Base.astro), not prefers-color-scheme.
+*/
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Static design tokens (ported from design/themes.ts + design/typography.ts). */
+@theme {
+  --font-header: "Montserrat", sans-serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --color-discord: #7289da;
+  --color-discord-darker: #5265ad;
+  --color-code-bg: #0c1115;
+}
+
+/*
+  Themeable colors as CSS variables that swap on data-theme. Dark is the
+  default (matches the old prefers fallback) so no-JS renders dark.
+*/
+:root,
+[data-theme="dark"] {
+  --sidebar-bg: #19222a;
+  --sidebar-fg: #ffffff;
+  --sidebar-active: #00fcff;
+  --main-bg: #202c36;
+  --main-fg: #ffffff;
+  --main-link: #04b0a6;
+  --rule: #34414e;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --sidebar-bg: #f9f9f9;
+  --sidebar-fg: #000000;
+  --sidebar-active: #499def;
+  --main-bg: #ffffff;
+  --main-fg: #000000;
+  --main-link: #04b0a6;
+  --rule: #a3beda;
+  color-scheme: light;
+}
+
+/* Expose the themeable vars as Tailwind color utilities (bg-main, text-main-fg…). */
+@theme inline {
+  --color-sidebar: var(--sidebar-bg);
+  --color-sidebar-fg: var(--sidebar-fg);
+  --color-sidebar-active: var(--sidebar-active);
+  --color-main: var(--main-bg);
+  --color-main-fg: var(--main-fg);
+  --color-main-link: var(--main-link);
+  --color-rule: var(--rule);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    background: #1f2a34;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+    font-size: 20px;
+    line-height: 26px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

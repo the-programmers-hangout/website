@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions"
+import "../styles/global.css"
 import "prismjs/themes/prism-tomorrow.css"
 
 export interface Props {
@@ -40,6 +41,27 @@ const fullTitle = `${displayTitle} | ${siteTitle}`
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="theme-color" content="#2874fe" />
 
+    {/* No-flash theme: set data-theme before paint, and re-apply after each
+        client-side navigation (ClientRouter keeps the <html> element). */}
+    <script is:inline>
+      window.__applyTheme = function () {
+        try {
+          var t = localStorage.getItem("user-selected-theme")
+          t = t ? JSON.parse(t) : null
+          if (t !== "light" && t !== "dark") {
+            t = matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark"
+          }
+          document.documentElement.dataset.theme = t
+        } catch (e) {
+          document.documentElement.dataset.theme = "dark"
+        }
+      }
+      window.__applyTheme()
+      document.addEventListener("astro:after-swap", window.__applyTheme)
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       rel="preconnect"
@@ -68,15 +90,3 @@ const fullTitle = `${displayTitle} | ${siteTitle}`
     <slot />
   </body>
 </html>
-
-<style is:global>
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  /* Match the default (dark) theme so navigation never flashes white. */
-  html {
-    background: #1f2a34;
-  }
-</style>

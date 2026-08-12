@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config"
 import react from "@astrojs/react"
 import svgr from "vite-plugin-svgr"
+import tailwindcss from "@tailwindcss/vite"
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,6 +11,7 @@ export default defineConfig({
   trailingSlash: "ignore",
   vite: {
     plugins: [
+      tailwindcss(),
       // `import Icon from "./icon.svg?react"` returns a React component,
       // replacing gatsby-plugin-react-svg / svg-react-loader. The `?react`
       // query keeps Astro's asset pipeline from claiming the .svg import.

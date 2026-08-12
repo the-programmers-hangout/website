@@ -1,4 +1,4 @@
-import React, { createContext, FC, useMemo } from "react"
+import React, { createContext, FC, useEffect, useMemo } from "react"
 import {
   ThemeProvider as BaseThemeProvider,
   StyleSheetManager,
@@ -53,6 +53,13 @@ function useTheme() {
 const ThemeProvider: FC<IScopedDownChildren> = ({ children }) => {
   const isBrowser = useIsBrowser()
   const { theme, themeObject, setTheme } = useTheme()
+
+  // Bridge to the Tailwind side: drive the data-theme attribute the CSS variables
+  // key off. (Once every component is on Tailwind, styled-components + this
+  // provider go away and only the attribute remains.)
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+  }, [theme])
 
   const contextValue = useMemo(
     () => ({
