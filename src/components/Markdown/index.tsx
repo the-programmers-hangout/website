@@ -14,25 +14,27 @@ import "prismjs/components/prism-python"
 import "prismjs/components/prism-yaml"
 import "prismjs/plugins/line-numbers/prism-line-numbers.css"
 import React, { FC, useEffect } from "react"
+import { cn } from "../../lib/cn"
 import "./env"
 
 interface IMarkdownProps {
   // Pre-rendered HTML (built at compile time from Markdown/MDX content).
   content: string
+  className?: string
 }
 
 /*
   Wraps Markdown-generated HTML. `prose` (typography plugin) is the base and the
   `.markdown` layer (global.css) reproduces the TPH-specific design.
 */
-export const Markdown: FC<IMarkdownProps> = ({ content }) => {
+export const Markdown: FC<IMarkdownProps> = ({ content, className }) => {
   useEffect(() => {
     Prism.highlightAll()
   }, [content])
 
   return (
     <div
-      className="markdown prose max-w-none"
+      className={cn("markdown prose max-w-none", className)}
       dangerouslySetInnerHTML={{ __html: content }}
     />
   )

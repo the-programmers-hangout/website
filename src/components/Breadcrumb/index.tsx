@@ -26,7 +26,8 @@ const LinkItem: FC<ILinkProps> = ({ item }) => {
   )
 }
 
-function flatten([
+// Folder chain from the outermost folder down to the file.
+export function flattenTrail([
   currNode,
   ...previousNodes
 ]: IFileOrFolder[]): IFileOrFolder[] {
@@ -34,12 +35,12 @@ function flatten([
     return [...previousNodes, currNode]
   }
 
-  return flatten([...currNode.children, ...previousNodes, currNode])
+  return flattenTrail([...currNode.children, ...previousNodes, currNode])
 }
 
 export function Breadcrumb({ relativePath, basePath }: IBreadcrumbProps) {
   const paths = relativePath.split("/")
-  const breadcrumbItems = flatten([traversePaths(paths, basePath)])
+  const breadcrumbItems = flattenTrail([traversePaths(paths, basePath)])
   let foldersDepth = 0
   return (
     <div className="flex flex-wrap items-start max-md:mb-4">
