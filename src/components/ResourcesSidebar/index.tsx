@@ -5,9 +5,8 @@ import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import useSidebar from "../../hooks/useSidebar"
 import useLocation from "../../hooks/useLocation"
 import { useResourceData } from "../../context/ResourceDataContext"
-import TriangleDown from "../../icons/triangle-down.svg?react"
-import Collapse from "../../icons/collapse.svg?react"
-import Expand from "../../icons/expand.svg?react"
+import ArrowLeft from "../../icons/arrow-left-bold.svg?react"
+import CaretDown from "../../icons/caret-down-fill.svg?react"
 import { AppLink } from "../AppLink"
 import { IFileOrFolder, IFolder } from "../../types"
 import { getPath, humanize } from "../../utils"
@@ -15,6 +14,11 @@ import { cn } from "../../lib/cn"
 import { Sidebar } from "../Sidebar"
 import useMatchingPath from "./useMatchingPath"
 import useTree from "./useTree"
+
+// 20/26 IBM Plex Sans with tight tracking; the current page is bold with
+// opened-up tracking, matching the main menu.
+const itemClass =
+  "text-xl leading-[26px] tracking-[-0.75px] text-sidebar-fg no-underline hover:underline [&.active]:font-bold [&.active]:tracking-[0.75px]"
 
 const childrenSort = sortWith<IFileOrFolder>([
   descend((f) => {
@@ -49,7 +53,7 @@ function Tree({
         key={item.title}
         to={path}
         activeClassName="active"
-        className="rs-item"
+        className={itemClass}
         onClick={() => {
           setOpenOnMobile(false)
           unlock()
@@ -75,22 +79,29 @@ function Folder({ item }: { item: IFolder }) {
     setCollapse(false)
   })
 
-  function toggleCollapse() {
-    setCollapse((prevState) => !prevState)
-  }
-
   const sortedChildren = childrenSort(item.children)
 
   return (
-    <div className={cn("rs-tree", collapsed && "collapsed")}>
-      <div className="rs-label" onClick={toggleCollapse}>
-        <TriangleDown /> {humanize(item.title)}
-      </div>
-      <div className="rs-children">
-        {sortedChildren.map((node) => (
-          <Tree key={node.title + "-tree"} item={node} />
-        ))}
-      </div>
+    <div className="flex flex-col items-start gap-1">
+      <button
+        type="button"
+        aria-expanded={!collapsed}
+        onClick={() => setCollapse((prevState) => !prevState)}
+        className={cn(itemClass, "flex cursor-pointer items-center gap-2.5")}
+      >
+        {humanize(item.title)}
+        <CaretDown
+          aria-hidden="true"
+          className={cn("shrink-0", !collapsed && "rotate-180")}
+        />
+      </button>
+      {!collapsed && (
+        <div className="flex flex-col items-start gap-1 pl-4">
+          {sortedChildren.map((node) => (
+            <Tree key={node.title + "-tree"} item={node} />
+          ))}
+        </div>
+      )}
     </div>
   )
 }
@@ -107,19 +118,19 @@ const FirstLevelFolder = memo(({ item }: { item: IFolder }) => {
   const sortedChildren = childrenSort(item.children)
 
   return (
-    <div className="rs-tree firstLevel">
-      <div className="rs-first-label">{humanize(item.title)}</div>
-      <div className="rs-children">
-        {sortedChildren
-          .filter((child) => {
-            // TODO: clean me up, temporary fix
-            if (isProject && child.title === "intro") return false
-            return true
-          })
-          .map((node) => (
-            <Tree key={node.title + "-tree"} item={node} />
-          ))}
+    <div className="flex w-full flex-col items-start gap-1 px-9">
+      <div className="text-xl leading-[26px] font-bold tracking-[0.75px] text-sidebar-fg">
+        {humanize(item.title)}
       </div>
+      {sortedChildren
+        .filter((child) => {
+          // TODO: clean me up, temporary fix
+          if (isProject && child.title === "intro") return false
+          return true
+        })
+        .map((node) => (
+          <Tree key={node.title + "-tree"} item={node} />
+        ))}
     </div>
   )
 })
@@ -133,12 +144,12 @@ const ResourceList: FC<{
   const { current, setCurrent } = useSidebar()
 
   return (
-    <div className="rs-list">
+    <div className="flex w-full flex-col items-start gap-1 px-9 [&+&]:mt-[13px]">
       {items.map((item) => (
         <AppLink
           key={item.title}
           to={getPath(item)}
-          className={cn("rs-item", current === item.title && "active")}
+          className={cn(itemClass, current === item.title && "active")}
           onClick={() => {
             setCurrent(item.title)
             setExpanded(false)
@@ -147,29 +158,6 @@ const ResourceList: FC<{
           {item.title}
         </AppLink>
       ))}
-    </div>
-  )
-}
-
-const ExpandResources: FC<{
-  expanded: boolean
-  setExpanded: React.Dispatch<React.SetStateAction<boolean>>
-}> = ({ children, expanded, setExpanded }) => {
-  const { current } = useSidebar()
-
-  const showList = expanded || !current
-
-  return (
-    <div className="rs-expand">
-      {current && (
-        <div
-          className="rs-expand-header"
-          onClick={() => setExpanded((prevState) => !prevState)}
-        >
-          Expand resources {expanded ? <Collapse /> : <Expand />}
-        </div>
-      )}
-      {showList && children}
     </div>
   )
 }
@@ -184,14 +172,41 @@ export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
   const currentLanguage = languagesTree.find((lang) => lang.title === current)
   const currentTopic = topicsTree.find((topic) => topic.title === current)
 
+  // Drill-down: inside a language/topic the card shows its tree, and
+  // "other resources" steps back up to the list of all of them.
+  const showList = expanded || !current
+
   return (
-    <Sidebar {...props}>
-      <ExpandResources expanded={expanded} setExpanded={setExpanded}>
-        <ResourceList items={languagesTree} setExpanded={setExpanded} />
-        <ResourceList items={topicsTree} setExpanded={setExpanded} />
-      </ExpandResources>
-      {currentLanguage && <Tree item={currentLanguage} firstLevel={true} />}
-      {currentTopic && <Tree item={currentTopic} firstLevel={true} />}
+    <Sidebar variant="card" {...props}>
+      <div className="flex w-full flex-col items-center gap-[17px]">
+        {current && (
+          <button
+            type="button"
+            aria-expanded={expanded}
+            onClick={() => setExpanded((prevState) => !prevState)}
+            className="flex w-full cursor-pointer items-center gap-2.5 px-2.5 text-left text-xl leading-[26px] tracking-[0.75px] text-sidebar-fg/50 underline decoration-from-font underline-offset-auto hover:text-sidebar-fg/70"
+          >
+            <ArrowLeft
+              aria-hidden="true"
+              className={cn("shrink-0", expanded && "rotate-180")}
+            />
+            other resources
+          </button>
+        )}
+        {showList ? (
+          <>
+            <ResourceList items={languagesTree} setExpanded={setExpanded} />
+            <ResourceList items={topicsTree} setExpanded={setExpanded} />
+          </>
+        ) : (
+          <>
+            {currentLanguage && (
+              <Tree item={currentLanguage} firstLevel={true} />
+            )}
+            {currentTopic && <Tree item={currentTopic} firstLevel={true} />}
+          </>
+        )}
+      </div>
     </Sidebar>
   )
 }

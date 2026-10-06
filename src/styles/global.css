@@ -17,6 +17,14 @@
   --color-discord: oklch(64.738% 0.12427 270.623); /* #7289da */
   --color-discord-darker: oklch(52.571% 0.11563 270.843); /* #5265ad */
   --color-code-bg: oklch(17.423% 0.01147 242.494); /* #0c1115 */
+
+  /* 2026 resources redesign. */
+  --color-sunken: oklch(16.599% 0.01061 248.467); /* #0b0f13 */
+  --color-panel-from: oklch(27.52% 0.0241 246.247); /* #1e2933 */
+  --color-panel-to: oklch(34.517% 0.03154 246.985); /* #2c3b49 */
+  --color-avatar-ring: oklch(50.251% 0.05127 246.929); /* #4c6780 */
+  --color-brand-orange: oklch(81.669% 0.12401 59.663); /* #feaf6d */
+  --color-brand-pink: oklch(73.207% 0.18102 359.345); /* #ff70a5 */
 }
 
 /*
@@ -33,6 +41,7 @@
   --main-link: oklch(68.233% 0.11835 187.628); /* #04b0a6 */
   --rule: oklch(36.915% 0.02819 248.596); /* #34414e */
   --content-border: oklch(17.521% 0.01047 248.425); /* #0d1115 */
+  --card-border: oklch(36.705% 0.03397 245.538); /* #304150 */
   color-scheme: dark;
 }
 
@@ -45,6 +54,7 @@
   --main-link: oklch(68.233% 0.11835 187.628); /* #04b0a6 */
   --rule: oklch(79.069% 0.04965 249.408); /* #a3beda */
   --content-border: oklch(92.494% 0 0); /* #e6e6e6 */
+  --card-border: oklch(92.494% 0 0); /* #e6e6e6 */
   color-scheme: light;
 }
 
@@ -58,6 +68,7 @@
   --color-main-link: var(--main-link);
   --color-rule: var(--rule);
   --color-content-border: var(--content-border);
+  --color-card-border: var(--card-border);
 }
 
 @layer base {
@@ -116,6 +127,16 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  /* 2px border that fades from --card-border at the top to transparent at the
+     bottom (Figma: inside gradient stroke). The fill is painted on the padding
+     box only so the border-box gradient shows through the border. */
+  .card-gradient-border {
+    border: 2px solid transparent;
+    background:
+      linear-gradient(var(--main-bg), var(--main-bg)) padding-box,
+      linear-gradient(to bottom, var(--card-border), transparent) border-box;
   }
 
   /* Table-of-contents item, incl. scrollspy active bar (classes set at runtime). */
@@ -219,124 +240,6 @@
 .spotlight-link.active {
   font-weight: 700;
   color: var(--sidebar-active);
-}
-
-/* Resources sidebar tree (ported from ResourcesSidebar). transparentize(n) maps
-   to color-mix at (1-n) opacity. */
-.rs-children {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  overflow: hidden;
-  padding-left: 16px;
-  padding-bottom: 8px;
-}
-.rs-children:last-child {
-  padding-bottom: 0;
-}
-.rs-label {
-  position: relative;
-  display: flex;
-  align-items: center;
-  align-self: flex-start;
-  padding: 8px 0 0;
-  margin-bottom: 6px;
-  cursor: pointer;
-  user-select: none;
-  border-bottom: 2px solid transparent;
-}
-.rs-label:hover {
-  border-color: color-mix(in oklab, var(--sidebar-fg) 30%, transparent);
-}
-.rs-label svg {
-  position: absolute;
-  right: 100%;
-  margin-right: 5px;
-  width: 7px;
-  fill: var(--sidebar-fg);
-}
-.rs-first-label {
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 12px 15px 12px 0;
-  font-weight: 700;
-  color: var(--sidebar-fg);
-  cursor: pointer;
-  user-select: none;
-}
-.rs-tree {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  font-size: 20px;
-}
-.rs-tree.firstLevel {
-  overflow: hidden;
-  border-top: 1px solid color-mix(in oklab, var(--sidebar-fg) 20%, transparent);
-}
-.rs-tree.collapsed .rs-children {
-  display: none;
-}
-.rs-tree.collapsed > .rs-label svg {
-  transform: rotate(-90deg);
-}
-.rs-expand {
-  padding-right: 15px;
-  margin-bottom: 20px;
-}
-.rs-expand-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-  font-weight: 700;
-  color: color-mix(in oklab, var(--sidebar-fg) 50%, transparent);
-  cursor: pointer;
-  user-select: none;
-}
-.rs-expand-header:hover {
-  opacity: 0.85;
-}
-.rs-expand-header svg {
-  margin-left: auto;
-}
-.rs-expand-header svg path {
-  fill: color-mix(in oklab, var(--sidebar-fg) 50%, transparent);
-}
-.rs-list {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  overflow: hidden;
-}
-.rs-list + .rs-list {
-  padding-top: 16px;
-  margin-top: 16px;
-  border-top: 1px solid color-mix(in oklab, var(--sidebar-fg) 20%, transparent);
-}
-.rs-item {
-  display: block;
-  align-self: flex-start;
-  margin-bottom: 4px;
-  color: var(--sidebar-fg);
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-}
-.rs-item:hover {
-  border-color: color-mix(in oklab, var(--sidebar-fg) 30%, transparent);
-}
-.rs-item + .rs-item,
-.rs-tree + .rs-item {
-  padding: 8px 0 0;
-}
-.rs-item.active {
-  font-weight: 700;
-  color: var(--sidebar-active);
-}
-.rs-item.active:hover {
-  border-color: color-mix(in oklab, var(--sidebar-active) 30%, transparent);
 }
 
 /* "Extra resources" box on resource home pages (ported from ResourcesHomeContent).
