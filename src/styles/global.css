@@ -682,11 +682,12 @@
 }
 
 /* Right aside: table of contents + recommended reading. */
+/* Same 26px line + 4px gap rhythm as the sidebar card's lists. */
 .resource-aside .toc-item {
   position: relative;
   display: block;
   font-size: 18px;
-  line-height: 23px;
+  line-height: 26px;
   color: color-mix(in oklab, var(--main-fg) 90%, transparent);
 }
 .resource-aside .toc-item.depth-2,
@@ -697,7 +698,7 @@
   padding-left: 16px;
 }
 .resource-aside .toc-item + .toc-item {
-  margin-top: 11.5px;
+  margin-top: 4px;
 }
 .resource-aside .toc-item a {
   color: inherit;
@@ -750,12 +751,6 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-/* Clear the fixed mobile header (shown below lg) when jumping to a heading. */
-@media (max-width: 1023px) {
-  .markdown.resource-prose :is(h1, h2, h3, h4, h5, h6) {
-    scroll-margin-top: 90px;
-  }
 }
 @media (max-width: 767px) {
   .markdown.resource-prose pre,
