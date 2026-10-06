@@ -70,10 +70,15 @@ const InnerColumnLayout: FC<IColumnLayoutProps> = ({
         {isCard && <WavesBanner className="-z-10" />}
 
         {/* The card layout needs more room, so it switches to the header +
-            drawer below lg instead of md. */}
+            drawer below lg instead of md. Its header sits on the waves banner
+            and scrolls away with the page instead of a translucent fixed bar. */}
         <MobileHeader
           openMenu={() => setOpenOnMobile(true)}
-          className={isCard ? "max-lg:flex" : "max-md:flex"}
+          className={
+            isCard
+              ? "absolute bg-transparent backdrop-blur-none max-lg:flex"
+              : "max-md:flex"
+          }
         >
           {title}
         </MobileHeader>
