@@ -27,7 +27,7 @@ export const PageSidebarLink: FC<IPageSidebarLinkProps> = ({
 
   if (type === "external") {
     return (
-      <a href={href} target="_blank" className={linkClass}>
+      <a href={href} target="_blank" rel="noreferrer" className={linkClass}>
         {text}
       </a>
     )
