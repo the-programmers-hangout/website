@@ -1,8 +1,10 @@
-import React, { FC, Fragment } from "react"
+import React, { FC, Fragment, useEffect, useRef } from "react"
 import { Dialog } from "@base-ui/react/dialog"
 
 import { MobileHeader } from "../../components/MobileHeader"
+import { WavesBanner } from "../../components/WavesBanner"
 import useSidebar from "../../hooks/useSidebar"
+import { cn } from "../../lib/cn"
 import { SidebarProvider } from "../../SidebarProvider"
 import { ThemeProvider } from "../../ThemeProvider"
 
@@ -10,24 +12,84 @@ interface IColumnLayoutProps {
   title: string
   sidebar: (props: { className: string }) => React.ReactNode
   content: React.ReactNode
+  // "column": fixed full-height sidebar. "card": floating sticky sidebar card
+  // over a waves banner (2026 resources redesign).
+  variant?: "column" | "card"
+}
+
+const CARD_GUTTER = 36
+
+/*
+  Sticky offset for a sidebar that may be taller than the viewport: it sticks
+  36px from the top when it fits, otherwise it scrolls with the page until its
+  bottom is 36px from the viewport bottom, so no part of it is ever clipped.
+*/
+function useBottomAwareSticky(ref: React.RefObject<HTMLElement>) {
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    const update = () => {
+      const top = Math.min(
+        CARD_GUTTER,
+        window.innerHeight - el.offsetHeight - CARD_GUTTER
+      )
+      el.style.top = `${top}px`
+    }
+
+    update()
+    const observer = new ResizeObserver(update)
+    observer.observe(el)
+    window.addEventListener("resize", update)
+    return () => {
+      observer.disconnect()
+      window.removeEventListener("resize", update)
+    }
+  }, [ref])
 }
 
 const InnerColumnLayout: FC<IColumnLayoutProps> = ({
   title,
   sidebar,
   content,
+  variant = "column",
 }) => {
   const { openOnMobile, setOpenOnMobile } = useSidebar()
+  const isCard = variant === "card"
+  const cardRef = useRef<HTMLDivElement>(null)
+  useBottomAwareSticky(cardRef)
 
   return (
     <Fragment>
-      <div className="flex min-h-screen w-full bg-main text-main-fg">
+      <div
+        className={cn(
+          "flex min-h-screen w-full bg-main text-main-fg",
+          isCard && "relative isolate"
+        )}
+      >
+        {isCard && <WavesBanner className="-z-10" />}
+
         <MobileHeader openMenu={() => setOpenOnMobile(true)}>{title}</MobileHeader>
 
-        {/* Desktop: the fixed sidebar column (hidden on mobile). */}
-        {sidebar({ className: "max-md:hidden" })}
+        {/* Desktop: the sidebar (hidden on mobile). */}
+        {isCard ? (
+          <div
+            ref={cardRef}
+            className="sticky top-9 my-9 ml-9 w-[327px] shrink-0 self-start max-md:hidden"
+          >
+            {sidebar({ className: "" })}
+          </div>
+        ) : (
+          sidebar({ className: "max-md:hidden" })
+        )}
 
-        <main className="ml-80 flex w-[calc(100%-320px)] flex-[1_1_auto] flex-wrap items-start max-md:ml-0 max-md:w-full [&>:first-child]:mt-0 [&>:last-child]:mb-0">
+        <main
+          className={cn(
+            isCard
+              ? "min-w-0 flex-1"
+              : "ml-80 flex w-[calc(100%-320px)] flex-[1_1_auto] flex-wrap items-start max-md:ml-0 max-md:w-full [&>:first-child]:mt-0 [&>:last-child]:mb-0"
+          )}
+        >
           {content}
         </main>
       </div>
@@ -46,15 +108,11 @@ const InnerColumnLayout: FC<IColumnLayoutProps> = ({
   )
 }
 
-export const ColumnLayout: FC<IColumnLayoutProps> = ({
-  title,
-  sidebar,
-  content,
-}) => {
+export const ColumnLayout: FC<IColumnLayoutProps> = (props) => {
   return (
     <ThemeProvider>
       <SidebarProvider>
-        <InnerColumnLayout title={title} sidebar={sidebar} content={content} />
+        <InnerColumnLayout {...props} />
       </SidebarProvider>
     </ThemeProvider>
   )
