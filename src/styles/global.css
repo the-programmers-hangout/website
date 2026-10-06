@@ -566,3 +566,211 @@
     rgba(0, 0, 0, 0) 95%
   );
 }
+
+/*
+  2026 resources redesign (Figma "2026 resources redesign", 1440 frame).
+  Scoped to the resources section; other layouts keep the styles above.
+*/
+
+/* Article body: 18px IBM Plex Sans on a 23px rhythm, -0.75px tracking. */
+.markdown.resource-prose {
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: -0.75px;
+}
+/* Vertical rhythm, measured from the frame: 23px between blocks, 27px above
+   and 19px below headings. Only top margins are set so nothing collapses. */
+.markdown.resource-prose > * {
+  margin-top: 23px;
+  margin-bottom: 0;
+}
+.markdown.resource-prose > :first-child {
+  margin-top: 0;
+}
+/* The code box sits around the 23px flow: 12px of the gap above it and
+   11px of the gap below are taken by the box's own border and padding. */
+.markdown.resource-prose > * + pre {
+  margin-top: 11px;
+}
+.markdown.resource-prose > pre + * {
+  margin-top: 12px;
+}
+.markdown.resource-prose > * + :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: 27px;
+}
+.markdown.resource-prose > :is(h1, h2, h3, h4, h5, h6) + * {
+  margin-top: 19px;
+}
+.markdown.resource-prose :is(h1, h2, h3, h4, h5, h6) {
+  font-weight: 700;
+  letter-spacing: -0.75px;
+  line-height: normal;
+  scroll-margin-top: 36px;
+}
+/* Headings are wrapped in an autolink anchor; keep the heading's weight
+   instead of the typography plugin's link weight. */
+.markdown.resource-prose :is(h1, h2, h3, h4, h5, h6) a.anchor {
+  font-weight: inherit;
+}
+.markdown.resource-prose h1 {
+  font-size: 41.35px;
+}
+.markdown.resource-prose h2 {
+  font-size: 39.45px;
+  margin-left: 0;
+}
+.markdown.resource-prose h2 ~ h2::before {
+  content: none;
+}
+.markdown.resource-prose h3 {
+  font-size: 31.5px;
+}
+.markdown.resource-prose h4 {
+  font-size: 25px;
+}
+.markdown.resource-prose :is(h5, h6) {
+  font-size: 20px;
+}
+.markdown.resource-prose li {
+  margin: 6px 0;
+}
+.markdown.resource-prose blockquote {
+  margin-inline: 0;
+  padding-left: 23px;
+}
+
+/* Inline code chip. inline-block keeps the chip 22px tall like the design
+   instead of the font's full 23.4px content area. */
+.markdown.resource-prose :not(pre) > code {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0 2px;
+  border: 1px solid var(--card-border);
+  border-radius: 5px;
+  background: var(--color-sunken);
+  color: oklch(100% 0 0);
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: inherit;
+  overflow-wrap: anywhere;
+}
+
+/* Code block: bleeds 18px left / 10px right of the text column. */
+.markdown.resource-prose pre,
+.markdown.resource-prose pre[class*="language-"] {
+  margin-inline: -18px -10px;
+  padding: 12px 17px 9px;
+  border: 1px solid var(--card-border);
+  border-radius: 5px;
+  background: var(--color-sunken);
+  font-size: 18px;
+  line-height: 23px;
+}
+.markdown.resource-prose pre code,
+.markdown.resource-prose pre code[class*="language-"] {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: oklch(100% 0 0);
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: -0.75px;
+}
+.markdown.resource-prose pre .token.punctuation {
+  color: inherit;
+}
+
+/* Right aside: table of contents + recommended reading. */
+.resource-aside .toc-item {
+  position: relative;
+  display: block;
+  font-size: 18px;
+  line-height: 23px;
+  color: color-mix(in oklab, var(--main-fg) 90%, transparent);
+}
+.resource-aside .toc-item.depth-2,
+.resource-aside .toc-item.depth-3 {
+  padding: 0;
+}
+.resource-aside .toc-item.depth-3 {
+  padding-left: 16px;
+}
+.resource-aside .toc-item + .toc-item {
+  margin-top: 11.5px;
+}
+.resource-aside .toc-item a {
+  color: inherit;
+}
+.resource-aside .toc-item.scrollspy-current,
+.resource-aside .toc-item.scrollspy-cached {
+  font-weight: 700;
+  text-shadow: none;
+}
+.resource-aside .toc-item.scrollspy-current::after,
+.resource-aside .toc-item.scrollspy-cached::after {
+  top: 1px;
+  left: -8px;
+  width: 2px;
+  height: 24px;
+}
+
+/* Gradient-underlined link followed by a chevron (recommended reading). */
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--main-fg);
+}
+.resource-link a {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+}
+.resource-link a::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--color-brand-orange),
+    var(--color-brand-pink)
+  );
+}
+.resource-link a:hover {
+  background: linear-gradient(
+    90deg,
+    var(--color-brand-orange),
+    var(--color-brand-pink)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media (max-width: 767px) {
+  .markdown.resource-prose pre,
+  .markdown.resource-prose pre[class*="language-"] {
+    margin-inline: 0;
+  }
+  /* Clear the fixed mobile header when jumping to a heading. */
+  .markdown.resource-prose :is(h1, h2, h3, h4, h5, h6) {
+    scroll-margin-top: 90px;
+  }
+  /* No phone frame in the design: scale the heading ramp down. */
+  .markdown.resource-prose h1 {
+    font-size: 32px;
+  }
+  .markdown.resource-prose h2 {
+    font-size: 30px;
+  }
+  .markdown.resource-prose h3 {
+    font-size: 25px;
+  }
+  .markdown.resource-prose h4 {
+    font-size: 21px;
+  }
+}

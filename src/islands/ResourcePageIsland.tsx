@@ -1,10 +1,9 @@
 import React from "react"
 import { Shell } from "./Shell"
 import { Footer } from "../components/Footer"
-import { Header } from "../components/Header"
 import { Markdown } from "../components/Markdown"
-import { PageContent } from "../components/PageContent"
 import { PageNavigation } from "../components/PageNavigation"
+import { ResourceArticle } from "../components/ResourceArticle"
 import { buildToc } from "../utils"
 import type { ResourcePageData, ResourceDataShape } from "../lib/content"
 
@@ -19,34 +18,27 @@ export default function ResourcePageIsland({
   data,
   resourceData,
 }: Props) {
-  const toc = buildToc(data.headings)
-  const shiftLayout = Boolean(
-    data.recommendedReading || data.externalResources || toc.length
-  )
-
   return (
     <Shell layout="resources" pathname={pathname} resourceData={resourceData}>
-      <Header
+      <ResourceArticle
         relativePath={data.relativePath}
         basePath="/resources"
         title={data.title}
         authors={data.authors}
         createdAt={data.createdAt}
         timeToRead={data.timeToRead}
-        shifted={shiftLayout}
-      />
-      <PageContent
-        content={
+        toc={buildToc(data.headings)}
+        recommendedReading={data.recommendedReading}
+        externalResources={data.externalResources}
+        after={
           <>
-            <Markdown content={data.html} />
             <PageNavigation next={data.next} previous={data.previous} />
             <Footer />
           </>
         }
-        toc={toc}
-        recommendedReading={data.recommendedReading}
-        externalResources={data.externalResources}
-      />
+      >
+        <Markdown content={data.html} className="resource-prose" />
+      </ResourceArticle>
     </Shell>
   )
 }
