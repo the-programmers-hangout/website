@@ -24,9 +24,13 @@ export const MobileHeader: FC<IMobileHeaderProps> = ({
         <Logo className="h-[25px]" />
       </div>
       {children}
-      <div
+      {/* content-box: the two 2px bars sit at the top and bottom of the 9px
+          content box, inside 8px of padding that enlarges the tap target. */}
+      <button
+        type="button"
+        aria-label="Open menu"
         onClick={openMenu}
-        className="relative ml-auto h-[9px] w-4 cursor-pointer p-2 before:absolute before:top-2 before:h-0.5 before:w-4 before:bg-main-fg before:content-[''] after:absolute after:bottom-2 after:h-0.5 after:w-4 after:bg-main-fg after:content-['']"
+        className="relative ml-auto box-content h-[9px] w-4 cursor-pointer p-2 before:absolute before:top-2 before:h-0.5 before:w-4 before:bg-main-fg before:content-[''] after:absolute after:bottom-2 after:h-0.5 after:w-4 after:bg-main-fg after:content-['']"
       />
     </div>
   )
