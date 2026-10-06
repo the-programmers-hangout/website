@@ -1,16 +1,25 @@
 import React, { FC } from "react"
 import Logo from "../../images/tph-logo"
+import { cn } from "../../lib/cn"
 
 interface IMobileHeaderProps {
   openMenu: () => void
+  // Breakpoint classes that reveal the header (defaults to below md).
+  className?: string
 }
 
 export const MobileHeader: FC<IMobileHeaderProps> = ({
   openMenu,
+  className = "max-md:flex",
   children,
 }) => {
   return (
-    <div className="fixed inset-x-0 top-0 z-50 hidden items-center bg-main/40 px-8 py-4 font-header text-[22px] font-bold backdrop-blur-[14px] max-md:flex">
+    <div
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 hidden items-center bg-main/40 px-8 py-4 font-header text-[22px] font-bold backdrop-blur-[14px]",
+        className
+      )}
+    >
       <div className="mr-2 flex h-[35px] w-[35px] items-center justify-center rounded-[7px] bg-[#222]">
         <Logo className="h-[25px]" />
       </div>

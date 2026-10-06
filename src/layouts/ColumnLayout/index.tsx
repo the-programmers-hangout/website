@@ -69,13 +69,20 @@ const InnerColumnLayout: FC<IColumnLayoutProps> = ({
       >
         {isCard && <WavesBanner className="-z-10" />}
 
-        <MobileHeader openMenu={() => setOpenOnMobile(true)}>{title}</MobileHeader>
+        {/* The card layout needs more room, so it switches to the header +
+            drawer below lg instead of md. */}
+        <MobileHeader
+          openMenu={() => setOpenOnMobile(true)}
+          className={isCard ? "max-lg:flex" : "max-md:flex"}
+        >
+          {title}
+        </MobileHeader>
 
         {/* Desktop: the sidebar (hidden on mobile). */}
         {isCard ? (
           <div
             ref={cardRef}
-            className="sticky top-9 my-9 ml-9 w-[327px] shrink-0 self-start max-md:hidden"
+            className="sticky top-9 my-9 ml-9 w-[327px] shrink-0 self-start max-lg:hidden"
           >
             {sidebar({ className: "" })}
           </div>
@@ -98,8 +105,20 @@ const InnerColumnLayout: FC<IColumnLayoutProps> = ({
           Escape, scroll lock, backdrop dismiss). */}
       <Dialog.Root open={openOnMobile} onOpenChange={setOpenOnMobile}>
         <Dialog.Portal>
-          <Dialog.Backdrop className="fixed inset-0 z-[99] bg-black/20 transition-opacity duration-300 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 md:hidden" />
-          <Dialog.Popup className="fixed top-0 bottom-0 left-0 z-[100] w-[calc(100vw-100px)] shadow-[0_4px_10px_rgba(0,0,0,0.2)] transition-transform duration-300 outline-none data-[ending-style]:-translate-x-full data-[starting-style]:-translate-x-full md:hidden">
+          <Dialog.Backdrop
+            className={cn(
+              "fixed inset-0 z-[99] bg-black/20 transition-opacity duration-300 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0",
+              isCard ? "lg:hidden" : "md:hidden"
+            )}
+          />
+          <Dialog.Popup
+            className={cn(
+              "fixed top-0 bottom-0 left-0 z-[100] shadow-[0_4px_10px_rgba(0,0,0,0.2)] transition-transform duration-300 outline-none data-[ending-style]:-translate-x-full data-[starting-style]:-translate-x-full",
+              isCard
+                ? "w-[min(363px,calc(100vw-48px))] lg:hidden"
+                : "w-[calc(100vw-100px)] md:hidden"
+            )}
+          >
             {sidebar({ className: "in-drawer" })}
           </Dialog.Popup>
         </Dialog.Portal>

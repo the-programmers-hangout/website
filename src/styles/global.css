@@ -751,14 +751,16 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/* Clear the fixed mobile header (shown below lg) when jumping to a heading. */
+@media (max-width: 1023px) {
+  .markdown.resource-prose :is(h1, h2, h3, h4, h5, h6) {
+    scroll-margin-top: 90px;
+  }
+}
 @media (max-width: 767px) {
   .markdown.resource-prose pre,
   .markdown.resource-prose pre[class*="language-"] {
     margin-inline: 0;
-  }
-  /* Clear the fixed mobile header when jumping to a heading. */
-  .markdown.resource-prose :is(h1, h2, h3, h4, h5, h6) {
-    scroll-margin-top: 90px;
   }
   /* No phone frame in the design: scale the heading ramp down. */
   .markdown.resource-prose h1 {
