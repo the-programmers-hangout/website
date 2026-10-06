@@ -7,15 +7,16 @@
 */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/* Static design tokens (ported from design/themes.ts + design/typography.ts). */
+/* Static design tokens (ported from design/themes.ts + design/typography.ts).
+   Colors are oklch; the trailing comment is the original hex. */
 @theme {
   --font-header: "Montserrat", sans-serif;
   --font-body: "IBM Plex Sans", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
 
-  --color-discord: #7289da;
-  --color-discord-darker: #5265ad;
-  --color-code-bg: #0c1115;
+  --color-discord: oklch(64.738% 0.12427 270.623); /* #7289da */
+  --color-discord-darker: oklch(52.571% 0.11563 270.843); /* #5265ad */
+  --color-code-bg: oklch(17.423% 0.01147 242.494); /* #0c1115 */
 }
 
 /*
@@ -24,26 +25,26 @@
 */
 :root,
 [data-theme="dark"] {
-  --sidebar-bg: #19222a;
-  --sidebar-fg: #ffffff;
-  --sidebar-active: #00fcff;
-  --main-bg: #202c36;
-  --main-fg: #ffffff;
-  --main-link: #04b0a6;
-  --rule: #34414e;
-  --content-border: #0d1115;
+  --sidebar-bg: oklch(24.695% 0.02001 245.562); /* #19222a */
+  --sidebar-fg: oklch(100% 0 0); /* #ffffff */
+  --sidebar-active: oklch(89.833% 0.15302 196.319); /* #00fcff */
+  --main-bg: oklch(28.655% 0.02471 243.926); /* #202c36 */
+  --main-fg: oklch(100% 0 0); /* #ffffff */
+  --main-link: oklch(68.233% 0.11835 187.628); /* #04b0a6 */
+  --rule: oklch(36.915% 0.02819 248.596); /* #34414e */
+  --content-border: oklch(17.521% 0.01047 248.425); /* #0d1115 */
   color-scheme: dark;
 }
 
 [data-theme="light"] {
-  --sidebar-bg: #f9f9f9;
-  --sidebar-fg: #000000;
-  --sidebar-active: #499def;
-  --main-bg: #ffffff;
-  --main-fg: #000000;
-  --main-link: #04b0a6;
-  --rule: #a3beda;
-  --content-border: #e6e6e6;
+  --sidebar-bg: oklch(98.212% 0 0); /* #f9f9f9 */
+  --sidebar-fg: oklch(0% 0 0); /* #000000 */
+  --sidebar-active: oklch(68.144% 0.14633 250.38); /* #499def */
+  --main-bg: oklch(100% 0 0); /* #ffffff */
+  --main-fg: oklch(0% 0 0); /* #000000 */
+  --main-link: oklch(68.233% 0.11835 187.628); /* #04b0a6 */
+  --rule: oklch(79.069% 0.04965 249.408); /* #a3beda */
+  --content-border: oklch(92.494% 0 0); /* #e6e6e6 */
   color-scheme: light;
 }
 
