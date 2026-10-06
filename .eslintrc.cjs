@@ -12,6 +12,13 @@ https://github.com/typescript-eslint/tslint-to-eslint-config/blob/master/docs/FA
 Happy linting! 💖
 */
 module.exports = {
+  root: true,
+  // Islands run in the browser; scripts and Astro config run in Node.
+  env: {
+    browser: true,
+    node: true,
+    es2022: true,
+  },
   extends: [
     "eslint:recommended",
     "plugin:react/recommended",
@@ -20,7 +27,7 @@ module.exports = {
   ],
   settings: {
     react: {
-      version: "16.13.1",
+      version: "detect",
     },
   },
   parser: "@typescript-eslint/parser",
@@ -28,13 +35,7 @@ module.exports = {
     project: "tsconfig.json",
     sourceType: "module",
   },
-  plugins: [
-    "@typescript-eslint",
-    "@typescript-eslint/tslint",
-    "import",
-    "jsdoc",
-    "prefer-arrow",
-  ],
+  plugins: ["@typescript-eslint", "import", "jsdoc"],
   globals: {
     React: true,
     JSX: true,
@@ -102,7 +103,6 @@ module.exports = {
     "@typescript-eslint/no-misused-new": "error",
     "@typescript-eslint/no-namespace": "error",
     "no-param-reassign": "error",
-    "@typescript-eslint/no-parameter-properties": "off",
     "@typescript-eslint/no-this-alias": "error",
     "no-unused-expressions": "error",
     "@typescript-eslint/no-unused-expressions": ["error"],
@@ -150,7 +150,6 @@ module.exports = {
     "import/no-internal-modules": "off",
     "jsdoc/check-alignment": "error",
     "jsdoc/check-indentation": "error",
-    "jsdoc/newline-after-description": "error",
     "linebreak-style": "off",
     "max-classes-per-file": ["error", 1],
     "max-len": "off",
@@ -211,19 +210,5 @@ module.exports = {
     ],
     "use-isnan": "error",
     "valid-typeof": "off",
-    "@typescript-eslint/tslint/config": [
-      "error",
-      {
-        rules: {
-          "prefer-conditional-expression": true,
-          typedef: [
-            true,
-            "parameter",
-            "property-declaration",
-            "member-variable-declaration",
-          ],
-        },
-      },
-    ],
   },
 }

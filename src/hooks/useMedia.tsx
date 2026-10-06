@@ -1,4 +1,3 @@
-/* globals window */
 import { useEffect, useState } from "react"
 
 export function useMedia<Value extends unknown>(

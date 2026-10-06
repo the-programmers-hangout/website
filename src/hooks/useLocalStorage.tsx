@@ -1,4 +1,3 @@
-/* globals window */
 import { useEffect, useState } from "react"
 
 export const useLocalStorage = <Value extends unknown = unknown>(
