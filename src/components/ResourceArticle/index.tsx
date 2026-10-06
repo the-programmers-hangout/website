@@ -239,7 +239,7 @@ export const ResourceArticle: FC<IResourceArticleProps> = ({
   after,
 }) => {
   return (
-    <div className="grid grid-cols-[minmax(0,677px)] justify-center px-5 pt-[100px] pb-16 md:px-8 md:pt-[63px] min-[1200px]:grid-cols-[minmax(0,677px)_204px] min-[1200px]:gap-x-[clamp(40px,6vw,86px)]">
+    <div className="grid grid-cols-[minmax(0,677px)] justify-center px-5 pt-[100px] pb-16 md:px-8 lg:pt-[63px] min-[1200px]:grid-cols-[minmax(0,677px)_204px] min-[1200px]:gap-x-[clamp(40px,6vw,86px)]">
       <header className="pb-10 md:pb-[60px] min-[1200px]:col-start-1">
         <ResourceBreadcrumb relativePath={relativePath} basePath={basePath} />
         <h1 className="m-0 mt-[-1px] pl-[21px] font-header text-[48px] leading-[58.5px] font-bold tracking-[-0.75px] text-main-fg max-md:pl-0 max-md:text-[36px] max-md:leading-[44px]">
