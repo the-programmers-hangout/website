@@ -4,6 +4,7 @@ import type { Author } from "../../appTypes"
 import ChevronRight from "../../icons/chevron-right.svg?react"
 import ChevronRightSmall from "../../icons/chevron-right-sm.svg?react"
 import { useScrollAwareSticky } from "../../hooks/useScrollAwareSticky"
+import { cn } from "../../lib/cn"
 import { IExternalResource, ITocItem } from "../../types"
 import { humanize, traversePaths } from "../../utils"
 import { AppLink } from "../AppLink"
@@ -178,10 +179,20 @@ const ResourceAside: FC<{
   // A long table of contents can outgrow the viewport; keep all of it reachable.
   useScrollAwareSticky(ref, 36)
 
+  const hasLinks =
+    Boolean(recommendedReading?.length) || Boolean(externalResources?.length)
+  if (!hasLinks && toc.length === 0) return null
+
   return (
     <aside
       ref={ref}
-      className="resource-aside flex flex-col gap-[56.5px] pl-2 empty:hidden min-[1200px]:sticky min-[1200px]:top-9 min-[1200px]:-mt-px min-[1200px]:col-start-2 min-[1200px]:row-span-2 min-[1200px]:row-start-2 min-[1200px]:self-start max-[1199px]:mt-16">
+      className={cn(
+        "resource-aside flex flex-col gap-[56.5px] pl-2 min-[1200px]:sticky min-[1200px]:top-9 min-[1200px]:-mt-px min-[1200px]:col-start-2 min-[1200px]:row-span-2 min-[1200px]:row-start-2 min-[1200px]:self-start max-[1199px]:mt-16",
+        // Below 1200px the table of contents is hidden; with no links left
+        // the aside would be an empty landmark adding 64px of space.
+        !hasLinks && "max-[1199px]:hidden"
+      )}
+    >
       {toc.length > 0 && (
         <nav aria-label="On this page" className="max-[1199px]:hidden">
           <Toc header={null} items={toc} />
