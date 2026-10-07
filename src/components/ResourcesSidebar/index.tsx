@@ -1,7 +1,6 @@
 import descend from "ramda/es/descend"
 import sortWith from "ramda/es/sortWith"
 import React, { FC, HTMLAttributes, memo, useState } from "react"
-import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import useSidebar from "../../hooks/useSidebar"
 import useLocation from "../../hooks/useLocation"
 import { useResourceData } from "../../context/ResourceDataContext"
@@ -43,7 +42,6 @@ function Tree({
   firstLevel?: boolean
 }) {
   const { setOpenOnMobile } = useSidebar()
-  const { unlock } = useLockBodyScroll()
 
   if (item.type === "file") {
     const path = getPath(item)
@@ -54,10 +52,8 @@ function Tree({
         to={path}
         activeClassName="active"
         className={itemClass}
-        onClick={() => {
-          setOpenOnMobile(false)
-          unlock()
-        }}
+        // Closing the drawer releases Base UI's scroll lock.
+        onClick={() => setOpenOnMobile(false)}
       >
         {humanize(item.title)}
       </AppLink>
