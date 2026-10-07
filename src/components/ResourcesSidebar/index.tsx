@@ -1,6 +1,6 @@
 import descend from "ramda/es/descend"
 import sortWith from "ramda/es/sortWith"
-import React, { FC, HTMLAttributes, memo, useState } from "react"
+import React, { FC, HTMLAttributes, memo, useCallback, useState } from "react"
 import useSidebar from "../../hooks/useSidebar"
 import useLocation from "../../hooks/useLocation"
 import { useResourceData } from "../../context/ResourceDataContext"
@@ -71,9 +71,10 @@ function Folder({ item }: { item: IFolder }) {
   const { isMatchingPath } = useLocation()
   const [collapsed, setCollapse] = useState(() => !isMatchingPath(item.path))
 
-  useMatchingPath(item.path, () => {
-    setCollapse(false)
-  })
+  // Stable callback: useMatchingPath re-runs its effect when the callback
+  // changes, which re-expanded the folder right after every collapse click.
+  const expand = useCallback(() => setCollapse(false), [])
+  useMatchingPath(item.path, expand)
 
   const sortedChildren = childrenSort(item.children)
 
