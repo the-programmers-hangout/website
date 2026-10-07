@@ -1,8 +1,9 @@
-import React, { FC, ReactNode } from "react"
+import React, { FC, ReactNode, useRef } from "react"
 
 import type { Author } from "../../appTypes"
 import ChevronRight from "../../icons/chevron-right.svg?react"
 import ChevronRightSmall from "../../icons/chevron-right-sm.svg?react"
+import { useScrollAwareSticky } from "../../hooks/useScrollAwareSticky"
 import { IExternalResource, ITocItem } from "../../types"
 import { humanize, traversePaths } from "../../utils"
 import { AppLink } from "../AppLink"
@@ -171,8 +172,14 @@ const ResourceAside: FC<{
   recommendedReading?: string[]
   externalResources?: IExternalResource[]
 }> = ({ toc, recommendedReading, externalResources }) => {
+  const ref = useRef<HTMLElement>(null)
+  // A long table of contents can outgrow the viewport; keep all of it reachable.
+  useScrollAwareSticky(ref, 36)
+
   return (
-    <aside className="resource-aside flex flex-col gap-[56.5px] pl-2 empty:hidden min-[1200px]:sticky min-[1200px]:top-9 min-[1200px]:-mt-px min-[1200px]:col-start-2 min-[1200px]:row-span-2 min-[1200px]:row-start-2 min-[1200px]:self-start max-[1199px]:mt-16">
+    <aside
+      ref={ref}
+      className="resource-aside flex flex-col gap-[56.5px] pl-2 empty:hidden min-[1200px]:sticky min-[1200px]:top-9 min-[1200px]:-mt-px min-[1200px]:col-start-2 min-[1200px]:row-span-2 min-[1200px]:row-start-2 min-[1200px]:self-start max-[1199px]:mt-16">
       {toc.length > 0 && (
         <nav aria-label="On this page" className="max-[1199px]:hidden">
           <Toc header={null} items={toc} />
