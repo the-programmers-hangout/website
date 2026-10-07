@@ -38,15 +38,24 @@ function trackCodeScroll(container: HTMLElement): () => void {
   }
 
   const onScroll = (event: Event) => update(event.currentTarget as HTMLElement)
+  const updateAll = () => blocks.forEach(update)
+  // Watch the <code> too: when the web font swaps in, the lines get wider
+  // but the <pre> box keeps its size.
   const observer = new ResizeObserver((entries) => {
-    entries.forEach((entry) => update(entry.target as HTMLElement))
+    entries.forEach((entry) => {
+      const pre = entry.target.closest("pre")
+      if (pre) update(pre)
+    })
   })
 
   blocks.forEach((pre) => {
     update(pre)
     pre.addEventListener("scroll", onScroll, { passive: true })
     observer.observe(pre)
+    const code = pre.querySelector("code")
+    if (code) observer.observe(code)
   })
+  document.fonts?.ready.then(updateAll)
 
   return () => {
     observer.disconnect()
