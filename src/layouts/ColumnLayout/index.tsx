@@ -1,8 +1,9 @@
-import React, { FC, Fragment, useEffect, useRef } from "react"
+import React, { FC, Fragment, useRef } from "react"
 import { Dialog } from "@base-ui/react/dialog"
 
 import { MobileHeader } from "../../components/MobileHeader"
 import { WavesBanner } from "../../components/WavesBanner"
+import { useScrollAwareSticky } from "../../hooks/useScrollAwareSticky"
 import useSidebar from "../../hooks/useSidebar"
 import { cn } from "../../lib/cn"
 import { SidebarProvider } from "../../SidebarProvider"
@@ -17,37 +18,6 @@ interface IColumnLayoutProps {
   variant?: "column" | "card"
 }
 
-const CARD_GUTTER = 36
-
-/*
-  Sticky offset for a sidebar that may be taller than the viewport: it sticks
-  36px from the top when it fits, otherwise it scrolls with the page until its
-  bottom is 36px from the viewport bottom, so no part of it is ever clipped.
-*/
-function useBottomAwareSticky(ref: React.RefObject<HTMLElement>) {
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-
-    const update = () => {
-      const top = Math.min(
-        CARD_GUTTER,
-        window.innerHeight - el.offsetHeight - CARD_GUTTER
-      )
-      el.style.top = `${top}px`
-    }
-
-    update()
-    const observer = new ResizeObserver(update)
-    observer.observe(el)
-    window.addEventListener("resize", update)
-    return () => {
-      observer.disconnect()
-      window.removeEventListener("resize", update)
-    }
-  }, [ref])
-}
-
 const InnerColumnLayout: FC<IColumnLayoutProps> = ({
   title,
   sidebar,
@@ -57,7 +27,7 @@ const InnerColumnLayout: FC<IColumnLayoutProps> = ({
   const { openOnMobile, setOpenOnMobile } = useSidebar()
   const isCard = variant === "card"
   const cardRef = useRef<HTMLDivElement>(null)
-  useBottomAwareSticky(cardRef)
+  useScrollAwareSticky(cardRef, 36)
 
   return (
     <Fragment>
