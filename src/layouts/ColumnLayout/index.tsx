@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useRef } from "react"
+import React, { FC, Fragment, useEffect, useRef } from "react"
 import { Dialog } from "@base-ui/react/dialog"
 
 import { MobileHeader } from "../../components/MobileHeader"
@@ -28,6 +28,20 @@ const InnerColumnLayout: FC<IColumnLayoutProps> = ({
   const isCard = variant === "card"
   const cardRef = useRef<HTMLDivElement>(null)
   useScrollAwareSticky(cardRef, 36)
+
+  // The drawer only exists below the breakpoint (CSS hides it above). Close
+  // it when the viewport grows past it, e.g. a tablet rotating to landscape;
+  // otherwise the modal stays open, invisible, holding the scroll lock.
+  useEffect(() => {
+    const query = window.matchMedia(
+      isCard ? "(min-width: 1024px)" : "(min-width: 768px)"
+    )
+    const onChange = () => {
+      if (query.matches) setOpenOnMobile(false)
+    }
+    query.addEventListener("change", onChange)
+    return () => query.removeEventListener("change", onChange)
+  }, [isCard, setOpenOnMobile])
 
   return (
     <Fragment>
