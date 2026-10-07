@@ -92,7 +92,7 @@ const ArticleMeta: FC<{
   const parts: ReactNode[] = []
   if (names.length > 0) {
     parts.push(
-      <span key="by" className="text-base">
+      <span key="by" className="text-[16px]">
         by{" "}
         {listFormat.formatToParts(names).map((part, index) =>
           part.type === "element" ? (
@@ -108,13 +108,13 @@ const ArticleMeta: FC<{
   }
   if (hasDate) {
     parts.push(
-      <time key="date" dateTime={date.toISOString()} className="text-sm">
+      <time key="date" dateTime={date.toISOString()} className="text-[14px]">
         {dateFormat.format(date)}
       </time>
     )
   }
   parts.push(
-    <span key="time" className="text-sm">
+    <span key="time" className="text-[14px]">
       {timeToRead} minute read time
     </span>
   )
@@ -136,11 +136,13 @@ const ArticleMeta: FC<{
           ))}
         </div>
       )}
+      {/* Sizes are arbitrary values (font-size only) so the row's 21px
+          line-height reaches them; text-sm/text-base would reset it. */}
       <p className="m-0 flex flex-wrap items-center gap-x-[11px] leading-[21px] font-light tracking-[-0.75px] text-main-fg/90">
         {parts.map((part, index) => (
           <React.Fragment key={index}>
             {index > 0 && (
-              <span aria-hidden="true" className="text-sm">
+              <span aria-hidden="true" className="text-[14px]">
                 •
               </span>
             )}
