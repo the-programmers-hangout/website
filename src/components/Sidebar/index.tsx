@@ -88,7 +88,7 @@ const CardSidebar: FC<HTMLAttributes<HTMLDivElement>> = ({
         ))}
       </nav>
 
-      <div className="mt-auto w-full px-9 text-base text-sidebar-fg/50">
+      <div className="mt-auto w-full px-9 text-base text-sidebar-fg/90">
         <ThemeToggler />
       </div>
     </div>
