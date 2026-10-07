@@ -658,8 +658,9 @@
 /* Code block: bleeds 18px left / 10px right of the text column. */
 .markdown.resource-prose pre,
 .markdown.resource-prose pre[class*="language-"] {
+  --code-pad-x: 17px;
   margin-inline: -18px -10px;
-  padding: 12px 17px 9px;
+  padding: 12px var(--code-pad-x) 9px;
   border: 1px solid var(--card-border);
   border-radius: 5px;
   background: var(--color-sunken);
@@ -679,6 +680,56 @@
 }
 .markdown.resource-prose pre .token.punctuation {
   color: inherit;
+}
+
+/* Sideways-scrolling code: an edge fade on whichever side has more to see.
+   The block is a one-cell grid so the fades can overlay the code, and they
+   are sticky so they stay on the visible edges while it scrolls. The state
+   attributes are set by Markdown (trackCodeScroll). */
+.markdown.resource-prose pre {
+  display: grid;
+  /* As wide as the longest line, so the end fade starts beyond the visible
+     edge and sticks to it until the scroll reaches the end. */
+  grid-template-columns: max-content;
+}
+.markdown.resource-prose pre > code {
+  grid-area: 1 / 1;
+}
+.markdown.resource-prose pre::before,
+.markdown.resource-prose pre::after {
+  content: "";
+  position: sticky;
+  z-index: 1;
+  grid-area: 1 / 1;
+  width: 48px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+/* Sticky insets are measured from the content box and Chrome will not push
+   past it with a negative inset alone; a matching negative margin carries the
+   fades out over the horizontal padding onto the visible edges. */
+.markdown.resource-prose pre::before {
+  justify-self: start;
+  left: calc(-1 * var(--code-pad-x));
+  margin-left: calc(-1 * var(--code-pad-x));
+  background: linear-gradient(to right, var(--color-sunken), transparent);
+}
+.markdown.resource-prose pre::after {
+  justify-self: end;
+  right: calc(-1 * var(--code-pad-x));
+  margin-right: calc(-1 * var(--code-pad-x));
+  background: linear-gradient(to left, var(--color-sunken), transparent);
+}
+.markdown.resource-prose pre[data-scroll-start]::before,
+.markdown.resource-prose pre[data-scroll-end]::after {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .markdown.resource-prose pre::before,
+  .markdown.resource-prose pre::after {
+    transition: none;
+  }
 }
 
 /* Right aside: table of contents + recommended reading. */
@@ -753,9 +804,14 @@
   -webkit-text-fill-color: transparent;
 }
 @media (max-width: 767px) {
+  /* Full-bleed code on phones: out to the 20px page gutters, square edges,
+     code text aligned with the body text. */
   .markdown.resource-prose pre,
   .markdown.resource-prose pre[class*="language-"] {
-    margin-inline: 0;
+    --code-pad-x: 20px;
+    margin-inline: -20px;
+    border-inline-width: 0;
+    border-radius: 0;
   }
   /* No phone frame in the design: scale the heading ramp down. */
   .markdown.resource-prose h1 {

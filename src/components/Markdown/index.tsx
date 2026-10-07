@@ -13,7 +13,7 @@ import "prismjs/components/prism-php"
 import "prismjs/components/prism-python"
 import "prismjs/components/prism-yaml"
 import "prismjs/plugins/line-numbers/prism-line-numbers.css"
-import React, { FC, useEffect } from "react"
+import React, { FC, useEffect, useRef } from "react"
 import { cn } from "../../lib/cn"
 import "./env"
 
@@ -24,16 +24,51 @@ interface IMarkdownProps {
 }
 
 /*
+  Marks code blocks that can scroll sideways: data-scroll-start when there is
+  content to the left, data-scroll-end when there is more to the right. The
+  CSS draws an edge fade for each (see .resource-prose pre in global.css).
+*/
+function trackCodeScroll(container: HTMLElement): () => void {
+  const blocks = Array.from(container.querySelectorAll("pre"))
+
+  const update = (pre: HTMLElement) => {
+    const maxScroll = pre.scrollWidth - pre.clientWidth
+    pre.toggleAttribute("data-scroll-start", pre.scrollLeft > 1)
+    pre.toggleAttribute("data-scroll-end", pre.scrollLeft < maxScroll - 1)
+  }
+
+  const onScroll = (event: Event) => update(event.currentTarget as HTMLElement)
+  const observer = new ResizeObserver((entries) => {
+    entries.forEach((entry) => update(entry.target as HTMLElement))
+  })
+
+  blocks.forEach((pre) => {
+    update(pre)
+    pre.addEventListener("scroll", onScroll, { passive: true })
+    observer.observe(pre)
+  })
+
+  return () => {
+    observer.disconnect()
+    blocks.forEach((pre) => pre.removeEventListener("scroll", onScroll))
+  }
+}
+
+/*
   Wraps Markdown-generated HTML. `prose` (typography plugin) is the base and the
   `.markdown` layer (global.css) reproduces the TPH-specific design.
 */
 export const Markdown: FC<IMarkdownProps> = ({ content, className }) => {
+  const ref = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
     Prism.highlightAll()
+    return ref.current ? trackCodeScroll(ref.current) : undefined
   }, [content])
 
   return (
     <div
+      ref={ref}
       className={cn("markdown prose max-w-none", className)}
       dangerouslySetInnerHTML={{ __html: content }}
     />
