@@ -38,16 +38,22 @@ const ResourceBreadcrumb: FC<{ relativePath: string; basePath: string }> = ({
   basePath,
 }) => {
   const trail = flattenTrail([traversePaths(relativePath.split("/"), basePath)])
-  let folderDepth = 0
+  const folders = trail.filter((item) => item.type === "folder")
+  const file = trail[trail.length - 1]
+  // A top-level folder's intro is that folder's home page (/resources/<lang>),
+  // so its crumb would be a link to the current page.
+  const crumbs =
+    file.type === "file" && file.title === "intro" && folders.length === 1
+      ? []
+      : folders
   const items = [
     { path: "/", title: "home", link: true },
     { path: basePath, title: basePath.replace(/\//, ""), link: true },
-    ...trail
-      .filter((item) => item.type === "folder")
-      .map((item) => {
-        folderDepth++
-        return { path: item.path, title: item.title, link: folderDepth === 1 }
-      }),
+    ...crumbs.map((item, index) => ({
+      path: item.path,
+      title: item.title,
+      link: index === 0,
+    })),
   ]
 
   return (
