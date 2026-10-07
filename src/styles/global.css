@@ -601,6 +601,14 @@
 .markdown.resource-prose > :is(h1, h2, h3, h4, h5, h6) + * {
   margin-top: 19px;
 }
+/* Same idea when a code box meets a heading: its border and padding take
+   12px of the gap above it and 11px of the gap below. */
+.markdown.resource-prose > pre + :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: 16px;
+}
+.markdown.resource-prose > :is(h1, h2, h3, h4, h5, h6) + pre {
+  margin-top: 7px;
+}
 .markdown.resource-prose :is(h1, h2, h3, h4, h5, h6) {
   font-weight: 700;
   letter-spacing: -0.75px;
@@ -653,6 +661,12 @@
   line-height: 20px;
   letter-spacing: inherit;
   overflow-wrap: anywhere;
+}
+
+/* Inside headings the chip scales with the heading instead of staying 18px. */
+.markdown.resource-prose :is(h1, h2, h3, h4, h5, h6) :not(pre) > code {
+  font-size: 0.85em;
+  line-height: 1.15;
 }
 
 /* Code block: bleeds 18px left / 10px right of the text column. */
