@@ -9,6 +9,8 @@ import rehypeStringify from "rehype-stringify"
 import { visit } from "unist-util-visit"
 import { toString } from "mdast-util-to-string"
 import type { Root } from "mdast"
+import type { Element, Root as HastRoot } from "hast"
+import { Prism } from "./prism"
 
 export interface Heading {
   depth: number
@@ -60,6 +62,73 @@ function preprocess(raw: string): string {
     )
 }
 
+// Prism's own language-class pattern (prism.js `lang`).
+const LANGUAGE_CLASS = /(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i
+
+function classString(node: Element): string {
+  const className = node.properties.className
+  return Array.isArray(className) ? className.join(" ") : ""
+}
+
+function setLanguage(node: Element, language: string) {
+  const kept = classString(node)
+    .split(/\s+/)
+    .filter((name) => name && !LANGUAGE_CLASS.test(name))
+  node.properties.className = [...kept, `language-${language}`]
+}
+
+function textContent(node: Element | HastRoot["children"][number]): string {
+  if (node.type === "text") return node.value
+  return "children" in node ? node.children.map(textContent).join("") : ""
+}
+
+/**
+ * Syntax-highlight code at build time, doing what Prism.highlightAll() did
+ * in the browser: the same element selection, language lookup through
+ * ancestors, language classes on <code> and its <pre>, and tabindex on the
+ * <pre>. The HTML then arrives highlighted instead of changing at hydration.
+ */
+function rehypePrism() {
+  return (tree: HastRoot) => {
+    const walk = (node: HastRoot | Element, ancestors: Element[]) => {
+      for (const child of node.children) {
+        if (child.type !== "element") continue
+        const chain = [child, ...ancestors]
+        if (
+          child.tagName === "code" &&
+          chain.some((el) => /lang(uage)?-/.test(classString(el)))
+        ) {
+          highlight(child, chain, node.type === "element" ? node : null)
+        } else {
+          walk(child, chain)
+        }
+      }
+    }
+    walk(tree, [])
+  }
+}
+
+function highlight(code: Element, chain: Element[], parent: Element | null) {
+  const match = chain
+    .map((el) => LANGUAGE_CLASS.exec(classString(el)))
+    .find(Boolean)
+  const language = match ? match[1].toLowerCase() : "none"
+  const grammar = Prism.languages[language]
+
+  setLanguage(code, language)
+  if (parent?.tagName === "pre") {
+    setLanguage(parent, language)
+    if (parent.properties.tabIndex === undefined) parent.properties.tabIndex = 0
+  }
+
+  const text = textContent(code)
+  if (!text) return
+  const html = grammar
+    ? Prism.highlight(text, grammar, language)
+    : (Prism.util.encode(text) as string)
+  code.children = [{ type: "raw", value: html }]
+}
+
 function processor() {
   return unified()
     .use(remarkParse)
@@ -71,6 +140,7 @@ function processor() {
       behavior: "wrap",
       properties: { className: ["anchor"] },
     })
+    .use(rehypePrism)
     .use(rehypeStringify, { allowDangerousHtml: true })
 }
 
@@ -108,9 +178,7 @@ export function excerpt(raw: string, length = 140): string {
 export function readingTime(raw: string): number {
   // Matches gatsby-plugin-mdx's timeToRead (≈265 words per minute); prose only,
   // excluding fenced/inline code the way the old counter effectively did.
-  const prose = raw
-    .replace(/```[\s\S]*?```/g, " ")
-    .replace(/`[^`]*`/g, " ")
+  const prose = raw.replace(/```[\s\S]*?```/g, " ").replace(/`[^`]*`/g, " ")
   const words = plainText(prose).split(/\s+/).filter(Boolean).length
   return Math.max(1, Math.round(words / 200))
 }
