@@ -85,6 +85,15 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* No double-tap-to-zoom wait before a tap registers on these. */
+  a,
+  button,
+  label,
+  summary,
+  [role="button"] {
+    touch-action: manipulation;
+  }
+
   /* Reduced motion: near-zero durations rather than none, so anything waiting
      on transitionend or animationend still gets the event. */
   @media (prefers-reduced-motion: reduce) {
