@@ -9,7 +9,6 @@ export const ResourcesLayout: FC = ({ children }) => {
       title="Resources"
       sidebar={ResourcesSidebar}
       content={children}
-      variant="card"
     />
   )
 }

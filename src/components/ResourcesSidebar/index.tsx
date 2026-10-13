@@ -173,7 +173,7 @@ export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
   const showList = expanded || !inCategory
 
   return (
-    <Sidebar variant="card" {...props}>
+    <Sidebar {...props}>
       <div className="flex w-full flex-col items-center gap-[17px]">
         {inCategory && (
           <button

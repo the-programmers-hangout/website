@@ -112,33 +112,6 @@
     -webkit-text-fill-color: transparent;
   }
 
-  /* Breadcrumb link: near-fg colour, underlined, gradient text on hover. */
-  .link-breadcrumb {
-    cursor: pointer;
-    font-weight: 700;
-    color: #172129;
-    text-decoration: underline;
-  }
-  [data-theme="dark"] .link-breadcrumb {
-    color: #f9f9f9;
-  }
-  .link-breadcrumb:hover {
-    background: linear-gradient(92.97deg, #feaf6d 0%, #ff70a5 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  /* 2px border that fades from --card-border at the top to transparent at the
-     bottom (Figma: inside gradient stroke). The fill is painted on the padding
-     box only so the border-box gradient shows through the border. */
-  .card-gradient-border {
-    border: 2px solid transparent;
-    background:
-      linear-gradient(var(--main-bg), var(--main-bg)) padding-box,
-      linear-gradient(to bottom, var(--card-border), transparent) border-box;
-  }
-
   /* Table-of-contents item, incl. scrollspy active bar (classes set at runtime). */
   .toc-item {
     display: inline-block;
@@ -165,81 +138,6 @@
     width: 2px;
     height: 100%;
   }
-}
-
-/* Responsive header banner background image (ported from HeaderBarebone).
-   Vite resolves + hashes these url() paths relative to this file. */
-.header-bg {
-  position: absolute;
-  inset: 0;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  background-image: var(--header-image);
-}
-.header-sticky .header-bg {
-  background-image:
-    linear-gradient(to left, rgba(38, 52, 64, 0) 0, #263440 100%),
-    var(--header-image);
-}
-@media (min-width: 2500px) {
-  .header-bg {
-    --header-image: url("../images/header-2560x1440.png");
-  }
-}
-@media (min-width: 1800px) and (max-width: 2499px) {
-  .header-bg {
-    --header-image: url("../images/header-1920x1080.png");
-  }
-}
-@media (min-width: 768px) and (max-width: 1799px) {
-  .header-bg {
-    --header-image: url("../images/header-1440x900.png");
-  }
-}
-@media (max-width: 767px) {
-  .header-bg {
-    --header-image: url("../images/header-mobile-375x300.png");
-  }
-}
-
-/* Header meta row items, separated by a bullet (ported from Header). */
-.header-meta {
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-  color: color-mix(in oklab, var(--main-fg) 90%, transparent);
-}
-.header-meta + .header-meta::before {
-  content: "•";
-  margin: 0 8px;
-}
-@media (max-width: 1200px) {
-  .header-meta + .header-meta {
-    margin-top: 8px;
-  }
-  .header-meta + .header-meta::before {
-    display: none;
-  }
-}
-
-/* Spotlights sidebar link (ported from SpotlightsSidebar). */
-.spotlight-link {
-  display: block;
-  padding-top: 4px;
-  color: var(--sidebar-fg);
-  align-self: flex-start;
-  text-decoration: none;
-}
-.spotlight-link:hover {
-  text-decoration: underline;
-}
-.spotlight-link + .spotlight-link {
-  margin-top: 4px;
-}
-.spotlight-link.active {
-  font-weight: 700;
-  color: var(--sidebar-active);
 }
 
 /* "Extra resources" box on resource home pages (ported from ResourcesHomeContent).

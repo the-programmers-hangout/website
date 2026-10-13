@@ -16,7 +16,7 @@ export const SpotlightsSidebar: FC<HTMLAttributes<HTMLDivElement>> = (
   const sortedTree = sort((a, b) => a.title.localeCompare(b.title), tree)
 
   return (
-    <Sidebar variant="card" {...props}>
+    <Sidebar {...props}>
       <div className="flex w-full flex-col items-start gap-1 px-9">
         <div className="text-xl leading-[26px] font-bold tracking-[0.75px] text-sidebar-fg">
           spotlights

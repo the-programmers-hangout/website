@@ -5,7 +5,6 @@ import { MobileHeader } from "../../components/MobileHeader"
 import { WavesBanner } from "../../components/WavesBanner"
 import { useScrollAwareSticky } from "../../hooks/useScrollAwareSticky"
 import useSidebar from "../../hooks/useSidebar"
-import { cn } from "../../lib/cn"
 import { SidebarProvider } from "../../SidebarProvider"
 import { ThemeProvider } from "../../ThemeProvider"
 
@@ -13,101 +12,56 @@ interface IColumnLayoutProps {
   title: string
   sidebar: (props: { className: string }) => React.ReactNode
   content: React.ReactNode
-  // "column": fixed full-height sidebar. "card": floating sticky sidebar card
-  // over a waves banner (2026 resources redesign).
-  variant?: "column" | "card"
 }
 
+/*
+  The 2026 page shell: a floating sticky sidebar card over the waves banner
+  from 1024px up; below that a header that opens the same card in a drawer.
+*/
 const InnerColumnLayout: FC<IColumnLayoutProps> = ({
   title,
   sidebar,
   content,
-  variant = "column",
 }) => {
   const { openOnMobile, setOpenOnMobile } = useSidebar()
-  const isCard = variant === "card"
   const cardRef = useRef<HTMLDivElement>(null)
   useScrollAwareSticky(cardRef, 36)
 
-  // The drawer only exists below the breakpoint (CSS hides it above). Close
-  // it when the viewport grows past it, e.g. a tablet rotating to landscape;
-  // otherwise the modal stays open, invisible, holding the scroll lock.
+  // The drawer only exists below lg (CSS hides it above). Close it when the
+  // viewport grows past that, e.g. a tablet rotating to landscape; otherwise
+  // the modal stays open, invisible, holding the scroll lock.
   useEffect(() => {
-    const query = window.matchMedia(
-      isCard ? "(min-width: 1024px)" : "(min-width: 768px)"
-    )
+    const query = window.matchMedia("(min-width: 1024px)")
     const onChange = () => {
       if (query.matches) setOpenOnMobile(false)
     }
     query.addEventListener("change", onChange)
     return () => query.removeEventListener("change", onChange)
-  }, [isCard, setOpenOnMobile])
+  }, [setOpenOnMobile])
 
   return (
     <Fragment>
-      <div
-        className={cn(
-          "flex min-h-screen w-full bg-main text-main-fg",
-          isCard && "relative isolate"
-        )}
-      >
-        {isCard && <WavesBanner className="-z-10" />}
+      <div className="relative isolate flex min-h-screen w-full bg-main text-main-fg">
+        <WavesBanner className="-z-10" />
 
-        {/* The card layout needs more room, so it switches to the header +
-            drawer below lg instead of md. Its header sits on the waves banner
-            and scrolls away with the page instead of a translucent fixed bar. */}
-        <MobileHeader
-          openMenu={() => setOpenOnMobile(true)}
-          className={
-            isCard
-              ? "absolute bg-transparent backdrop-blur-none max-lg:flex"
-              : "max-md:flex"
-          }
+        <MobileHeader openMenu={() => setOpenOnMobile(true)}>{title}</MobileHeader>
+
+        <div
+          ref={cardRef}
+          className="sticky top-9 my-9 ml-9 w-[327px] shrink-0 self-start max-lg:hidden"
         >
-          {title}
-        </MobileHeader>
+          {sidebar({ className: "" })}
+        </div>
 
-        {/* Desktop: the sidebar (hidden on mobile). */}
-        {isCard ? (
-          <div
-            ref={cardRef}
-            className="sticky top-9 my-9 ml-9 w-[327px] shrink-0 self-start max-lg:hidden"
-          >
-            {sidebar({ className: "" })}
-          </div>
-        ) : (
-          sidebar({ className: "max-md:hidden" })
-        )}
-
-        <main
-          className={cn(
-            isCard
-              ? "min-w-0 flex-1"
-              : "ml-80 flex w-[calc(100%-320px)] flex-[1_1_auto] flex-wrap items-start max-md:ml-0 max-md:w-full [&>:first-child]:mt-0 [&>:last-child]:mb-0"
-          )}
-        >
-          {content}
-        </main>
+        <main className="min-w-0 flex-1">{content}</main>
       </div>
 
-      {/* Mobile: the same sidebar in a Base UI Dialog drawer (focus trap,
+      {/* Below lg: the same sidebar in a Base UI Dialog drawer (focus trap,
           Escape, scroll lock, backdrop dismiss). */}
       <Dialog.Root open={openOnMobile} onOpenChange={setOpenOnMobile}>
         <Dialog.Portal>
-          <Dialog.Backdrop
-            className={cn(
-              "fixed inset-0 z-[99] bg-black/20 transition-opacity duration-300 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0",
-              isCard ? "lg:hidden" : "md:hidden"
-            )}
-          />
-          <Dialog.Popup
-            className={cn(
-              "fixed top-0 bottom-0 left-0 z-[100] shadow-[0_4px_10px_rgba(0,0,0,0.2)] transition-transform duration-300 outline-none data-[ending-style]:-translate-x-full data-[starting-style]:-translate-x-full",
-              isCard
-                ? "w-[min(363px,calc(100vw-48px))] lg:hidden"
-                : "w-[calc(100vw-100px)] md:hidden"
-            )}
-          >
+          <Dialog.Backdrop className="fixed inset-0 z-[99] bg-black/20 transition-opacity duration-300 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 lg:hidden" />
+          <Dialog.Popup className="fixed top-0 bottom-0 left-0 z-[100] w-[min(363px,calc(100vw-48px))] shadow-[0_4px_10px_rgba(0,0,0,0.2)] transition-transform duration-300 outline-none data-[ending-style]:-translate-x-full data-[starting-style]:-translate-x-full lg:hidden">
             {sidebar({ className: "in-drawer" })}
           </Dialog.Popup>
         </Dialog.Portal>
