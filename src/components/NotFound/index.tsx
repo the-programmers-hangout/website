@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React, { FC, useEffect, useState } from "react"
 import { levenshteinDistance } from "../../lib/levenshtein"
 import { humanize, sentenceCase } from "../../utils"
 import { AppLink } from "../AppLink"
@@ -16,10 +16,6 @@ interface INotFoundProps {
   threshold?: number
 }
 
-function currentPath(): string {
-  return typeof window !== "undefined" ? window.location.pathname : ""
-}
-
 export const NotFound: FC<INotFoundProps> = ({
   title,
   basePath,
@@ -27,7 +23,13 @@ export const NotFound: FC<INotFoundProps> = ({
   candidates = [],
   threshold = 8,
 }) => {
-  const search = currentPath()
+  // One built page answers every missing URL, so the path is only known in
+  // the browser. Read it after mount to keep hydration in step with the
+  // server HTML, which has no suggestions.
+  const [pathname, setPathname] = useState("")
+  useEffect(() => setPathname(window.location.pathname), [])
+
+  const search = pathname
     .replace(basePath ? `${basePath}/` : "/", "")
     .replace(/\/$/, "")
     .toLowerCase()
