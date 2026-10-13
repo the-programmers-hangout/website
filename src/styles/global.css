@@ -568,9 +568,16 @@
   line-height: 23px;
   letter-spacing: 0;
 }
+/* The FAQ stacks pills one per line with <br>: 7px between them. */
+.markdown.article-prose :is(h1, h2, h3, h4, h5, h6):has(.role):has(br) {
+  line-height: 30px;
+}
+/* 17px line + 1px padding + 2px border = 23px: a pill in running text keeps
+   the 23px line instead of pushing it taller. */
 .markdown.article-prose .role {
-  margin: 3px 0;
+  margin: 0;
   padding: 1px 10px;
+  line-height: 17px;
 }
 
 /* Inline code chip. inline-block keeps the chip 22px tall like the design
