@@ -1,46 +1,39 @@
 import sort from "ramda/es/sort"
 import React, { FC, HTMLAttributes } from "react"
 import useBuildTree from "../../hooks/useBuildTree"
-import { useLockBodyScroll } from "../../hooks/useLockBodyScroll"
 import useSidebar from "../../hooks/useSidebar"
 import { useResourceData } from "../../context/ResourceDataContext"
-import { IFileOrFolder } from "../../types"
 import { humanize } from "../../utils"
 import { AppLink } from "../AppLink"
-import { Sidebar } from "../Sidebar"
-
-function Tree({ item }: { item: IFileOrFolder }) {
-  const { setOpenOnMobile } = useSidebar()
-  const { unlock } = useLockBodyScroll()
-
-  return (
-    <AppLink
-      key={item.title}
-      to={item.path}
-      activeClassName="active"
-      className="spotlight-link"
-      onClick={() => {
-        setOpenOnMobile(false)
-        unlock()
-      }}
-    >
-      {humanize(item.title)}
-    </AppLink>
-  )
-}
+import { cardItemClass, Sidebar } from "../Sidebar"
 
 export const SpotlightsSidebar: FC<HTMLAttributes<HTMLDivElement>> = (
   props
 ) => {
   const { spotlights } = useResourceData()
+  const { setOpenOnMobile } = useSidebar()
   const tree = useBuildTree(spotlights, "/spotlights")
   const sortedTree = sort((a, b) => a.title.localeCompare(b.title), tree)
 
   return (
-    <Sidebar {...props}>
-      {sortedTree.map((node) => (
-        <Tree item={node} key={node.path} />
-      ))}
+    <Sidebar variant="card" {...props}>
+      <div className="flex w-full flex-col items-start gap-1 px-9">
+        <div className="text-xl leading-[26px] font-bold tracking-[0.75px] text-sidebar-fg">
+          spotlights
+        </div>
+        {sortedTree.map((item) => (
+          <AppLink
+            key={item.path}
+            to={item.path}
+            activeClassName="active"
+            className={cardItemClass}
+            // Closing the drawer releases Base UI's scroll lock.
+            onClick={() => setOpenOnMobile(false)}
+          >
+            {humanize(item.title)}
+          </AppLink>
+        ))}
+      </div>
     </Sidebar>
   )
 }

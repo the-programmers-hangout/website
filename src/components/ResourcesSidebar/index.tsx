@@ -10,14 +10,11 @@ import { AppLink } from "../AppLink"
 import { IFileOrFolder, IFolder } from "../../types"
 import { getPath, humanize } from "../../utils"
 import { cn } from "../../lib/cn"
-import { Sidebar } from "../Sidebar"
+import { cardItemClass, Sidebar } from "../Sidebar"
 import useMatchingPath from "./useMatchingPath"
 import useTree from "./useTree"
 
-// 20/26 IBM Plex Sans with tight tracking; the current page is bold with
-// opened-up tracking, matching the main menu.
-const itemClass =
-  "text-xl leading-[26px] tracking-[-0.75px] text-sidebar-fg no-underline hover:underline [&.active]:font-bold [&.active]:tracking-[0.75px]"
+const itemClass = cardItemClass
 
 const childrenSort = sortWith<IFileOrFolder>([
   descend((f) => {

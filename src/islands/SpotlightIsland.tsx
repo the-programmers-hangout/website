@@ -1,8 +1,8 @@
 import React from "react"
 import { Shell } from "./Shell"
-import { Header } from "../components/Header"
+import { Article } from "../components/Article"
 import { Markdown } from "../components/Markdown"
-import { PageContent } from "../components/PageContent"
+import { sentenceCase } from "../utils"
 import type { SpotlightData, ResourceDataShape } from "../lib/content"
 
 interface Props {
@@ -18,16 +18,16 @@ export default function SpotlightIsland({
 }: Props) {
   return (
     <Shell layout="spotlights" pathname={pathname} resourceData={resourceData}>
-      <Header
+      <Article
         relativePath={data.relativePath}
         basePath="/spotlights"
-        title={data.title}
+        title={sentenceCase(data.title)}
         authors={data.authors}
         createdAt={data.createdAt}
         timeToRead={data.timeToRead}
-        shifted={false}
-      />
-      <PageContent content={<Markdown content={data.html} />} />
+      >
+        <Markdown content={data.html} className="article-prose" />
+      </Article>
     </Shell>
   )
 }

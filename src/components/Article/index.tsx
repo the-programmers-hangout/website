@@ -6,7 +6,7 @@ import ChevronRightSmall from "../../icons/chevron-right-sm.svg?react"
 import { useScrollAwareSticky } from "../../hooks/useScrollAwareSticky"
 import { cn } from "../../lib/cn"
 import { IExternalResource, ITocItem } from "../../types"
-import { humanize, traversePaths } from "../../utils"
+import { humanize, sentenceCase, traversePaths } from "../../utils"
 import { AppLink } from "../AppLink"
 import { Footer } from "../Footer"
 import { flattenTrail } from "../Breadcrumb"
@@ -17,7 +17,8 @@ interface IArticleProps {
   // Omitted on section pages (the resources index): the breadcrumb is then
   // just Home, and there is no meta line.
   relativePath?: string
-  basePath: string
+  // Section root for the breadcrumb ("/resources"); needed with relativePath.
+  basePath?: string
   title: string
   authors?: Author[]
   createdAt?: string
@@ -29,10 +30,6 @@ interface IArticleProps {
   // footer always comes last.
   children: ReactNode
   after?: ReactNode
-}
-
-function sentenceCase(text: string): string {
-  return text.charAt(0).toUpperCase() + text.slice(1)
 }
 
 function trailItems(relativePath: string, basePath: string) {
@@ -59,13 +56,14 @@ function trailItems(relativePath: string, basePath: string) {
 
 // Home > Resources > language (link) > deeper folders (text). The page itself
 // is the <h1> below, so it is not repeated here.
-const ArticleBreadcrumb: FC<{ relativePath?: string; basePath: string }> = ({
+const ArticleBreadcrumb: FC<{ relativePath?: string; basePath?: string }> = ({
   relativePath,
   basePath,
 }) => {
-  const items = relativePath
-    ? trailItems(relativePath, basePath)
-    : [{ path: "/", title: "home", link: true }]
+  const items =
+    relativePath && basePath
+      ? trailItems(relativePath, basePath)
+      : [{ path: "/", title: "home", link: true }]
 
   return (
     <nav aria-label="Breadcrumb" className="pl-[23px] max-md:pl-0">

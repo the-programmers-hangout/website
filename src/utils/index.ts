@@ -28,6 +28,10 @@ export function humanize(str: string): string {
   return pipe(dashToSpace, specificWordsToUpper, removeDotMD)(str)
 }
 
+export function sentenceCase(text: string): string {
+  return text.charAt(0).toUpperCase() + text.slice(1)
+}
+
 export function getPath({ path, title }: IFileOrFolder) {
   const depth = path.replace("/resources", "").split("/").length - 2
   const isLanguageIntro = depth === 1 && title.includes("intro")

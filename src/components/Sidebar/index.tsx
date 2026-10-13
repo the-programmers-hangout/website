@@ -9,9 +9,9 @@ import { cn } from "../../lib/cn"
 const menuItemClass =
   "py-1 text-xl text-sidebar-fg no-underline hover:underline active:underline [&.active]:font-bold"
 
-// Card variant (2026 resources redesign): 20/26 type, active item bold with
-// opened-up tracking.
-const cardMenuItemClass =
+// Card variant (2026 redesign): 20/26 type, active item bold with opened-up
+// tracking. Shared by every list in the card (menu, resources, spotlights).
+export const cardItemClass =
   "text-xl leading-[26px] tracking-[-0.75px] text-sidebar-fg no-underline hover:underline [&.active]:font-bold [&.active]:tracking-[0.75px]"
 
 const MENU = [
@@ -81,7 +81,7 @@ const CardSidebar: FC<HTMLAttributes<HTMLDivElement>> = ({
             to={item.to}
             activeClassName="active"
             partiallyActive
-            className={cardMenuItemClass}
+            className={cardItemClass}
           >
             {item.label}
           </AppLink>
