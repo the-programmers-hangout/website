@@ -25,7 +25,7 @@ export const MobileHeader: FC<IMobileHeaderProps> = ({
         type="button"
         aria-label="Open menu"
         onClick={openMenu}
-        className="relative -mr-2 ml-auto box-content h-[9px] w-4 cursor-pointer p-2 before:absolute before:top-2 before:h-0.5 before:w-4 before:bg-main-fg before:content-[''] after:absolute after:bottom-2 after:h-0.5 after:w-4 after:bg-main-fg after:content-['']"
+        className="relative -mr-2 ml-auto box-content h-[9px] w-4 cursor-pointer p-2 before:absolute before:top-2 before:left-2 before:h-0.5 before:w-4 before:bg-main-fg before:content-[''] after:absolute after:bottom-2 after:left-2 after:h-0.5 after:w-4 after:bg-main-fg after:content-['']"
       />
     </div>
   )
