@@ -581,7 +581,12 @@
 }
 
 /* Inline code chip. inline-block keeps the chip 22px tall like the design
-   instead of the font's full 23.4px content area. */
+   instead of the font's full 23.4px content area. Regular weight as in the
+   frame: the typography plugin sets code to 600, which IBM Plex Mono (loaded
+   at 400 only) can only fake. */
+.markdown.article-prose code {
+  font-weight: 400;
+}
 .markdown.article-prose :not(pre) > code {
   display: inline-block;
   max-width: 100%;
