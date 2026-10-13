@@ -1,5 +1,4 @@
 import React, { FC, HTMLAttributes } from "react"
-import { Footer } from "../Footer"
 import { Markdown } from "../Markdown"
 import { ResourcesList } from "../ResourcesList"
 
@@ -21,7 +20,6 @@ export const ResourcesHomeContent: FC<IResourcesHomeContent> = (props) => {
         <h2 className="font-header text-2xl">Extra resources</h2>
         <Markdown content={props.body} />
       </div>
-      <Footer />
     </>
   )
 }

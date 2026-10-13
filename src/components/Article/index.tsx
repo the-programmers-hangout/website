@@ -8,6 +8,7 @@ import { cn } from "../../lib/cn"
 import { IExternalResource, ITocItem } from "../../types"
 import { humanize, traversePaths } from "../../utils"
 import { AppLink } from "../AppLink"
+import { Footer } from "../Footer"
 import { flattenTrail } from "../Breadcrumb"
 import { PageSidebarLink } from "../PageSidebarLink"
 import { Toc } from "../Toc"
@@ -24,7 +25,8 @@ interface IArticleProps {
   toc?: ITocItem[]
   recommendedReading?: string[]
   externalResources?: IExternalResource[]
-  // Article body (the Markdown), and what follows it (prev/next, footer).
+  // Article body (the Markdown), and what follows it (prev/next). The site
+  // footer always comes last.
   children: ReactNode
   after?: ReactNode
 }
@@ -300,11 +302,10 @@ export const Article: FC<IArticleProps> = ({
         externalResources={externalResources}
       />
 
-      {after && (
-        <div className="pr-2.5 pl-[18px] max-md:px-0 min-[1200px]:col-start-1">
-          {after}
-        </div>
-      )}
+      <div className="pr-2.5 pl-[18px] max-md:px-0 min-[1200px]:col-start-1">
+        {after}
+        <Footer />
+      </div>
     </div>
   )
 }

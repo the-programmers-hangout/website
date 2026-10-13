@@ -1,6 +1,5 @@
 import React from "react"
 import { Shell } from "./Shell"
-import { Footer } from "../components/Footer"
 import { Markdown } from "../components/Markdown"
 import { PageNavigation } from "../components/PageNavigation"
 import { Article } from "../components/Article"
@@ -30,12 +29,7 @@ export default function ResourcePageIsland({
         toc={buildToc(data.headings)}
         recommendedReading={data.recommendedReading}
         externalResources={data.externalResources}
-        after={
-          <>
-            <PageNavigation next={data.next} previous={data.previous} />
-            <Footer />
-          </>
-        }
+        after={<PageNavigation next={data.next} previous={data.previous} />}
       >
         <Markdown content={data.html} className="article-prose" />
       </Article>
