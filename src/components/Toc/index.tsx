@@ -31,7 +31,12 @@ const ScrollspyWrapper: FC<{ className?: string }> = ({
 }) => <div {...props} className={cn("flex flex-col", className)} />
 
 export const Toc: FC<ITocProps> = ({ header, items }) => {
-  const [scrollSpyCache, setScrollSpyCache] = React.useState<string>()
+  // Start on the first heading, which is where scrollspy lands for a page
+  // opened at the top. Without it the server HTML has no active item, and
+  // the bold active style reflows the list when scrollspy mounts.
+  const [scrollSpyCache, setScrollSpyCache] = React.useState<
+    string | undefined
+  >(() => items[0]?.link.substring(1))
 
   return (
     <div className="flex flex-col">
