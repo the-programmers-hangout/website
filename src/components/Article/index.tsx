@@ -163,16 +163,23 @@ const ArticleMeta: FC<{
       {/* Sizes are arbitrary values (font-size only) so the row's 21px
           line-height reaches them; text-sm/text-base would reset it. */}
       <p className="m-0 flex flex-wrap items-center gap-x-[11px] leading-[21px] font-light tracking-[-0.75px] text-main-fg/90">
-        {parts.map((part, index) => (
-          <React.Fragment key={index}>
-            {index > 0 && (
+        {/* Each bullet is kept on the line of the item after it, so a wrapped
+            row never ends on a dangling "•". */}
+        {parts.map((part, index) =>
+          index === 0 ? (
+            part
+          ) : (
+            <span
+              key={index}
+              className="inline-flex items-center gap-x-[11px] whitespace-nowrap"
+            >
               <span aria-hidden="true" className="text-[14px]">
                 •
               </span>
-            )}
-            {part}
-          </React.Fragment>
-        ))}
+              {part}
+            </span>
+          )
+        )}
       </p>
     </div>
   )
