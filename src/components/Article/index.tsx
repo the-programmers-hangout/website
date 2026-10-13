@@ -228,7 +228,7 @@ const ArticleAside: FC<{
     <aside
       ref={ref}
       className={cn(
-        "article-aside flex flex-col gap-[56.5px] pl-2 min-[1200px]:sticky min-[1200px]:top-9 min-[1200px]:-mt-px min-[1200px]:col-start-2 min-[1200px]:row-span-2 min-[1200px]:row-start-2 min-[1200px]:self-start max-[1199px]:mt-16",
+        "article-aside flex flex-col gap-[56.5px] pr-2.5 pl-[18px] max-md:px-0 min-[1200px]:sticky min-[1200px]:pr-0 min-[1200px]:pl-2 min-[1200px]:top-9 min-[1200px]:-mt-px min-[1200px]:col-start-2 min-[1200px]:row-span-2 min-[1200px]:row-start-2 min-[1200px]:self-start max-[1199px]:mt-16",
         // Below 1200px the table of contents is hidden; with no links left
         // the aside would be an empty landmark adding 64px of space.
         !hasLinks && "max-[1199px]:hidden"
