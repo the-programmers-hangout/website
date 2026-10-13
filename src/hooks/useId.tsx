@@ -1,14 +1,10 @@
-import { v4 as uuidV4 } from "uuid"
-import { useState } from "react"
+import { useId as useReactId } from "react"
 
-export const useId = () => {
-  // Utilize useState instead of useMemo because React
-  // makes no guarantees that the memo store is durable
-  const [id] = useState(() => {
-    return uuidV4()
-  })
-
-  return id
-}
+/*
+  An id that matches between the server render and hydration (a random one
+  would differ). React's ids look like ":r0:"; the colons are stripped so the
+  result is safe inside url(#…) references and CSS selectors.
+*/
+export const useId = () => useReactId().replace(/:/g, "")
 
 export default useId
