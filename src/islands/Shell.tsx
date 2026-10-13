@@ -17,7 +17,7 @@ interface ShellProps {
 
 /*
   Replaces gatsby-plugin-layout: wraps a page's content in the correct
-  layout (which itself provides ThemeProvider / SidebarProvider) plus the
+  layout (which itself provides SidebarProvider) plus the
   Location + ResourceData contexts the components rely on.
 */
 export const Shell: FC<ShellProps> = ({

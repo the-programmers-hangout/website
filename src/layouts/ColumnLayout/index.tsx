@@ -6,7 +6,6 @@ import { WavesBanner } from "../../components/WavesBanner"
 import { useScrollAwareSticky } from "../../hooks/useScrollAwareSticky"
 import useSidebar from "../../hooks/useSidebar"
 import { SidebarProvider } from "../../SidebarProvider"
-import { ThemeProvider } from "../../ThemeProvider"
 
 interface IColumnLayoutProps {
   title: string
@@ -81,10 +80,8 @@ const InnerColumnLayout: FC<IColumnLayoutProps> = ({
 
 export const ColumnLayout: FC<IColumnLayoutProps> = (props) => {
   return (
-    <ThemeProvider>
-      <SidebarProvider>
-        <InnerColumnLayout {...props} />
-      </SidebarProvider>
-    </ThemeProvider>
+    <SidebarProvider>
+      <InnerColumnLayout {...props} />
+    </SidebarProvider>
   )
 }

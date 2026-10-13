@@ -41,11 +41,12 @@ const fullTitle = `${displayTitle} | ${siteTitle}`
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="theme-color" content="#202c36" />
 
-    {/* No-flash theme: set data-theme before paint, and re-apply after each
-        client-side navigation (ClientRouter keeps the <html> element).
+    {/* No-flash theme: set data-theme before paint, re-apply after each
+        client-side navigation (ClientRouter keeps the <html> element), and
+        follow the OS setting live until the user picks a theme.
         theme-color follows data-theme so the browser UI matches --main-bg;
         the observer catches both this script and the toggle in
-        ThemeProvider, and re-queries because ClientRouter swaps <head>. */}
+        ThemeToggler, and re-queries because ClientRouter swaps <head>. */}
     <script is:inline>
       new MutationObserver(function () {
         var meta = document.querySelector('meta[name="theme-color"]')
@@ -75,6 +76,10 @@ const fullTitle = `${displayTitle} | ${siteTitle}`
       }
       window.__applyTheme()
       document.addEventListener("astro:after-swap", window.__applyTheme)
+      matchMedia("(prefers-color-scheme: light)").addEventListener(
+        "change",
+        window.__applyTheme
+      )
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
