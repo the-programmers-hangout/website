@@ -277,6 +277,7 @@ export interface SpotlightData {
   relativePath: string
   title: string
   html: string
+  headings: Heading[]
   excerpt: string
   authors: Author[]
   createdAt: string
@@ -294,6 +295,7 @@ export async function getSpotlightData(
     relativePath,
     title: humanize(relativePath),
     html: await renderMarkdown(raw),
+    headings: extractHeadings(raw),
     excerpt: makeExcerpt(raw),
     authors: authorsFor(fm),
     createdAt: String(fm.created_at ?? ""),
