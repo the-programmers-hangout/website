@@ -568,48 +568,49 @@
 }
 
 /*
-  2026 resources redesign (Figma "2026 resources redesign", 1440 frame).
-  Scoped to the resources section; other layouts keep the styles above.
+  2026 redesign (Figma "2026 resources redesign", 1440 frame).
+  Article pages (components/Article) opt in with these classes; the plain
+  .markdown rules above still apply elsewhere.
 */
 
 /* Article body: 18px IBM Plex Sans on a 23px rhythm, -0.75px tracking. */
-.markdown.resource-prose {
+.markdown.article-prose {
   font-size: 18px;
   line-height: 23px;
   letter-spacing: -0.75px;
 }
 /* Vertical rhythm, measured from the frame: 23px between blocks, 27px above
    and 19px below headings. Only top margins are set so nothing collapses. */
-.markdown.resource-prose > * {
+.markdown.article-prose > * {
   margin-top: 23px;
   margin-bottom: 0;
 }
-.markdown.resource-prose > :first-child {
+.markdown.article-prose > :first-child {
   margin-top: 0;
 }
 /* The code box sits around the 23px flow: 12px of the gap above it and
    11px of the gap below are taken by the box's own border and padding. */
-.markdown.resource-prose > * + pre {
+.markdown.article-prose > * + pre {
   margin-top: 11px;
 }
-.markdown.resource-prose > pre + * {
+.markdown.article-prose > pre + * {
   margin-top: 12px;
 }
-.markdown.resource-prose > * + :is(h1, h2, h3, h4, h5, h6) {
+.markdown.article-prose > * + :is(h1, h2, h3, h4, h5, h6) {
   margin-top: 27px;
 }
-.markdown.resource-prose > :is(h1, h2, h3, h4, h5, h6) + * {
+.markdown.article-prose > :is(h1, h2, h3, h4, h5, h6) + * {
   margin-top: 19px;
 }
 /* Same idea when a code box meets a heading: its border and padding take
    12px of the gap above it and 11px of the gap below. */
-.markdown.resource-prose > pre + :is(h1, h2, h3, h4, h5, h6) {
+.markdown.article-prose > pre + :is(h1, h2, h3, h4, h5, h6) {
   margin-top: 16px;
 }
-.markdown.resource-prose > :is(h1, h2, h3, h4, h5, h6) + pre {
+.markdown.article-prose > :is(h1, h2, h3, h4, h5, h6) + pre {
   margin-top: 7px;
 }
-.markdown.resource-prose :is(h1, h2, h3, h4, h5, h6) {
+.markdown.article-prose :is(h1, h2, h3, h4, h5, h6) {
   font-weight: 700;
   letter-spacing: -0.75px;
   line-height: normal;
@@ -617,39 +618,39 @@
 }
 /* Headings are wrapped in an autolink anchor; keep the heading's weight
    instead of the typography plugin's link weight. */
-.markdown.resource-prose :is(h1, h2, h3, h4, h5, h6) a.anchor {
+.markdown.article-prose :is(h1, h2, h3, h4, h5, h6) a.anchor {
   font-weight: inherit;
 }
-.markdown.resource-prose h1 {
+.markdown.article-prose h1 {
   font-size: 41.35px;
 }
-.markdown.resource-prose h2 {
+.markdown.article-prose h2 {
   font-size: 39.45px;
   margin-left: 0;
 }
-.markdown.resource-prose h2 ~ h2::before {
+.markdown.article-prose h2 ~ h2::before {
   content: none;
 }
-.markdown.resource-prose h3 {
+.markdown.article-prose h3 {
   font-size: 31.5px;
 }
-.markdown.resource-prose h4 {
+.markdown.article-prose h4 {
   font-size: 25px;
 }
-.markdown.resource-prose :is(h5, h6) {
+.markdown.article-prose :is(h5, h6) {
   font-size: 20px;
 }
-.markdown.resource-prose li {
+.markdown.article-prose li {
   margin: 6px 0;
 }
-.markdown.resource-prose blockquote {
+.markdown.article-prose blockquote {
   margin-inline: 0;
   padding-left: 23px;
 }
 
 /* Inline code chip. inline-block keeps the chip 22px tall like the design
    instead of the font's full 23.4px content area. */
-.markdown.resource-prose :not(pre) > code {
+.markdown.article-prose :not(pre) > code {
   display: inline-block;
   max-width: 100%;
   padding: 0 2px;
@@ -664,14 +665,14 @@
 }
 
 /* Inside headings the chip scales with the heading instead of staying 18px. */
-.markdown.resource-prose :is(h1, h2, h3, h4, h5, h6) :not(pre) > code {
+.markdown.article-prose :is(h1, h2, h3, h4, h5, h6) :not(pre) > code {
   font-size: 0.85em;
   line-height: 1.15;
 }
 
 /* Code block: bleeds 18px left / 10px right of the text column. */
-.markdown.resource-prose pre,
-.markdown.resource-prose pre[class*="language-"] {
+.markdown.article-prose pre,
+.markdown.article-prose pre[class*="language-"] {
   --code-pad-x: 17px;
   margin-inline: -18px -10px;
   padding: 12px var(--code-pad-x) 9px;
@@ -681,8 +682,8 @@
   font-size: 18px;
   line-height: 23px;
 }
-.markdown.resource-prose pre code,
-.markdown.resource-prose pre code[class*="language-"] {
+.markdown.article-prose pre code,
+.markdown.article-prose pre code[class*="language-"] {
   display: block;
   padding: 0;
   border: 0;
@@ -692,7 +693,7 @@
   line-height: inherit;
   letter-spacing: -0.75px;
 }
-.markdown.resource-prose pre .token.punctuation {
+.markdown.article-prose pre .token.punctuation {
   color: inherit;
 }
 
@@ -700,17 +701,17 @@
    The block is a one-cell grid so the fades can overlay the code, and they
    are sticky so they stay on the visible edges while it scrolls. The state
    attributes are set by Markdown (trackCodeScroll). */
-.markdown.resource-prose pre {
+.markdown.article-prose pre {
   display: grid;
   /* As wide as the longest line, so the end fade starts beyond the visible
      edge and sticks to it until the scroll reaches the end. */
   grid-template-columns: max-content;
 }
-.markdown.resource-prose pre > code {
+.markdown.article-prose pre > code {
   grid-area: 1 / 1;
 }
-.markdown.resource-prose pre::before,
-.markdown.resource-prose pre::after {
+.markdown.article-prose pre::before,
+.markdown.article-prose pre::after {
   content: "";
   position: sticky;
   z-index: 1;
@@ -723,58 +724,58 @@
 /* Sticky insets are measured from the content box and Chrome will not push
    past it with a negative inset alone; a matching negative margin carries the
    fades out over the horizontal padding onto the visible edges. */
-.markdown.resource-prose pre::before {
+.markdown.article-prose pre::before {
   justify-self: start;
   left: calc(-1 * var(--code-pad-x));
   margin-left: calc(-1 * var(--code-pad-x));
   background: linear-gradient(to right, var(--color-sunken), transparent);
 }
-.markdown.resource-prose pre::after {
+.markdown.article-prose pre::after {
   justify-self: end;
   right: calc(-1 * var(--code-pad-x));
   margin-right: calc(-1 * var(--code-pad-x));
   background: linear-gradient(to left, var(--color-sunken), transparent);
 }
-.markdown.resource-prose pre[data-scroll-start]::before,
-.markdown.resource-prose pre[data-scroll-end]::after {
+.markdown.article-prose pre[data-scroll-start]::before,
+.markdown.article-prose pre[data-scroll-end]::after {
   opacity: 1;
 }
 @media (prefers-reduced-motion: reduce) {
-  .markdown.resource-prose pre::before,
-  .markdown.resource-prose pre::after {
+  .markdown.article-prose pre::before,
+  .markdown.article-prose pre::after {
     transition: none;
   }
 }
 
 /* Right aside: table of contents + recommended reading. */
 /* Same 26px line + 4px gap rhythm as the sidebar card's lists. */
-.resource-aside .toc-item {
+.article-aside .toc-item {
   position: relative;
   display: block;
   font-size: 18px;
   line-height: 26px;
   color: color-mix(in oklab, var(--main-fg) 90%, transparent);
 }
-.resource-aside .toc-item.depth-2,
-.resource-aside .toc-item.depth-3 {
+.article-aside .toc-item.depth-2,
+.article-aside .toc-item.depth-3 {
   padding: 0;
 }
-.resource-aside .toc-item.depth-3 {
+.article-aside .toc-item.depth-3 {
   padding-left: 16px;
 }
-.resource-aside .toc-item + .toc-item {
+.article-aside .toc-item + .toc-item {
   margin-top: 4px;
 }
-.resource-aside .toc-item a {
+.article-aside .toc-item a {
   color: inherit;
 }
-.resource-aside .toc-item.scrollspy-current,
-.resource-aside .toc-item.scrollspy-cached {
+.article-aside .toc-item.scrollspy-current,
+.article-aside .toc-item.scrollspy-cached {
   font-weight: 700;
   text-shadow: none;
 }
-.resource-aside .toc-item.scrollspy-current::after,
-.resource-aside .toc-item.scrollspy-cached::after {
+.article-aside .toc-item.scrollspy-current::after,
+.article-aside .toc-item.scrollspy-cached::after {
   top: 1px;
   left: -8px;
   width: 2px;
@@ -782,7 +783,7 @@
 }
 
 /* Gradient-underlined link followed by a chevron (recommended reading). */
-.resource-link {
+.article-link {
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -790,12 +791,12 @@
   line-height: 21px;
   color: var(--main-fg);
 }
-.resource-link a {
+.article-link a {
   position: relative;
   color: inherit;
   text-decoration: none;
 }
-.resource-link a::after {
+.article-link a::after {
   content: "";
   position: absolute;
   inset-inline: 0;
@@ -807,7 +808,7 @@
     var(--color-brand-pink)
   );
 }
-.resource-link a:hover {
+.article-link a:hover {
   background: linear-gradient(
     90deg,
     var(--color-brand-orange),
@@ -820,24 +821,24 @@
 @media (max-width: 767px) {
   /* Full-bleed code on phones: out to the 20px page gutters, square edges,
      code text aligned with the body text. */
-  .markdown.resource-prose pre,
-  .markdown.resource-prose pre[class*="language-"] {
+  .markdown.article-prose pre,
+  .markdown.article-prose pre[class*="language-"] {
     --code-pad-x: 20px;
     margin-inline: -20px;
     border-inline-width: 0;
     border-radius: 0;
   }
   /* No phone frame in the design: scale the heading ramp down. */
-  .markdown.resource-prose h1 {
+  .markdown.article-prose h1 {
     font-size: 32px;
   }
-  .markdown.resource-prose h2 {
+  .markdown.article-prose h2 {
     font-size: 30px;
   }
-  .markdown.resource-prose h3 {
+  .markdown.article-prose h3 {
     font-size: 25px;
   }
-  .markdown.resource-prose h4 {
+  .markdown.article-prose h4 {
     font-size: 21px;
   }
 }

@@ -1,6 +1,6 @@
 import React from "react"
 import { Shell } from "./Shell"
-import { ResourceArticle } from "../components/ResourceArticle"
+import { Article } from "../components/Article"
 import { ResourcesHomeContent } from "../components/ResourcesHomeContent"
 import type { ResourceHomeData, ResourceDataShape } from "../lib/content"
 
@@ -17,7 +17,7 @@ export default function ResourceHomeIsland({
 }: Props) {
   return (
     <Shell layout="resources" pathname={pathname} resourceData={resourceData}>
-      <ResourceArticle
+      <Article
         relativePath={data.relativePath}
         basePath="/resources"
         title={data.title}
@@ -28,7 +28,7 @@ export default function ResourceHomeIsland({
         externalResources={data.externalResources}
       >
         <ResourcesHomeContent language={data.language} body={data.html} />
-      </ResourceArticle>
+      </Article>
     </Shell>
   )
 }

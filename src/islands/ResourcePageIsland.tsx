@@ -3,7 +3,7 @@ import { Shell } from "./Shell"
 import { Footer } from "../components/Footer"
 import { Markdown } from "../components/Markdown"
 import { PageNavigation } from "../components/PageNavigation"
-import { ResourceArticle } from "../components/ResourceArticle"
+import { Article } from "../components/Article"
 import { buildToc } from "../utils"
 import type { ResourcePageData, ResourceDataShape } from "../lib/content"
 
@@ -20,7 +20,7 @@ export default function ResourcePageIsland({
 }: Props) {
   return (
     <Shell layout="resources" pathname={pathname} resourceData={resourceData}>
-      <ResourceArticle
+      <Article
         relativePath={data.relativePath}
         basePath="/resources"
         title={data.title}
@@ -37,8 +37,8 @@ export default function ResourcePageIsland({
           </>
         }
       >
-        <Markdown content={data.html} className="resource-prose" />
-      </ResourceArticle>
+        <Markdown content={data.html} className="article-prose" />
+      </Article>
     </Shell>
   )
 }
