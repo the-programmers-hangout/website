@@ -150,19 +150,17 @@ export function buildToc(headings: Heading[] | null | undefined): ITocItem[] {
     return []
   }
 
-  const strip = (value: string) => value.replace(/^(\d*-)(.*)/, "$2")
-
+  // Mirror rehype-slug: slug every heading in document order (it numbers
+  // repeated slugs across all levels) and keep leading digits, so the links
+  // match the ids it writes ("1-keep-the-learning-environment-positive").
   slugger.reset()
 
   return headings
-    .filter((h) => h?.depth === 2)
-    .map((h) => {
-      const slug = slugger.slug(h!.value!)
-
-      return {
-        depth: h!.depth!,
-        link: `#${strip(slug)}`,
-        title: h!.value!,
-      }
-    })
+    .map((h) => ({ heading: h, slug: slugger.slug(h!.value!) }))
+    .filter(({ heading }) => heading?.depth === 2)
+    .map(({ heading, slug }) => ({
+      depth: heading!.depth!,
+      link: `#${slug}`,
+      title: heading!.value!,
+    }))
 }
