@@ -112,6 +112,16 @@
     -webkit-text-fill-color: transparent;
   }
 
+  /* 2px border that fades from --card-border at the top to transparent at the
+     bottom (Figma: inside gradient stroke). The fill is painted on the padding
+     box only so the border-box gradient shows through the border. */
+  .card-gradient-border {
+    border: 2px solid transparent;
+    background:
+      linear-gradient(var(--main-bg), var(--main-bg)) padding-box,
+      linear-gradient(to bottom, var(--card-border), transparent) border-box;
+  }
+
   /* Table-of-contents item, incl. scrollspy active bar (classes set at runtime). */
   .toc-item {
     display: inline-block;
