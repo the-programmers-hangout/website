@@ -84,6 +84,19 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  /* Reduced motion: near-zero durations rather than none, so anything waiting
+     on transitionend or animationend still gets the event. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 @layer components {
@@ -678,12 +691,6 @@
 .markdown.article-prose pre[data-scroll-start]::before,
 .markdown.article-prose pre[data-scroll-end]::after {
   opacity: 1;
-}
-@media (prefers-reduced-motion: reduce) {
-  .markdown.article-prose pre::before,
-  .markdown.article-prose pre::after {
-    transition: none;
-  }
 }
 
 /* Right aside: table of contents + recommended reading. */
