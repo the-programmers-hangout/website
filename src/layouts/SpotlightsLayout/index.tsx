@@ -9,6 +9,7 @@ export const SpotlightsLayout: FC = ({ children }) => {
       title="Spotlights"
       sidebar={SpotlightsSidebar}
       content={children}
+      variant="card"
     />
   )
 }

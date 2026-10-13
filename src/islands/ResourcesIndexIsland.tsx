@@ -14,7 +14,7 @@ interface Props {
 export default function ResourcesIndexIsland({ pathname, resourceData }: Props) {
   return (
     <Shell layout="resources" pathname={pathname} resourceData={resourceData}>
-      <Article basePath="/resources" title="Welcome to the TPH resources">
+      <Article title="Welcome to the TPH resources">
         {/* Plain anchors: the .markdown layer gives them the article link
             style (Link's link-gradient would draw a second underline). */}
         <div className="markdown prose article-prose max-w-none">
