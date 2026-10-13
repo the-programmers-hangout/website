@@ -12,7 +12,7 @@ import { flattenTrail } from "../Breadcrumb"
 import { PageSidebarLink } from "../PageSidebarLink"
 import { Toc } from "../Toc"
 
-interface IResourceArticleProps {
+interface IArticleProps {
   // Omitted on section pages (the resources index): the breadcrumb is then
   // just Home, and there is no meta line.
   relativePath?: string
@@ -57,7 +57,7 @@ function trailItems(relativePath: string, basePath: string) {
 
 // Home > Resources > language (link) > deeper folders (text). The page itself
 // is the <h1> below, so it is not repeated here.
-const ResourceBreadcrumb: FC<{ relativePath?: string; basePath: string }> = ({
+const ArticleBreadcrumb: FC<{ relativePath?: string; basePath: string }> = ({
   relativePath,
   basePath,
 }) => {
@@ -188,7 +188,7 @@ function recommendedLabel(path: string): string {
 const asideHeader =
   "m-0 mb-2.5 text-lg leading-[23px] font-bold text-main-fg/90"
 
-const ResourceAside: FC<{
+const ArticleAside: FC<{
   toc: ITocItem[]
   recommendedReading?: string[]
   externalResources?: IExternalResource[]
@@ -205,7 +205,7 @@ const ResourceAside: FC<{
     <aside
       ref={ref}
       className={cn(
-        "resource-aside flex flex-col gap-[56.5px] pl-2 min-[1200px]:sticky min-[1200px]:top-9 min-[1200px]:-mt-px min-[1200px]:col-start-2 min-[1200px]:row-span-2 min-[1200px]:row-start-2 min-[1200px]:self-start max-[1199px]:mt-16",
+        "article-aside flex flex-col gap-[56.5px] pl-2 min-[1200px]:sticky min-[1200px]:top-9 min-[1200px]:-mt-px min-[1200px]:col-start-2 min-[1200px]:row-span-2 min-[1200px]:row-start-2 min-[1200px]:self-start max-[1199px]:mt-16",
         // Below 1200px the table of contents is hidden; with no links left
         // the aside would be an empty landmark adding 64px of space.
         !hasLinks && "max-[1199px]:hidden"
@@ -222,7 +222,7 @@ const ResourceAside: FC<{
           <h2 className={asideHeader}>Recommended reading</h2>
           <ul className="m-0 flex list-none flex-col items-start gap-[5px] p-0">
             {recommendedReading.map((item) => (
-              <li key={item} className="resource-link">
+              <li key={item} className="article-link">
                 <PageSidebarLink
                   href={item}
                   text={recommendedLabel(item)}
@@ -240,7 +240,7 @@ const ResourceAside: FC<{
           <h2 className={asideHeader}>External resources</h2>
           <ul className="m-0 flex list-none flex-col items-start gap-[5px] p-0">
             {externalResources.map((item) => (
-              <li key={item.href} className="resource-link">
+              <li key={item.href} className="article-link">
                 <PageSidebarLink
                   href={item.href}
                   text={item.text}
@@ -257,13 +257,13 @@ const ResourceAside: FC<{
 }
 
 /*
-  Resource page from the 2026 redesign: header (breadcrumb, title, meta), the
+  Article page from the 2026 redesign: header (breadcrumb, title, meta), the
   article column, and a sticky aside (table of contents, recommended reading).
   At 1440 the article column is 677px wide and the group is centred in the
   space right of the sidebar card; below 1200 the aside drops under the
   article and the table of contents is hidden.
 */
-export const ResourceArticle: FC<IResourceArticleProps> = ({
+export const Article: FC<IArticleProps> = ({
   relativePath,
   basePath,
   title,
@@ -279,7 +279,7 @@ export const ResourceArticle: FC<IResourceArticleProps> = ({
   return (
     <div className="grid grid-cols-[minmax(0,677px)] justify-center px-5 pt-[100px] pb-16 md:px-8 lg:pt-[63px] min-[1200px]:grid-cols-[minmax(0,677px)_204px] min-[1200px]:gap-x-[clamp(40px,6vw,86px)]">
       <header className="pb-10 md:pb-[60px] min-[1200px]:col-start-1">
-        <ResourceBreadcrumb relativePath={relativePath} basePath={basePath} />
+        <ArticleBreadcrumb relativePath={relativePath} basePath={basePath} />
         <h1 className="m-0 mt-[-1px] pl-[21px] font-header text-[48px] leading-[58.5px] font-bold tracking-[-0.75px] break-words text-main-fg max-md:pl-0 max-md:text-[36px] max-md:leading-[44px]">
           {title}
         </h1>
@@ -294,7 +294,7 @@ export const ResourceArticle: FC<IResourceArticleProps> = ({
         {children}
       </div>
 
-      <ResourceAside
+      <ArticleAside
         toc={toc}
         recommendedReading={recommendedReading}
         externalResources={externalResources}

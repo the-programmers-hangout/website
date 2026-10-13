@@ -1,7 +1,7 @@
 import React from "react"
 import { Shell } from "./Shell"
 import { AppLink } from "../components/AppLink"
-import { ResourceArticle } from "../components/ResourceArticle"
+import { Article } from "../components/Article"
 import { ResourcesList } from "../components/ResourcesList"
 import packageJson from "../../package.json"
 import type { ResourceDataShape } from "../lib/content"
@@ -14,10 +14,10 @@ interface Props {
 export default function ResourcesIndexIsland({ pathname, resourceData }: Props) {
   return (
     <Shell layout="resources" pathname={pathname} resourceData={resourceData}>
-      <ResourceArticle basePath="/resources" title="Welcome to the TPH resources">
+      <Article basePath="/resources" title="Welcome to the TPH resources">
         {/* Plain anchors: the .markdown layer gives them the article link
             style (Link's link-gradient would draw a second underline). */}
-        <div className="markdown prose resource-prose max-w-none">
+        <div className="markdown prose article-prose max-w-none">
           <p>
             This is meant as a small knowledge base for commonly answered
             questions on our Discord community,{" "}
@@ -32,7 +32,7 @@ export default function ResourcesIndexIsland({ pathname, resourceData }: Props) 
           </p>
         </div>
         <ResourcesList />
-      </ResourceArticle>
+      </Article>
     </Shell>
   )
 }

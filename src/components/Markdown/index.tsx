@@ -26,7 +26,7 @@ interface IMarkdownProps {
 /*
   Marks code blocks that can scroll sideways: data-scroll-start when there is
   content to the left, data-scroll-end when there is more to the right. The
-  CSS draws an edge fade for each (see .resource-prose pre in global.css).
+  CSS draws an edge fade for each (see .article-prose pre in global.css).
 */
 function trackCodeScroll(container: HTMLElement): () => void {
   const blocks = Array.from(container.querySelectorAll("pre"))
