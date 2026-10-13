@@ -170,13 +170,15 @@ export const ResourcesSidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => {
   const currentTopic = topicsTree.find((topic) => topic.title === current)
 
   // Drill-down: inside a language/topic the card shows its tree, and
-  // "other resources" steps back up to the list of all of them.
-  const showList = expanded || !current
+  // "other resources" steps back up to the list of all of them. A path that
+  // matches no language or topic (e.g. /resources/404) gets the list.
+  const inCategory = Boolean(currentLanguage || currentTopic)
+  const showList = expanded || !inCategory
 
   return (
     <Sidebar variant="card" {...props}>
       <div className="flex w-full flex-col items-center gap-[17px]">
-        {current && (
+        {inCategory && (
           <button
             type="button"
             aria-expanded={expanded}
