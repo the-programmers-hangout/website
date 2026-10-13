@@ -420,7 +420,9 @@
   background-repeat: no-repeat;
   background-size: 100% 3px;
   background-position: 0 100%;
-  transition: all 0.125s ease-in;
+  transition:
+    color 0.125s ease-in,
+    background-size 0.125s ease-in;
 }
 .markdown a:not(.anchor):not(.button):hover {
   color: black;
