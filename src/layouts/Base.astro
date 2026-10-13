@@ -39,11 +39,26 @@ const fullTitle = `${displayTitle} | ${siteTitle}`
 
     <link rel="icon" href="/icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
-    <meta name="theme-color" content="#2874fe" />
+    <meta name="theme-color" content="#202c36" />
 
     {/* No-flash theme: set data-theme before paint, and re-apply after each
-        client-side navigation (ClientRouter keeps the <html> element). */}
+        client-side navigation (ClientRouter keeps the <html> element).
+        theme-color follows data-theme so the browser UI matches --main-bg;
+        the observer catches both this script and the toggle in
+        ThemeProvider, and re-queries because ClientRouter swaps <head>. */}
     <script is:inline>
+      new MutationObserver(function () {
+        var meta = document.querySelector('meta[name="theme-color"]')
+        if (meta) {
+          meta.content =
+            document.documentElement.dataset.theme === "light"
+              ? "#ffffff"
+              : "#202c36"
+        }
+      }).observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["data-theme"],
+      })
       window.__applyTheme = function () {
         try {
           var t = localStorage.getItem("user-selected-theme")
