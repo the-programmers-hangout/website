@@ -5,11 +5,10 @@ import ChevronRight from "../../icons/chevron-right.svg?react"
 import ChevronRightSmall from "../../icons/chevron-right-sm.svg?react"
 import { useScrollAwareSticky } from "../../hooks/useScrollAwareSticky"
 import { cn } from "../../lib/cn"
-import { IExternalResource, ITocItem } from "../../types"
+import { IExternalResource, IFileOrFolder, ITocItem } from "../../types"
 import { humanize, sentenceCase, traversePaths } from "../../utils"
 import { AppLink } from "../AppLink"
 import { Footer } from "../Footer"
-import { flattenTrail } from "../Breadcrumb"
 import { PageSidebarLink } from "../PageSidebarLink"
 import { Toc } from "../Toc"
 
@@ -32,6 +31,18 @@ interface IArticleProps {
   // footer always comes last.
   children: ReactNode
   after?: ReactNode
+}
+
+// Folder chain from the outermost folder down to the file.
+function flattenTrail([
+  currNode,
+  ...previousNodes
+]: IFileOrFolder[]): IFileOrFolder[] {
+  if (currNode.type === "file") {
+    return [...previousNodes, currNode]
+  }
+
+  return flattenTrail([...currNode.children, ...previousNodes, currNode])
 }
 
 function trailItems(relativePath: string, basePath: string) {

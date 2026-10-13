@@ -1,4 +1,4 @@
-import React, { FC, HTMLAttributes } from "react"
+import React, { FC } from "react"
 
 import startCase from "lodash/startCase"
 import { Sidebar } from "../../components/Sidebar"
@@ -11,19 +11,14 @@ interface IPageLayoutProps {
 // Mobile header label: the page slug, with acronyms kept upper case.
 const TITLES: Record<string, string> = { faq: "FAQ" }
 
-const PageSidebar: FC<HTMLAttributes<HTMLDivElement>> = (props) => (
-  <Sidebar variant="card" {...props} />
-)
-
 export const PageLayout: FC<IPageLayoutProps> = ({ path, children }) => {
   const [, page] = (path ?? "").split("/")
 
   return (
     <ColumnLayout
       title={TITLES[page] ?? startCase(page)}
-      sidebar={PageSidebar}
+      sidebar={Sidebar}
       content={children}
-      variant="card"
     />
   )
 }

@@ -1,25 +1,18 @@
 import React, { FC } from "react"
 import Logo from "../../images/tph-logo"
-import { cn } from "../../lib/cn"
 
 interface IMobileHeaderProps {
   openMenu: () => void
-  // Breakpoint classes that reveal the header (defaults to below md).
-  className?: string
 }
 
+// Below lg: section title and menu button sitting on the waves banner. It
+// scrolls away with the page rather than covering the content.
 export const MobileHeader: FC<IMobileHeaderProps> = ({
   openMenu,
-  className = "max-md:flex",
   children,
 }) => {
   return (
-    <div
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 hidden items-center bg-main/40 px-8 py-4 font-header text-[22px] font-bold backdrop-blur-[14px]",
-        className
-      )}
-    >
+    <div className="absolute inset-x-0 top-0 z-50 hidden items-center px-8 py-4 font-header text-[22px] font-bold max-lg:flex">
       <div className="mr-2 flex h-[35px] w-[35px] items-center justify-center rounded-[7px] bg-[#222]">
         <Logo className="h-[25px]" />
       </div>
