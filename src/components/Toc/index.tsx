@@ -1,9 +1,15 @@
 import cx from "classnames"
 import React, { FC } from "react"
-import Scrollspy from "react-scrollspy"
+import ScrollspyModule from "react-scrollspy"
 import { PageSidebarLink } from "../PageSidebarLink"
 import { ITocItem } from "../../types"
 import { cn } from "../../lib/cn"
+
+// react-scrollspy is CommonJS with `exports.default`. Bundlers unwrap it,
+// but Node's import during the server render returns the exports object.
+const Scrollspy =
+  (ScrollspyModule as unknown as { default?: typeof ScrollspyModule })
+    .default ?? ScrollspyModule
 
 interface ITocProps {
   header: React.ReactNode
