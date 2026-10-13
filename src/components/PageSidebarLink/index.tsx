@@ -3,7 +3,7 @@ import { AppLink } from "../AppLink"
 import { humanize } from "../../utils"
 
 const linkClass =
-  "text-main-fg no-underline break-words hover:underline focus:underline"
+  "text-main-fg no-underline break-words hover:underline focus-visible:underline"
 
 interface IPageSidebarLinkProps {
   href: string
