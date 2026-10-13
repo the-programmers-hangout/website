@@ -2,8 +2,6 @@
 path: /beginners
 ---
 
-## Beginners
-
 Whenever someone new starts programming, they always want to know the answer to the question - "What language should I start with?". Sometimes this has some variance, i.e. the person provides some choices and they want the opinions of others on which of the given they should do "first". This question is so common it has its own channel. We literally made a channel just to answer this question, so please read the below section.
 
 ## Actual answer for newbies
