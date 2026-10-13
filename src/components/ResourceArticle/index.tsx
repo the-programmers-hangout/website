@@ -13,12 +13,14 @@ import { PageSidebarLink } from "../PageSidebarLink"
 import { Toc } from "../Toc"
 
 interface IResourceArticleProps {
-  relativePath: string
+  // Omitted on section pages (the resources index): the breadcrumb is then
+  // just Home, and there is no meta line.
+  relativePath?: string
   basePath: string
   title: string
   authors?: Author[]
-  createdAt: string
-  timeToRead: number
+  createdAt?: string
+  timeToRead?: number
   toc?: ITocItem[]
   recommendedReading?: string[]
   externalResources?: IExternalResource[]
@@ -31,12 +33,7 @@ function sentenceCase(text: string): string {
   return text.charAt(0).toUpperCase() + text.slice(1)
 }
 
-// Home > Resources > language (link) > deeper folders (text). The page itself
-// is the <h1> below, so it is not repeated here.
-const ResourceBreadcrumb: FC<{ relativePath: string; basePath: string }> = ({
-  relativePath,
-  basePath,
-}) => {
+function trailItems(relativePath: string, basePath: string) {
   const trail = flattenTrail([traversePaths(relativePath.split("/"), basePath)])
   const folders = trail.filter((item) => item.type === "folder")
   const file = trail[trail.length - 1]
@@ -55,6 +52,18 @@ const ResourceBreadcrumb: FC<{ relativePath: string; basePath: string }> = ({
       link: index === 0,
     })),
   ]
+  return items
+}
+
+// Home > Resources > language (link) > deeper folders (text). The page itself
+// is the <h1> below, so it is not repeated here.
+const ResourceBreadcrumb: FC<{ relativePath?: string; basePath: string }> = ({
+  relativePath,
+  basePath,
+}) => {
+  const items = relativePath
+    ? trailItems(relativePath, basePath)
+    : [{ path: "/", title: "home", link: true }]
 
   return (
     <nav aria-label="Breadcrumb" className="pl-[23px] max-md:pl-0">
@@ -89,8 +98,8 @@ const dateFormat = new Intl.DateTimeFormat("en-US", { dateStyle: "long" })
 
 const ArticleMeta: FC<{
   authors?: Author[]
-  createdAt: string
-  timeToRead: number
+  createdAt?: string
+  timeToRead?: number
 }> = ({ authors = [], createdAt, timeToRead }) => {
   const date = createdAt ? new Date(createdAt) : null
   const hasDate = date !== null && !Number.isNaN(date.getTime())
@@ -120,11 +129,14 @@ const ArticleMeta: FC<{
       </time>
     )
   }
-  parts.push(
-    <span key="time" className="text-[14px]">
-      {timeToRead} minute read time
-    </span>
-  )
+  if (timeToRead !== undefined) {
+    parts.push(
+      <span key="time" className="text-[14px]">
+        {timeToRead} minute read time
+      </span>
+    )
+  }
+  if (parts.length === 0) return null
 
   return (
     <div className="mt-[6.5px] flex items-center gap-[13px] pl-[21px] max-md:pl-0">
