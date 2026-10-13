@@ -14,7 +14,7 @@ interface IPageContentProps {
 
 const textClass = "m-0 mr-[19px] mb-[7px] ml-[17px] font-body text-lg font-bold"
 const navLinkClass =
-  "flex no-underline hover:text-main-fg hover:underline focus:text-main-fg focus:underline"
+  "flex no-underline hover:text-main-fg hover:underline focus-visible:text-main-fg focus-visible:underline"
 const titleClass =
   "m-0 mx-2.5 font-body text-lg font-bold bg-[linear-gradient(91.81deg,var(--color-brand-orange)_0%,var(--color-brand-pink)_100%)] bg-clip-text text-transparent"
 
