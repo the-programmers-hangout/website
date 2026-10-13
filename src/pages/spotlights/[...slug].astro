@@ -21,7 +21,7 @@ const resourceData = getResourceData()
 
 <Base title={data.title} description={data.excerpt}>
   <SpotlightIsland
-    client:only="react"
+    client:load
     pathname={`/spotlights/${relativePath}`}
     data={data}
     resourceData={resourceData}

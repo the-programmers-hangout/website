@@ -56,14 +56,14 @@ if (props.kind === "home") {
   {
     props.kind === "home" ? (
       <ResourceHomeIsland
-        client:only="react"
+        client:load
         pathname={pathname}
         data={homeData}
         resourceData={resourceData}
       />
     ) : (
       <ResourcePageIsland
-        client:only="react"
+        client:load
         pathname={pathname}
         data={articleData}
         resourceData={resourceData}
