@@ -41,6 +41,13 @@ const InnerColumnLayout: FC<IColumnLayoutProps> = ({
 
   return (
     <Fragment>
+      {/* First tab stop: jumps past the sidebar. Hidden until keyboard focus. */}
+      <a
+        href="#main-content"
+        className="fixed top-2 left-2 z-[200] -translate-y-[calc(100%+8px)] rounded bg-main px-4 py-2 font-bold text-main-fg no-underline shadow-[0_2px_8px_rgba(0,0,0,0.25)] focus:translate-y-0"
+      >
+        Skip to content
+      </a>
       <div className="relative isolate flex min-h-screen w-full bg-main text-main-fg">
         <WavesBanner className="-z-10" />
 
@@ -53,7 +60,9 @@ const InnerColumnLayout: FC<IColumnLayoutProps> = ({
           {sidebar({ className: "" })}
         </div>
 
-        <main className="min-w-0 flex-1">{content}</main>
+        <main id="main-content" className="min-w-0 flex-1">
+          {content}
+        </main>
       </div>
 
       {/* Below lg: the same sidebar in a Base UI Dialog drawer (focus trap,
