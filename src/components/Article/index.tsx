@@ -19,6 +19,8 @@ interface IArticleProps {
   relativePath?: string
   // Section root for the breadcrumb ("/resources"); needed with relativePath.
   basePath?: string
+  // Explicit crumbs after Home, for pages that are not content files (404s).
+  crumbs?: { path: string; title: string }[]
   title: string
   authors?: Author[]
   createdAt?: string
@@ -56,14 +58,17 @@ function trailItems(relativePath: string, basePath: string) {
 
 // Home > Resources > language (link) > deeper folders (text). The page itself
 // is the <h1> below, so it is not repeated here.
-const ArticleBreadcrumb: FC<{ relativePath?: string; basePath?: string }> = ({
-  relativePath,
-  basePath,
-}) => {
-  const items =
-    relativePath && basePath
-      ? trailItems(relativePath, basePath)
-      : [{ path: "/", title: "home", link: true }]
+const ArticleBreadcrumb: FC<{
+  relativePath?: string
+  basePath?: string
+  crumbs?: { path: string; title: string }[]
+}> = ({ relativePath, basePath, crumbs }) => {
+  const home = { path: "/", title: "home", link: true }
+  const items = crumbs
+    ? [home, ...crumbs.map((crumb) => ({ ...crumb, link: true }))]
+    : relativePath && basePath
+    ? trailItems(relativePath, basePath)
+    : [home]
 
   return (
     <nav aria-label="Breadcrumb" className="pl-[23px] max-md:pl-0">
@@ -266,6 +271,7 @@ const ArticleAside: FC<{
 export const Article: FC<IArticleProps> = ({
   relativePath,
   basePath,
+  crumbs,
   title,
   authors,
   createdAt,
@@ -279,7 +285,11 @@ export const Article: FC<IArticleProps> = ({
   return (
     <div className="grid grid-cols-[minmax(0,677px)] justify-center px-5 pt-[100px] pb-16 md:px-8 lg:pt-[63px] min-[1200px]:grid-cols-[minmax(0,677px)_204px] min-[1200px]:gap-x-[clamp(40px,6vw,86px)]">
       <header className="pb-10 md:pb-[60px] min-[1200px]:col-start-1">
-        <ArticleBreadcrumb relativePath={relativePath} basePath={basePath} />
+        <ArticleBreadcrumb
+          relativePath={relativePath}
+          basePath={basePath}
+          crumbs={crumbs}
+        />
         <h1 className="m-0 mt-[-1px] pl-[21px] font-header text-[48px] leading-[58.5px] font-bold tracking-[-0.75px] break-words text-main-fg max-md:pl-0 max-md:text-[36px] max-md:leading-[44px]">
           {title}
         </h1>
