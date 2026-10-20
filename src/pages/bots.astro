@@ -1,19 +1,11 @@
 ---
 import Base from "../layouts/Base.astro"
-import SitePageIsland from "../islands/SitePageIsland.tsx"
-import { getSitePageData, getResourceData } from "../lib/content"
+import BotsPageIsland from "../islands/BotsPageIsland.tsx"
+import { getResourceData } from "../lib/content"
 
-const data = await getSitePageData("/bots")
 const resourceData = getResourceData()
 ---
 
-<Base title="BOTS">
-  <SitePageIsland
-    client:load
-    pathname="/bots"
-    headerTitle="Bots"
-    html={data.html}
-    headings={data.headings}
-    resourceData={resourceData}
-  />
+<Base title="Bots">
+  <BotsPageIsland client:load resourceData={resourceData} />
 </Base>
