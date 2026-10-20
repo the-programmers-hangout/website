@@ -6,29 +6,14 @@ import { Role } from "../../components/Role"
 
 ## What are the roles and what do they mean?
 
-### <Role color="#babbbe">Community-Member</Role><br /><Role color="#e9c545">Active</Role><br /><Role color="#3b74d1">Chatterbox</Role><br /><Role color="#ce4ac6">Super-Talky</Role><br /><Role color="#62ccbd">Bepis-Drinker</Role><br /><Role color="#d45846">Conke-Commander</Role><br /><Role color="#985bf6">Patriotic-Procrastinator</Role>
-
-These are the activity roles of the server in the order you will be granted them. Different tiers will grant different perks, such as unlocking hidden channels, voice access, and nicknaming privileges. These roles are assigned automatically as you participate in the server, so don't ask for them.
-
-### <Role color="#915db1">Wizard</Role>
-
-This is given out at the discretion of the Staff team, though any regular members may suggest someone by using ModMail. Less than 0.001% of users get this role.
-
-### <Role color="#968ce3">Solid Contributor</Role>
-
-This role recognizes people who contribute their time and knowledge to the server completely out of their own volition. Again you can nominate someone for this role by using ModMail.
-
-### <Role color="#babbbe">ChatMod</Role><br /><Role color="#babbbe">Moderator</Role><br /><Role color="#babbbe">Senior Moderator</Role><br /><Role color="#babbbe">Admin</Role><br /><Role color="#babbbe">Owner</Role>
-
-These people ensure that the usage of this environment reflects the guidelines as illustrated in the rules. Staff is occasionally handpicked, and sometimes there is an application process. There is a trial period for all new staff of 2-4 weeks (sometimes more, sometimes less) which comes with a trial role, however, they are treated as full staff members during this time. Please respect all staff equally; if you have an issue with a specific staff member, talk to an administrator.
-
-### <Role color="#babbbe">Administrative Board Member</Role><br /><Role color="#babbbe">Senior Board Member</Role><br /><Role color="#babbbe">Board Member</Role>
-
-This is for staff members who are currently not active moderators.
-
-### <Role color="#98ed88">Retired Staff</Role>
-
-This role is for members who are no longer staff.
+<div class="role-groups">
+<div class="role-group"><ul class="role-pills"><li><Role color="#babbbe">Community-Member</Role></li><li><Role color="#e9c545">Active</Role></li><li><Role color="#3b74d1">Chatterbox</Role></li><li><Role color="#ce4ac6">Super-Talky</Role></li><li><Role color="#62ccbd">Bepis-Drinker</Role></li><li><Role color="#d45846">Conke-Commander</Role></li><li><Role color="#985bf6">Patriotic-Procrastinator</Role></li></ul><p>These are the activity roles of the server in the order you will be granted them. Different tiers will grant different perks, such as unlocking hidden channels, voice access, and nicknaming privileges. These roles are assigned automatically as you participate in the server, so don't ask for them.</p></div>
+<div class="role-group"><ul class="role-pills"><li><Role color="#915db1">Wizard</Role></li></ul><p>This is given out at the discretion of the Staff team, though any regular members may suggest someone by using ModMail. Less than 0.001% of users get this role.</p></div>
+<div class="role-group"><ul class="role-pills"><li><Role color="#968ce3">Solid Contributor</Role></li></ul><p>This role recognizes people who contribute their time and knowledge to the server completely out of their own volition. Again you can nominate someone for this role by using ModMail.</p></div>
+<div class="role-group"><ul class="role-pills"><li><Role color="#babbbe">ChatMod</Role></li><li><Role color="#babbbe">Moderator</Role></li><li><Role color="#babbbe">Senior Moderator</Role></li><li><Role color="#babbbe">Admin</Role></li><li><Role color="#babbbe">Owner</Role></li></ul><p>These people ensure that the usage of this environment reflects the guidelines as illustrated in the rules. Staff is occasionally handpicked, and sometimes there is an application process. There is a trial period for all new staff of 2-4 weeks (sometimes more, sometimes less) which comes with a trial role, however, they are treated as full staff members during this time. Please respect all staff equally; if you have an issue with a specific staff member, talk to an administrator.</p></div>
+<div class="role-group"><ul class="role-pills"><li><Role color="#babbbe">Administrative Board Member</Role></li><li><Role color="#babbbe">Senior Board Member</Role></li><li><Role color="#babbbe">Board Member</Role></li></ul><p>This is for staff members who are currently not active moderators.</p></div>
+<div class="role-group"><ul class="role-pills"><li><Role color="#98ed88">Retired Staff</Role></li></ul><p>This role is for members who are no longer staff.</p></div>
+</div>
 
 ## Why can’t I change my nickname?
 

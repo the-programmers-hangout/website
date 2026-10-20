@@ -592,10 +592,6 @@
   line-height: 23px;
   letter-spacing: 0;
 }
-/* The FAQ stacks pills one per line with <br>: 7px between them. */
-.markdown.article-prose :is(h1, h2, h3, h4, h5, h6):has(.role):has(br) {
-  line-height: 30px;
-}
 /* 17px line + 1px padding + 2px border = 23px: a pill in running text keeps
    the 23px line instead of pushing it taller. */
 .markdown.article-prose .role {
@@ -847,5 +843,60 @@
   }
   .bots .bot-commands > div:not(:first-child) dt {
     margin-top: 10px;
+  }
+}
+
+/* FAQ (/faq). Questions are smaller than article headings and ruled off
+   from each other, so the page reads as a list of answers. */
+.markdown.article-prose.faq h2 {
+  font-size: 31.5px;
+}
+.markdown.article-prose.faq > h2:not(:first-child) {
+  margin-top: 46px;
+  padding-top: 46px;
+  border-top: 1px solid var(--card-border);
+}
+/* Role groups: the pills in a column on the left, what they mean on the
+   right. On phones the pills wrap above the text. */
+.markdown.article-prose.faq .role-group {
+  display: grid;
+  grid-template-columns: 256px minmax(0, 1fr);
+  gap: 24px;
+  padding: 20px 0;
+}
+.markdown.article-prose.faq .role-group + .role-group {
+  border-top: 1px solid color-mix(in oklab, var(--card-border) 60%, transparent);
+}
+.markdown.article-prose.faq .role-group:first-child {
+  padding-top: 0;
+}
+.markdown.article-prose.faq .role-pills {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.markdown.article-prose.faq .role-pills li {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+.markdown.article-prose.faq .role-pills li::marker {
+  content: none;
+}
+.markdown.article-prose.faq .role-group p {
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .markdown.article-prose.faq .role-group {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+  .markdown.article-prose.faq .role-pills {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
