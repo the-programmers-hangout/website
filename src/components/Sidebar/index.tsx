@@ -4,10 +4,11 @@ import TPHLogo from "../../images/tph-logo"
 import { ThemeToggler } from "../ThemeToggler"
 import { cn } from "../../lib/cn"
 
-// 20/26 type, active item bold with opened-up tracking. Shared by every list
-// in the card (menu, resources, spotlights).
+// 20/26 type. The active item is thickened with a text stroke rather than
+// font-weight, so its glyphs keep their regular width and nothing rewraps.
+// Shared by every list in the card (menu, resources, spotlights).
 export const cardItemClass =
-  "text-xl leading-[26px] tracking-[-0.75px] text-sidebar-fg no-underline hover:underline [&.active]:font-bold [&.active]:tracking-[0.75px]"
+  "text-xl leading-[26px] tracking-[-0.75px] text-sidebar-fg no-underline hover:underline [&.active]:[-webkit-text-stroke:0.6px_currentColor]"
 
 const MENU = [
   { to: "/about", label: "about" },
